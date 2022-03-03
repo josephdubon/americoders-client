@@ -24,7 +24,7 @@ const Index = () => {
             </div>
             <div className="navbar navbar-dark bg-dark shadow-sm">
                 <div className="container-fluid">
-                    <a href="#" className="navbar-brand d-flex align-items-center">
+                    <a href="/" className="navbar-brand d-flex align-items-center">
                         <strong>Americoders</strong>
                     </a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
