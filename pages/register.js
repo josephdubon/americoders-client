@@ -24,7 +24,7 @@ const Register = () => {
             </div>
             <div className="navbar navbar-dark bg-dark shadow-sm">
                 <div className="container-fluid">
-                    <a href="#" className="navbar-brand d-flex align-items-center">
+                    <a href="/" className="navbar-brand d-flex align-items-center">
                         <strong>Americoders</strong>
                     </a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -45,13 +45,13 @@ const Register = () => {
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="/">Home</a>
+                                <a className="nav-link" aria-current="page" href="/">Home</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="login">Login</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="register">Register</a>
+                                <a className="nav-link active" href="register">Register</a>
                             </li>
                         </ul>
                     </div>
