@@ -1,11 +1,25 @@
+import {useState} from 'react'
+
 const Register = () => {
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const handleSubmit = (e) => {
+        // do not reload the page
+        e.preventDefault()
+
+        // send data to backend
+        console.table({name, email, password})
+    }
+
     return (<>
         <header>
             <div className="collapse bg-dark" id="navbarHeader">
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-8 col-md-7 py-4">
-                            <h4 className="text-white"></h4>
+                            <h4 className="text-white">Americoders</h4>
                             <p className="text-muted">Add some information about the album below, the author, or any
                                 other background context. Make it a few sentences long so folks can pick up some
                                 informative tidbits. Then, link them off to some social networking sites or contact
@@ -34,29 +48,6 @@ const Register = () => {
                     </button>
                 </div>
             </div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <div className="container-fluid">
-                    <a className="navbar-brand" href="#">Never Stop Learning</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                            aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon">{' '}</span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav">
-                            <li className="nav-item">
-                                <a className="nav-link" aria-current="page" href="/">Home</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="login">Login</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link active" href="register">Register</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
         </header>
 
         <main>
@@ -74,10 +65,39 @@ const Register = () => {
 
             <div className="album py-5 bg-light">
                 <div className="container">
-                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <p className='lead'>
-                            Welcome Register
-                        </p>
+                    {/* Registration Form */}
+                    <div className='container-fluid col-md-4 offset-md-4 pb-5'>
+
+                        <form onSubmit={handleSubmit}>
+                            <input
+                                type="text"
+                                className='form-control mb-4 p-4'
+                                value={name}
+                                onChange={e => setName(e.target.value)}
+                                placeholder='Enter name'
+                                required
+                            />
+                            <input
+                                type="text"
+                                className='form-control mb-4 p-4'
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                                placeholder='Enter email'
+                                required
+                            />
+                            <input
+                                type="text"
+                                className='form-control mb-4 p-4'
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                                placeholder='Enter password'
+                                required
+                            />
+                            <div className="d-grid gap-2">
+                                <button type='submit' className='btn btn-primary'>Submit</button>
+                            </div>
+                        </form>
+
                     </div>
                 </div>
             </div>
