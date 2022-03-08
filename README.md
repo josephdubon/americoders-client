@@ -1,71 +1,27 @@
 # Americoders - Client
 
-Frontend repo for the Americoders project
+Frontend for the Americoders education project.
 
-## Summary
+## Installation
 
-- [Getting Started](#getting-started)
-- [Runing the tests](#running-the-tests)
-- [Deployment](#deployment)
-- [Authors](#authors)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+TODO
 
-# Getting Started
+```bash
+# TODO
+```
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing
-purposes. See deployment for notes on how to deploy the project on a live system.
+## Usage
 
-### Prerequisites
+```python
+# TODO
+```
 
-What things you need to install the software and how to install them
+## Contributing
 
-    Give examples
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-    Give the example
-
-And repeat
-
-    until finished
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-    Give an example
-
-### And coding style tests
-
-Explain what these tests test and why
-
-    Give an example
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Authors
-
-- **Joseph Dubon <josephdubon@pm.me>**
+Please make sure to update tests as appropriate.
 
 ## License
 
-TODO add license
-
-- CLOSED SOURCE - NO USE CASE PERMISSION GRANTED TO ANY PERSONS OR COMPANY
-
-## Acknowledgments
-
-- Erik Satie for providing the soundtrack
+TODO
