@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import {SyncOutlined} from "@ant-design/icons";
 
 const axios = require('axios')
 const {toast} = require('react-toastify')
@@ -7,6 +8,7 @@ const Register = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [loading, setLoading] = useState(false)
 
     const handleSubmit = async (e) => {
         // do not reload the page
@@ -14,6 +16,8 @@ const Register = () => {
 
         // send data to backend
         try {
+            // activate load spinner
+            setLoading(true)
             const {data} = await axios.post(`http://localhost:8000/api/register`, {
                 name, email, password
             })
@@ -26,8 +30,14 @@ const Register = () => {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-            });
+            })
+
+            // deactivate load spinner
+            setLoading(false)
         } catch (err) {
+            // deactivate load spinner
+            setLoading(false)
+
             toast.error(err.response.data, {
                 position: "top-center",
                 autoClose: 5000,
@@ -121,7 +131,13 @@ const Register = () => {
                                 required
                             />
                             <div className="d-grid gap-2">
-                                <button type='submit' className='btn btn-primary'>Submit</button>
+                                <button
+                                    type='submit'
+                                    className='btn btn-primary'
+                                    disabled={!name || !email || !password || loading}
+                                >
+                                    {loading ? <SyncOutlined spin/> : 'Submit'}
+                                </button>
                             </div>
                         </form>
 
