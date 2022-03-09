@@ -125,7 +125,7 @@ const Register = () => {
                                 required
                             />
                             <input
-                                type="text"
+                                type="password"
                                 className='form-control mb-4 p-4'
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}
