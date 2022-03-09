@@ -21,7 +21,7 @@ const Register = () => {
             const {data} = await axios.post(`http://localhost:8000/api/register`, {
                 name, email, password
             })
-            // console.log('REGISTER RESPONSE', data)
+
             toast.success('Registration successful. Please login.', {
                 position: "top-center",
                 autoClose: 5000,
@@ -62,6 +62,7 @@ const Register = () => {
                                 informative tidbits. Then, link them off to some social networking sites or contact
                                 information.</p>
                         </div>
+
                         <div className="col-sm-4 offset-md-1 py-4">
                             <h4 className="text-white">Contact</h4>
                             <ul className="list-unstyled">
@@ -73,6 +74,7 @@ const Register = () => {
                     </div>
                 </div>
             </div>
+
             <div className="navbar navbar-dark bg-dark shadow-sm">
                 <div className="container-fluid">
                     <a href="/" className="navbar-brand d-flex align-items-center">
