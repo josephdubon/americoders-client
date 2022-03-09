@@ -1,6 +1,7 @@
 import {useState} from 'react'
 
 const axios = require('axios')
+const {toast} = require('react-toastify')
 
 const Register = () => {
     const [name, setName] = useState('')
@@ -12,10 +13,31 @@ const Register = () => {
         e.preventDefault()
 
         // send data to backend
-        const {data} = await axios.post(`http://localhost:8000/api/register`, {
-            name, email, password
-        })
-        console.log('REGISTER RESPONSE', data)
+        try {
+            const {data} = await axios.post(`http://localhost:8000/api/register`, {
+                name, email, password
+            })
+            // console.log('REGISTER RESPONSE', data)
+            toast.success('Registration successful. Please login.', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        } catch (err) {
+            toast.error(err.response.data, {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
+        }
     }
 
     return (<>
