@@ -18,7 +18,7 @@ const Register = () => {
         try {
             // activate load spinner
             setLoading(true)
-            const {data} = await axios.post(`${process.env.NEXT_PUBLIC_API}/register`, {
+            const {data} = await axios.post(`/api/register`, {
                 name, email, password
             })
 
