@@ -23,7 +23,7 @@ const Register = () => {
             })
 
             toast.success('Registration successful. Please login.', {
-                position: "top-center",
+                position: 'top-center',
                 autoClose: 5000,
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -39,14 +39,14 @@ const Register = () => {
             setLoading(false)
 
             toast.error(err.response.data, {
-                position: "top-center",
+                position: 'top-center',
                 autoClose: 5000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-            });
+            })
         }
     }
 
