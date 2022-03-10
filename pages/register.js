@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import {SyncOutlined} from "@ant-design/icons";
+import Link from 'next/link'
 
 const axios = require('axios')
 const {toast} = require('react-toastify')
@@ -142,6 +143,13 @@ const Register = () => {
                                 </button>
                             </div>
                         </form>
+
+                        <p className='text-center p3'>
+                            Already registered?
+                            <Link href='/login'>
+                                <a> Login</a>
+                            </Link>
+                        </p>
 
                     </div>
                 </div>
