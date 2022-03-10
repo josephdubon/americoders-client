@@ -10,6 +10,10 @@ const Login = () => {
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
 
+    // global state
+    const {state, dispatch} = useContext(Context)
+    console.log('STATE', state)
+
     const handleSubmit = async (e) => {
         // do not reload the page
         e.preventDefault()
