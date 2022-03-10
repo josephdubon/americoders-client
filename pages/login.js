@@ -1,6 +1,9 @@
-import {useState} from 'react'
-import {SyncOutlined} from "@ant-design/icons";
+import {useContext, useState} from 'react'
 import Link from 'next/link'
+
+import {Context} from '../context'
+
+import {SyncOutlined} from '@ant-design/icons'
 
 const axios = require('axios')
 const {toast} = require('react-toastify')
