@@ -36,7 +36,12 @@ const Login = () => {
                 progress: undefined,
             })
 
-            console.log('LOGIN RESPONSE', data)
+            // console.log('LOGIN RESPONSE', data)
+            dispatch({
+                type: 'LOGIN',
+                payload: data,
+            })
+
             // deactivate load spinner
             // setLoading(false)
         } catch (err) {
