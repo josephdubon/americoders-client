@@ -1,21 +1,54 @@
 import {useState} from 'react'
+import {SyncOutlined} from "@ant-design/icons";
+import Link from 'next/link'
 
 const axios = require('axios')
+const {toast} = require('react-toastify')
 
 const Register = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [loading, setLoading] = useState(false)
 
     const handleSubmit = async (e) => {
         // do not reload the page
         e.preventDefault()
 
         // send data to backend
-        const {data} = await axios.post(`http://localhost:8000/api/register`, {
-            name, email, password
-        })
-        console.log('REGISTER RESPONSE', data)
+        try {
+            // activate load spinner
+            setLoading(true)
+            const {data} = await axios.post(`/api/register`, {
+                name, email, password
+            })
+
+            toast.success('Registration successful. Please login.', {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+
+            // deactivate load spinner
+            setLoading(false)
+        } catch (err) {
+            // deactivate load spinner
+            setLoading(false)
+
+            toast.error(err.response.data, {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        }
     }
 
     return (<>
@@ -30,6 +63,7 @@ const Register = () => {
                                 informative tidbits. Then, link them off to some social networking sites or contact
                                 information.</p>
                         </div>
+
                         <div className="col-sm-4 offset-md-1 py-4">
                             <h4 className="text-white">Contact</h4>
                             <ul className="list-unstyled">
@@ -41,6 +75,7 @@ const Register = () => {
                     </div>
                 </div>
             </div>
+
             <div className="navbar navbar-dark bg-dark shadow-sm">
                 <div className="container-fluid">
                     <a href="/" className="navbar-brand d-flex align-items-center">
@@ -91,7 +126,7 @@ const Register = () => {
                                 required
                             />
                             <input
-                                type="text"
+                                type="password"
                                 className='form-control mb-4 p-4'
                                 value={password}
                                 onChange={e => setPassword(e.target.value)}
@@ -99,9 +134,22 @@ const Register = () => {
                                 required
                             />
                             <div className="d-grid gap-2">
-                                <button type='submit' className='btn btn-primary'>Submit</button>
+                                <button
+                                    type='submit'
+                                    className='btn btn-primary'
+                                    disabled={!name || !email || !password || loading}
+                                >
+                                    {loading ? <SyncOutlined spin/> : 'Submit'}
+                                </button>
                             </div>
                         </form>
+
+                        <p className='text-center p3'>
+                            Already registered?
+                            <Link href='/login'>
+                                <a> Login</a>
+                            </Link>
+                        </p>
 
                     </div>
                 </div>
