@@ -17,7 +17,6 @@ const TopNav = () => {
     useEffect(() => {
         // process.browser is depreciated use typeof instead
         isServer() && setCurrentPage(window.location.pathname)
-        console.log(isServer(), window.location.pathname)
     }, [isServer() && window.location.pathname])
 
 

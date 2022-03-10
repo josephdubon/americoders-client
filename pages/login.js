@@ -1,16 +1,69 @@
+import {useState} from 'react'
+import {SyncOutlined} from "@ant-design/icons";
+import Link from 'next/link'
+
+const axios = require('axios')
+const {toast} = require('react-toastify')
+
 const Login = () => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [loading, setLoading] = useState(false)
+
+    const handleSubmit = async (e) => {
+        // do not reload the page
+        e.preventDefault()
+
+        // send data to backend
+        try {
+            // activate load spinner
+            setLoading(true)
+            const {data} = await axios.post(`/api/login`, {
+                email, password
+            })
+
+            toast.success('Registration successful. Please login.', {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+
+            console.log('LOGIN RESPONSE', data)
+            // deactivate load spinner
+            // setLoading(false)
+        } catch (err) {
+            // deactivate load spinner
+            setLoading(false)
+
+            toast.error(err.response.data, {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        }
+    }
+
     return (<>
         <header>
             <div className="collapse bg-dark" id="navbarHeader">
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-8 col-md-7 py-4">
-                            <h4 className="text-white">{''}</h4>
+                            <h4 className="text-white">Americoders</h4>
                             <p className="text-muted">Add some information about the album below, the author, or any
                                 other background context. Make it a few sentences long so folks can pick up some
                                 informative tidbits. Then, link them off to some social networking sites or contact
                                 information.</p>
                         </div>
+
                         <div className="col-sm-4 offset-md-1 py-4">
                             <h4 className="text-white">Contact</h4>
                             <ul className="list-unstyled">
@@ -22,6 +75,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+
             <div className="navbar navbar-dark bg-dark shadow-sm">
                 <div className="container-fluid">
                     <a href="/" className="navbar-brand d-flex align-items-center">
@@ -51,10 +105,45 @@ const Login = () => {
 
             <div className="album py-5 bg-light">
                 <div className="container">
-                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                        <p className='lead'>
-                            Welcome Login
+                    {/* Login Form */}
+                    <div className='container-fluid col-md-4 offset-md-4 pb-5'>
+
+                        <form onSubmit={handleSubmit}>
+                            <input
+                                type="text"
+                                className='form-control mb-4 p-4'
+                                value={email}
+                                onChange={e => setEmail(e.target.value)}
+                                placeholder='Enter email'
+                                required
+                            />
+                            <input
+                                type="password"
+                                className='form-control mb-4 p-4'
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                                placeholder='Enter password'
+                                required
+                            />
+                            <div className="d-grid gap-2">
+                                <button
+                                    type='submit'
+                                    className='btn btn-primary'
+                                    disabled={!email || !password || loading}
+                                >
+                                    {loading ? <SyncOutlined spin/> : 'Submit'}
+                                </button>
+                            </div>
+                        </form>
+
+                        <p className='text-center p3'>
+                            Need to sign up?
+                            <br />Register
+                            <Link href='/register'>
+                                <a> Here</a>
+                            </Link>
                         </p>
+
                     </div>
                 </div>
             </div>
