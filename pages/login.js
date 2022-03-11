@@ -15,7 +15,9 @@ const Login = () => {
 
     // global state
     const {state, dispatch} = useContext(Context)
-    console.log('STATE', state)
+
+    // router
+    const router = useRouter()
 
     const handleSubmit = async (e) => {
         // do not reload the page
