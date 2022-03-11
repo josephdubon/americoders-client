@@ -1,7 +1,7 @@
 import {Menu} from 'antd'
-import Link from 'next/Link'
-import {AppstoreOutlined, LoginOutlined, UserAddOutlined} from '@ant-design/icons'
-import {useEffect, useState} from 'react'
+
+import {Context} from '../context'
+import {AppstoreOutlined, LoginOutlined, LogoutOutlined, UserAddOutlined} from '@ant-design/icons'
 
 
 // de-structure item from menu
