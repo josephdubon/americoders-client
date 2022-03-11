@@ -101,12 +101,13 @@ const TopNav = () => {
             {user !== null && (
                 <>
                     <SubMenu
+                        key={null}
                         icon={<CoffeeOutlined/>}
                         title={user && user.name}
                         style={{marginLeft: 'auto'}} // float nav item to the right
                     >
                         <Item
-                            key='null'
+                            key={null}
                             onClick={logout}
                             icon={<LogoutOutlined/>}
                         >
