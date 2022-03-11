@@ -1,6 +1,8 @@
 import {useState} from 'react'
 import {SyncOutlined} from "@ant-design/icons";
 import Link from 'next/link'
+import {useRouter} from 'next/router'
+import {Context} from "../context";
 
 const axios = require('axios')
 const {toast} = require('react-toastify')
@@ -10,6 +12,19 @@ const Register = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
+
+    // global state
+    const {
+        state: {user},
+    } = useContext(Context)
+
+    // router
+    const router = useRouter()
+
+    // condition redirect for logged-in user
+    useEffect(() => {
+        if (user !== null) router.push('/')
+    })
 
     const handleSubmit = async (e) => {
         // do not reload the page
