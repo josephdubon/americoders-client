@@ -12,6 +12,8 @@ const TopNav = () => {
     const [currentPage, setCurrentPage] = useState('')
 
     const isServer = () => typeof window !== 'undefined'
+    const {state, dispatch} = useContext(Context)
+    const router = useRouter
 
     // update state on page change
     useEffect(() => {
