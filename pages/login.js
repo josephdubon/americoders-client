@@ -1,4 +1,4 @@
-import {useContext, useState} from 'react'
+import {useContext, useEffect, useState} from 'react'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
 import {Context} from '../context'
@@ -14,10 +14,19 @@ const Login = () => {
     const [loading, setLoading] = useState(false)
 
     // global state
-    const {state, dispatch} = useContext(Context)
+    const {
+        state: {user}, // get user status from state
+        dispatch,
+    } = useContext(Context)
+
 
     // router
     const router = useRouter()
+
+    // condition redirect for logged-in user
+    useEffect(() => {
+        if (user !== null) router.push('/')
+    }, [user])
 
     const handleSubmit = async (e) => {
         // do not reload the page
