@@ -90,6 +90,15 @@ const TopNav = () => {
                     <a>Register</a>
                 </Link>
             </Item>
+
+            <Item
+                key='null'
+                onClick={logout}
+                icon={<LogoutOutlined/>}
+
+            >
+                Logout
+            </Item>
         </Menu>
     </>)
 }
