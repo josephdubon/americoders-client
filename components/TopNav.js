@@ -15,7 +15,6 @@ const {Item} = Menu
 const TopNav = () => {
     // set state for current page/link
     const [currentPage, setCurrentPage] = useState('')
-
     const isServer = () => typeof window !== 'undefined'
     const {state, dispatch} = useContext(Context)
     const router = useRouter
