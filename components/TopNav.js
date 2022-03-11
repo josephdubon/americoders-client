@@ -6,11 +6,11 @@ import {toast} from 'react-toastify'
 import {Menu} from 'antd'
 
 import {Context} from '../context'
-import {AppstoreOutlined, LoginOutlined, LogoutOutlined, UserAddOutlined} from '@ant-design/icons'
+import {AppstoreOutlined, CoffeeOutlined, LoginOutlined, LogoutOutlined, UserAddOutlined} from '@ant-design/icons'
 
 
 // de-structure item from menu
-const {Item} = Menu
+const {Item, SubMenu} = Menu
 
 const TopNav = () => {
     // set state for current page/link
@@ -69,38 +69,52 @@ const TopNav = () => {
                 </Link>
             </Item>
 
-            <Item
-                key='/login'
-                onClick={(e) => {
-                    setCurrentPage(e.key)
-                }}
-                icon={<LoginOutlined/>}
-            >
-                <Link href='/login'>
-                    <a>Login</a>
-                </Link>
-            </Item>
+            {/* not logged in user menu */}
+            {user === null && (
+                <>
+                    <Item
+                        key='/login'
+                        onClick={(e) => {
+                            setCurrentPage(e.key)
+                        }}
+                        icon={<LoginOutlined/>}
+                    >
+                        <Link href='/login'>
+                            <a>Login</a>
+                        </Link>
+                    </Item>
+                    <Item
+                        key='/register'
+                        onClick={(e) => {
+                            setCurrentPage(e.key)
+                        }}
+                        icon={<UserAddOutlined/>}
+                    >
+                        <Link href='/register'>
+                            <a>Register</a>
+                        </Link>
+                    </Item>
+                </>
+            )}
 
-            <Item
-                key='/register'
-                onClick={(e) => {
-                    setCurrentPage(e.key)
-                }}
-                icon={<UserAddOutlined/>}
-            >
-                <Link href='/register'>
-                    <a>Register</a>
-                </Link>
-            </Item>
-
-            <Item
-                key='null'
-                onClick={logout}
-                icon={<LogoutOutlined/>}
-
-            >
-                Logout
-            </Item>
+            {/* logged in user menu */}
+            {user !== null && (
+                <>
+                    <SubMenu
+                        icon={<CoffeeOutlined/>}
+                        title={user && user.name}
+                        style={{marginLeft: 'auto'}} // float nav item to the right
+                    >
+                        <Item
+                            key='null'
+                            onClick={logout}
+                            icon={<LogoutOutlined/>}
+                        >
+                            Logout
+                        </Item>
+                    </SubMenu>
+                </>
+            )}
         </Menu>
     </>)
 }
