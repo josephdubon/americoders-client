@@ -152,7 +152,7 @@ const Login = () => {
 
                         <p className='text-center p3'>
                             Need to sign up?
-                            <br />Register
+                            <br/>Register
                             <Link href='/register'>
                                 <a> Here</a>
                             </Link>
