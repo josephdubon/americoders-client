@@ -48,8 +48,11 @@ const Login = () => {
                 payload: data,
             })
 
-            // deactivate load spinner
-            // setLoading(false)
+            // save state in local storage
+            window.localStorage.setItem('user', JSON.stringify(data))
+
+            // redirect
+            await router.push('/')
         } catch (err) {
             // deactivate load spinner
             setLoading(false)
