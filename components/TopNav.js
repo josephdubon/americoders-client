@@ -25,6 +25,30 @@ const TopNav = () => {
         isServer() && setCurrentPage(window.location.pathname)
     }, [isServer() && window.location.pathname])
 
+    // logout logic
+    const logout = async () => {
+        dispatch({
+            type: 'LOGOUT'
+        })
+
+        // clear out local storage, context, and redirect
+        window.localStorage.removeItem('user')
+
+        const {data} = await axios.get('/api/logout')
+
+        // notification config
+        toast(data.message, {
+            position: 'top-center',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        })
+
+        await router.push('/login')
+    }
 
     return (<>
         <Menu
