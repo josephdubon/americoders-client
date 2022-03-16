@@ -100,6 +100,18 @@ const TopNav = () => {
             {/* logged in user menu */}
             {user !== null && (
                 <>
+                    <Item
+                        key='/user'
+                        onClick={(e) => {
+                            setCurrentPage(e.key)
+                        }}
+                        icon={<LoginOutlined/>}
+                    >
+                        <Link href='/user'>
+                            <a>Profile</a>
+                        </Link>
+                    </Item>
+
                     <SubMenu
                         key='#submenu'
                         icon={<CoffeeOutlined/>}
