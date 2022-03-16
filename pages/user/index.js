@@ -5,7 +5,6 @@ import axios from 'axios'
 const UserIndex = () => {
     // state
     const [hidden, setHidden] = useState(true)
-
     const {
         state: {user},
     } = useContext(Context)
