@@ -3,6 +3,7 @@ const {ToastContainer} = require('react-toastify')
 import {useEffect} from 'react'
 
 import TopNav from "../components/TopNav";
+import {Provider} from '../context'
 
 import 'react-toastify/dist/ReactToastify.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -16,21 +17,24 @@ function MyApp({Component, pageProps}) {
         import('bootstrap/dist/js/bootstrap');
     }, []);
 
-    return (<>
-        <ToastContainer
-            position="top-center"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-        />
-        <TopNav/>
-        <Component {...pageProps}/>
-    </>)
+    return (
+        // wrap app in provider for access to state
+        <Provider>
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
+            <TopNav/>
+            <Component {...pageProps}/>
+        </Provider>
+    )
 }
 
 export default MyApp

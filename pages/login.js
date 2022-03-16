@@ -1,6 +1,9 @@
-import {useState} from 'react'
-import {SyncOutlined} from "@ant-design/icons";
+import {useContext, useEffect, useState} from 'react'
 import Link from 'next/link'
+import {useRouter} from 'next/router'
+import {Context} from '../context'
+
+import {SyncOutlined} from '@ant-design/icons'
 
 const axios = require('axios')
 const {toast} = require('react-toastify')
@@ -9,6 +12,21 @@ const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
+
+    // global state
+    const {
+        state: {user}, // get user status from state
+        dispatch,
+    } = useContext(Context)
+
+
+    // router
+    const router = useRouter()
+
+    // condition redirect for logged-in user
+    useEffect(() => {
+        if (user !== null) router.push('/')
+    }, [user])
 
     const handleSubmit = async (e) => {
         // do not reload the page
@@ -22,7 +40,8 @@ const Login = () => {
                 email, password
             })
 
-            toast.success('Registration successful. Please login.', {
+            // notification config
+            toast.success('Welcome to Americoders! What will you do to make the world a better place?', {
                 position: 'top-center',
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -32,9 +51,17 @@ const Login = () => {
                 progress: undefined,
             })
 
-            console.log('LOGIN RESPONSE', data)
-            // deactivate load spinner
-            // setLoading(false)
+            // console.log('LOGIN RESPONSE', data)
+            dispatch({
+                type: 'LOGIN',
+                payload: data,
+            })
+
+            // save state in local storage
+            window.localStorage.setItem('user', JSON.stringify(data))
+
+            // redirect
+            await router.push('/')
         } catch (err) {
             // deactivate load spinner
             setLoading(false)
@@ -138,7 +165,7 @@ const Login = () => {
 
                         <p className='text-center p3'>
                             Need to sign up?
-                            <br />Register
+                            <br/>Register
                             <Link href='/register'>
                                 <a> Here</a>
                             </Link>
