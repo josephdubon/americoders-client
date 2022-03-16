@@ -79,16 +79,16 @@ const UserIndex = () => {
                     </div>
                 </section>
 
-                <div className='album py-5 bg-light'>
-                    <div className='container'>
-                        <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
-                            <p className='lead'>
-                                Welcome User {JSON.stringify(user.name)}
-                            </p>
-                        </div>
+            <div className='album py-5 bg-light'>
+                <div className='container'>
+                    <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
+                        <p className='lead'>
+                            Welcome User {JSON.stringify(user, null, 4)}
+                        </p>
                     </div>
                 </div>
-            </main>
+            </div>
+        </main>
 
             <footer className='text-muted py-5'>
                 <div className='container'>
