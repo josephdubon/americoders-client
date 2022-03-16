@@ -1,6 +1,6 @@
-import {useContext, useEffect, useState} from 'react'
+import {useContext, useState} from 'react'
 import {Context} from '../../context'
-import axios from 'axios'
+import UserRoute from "../../components/routes/UserRoute";
 
 const UserIndex = () => {
     // state
