@@ -10,7 +10,7 @@ import {AppstoreOutlined, CoffeeOutlined, LoginOutlined, LogoutOutlined, UserAdd
 
 
 // de-structure item from menu
-const {Item, SubMenu} = Menu
+const {Item, ItemGroup, SubMenu} = Menu
 
 const TopNav = () => {
     // set state for current page/link
@@ -100,17 +100,6 @@ const TopNav = () => {
             {/* logged in user menu */}
             {user !== null && (
                 <>
-                    <Item
-                        key='/user'
-                        onClick={(e) => {
-                            setCurrentPage(e.key)
-                        }}
-                        icon={<LoginOutlined/>}
-                    >
-                        <Link href='/user'>
-                            <a>Profile</a>
-                        </Link>
-                    </Item>
 
                     <SubMenu
                         key='#submenu'
@@ -118,13 +107,28 @@ const TopNav = () => {
                         title={user && user.name}
                         style={{marginLeft: 'auto'}} // float nav item to the right
                     >
-                        <Item
-                            key='#submenu-item'
-                            onClick={logout}
-                            icon={<LogoutOutlined/>}
-                        >
-                            Logout
-                        </Item>
+                        {/* ItemGroup for multiple items in submenu */}
+                        <ItemGroup>
+                            <Item
+                                key='/user'
+                                onClick={(e) => {
+                                    setCurrentPage(e.key)
+                                }}
+                                icon={<LoginOutlined/>}
+                            >
+                                <Link href='/user'>
+                                    <a>Dashboard</a>
+                                </Link>
+                            </Item>
+
+                            <Item
+                                key='#submenu-item'
+                                onClick={logout}
+                                icon={<LogoutOutlined/>}
+                            >
+                                Logout
+                            </Item>
+                        </ItemGroup>
                     </SubMenu>
                 </>
             )}
