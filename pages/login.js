@@ -41,7 +41,7 @@ const Login = () => {
             })
 
             // notification config
-            toast.success('Welcome to Americoders! What will you do to make the world a better place?', {
+            toast.success('Welcome to Americoders! What will you create to make the world a better place?', {
                 position: 'top-center',
                 autoClose: 5000,
                 hideProgressBar: false,
