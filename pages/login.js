@@ -163,12 +163,14 @@ const Login = () => {
                             </div>
                         </form>
 
+                        {/*  register */}
                         <p className='text-center p3'>
-                            Need to sign up?
-                            <br/>Register
-                            <Link href='/register'>
-                                <a> Here</a>
-                            </Link>
+                            Want to sign-up? <Link href='/register'><a>Register</a></Link>
+                        </p>
+
+                        {/* reset password */}
+                        <p className='text-center p3'>
+                            <Link href='/forgot-password'><a className='text-danger'>Forgot password?</a></Link>
                         </p>
 
                     </div>
