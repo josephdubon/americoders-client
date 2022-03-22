@@ -137,7 +137,7 @@ const Login = () => {
 
                         <form onSubmit={handleSubmit}>
                             <input
-                                type="text"
+                                type="email"
                                 className='form-control mb-4 p-4'
                                 value={email}
                                 onChange={e => setEmail(e.target.value)}
