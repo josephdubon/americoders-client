@@ -50,6 +50,7 @@ const Register = () => {
 
             // deactivate load spinner
             setLoading(false)
+            await router.push('/login')
         } catch (err) {
             // deactivate load spinner
             setLoading(false)
