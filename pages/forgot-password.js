@@ -39,7 +39,7 @@ const ForgotPassword = () => {
             // set success state and give user notification
             setSuccess(true)
 
-            toast('Check your email for the secret code...', {
+            toast('Check your email for the secret code', {
                 position: 'top-center',
                 autoClose: 5000,
                 hideProgressBar: false,
