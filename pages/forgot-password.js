@@ -48,6 +48,7 @@ const ForgotPassword = () => {
                 draggable: true,
                 progress: undefined,
             })
+            setLoading(false)
 
         } catch (err) {
             setLoading(false)
