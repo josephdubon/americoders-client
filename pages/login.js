@@ -60,7 +60,9 @@ const Login = () => {
             // save state in local storage
             window.localStorage.setItem('user', JSON.stringify(data))
 
-            // redirect
+            // clear fields and redirect
+            setEmail('')
+            setPassword('')
             await router.push('/')
         } catch (err) {
             // deactivate load spinner
