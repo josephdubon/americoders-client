@@ -50,6 +50,11 @@ const Register = () => {
 
             // deactivate load spinner
             setLoading(false)
+
+            // clear fields and redirect home
+            setName('')
+            setEmail('')
+            setPassword('')
             await router.push('/login')
         } catch (err) {
             // deactivate load spinner
