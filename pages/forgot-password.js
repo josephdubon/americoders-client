@@ -156,7 +156,8 @@ const ForgotPassword = () => {
                     {/* ForgotPassword Form */}
                     <div className='container-fluid col-md-4 offset-md-4 pb-5'>
 
-                        <form onSubmit={handleSubmit}>
+                        {/* if success is true then handle submit with handleResetPassword */}
+                        <form onSubmit={success ? handleResetPassword : handleSubmit}>
                             <input
                                 type="email"
                                 className='form-control mb-4 p-4'
@@ -165,14 +166,28 @@ const ForgotPassword = () => {
                                 placeholder='Enter email'
                                 required
                             />
-                            {/*<input*/}
-                            {/*    type="password"*/}
-                            {/*    className='form-control mb-4 p-4'*/}
-                            {/*    value={newPassword}*/}
-                            {/*    onChange={e => setNewPassword(e.target.value)}*/}
-                            {/*    placeholder='Enter new password'*/}
-                            {/*    required*/}
-                            {/*/>*/}
+
+                            {/* render on successful reset password submission */}
+                            {success && <>
+                                <input
+                                    type="password"
+                                    className='form-control mb-4 p-4'
+                                    value={code}
+                                    onChange={e => setCode(e.target.value)}
+                                    placeholder='Enter secret code'
+                                    required
+                                />
+
+                                <input
+                                    type="password"
+                                    className='form-control mb-4 p-4'
+                                    value={newPassword}
+                                    onChange={e => setNewPassword(e.target.value)}
+                                    placeholder='Enter new password'
+                                    required
+                                />
+                            </>}
+
                             <div className="d-grid gap-2">
                                 <button
                                     type='submit'
