@@ -80,6 +80,21 @@ const ForgotPassword = () => {
             setCode('')
             setNewPassword('')
             setLoading(false)
+
+            // notification config
+            toast('Success! Please try to login with your new password', {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+
+
+            // redirect to login page
+            await router.push('login')
         } catch (err) {
             setLoading(false)
 
