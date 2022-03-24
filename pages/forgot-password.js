@@ -69,8 +69,6 @@ const ForgotPassword = () => {
     // submit new password from forgotPassword
     const handleResetPassword = async (e) => {
         e.preventDefault()
-        console.log(email, code, newPassword)
-        return // anything below this is unreachable
         try {
             setLoading(true)
             const {data} = await axios.post('/api/reset-password', {
