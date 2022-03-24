@@ -1,19 +1,20 @@
 import {useContext, useEffect, useState} from 'react'
-import {SyncOutlined} from "@ant-design/icons";
-import Link from 'next/link'
+import {Context} from '../context'
 import {useRouter} from 'next/router'
-import {Context} from "../context";
+import {SyncOutlined} from "@ant-design/icons";
 
 const axios = require('axios')
 const {toast} = require('react-toastify')
 
-const Register = () => {
-    const [name, setName] = useState('')
+const ForgotPassword = () => {
+    // state
     const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [success, setSuccess] = useState(false)
+    const [code, setCode] = useState('')
+    const [newPassword, setNewPassword] = useState('')
     const [loading, setLoading] = useState(false)
 
-    // global state
+    // context
     const {
         state: {user},
     } = useContext(Context)
@@ -21,24 +22,24 @@ const Register = () => {
     // router
     const router = useRouter()
 
-    // condition redirect for logged-in user
+    // if user is logged-in, redirect to homepage
     useEffect(() => {
         if (user !== null) router.push('/')
-    })
+    }, [])
 
+    // submit form data to backend
     const handleSubmit = async (e) => {
-        // do not reload the page
         e.preventDefault()
-
-        // send data to backend
         try {
-            // activate load spinner
             setLoading(true)
-            const {data} = await axios.post(`/api/register`, {
-                name, email, password
-            })
 
-            toast.success('Registration successful. Please login.', {
+            // make request to server
+            const {data} = await axios.post('/api/forgot-password', {email})
+
+            // set success state and give user notification
+            setSuccess(true)
+
+            toast('Check your email for the secret code', {
                 position: 'top-center',
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -47,20 +48,13 @@ const Register = () => {
                 draggable: true,
                 progress: undefined,
             })
-
-            // deactivate load spinner
             setLoading(false)
 
-            // clear fields and redirect home
-            setName('')
-            setEmail('')
-            setPassword('')
-            await router.push('/login')
         } catch (err) {
-            // deactivate load spinner
             setLoading(false)
 
-            toast.error(err.response.data, {
+            // notification config
+            toast(err.response.data, {
                 position: 'top-center',
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -71,6 +65,52 @@ const Register = () => {
             })
         }
     }
+
+    // submit new password from forgotPassword
+    const handleResetPassword = async (e) => {
+        e.preventDefault()
+        try {
+            setLoading(true)
+            const {data} = await axios.post('/api/reset-password', {
+                email, code, newPassword,
+            })
+
+            // reset fields to empty
+            setEmail('')
+            setCode('')
+            setNewPassword('')
+            setLoading(false)
+
+            // notification config
+            toast('Success! Please try to login with your new password', {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+
+
+            // redirect to login page
+            await router.push('login')
+        } catch (err) {
+            setLoading(false)
+
+            // notification config
+            toast(err.response.data, {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        }
+    }
+
 
     return (<>
         <header>
@@ -116,7 +156,7 @@ const Register = () => {
             <section className="py-5 text-center container">
                 <div className="row py-lg-5">
                     <div className="col-lg-6 col-md-8 mx-auto">
-                        <h1 className="fw-light">Register</h1>
+                        <h1 className="fw-light">Forgot Password</h1>
                         <p className="lead text-muted">Something short and leading about the collection below—its
                             contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply
                             skip over it entirely.</p>
@@ -126,52 +166,51 @@ const Register = () => {
 
             <div className="album py-5 bg-light">
                 <div className="container">
-                    {/* Registration Form */}
+                    {/* ForgotPassword Form */}
                     <div className='container-fluid col-md-4 offset-md-4 pb-5'>
 
-                        <form onSubmit={handleSubmit}>
+                        {/* if success is true then handle submit with handleResetPassword */}
+                        <form onSubmit={success ? handleResetPassword : handleSubmit}>
                             <input
-                                type="text"
-                                className='form-control mb-4 p-4'
-                                value={name}
-                                onChange={e => setName(e.target.value)}
-                                placeholder='Enter name'
-                                required
-                            />
-                            <input
-                                type="text"
+                                type="email"
                                 className='form-control mb-4 p-4'
                                 value={email}
                                 onChange={e => setEmail(e.target.value)}
                                 placeholder='Enter email'
                                 required
                             />
-                            <input
-                                type="password"
-                                className='form-control mb-4 p-4'
-                                value={password}
-                                onChange={e => setPassword(e.target.value)}
-                                placeholder='Enter password'
-                                required
-                            />
+
+                            {/* render on successful reset password submission */}
+                            {success && <>
+                                <input
+                                    type="password"
+                                    className='form-control mb-4 p-4'
+                                    value={code}
+                                    onChange={e => setCode(e.target.value)}
+                                    placeholder='Enter secret code'
+                                    required
+                                />
+
+                                <input
+                                    type="password"
+                                    className='form-control mb-4 p-4'
+                                    value={newPassword}
+                                    onChange={e => setNewPassword(e.target.value)}
+                                    placeholder='Enter new password'
+                                    required
+                                />
+                            </>}
+
                             <div className="d-grid gap-2">
                                 <button
                                     type='submit'
                                     className='btn btn-primary'
-                                    disabled={!name || !email || !password || loading}
+                                    disabled={!email || loading}
                                 >
                                     {loading ? <SyncOutlined spin/> : 'Submit'}
                                 </button>
                             </div>
                         </form>
-
-                        <p className='text-center p3'>
-                            Already registered?
-                            <Link href='/login'>
-                                <a> Login</a>
-                            </Link>
-                        </p>
-
                     </div>
                 </div>
             </div>
@@ -191,4 +230,4 @@ const Register = () => {
     </>)
 }
 
-export default Register
+export default ForgotPassword

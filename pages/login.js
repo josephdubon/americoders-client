@@ -41,7 +41,7 @@ const Login = () => {
             })
 
             // notification config
-            toast.success('Welcome to Americoders! What will you do to make the world a better place?', {
+            toast.success('Welcome to Americoders! What will you create to make the world a better place?', {
                 position: 'top-center',
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -60,7 +60,9 @@ const Login = () => {
             // save state in local storage
             window.localStorage.setItem('user', JSON.stringify(data))
 
-            // redirect
+            // clear fields and redirect
+            setEmail('')
+            setPassword('')
             await router.push('/')
         } catch (err) {
             // deactivate load spinner
@@ -137,7 +139,7 @@ const Login = () => {
 
                         <form onSubmit={handleSubmit}>
                             <input
-                                type="text"
+                                type="email"
                                 className='form-control mb-4 p-4'
                                 value={email}
                                 onChange={e => setEmail(e.target.value)}
@@ -163,12 +165,14 @@ const Login = () => {
                             </div>
                         </form>
 
+                        {/*  register */}
                         <p className='text-center p3'>
-                            Need to sign up?
-                            <br/>Register
-                            <Link href='/register'>
-                                <a> Here</a>
-                            </Link>
+                            Want to sign-up? <Link href='/register'><a>Register</a></Link>
+                        </p>
+
+                        {/* reset password */}
+                        <p className='text-center p3'>
+                            <Link href='/forgot-password'><a className='text-danger'>Forgot password?</a></Link>
                         </p>
 
                     </div>
