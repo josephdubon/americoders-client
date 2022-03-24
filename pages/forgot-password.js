@@ -66,6 +66,38 @@ const ForgotPassword = () => {
         }
     }
 
+    // submit new password from forgotPassword
+    const handleResetPassword = async (e) => {
+        e.preventDefault()
+        console.log(email, code, newPassword)
+        return // anything below this is unreachable
+        try {
+            setLoading(true)
+            const {data} = await axios.post('/api/reset-password', {
+                email, code, newPassword,
+            })
+
+            // reset fields to empty
+            setEmail('')
+            setCode('')
+            setNewPassword('')
+            setLoading(false)
+        } catch (err) {
+            setLoading(false)
+
+            // notification config
+            toast(err.response.data, {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        }
+    }
+
 
     return (<>
         <header>
