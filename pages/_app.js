@@ -1,4 +1,4 @@
-import TopBanner from "../components/top-banner/TopBanner";
+import TopBanner from '../components/top-banner/TopBanner';
 import {useEffect} from 'react'
 
 import TopNav from '../components/nav/TopNav'
@@ -23,7 +23,7 @@ function MyApp({Component, pageProps}) {
         // wrap app in provider for access to state
         <Provider>
             <ToastContainer
-                position="top-center"
+                position='top-center'
                 autoClose={5000}
                 hideProgressBar={false}
                 newestOnTop={false}
