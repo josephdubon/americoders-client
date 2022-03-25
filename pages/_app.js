@@ -1,5 +1,4 @@
-const {ToastContainer} = require('react-toastify')
-
+import TopBanner from "../components/top-banner/TopBanner";
 import {useEffect} from 'react'
 
 import TopNav from '../components/nav/TopNav'
@@ -34,8 +33,10 @@ function MyApp({Component, pageProps}) {
                 draggable
                 pauseOnHover
             />
+            <TopBanner/>
             <TopNav/>
             <Component {...pageProps}/>
+            <Footer/>
         </Provider>
     )
 }
