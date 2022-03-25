@@ -63,7 +63,7 @@ const Login = () => {
             // clear fields and redirect
             setEmail('')
             setPassword('')
-            await router.push('/')
+            await router.push('user')
         } catch (err) {
             // deactivate load spinner
             setLoading(false)
