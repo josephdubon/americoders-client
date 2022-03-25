@@ -10,6 +10,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'antd/dist/antd.css'
 import '../public/css/styles.css'
 
+const {ToastContainer} = require('react-toastify')
+
 
 function MyApp({Component, pageProps}) {
     // add this for bootstrap js components to render correctly
