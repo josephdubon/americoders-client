@@ -21,7 +21,6 @@ const Index = () => {
                     </div>
                 </div>
             </div>
-
         </main>
 
         <footer className="text-muted py-5">
