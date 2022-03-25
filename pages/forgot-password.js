@@ -92,7 +92,6 @@ const ForgotPassword = () => {
                 progress: undefined,
             })
 
-
             // redirect to login page
             await router.push('login')
         } catch (err) {
