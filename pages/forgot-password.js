@@ -110,7 +110,6 @@ const ForgotPassword = () => {
         }
     }
 
-
     return (<>
         <header>
             <div className="collapse bg-dark" id="navbarHeader">
