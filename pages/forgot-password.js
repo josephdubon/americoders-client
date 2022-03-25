@@ -25,7 +25,7 @@ const ForgotPassword = () => {
     // if user is logged-in, redirect to homepage
     useEffect(() => {
         if (user !== null) router.push('/')
-    }, [])
+    }, [user]) // add user as dependency to block page from logged-in user
 
     // submit form data to backend
     const handleSubmit = async (e) => {
