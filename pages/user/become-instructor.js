@@ -24,7 +24,7 @@ const BecomeInstructor = () => {
         axios
             .post('/api/make-instructor')
             .then((res) => {
-                console.log(res)
+                // console.log(res)
                 window.location.href = res.data // open on-boarding in new window
             })
             .catch((err) => {
