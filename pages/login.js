@@ -139,7 +139,6 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-
         </main>
 
         <footer className="text-muted py-5">
