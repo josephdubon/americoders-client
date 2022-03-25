@@ -2,7 +2,8 @@ const {ToastContainer} = require('react-toastify')
 
 import {useEffect} from 'react'
 
-import TopNav from "../components/TopNav";
+import TopNav from '../components/nav/TopNav'
+import Footer from '../components/footer/Footer'
 import {Provider} from '../context'
 
 import 'react-toastify/dist/ReactToastify.css'
