@@ -91,6 +91,7 @@ const TopNav = () => {
                             <a>Login</a>
                         </Link>
                     </Item>
+
                     <Item
                         key='/register'
                         onClick={(e) => {
