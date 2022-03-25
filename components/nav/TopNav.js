@@ -5,8 +5,16 @@ import useRouter from 'next/router'
 import {toast} from 'react-toastify'
 import {Menu} from 'antd'
 
-import {Context} from '../context'
-import {AppstoreOutlined, CoffeeOutlined, LoginOutlined, LogoutOutlined, UserAddOutlined} from '@ant-design/icons'
+import {Context} from '../../context'
+import {
+    AppstoreOutlined,
+    CarryOutOutlined,
+    CoffeeOutlined,
+    LoginOutlined,
+    LogoutOutlined,
+    TeamOutlined,
+    UserAddOutlined
+} from '@ant-design/icons'
 
 
 // de-structure item from menu
