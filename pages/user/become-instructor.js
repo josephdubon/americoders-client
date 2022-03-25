@@ -16,7 +16,13 @@ const BecomeInstructor = () => {
                 <div className='container'>
                     <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
                         <p className='lead'>
-                            Become Instructor
+                            Americoders partners with Stripe to transfer earnings to your bank account.
+                        </p>
+                        <p className='lead'>
+                            Americoders partners with Stripe to transfer earnings to your bank account.
+                        </p>
+                        <p className='lead'>
+                            Americoders partners with Stripe to transfer earnings to your bank account.
                         </p>
                     </div>
                 </div>
