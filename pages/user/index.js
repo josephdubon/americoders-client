@@ -1,6 +1,6 @@
 import {useContext, useState} from 'react'
 import {Context} from '../../context'
-import UserRoute from "../../components/routes/UserRoute";
+import UserRoute from '../../components/routes/UserRoute'
 
 const UserIndex = () => {
     // state

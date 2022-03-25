@@ -1,7 +1,7 @@
 import {useContext, useEffect, useState} from 'react'
 import {Context} from '../context'
 import {useRouter} from 'next/router'
-import {SyncOutlined} from "@ant-design/icons";
+import {SyncOutlined} from '@ant-design/icons';
 
 const axios = require('axios')
 const {toast} = require('react-toastify')
@@ -112,26 +112,26 @@ const ForgotPassword = () => {
 
     return (<>
         <main>
-            <section className="py-5 text-center container">
-                <div className="row py-lg-5">
-                    <div className="col-lg-6 col-md-8 mx-auto">
-                        <h1 className="fw-light">Forgot Password</h1>
-                        <p className="lead text-muted">Something short and leading about the collection below—its
+            <section className='py-5 text-center container'>
+                <div className='row py-lg-5'>
+                    <div className='col-lg-6 col-md-8 mx-auto'>
+                        <h1 className='fw-light'>Forgot Password</h1>
+                        <p className='lead text-muted'>Something short and leading about the collection below—its
                             contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply
                             skip over it entirely.</p>
                     </div>
                 </div>
             </section>
 
-            <div className="album py-5 bg-light">
-                <div className="container">
+            <div className='album py-5 bg-light'>
+                <div className='container'>
                     {/* ForgotPassword Form */}
                     <div className='container-fluid col-md-4 offset-md-4 pb-5'>
 
                         {/* if success is true then handle submit with handleResetPassword */}
                         <form onSubmit={success ? handleResetPassword : handleSubmit}>
                             <input
-                                type="email"
+                                type='email'
                                 className='form-control mb-4 p-4'
                                 value={email}
                                 onChange={e => setEmail(e.target.value)}
@@ -142,7 +142,7 @@ const ForgotPassword = () => {
                             {/* render on successful reset password submission */}
                             {success && <>
                                 <input
-                                    type="password"
+                                    type='password'
                                     className='form-control mb-4 p-4'
                                     value={code}
                                     onChange={e => setCode(e.target.value)}
@@ -151,7 +151,7 @@ const ForgotPassword = () => {
                                 />
 
                                 <input
-                                    type="password"
+                                    type='password'
                                     className='form-control mb-4 p-4'
                                     value={newPassword}
                                     onChange={e => setNewPassword(e.target.value)}
@@ -160,7 +160,7 @@ const ForgotPassword = () => {
                                 />
                             </>}
 
-                            <div className="d-grid gap-2">
+                            <div className='d-grid gap-2'>
                                 <button
                                     type='submit'
                                     className='btn btn-primary'
