@@ -77,6 +77,35 @@ const TopNav = () => {
                 </Link>
             </Item>
 
+            {/* conditional render of content depending on user role (instructor or subscriber) */}
+            {user && user.role && user.role.includes('Instructor') ? (<>
+                {/* Instructor Role */}
+                <Item
+                    key='/instructor/course/create'
+                    onClick={(e) => {
+                        setCurrentPage(e.key)
+                    }}
+                    icon={<CarryOutOutlined/>}
+                >
+                    <Link href='/instructor/course/create'>
+                        <a>Create Course</a>
+                    </Link>
+                </Item>
+            </>) : (<>
+                {/* Other Role */}
+                <Item
+                    key='/user/become-instructor'
+                    onClick={(e) => {
+                        setCurrentPage(e.key)
+                    }}
+                    icon={<TeamOutlined/>}
+                >
+                    <Link href='/user/become-instructor'>
+                        <a>Become Instructor</a>
+                    </Link>
+                </Item>
+            </>)}
+
             {/* not logged in user menu */}
             {user === null && (
                 <>
