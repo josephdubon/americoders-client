@@ -1,19 +1,14 @@
 import {useState} from 'react'
 // import axios from 'axios'
-import {Select} from 'antd'
-
 import InstructorRoute from '../../../components/routes/InstructorRoute'
 import CourseCreateForm from '../../../components/forms/CourseCreateForm'
-
-const {Option} = Select
 
 const CreateCourse = () => {
     // state
     const [values, setValues] = useState({
         name: '',
         description: '',
-        category: '',
-        price: '9.99',
+        price: '49.99',
         uploading: false,
         paid: true,
         loading: false,
