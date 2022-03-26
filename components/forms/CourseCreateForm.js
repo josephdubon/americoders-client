@@ -80,24 +80,35 @@ const CourseCreateForm = ({handleChange, handleImage, handleSubmit, preview, val
                 />
             </div>
 
-                {/* image upload */}
-                <div className='form-row'>
-                    <div className='col'>
-                        <div className='form-group d-grid'>
-                            <label
-                                className='btn btn-outline-secondary text-left'>
-                                {values.loading ? ' Uploading' : 'Image Upload'}
-                                <input
-                                    type='file'
-                                    name='image'
-                                    accept='image/*'
-                                    onChange={handleChange}
-                                    hidden
-                                />
-                            </label>
-                        </div>
+            {/* image upload */}
+            <div className='form-row'>
+                <div className='col'>
+                    <div className='form-group d-grid'>
+                        <label
+                            className='btn btn-outline-secondary text-left'>
+                            {values.loading ? ' Uploading' : 'Image Upload'}
+                            <input
+                                type='file'
+                                name='image'
+                                accept='image/*'
+                                onChange={handleImage}
+                                hidden
+                            />
+                        </label>
                     </div>
                 </div>
+
+            </div>
+            {/* image preview */}
+            {preview && (<>
+                <div className="col-md-6 text-center w-100 mb-3">
+                    <p>Image Preview:</p>
+                    <Avatar
+                        width={200}
+                        src={preview}
+                    />
+                </div>
+            </>)}
 
             {/* button */}
             <div className='row'>
