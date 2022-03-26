@@ -13,7 +13,6 @@ const CreateCourse = () => {
         paid: true,
         category: '',
         loading: false,
-        imagePreview: '',
     })
 
     // form logic: values
