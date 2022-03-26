@@ -1,7 +1,7 @@
-import axios from 'axios'
+import InstructorRoute from '../../../components/routes/InstructorRoute'
 
 const CreateCourse = () => {
-    return (<>
+    return (<InstructorRoute>
         <main>
             <section className="py-5 text-center container">
                 <div className="row py-lg-5">
@@ -24,7 +24,7 @@ const CreateCourse = () => {
                 </div>
             </div>
         </main>
-    </>)
+    </InstructorRoute>)
 }
 
 export default CreateCourse
