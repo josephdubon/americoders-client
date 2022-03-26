@@ -25,8 +25,8 @@ const CourseCreateForm = ({handleChange, handleImage, handleSubmit, values, setV
                     />
                 </div>
 
-            {/* description */}
-            <div className='form-group'>
+                {/* description */}
+                <div className='form-group'>
                 <textarea
                     name='description'
                     id=''
@@ -38,7 +38,7 @@ const CourseCreateForm = ({handleChange, handleImage, handleSubmit, values, setV
                     onChange={handleChange}
                 >
                 </textarea>
-            </div>
+                </div>
 
             {/* paid or free course */}
             <div className='form-row'>
