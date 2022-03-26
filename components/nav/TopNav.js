@@ -170,6 +170,23 @@ const TopNav = () => {
                     </SubMenu>
                 </>
             )}
+
+            {/* user is instructor menu */}
+            {user && user.role && user.role.includes('Instructor') && (
+                <>
+                    <Item
+                        key='/instructor'
+                        icon={<TeamOutlined/>}
+                        onClick={(e) => {
+                            setCurrentPage(e.key)
+                        }}
+                    >
+                        <Link href='/instructor'>
+                            <a>Instructor</a>
+                        </Link>
+                    </Item>
+                </>
+            )}
         </Menu>
     </>)
 }
