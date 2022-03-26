@@ -23,8 +23,8 @@ const CreateCourse = () => {
     }
 
     // form logic: images
-    const handleImage = () => {
-        //
+    const handleImage = (e) => {
+        setPreview(window.URL.createObjectURL(e.target.files[0]))
     }
 
     // form logic: submission
