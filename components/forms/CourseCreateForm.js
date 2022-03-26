@@ -3,20 +3,27 @@ import {Button, Select} from 'antd'
 
 const {Option} = Select
 
-const CourseCreateForm = ({handleChange, handleImage, handleSubmit, values, setValues}) => (
-    <>
-        <form onSubmit={handleSubmit}>
-            <div className='form-group '>
-                {/* name */}
-                <input
-                    type='text'
-                    name='name'
-                    className='form-control'
-                    value={values.name}
-                    placeholder='Name'
-                    onChange={handleChange}
-                />
-            </div>
+const CourseCreateForm = ({handleChange, handleImage, handleSubmit, values, setValues}) => {
+    // price dropdown logic
+    const children = []
+    for (let i = 49.99; i <= 100.99; i++) {
+        children.push(<Option key={i.toFixed(2)}>${i.toFixed(2)}</Option>)
+    }
+
+    return (
+        <>
+            <form onSubmit={handleSubmit}>
+                <div className='form-group '>
+                    {/* name */}
+                    <input
+                        type='text'
+                        name='name'
+                        className='form-control'
+                        value={values.name}
+                        placeholder='Name'
+                        onChange={handleChange}
+                    />
+                </div>
 
             {/* description */}
             <div className='form-group'>
