@@ -56,43 +56,44 @@ const CourseCreateForm = ({handleChange, handleImage, handleSubmit, values, setV
                 </div>
             </div>
 
-            {/* image upload */}
-            <div className='form-row'>
-                <div className='col'>
-                    <div className='form-group d-grid'>
-                        <label
-                            className='btn btn-outline-secondary text-left'>
-                            {values.loading ? ' Uploading' : 'Image Upload'}
-                            <input
-                                type='file'
-                                name='image'
-                                accept='image/*'
-                                onChange={handleChange}
-                                hidden
-                            />
-                        </label>
+                {/* image upload */}
+                <div className='form-row'>
+                    <div className='col'>
+                        <div className='form-group d-grid'>
+                            <label
+                                className='btn btn-outline-secondary text-left'>
+                                {values.loading ? ' Uploading' : 'Image Upload'}
+                                <input
+                                    type='file'
+                                    name='image'
+                                    accept='image/*'
+                                    onChange={handleChange}
+                                    hidden
+                                />
+                            </label>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            {/* button */}
-            <div className='row'>
-                <div className='col d-grid'>
-                    <Button
-                        onClick={handleSubmit}
-                        disabled={values.loading || values.uploading}
-                        className='btn btn-primary'
-                        loading={values.loading}
-                        icon={<SaveOutlined/>}
-                        type='primary'
-                        size='large'
-                        shape='round'
-                    >
-                        {values.loading ? 'Saving...' : 'Save & Continue'}
-                    </Button>
+                {/* button */}
+                <div className='row'>
+                    <div className='col d-grid'>
+                        <Button
+                            onClick={handleSubmit}
+                            disabled={values.loading || values.uploading}
+                            className='btn btn-primary'
+                            loading={values.loading}
+                            icon={<SaveOutlined/>}
+                            type='primary'
+                            size='large'
+                            shape='round'
+                        >
+                            {values.loading ? 'Saving...' : 'Save & Continue'}
+                        </Button>
+                    </div>
                 </div>
-            </div>
-        </form>
-    </>
-)
+            </form>
+        </>
+    )
+}
 export default CourseCreateForm
