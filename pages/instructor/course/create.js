@@ -136,7 +136,13 @@ const CreateCourse = () => {
             <div className="album py-5 bg-light">
                 <div className='container'>
                     <div className='container-fluid col-md-4 offset-md-4 pb-5'>
-                        {courseCreateForm()}
+                        {/* use props for form function and values */}
+                        <CourseCreateForm handleChange={handleChange}
+                                          handleImage={handleImage()}
+                                          handleSubmit={handleSubmit}
+                                          values={values}
+                                          setValues={setValues}
+                        />
                     </div>
                 </div>
             </div>
