@@ -50,11 +50,13 @@ const CreateCourse = () => {
                 <div className='container'>
                     <div className='container-fluid col-md-4 offset-md-4 pb-5'>
                         {/* use props for form function and values */}
-                        <CourseCreateForm handleChange={handleChange}
-                                          handleImage={handleImage()}
-                                          handleSubmit={handleSubmit}
-                                          values={values}
-                                          setValues={setValues}
+                        <CourseCreateForm
+                            handleSubmit={handleSubmit}
+                            handleImage={handleImage}
+                            handleChange={handleChange}
+                            values={values}
+                            setValues={setValues}
+                            preview={preview}
                         />
                     </div>
                     <pre>{JSON.stringify(values, null, 4)}</pre>
