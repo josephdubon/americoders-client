@@ -3,6 +3,7 @@ import {useState} from 'react'
 import {Select} from 'antd'
 
 import InstructorRoute from '../../../components/routes/InstructorRoute'
+import CourseCreateForm from '../../../components/forms/CourseCreateForm'
 
 const {Option} = Select
 
