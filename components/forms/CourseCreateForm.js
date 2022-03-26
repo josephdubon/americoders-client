@@ -10,23 +10,22 @@ const CourseCreateForm = ({handleChange, handleImage, handleSubmit, preview, val
         children.push(<Option key={i.toFixed(2)}>${i.toFixed(2)}</Option>)
     }
 
-    return (
-        <>
-            <form onSubmit={handleSubmit}>
-                <div className='form-group '>
-                    {/* name */}
-                    <input
-                        type='text'
-                        name='name'
-                        className='form-control'
-                        value={values.name}
-                        placeholder='Name'
-                        onChange={handleChange}
-                    />
-                </div>
+    return (<>
+        <form onSubmit={handleSubmit}>
+            <div className='form-group '>
+                {/* name */}
+                <input
+                    type='text'
+                    name='name'
+                    className='form-control'
+                    value={values.name}
+                    placeholder='Name'
+                    onChange={handleChange}
+                />
+            </div>
 
-                {/* description */}
-                <div className='form-group'>
+            {/* description */}
+            <div className='form-group'>
                 <textarea
                     name='description'
                     id=''
@@ -38,50 +37,48 @@ const CourseCreateForm = ({handleChange, handleImage, handleSubmit, preview, val
                     onChange={handleChange}
                 >
                 </textarea>
-                </div>
+            </div>
 
-                {/* paid or free course */}
-                <div className='form-row'>
-                    <div className='col'>
-                        <div className='form-group d-grid'>
-                            <Select
-                                size='large'
-                                value={values.paid}
-                                onChange={(v) => setValues({...values, paid: !values.paid})}
-                            >
-                                <Option value={true}>Paid</Option>
-                                <Option value={false}>Free</Option>
-                            </Select>
-                        </div>
+            {/* paid or free course */}
+            <div className='form-row'>
+                <div className='col'>
+                    <div className='form-group d-grid'>
+                        <Select
+                            size='large'
+                            value={values.paid}
+                            onChange={(v) => setValues({...values, paid: !values.paid})}
+                        >
+                            <Option value={true}>Paid</Option>
+                            <Option value={false}>Free</Option>
+                        </Select>
                     </div>
-
-                    {/* price dropdown */}
-                    {values.paid &&
-                        <div className="form-group">
-                            <Select
-                                size='large'
-                                tokenSeparators={[,]}
-                                defaultValue='$49.99'
-                                className='w-100'
-                                onChange={v => setValues({...values, price: v})}
-                            >
-                                {children}
-                            </Select>
-                        </div>
-                    }
                 </div>
 
-                {/* category */}
-                <div className='form-group '>
-                    <input
-                        type='text'
-                        name='category'
-                        className='form-control'
-                        value={values.category}
-                        placeholder='Category'
-                        onChange={handleChange}
-                    />
-                </div>
+                {/* price dropdown */}
+                {values.paid && <div className="form-group">
+                    <Select
+                        size='large'
+                        tokenSeparators={[,]}
+                        defaultValue='$49.99'
+                        className='w-100'
+                        onChange={v => setValues({...values, price: v})}
+                    >
+                        {children}
+                    </Select>
+                </div>}
+            </div>
+
+            {/* category */}
+            <div className='form-group '>
+                <input
+                    type='text'
+                    name='category'
+                    className='form-control'
+                    value={values.category}
+                    placeholder='Category'
+                    onChange={handleChange}
+                />
+            </div>
 
                 {/* image upload */}
                 <div className='form-row'>
@@ -102,25 +99,24 @@ const CourseCreateForm = ({handleChange, handleImage, handleSubmit, preview, val
                     </div>
                 </div>
 
-                {/* button */}
-                <div className='row'>
-                    <div className='col d-grid'>
-                        <Button
-                            onClick={handleSubmit}
-                            disabled={values.loading || values.uploading}
-                            className='btn btn-primary'
-                            loading={values.loading}
-                            icon={<SaveOutlined/>}
-                            type='primary'
-                            size='large'
-                            shape='round'
-                        >
-                            {values.loading ? 'Saving...' : 'Save & Continue'}
-                        </Button>
-                    </div>
+            {/* button */}
+            <div className='row'>
+                <div className='col d-grid'>
+                    <Button
+                        onClick={handleSubmit}
+                        disabled={values.loading || values.uploading}
+                        className='btn btn-primary'
+                        loading={values.loading}
+                        icon={<SaveOutlined/>}
+                        type='primary'
+                        size='large'
+                        shape='round'
+                    >
+                        {values.loading ? 'Saving...' : 'Save & Continue'}
+                    </Button>
                 </div>
-            </form>
-        </>
-    )
+            </div>
+        </form>
+    </>)
 }
 export default CourseCreateForm
