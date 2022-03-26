@@ -139,7 +139,6 @@ const TopNav = () => {
             {/* logged in user menu */}
             {user !== null && (
                 <>
-
                     <SubMenu
                         key='#submenu'
                         icon={<CoffeeOutlined/>}
