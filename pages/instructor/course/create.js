@@ -1,4 +1,12 @@
+import {useState} from 'react'
+// import axios from 'axios'
+import {Button, Select} from 'antd'
+
+import {SaveOutlined} from '@ant-design/icons'
+
 import InstructorRoute from '../../../components/routes/InstructorRoute'
+
+const {Option} = Select
 
 const CreateCourse = () => {
     return (<InstructorRoute>
