@@ -15,6 +15,8 @@ const CreateCourse = () => {
         loading: false,
     })
 
+    const [preview, setPreview] = useState('')
+
     // form logic: values
     const handleChange = (e) => {
         setValues({...values, [e.target.name]: e.target.value})
