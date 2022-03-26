@@ -71,6 +71,18 @@ const CourseCreateForm = ({handleChange, handleImage, handleSubmit, values, setV
                     }
                 </div>
 
+                {/* category */}
+                <div className='form-group '>
+                    <input
+                        type='text'
+                        name='category'
+                        className='form-control'
+                        value={values.category}
+                        placeholder='Category'
+                        onChange={handleChange}
+                    />
+                </div>
+
                 {/* image upload */}
                 <div className='form-row'>
                     <div className='col'>
