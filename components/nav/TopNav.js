@@ -5,8 +5,16 @@ import useRouter from 'next/router'
 import {toast} from 'react-toastify'
 import {Menu} from 'antd'
 
-import {Context} from '../context'
-import {AppstoreOutlined, CoffeeOutlined, LoginOutlined, LogoutOutlined, UserAddOutlined} from '@ant-design/icons'
+import {Context} from '../../context'
+import {
+    AppstoreOutlined,
+    CarryOutOutlined,
+    CoffeeOutlined,
+    LoginOutlined,
+    LogoutOutlined,
+    TeamOutlined,
+    UserAddOutlined
+} from '@ant-design/icons'
 
 
 // de-structure item from menu
@@ -56,6 +64,7 @@ const TopNav = () => {
         <Menu
             mode='horizontal'
             selectedKeys={[currentPage]}
+            className='mb-2'
         >
             <Item
                 key='/'
@@ -68,6 +77,35 @@ const TopNav = () => {
                     <a>Home</a>
                 </Link>
             </Item>
+
+            {/* conditional render of content depending on user role (instructor or subscriber) */}
+            {user && user.role && user.role.includes('Instructor') ? (<>
+                {/* Instructor Role */}
+                <Item
+                    key='/instructor/course/create'
+                    onClick={(e) => {
+                        setCurrentPage(e.key)
+                    }}
+                    icon={<CarryOutOutlined/>}
+                >
+                    <Link href='/instructor/course/create'>
+                        <a>Create Course</a>
+                    </Link>
+                </Item>
+            </>) : (<>
+                {/* Other Role */}
+                <Item
+                    key='/user/become-instructor'
+                    onClick={(e) => {
+                        setCurrentPage(e.key)
+                    }}
+                    icon={<TeamOutlined/>}
+                >
+                    <Link href='/user/become-instructor'>
+                        <a>Become Instructor</a>
+                    </Link>
+                </Item>
+            </>)}
 
             {/* not logged in user menu */}
             {user === null && (
@@ -83,6 +121,7 @@ const TopNav = () => {
                             <a>Login</a>
                         </Link>
                     </Item>
+
                     <Item
                         key='/register'
                         onClick={(e) => {
@@ -100,7 +139,6 @@ const TopNav = () => {
             {/* logged in user menu */}
             {user !== null && (
                 <>
-
                     <SubMenu
                         key='#submenu'
                         icon={<CoffeeOutlined/>}
@@ -130,6 +168,23 @@ const TopNav = () => {
                             </Item>
                         </ItemGroup>
                     </SubMenu>
+                </>
+            )}
+
+            {/* user is instructor menu */}
+            {user && user.role && user.role.includes('Instructor') && (
+                <>
+                    <Item
+                        key='/instructor'
+                        icon={<TeamOutlined/>}
+                        onClick={(e) => {
+                            setCurrentPage(e.key)
+                        }}
+                    >
+                        <Link href='/instructor'>
+                            <a>Instructor</a>
+                        </Link>
+                    </Item>
                 </>
             )}
         </Menu>

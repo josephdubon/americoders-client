@@ -2,9 +2,9 @@ import {useEffect, useState} from 'react'
 import axios from 'axios'
 import {useRouter} from 'next/router'
 import {SyncOutlined} from '@ant-design/icons'
-import UserNav from '../nav/UserNav'
+import InstructorNav from '../nav/InstructorNav'
 
-const UserRoute = ({children}) => {
+const InstructorRoute = ({children}) => {
     // state
     const [ok, setOk] = useState(false)
 
@@ -12,18 +12,18 @@ const UserRoute = ({children}) => {
     const router = useRouter()
 
     useEffect(() => {
-        fetchUser()
+        fetchInstructor()
     }, [])
 
-    const fetchUser = async () => {
+    const fetchInstructor = async () => {
         // try to get user match
         try {
-            const {data} = await axios.get('/api/current-user')
+            const {data} = await axios.get('/api/current-instructor')
             if (data.ok) setOk(true) // if match found, set ok to true
         } catch (err) {
             console.log(err)
             setOk(false) // if no match found, set ok to false
-            await router.push('/login') // redirect to login page
+            await router.push('/') // redirect to login page
         }
     }
 
@@ -38,7 +38,7 @@ const UserRoute = ({children}) => {
                 <div className='container-fluid'>
                     <div className='row'>
                         <div className='col-md-2'>
-                            <UserNav/>
+                            <InstructorNav/>
                         </div>
                         <div className='col-md-10'>{children}</div>
                     </div>
@@ -48,4 +48,4 @@ const UserRoute = ({children}) => {
     </>)
 }
 
-export default UserRoute
+export default InstructorRoute
