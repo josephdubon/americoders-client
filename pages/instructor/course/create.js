@@ -11,6 +11,7 @@ const CreateCourse = () => {
         price: '49.99',
         uploading: false,
         paid: true,
+        category: '',
         loading: false,
         imagePreview: '',
     })
