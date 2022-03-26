@@ -144,6 +144,7 @@ const CreateCourse = () => {
                                           setValues={setValues}
                         />
                     </div>
+                    <pre>{JSON.stringify(values, null, 4)}</pre>
                 </div>
             </div>
         </main>
