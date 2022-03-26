@@ -1,8 +1,6 @@
 import {useState} from 'react'
 // import axios from 'axios'
-import {Button, Select} from 'antd'
-
-import {SaveOutlined} from '@ant-design/icons'
+import {Select} from 'antd'
 
 import InstructorRoute from '../../../components/routes/InstructorRoute'
 
