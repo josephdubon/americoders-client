@@ -40,21 +40,36 @@ const CourseCreateForm = ({handleChange, handleImage, handleSubmit, values, setV
                 </textarea>
                 </div>
 
-            {/* paid or free course */}
-            <div className='form-row'>
-                <div className='col'>
-                    <div className='form-group d-grid'>
-                        <Select
-                            size='large'
-                            value={values.paid}
-                            onChange={(v) => setValues({...values, paid: !values.paid})}
-                        >
-                            <Option value={true}>Paid</Option>
-                            <Option value={false}>Free</Option>
-                        </Select>
+                {/* paid or free course */}
+                <div className='form-row'>
+                    <div className='col'>
+                        <div className='form-group d-grid'>
+                            <Select
+                                size='large'
+                                value={values.paid}
+                                onChange={(v) => setValues({...values, paid: !values.paid})}
+                            >
+                                <Option value={true}>Paid</Option>
+                                <Option value={false}>Free</Option>
+                            </Select>
+                        </div>
                     </div>
+
+                    {/* price dropdown */}
+                    {values.paid &&
+                        <div className="form-group">
+                            <Select
+                                size='large'
+                                tokenSeparators={[,]}
+                                defaultValue='$49.99'
+                                className='w-100'
+                                onChange={v => setValues({...values, price: v})}
+                            >
+                                {children}
+                            </Select>
+                        </div>
+                    }
                 </div>
-            </div>
 
                 {/* image upload */}
                 <div className='form-row'>
