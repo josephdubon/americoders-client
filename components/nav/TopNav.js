@@ -64,6 +64,7 @@ const TopNav = () => {
         <Menu
             mode='horizontal'
             selectedKeys={[currentPage]}
+            className='mb-2'
         >
             <Item
                 key='/'
