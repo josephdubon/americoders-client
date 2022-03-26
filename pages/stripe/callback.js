@@ -17,7 +17,7 @@ const StripeCallback = () => {
                 .then(res => {
                     console.log(res)
                     // take user back to instructor page
-                    // window.location.href = '/instructor'
+                    window.location.href = '/instructor'
                 })
         }
     }, [user])
