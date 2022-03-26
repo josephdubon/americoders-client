@@ -15,7 +15,15 @@ const StripeCallback = () => {
         if (user) {
             axios.post('/api/get-account-status')
                 .then(res => {
-                    console.log(res)
+                    // console.log(res)
+
+                    dispatch({
+                        type: 'LOGIN',
+                        payload: res.data,
+                    })
+
+                    // update user in localStorage
+                    window.localStorage.setItem('user', JSON.stringify(res.data))
                     // take user back to instructor page
                     window.location.href = '/instructor'
                 })
