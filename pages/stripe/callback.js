@@ -5,7 +5,10 @@ import axios from 'axios'
 
 const StripeCallback = () => {
     // get user
-    const {state: {user}} = useContext(Context)
+    const {
+        state: {user},
+        dispatch,
+    } = useContext(Context)
 
     // update user info in db
     useEffect(() => {
