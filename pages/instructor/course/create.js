@@ -16,8 +16,8 @@ const CreateCourse = () => {
         category: '',
         loading: false,
     })
-
-    const [image, setImage] = useState('')
+    // set image initial state to an empty object
+    const [image, setImage] = useState({})
     const [preview, setPreview] = useState('')
     const [uploadButtonText, setUploadButtonText] = useState('Upload Image')
 
