@@ -112,10 +112,9 @@ const CourseCreateForm = ({
             {preview && (<>
                 <div className="col-md-6 text-center w-100 mb-3">
                     <p>Image Preview:</p>
-                    <Avatar
-                        width={200}
-                        src={preview}
-                    />
+                    <Badge count='X' onClick={handleImageRemove} className='pointer-event'>
+                        <Avatar width={200} src={preview}/>
+                    </Badge>
                 </div>
             </>)}
 
