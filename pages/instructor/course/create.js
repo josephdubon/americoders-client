@@ -136,6 +136,8 @@ const CreateCourse = () => {
                         />
                     </div>
                     <pre>{JSON.stringify(values, null, 4)}</pre>
+                    <hr/>
+                    <pre>{JSON.stringify(image, null, 4)}</pre>
                 </div>
             </div>
         </main>
