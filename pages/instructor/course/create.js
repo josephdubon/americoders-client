@@ -74,6 +74,33 @@ const CreateCourse = () => {
             })
     }
 
+    // form logic: image remove
+    const handleImageRemove = async (e) => {
+        // console.log('REMOVE IMAGE ')
+        try {
+            setValues(({...values, loading: true}))
+            const res = await axios.post('/api/course/remove-image', {image})
+            setImage({})
+            setPreview('')
+            setUploadButtonText('Upload Image')
+            setValues(({...values, loading: false}))
+
+        } catch (err) {
+            console.log('IMAGE REMOVE ERROR ', err)
+            setValues(({...values, loading: false}))
+            // notification config
+            toast.error('Image remove failed. Try again later.', {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        }
+    }
+
     // form logic: submission
     const handleSubmit = (e) => {
         e.preventDefault()
