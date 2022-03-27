@@ -28,7 +28,49 @@ const CreateCourse = () => {
 
     // form logic: images
     const handleImage = (e) => {
-        setPreview(window.URL.createObjectURL(e.target.files[0]))
+        let imagePreview = e.target.files[0]
+
+        // set preview state
+        setPreview(window.URL.createObjectURL(imagePreview))
+
+        // set state for button text
+        setUploadButtonText(imagePreview.name)
+
+        // set values state
+        setValues({...values, loading: true})
+
+        // resize image
+        Resizer.imageFileResizer(
+            imagePreview,
+            720,
+            500,
+            'JPEG',
+            100,
+            0,
+            async (uri) => {
+                try {
+                    let {data} = await axios.post('/api/course/upload-image', {
+                        image: uri,
+                    })
+                    console.log('IMAGE UPLOADED ', data)
+
+                    // update image state
+                    setValues({...values, loading: false})
+                } catch (err) {
+                    console.log('IMAGE RESIZE ERROR ', err)
+                    setValues(({...values, loading: false}))
+                    // notification config
+                    toast.error('Image upload failed. Try again later.', {
+                        position: 'top-center',
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                    })
+                }
+            })
     }
 
     // form logic: submission
