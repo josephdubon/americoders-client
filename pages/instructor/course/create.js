@@ -17,7 +17,9 @@ const CreateCourse = () => {
         loading: false,
     })
 
+    const [image, setImage] = useState('')
     const [preview, setPreview] = useState('')
+    const [uploadButtonText, setUploadButtonText] = useState('Upload Image')
 
     // form logic: values
     const handleChange = (e) => {
