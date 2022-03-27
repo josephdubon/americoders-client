@@ -55,6 +55,7 @@ const CreateCourse = () => {
                     console.log('IMAGE UPLOADED ', data)
 
                     // update image state
+                    setImage(data)
                     setValues({...values, loading: false})
                 } catch (err) {
                     console.log('IMAGE RESIZE ERROR ', err)
