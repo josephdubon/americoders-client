@@ -3,7 +3,16 @@ import {Avatar, Button, Select} from 'antd'
 
 const {Option} = Select
 
-const CourseCreateForm = ({handleChange, handleImage, handleSubmit, preview, values, setValues, uploadButtonText}) => {
+const CourseCreateForm = ({
+                              handleChange,
+                              handleImage,
+                              handleImageRemove,
+                              handleSubmit,
+                              preview,
+                              values,
+                              setValues,
+                              uploadButtonText
+                          }) => {
     // price dropdown logic
     const children = []
     for (let i = 49.99; i <= 100.99; i++) {
