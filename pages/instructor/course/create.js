@@ -103,6 +103,7 @@ const CreateCourse = () => {
                             values={values}
                             setValues={setValues}
                             preview={preview}
+                            uploadButtonText={uploadButtonText}
                         />
                     </div>
                     <pre>{JSON.stringify(values, null, 4)}</pre>
