@@ -86,7 +86,7 @@ const CourseCreateForm = ({handleChange, handleImage, handleSubmit, preview, val
                     <div className='form-group d-grid'>
                         <label
                             className='btn btn-outline-secondary text-left'>
-                            {values.loading ? ' Uploading' : 'Image Upload'}
+                            {uploadButtonText}
                             <input
                                 type='file'
                                 name='image'
