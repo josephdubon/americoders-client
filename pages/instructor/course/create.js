@@ -127,6 +127,7 @@ const CreateCourse = () => {
                         <CourseCreateForm
                             handleSubmit={handleSubmit}
                             handleImage={handleImage}
+                            handleImageRemove={handleImageRemove}
                             handleChange={handleChange}
                             values={values}
                             setValues={setValues}
