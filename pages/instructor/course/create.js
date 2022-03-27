@@ -1,7 +1,9 @@
 import {useState} from 'react'
-// import axios from 'axios'
+import axios from 'axios'
+import Resizer from 'react-image-file-resizer'
 import InstructorRoute from '../../../components/routes/InstructorRoute'
 import CourseCreateForm from '../../../components/forms/CourseCreateForm'
+import {toast} from 'react-toastify'
 
 const CreateCourse = () => {
     // state
