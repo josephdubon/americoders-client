@@ -173,9 +173,11 @@ const CreateCourse = () => {
                             uploadButtonText={uploadButtonText}
                         />
                     </div>
-                    <pre>{JSON.stringify(values, null, 4)}</pre>
+                    <p className='small'>
+                        {JSON.stringify(values, null, 4)}</p>
                     <hr/>
-                    <pre>{JSON.stringify(image, null, 4)}</pre>
+                    <p className='small'>
+                        {JSON.stringify(image, null, 4)}</p>
                 </div>
             </div>
         </main>
