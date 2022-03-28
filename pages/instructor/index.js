@@ -1,9 +1,11 @@
-import {useContext} from 'react'
+import {useContext, useEffect, useState} from 'react'
+import axios from 'axios'
 import {Context} from '../../context'
 import InstructorRoute from '../../components/routes/InstructorRoute'
 
 const InstructorIndex = () => {
     // state
+    const [courses, setCourses] = useState([]) // initialize courses state with empty array
     const {
         state: {user},
     } = useContext(Context)
