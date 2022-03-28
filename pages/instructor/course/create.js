@@ -4,8 +4,12 @@ import Resizer from 'react-image-file-resizer'
 import InstructorRoute from '../../../components/routes/InstructorRoute'
 import CourseCreateForm from '../../../components/forms/CourseCreateForm'
 import {toast} from 'react-toastify'
+import {useRouter} from 'next/router'
 
 const CreateCourse = () => {
+    // router
+    const router = useRouter()
+
     // state
     const [values, setValues] = useState({
         name: '',
@@ -16,6 +20,7 @@ const CreateCourse = () => {
         category: '',
         loading: false,
     })
+
     // set image initial state to an empty object
     const [image, setImage] = useState({})
     const [preview, setPreview] = useState('')
