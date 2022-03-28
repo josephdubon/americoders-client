@@ -10,6 +10,16 @@ const InstructorIndex = () => {
         state: {user},
     } = useContext(Context)
 
+    // update courses
+    useEffect(() => {
+        loadCourses()
+    }, [courses])
+
+    const loadCourses = async () => {
+        const {data} = await axios.get('/api/instructor-courses')
+        setCourses(data)
+    }
+
     return (<InstructorRoute>
         <main>
             <section className='py-5 text-center container'>
@@ -28,8 +38,8 @@ const InstructorIndex = () => {
             <div className='album py-5 bg-light'>
                 <div className='container'>
                     <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
-                        <p className='lead'>
-                            Welcome Instructor {JSON.stringify(user, null, 4)}
+                        <p className='small'>
+                            {JSON.stringify(courses, null, 4)}
                         </p>
                     </div>
                 </div>
