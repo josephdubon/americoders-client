@@ -107,7 +107,7 @@ const CreateCourse = () => {
     }
 
     // form logic: submission
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         console.log('VALUES ', values)
     }
