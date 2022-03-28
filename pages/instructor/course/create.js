@@ -109,7 +109,40 @@ const CreateCourse = () => {
     // form logic: submission
     const handleSubmit = async (e) => {
         e.preventDefault()
-        console.log('VALUES ', values)
+        // submit request to backend
+        // console.log('VALUES ', values)
+        try {
+            const {data} = await axios.post('/api/course', {
+                ...values, // unpack all the values from state
+                image, // include image with post request
+            })
+            // notification config
+            toast.success('Excellent! Now you can start adding lessons', {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+
+            // redirect to instructor page
+            await router.push('/instructor')
+        } catch (err) {
+            // notification config
+            toast.error(err.response.data, {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+
+        }
+
     }
 
     return (<InstructorRoute>
