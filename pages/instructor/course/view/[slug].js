@@ -4,6 +4,7 @@ import axios from 'axios'
 import InstructorRoute from '../../../../components/routes/InstructorRoute'
 import {CheckOutlined, EditOutlined} from '@ant-design/icons'
 import {Avatar, Tooltip} from 'antd'
+import ReactMarkdown from 'react-markdown'
 
 const CourseView = () => {
 // state
@@ -87,10 +88,12 @@ const CourseView = () => {
 
                                 </div>
                             </div>
-                            <div className='row row-cols-1 g-3'>
-                                <p className='text-muted'>
-                                    {course.description}
-                                </p>
+
+                            <hr/>
+
+                            {/* course description */}
+                            <div className='row row-ols-1 g-3'>
+                                <ReactMarkdown children={course.description}/>
                             </div>
                         </>)}
 
