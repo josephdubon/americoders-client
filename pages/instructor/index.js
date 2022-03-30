@@ -58,7 +58,7 @@ const InstructorIndex = () => {
                                     {/* image source */}
                                     <Avatar
                                         size={80}
-                                        src={course.image ? course.image.Location : '/americoders-course.png'}
+                                        src={course.image ? course.image.Location : '/images/americoders-course.png'}
                                     />
                                 </div>
                                 {/* media text body */}
