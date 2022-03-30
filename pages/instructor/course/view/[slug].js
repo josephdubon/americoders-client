@@ -26,6 +26,12 @@ const CourseView = () => {
         loadCourse()
     }, [slug]) // use slug as dependency to run loadCourse in useEffect
 
+    // style
+    const myStyle = {
+        marginTop: '-15px',
+        fontSize: '10px',
+    }
+
     return (
         <InstructorRoute>
             <main>
