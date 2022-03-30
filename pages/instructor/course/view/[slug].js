@@ -46,8 +46,18 @@ const CourseView = () => {
 
                 <div className='album py-5 bg-light'>
                     <div className='container'>
-                        {/* Login Form */}
-                        <div className='container-fluid col-md-4 offset-md-4 pb-5'>
+                        <div className='row row-cols-1 row-cols-sm-1 row-cols-md-1 g-1'>
+
+                            {course && (
+                                <div className='d-flex align-items-center pt-2'>
+                                    {/* image media div */}
+                                    <div className="flex-shrink-0">
+                                        {/* image source */}
+                                        <Avatar
+                                            size={80}
+                                            src={course.image ? course.image.Location : '/images/americoders-course.png'}
+                                        />
+                                    </div>
 
                             <small>{JSON.stringify(course, null, 4)}</small>
 
