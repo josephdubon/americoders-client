@@ -87,14 +87,14 @@ const CourseView = () => {
                                                 </Tooltip>
                                             </div>
 
-                                        </div>
-                                    </div>
-                                <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
-                                    <p className='lead'>
-                                        {course.description}
-                                    </p>
-                                    </div>
-                                </>)}
+                                </div>
+                            </div>
+                            <div className='row row-cols-1 g-3'>
+                                <p className='text-muted'>
+                                    {course.description}
+                                </p>
+                            </div>
+                        </>)}
 
                         </div>
                     </div>
