@@ -58,14 +58,14 @@ const CourseView = () => {
                                             />
                                         </div>
 
-                                    {/* media text body */}
-                                    <div className="flex-grow-1 ms-3">
-                                        {/* course name and lesson count */}
-                                        <h5 className="pt-2">{course.name}</h5>
-                                        <p> {course.lessons && course.lessons.length} Lessons</p>
+                                        {/* media text body */}
+                                        <div className="flex-grow-1 ms-3">
+                                            {/* course name and lesson count */}
+                                            <h5 className="pt-2">{course.name}</h5>
+                                            <p> {course.lessons && course.lessons.length} Lessons</p>
 
-                                        <p style={myStyle}>{course.category}</p>
-                                    </div>
+                                            <p style={myStyle}>{course.category}</p>
+                                        </div>
 
                                     {/* action icons */}
                                     <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
