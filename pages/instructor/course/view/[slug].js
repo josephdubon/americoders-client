@@ -59,7 +59,34 @@ const CourseView = () => {
                                         />
                                     </div>
 
-                            <small>{JSON.stringify(course, null, 4)}</small>
+                                    {/* media text body */}
+                                    <div className="flex-grow-1 ms-3">
+                                        {/* course name and lesson count */}
+                                        <h5 className="pt-2">{course.name}</h5>
+                                        <p> {course.lessons && course.lessons.length} Lessons</p>
+
+                                        <p style={myStyle}>{course.category}</p>
+                                    </div>
+
+                                    {/* action icons */}
+                                    <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
+                                        <div>
+                                            <Tooltip title='Edit'>
+                                                <EditOutlined className='h5 text-warning'/>
+                                                <small>Edit</small>
+                                            </Tooltip>
+                                        </div>
+                                        <span/>
+                                        {/* publish */}
+                                        <div>
+                                            <Tooltip title='Publish'>
+                                                <CheckOutlined className='h5 text-danger'/>
+                                                <small>Publish</small>
+                                            </Tooltip>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
 
                         </div>
                     </div>
