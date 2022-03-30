@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react'
 import {useRouter} from 'next/router'
 import axios from 'axios'
 import InstructorRoute from '../../../../components/routes/InstructorRoute'
+import {CheckOutlined, EditOutlined} from '@ant-design/icons'
+import {Avatar, Tooltip} from 'antd'
 
 const CourseView = () => {
 // state
