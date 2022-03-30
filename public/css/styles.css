@@ -1,8 +1,21 @@
-.page-header {
-    background-image: linear-gradient(to right, #007bff, #000000);
-    color: #ececec;
+/* bootstrap 5 removed these, this is just a workaround */
+.form-group {
+    margin-bottom: 1rem;
 }
 
-.page-header h1 {
-    color: #ececec;
+.form-inline .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+label {
+    margin-bottom: 0.5rem;
 }
