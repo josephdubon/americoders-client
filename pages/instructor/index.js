@@ -65,7 +65,7 @@ const InstructorIndex = () => {
                                 <div className="flex-grow-1 ms-3">
                                     {/* title / link to course*/}
                                     <Link
-                                        href={`/instructor/course/view/${course._id}`}
+                                        href={`/instructor/course/view/${course.slug}`}
                                     >
                                         <a className='mt-2 text-primary'><h5 className="pt-2">{course.name}</h5></a>
                                     </Link>
