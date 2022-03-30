@@ -13,15 +13,23 @@ const InstructorIndex = () => {
         state: {user},
     } = useContext(Context)
 
-    // update courses
-    useEffect(() => {
-        loadCourses()
-    }, [courses])
-
+    // get current courses
     const loadCourses = async () => {
         const {data} = await axios.get('/api/instructor-courses')
         setCourses(data)
     }
+
+    // update courses
+    useEffect(() => {
+        loadCourses()
+    }, [])
+
+    // style
+    const myStyle = {
+        marginTop: '-15px',
+        fontSize: '10px',
+    }
+
 
     return (<InstructorRoute>
         <main>
