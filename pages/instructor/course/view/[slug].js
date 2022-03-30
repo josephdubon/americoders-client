@@ -67,21 +67,26 @@ const CourseView = () => {
                                             <p style={myStyle}>{course.category}</p>
                                         </div>
 
-                                    {/* action icons */}
-                                    <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
-                                        <div>
-                                            <Tooltip title='Edit'>
-                                                <EditOutlined className='h5 text-warning'/>
-                                                <small>Edit</small>
-                                            </Tooltip>
-                                        </div>
-                                        <span/>
-                                        {/* publish */}
-                                        <div>
-                                            <Tooltip title='Publish'>
-                                                <CheckOutlined className='h5 text-danger'/>
-                                                <small>Publish</small>
-                                            </Tooltip>
+                                        {/* action icons */}
+                                        <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
+                                            {/* edit */}
+                                            <div>
+                                                <Tooltip title='Edit'>
+                                                    <EditOutlined className='h5 text-warning'/>
+                                                    <small>Edit</small>
+                                                </Tooltip>
+                                            </div>
+
+                                            <span/> {/* keep this here for some space */}
+
+                                            {/* publish */}
+                                            <div>
+                                                <Tooltip title='Publish'>
+                                                    <CheckOutlined className='h5 text-danger'/>
+                                                    <small>Publish</small>
+                                                </Tooltip>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
