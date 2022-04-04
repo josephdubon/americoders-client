@@ -144,7 +144,9 @@ const CourseView = () => {
                                         values={values}
                                         setValues={setValues}
                                         handleAddLesson={handleLesson}
+                                        handleVideo={handleVideo}
                                         uploading={uploading}
+                                        uploadButtonText={uploadButtonText}
                                     />
                                 </Modal>
                             </div>
