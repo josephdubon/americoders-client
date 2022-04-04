@@ -81,6 +81,36 @@ const CourseView = () => {
         }
     }
 
+    // remove video logic
+    const handleRemoveVideo = async e => {
+        e.preventDefault()
+        try {
+            setUploading(true)
+
+            const {data} = await axios.post(
+                '/api/course/remove-video',
+                values.video
+            )
+
+            console.log(data)
+            setValues({...values, video: {}})
+            setUploading(false)
+            setUploadButtonText('Upload another video')
+        } catch (err) {
+            setUploading(false)
+            toast.error('Video remove faileed'.response.data, {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        }
+    }
+
+
     // style
     const myStyle = {
         marginTop: '-15px', fontSize: '10px',
