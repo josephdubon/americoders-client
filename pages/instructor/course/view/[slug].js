@@ -22,6 +22,10 @@ const CourseView = () => {
     // get slug from router url
     const {slug} = router.query
 
+    useEffect(() => {
+        loadCourse()
+    }, [slug]) // use slug as dependency to run loadCourse in useEffect
+
     // load requested course by slug
     const loadCourse = async () => {
         // make get request
@@ -30,9 +34,11 @@ const CourseView = () => {
         setCourse(data)
     }
 
-    useEffect(() => {
-        loadCourse()
-    }, [slug]) // use slug as dependency to run loadCourse in useEffect
+    // add-lesson functions
+    const handleLesson = e => {
+        e.preventDefault()
+        console.log(values)
+    }
 
     // style
     const myStyle = {
