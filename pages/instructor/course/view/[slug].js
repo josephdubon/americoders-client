@@ -17,6 +17,7 @@ const CourseView = () => {
         video: '',
     })
     const [uploading, setUploading] = useState(false)
+    const [uploadButtonText, setUploadButtonText] = useState('Upload video')
 
     // router config
     const router = useRouter()
