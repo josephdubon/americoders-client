@@ -42,6 +42,15 @@ const CourseView = () => {
         console.log(values)
     }
 
+    // dave video logic
+    const handleVideo = e => {
+        e.preventDefault()
+        const file = e.target.files[0]
+
+        setUploadButtonText(file.name)
+        console.log('video save button!')
+    }
+
     // style
     const myStyle = {
         marginTop: '-15px', fontSize: '10px',
