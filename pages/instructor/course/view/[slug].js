@@ -6,6 +6,7 @@ import {CheckOutlined, EditOutlined, UploadOutlined} from '@ant-design/icons'
 import {Avatar, Button, Modal, Tooltip} from 'antd'
 import ReactMarkdown from 'react-markdown'
 import AddLessonForm from '../../../../components/forms/AddLessonForm'
+import {toast} from 'react-toastify'
 
 const CourseView = () => {
     // state
@@ -43,12 +44,40 @@ const CourseView = () => {
     }
 
     // dave video logic
-    const handleVideo = e => {
+    const handleVideo = async e => {
         e.preventDefault()
-        const file = e.target.files[0]
+        try {
+            // get file from form and update button text and loading state
+            const file = e.target.files[0]
+            setUploadButtonText(file.name)
+            setUploading(true)
 
-        setUploadButtonText(file.name)
-        console.log('video save button!')
+            // create variable to save from FormData
+            const videoData = new FormData()
+            videoData.append('video', file)
+
+            // save progress bar and send video as form data to backend
+            const {data} = await axios.post('/api/course/upload-video', videoData, {
+                onUploadProgress: (e) => {
+                    setProgress(Math.round((100 * e.loaded) / e.total))
+                },
+            })
+
+            // once response is received update stateKI
+            console.log(data);
+            setValues({...values, video: data});
+            setUploading(false);
+        } catch (err) {
+            toast.error(err.response.data, {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        }
     }
 
     // style
