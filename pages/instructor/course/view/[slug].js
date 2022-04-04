@@ -2,8 +2,8 @@ import {useEffect, useState} from 'react'
 import {useRouter} from 'next/router'
 import axios from 'axios'
 import InstructorRoute from '../../../../components/routes/InstructorRoute'
-import {CheckOutlined, EditOutlined} from '@ant-design/icons'
-import {Avatar, Tooltip} from 'antd'
+import {CheckOutlined, EditOutlined, UploadOutlined} from '@ant-design/icons'
+import {Avatar, Button, Modal, Tooltip} from 'antd'
 import ReactMarkdown from 'react-markdown'
 
 const CourseView = () => {
@@ -95,6 +95,31 @@ const CourseView = () => {
                             <div className='row row-ols-1 g-3'>
                                 <ReactMarkdown children={course.description}/>
                             </div>
+
+                            <div className="row">
+                                <Button
+                                    onClick={() => setVisible(true)} // update state for modal
+                                    className='col-md-6 offset-md-3 text-center'
+                                    type='primary'
+                                    shape='round'
+                                    icon={<UploadOutlined/>}
+                                    size='large'
+                                >
+                                    Add lesson
+                                </Button>
+
+                                {/* modal for lesson */}
+                                <Modal
+                                    title='+ Add Lesson'
+                                    centered
+                                    visible={visible}
+                                    onCancel={() => setVisible(false)}
+                                    footer={null}
+                                >
+                                    add lesson component here
+                                </Modal>
+                            </div>
+
                         </>)}
 
                     </div>
