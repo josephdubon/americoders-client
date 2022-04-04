@@ -9,6 +9,7 @@ import ReactMarkdown from 'react-markdown'
 const CourseView = () => {
 // state
     const [course, setCourse] = useState({})
+    const [visible, setVisible] = useState(false)
 
     // router config
     const router = useRouter()
