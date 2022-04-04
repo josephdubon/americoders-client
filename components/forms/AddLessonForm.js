@@ -25,19 +25,28 @@ const AddLessonForm = ({values, setValues, handleAddLesson, handleVideo, uploadi
                 >
             </textarea>
 
+                <div className='col d-grid'>
+                    <label className='btn btn-dark text-start mt-3'>
+                        {uploadButtonText}
+                        <input
+                            onChange={handleVideo}
+                            type='file'
+                            accept='video/*'
+                            hidden // hide generic upload button and layout
+                        />
+                    </label>
 
-                <div className='row'>
-                    <div className='col d-grid'>
-                        <Button
-                            onClick={handleAddLesson}
-                            className='col mt-3'
-                            size='large'
-                            type='primary'
-                            shape='round'
-                            loading={uploading}
-                        >Save</Button>
-                    </div>
+                    <Button
+                        onClick={handleAddLesson}
+                        className='col mt-3'
+                        size='large'
+                        type='primary'
+                        shape='round'
+                        loading={uploading}
+
+                    >Save</Button>
                 </div>
+
             </form>
         </div>
     </>)
