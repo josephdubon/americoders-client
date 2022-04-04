@@ -5,6 +5,7 @@ import InstructorRoute from '../../../../components/routes/InstructorRoute'
 import {CheckOutlined, EditOutlined, UploadOutlined} from '@ant-design/icons'
 import {Avatar, Button, Modal, Tooltip} from 'antd'
 import ReactMarkdown from 'react-markdown'
+import AddLessonForm from '../../../../components/forms/AddLessonForm'
 
 const CourseView = () => {
     // state
@@ -128,7 +129,13 @@ const CourseView = () => {
                                     onCancel={() => setVisible(false)}
                                     footer={null}
                                 >
-                                    add lesson component here
+                                    {/* render form component */}
+                                    <AddLessonForm
+                                        values={values}
+                                        setValues={setValues}
+                                        handleAddLesson={handleLesson}
+                                        uploading={uploading}
+                                    />
                                 </Modal>
                             </div>
 
