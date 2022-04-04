@@ -44,7 +44,7 @@ const CourseView = () => {
         console.log(values)
     }
 
-    // dave video logic
+    // save video logic
     const handleVideo = async e => {
         e.preventDefault()
         try {
