@@ -1,6 +1,15 @@
 import {Button} from 'antd'
 
-const AddLessonForm = ({values, setValues, handleAddLesson, handleVideo, uploading, uploadButtonText}) => {
+const AddLessonForm = ({
+                           values,
+                           setValues,
+                           handleAddLesson,
+                           handleVideo,
+                           handleRemoveVideo,
+                           progress,
+                           uploading,
+                           uploadButtonText
+                       }) => {
     return (<>
         <div className='container pt-3'>
 
