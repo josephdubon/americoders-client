@@ -7,9 +7,15 @@ import {Avatar, Button, Modal, Tooltip} from 'antd'
 import ReactMarkdown from 'react-markdown'
 
 const CourseView = () => {
-// state
+    // state
     const [course, setCourse] = useState({})
     const [visible, setVisible] = useState(false)
+    const [values, setValues] = useState({
+        title: '',
+        content: '',
+        video: '',
+    })
+    const [uploading, setUploading] = useState(false)
 
     // router config
     const router = useRouter()
