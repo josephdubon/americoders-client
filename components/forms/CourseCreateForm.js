@@ -121,24 +121,32 @@ const CourseCreateForm = ({
                     </div>
                 </>)}
 
-            {/* button */}
-            <div className='row'>
-                <div className='col d-grid'>
-                    <Button
-                        onClick={handleSubmit}
-                        disabled={values.loading || values.uploading}
-                        className='btn btn-primary'
-                        loading={values.loading}
-                        icon={<SaveOutlined/>}
-                        type='primary'
-                        size='large'
-                        shape='round'
-                    >
-                        {values.loading ? 'Saving...' : 'Save & Continue'}
-                    </Button>
+                {editPage && values.image && (
+                    <Avatar
+                        width={200}
+                        src={values.image.Location}
+                    ></Avatar>
+                )}
+
+                {/* button */}
+                <div className='row'>
+                    <div className='col d-grid'>
+                        <Button
+                            onClick={handleSubmit}
+                            disabled={values.loading || values.uploading}
+                            className='btn btn-primary'
+                            loading={values.loading}
+                            icon={<SaveOutlined/>}
+                            type='primary'
+                            size='large'
+                            shape='round'
+                        >
+                            {values.loading ? 'Saving...' : 'Save & Continue'}
+                        </Button>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        )}
     </>)
 }
 export default CourseCreateForm
