@@ -157,7 +157,8 @@ const CreateCourse = () => {
 
             <div className='album py-5 bg-light'>
                 <div className='container'>
-                    <div className='container-fluid col-md-4 offset-md-4 pb-5'>
+                    <div className='container-fluid col-md-12 offset-md-12 pb-5'>
+
                         {/* use props for form function and values */}
                         <CourseCreateForm
                             handleSubmit={handleSubmit}
