@@ -127,7 +127,6 @@ const EditCourse = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         // submit request to backend
-        // console.log('VALUES ', values)
         try {
             const {data} = await axios.put('/api/course', {
                 ...values, // unpack all the values from state
