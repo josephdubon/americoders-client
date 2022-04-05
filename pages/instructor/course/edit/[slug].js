@@ -246,11 +246,16 @@ const EditCourse = () => {
                         <div className='col lesson-list'>
                             <h4>{values && values.lessons && values.lessons.length} Lessons</h4>
                             <List
+                                onDragOver={(e) => e.preventDefault()}
                                 itemLayout='horizontal'
                                 dataSource={values && values.lessons}
                                 renderItem={(item, index) => (
                                     // list each item with index number next to title
-                                    <Item>
+                                    <Item
+                                        draggable
+                                        onDragStart={(e) => handleDrag(e, index)} // use index for position
+                                        onDrop={(e) => handleDrop(e, index)}
+                                    >
                                         <Item.Meta
                                             avatar={<Avatar>{index + 1}</Avatar>}
                                             title={item.title}
