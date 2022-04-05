@@ -184,6 +184,7 @@ const EditCourse = () => {
                 ...values, // unpack all the values from state
                 image, // include image with post request
             })
+
             // notification config
             toast.success('Awesome! Course is updated', {
                 position: 'top-center',
