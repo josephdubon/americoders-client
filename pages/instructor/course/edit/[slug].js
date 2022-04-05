@@ -38,6 +38,9 @@ const EditCourse = () => {
 
         // update state
         setValues(data)
+        if (data && data.image) {
+            setImage(data.image)
+        }
     }
 
     // form logic: values
