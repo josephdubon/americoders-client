@@ -39,7 +39,7 @@ const CourseView = () => {
     }
 
     // add-lesson functions
-    const handleLesson = e => {
+    const handleAddLesson = async e => {
         e.preventDefault()
         console.log(values)
     }
