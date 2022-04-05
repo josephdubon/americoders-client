@@ -65,7 +65,6 @@ const CourseView = () => {
             })
 
             // once response is received update stateKI
-            console.log(data);
             setValues({...values, video: data});
             setUploading(false);
         } catch (err) {
@@ -92,7 +91,7 @@ const CourseView = () => {
                 values.video
             )
 
-            console.log(data)
+            setProgress(0)
             setValues({...values, video: {}})
             setUploading(false)
             setUploadButtonText('Upload another video')
