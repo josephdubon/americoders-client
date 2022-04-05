@@ -101,6 +101,53 @@ const EditCourse = () => {
             })
     }
 
+    // drag logic
+    const handleDrag = (e, index) => {
+        // console.log('ON DRAG => ', index)
+
+        // use dataTransfer for drag and index position
+        e.dataTransfer.setData('itemIndex', index)
+    }
+
+    // drop logic
+    const handleDrop = async (e, index) => {
+        // console.log('ON DROP => ', index)
+
+        // what index position is drag-item coming from
+        const draggedItemIndex = e.dataTransfer.getData('itemIndex')
+
+        // what index position is drag-item going to
+        const targetItemIndex = index
+
+        // collect lessons
+        let allLessons = values.lessons
+
+        // item reorder logic
+        let draggedItem = allLessons[draggedItemIndex] // active clicked on/dragged item for reorder
+        allLessons.splice(draggedItemIndex, 1) // remove 1 item from index
+        allLessons.splice(targetItemIndex, 0, draggedItem) // push item after target-item index
+
+        // update state
+        setValues({...values, lessons: [...allLessons]})
+
+        // save to database
+        const {data} = await axios.put(`/api/course/${slug}`, {
+            ...values, // unpack all the values from state
+            image, // include image with post request
+        })
+
+        // notification config
+        toast.success('Great job! Lesson rearranged', {
+            position: 'top-center',
+            autoClose: 1000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        })
+    }
+
     // form logic: image remove
     const handleImageRemove = async (e) => {
         // console.log('REMOVE IMAGE ')
