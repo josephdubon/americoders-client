@@ -133,7 +133,7 @@ const EditCourse = () => {
                 image, // include image with post request
             })
             // notification config
-            toast.success('Awesome! Course updated', {
+            toast.success('Awesome! Course is updated', {
                 position: 'top-center',
                 autoClose: 5000,
                 hideProgressBar: false,
