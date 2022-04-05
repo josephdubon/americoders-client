@@ -40,7 +40,9 @@ const EditCourse = () => {
         const {data} = await axios.get(`/api/course/${slug}`)
 
         // update state
-        setValues(data)
+        if (data) {
+            setValues(data)
+        }
         if (data && data.image) {
             setImage(data.image)
         }
