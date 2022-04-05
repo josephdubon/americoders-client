@@ -70,8 +70,9 @@ const AddLessonForm = ({
                         type='primary'
                         shape='round'
                         loading={uploading}
-                        progress={progress}
-                    >Save</Button>
+                    >
+                        Save
+                    </Button>
                 </div>
 
             </form>
