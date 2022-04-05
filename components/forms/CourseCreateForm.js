@@ -11,7 +11,8 @@ const CourseCreateForm = ({
                               preview,
                               values,
                               setValues,
-                              uploadButtonText
+                              uploadButtonText,
+                              editPage = false,
                           }) => {
     // price dropdown logic
     const children = []
