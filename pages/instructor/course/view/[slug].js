@@ -173,7 +173,7 @@ const CourseView = () => {
                         {course && (<>
                             <div className='d-flex align-items-center pt-2'>
                                 {/* image media div */}
-                                <div className="flex-shrink-0">
+                                <div className='flex-shrink-0'>
                                     {/* image source */}
                                     <Avatar
                                         size={80}
@@ -182,9 +182,9 @@ const CourseView = () => {
                                 </div>
 
                                 {/* media text body */}
-                                <div className="flex-grow-1 ms-3">
+                                <div className='flex-grow-1 ms-3'>
                                     {/* course name and lesson count */}
-                                    <h5 className="pt-2">{course.name}</h5>
+                                    <h5 className='pt-2'>{course.name}</h5>
                                     <p> {course.lessons && course.lessons.length} Lessons</p>
 
                                     <p style={myStyle}>{course.category}</p>
@@ -220,7 +220,7 @@ const CourseView = () => {
                                 <ReactMarkdown children={course.description}/>
                             </div>
 
-                            <div className="row">
+                            <div className='row'>
                                 <Button
                                     onClick={() => setVisible(true)} // update state for modal
                                     className='col-md-6 offset-md-3 text-center'
@@ -255,7 +255,7 @@ const CourseView = () => {
 
                                 {/* lessons list */}
                                 <div className='row pb-5'>
-                                    <div className="col lesson-list">
+                                    <div className='col lesson-list'>
                                         <h4>{course && course.lessons && course.lessons.length} Lessons</h4>
                                         <List
                                             itemLayout='horizontal'

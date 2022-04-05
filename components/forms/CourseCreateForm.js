@@ -6,12 +6,13 @@ const {Option} = Select
 const CourseCreateForm = ({
                               handleChange,
                               handleImage,
-                              handleImageRemove,
+                              handleImageRemove = (f) => f,
                               handleSubmit,
                               preview,
                               values,
                               setValues,
-                              uploadButtonText
+                              uploadButtonText,
+                              editPage = false,
                           }) => {
     // price dropdown logic
     const children = []
@@ -20,21 +21,23 @@ const CourseCreateForm = ({
     }
 
     return (<>
-        <form onSubmit={handleSubmit}>
-            <div className='form-group '>
-                {/* name */}
-                <input
-                    type='text'
-                    name='name'
-                    className='form-control'
-                    value={values.name}
-                    placeholder='Name'
-                    onChange={handleChange}
-                />
-            </div>
+        {/* confirm values exist and then render form */}
+        {values && (
+            <form onSubmit={handleSubmit}>
+                <div className='form-group '>
+                    {/* name */}
+                    <input
+                        type='text'
+                        name='name'
+                        className='form-control'
+                        value={values.name}
+                        placeholder='Name'
+                        onChange={handleChange}
+                    />
+                </div>
 
-            {/* description */}
-            <div className='form-group'>
+                {/* description */}
+                <div className='form-group'>
                 <textarea
                     name='description'
                     id=''
@@ -46,96 +49,104 @@ const CourseCreateForm = ({
                     onChange={handleChange}
                 >
                 </textarea>
-            </div>
+                </div>
 
-            {/* paid or free course */}
-            <div className='form-row'>
-                <div className='col'>
-                    <div className='form-group d-grid'>
+                {/* paid or free course */}
+                <div className='form-row'>
+                    <div className='col'>
+                        <div className='form-group d-grid'>
+                            <Select
+                                size='large'
+                                value={values.paid}
+                                onChange={(v) => setValues({...values, paid: v, price: 0})}
+                            >
+                                <Option value={true}>Paid</Option>
+                                <Option value={false}>Free</Option>
+                            </Select>
+                        </div>
+                    </div>
+
+                    {/* price dropdown */}
+                    {values.paid && <div className='form-group'>
                         <Select
                             size='large'
-                            value={values.paid}
-                            onChange={(v) => setValues({...values, paid: v, price: 0})}
+                            tokenSeparators={[,]}
+                            defaultValue='$49.99'
+                            className='w-100'
+                            onChange={v => setValues({...values, price: v})}
                         >
-                            <Option value={true}>Paid</Option>
-                            <Option value={false}>Free</Option>
+                            {children}
                         </Select>
+                    </div>}
+                </div>
+
+                {/* category */}
+                <div className='form-group '>
+                    <input
+                        type='text'
+                        name='category'
+                        className='form-control'
+                        value={values.category}
+                        placeholder='Category'
+                        onChange={handleChange}
+                    />
+                </div>
+
+                {/* image upload */}
+                <div className='form-row'>
+                    <div className='col'>
+                        <div className='form-group d-grid'>
+                            <label
+                                className='btn btn-outline-secondary text-left'>
+                                {uploadButtonText}
+                                <input
+                                    type='file'
+                                    name='image'
+                                    accept='image/*'
+                                    onChange={handleImage}
+                                    hidden
+                                />
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+                {/* image preview */}
+                {preview && (<>
+                    <div className='col-md-6 text-center w-100 mb-3'>
+                        <p>Image Preview:</p>
+                        <Badge count='X' onClick={handleImageRemove} className='pointer-event'>
+                            <Avatar width={200} src={preview}/>
+                        </Badge>
+                    </div>
+                </>)}
+
+                {editPage && values.image && (
+                    <Avatar
+                        width={200}
+                        src={values.image.Location}
+                    ></Avatar>
+                )}
+
+                {/* button */}
+                <div className='row'>
+                    <div className='col d-grid'>
+                        <Button
+                            onClick={handleSubmit}
+                            disabled={values.loading || values.uploading}
+                            className='btn btn-primary'
+                            loading={values.loading}
+                            icon={<SaveOutlined/>}
+                            type='primary'
+                            size='large'
+                            shape='round'
+                        >
+                            {values.loading ? 'Saving...' : 'Save & Continue'}
+                        </Button>
                     </div>
                 </div>
-
-                {/* price dropdown */}
-                {values.paid && <div className="form-group">
-                    <Select
-                        size='large'
-                        tokenSeparators={[,]}
-                        defaultValue='$49.99'
-                        className='w-100'
-                        onChange={v => setValues({...values, price: v})}
-                    >
-                        {children}
-                    </Select>
-                </div>}
-            </div>
-
-            {/* category */}
-            <div className='form-group '>
-                <input
-                    type='text'
-                    name='category'
-                    className='form-control'
-                    value={values.category}
-                    placeholder='Category'
-                    onChange={handleChange}
-                />
-            </div>
-
-            {/* image upload */}
-            <div className='form-row'>
-                <div className='col'>
-                    <div className='form-group d-grid'>
-                        <label
-                            className='btn btn-outline-secondary text-left'>
-                            {uploadButtonText}
-                            <input
-                                type='file'
-                                name='image'
-                                accept='image/*'
-                                onChange={handleImage}
-                                hidden
-                            />
-                        </label>
-                    </div>
-                </div>
-
-            </div>
-            {/* image preview */}
-            {preview && (<>
-                <div className="col-md-6 text-center w-100 mb-3">
-                    <p>Image Preview:</p>
-                    <Badge count='X' onClick={handleImageRemove} className='pointer-event'>
-                        <Avatar width={200} src={preview}/>
-                    </Badge>
-                </div>
-            </>)}
-
-            {/* button */}
-            <div className='row'>
-                <div className='col d-grid'>
-                    <Button
-                        onClick={handleSubmit}
-                        disabled={values.loading || values.uploading}
-                        className='btn btn-primary'
-                        loading={values.loading}
-                        icon={<SaveOutlined/>}
-                        type='primary'
-                        size='large'
-                        shape='round'
-                    >
-                        {values.loading ? 'Saving...' : 'Save & Continue'}
-                    </Button>
-                </div>
-            </div>
-        </form>
+            </form>
+        )}
     </>)
 }
 export default CourseCreateForm

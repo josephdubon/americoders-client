@@ -49,7 +49,7 @@ const InstructorIndex = () => {
                             {/* parent media div */}
                             <div className='d-flex align-items-center pt-2'>
                                 {/* image media div */}
-                                <div className="flex-shrink-0">
+                                <div className='flex-shrink-0'>
                                     {/* image source */}
                                     <Avatar
                                         size={80}
@@ -57,12 +57,12 @@ const InstructorIndex = () => {
                                     />
                                 </div>
                                 {/* media text body */}
-                                <div className="flex-grow-1 ms-3">
+                                <div className='flex-grow-1 ms-3'>
                                     {/* title / link to course*/}
                                     <Link
                                         href={`/instructor/course/view/${course.slug}`}
                                     >
-                                        <a className='mt-2 text-primary'><h5 className="pt-2">{course.name}</h5></a>
+                                        <a className='mt-2 text-primary'><h5 className='pt-2'>{course.name}</h5></a>
                                     </Link>
                                     <p>{
                                         // show number of lessons in course
