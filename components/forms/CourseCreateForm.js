@@ -6,7 +6,7 @@ const {Option} = Select
 const CourseCreateForm = ({
                               handleChange,
                               handleImage,
-                              handleImageRemove,
+                              handleImageRemove = (f) => f,
                               handleSubmit,
                               preview,
                               values,
