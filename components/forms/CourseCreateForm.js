@@ -21,18 +21,20 @@ const CourseCreateForm = ({
     }
 
     return (<>
-        <form onSubmit={handleSubmit}>
-            <div className='form-group '>
-                {/* name */}
-                <input
-                    type='text'
-                    name='name'
-                    className='form-control'
-                    value={values.name}
-                    placeholder='Name'
-                    onChange={handleChange}
-                />
-            </div>
+        {/* confirm values exist and then render form */}
+        {values && (
+            <form onSubmit={handleSubmit}>
+                <div className='form-group '>
+                    {/* name */}
+                    <input
+                        type='text'
+                        name='name'
+                        className='form-control'
+                        value={values.name}
+                        placeholder='Name'
+                        onChange={handleChange}
+                    />
+                </div>
 
             {/* description */}
             <div className='form-group'>
