@@ -41,7 +41,47 @@ const CourseView = () => {
     // add-lesson functions
     const handleAddLesson = async e => {
         e.preventDefault()
-        console.log(values)
+        try {
+            // get request for data
+            const {data} = await axios.post(`/api/course/lesson/${slug}/${course.instructor._id}`,
+                values) // lesson content from values
+
+            // update state
+            setValues({
+                ...values,
+                title: '',
+                content: '',
+                video: {}, // video is an object
+            })
+            setVisible(false)
+            setUploadButtonText('Upload video')
+            setCourse(data)
+
+            // notification config
+            toast.success('Lesson added!', {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+
+        } catch (err) {
+            console.log('HANDLE LESSON: ', err)
+
+            // notification config
+            toast.error('Lesson add failed!', {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        }
     }
 
     // save video logic
