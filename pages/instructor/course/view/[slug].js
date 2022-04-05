@@ -2,18 +2,35 @@ import {useEffect, useState} from 'react'
 import {useRouter} from 'next/router'
 import axios from 'axios'
 import InstructorRoute from '../../../../components/routes/InstructorRoute'
-import {CheckOutlined, EditOutlined} from '@ant-design/icons'
-import {Avatar, Tooltip} from 'antd'
+import {CheckOutlined, EditOutlined, UploadOutlined} from '@ant-design/icons'
+import {Avatar, Button, List, Modal, Tooltip} from 'antd'
 import ReactMarkdown from 'react-markdown'
+import AddLessonForm from '../../../../components/forms/AddLessonForm'
+import {toast} from 'react-toastify'
+import Item from 'antd/lib/list/Item'
+
 
 const CourseView = () => {
-// state
+    // state
     const [course, setCourse] = useState({})
+    const [visible, setVisible] = useState(false)
+    const [values, setValues] = useState({
+        title: '',
+        content: '',
+        video: '',
+    })
+    const [uploading, setUploading] = useState(false)
+    const [uploadButtonText, setUploadButtonText] = useState('Upload video')
+    const [progress, setProgress] = useState(0)
 
     // router config
     const router = useRouter()
     // get slug from router url
     const {slug} = router.query
+
+    useEffect(() => {
+        loadCourse()
+    }, [slug]) // use slug as dependency to run loadCourse in useEffect
 
     // load requested course by slug
     const loadCourse = async () => {
@@ -23,9 +40,117 @@ const CourseView = () => {
         setCourse(data)
     }
 
-    useEffect(() => {
-        loadCourse()
-    }, [slug]) // use slug as dependency to run loadCourse in useEffect
+    // add-lesson functions
+    const handleAddLesson = async e => {
+        e.preventDefault()
+        try {
+            // get request for data
+            const {data} = await axios.post(`/api/course/lesson/${slug}/${course.instructor._id}`,
+                values) // lesson content from values
+
+            // update state
+            setValues({
+                ...values,
+                title: '',
+                content: '',
+                video: {}, // video is an object
+            })
+            setVisible(false)
+            setUploadButtonText('Upload video')
+            setCourse(data)
+
+            // notification config
+            toast.success('Lesson added!', {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+
+        } catch (err) {
+            console.log('HANDLE LESSON: ', err)
+
+            // notification config
+            toast.error('Lesson add failed!', {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        }
+    }
+
+    // save video logic
+    const handleVideo = async e => {
+        e.preventDefault()
+        try {
+            // get file from form and update button text and loading state
+            const file = e.target.files[0]
+            setUploadButtonText(file.name)
+            setUploading(true)
+
+            // create variable to save from FormData
+            const videoData = new FormData()
+            videoData.append('video', file)
+
+            // save progress bar and send video as form data to backend
+            const {data} = await axios.post(`/api/course/upload-video/${course.instructor._id}`, videoData, {
+                onUploadProgress: (e) => {
+                    setProgress(Math.round((100 * e.loaded) / e.total))
+                },
+            })
+
+            // once response is received update stateKI
+            setValues({...values, video: data});
+            setUploading(false);
+        } catch (err) {
+            toast.error(err.response.data, {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        }
+    }
+
+    // remove video logic
+    const handleRemoveVideo = async e => {
+        e.preventDefault()
+        try {
+            setUploading(true)
+
+            const {data} = await axios.post(
+                `/api/course/remove-video/${course.instructor._id}`,
+                values.video
+            )
+
+            setProgress(0)
+            setValues({...values, video: {}})
+            setUploading(false)
+            setUploadButtonText('Upload another video')
+        } catch (err) {
+            setUploading(false)
+            toast.error('Video remove faileed'.response.data, {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        }
+    }
+
 
     // style
     const myStyle = {
@@ -94,6 +219,63 @@ const CourseView = () => {
                             <div className='row row-ols-1 g-3'>
                                 <ReactMarkdown children={course.description}/>
                             </div>
+
+                            <div className="row">
+                                <Button
+                                    onClick={() => setVisible(true)} // update state for modal
+                                    className='col-md-6 offset-md-3 text-center'
+                                    type='primary'
+                                    shape='round'
+                                    icon={<UploadOutlined/>}
+                                    size='large'
+                                >
+                                    Add lesson
+                                </Button>
+
+                                {/* modal for lesson */}
+                                <Modal
+                                    title='+ Add Lesson'
+                                    centered
+                                    visible={visible}
+                                    onCancel={() => setVisible(false)}
+                                    footer={null}
+                                >
+                                    {/* render form component */}
+                                    <AddLessonForm
+                                        values={values}
+                                        setValues={setValues}
+                                        handleAddLesson={handleAddLesson}
+                                        handleVideo={handleVideo}
+                                        handleRemoveVideo={handleRemoveVideo}
+                                        uploading={uploading}
+                                        uploadButtonText={uploadButtonText}
+                                        progress={progress}
+                                    />
+                                </Modal>
+
+                                {/* lessons list */}
+                                <div className='row pb-5'>
+                                    <div className="col lesson-list">
+                                        <h4>{course && course.lessons && course.lessons.length} Lessons</h4>
+                                        <List
+                                            itemLayout='horizontal'
+                                            dataSource={course && course.lessons}
+                                            renderItem={(item, index) => (
+                                                // list each item with index number next to title
+                                                <Item>
+                                                    <Item.Meta
+                                                        avatar={<Avatar>{index + 1}</Avatar>}
+                                                        title={item.title}
+                                                    >
+                                                    </Item.Meta>
+                                                </Item>
+                                            )}>
+                                            <span>{}</span>
+                                        </List>
+                                    </div>
+                                </div>
+                            </div>
+
                         </>)}
 
                     </div>
