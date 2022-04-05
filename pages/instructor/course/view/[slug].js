@@ -3,10 +3,12 @@ import {useRouter} from 'next/router'
 import axios from 'axios'
 import InstructorRoute from '../../../../components/routes/InstructorRoute'
 import {CheckOutlined, EditOutlined, UploadOutlined} from '@ant-design/icons'
-import {Avatar, Button, Modal, Tooltip} from 'antd'
+import {Avatar, Button, List, Modal, Tooltip} from 'antd'
 import ReactMarkdown from 'react-markdown'
 import AddLessonForm from '../../../../components/forms/AddLessonForm'
 import {toast} from 'react-toastify'
+import Item from 'antd/lib/list/Item'
+
 
 const CourseView = () => {
     // state
@@ -253,6 +255,28 @@ const CourseView = () => {
                                         progress={progress}
                                     />
                                 </Modal>
+
+                                {/* lessons list */}
+                                <div className='row pb-5'>
+                                    <div className="col lesson-list">
+                                        <h4>{course && course.lessons && course.lessons.length} Lessons</h4>
+                                        <List
+                                            itemLayout='horizontal'
+                                            dataSource={course && course.lessons}
+                                            renderItem={(item, index) => (
+                                                // list each item with index number next to title
+                                                <Item>
+                                                    <Item.Meta
+                                                        avatar={<Avatar>{index + 1}</Avatar>}
+                                                        title={item.title}
+                                                    >
+                                                    </Item.Meta>
+                                                </Item>
+                                            )}>
+                                            <span>{}</span>
+                                        </List>
+                                    </div>
+                                </div>
                             </div>
 
                         </>)}
