@@ -245,7 +245,7 @@ const CourseView = () => {
                                     <AddLessonForm
                                         values={values}
                                         setValues={setValues}
-                                        handleAddLesson={handleLesson}
+                                        handleAddLesson={handleAddLesson}
                                         handleVideo={handleVideo}
                                         handleRemoveVideo={handleRemoveVideo}
                                         uploading={uploading}
