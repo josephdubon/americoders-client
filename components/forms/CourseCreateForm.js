@@ -64,7 +64,7 @@ const CourseCreateForm = ({
                 </div>
 
                 {/* price dropdown */}
-                {values.paid && <div className="form-group">
+                {values.paid && <div className='form-group'>
                     <Select
                         size='large'
                         tokenSeparators={[,]}
@@ -110,7 +110,7 @@ const CourseCreateForm = ({
             </div>
             {/* image preview */}
             {preview && (<>
-                <div className="col-md-6 text-center w-100 mb-3">
+                <div className='col-md-6 text-center w-100 mb-3'>
                     <p>Image Preview:</p>
                     <Badge count='X' onClick={handleImageRemove} className='pointer-event'>
                         <Avatar width={200} src={preview}/>
