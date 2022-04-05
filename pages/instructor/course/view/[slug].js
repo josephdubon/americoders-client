@@ -170,9 +170,6 @@ const CourseView = () => {
             <div className='album py-5 bg-light'>
                 <div className='container'>
                     <div className='row row-cols-1 row-cols-sm-1 row-cols-md-1 g-1'>
-                        <pre>
-                            {JSON.stringify(course, null, 4)}
-                        </pre>
                         {course && (<>
                             <div className='d-flex align-items-center pt-2'>
                                 {/* image media div */}
