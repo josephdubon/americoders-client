@@ -128,7 +128,7 @@ const EditCourse = () => {
         e.preventDefault()
         // submit request to backend
         try {
-            const {data} = await axios.put('/api/course', {
+            const {data} = await axios.put(`/api/course/${slug}`, {
                 ...values, // unpack all the values from state
                 image, // include image with post request
             })
