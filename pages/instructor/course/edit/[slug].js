@@ -149,7 +149,7 @@ const EditCourse = () => {
     }
 
     // form logic: image remove
-    const handleImageRemove = async (e) => {
+    const handleImageRemove = async ()  => {
         // console.log('REMOVE IMAGE ')
         try {
             setValues(({...values, loading: true}))
