@@ -232,7 +232,7 @@ const EditCourse = () => {
         setValues({...values, lessons: allLessons})
 
         // // send request to server
-        const {data} = await axios.put(`/update/course/${removedLesson._id}`)
+        const {data} = await axios.put(`/update/course/${slug}/${removedLesson[0]._id}`)
 
         console.log('lesson deleted  => ', data)
     }
