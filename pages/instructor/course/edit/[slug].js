@@ -262,6 +262,14 @@ const EditCourse = () => {
                                             title={item.title}
                                         >
                                         </Item.Meta>
+
+                                        {/* delete lesson icon */}
+                                        <DeleteOutlined
+                                            onClick={() => {
+                                                handleDelete(index)
+                                            }}
+                                            className='text-danger float-end'
+                                        />
                                     </Item>
                                 )}>
                                 <span>{}</span>
