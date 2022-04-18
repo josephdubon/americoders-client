@@ -251,6 +251,7 @@ const EditCourse = () => {
                                 itemLayout='horizontal'
                                 dataSource={values && values.lessons}
                                 renderItem={(item, index) => (
+
                                     // list each item with index number next to title
                                     <Item
                                         draggable
