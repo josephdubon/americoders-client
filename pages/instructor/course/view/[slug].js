@@ -195,8 +195,12 @@ const CourseView = () => {
                                     {/* edit */}
                                     <div>
                                         <Tooltip title='Edit'>
-                                            <EditOutlined className='h5 text-warning'/>
-                                            <small>Edit</small>
+                                            <EditOutlined
+                                                onClick={() =>
+                                                    router.push(`/instructor/course/edit/${slug}`)
+                                                }
+                                                className='h5 pointer text-warning mr-4'
+                                            />
                                         </Tooltip>
                                     </div>
 
