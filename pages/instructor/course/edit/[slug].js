@@ -217,22 +217,19 @@ const EditCourse = () => {
 
     // form logic: delete lesson
     const handleDelete = async (index) => {
-        console.log('delete lesson btn')
-
         const answer = window.confirm('Are you sure you want to delete?')
         if (!answer) return // if user clicks cancel on confirmation prompt do nothing but close prompt
 
         // collect lessons
         let allLessons = values.lessons
-        console.log(allLessons)
 
         // delete item based in index and collect id
         const removedLesson = allLessons.splice(index, 1)
 
+        console.log(removedLesson[0]._id)
+
         // update state
         setValues({...values, lessons: allLessons})
-
-        console.log('updated lessons => ', allLessons)
 
         // // send request to server
         const {data} = await axios.put(`/update/course/${removedLesson._id}`)
