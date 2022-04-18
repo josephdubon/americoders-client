@@ -7,6 +7,7 @@ import {toast} from 'react-toastify'
 import {useRouter} from 'next/router'
 import {Avatar, List} from 'antd'
 import Item from 'antd/lib/list/Item'
+import {DeleteOutlined} from '@ant-design/icons'
 
 const EditCourse = () => {
     // state
