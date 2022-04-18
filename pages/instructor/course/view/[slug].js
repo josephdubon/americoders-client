@@ -107,8 +107,8 @@ const CourseView = () => {
             })
 
             // once response is received update stateKI
-            setValues({...values, video: data});
-            setUploading(false);
+            setValues({...values, video: data})
+            setUploading(false)
         } catch (err) {
             toast.error(err.response.data, {
                 position: 'top-center',
