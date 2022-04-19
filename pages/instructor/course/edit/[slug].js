@@ -304,7 +304,6 @@ const EditCourse = () => {
                                         />
                                     </Item>
                                 )}>
-                                <span>{}</span>
                             </List>
                         </div>
                     </div>
