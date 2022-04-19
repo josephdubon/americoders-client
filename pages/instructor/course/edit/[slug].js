@@ -3,6 +3,7 @@ import axios from 'axios'
 import Resizer from 'react-image-file-resizer'
 import InstructorRoute from '../../../../components/routes/InstructorRoute'
 import CourseCreateForm from '../../../../components/forms/CourseCreateForm'
+import UpdateLessonForm from '../../../../components/forms/UpdateLessonForm'
 import {toast} from 'react-toastify'
 import {useRouter} from 'next/router'
 import {Avatar, List, Modal} from 'antd'
@@ -30,6 +31,9 @@ const EditCourse = () => {
     // set state for lessons update
     const [visible, setVisible] = useState(false)
     const [current, setCurrent] = useState({})
+    const [uploadVideoButtonText, setUploadVideoButtonText] = useState('Upload Video')
+    const [progress, setProgress] = useState(0)
+    const [uploading, setUploading] = useState(false)
 
     // router
     const router = useRouter()
@@ -241,6 +245,15 @@ const EditCourse = () => {
         console.log('lesson deleted  => ', data)
     }
 
+    // lesson update logic
+    const handleVideo = () => {
+        console.log('handle video hit!')
+    }
+
+    const handleUpdateLesson = () => {
+        console.log('handle update lesson hit!')
+    }
+
     return (<InstructorRoute>
         <main>
             <section className='py-5 text-center container'>
@@ -321,8 +334,15 @@ const EditCourse = () => {
             footer={null}
         >
             {/* modal content here */}
-            update lesson form
-            <pre>{JSON.stringify(current, null, 4)}</pre>
+            <UpdateLessonForm
+                current={current}
+                setCurrent={setCurrent}
+                handleVideo={handleVideo}
+                handleUpdateLesson={handleUpdateLesson}
+                uploadVideoButtonText={uploadVideoButtonText}
+                progress={progress}
+                uploading={uploading}
+            />
         </Modal>
     </InstructorRoute>)
 }
