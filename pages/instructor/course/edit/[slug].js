@@ -27,6 +27,10 @@ const EditCourse = () => {
     const [preview, setPreview] = useState('')
     const [uploadButtonText, setUploadButtonText] = useState('Upload Image')
 
+    // set state for lessons update
+    const [visible, setVisible] = useState(false)
+    const [current, setCurrent] = useState({})
+
     // router
     const router = useRouter()
     const {slug} = router.query
