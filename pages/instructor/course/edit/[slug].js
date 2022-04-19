@@ -5,7 +5,7 @@ import InstructorRoute from '../../../../components/routes/InstructorRoute'
 import CourseCreateForm from '../../../../components/forms/CourseCreateForm'
 import {toast} from 'react-toastify'
 import {useRouter} from 'next/router'
-import {Avatar, List} from 'antd'
+import {Avatar, List, Modal} from 'antd'
 import Item from 'antd/lib/list/Item'
 import {DeleteOutlined} from '@ant-design/icons'
 
@@ -306,6 +306,19 @@ const EditCourse = () => {
                 </div>
             </div>
         </main>
+
+        {/* lesson modal */}
+        <Modal
+            title='Update Lesson'
+            centered
+            visible={visible}
+            onCancel={() => setVisible(false)}
+            footer={null}
+        >
+            {/* modal content here */}
+            update lesson form
+            <pre>{JSON.stringify(current, null, 4)}</pre>
+        </Modal>
     </InstructorRoute>)
 }
 
