@@ -272,6 +272,7 @@ const EditCourse = () => {
                     <div className='row pb-5'>
                         <div className='col lesson-list'>
                             <h4>{values && values.lessons && values.lessons.length} Lessons</h4>
+                            <small>Click on lesson title to edit lesson contents.</small>
                             <List
                                 onDragOver={(e) => e.preventDefault()}
                                 itemLayout='horizontal'
