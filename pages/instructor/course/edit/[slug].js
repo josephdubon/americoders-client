@@ -285,6 +285,11 @@ const EditCourse = () => {
                                         onDrop={(e) => handleDrop(e, index)}
                                     >
                                         <Item.Meta
+                                            onClick={() => {
+                                                //
+                                                setVisible(true)
+                                                setCurrent(item.title)
+                                            }}
                                             avatar={<Avatar>{index + 1}</Avatar>}
                                             title={item.title}
                                         >
