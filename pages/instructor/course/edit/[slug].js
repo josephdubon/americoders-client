@@ -246,8 +246,35 @@ const EditCourse = () => {
     }
 
     // lesson update logic
-    const handleVideo = () => {
-        console.log('handle video hit!')
+    const handleVideo = async (e) => {
+        // remove previous video, if there is one
+        if (current.video && current.video.Location) {
+            const res = await axios.post(`/api/course/remove-video/${values.instructor._id}`,
+                current.video,
+            )
+            console.log('REMOVED ==> ', res)
+        }
+
+        // upload replacement video
+        const file = e.target.files[0]
+        setUploadVideoButtonText(file.name)
+        setUploading(true)
+
+        // send video data as form_data
+        const videoData = new FormData()
+        videoData.append('video', file)
+        videoData.append('courseId', values._id)
+
+        // save progress bar and send video as form_data to backend
+        const {data} = await axios.post(`/api/course/upload-video/${values.instructor._id}`, videoData, {
+            onUploadProgress: (e) => setProgress(Math.round((100 * e.loaded) / e.total)),
+        })
+
+        console.log(data)
+
+        // update state
+        setCurrent({...current, video: data})
+        setUploading(false)
     }
 
     const handleUpdateLesson = () => {
