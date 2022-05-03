@@ -29,17 +29,22 @@ const UpdateLessonForm = ({
                     value={current.content}
                 >{''}</textarea>
 
-                <div className='d-flex justify-content-center'>
+                <div className='col d-grid gap-2'>
+                    {!uploading && current.video && current.video.Location && (
+                        <div className='pt-2 d-flex justify-content-center'>
+                            <ReactPlayer
+                                url={current.video.Location}
+                                width='410px'
+                                height='240px'
+                                controls
+                            />
+                        </div>
+                    )}
+
                     <label className='btn btn-dark btn-block text-left mt-3'>
                         {uploadVideoButtonText}
                         <input onChange={handleVideo} type='file' accept='video/*' hidden/>
                     </label>
-
-                    {!uploading && current.video && current.video.Location && (
-                        <div className='pt-2 d-flex justify-content-center'>
-                            show video player on react player
-                        </div>
-                    )}
                 </div>
 
                 {progress > 0 && (
