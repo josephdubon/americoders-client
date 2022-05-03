@@ -10,7 +10,10 @@ const UpdateLessonForm = ({
                               progress,
                           }) => {
     return (
+
         <div className='container pt-3'>
+
+            {/*{JSON.stringify(current, null, 4)}*/}
             <form onSubmit={handleUpdateLesson}>
                 <input
                     type='text'
