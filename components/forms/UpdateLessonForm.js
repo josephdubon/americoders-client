@@ -1,4 +1,5 @@
-import {Button, Progress} from 'antd'
+import {Button, Progress, Switch} from 'antd'
+import ReactPlayer from 'react-player'
 
 const UpdateLessonForm = ({
                               current,
