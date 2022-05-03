@@ -106,9 +106,9 @@ const CourseView = () => {
                 },
             })
 
-            // once response is received update stateKI
-            setValues({...values, video: data});
-            setUploading(false);
+            // once response is received update state
+            setValues({...values, video: data})
+            setUploading(false)
         } catch (err) {
             toast.error(err.response.data, {
                 position: 'top-center',
@@ -195,8 +195,12 @@ const CourseView = () => {
                                     {/* edit */}
                                     <div>
                                         <Tooltip title='Edit'>
-                                            <EditOutlined className='h5 text-warning'/>
-                                            <small>Edit</small>
+                                            <EditOutlined
+                                                onClick={() =>
+                                                    router.push(`/instructor/course/edit/${slug}`)
+                                                }
+                                                className='h5 pointer text-warning mr-4'
+                                            />
                                         </Tooltip>
                                     </div>
 
