@@ -301,9 +301,6 @@ const EditCourse = () => {
             draggable: true,
             progress: undefined,
         })
-
-        // update state
-
     }
 
     return (<InstructorRoute>
