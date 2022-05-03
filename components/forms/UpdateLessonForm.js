@@ -27,7 +27,7 @@ const UpdateLessonForm = ({
                     rows='7'
                     onChange={(e) => setCurrent({...current, content: e.target.value})}
                     value={current.content}
-                ></textarea>
+                >{''}</textarea>
 
                 <div className='d-flex justify-content-center'>
                     <label className='btn btn-dark btn-block text-left mt-3'>
