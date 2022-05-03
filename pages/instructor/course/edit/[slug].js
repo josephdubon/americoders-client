@@ -283,6 +283,14 @@ const EditCourse = () => {
         setUploadVideoButtonText('Upload Video')
         setVisible(false)
 
+        // update state and ui
+        if (data.ok) {
+            let arr = values.lessons
+            const index = arr.findIndex((el) => el._id === current._id)
+            arr[index] = current
+            setValues({...values, lessons: arr})
+        }
+
         // notification config
         toast.success('Cool! Lesson has been updated.', {
             position: 'top-center',
