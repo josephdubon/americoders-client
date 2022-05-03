@@ -302,7 +302,7 @@ const EditCourse = () => {
                                             onClick={() => {
                                                 // update lesson modal
                                                 setVisible(true)
-                                                setCurrent(item.title)
+                                                setCurrent(item)
                                             }}
                                             avatar={<Avatar>{index + 1}</Avatar>}
                                             title={item.title}
