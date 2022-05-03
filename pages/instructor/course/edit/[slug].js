@@ -252,7 +252,6 @@ const EditCourse = () => {
             const res = await axios.post(`/api/course/remove-video/${values.instructor._id}`,
                 current.video,
             )
-            console.log('REMOVED ==> ', res)
         }
 
         // upload replacement video
@@ -269,8 +268,6 @@ const EditCourse = () => {
         const {data} = await axios.post(`/api/course/upload-video/${values.instructor._id}`, videoData, {
             onUploadProgress: (e) => setProgress(Math.round((100 * e.loaded) / e.total)),
         })
-
-        console.log(data)
 
         // update state
         setCurrent({...current, video: data})
