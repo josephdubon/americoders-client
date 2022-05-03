@@ -106,7 +106,7 @@ const CourseView = () => {
                 },
             })
 
-            // once response is received update stateKI
+            // once response is received update state
             setValues({...values, video: data})
             setUploading(false)
         } catch (err) {
