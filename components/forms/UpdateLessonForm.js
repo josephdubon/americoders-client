@@ -51,7 +51,7 @@ const UpdateLessonForm = ({
                 )}
 
                 <div className='d-flex justify-content-between'>
-                    <span className='pt-3 badge'>Preview</span>
+                    <span className='pt-3 badge text-black'>Preview</span>
                 </div>
 
                 <Button
