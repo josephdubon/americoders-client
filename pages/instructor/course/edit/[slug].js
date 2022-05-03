@@ -274,8 +274,28 @@ const EditCourse = () => {
         setUploading(false)
     }
 
-    const handleUpdateLesson = () => {
-        console.log('handle update lesson hit!')
+    const handleUpdateLesson = async (e) => {
+        e.preventDefault()
+
+        // collect data
+        const {data} = await axios.put(`/api/course/lesson/${slug}/${current._id}`,
+            current)
+        setUploadVideoButtonText('Upload Video')
+        setVisible(false)
+
+        // notification config
+        toast.success('Cool! Lesson has been updated.', {
+            position: 'top-center',
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        })
+
+        // update state
+
     }
 
     return (<InstructorRoute>
