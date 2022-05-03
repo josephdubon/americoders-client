@@ -300,7 +300,7 @@ const EditCourse = () => {
                                     >
                                         <Item.Meta
                                             onClick={() => {
-                                                //
+                                                // update lesson modal
                                                 setVisible(true)
                                                 setCurrent(item.title)
                                             }}
