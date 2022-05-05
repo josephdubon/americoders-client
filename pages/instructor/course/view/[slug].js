@@ -144,7 +144,7 @@ const CourseView = () => {
             setUploadButtonText('Upload another video')
         } catch (err) {
             setUploading(false)
-            toast.error('Video remove faileed'.response.data, {
+            toast.error('Video remove failed'.response.data, {
                 position: 'top-center',
                 autoClose: 5000,
                 hideProgressBar: false,
