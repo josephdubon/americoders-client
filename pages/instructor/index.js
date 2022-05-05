@@ -86,10 +86,13 @@ const InstructorIndex = () => {
                                 </div>
                                 <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
                                     {course.published ? (
-                                        <div><CheckCircleOutlined className='h5 text-success'/></div>
+                                        <Tooltip title='Published'>
+                                            <CheckCircleOutlined className='h5 text-success'/>
+                                        </Tooltip>
                                     ) : (
-                                        <div><CloseCircleOutlined className='h5 text-warning'/></div>
-
+                                        <Tooltip title='Unpublished'>
+                                            <CloseCircleOutlined className='h5 text-warning'/>
+                                        </Tooltip>
                                     )}
                                 </div>
                             </div>
