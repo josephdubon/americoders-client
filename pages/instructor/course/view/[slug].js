@@ -199,18 +199,16 @@ const CourseView = () => {
                                 </div>
 
                                 {/* action icons */}
-                                <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
-                                    {/* edit */}
-                                    <div>
-                                        <Tooltip title='Edit'>
-                                            <EditOutlined
-                                                onClick={() =>
-                                                    router.push(`/instructor/course/edit/${slug}`)
-                                                }
-                                                className='h5 pointer text-warning mr-4'
-                                            />
-                                        </Tooltip>
-                                    </div>
+                                {/* edit */}
+                                <div className='d-flex mr-4 gap-3'>
+                                    <Tooltip title='Edit'>
+                                        <EditOutlined
+                                            onClick={() =>
+                                                router.push(`/instructor/course/edit/${slug}`)
+                                            }
+                                            className='h5 pointer-event text-warning mr-4'
+                                        />
+                                    </Tooltip>
 
                                     <span/> {/* keep this here for some space */}
 
