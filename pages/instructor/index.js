@@ -2,7 +2,7 @@ import {useContext, useEffect, useState} from 'react'
 import axios from 'axios'
 import {Context} from '../../context'
 import InstructorRoute from '../../components/routes/InstructorRoute'
-import {Avatar} from 'antd'
+import {Avatar, Tooltip} from 'antd'
 import Link from 'next/link'
 import {CheckCircleOutlined, CloseCircleOutlined} from '@ant-design/icons'
 
