@@ -285,7 +285,8 @@ const CourseView = () => {
                                             // unpublish
                                             <Tooltip title='Unpublish'>
                                                 <CloseOutlined
-                                                    onClick={(e) => handleUnpublish(e, course._id)}/>
+                                                    onClick={handleUnpublish}
+                                                    className='text-danger'/>
                                             </Tooltip>
                                         ) : (
 
