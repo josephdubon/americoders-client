@@ -157,7 +157,7 @@ const CourseView = () => {
     }
 
 
-    const handlePublish = async (e, courseId) => {
+    const handlePublish = async () => {
         try {
             // confirm publish
             let answer = window.confirm('Once you publish the course will be live on the platform for the students to enroll.')
@@ -193,7 +193,7 @@ const CourseView = () => {
         }
     }
 
-    const handleUnpublish = async (e, courseId) => {
+    const handleUnpublish = async () => {
         try {
             // confirm publish
             let answer = window.confirm('Once you unpublish the course will be not be live on the platform for the students to enroll.')
