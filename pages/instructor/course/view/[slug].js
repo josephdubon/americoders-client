@@ -11,6 +11,11 @@ import Item from 'antd/lib/list/Item'
 
 
 const CourseView = () => {
+    // style
+    const myStyle = {
+        marginTop: '-15px', fontSize: '10px',
+    }
+
     // state
     const [course, setCourse] = useState({})
     const [visible, setVisible] = useState(false)
