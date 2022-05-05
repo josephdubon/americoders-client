@@ -162,7 +162,7 @@ const CourseView = () => {
             // confirm publish
             let answer = window.confirm('Once you publish the course will be live on the platform for the students to enroll.')
 
-            if (!answer) return ''
+            if (!answer) return
 
             // make request to backend
             const {data} = await axios.put(`/api/course/publish/${courseId}`)
@@ -198,7 +198,7 @@ const CourseView = () => {
             // confirm publish
             let answer = window.confirm('Once you unpublish the course will be not be live on the platform for the students to enroll.')
 
-            if (!answer) return ''
+            if (!answer) return
 
             // make request to backend
             const {data} = await axios.put(`/api/course/unpublish/${courseId}`)
