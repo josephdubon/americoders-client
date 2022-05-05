@@ -157,9 +157,12 @@ const CourseView = () => {
     }
 
 
-    // style
-    const myStyle = {
-        marginTop: '-15px', fontSize: '10px',
+    function handleUnpublish(e, courseId) {
+
+    }
+
+    function handlePublish(e, courseId) {
+
     }
 
     return (<InstructorRoute>
