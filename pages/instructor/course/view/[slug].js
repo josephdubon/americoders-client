@@ -157,8 +157,40 @@ const CourseView = () => {
     }
 
 
-    function handleUnpublish(e, courseId) {
+    const handlePublish = async (e, courseId) => {
+        try {
+            // confirm publish
+            let answer = window.confirm('Once you publish the course will be live on the platform for the students to enroll.')
 
+            if (!answer) return ''
+
+            // make request to backend
+            const {data} = await axios.put(`/api/course/publish/${courseId}`)
+
+            // update state
+            setCourse(data)
+
+            // notification config
+            toast.success('Your course is now live!', {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        } catch (err) {
+            toast.error('Course publish failed.'.response.data, {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        }
     }
 
     function handlePublish(e, courseId) {
