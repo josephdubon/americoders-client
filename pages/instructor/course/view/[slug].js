@@ -165,7 +165,7 @@ const CourseView = () => {
             if (!answer) return
 
             // make request to backend
-            const {data} = await axios.put(`/api/course/publish/${courseId}`)
+            const {data} = await axios.put(`/api/course/publish/${course._id}`)
 
             // update state
             setCourse(data)
@@ -201,7 +201,7 @@ const CourseView = () => {
             if (!answer) return
 
             // make request to backend
-            const {data} = await axios.put(`/api/course/unpublish/${courseId}`)
+            const {data} = await axios.put(`/api/course/unpublish/${course._id}`)
 
             // update state
             setCourse(data)
