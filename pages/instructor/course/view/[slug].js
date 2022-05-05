@@ -181,7 +181,7 @@ const CourseView = () => {
                 progress: undefined,
             })
         } catch (err) {
-            toast.error('Course publish failed.'.response.data, {
+            toast.error('Course publish failed.', {
                 position: 'top-center',
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -218,7 +218,7 @@ const CourseView = () => {
             })
 
         } catch (err) {
-            toast.error('Course unpublish failed.'.response.data, {
+            toast.error('Course unpublish failed.', {
                 position: 'top-center',
                 autoClose: 5000,
                 hideProgressBar: false,
