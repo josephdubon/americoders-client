@@ -193,7 +193,41 @@ const CourseView = () => {
         }
     }
 
-    function handlePublish(e, courseId) {
+    const handleUnpublish = async (e, courseId) => {
+        try {
+            // confirm publish
+            let answer = window.confirm('Once you unpublish the course will be not be live on the platform for the students to enroll.')
+
+            if (!answer) return ''
+
+            // make request to backend
+            const {data} = await axios.put(`/api/course/unpublish/${courseId}`)
+
+            // update state
+            setCourse(data)
+
+            // notification config
+            toast.success('Your course is unpublished.', {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+
+        } catch (err) {
+            toast.error('Course unpublish failed.'.response.data, {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        }
 
     }
 
