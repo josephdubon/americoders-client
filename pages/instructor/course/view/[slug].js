@@ -293,7 +293,7 @@ const CourseView = () => {
                                             // publish
                                             <Tooltip title='Publish'>
                                                 <CheckOutlined
-                                                    onClick={(e) => handlePublish(e, course._id)}
+                                                    onClick={handlePublish}
                                                     className='text-success'/>
                                             </Tooltip>
                                         )
