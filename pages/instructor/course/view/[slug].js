@@ -210,7 +210,11 @@ const CourseView = () => {
                                         />
                                     </Tooltip>
 
-                                    <span/> {/* keep this here for some space */}
+                                    {/* render publish icon if min of 6 lessons is met */}
+                                    {course.lessons && course.lessons.length < 5 ?
+                                        <Tooltip title='Minimum of 5 lessons required to publish'>
+                                            <QuestionOutlined className='h5 pointer-event text-danger'/>
+                                        </Tooltip> : course.published ? (
 
                                     {/* publish */}
                                     <div>
