@@ -216,14 +216,21 @@ const CourseView = () => {
                                             <QuestionOutlined className='h5 pointer-event text-danger'/>
                                         </Tooltip> : course.published ? (
 
-                                    {/* publish */}
-                                    <div>
-                                        <Tooltip title='Publish'>
-                                            <CheckOutlined className='h5 text-danger'/>
-                                            <small>Publish</small>
-                                        </Tooltip>
-                                    </div>
+                                            // unpublish
+                                            <Tooltip title='Unpublish'>
+                                                <CloseOutlined
+                                                    onClick={(e) => handleUnpublish(e, course._id)}/>
+                                            </Tooltip>
+                                        ) : (
 
+                                            // publish
+                                            <Tooltip title='Publish'>
+                                                <CheckOutlined
+                                                    onClick={(e) => handlePublish(e, course._id)}
+                                                    className='text-success'/>
+                                            </Tooltip>
+                                        )
+                                    }
                                 </div>
                             </div>
 
