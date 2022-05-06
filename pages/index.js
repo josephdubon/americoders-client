@@ -34,11 +34,14 @@ const Index = () => {
                     <div className='row gap-3'>
                         <p className='lead'>
                             Welcome Home
-                            {courses.map((course) => (<div key={course._id}>
-                                {<pre className='small'>
-                                    {JSON.stringify({course}, null, 4)}
-                                </pre>}
-                            </div>))}
+                            <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
+                                {courses.map((course) => (
+                                        <div key={course._id}>
+                                            <CourseCard course={course}/>
+                                        </div>
+                                    )
+                                )}
+                            </div>
                         </p>
                     </div>
                 </div>
