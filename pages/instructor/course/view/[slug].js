@@ -60,8 +60,9 @@ const CourseView = () => {
                 content: '',
                 video: {}, // video is an object
             })
-            setVisible(false)
+            setProgress(0)
             setUploadButtonText('Upload video')
+            setVisible(false)
             setCourse(data)
 
             // notification config
