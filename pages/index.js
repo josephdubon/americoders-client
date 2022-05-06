@@ -2,6 +2,20 @@ import {useEffect, useState} from 'react'
 import axios from 'axios'
 
 const Index = () => {
+    // state config
+    const [courses, setCourses] = useState([])
+
+    // courses config
+    useEffect(() => {
+
+        // collect data
+        const fetchCourses = async () => {
+            const {data} = await axios.get('/api/courses')
+            setCourses(data)
+        }
+        fetchCourses()
+    }, [])
+
     return (<>
         <main>
             <section className='py-5 text-center container'>
