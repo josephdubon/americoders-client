@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react'
 import {useRouter} from 'next/router'
 import axios from 'axios'
 import InstructorRoute from '../../../../components/routes/InstructorRoute'
-import {CheckOutlined, EditOutlined, UploadOutlined} from '@ant-design/icons'
+import {CheckOutlined, CloseOutlined, EditOutlined, QuestionOutlined, UploadOutlined} from '@ant-design/icons'
 import {Avatar, Button, List, Modal, Tooltip} from 'antd'
 import ReactMarkdown from 'react-markdown'
 import AddLessonForm from '../../../../components/forms/AddLessonForm'
@@ -11,6 +11,11 @@ import Item from 'antd/lib/list/Item'
 
 
 const CourseView = () => {
+    // style
+    const myStyle = {
+        marginTop: '-15px', fontSize: '10px',
+    }
+
     // state
     const [course, setCourse] = useState({})
     const [visible, setVisible] = useState(false)
@@ -55,8 +60,9 @@ const CourseView = () => {
                 content: '',
                 video: {}, // video is an object
             })
-            setVisible(false)
+            setProgress(0)
             setUploadButtonText('Upload video')
+            setVisible(false)
             setCourse(data)
 
             // notification config
@@ -139,7 +145,7 @@ const CourseView = () => {
             setUploadButtonText('Upload another video')
         } catch (err) {
             setUploading(false)
-            toast.error('Video remove faileed'.response.data, {
+            toast.error('Video remove failed'.response.data, {
                 position: 'top-center',
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -152,9 +158,78 @@ const CourseView = () => {
     }
 
 
-    // style
-    const myStyle = {
-        marginTop: '-15px', fontSize: '10px',
+    const handlePublish = async () => {
+        try {
+            // confirm publish
+            let answer = window.confirm('Once you publish the course will be live on the platform for the students to enroll.')
+
+            if (!answer) return
+
+            // make request to backend
+            const {data} = await axios.put(`/api/course/publish/${course._id}`)
+
+            // update state
+            setCourse(data)
+
+            // notification config
+            toast.success('Your course is now live!', {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        } catch (err) {
+            toast.error('Course publish failed.', {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        }
+    }
+
+    const handleUnpublish = async () => {
+        try {
+            // confirm publish
+            let answer = window.confirm('Once you unpublish the course will be not be live on the platform for the students to enroll.')
+
+            if (!answer) return
+
+            // make request to backend
+            const {data} = await axios.put(`/api/course/unpublish/${course._id}`)
+
+            // update state
+            setCourse(data)
+
+            // notification config
+            toast.success('Your course is unpublished.', {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+
+        } catch (err) {
+            toast.error('Course unpublish failed.', {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        }
+
     }
 
     return (<InstructorRoute>
@@ -191,29 +266,39 @@ const CourseView = () => {
                                 </div>
 
                                 {/* action icons */}
-                                <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
-                                    {/* edit */}
-                                    <div>
-                                        <Tooltip title='Edit'>
-                                            <EditOutlined
-                                                onClick={() =>
-                                                    router.push(`/instructor/course/edit/${slug}`)
-                                                }
-                                                className='h5 pointer text-warning mr-4'
-                                            />
-                                        </Tooltip>
-                                    </div>
+                                {/* edit */}
+                                <div className='d-flex mr-4 gap-3'>
+                                    <Tooltip title='Edit'>
+                                        <EditOutlined
+                                            onClick={() =>
+                                                router.push(`/instructor/course/edit/${slug}`)
+                                            }
+                                            className='h5 pointer-event text-warning mr-4'
+                                        />
+                                    </Tooltip>
 
-                                    <span/> {/* keep this here for some space */}
+                                    {/* render publish icon if min of 6 lessons is met */}
+                                    {course.lessons && course.lessons.length < 5 ?
+                                        <Tooltip title='Minimum of 5 lessons required to publish'>
+                                            <QuestionOutlined className='h5 pointer-event text-danger'/>
+                                        </Tooltip> : course.published ? (
 
-                                    {/* publish */}
-                                    <div>
-                                        <Tooltip title='Publish'>
-                                            <CheckOutlined className='h5 text-danger'/>
-                                            <small>Publish</small>
-                                        </Tooltip>
-                                    </div>
+                                            // unpublish
+                                            <Tooltip title='Unpublish'>
+                                                <CloseOutlined
+                                                    onClick={handleUnpublish}
+                                                    className='text-danger'/>
+                                            </Tooltip>
+                                        ) : (
 
+                                            // publish
+                                            <Tooltip title='Publish'>
+                                                <CheckOutlined
+                                                    onClick={handlePublish}
+                                                    className='text-success'/>
+                                            </Tooltip>
+                                        )
+                                    }
                                 </div>
                             </div>
 
