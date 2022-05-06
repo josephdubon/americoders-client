@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react'
 import axios from 'axios'
+import CourseCard from '../components/card/CourseCard'
 
 const Index = () => {
     // state config
