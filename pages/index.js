@@ -30,6 +30,7 @@ const Index = () => {
 
             <div className='album py-5 bg-light'>
                 <div className='container'>
+
                     <div className='row gap-3'>
                         <p className='lead'>
                             Welcome Home
