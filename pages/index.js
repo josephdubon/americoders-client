@@ -32,6 +32,11 @@ const Index = () => {
                     <div className='row gap-3'>
                         <p className='lead'>
                             Welcome Home
+                            {courses.map((course) => (<div key={course._id}>
+                                {<pre className='small'>
+                                    {JSON.stringify({course}, null, 4)}
+                                </pre>}
+                            </div>))}
                         </p>
                     </div>
                 </div>
