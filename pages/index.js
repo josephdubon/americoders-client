@@ -44,8 +44,10 @@ const Index = () => {
                             </div>
                         </p>
                     </div>
+
                 </div>
             </div>
+
         </main>
     </>)
 }
