@@ -13,6 +13,19 @@ const SingleCourse = ({course}) => {
     const router = useRouter()
     const {slug} = router.query
 
+    // destructure course items
+    const {
+        name,
+        description,
+        instructor,
+        updatedAt,
+        lessons,
+        image,
+        price,
+        paid,
+        category
+    } = course
+
     return (<>
         <div className='container-fluid'>
             <div className='row'>
