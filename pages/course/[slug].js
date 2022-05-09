@@ -2,6 +2,7 @@ import axios from 'axios'
 import {useRouter} from 'next/router'
 import {useState} from 'react'
 import SingleCourseHero from '../../components/cards/SingleCourseHero'
+import PreviewModal from '../../components/modal/PreviewModal'
 
 const SingleCourse = ({course}) => {
 // state
@@ -20,7 +21,11 @@ const SingleCourse = ({course}) => {
             setPreview={setPreview}
         />
 
-        {showModal ? course.lessons[0].video.Location : 'dont show'}
+        <PreviewModal
+            showModal={showModal}
+            setShowModal={setShowModal}
+            preview={preview}
+        />
     </>)
 }
 
