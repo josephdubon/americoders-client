@@ -1,21 +1,7 @@
-import {useEffect, useState} from 'react'
 import axios from 'axios'
 import CourseCard from '../components/card/CourseCard'
 
-const Index = () => {
-    // state config
-    const [courses, setCourses] = useState([])
-
-    // courses config
-    useEffect(() => {
-
-        // collect data
-        const fetchCourses = async () => {
-            const {data} = await axios.get('/api/courses')
-            setCourses(data)
-        }
-        fetchCourses()
-    }, [])
+const Index = ({courses}) => {
 
     return (<>
         <main>
@@ -50,6 +36,17 @@ const Index = () => {
 
         </main>
     </>)
+}
+
+export async function getServerSideProps() {
+    // collect courses data
+    const {data} = await axios.get(`${process.env.API}/courses`) // full path of server here
+
+    return {
+        props: {
+            courses: data // return data as props
+        }
+    }
 }
 
 export default Index
