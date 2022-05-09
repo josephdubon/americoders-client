@@ -1,5 +1,9 @@
 import axios from 'axios'
 import {useRouter} from 'next/router'
+import {Badge, Col, Image} from 'antd'
+import {currencyFormatter} from '../../utils/currency'
+import ReactPlayer from 'react-player'
+import {useState} from 'react'
 
 const SingleCourse = ({course}) => {
 // state
