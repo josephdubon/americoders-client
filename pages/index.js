@@ -1,5 +1,5 @@
 import axios from 'axios'
-import CourseCard from '../components/card/CourseCard'
+import CourseCard from '../components/cards/CourseCard'
 
 const Index = ({courses}) => {
 
