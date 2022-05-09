@@ -36,7 +36,6 @@ const SingleCourse = ({course}) => {
 }
 
 export async function getServerSideProps({query}) {
-    console.log(query)
     const {data} = await axios.get(`${process.env.API}/course/${query.slug}`)
 
     return {
