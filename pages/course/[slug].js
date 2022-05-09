@@ -2,6 +2,10 @@ import axios from 'axios'
 import {useRouter} from 'next/router'
 
 const SingleCourse = ({course}) => {
+// state
+    const [showModal, setShowModal] = useState(false)
+    const [preview, setPreview] = useState('')
+
     const router = useRouter()
     const {slug} = router.query
 
