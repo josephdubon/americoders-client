@@ -1,5 +1,6 @@
 import {Badge, Card} from 'antd'
 import Link from 'next/link'
+import {currencyFormatter} from '../../utils/currency'
 
 const {Meta} = Card
 
@@ -24,7 +25,10 @@ const CourseCard = ({course}) => {
                         style={{backgroundColor: '#03a9f4'}}
                         className='pb-2 mr-2'
                     />
-                    <h4 className='pt-2'>{paid ? '$' + price : 'Free'}</h4>
+                    <h4 className='pt-2'>{paid ? currencyFormatter({
+                        amount: price,
+                        currency: 'usd',
+                    }) : 'Free'}</h4>
                 </Card>
             </a>
         </Link>
