@@ -348,6 +348,7 @@ const EditCourse = () => {
                                         onDrop={(e) => handleDrop(e, index)}
                                     >
                                         <Item.Meta
+                                            role='button'
                                             onClick={() => {
                                                 // update lesson modal
                                                 setVisible(true)
