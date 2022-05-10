@@ -1,6 +1,6 @@
+import {useState} from 'react'
 import axios from 'axios'
 import {useRouter} from 'next/router'
-import {useState} from 'react'
 import SingleCourseHero from '../../components/cards/SingleCourseHero'
 import PreviewModal from '../../components/modal/PreviewModal'
 import SingleCourseLessons from '../../components/cards/SingleCourseLessons'
