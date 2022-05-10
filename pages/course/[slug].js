@@ -6,7 +6,7 @@ import PreviewModal from '../../components/modal/PreviewModal'
 import SingleCourseLessons from '../../components/cards/SingleCourseLessons'
 
 const SingleCourse = ({course}) => {
-// state
+    // state
     const [showModal, setShowModal] = useState(false)
     const [preview, setPreview] = useState('')
 
