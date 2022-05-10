@@ -41,7 +41,7 @@ const SingleCourseLessons = ({
                 </div>
             </div>
         </div>
-    </>)
+    )
 }
 
 export default SingleCourseLessons
