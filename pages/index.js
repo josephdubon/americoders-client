@@ -18,7 +18,7 @@ const Index = ({courses}) => {
                 <div className='container'>
 
                     <div className='row gap-3'>
-                        <p className='lead'>
+                        <span className='lead'>
                             Welcome Home
                             <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
                                 {courses.map((course) => (
@@ -28,7 +28,7 @@ const Index = ({courses}) => {
                                     )
                                 )}
                             </div>
-                        </p>
+                        </span>
                     </div>
 
                 </div>
