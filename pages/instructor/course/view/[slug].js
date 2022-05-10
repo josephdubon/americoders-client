@@ -274,14 +274,14 @@ const CourseView = () => {
                                             onClick={() =>
                                                 router.push(`/instructor/course/edit/${slug}`)
                                             }
-                                            className='h5 pointer-event text-warning mr-4'
+                                            className='h5 text-warning mr-4'
                                         />
                                     </Tooltip>
 
                                     {/* render publish icon if min of 6 lessons is met */}
                                     {course.lessons && course.lessons.length < 5 ?
                                         <Tooltip title='Minimum of 5 lessons required to publish'>
-                                            <QuestionOutlined className='h5 pointer-event text-danger'/>
+                                            <QuestionOutlined  role='button' className='h5 text-danger'/>
                                         </Tooltip> : course.published ? (
 
                                             // unpublish
