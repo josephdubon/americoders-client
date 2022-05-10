@@ -2,8 +2,13 @@ import {Avatar, List} from 'antd'
 
 const {Item} = List
 
-const SingleCourseLessons = ({lessons, setPreview, setShowModal, showModal}) => {
-    return (<>
+const SingleCourseLessons = ({
+                                 lessons,
+                                 setPreview,
+                                 showModal,
+                                 setShowModal,
+                             }) => {
+    return (
         <div className='container'>
             <div className='row'>
                 <div className='col lesson-list'>
@@ -17,9 +22,19 @@ const SingleCourseLessons = ({lessons, setPreview, setShowModal, showModal}) => 
                                 <Item.Meta
                                     avatar={<Avatar>{index + 1}</Avatar>}
                                     title={item.title}
-                                >
-
-                                </Item.Meta>
+                                />
+                                {item.video && true && item.free_preview && (
+                                    <span
+                                        role='button'
+                                        className='text-primary'
+                                        onClick={() => {
+                                            setPreview(item.video.Location)
+                                            setShowModal(!showModal)
+                                        }}
+                                    >
+                    Preview
+                  </span>
+                                )}
                             </Item>
                         )}
                     />
