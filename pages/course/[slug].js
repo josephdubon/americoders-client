@@ -84,7 +84,7 @@ const SingleCourse = ({course}) => {
             })
             console.log('FREE ENROLLMENT ERROR: ', err)
 
-            //update state
+            // update state
             setLoading(false)
         }
 
