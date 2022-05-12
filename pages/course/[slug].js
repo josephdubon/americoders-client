@@ -43,7 +43,6 @@ const SingleCourse = ({course}) => {
 
     const handleFreeEnrollment = async (e) => {
         // console.log('handle FREE enroll hit!')
-
         e.preventDefault()
 
         try {
