@@ -7,7 +7,11 @@ const SingleCourseHero = ({
                               showModal,
                               setShowModal,
                               preview,
-                              setPreview
+                              setPreview,
+                              loading,
+                              user,
+                              handleFreeEnrollment,
+                              handlePaidEnrollment,
                           }) => {
 
     // destructure course items
