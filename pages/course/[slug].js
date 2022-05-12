@@ -46,6 +46,12 @@ const SingleCourse = ({course}) => {
         e.preventDefault()
 
         try {
+            // check if user is logged in
+            if (!user) await router.push('/login')
+
+            // check if already enrolled and redirect to course page
+            if (enrolled.status) return router.push(`/user/course/${enrolled.course.slug}`)
+
             // update state
             setLoading(true)
             const {data} = await axios.post(`/api/free-enrollment/${course._id}`)
