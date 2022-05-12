@@ -1,4 +1,4 @@
-import {useContext, useState} from 'react'
+import {useContext, useEffect, useState} from 'react'
 import axios from 'axios'
 import {useRouter} from 'next/router'
 import SingleCourseHero from '../../components/cards/SingleCourseHero'
@@ -17,6 +17,21 @@ const SingleCourse = ({course}) => {
     const {
         state: {user},
     } = useContext(Context)
+
+    // make request to backend
+    useEffect(() => {
+        //
+        if (user && course) checkEnrollment()
+    }, [user, course])
+
+    const checkEnrollment = async () => {
+        const {data} = await axios.get(`/api/check-enrollment/${course._id}`)
+        console.log('CHECK ENROLLMENT', data)
+
+        // update state
+        setEnrolled(data)
+    }
+
 
     const router = useRouter()
     const {slug} = router.query
