@@ -19,6 +19,14 @@ const SingleCourse = ({course}) => {
     const router = useRouter()
     const {slug} = router.query
 
+    const handlePaidEnrollment = () => {
+        console.log('handle paid enroll hit!')
+    }
+
+    const handleFreeEnrollment = () => {
+        console.log('handle FREE enroll hit!')
+    }
+
     return (<>
         <SingleCourseHero
             course={course}
