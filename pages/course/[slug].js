@@ -55,6 +55,8 @@ const SingleCourse = ({course}) => {
             loading={loading}
             handlePaidEnrollment={handlePaidEnrollment}
             handleFreeEnrollment={handleFreeEnrollment}
+            enrolled={enrolled}
+            setEnrolled={setEnrolled}
         />
 
         <PreviewModal
