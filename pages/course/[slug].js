@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useContext, useState} from 'react'
 import axios from 'axios'
 import {useRouter} from 'next/router'
 import SingleCourseHero from '../../components/cards/SingleCourseHero'
