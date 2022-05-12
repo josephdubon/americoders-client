@@ -4,6 +4,7 @@ import {useRouter} from 'next/router'
 import SingleCourseHero from '../../components/cards/SingleCourseHero'
 import PreviewModal from '../../components/modal/PreviewModal'
 import SingleCourseLessons from '../../components/cards/SingleCourseLessons'
+import {Context} from '../../context'
 
 const SingleCourse = ({course}) => {
     // state
@@ -34,6 +35,10 @@ const SingleCourse = ({course}) => {
             setShowModal={setShowModal}
             preview={preview}
             setPreview={setPreview}
+            user={user}
+            loading={loading}
+            handlePaidEnrollment={handlePaidEnrollment}
+            handleFreeEnrollment={handleFreeEnrollment}
         />
 
         <PreviewModal
