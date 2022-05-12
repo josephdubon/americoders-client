@@ -104,14 +104,14 @@ const SingleCourseHero = ({
                                     <LoadingOutlined className='h1 text-danger'/>
                                 </div> : (
                                     <Button
-                                    className='mb-3 mt-3'
-                                    type='danger'
-                                    block
-                                    shape='round'
-                                    icon={<SafetyOutlined />}
-                                    size='large'
-                                    disabled={loading}
-                                    onClick={paid ? handlePaidEnrollment : handleFreeEnrollment}
+                                        className='mb-3 mt-3'
+                                        type='danger'
+                                        block
+                                        shape='round'
+                                        icon={<SafetyOutlined/>}
+                                        size='large'
+                                        disabled={loading}
+                                        onClick={paid ? handlePaidEnrollment : handleFreeEnrollment}
                                     >
                                         {user ? 'Enroll' : 'Login to enroll'}
                                     </Button>
