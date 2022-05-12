@@ -13,6 +13,8 @@ const SingleCourseHero = ({
                               user,
                               handleFreeEnrollment,
                               handlePaidEnrollment,
+                              enrolled,
+                              setEnrolled,
                           }) => {
 
     // destructure course items
