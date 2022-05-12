@@ -9,6 +9,12 @@ const SingleCourse = ({course}) => {
     // state
     const [showModal, setShowModal] = useState(false)
     const [preview, setPreview] = useState('')
+    const [loading, setLoading] = useState(false)
+
+    // context
+    const {
+        state: {user},
+    } = useContext(Context)
 
     const router = useRouter()
     const {slug} = router.query
