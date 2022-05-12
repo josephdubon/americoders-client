@@ -11,6 +11,7 @@ const SingleCourse = ({course}) => {
     const [showModal, setShowModal] = useState(false)
     const [preview, setPreview] = useState('')
     const [loading, setLoading] = useState(false)
+    const [enrolled, setEnrolled] = useState({})
 
     // context
     const {
