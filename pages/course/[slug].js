@@ -66,6 +66,12 @@ const SingleCourse = ({course}) => {
                 draggable: true,
                 progress: undefined,
             })
+
+            // update state
+            setLoading(false)
+
+            // redirect to course page
+            await router.push(`/user/course/${data.course.slug}`)
         } catch (err) {
             toast.error('Enrollment failed', {
                 position: 'top-center',
