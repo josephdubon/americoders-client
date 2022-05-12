@@ -5,6 +5,7 @@ import SingleCourseHero from '../../components/cards/SingleCourseHero'
 import PreviewModal from '../../components/modal/PreviewModal'
 import SingleCourseLessons from '../../components/cards/SingleCourseLessons'
 import {Context} from '../../context'
+import {toast} from 'react-toastify'
 
 const SingleCourse = ({course}) => {
     // state
