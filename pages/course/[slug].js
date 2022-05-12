@@ -40,8 +40,42 @@ const SingleCourse = ({course}) => {
         console.log('handle paid enroll hit!')
     }
 
-    const handleFreeEnrollment = () => {
-        console.log('handle FREE enroll hit!')
+    const handleFreeEnrollment = async (e) => {
+        // console.log('handle FREE enroll hit!')
+
+        e.preventDefault()
+
+        try {
+            // update state
+            setLoading(true)
+            const {data} = await axios.post(`/api/free-enrollment/${course._id}`)
+
+            // notification config
+            toast(data.message, {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+        } catch (err) {
+            toast.error('Enrollment failed', {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+            console.log('FREE ENROLLMENT ERROR: ', err)
+
+            //update state
+            setLoading(false)
+        }
+
     }
 
     return (<>
