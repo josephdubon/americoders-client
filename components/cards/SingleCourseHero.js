@@ -1,6 +1,7 @@
-import {Badge, Col, Image} from 'antd'
+import {Badge, Button, Col, Image} from 'antd'
 import {currencyFormatter} from '../../utils/currency'
 import ReactPlayer from 'react-player'
+import {LoadingOutlined, SafetyOutlined} from '@ant-design/icons'
 
 const SingleCourseHero = ({
                               course,
@@ -98,6 +99,23 @@ const SingleCourseHero = ({
                                         alt={name}
                                     />
                                 </>)}
+                                {/* enroll button */}
+                                {loading ? <div className='d-flex justify-content-center'>
+                                    <LoadingOutlined className='h1 text-danger'/>
+                                </div> : (
+                                    <Button
+                                    className='mb-3 mt-3'
+                                    type='danger'
+                                    block
+                                    shape='round'
+                                    icon={<SafetyOutlined />}
+                                    size='large'
+                                    disabled={loading}
+                                    onClick={paid ? handlePaidEnrollment : handleFreeEnrollment}
+                                    >
+                                        {user ? 'Enroll' : 'Login to enroll'}
+                                    </Button>
+                                )}
                             </Col>
                         </div>
                     </div>
