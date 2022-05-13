@@ -42,6 +42,52 @@ const SingleCourse = ({course}) => {
 
     const handlePaidEnrollment = async () => {
         console.log('handle paid enroll hit!')
+        try {
+            // update state
+            setLoading(true)
+
+            // check if user is logged in
+            if (!user) await router.push('/login')
+
+            // check if already enrolled and redirect to course page
+            if (enrolled.status) return router.push(`/user/course/${enrolled.course.slug}`)
+
+            // collect data
+            const {data} = await axios.post(`/api/paid-enrollment/${course._id}`)
+
+            // stripe config
+            const stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_KEY)
+            await stripe.redirectToCheckout({sessionId: data})
+
+
+            // notification config
+            toast(data.message, {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+
+            // update state
+            setLoading(false)
+        } catch (err) {
+            toast.error('Enrollment failed', {
+                position: 'top-center',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            })
+            console.log('PAID ENROLLMENT ERROR: ', err)
+
+            // update state
+            setLoading(false)
+        }
     }
 
     const handleFreeEnrollment = async (e) => {
