@@ -40,7 +40,7 @@ const SingleCourse = ({course}) => {
     const router = useRouter()
     const {slug} = router.query
 
-    const handlePaidEnrollment = () => {
+    const handlePaidEnrollment = async () => {
         console.log('handle paid enroll hit!')
     }
 
