@@ -16,6 +16,9 @@ const StripeSuccess = () => {
     const successRequest = async () => {
         const {data} = await axios.get(`/api/stripe-success/${id}`)
 
+        // sanity check
+        console.log('SUCCESS REQ DATA', data)
+
         // redirect to course page
         await router.push(`/user/course/${data.slug}`)
     }
