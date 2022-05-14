@@ -20,7 +20,7 @@ const StripeSuccess = () => {
         console.log('SUCCESS REQ DATA', data)
 
         // redirect to course page
-        await router.push(`/user/course/${data.slug}`)
+        await router.push(`/user/course/${data.course.slug}`)
     }
 
     return (
