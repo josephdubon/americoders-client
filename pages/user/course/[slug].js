@@ -1,6 +1,10 @@
 import {useRouter} from 'next/router'
 
 const SingleCourse = () => {
+    const [loading, setLoading] = useState(false)
+    const [course, setCourse] = useState({lessons: []}) // course.lessons
+
+    // router
     const router = useRouter()
 
     return (<>
