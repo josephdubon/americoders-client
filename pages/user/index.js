@@ -36,7 +36,7 @@ const UserIndex = () => {
                 <div className='container'>
                     <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
                         <p className='lead'>
-                            Welcome User {JSON.stringify(user, null, 4)}
+                            {JSON.stringify(courses, null, 4)}
                         </p>
                     </div>
                 </div>
