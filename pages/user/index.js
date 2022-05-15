@@ -5,6 +5,9 @@ import UserRoute from '../../components/routes/UserRoute'
 const UserIndex = () => {
     // state
     const [hidden, setHidden] = useState(true)
+    const [courses, setCourses] = useState([])
+
+    // get user
     const {
         state: {user},
     } = useContext(Context)
