@@ -76,7 +76,7 @@ const UserIndex = () => {
                                 <div className='flex-grow-1 ms-3'>
                                     {/* title / link to course*/}
                                     <Link
-                                        href={`/instructor/course/view/${course.slug}`}
+                                        href={`/user/course/${course.slug}`}
                                     >
                                         <a className='mt-2 text-primary'><h5 className='pt-2'>{course.name}</h5></a>
                                     </Link>
@@ -92,7 +92,7 @@ const UserIndex = () => {
                                 </div>
                                 <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
                                     <Link
-                                        href={`/instructor/course/view/${course.slug}`}
+                                        href={`/user/course/${course.slug}`}
                                     >
                                         <a>
                                             <Tooltip title='Go to course'>
