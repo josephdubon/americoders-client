@@ -33,6 +33,13 @@ const UserIndex = () => {
         setLoading(false)
     }
 
+    // style
+    const myStyle = {
+        marginTop: '-15px',
+        fontSize: '10px',
+    }
+
+
     return (<UserRoute>
         <main>
             <section className='py-5 text-center container'>
