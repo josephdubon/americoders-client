@@ -41,6 +41,12 @@ const UserIndex = () => {
 
 
     return (<UserRoute>
+        {loading && (
+            <SyncOutlined
+                spin
+                className='d-flex justify-content-between display-1 text-danger p-5'
+            />
+        )}
         <main>
             <section className='py-5 text-center container'>
                 <div className='row py-lg-5'>
