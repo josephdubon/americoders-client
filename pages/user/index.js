@@ -9,8 +9,8 @@ import Link from 'next/link'
 
 const UserIndex = () => {
     // state
-    const [hidden, setHidden] = useState(true)
     const [courses, setCourses] = useState([])
+    const [loading, setLoading] = useState(false)
 
     // get user
     const {
