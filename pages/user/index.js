@@ -22,7 +22,15 @@ const UserIndex = () => {
     }, [])
 
     const loadCourses = async () => {
-        const {data} = await axios.get('/api/user-courses/')
+        // update state
+        setLoading(true)
+
+        // get data
+        const {data} = await axios.get('/api/user-courses')
+
+        // update state
+        setCourses(data)
+        setLoading(false)
     }
 
     return (<UserRoute>
