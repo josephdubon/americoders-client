@@ -24,7 +24,7 @@ const SingleCourse = () => {
 
     return (<>
         Course Slug:
-        <pre>{JSON.stringify(router, null, 4)}</pre>
+        <pre>{JSON.stringify(course, null, 4)}</pre>
     </>)
 }
 
