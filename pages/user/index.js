@@ -1,6 +1,7 @@
-import {useContext, useState} from 'react'
+import {useContext, useEffect, useState} from 'react'
 import {Context} from '../../context'
 import UserRoute from '../../components/routes/UserRoute'
+import axios from 'axios'
 
 const UserIndex = () => {
     // state
@@ -11,6 +12,14 @@ const UserIndex = () => {
     const {
         state: {user},
     } = useContext(Context)
+
+    useEffect(() => {
+        loadCourses()
+    }, [courses])
+
+    const loadCourses = async () => {
+        const {data} = await axios.get('/api/user-courses/')
+    }
 
     return (<UserRoute>
         <main>
