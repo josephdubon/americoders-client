@@ -59,10 +59,50 @@ const UserIndex = () => {
 
             <div className='album py-5 bg-light'>
                 <div className='container'>
-                    <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
-                        <p className='lead'>
-                            {JSON.stringify(courses, null, 4)}
-                        </p>
+                    <div className='row row-cols-1 row-cols-sm-1 row-cols-md-1 g-1'>
+                        {/* list all courses */}
+                        {courses && courses.map(course => (<>
+                            {/* parent media div */}
+                            <div className='d-flex align-items-center pt-2'>
+                                {/* image media div */}
+                                <div className='flex-shrink-0'>
+                                    {/* image source */}
+                                    <Avatar
+                                        size={80}
+                                        src={course.image ? course.image.Location : '/images/americoders-course.png'}
+                                    />
+                                </div>
+                                {/* media text body */}
+                                <div className='flex-grow-1 ms-3'>
+                                    {/* title / link to course*/}
+                                    <Link
+                                        href={`/instructor/course/view/${course.slug}`}
+                                    >
+                                        <a className='mt-2 text-primary'><h5 className='pt-2'>{course.name}</h5></a>
+                                    </Link>
+                                    <p>{
+                                        // show number of lessons in course
+                                        course.lessons.length} Lessons</p>
+                                    {
+                                        // show requirements message
+                                        <p style={myStyle} className='text-primary'>
+                                            By {course.instructor.name}
+                                        </p>
+                                    }
+                                </div>
+                                <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
+                                    <Link
+                                        href={`/instructor/course/view/${course.slug}`}
+                                    >
+                                        <a>
+                                            <Tooltip title='Go to course'>
+                                                <PlayCircleOutlined className='h5 text-primary'/>
+                                            </Tooltip>
+                                        </a>
+                                    </Link>
+                                </div>
+                            </div>
+                        </>))}
                     </div>
                 </div>
             </div>
