@@ -32,7 +32,6 @@ const SingleCourse = () => {
     const loadCourse = async () => {
         // collect data
         const {data} = await axios.get(`/api/user/course/${slug}`)
-
         // update state
         setCourse(data)
     }
