@@ -105,13 +105,22 @@ const SingleCourse = () => {
                         <>
                             <div className='col alert alert-primary'>
                                 <strong>{course.lessons[clicked].title.substring(0, 30)}</strong>
-                                <span
-                                    className='float-end'
-                                    role='button'
-                                    onClick={markComplete}
-                                >
-                                    Mark as Complete
-                                </span>
+                                {completedLessons.includes(course.lessons[clicked]._id) ? (
+                                    <span
+                                        className='float-end'
+                                        role='button'
+                                        onClick={markIncomplete}
+                                    >
+                    Mark as incomplete
+                  </span>
+                                ) : (
+                                    <span
+                                        className='float-end'
+                                        role='button'
+                                        onClick={markComplete}>
+                    Mark as completed
+                  </span>
+                                )}
                             </div>
 
                             {course.lessons[clicked].video && course.lessons[clicked].video.Location && (<>
