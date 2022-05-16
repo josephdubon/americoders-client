@@ -25,6 +25,10 @@ const SingleCourse = () => {
         if (slug) loadCourse()
     }, [slug])
 
+    useEffect(() => {
+        if (course) loadCompletedLessons()
+    }, [course])
+
     const loadCourse = async () => {
         // collect data
         const {data} = await axios.get(`/api/user/course/${slug}`)
