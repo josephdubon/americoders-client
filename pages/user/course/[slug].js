@@ -4,6 +4,9 @@ import axios from 'axios'
 import StudentRoute from '../../../components/routes/StudentRoute'
 
 const SingleCourse = () => {
+    // state
+    const [clicked, setClicked] = useState(-1)
+    const [collapsed, setCollapsed] = useState(false)
     const [loading, setLoading] = useState(false)
     const [course, setCourse] = useState({lessons: []}) // course.lessons
 
