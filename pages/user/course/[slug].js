@@ -6,7 +6,6 @@ import {Avatar, Menu} from 'antd'
 
 const {Item} = Menu
 
-
 const SingleCourse = () => {
     // state
     const [clicked, setClicked] = useState(-1)
