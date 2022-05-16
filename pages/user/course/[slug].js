@@ -98,7 +98,7 @@ const SingleCourse = () => {
                             </Item>
                         ))}
                     </Menu>
-                </div>
+                </Col>
 
                 <div className='col'>
                     {clicked !== -1 ? (
@@ -146,7 +146,7 @@ const SingleCourse = () => {
                         </>
                     )}
                 </div>
-            </div>
+            </Row>
         </StudentRoute>
     )
 }
