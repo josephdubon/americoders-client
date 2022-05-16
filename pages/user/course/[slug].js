@@ -68,23 +68,33 @@ const SingleCourse = () => {
                 </Menu>
             </div>
 
-                <div className='col'>
-                    {clicked !== -1 ? (
-                        <>
-                            {course.lessons[clicked].video && course.lessons[clicked].video.Location && (
-                                <>
-                                    <div>
-                                        {/* video player */}
-                                        <ReactPlayer
-                                            className='player'
-                                            url={course.lessons[clicked].video.Location}
-                                            width='100%'
-                                            height='100%'
-                                            controls
-                                        />
-                                    </div>
-                                </>
-                            )}
+            <div className='col'>
+                {clicked !== -1 ? (
+                    <>
+                        <div className='col alert alert-primary'>
+                            <strong>{course.lessons[clicked].title.substring(0, 30)}</strong>
+                            <span
+                                className='float-end'
+                                role='button'
+                                onClick={markComplete}
+                            >
+                                    Mark as Complete
+                                </span>
+                        </div>
+
+                        {course.lessons[clicked].video && course.lessons[clicked].video.Location && (<>
+                                <div>
+                                    {/* video player */}
+                                    <ReactPlayer
+                                        className='player'
+                                        url={course.lessons[clicked].video.Location}
+                                        width='100%'
+                                        height='100%'
+                                        controls
+                                    />
+                                </div>
+                            </>
+                        )}
 
                             {/* course description*/}
                             <ReactMarkdown
