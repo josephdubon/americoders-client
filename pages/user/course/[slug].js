@@ -63,9 +63,26 @@ const SingleCourse = () => {
                 <div className='col'>
                     {clicked !== -1 ? (
                         <>
-                            <pre>
-                            {JSON.stringify(course.lessons[clicked], null, 4)}
-                            </pre>
+                            {course.lessons[clicked].video && course.lessons[clicked].video.Location && (
+                                <>
+                                    <div>
+                                        {/* video player */}
+                                        <ReactPlayer
+                                            className='player'
+                                            url={course.lessons[clicked].video.Location}
+                                            width='100%'
+                                            height='100%'
+                                            controls
+                                        />
+                                    </div>
+                                </>
+                            )}
+
+                            {/* course description*/}
+                            <ReactMarkdown
+                                children={course.lessons[clicked].content}
+                                className='single-post'
+                            />
                         </>
                     ) : (
                         <>
