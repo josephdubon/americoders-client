@@ -2,10 +2,16 @@ import {createElement, useEffect, useState} from 'react'
 import {useRouter} from 'next/router'
 import axios from 'axios'
 import StudentRoute from '../../../components/routes/StudentRoute'
-import {Avatar, Button, Menu} from 'antd'
+import {Avatar, Button, Col, Menu, Row} from 'antd'
 import ReactPlayer from 'react-player'
 import ReactMarkdown from 'react-markdown'
-import {MenuFoldOutlined, MenuUnfoldOutlined, PlayCircleOutlined} from '@ant-design/icons'
+import {
+    CheckCircleFilled,
+    MenuFoldOutlined,
+    MenuUnfoldOutlined,
+    MinusCircleFilled,
+    PlayCircleOutlined
+} from '@ant-design/icons'
 
 const {Item} = Menu
 
@@ -123,25 +129,28 @@ const SingleCourse = () => {
                                 )}
                             </div>
 
-                            {course.lessons[clicked].video && course.lessons[clicked].video.Location && (<>
-                                    <div>
-                                        {/* video player */}
-                                        <ReactPlayer
-                                            className='player'
-                                            url={course.lessons[clicked].video.Location}
-                                            width='100%'
-                                            height='100%'
-                                            controls
-                                        />
-                                    </div>
-                                </>
-                            )}
+                            {course.lessons[clicked].video &&
+                                course.lessons[clicked].video.Location && (
+                                    <>
+                                        <div>
+                                            <ReactPlayer
+                                                className='player'
+                                                url={course.lessons[clicked].video.Location}
+                                                width='100%'
+                                                height='100%'
+                                                controls
+                                            />
+                                        </div>
+                                    </>
+                                )}
 
-                            {/* course description*/}
-                            <ReactMarkdown
-                                children={course.lessons[clicked].content}
-                                className='single-post'
-                            />
+                            <div>
+                                {/* course description*/}
+                                <ReactMarkdown
+                                    children={course.lessons[clicked].content}
+                                    className='single-post'
+                                />
+                            </div>
                         </>
                     ) : (
                         <>
