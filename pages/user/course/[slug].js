@@ -33,8 +33,16 @@ const SingleCourse = () => {
         <StudentRoute>
             <div className='row'>
                 <div
-                    className='col'
-                    style={{maxWidth: 320}}>
+                    style={{maxWidth: 320}}
+                >
+                    <Button
+                        disabled={loading}
+                        onClick={() => setCollapsed(!collapsed)}
+                        className='text-primary mt-1 btn-block mb-2'
+                    >
+                        {createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}{' '}
+                        {!collapsed && 'Lessons'}
+                    </Button>
                     <Menu
                         defaultSelectedKeys={[clicked]}
                         inlineCollapsed={collapsed}
