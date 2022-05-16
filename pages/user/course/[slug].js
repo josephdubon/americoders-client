@@ -14,7 +14,8 @@ const SingleCourse = () => {
     const [clicked, setClicked] = useState(-1)
     const [collapsed, setCollapsed] = useState(false)
     const [loading, setLoading] = useState(false)
-    const [course, setCourse] = useState({lessons: []}) // course.lessons
+    const [course, setCourse] = useState({lessons: []}) // course.lessonn
+    const [completedLessons, setCompletedLessons] = useState([])
 
     // router
     const router = useRouter()
