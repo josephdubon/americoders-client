@@ -153,15 +153,12 @@ const SingleCourse = () => {
                             </div>
                         </>
                     ) : (
-                        <>
-                            <div className='display-flex justify-content-center p-5'>
-                                <div className='text-center p-5'>
-                                    <PlayCircleOutlined
-                                        className='text-primary display-1 p-5'/>
-                                    <p className='lead'>Click on a lesson to start learning!</p>
-                                </div>
+                        <div className='d-flex justify-content-center p-5'>
+                            <div className='text-center p-5'>
+                                <PlayCircleOutlined className='text-primary display-1 p-5'/>
+                                <p className='lead'>Welcome! Click on the lessons to start learning</p>
                             </div>
-                        </>
+                        </div>
                     )}
                 </div>
             </Row>
