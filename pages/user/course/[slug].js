@@ -52,11 +52,18 @@ const SingleCourse = () => {
         console.log(data)
     }
 
-    return (<StudentRoute>
-            <div className='row'>
-                <div
-                    style={{maxWidth: 320}}
-                >
+    const markIncomplete = async () => {
+        const {data} = await axios.post(`/api/mark-incomplete`, {
+            courseId: course._id,
+            lessonId: course.lessons[clicked]._id
+        })
+        console.log(data)
+    }
+
+    return (
+        <StudentRoute>
+            <Row>
+                <Col>
                     <Button
                         disabled={loading}
                         onClick={() => setCollapsed(!collapsed)}
