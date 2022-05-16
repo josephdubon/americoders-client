@@ -2,6 +2,10 @@ import {useEffect, useState} from 'react'
 import {useRouter} from 'next/router'
 import axios from 'axios'
 import StudentRoute from '../../../components/routes/StudentRoute'
+import {Avatar, Menu} from 'antd'
+
+const {Item} = Menu
+
 
 const SingleCourse = () => {
     // state
@@ -26,10 +30,45 @@ const SingleCourse = () => {
         setCourse(data)
     }
 
-    return (<StudentRoute>
-        Course Slug:
-        <pre>{JSON.stringify(course, null, 4)}</pre>
-    </StudentRoute>)
+    return (
+        <StudentRoute>
+            <div className='row'>
+                <div
+                    className='col'
+                    style={{maxWidth: 320}}>
+                    <Menu
+                        defaultSelectedKeys={[clicked]}
+                        inlineCollapsed={collapsed}
+                        style={{height: '80vh', overflow: 'scroll'}}
+                    >
+                        {course.lessons.map((lesson, index) => (
+                            <Item
+                                onClick={() => setClicked(index)}
+                                key={index}
+                                icon={<Avatar>{index}</Avatar>}
+                            >
+                                {lesson.title.substring(0, 30)}
+                            </Item>
+                        ))}
+                    </Menu>
+                </div>
+
+                <div className='col'>
+                    {clicked !== -1 ? (
+                        <>
+                            <pre>
+                            {JSON.stringify(course.lessons[clicked], null, 4)}
+                            </pre>
+                        </>
+                    ) : (
+                        <>
+                            Click on a lesson to start learning!
+                        </>
+                    )}
+                </div>
+            </div>
+        </StudentRoute>
+    )
 }
 
 export default SingleCourse
