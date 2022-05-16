@@ -37,6 +37,14 @@ const SingleCourse = () => {
         setCourse(data)
     }
 
+    const loadCompletedLessons = async () => {
+        const {data} = await axios.post(`/api/list-complete`, {
+            courseId: course._id,
+        })
+        console.log('COMPLETED LESSONS => ', data)
+        setCompletedLessons(data)
+    }
+
     const markComplete = async () => {
         const {data} = await axios.post(`/api/mark-complete`, {
             courseId: course._id,
