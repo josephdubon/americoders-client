@@ -41,60 +41,60 @@ const SingleCourse = () => {
     }
 
     return (<StudentRoute>
-        <div className='row'>
-            <div
-                style={{maxWidth: 320}}
-            >
-                <Button
-                    disabled={loading}
-                    onClick={() => setCollapsed(!collapsed)}
-                    className='text-primary mt-1 btn-block mb-2'
+            <div className='row'>
+                <div
+                    style={{maxWidth: 320}}
                 >
-                    {createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}{' '}
-                    {!collapsed && 'Lessons'}
-                </Button>
-                <Menu
-                    defaultSelectedKeys={[clicked]}
-                    inlineCollapsed={collapsed}
-                    style={{height: '80vh', overflow: 'scroll'}}
-                >
-                    {course.lessons.map((lesson, index) => (<Item
-                        onClick={() => setClicked(index)}
-                        key={index}
-                        icon={<Avatar>{index}</Avatar>}
+                    <Button
+                        disabled={loading}
+                        onClick={() => setCollapsed(!collapsed)}
+                        className='text-primary mt-1 btn-block mb-2'
                     >
-                        {lesson.title.substring(0, 30)}
-                    </Item>))}
-                </Menu>
-            </div>
+                        {createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}{' '}
+                        {!collapsed && 'Lessons'}
+                    </Button>
+                    <Menu
+                        defaultSelectedKeys={[clicked]}
+                        inlineCollapsed={collapsed}
+                        style={{height: '80vh', overflow: 'scroll'}}
+                    >
+                        {course.lessons.map((lesson, index) => (<Item
+                            onClick={() => setClicked(index)}
+                            key={index}
+                            icon={<Avatar>{index}</Avatar>}
+                        >
+                            {lesson.title.substring(0, 30)}
+                        </Item>))}
+                    </Menu>
+                </div>
 
-            <div className='col'>
-                {clicked !== -1 ? (
-                    <>
-                        <div className='col alert alert-primary'>
-                            <strong>{course.lessons[clicked].title.substring(0, 30)}</strong>
-                            <span
-                                className='float-end'
-                                role='button'
-                                onClick={markComplete}
-                            >
+                <div className='col'>
+                    {clicked !== -1 ? (
+                        <>
+                            <div className='col alert alert-primary'>
+                                <strong>{course.lessons[clicked].title.substring(0, 30)}</strong>
+                                <span
+                                    className='float-end'
+                                    role='button'
+                                    onClick={markComplete}
+                                >
                                     Mark as Complete
                                 </span>
-                        </div>
+                            </div>
 
-                        {course.lessons[clicked].video && course.lessons[clicked].video.Location && (<>
-                                <div>
-                                    {/* video player */}
-                                    <ReactPlayer
-                                        className='player'
-                                        url={course.lessons[clicked].video.Location}
-                                        width='100%'
-                                        height='100%'
-                                        controls
-                                    />
-                                </div>
-                            </>
-                        )}
+                            {course.lessons[clicked].video && course.lessons[clicked].video.Location && (<>
+                                    <div>
+                                        {/* video player */}
+                                        <ReactPlayer
+                                            className='player'
+                                            url={course.lessons[clicked].video.Location}
+                                            width='100%'
+                                            height='100%'
+                                            controls
+                                        />
+                                    </div>
+                                </>
+                            )}
 
                             {/* course description*/}
                             <ReactMarkdown
