@@ -70,13 +70,26 @@ const SingleCourse = () => {
                         inlineCollapsed={collapsed}
                         style={{height: '80vh', overflow: 'scroll'}}
                     >
-                        {course.lessons.map((lesson, index) => (<Item
-                            onClick={() => setClicked(index)}
-                            key={index}
-                            icon={<Avatar>{index}</Avatar>}
-                        >
-                            {lesson.title.substring(0, 30)}
-                        </Item>))}
+                        {course.lessons.map((lesson, index) => (
+                            <Item
+                                onClick={() => setClicked(index)}
+                                key={index}
+                                icon={<Avatar>{index + 1}</Avatar>}
+                            >
+                                {lesson.title.substring(0, 30)}{' '}
+                                {completedLessons.includes(lesson._id) ? (
+                                    <CheckCircleFilled
+                                        className='float-end text-primary ml-2'
+                                        style={{marginTop: '13px'}}
+                                    />
+                                ) : (
+                                    <MinusCircleFilled
+                                        className='float-end text-danger ml-2'
+                                        style={{marginTop: '13px'}}
+                                    />
+                                )}
+                            </Item>
+                        ))}
                     </Menu>
                 </div>
 
