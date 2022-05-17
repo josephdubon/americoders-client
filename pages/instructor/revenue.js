@@ -8,6 +8,7 @@ import {stripeCurrencyFormatter} from '../../utils/helpers'
 const InstructorRevenue = () => {
     // state
     const [balance, setBalance] = useState({pending: []})
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         sendBalanceRequest()
