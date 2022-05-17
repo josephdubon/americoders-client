@@ -2,7 +2,14 @@ import {useEffect, useState} from 'react'
 import {useRouter} from 'next/router'
 import axios from 'axios'
 import InstructorRoute from '../../../../components/routes/InstructorRoute'
-import {CheckOutlined, CloseOutlined, EditOutlined, QuestionOutlined, UploadOutlined} from '@ant-design/icons'
+import {
+    CheckOutlined,
+    CloseOutlined,
+    EditOutlined,
+    QuestionOutlined,
+    UploadOutlined,
+    UserSwitchOutlined
+} from '@ant-design/icons'
 import {Avatar, Button, List, Modal, Tooltip} from 'antd'
 import ReactMarkdown from 'react-markdown'
 import AddLessonForm from '../../../../components/forms/AddLessonForm'
@@ -27,6 +34,7 @@ const CourseView = () => {
     const [uploading, setUploading] = useState(false)
     const [uploadButtonText, setUploadButtonText] = useState('Upload video')
     const [progress, setProgress] = useState(0)
+    const [students, setStudents] = useState(0)
 
     // router config
     const router = useRouter()
@@ -36,6 +44,18 @@ const CourseView = () => {
     useEffect(() => {
         loadCourse()
     }, [slug]) // use slug as dependency to run loadCourse in useEffect
+
+    useEffect(() => {
+        course && studentCount()
+    }, [course])
+
+    const studentCount = async () => {
+        const {data} = await axios.post(`/api/instructor/student-count`, {
+            courseId: course._id,
+        })
+        console.log('STUDENT COUNT => ', data)
+        setStudents(data.length)
+    }
 
     // load requested course by slug
     const loadCourse = async () => {
@@ -108,10 +128,10 @@ const CourseView = () => {
             // save progress bar and send video as form data to backend
             const {data} = await axios.post(`/api/course/upload-video/${course.instructor._id}`,
                 videoData, {
-                onUploadProgress: (e) => {
-                    setProgress(Math.round((100 * e.loaded) / e.total))
-                },
-            })
+                    onUploadProgress: (e) => {
+                        setProgress(Math.round((100 * e.loaded) / e.total))
+                    },
+                })
 
             // once response is received update state
             setValues({...values, video: data})
@@ -267,8 +287,18 @@ const CourseView = () => {
                                 </div>
 
                                 {/* action icons */}
-                                {/* edit */}
+                                {/* student count */}
                                 <div className='d-flex mr-4 gap-3'>
+                                    <Tooltip title={`${students} Currently Enrolled`}>
+                                        <UserSwitchOutlined
+                                            onClick={() =>
+                                                router.push(`/instructor/course/edit/${slug}`)
+                                            }
+                                            className='h5 text-success mr-4'
+                                        />
+                                    </Tooltip>
+
+                                    {/* edit */}
                                     <Tooltip title='Edit'>
                                         <EditOutlined
                                             onClick={() =>
@@ -281,7 +311,7 @@ const CourseView = () => {
                                     {/* render publish icon if min of 6 lessons is met */}
                                     {course.lessons && course.lessons.length < 5 ?
                                         <Tooltip title='Minimum of 5 lessons required to publish'>
-                                            <QuestionOutlined  role='button' className='h5 text-danger'/>
+                                            <QuestionOutlined role='button' className='h5 text-danger'/>
                                         </Tooltip> : course.published ? (
 
                                             // unpublish

@@ -15,11 +15,21 @@ const InstructorNav = () => {
     return (<>
         <div className='nav flex-column nav-pills'>
             <Link href='/instructor'>
-                <a className={`nav-link ${currentPage === '/instructor' && 'active'}`}>Dashboard</a>
+                <a className={`nav-link ${currentPage === '/instructor' && 'active'}`}>
+                    Dashboard
+                </a>
             </Link>
 
             <Link href='/instructor/course/create'>
-                <a className={`nav-link ${currentPage === '/instructor/course/create' && 'active'}`}>Create Course</a>
+                <a className={`nav-link ${currentPage === '/instructor/course/create' && 'active'}`}>
+                    Create Course
+                </a>
+            </Link>
+
+            <Link href='/instructor/revenue'>
+                <a className={`nav-link ${currentPage === '/instructor/revenue' && 'active'}`}>
+                    Revenue
+                </a>
             </Link>
         </div>
     </>)

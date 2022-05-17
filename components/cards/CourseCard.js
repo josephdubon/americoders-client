@@ -1,6 +1,6 @@
 import {Badge, Card} from 'antd'
 import Link from 'next/link'
-import {currencyFormatter} from '../../utils/currency'
+import {currencyFormatter} from '../../utils/helpers'
 
 const {Meta} = Card
 
