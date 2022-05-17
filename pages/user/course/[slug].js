@@ -113,7 +113,9 @@ const SingleCourse = () => {
                                 key={index}
                                 icon={<Avatar>{index + 1}</Avatar>}
                             >
-                                {lesson.title.substring(0, 30)}{' '}
+                                <span style={{marginRight: '25px'}}>
+                                    {lesson.title.substring(0, 30)}
+                                </span>
                                 {completedLessons.includes(lesson._id) ? (
                                     <CheckCircleFilled
                                         className='float-end text-primary ml-2'
@@ -163,6 +165,7 @@ const SingleCourse = () => {
                                                 width='100%'
                                                 height='100%'
                                                 controls
+                                                onEnded={markComplete} // update lesson completed status on video complete
                                             />
                                         </div>
                                     </>
