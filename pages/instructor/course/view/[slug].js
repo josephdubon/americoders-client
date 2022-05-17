@@ -298,6 +298,16 @@ const CourseView = () => {
                                         />
                                     </Tooltip>
 
+                                    {/* edit */}
+                                    <Tooltip title='Edit'>
+                                        <EditOutlined
+                                            onClick={() =>
+                                                router.push(`/instructor/course/edit/${slug}`)
+                                            }
+                                            className='h5 text-warning mr-4'
+                                        />
+                                    </Tooltip>
+
                                     {/* render publish icon if min of 6 lessons is met */}
                                     {course.lessons && course.lessons.length < 5 ?
                                         <Tooltip title='Minimum of 5 lessons required to publish'>
