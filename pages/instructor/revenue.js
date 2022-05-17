@@ -65,11 +65,18 @@ const InstructorRevenue = () => {
                     <small>For 48 Hours</small>
                     <hr/>
                     <h4>
-                        Payouts <SettingOutlined
-                        className='float-end'
-                        role='button'
-                        onClick={handlePayoutSettings}
-                    />
+                        Payouts{' '}
+                        {!loading ?
+                            <SettingOutlined
+                                className='float-end'
+                                role='button'
+                                onClick={handlePayoutSettings}
+                            />
+                            :
+                            <SyncOutlined
+                                className='float-end'
+                                role='button'
+                            />}
                     </h4>
                     <small>
                         Update your Stripe account details or view previous payouts.
