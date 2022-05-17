@@ -57,7 +57,8 @@ const SingleCourse = () => {
             courseId: course._id,
             lessonId: course.lessons[clicked]._id
         })
-        console.log(data)
+        setCompletedLessons([...completedLessons, course.lessons[clicked]._id])
+        setUpdateState(!updateState)
     }
 
     const markIncomplete = async () => {
