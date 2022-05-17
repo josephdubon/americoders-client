@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react'
 import InstructorRoute from '../../components/routes/InstructorRoute'
 import {DollarOutlined, SettingOutlined} from '@ant-design/icons'
 import {Col, Row} from 'antd'
+import axios from 'axios'
+import {currencyFormatter, stripeCurrencyFormatter} from '../../utils/helpers'
 
 const InstructorRevenue = () => {
     // state
@@ -12,8 +14,11 @@ const InstructorRevenue = () => {
     }, [])
 
     const sendBalanceRequest = async () => {
-        console.log(' send balance request')
+        // collect data
+        const {data} = await axios.get('/api/instructor/balance')
 
+        // update state
+        setBalance(data)
     }
 
     const handlePayoutSettings = async () => {
