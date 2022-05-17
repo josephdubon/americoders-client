@@ -1,5 +1,5 @@
 import {Badge, Button, Col, Image} from 'antd'
-import {currencyFormatter} from '../../utils/currency'
+import {currencyFormatter} from '../../utils/helpers'
 import ReactPlayer from 'react-player'
 import {LoadingOutlined, SafetyOutlined} from '@ant-design/icons'
 
