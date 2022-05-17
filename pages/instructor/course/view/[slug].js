@@ -287,14 +287,14 @@ const CourseView = () => {
                                 </div>
 
                                 {/* action icons */}
-                                {/* edit */}
+                                {/* student count */}
                                 <div className='d-flex mr-4 gap-3'>
-                                    <Tooltip title='Edit'>
-                                        <EditOutlined
+                                    <Tooltip title={`${students} Currently Enrolled`}>
+                                        <UserSwitchOutlined
                                             onClick={() =>
                                                 router.push(`/instructor/course/edit/${slug}`)
                                             }
-                                            className='h5 text-warning mr-4'
+                                            className='h5 text-success mr-4'
                                         />
                                     </Tooltip>
 
