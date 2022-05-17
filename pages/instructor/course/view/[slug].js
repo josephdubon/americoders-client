@@ -34,6 +34,7 @@ const CourseView = () => {
     const [uploading, setUploading] = useState(false)
     const [uploadButtonText, setUploadButtonText] = useState('Upload video')
     const [progress, setProgress] = useState(0)
+    const [students, setStudents] = useState(0)
 
     // router config
     const router = useRouter()
