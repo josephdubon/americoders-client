@@ -1,9 +1,9 @@
 import {useEffect, useState} from 'react'
 import InstructorRoute from '../../components/routes/InstructorRoute'
-import {DollarOutlined, SettingOutlined} from '@ant-design/icons'
+import {DollarOutlined, SettingOutlined, SyncOutlined} from '@ant-design/icons'
 import {Col, Row} from 'antd'
 import axios from 'axios'
-import {currencyFormatter, stripeCurrencyFormatter} from '../../utils/helpers'
+import {stripeCurrencyFormatter} from '../../utils/helpers'
 
 const InstructorRevenue = () => {
     // state
