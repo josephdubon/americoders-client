@@ -62,8 +62,17 @@ const TopNav = () => {
 
     return (<>
         <Menu
+            theme='dark'
             mode='horizontal'
             selectedKeys={[currentPage]}
+            defaultSelectedKeys={[currentPage]}
+            items={new Array(15).fill(null).map((_, index) => {
+                const key = index + 1
+                return {
+                    key,
+                    label: `nav ${key}`,
+                }
+            })}
             className='mb-2'
         >
             <Item
@@ -93,18 +102,6 @@ const TopNav = () => {
                     </Link>
                 </Item>
             </>) : (<>
-                {/* Other Role */}
-                <Item
-                    key='/user/become-instructor'
-                    onClick={(e) => {
-                        setCurrentPage(e.key)
-                    }}
-                    icon={<TeamOutlined/>}
-                >
-                    <Link href='/user/become-instructor'>
-                        <a>Become Instructor</a>
-                    </Link>
-                </Item>
             </>)}
 
             {/* not logged in user menu */}
