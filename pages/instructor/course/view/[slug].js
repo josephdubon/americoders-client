@@ -45,6 +45,18 @@ const CourseView = () => {
         loadCourse()
     }, [slug]) // use slug as dependency to run loadCourse in useEffect
 
+    useEffect(() => {
+        course && studentCount()
+    }, [course])
+
+    const studentCount = async () => {
+        const {data} = await axios.post(`/api/instructor/student-count`, {
+            courseId: course._id,
+        })
+        console.log('STUDENT COUNT => ', data)
+        setStudents(data.length)
+    }
+
     // load requested course by slug
     const loadCourse = async () => {
         // make get request
