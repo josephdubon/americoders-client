@@ -23,6 +23,9 @@ const SingleCourse = () => {
     const [course, setCourse] = useState({lessons: []}) // course.lessonn
     const [completedLessons, setCompletedLessons] = useState([])
 
+    // force stat update
+    const [updateState, setUpdateState] = useState(false)
+
     // router
     const router = useRouter()
     const {slug} = router.query
