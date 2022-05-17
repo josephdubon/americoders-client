@@ -30,7 +30,12 @@ const InstructorRevenue = () => {
                     <small>You get paid directly from Stripe to your bank account every 48 hours.</small>
                     <hr/>
                     <h4>
-                        Pending Balance <span className='float-end'>$0.00</span>
+                        Pending balance {balance.pending &&
+                        balance.pending.map((bp, i) => (
+                            <span key={i} className='float-end'>
+                    {stripeCurrencyFormatter(bp)}
+                  </span>
+                        ))}
                     </h4>
                     <small>For 48 Hours</small>
                     <hr/>
