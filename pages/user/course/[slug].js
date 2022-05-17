@@ -62,11 +62,32 @@ const SingleCourse = () => {
     }
 
     const markIncomplete = async () => {
-        const {data} = await axios.post(`/api/mark-incomplete`, {
-            courseId: course._id,
-            lessonId: course.lessons[clicked]._id
-        })
-        console.log(data)
+        try {
+            const {data} = await axios.post(`/api/mark-incomplete`, {
+                courseId: course._id,
+                lessonId: course.lessons[clicked]._id
+            })
+
+            console.log(data)
+
+            // get completed lessons
+            const all = completedLessons
+
+            // find index of lesson
+            const index = all.indexOf(course.lessons[clicked]._id)
+
+            // remove lesson from completed array
+            if (index > -1) {
+                all.splice(index, 1)
+            }
+
+            // update state
+            setCompletedLessons(all)
+            setUpdateState(!updateState)
+        } catch (err) {
+            console.log(err)
+        }
+
     }
 
     return (
