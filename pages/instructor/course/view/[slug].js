@@ -128,10 +128,10 @@ const CourseView = () => {
             // save progress bar and send video as form data to backend
             const {data} = await axios.post(`/api/course/upload-video/${course.instructor._id}`,
                 videoData, {
-                onUploadProgress: (e) => {
-                    setProgress(Math.round((100 * e.loaded) / e.total))
-                },
-            })
+                    onUploadProgress: (e) => {
+                        setProgress(Math.round((100 * e.loaded) / e.total))
+                    },
+                })
 
             // once response is received update state
             setValues({...values, video: data})
