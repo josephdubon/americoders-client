@@ -21,3 +21,82 @@
 label {
     margin-bottom: 0.5rem;
 }
+
+.site-layout-content {
+    min-height: 280px;
+    padding: 24px;
+    background: var(--white);
+}
+
+.logo {
+    float: left;
+    width: 120px;
+    height: 31px;
+    margin: 16px 24px 16px 0;
+    background: var(--dark-blue);
+}
+
+/**/
+
+
+/**/
+
+.ant-layout,
+.ant-layout-content {
+    background-color: var(--dark-blue);
+}
+
+.bg-primary,
+.btn-primary {
+    background-color: var(--blue) !important;
+}
+
+.btn-outline-primary {
+    color: var(--blue) !important;
+    border-color: var(--blue) !important;
+}
+
+.border-primary {
+    border-color: var(--blue) !important;
+}
+
+.ant-row-rtl .logo {
+    float: right;
+    margin: 16px 0 16px 24px;
+}
+
+.ant-menu-dark {
+    color: var(--white);
+}
+
+.ant-menu-item-selected {
+}
+
+/**/
+
+.hero-section {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)),
+    url('/images/branding/bg-images/americoders-kids-laptop-fun.jpg');
+    /* Set a specific height */
+    height: 80vh;
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    font-size: 5rem;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--white);
+    text-shadow: black 10px 10px 25px;
+}
+
+/**/
