@@ -1,8 +1,8 @@
-import {useContext, useEffect, useState} from 'react'
-import {SyncOutlined} from '@ant-design/icons'
 import Link from 'next/link'
-import {useRouter} from 'next/router'
-import {Context} from '../context'
+import {Image, Layout} from 'antd'
+import MailingListForm from '../components/forms/MailingListForm'
+
+const {Header, Content, Footer} = Layout
 
 const axios = require('axios')
 const {toast} = require('react-toastify')
