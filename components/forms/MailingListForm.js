@@ -48,7 +48,7 @@ export default function MailingListForm() {
     >
         <p className='lead text-light text-center ant-dropdown-menu-submenu-title'>Enter your email to join our early students list.</p>
         <Form
-            style={{width: '250px', margin: '0 auto'}}
+            style={{width: '320px', margin: '0 auto'}}
             name='basic'
             initialValues={{
                 remember: true,
