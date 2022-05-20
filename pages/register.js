@@ -73,14 +73,61 @@ const Register = () => {
     }
 
     return (<>
-        <main>
-            <section className='py-5 text-center container'>
-                <div className='row py-lg-5'>
-                    <div className='col-lg-6 col-md-8 mx-auto'>
-                        <h1 className='fw-light'>Register</h1>
+        {/* hero section */}
+        <Content className='bg-light'>
+            <div className='container col-xxl-8 px-4 py-5'>
+                <div className='row flex-lg-row-reverse align-items-center justify-content-center g-5 py-5'>
+                    <div className='col-10 col-sm-8 col-lg-6'>
+                        <Image
+                            src='/images/branding/bg-images/americoders-students-desktop.jpg'
+                            alt='Americoders'
+                            loading='lazy'
+                            preview={false}
+                        />
+                    </div>
+                    <div className='col-lg-6'>
+                        <h1 className='display-5 fw-bold lh-1 mb-3'>Early Students Mailing List</h1>
+                        <p className='lead text-muted'>
+                            Hello future <strong className='text-primary fw-bold'>Americoder</strong>!
+                            <br/>
+                            <br/>
+                            Thank you for your patience as we build out our system. We are currently in development of
+                            our first courses/workshops.
+                        </p>
+                        <p className='lead text-muted'>
+                            Use the form below to signup for our early students list. Be the first
+                            to know once we launch the <strong
+                            className='text-primary fw-bold'>Americoders</strong> app.
+                        </p>
+                        <p className='lead text-muted'>
+                            Our first workshops scheduled to begin in June 2022.
+                            <br/>
+                            <span
+                                className='small text-danger fw-bold'>Limited
+                            Spots Available.</span>
+                        </p>
+                        {/* buttons */}
+                        <div className='d-grid gap-2 d-md-flex justify-content-md-start'>
+                            <Link href='#sign-up'>
+                                <a>
+                                    <button type='button' className='btn btn-primary btn-lg px-4 me-md-2'>Early Sign-Up
+                                    </button>
+                                </a>
+                            </Link>
+
+                            <Link href='/#more-info'>
+                                <a>
+                                    <button type='button' className='btn btn-outline-secondary btn-lg px-4'>More
+                                        Info
+                                    </button>
+                                </a>
+                            </Link>
+
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </Content>
 
             <div className='album py-5 bg-light'>
                 <div className='container'>
