@@ -1,7 +1,6 @@
 import axios from 'axios'
 import {Image, Layout} from 'antd'
 import Link from 'next/link'
-import CourseCard from '../components/cards/CourseCard'
 
 const {Header, Content, Footer} = Layout
 
@@ -226,9 +225,13 @@ const Index = ({courses}) => {
                                         <li>Free Courses Access on Web App</li>
                                         <li>Email support</li>
                                     </ul>
-                                    <button type='button' className='w-100 btn btn-lg btn-outline-danger'>
-                                        Registration Opening Soon
-                                    </button>
+                                    <Link href='/register'>
+                                        <a>
+                                            <button type='button' className='w-100 btn btn-lg btn-outline-danger'>
+                                                Registration Opening Soon
+                                            </button>
+                                        </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -249,9 +252,13 @@ const Index = ({courses}) => {
                                         <li>Priority email support</li>
                                         <li>Help center access</li>
                                     </ul>
-                                    <button type='button' className='w-100 btn btn-lg btn-danger'>
-                                        Registration Opening Soon
-                                    </button>
+                                    <Link href='/register'>
+                                        <a>
+                                            <button type='button' className='w-100 btn btn-lg btn-danger'>
+                                                Registration Opening Soon
+                                            </button>
+                                        </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -272,9 +279,13 @@ const Index = ({courses}) => {
                                         <li>Priority Phone and email support</li>
                                         <li>Help center access</li>
                                     </ul>
-                                    <button type='button' className='w-100 btn btn-lg btn-danger'>
-                                        Registration Opening Soon
-                                    </button>
+                                    <Link href='/register'>
+                                        <a>
+                                            <button type='button' className='w-100 btn btn-lg btn-danger'>
+                                                Registration Opening Soon
+                                            </button>
+                                        </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
