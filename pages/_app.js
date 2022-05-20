@@ -1,4 +1,3 @@
-import TopBanner from '../components/top-banner/TopBanner';
 import {useEffect} from 'react'
 
 import TopNav from '../components/nav/TopNav'
@@ -16,8 +15,8 @@ const {ToastContainer} = require('react-toastify')
 function MyApp({Component, pageProps}) {
     // add this for bootstrap js components to render correctly
     useEffect(() => {
-        import('bootstrap/dist/js/bootstrap');
-    }, []);
+        import('bootstrap/dist/js/bootstrap')
+    }, [])
 
     return (
         // wrap app in provider for access to state
@@ -33,7 +32,6 @@ function MyApp({Component, pageProps}) {
                 draggable
                 pauseOnHover
             />
-            <TopBanner/>
             <TopNav/>
             <Component {...pageProps}/>
             <Footer/>
