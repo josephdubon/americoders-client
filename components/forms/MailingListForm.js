@@ -44,7 +44,7 @@ export default function MailingListForm() {
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo)
     }
-    return (<Layout className='site-layout-background'
+    return (<Layout
     >
         <Form
             style={{width: '250px', margin: '0 auto'}}
