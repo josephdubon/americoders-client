@@ -42,7 +42,8 @@ const Index = ({courses}) => {
                             <p className='lead text-muted'>
                                 <strong>Americoders</strong> is for anyone of any age that wants to
                                 learn skills that will lead to the betterment of not only your life but the lives of
-                                everyone around you.
+                                everyone around you. We can do this by understanding the time we live in as well as
+                                magnifying our ability to see opportunity in this new age.
                             </p>
                             {/* buttons */}
                             <div className='d-grid gap-2 d-md-flex justify-content-md-start'>
