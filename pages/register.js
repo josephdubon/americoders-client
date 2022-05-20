@@ -140,41 +140,26 @@ const Register = () => {
                             </svg>
                         </div>
 
-                        <form onSubmit={handleSubmit}>
-                            <input
-                                type='text'
-                                className='form-control mb-4 p-4'
-                                value={name}
-                                onChange={e => setName(e.target.value)}
-                                placeholder='Enter name'
-                                required
-                            />
-                            <input
-                                type='text'
-                                className='form-control mb-4 p-4'
-                                value={email}
-                                onChange={e => setEmail(e.target.value)}
-                                placeholder='Enter email'
-                                required
-                            />
-                            <input
-                                type='password'
-                                className='form-control mb-4 p-4'
-                                value={password}
-                                onChange={e => setPassword(e.target.value)}
-                                placeholder='Enter password'
-                                required
-                            />
-                            <div className='d-grid gap-2'>
-                                <button
-                                    type='submit'
-                                    className='btn btn-primary'
-                                    disabled={!name || !email || !password || loading}
-                                >
-                                    {loading ? <SyncOutlined spin/> : 'Submit'}
-                                </button>
-                            </div>
-                        </form>
+                        <h2 className='text-light'>Unlock a 20% Discount</h2>
+                        <p className='text-light'>
+
+                        </p>
+                        <p className='text-light'>
+                            Welcome to Americoders, the #1 online and in-person technology advocacy learning system for
+                            kids and adults of all ages. We offer live, world-class, in-person computer science
+                            workshops and courses in a mindful and peaceful, judgment-free zone.
+                        </p>
+                        <p className='text-light fw-bold'>
+                            Projects: <br/>
+                            Learn to Code | Build Games | Solve Puzzles | Build Hardware Projects
+                        </p>
+                        <MailingListForm/>
+                    </div>
+                    <div className='feature col'>
+                        <div className='feature-icon bg-primary bg-gradient'>
+                            <svg className='bi' width='1em' height='1em'>
+                            </svg>
+                        </div>
 
                         <p className='text-center p3'>
                             Already registered?
