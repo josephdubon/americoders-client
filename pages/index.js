@@ -38,15 +38,13 @@ const Index = ({courses}) => {
                                 Hello friend,
                                 <br/>
                                 <br/>
-                                Welcome to the <strong>Americoders</strong> web-app. We are an online
-                                learning platform dedicated to the advancement and technological development of the
-                                peoples of our community.
+                                Welcome to the <strong className='text-primary fw-bold'>Americoders</strong> web-app.
+                                Thank you for your interest and support with this community project. We are an online
+                                learning platform dedicated to the technological development/education of the peoples of
+                                our community.
                             </p>
                             <p className='lead text-muted'>
-                                <strong>Americoders</strong> is for anyone of any age that wants to
-                                learn skills that will lead to the betterment of not only your life but the lives of
-                                everyone around you. We can do this by understanding the time we live in as well as
-                                magnifying our ability to see opportunity in this new age.
+                                Join us as we educate, evolve, and adapt to this new digital age.
                             </p>
                             {/* buttons */}
                             <div className='d-grid gap-2 d-md-flex justify-content-md-start'>
