@@ -120,9 +120,9 @@ const Index = ({courses}) => {
                                 Our habits determine our future. We have the option to not only survive but thrive in
                                 the coming future.
                             </p>
-                            <p className='text-light fw-bold'>
-                                Technological advancements are emerging and
-                                blooming in front of our very eyes.
+                            <p className='text-light'>
+                                There are many useful skills that our kids (and ourselves) can learn
+                                to get ahead in life, but few are as flexible and fun as the ability to code.
                             </p>
                         </div>
 
