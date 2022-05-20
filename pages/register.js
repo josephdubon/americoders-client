@@ -161,17 +161,23 @@ const Register = () => {
                             </svg>
                         </div>
 
-                        <p className='text-center p3'>
-                            Already registered?
-                            <Link href='/login'>
-                                <a> Login</a>
-                            </Link>
+                        <h2 className='text-light'>Physical Location Coming Soon...</h2>
+                        <p className='text-light'>
+                            We are in the process of finding a physical location to host our workshops and in-person
+                            courses.
                         </p>
 
+                        <p className='text-light'>
+                            Bond with your kids and become first-class citizens of technology.
+                        </p>
+                        <p className='text-light'>
+                            Our kids deserve to be coherent and able to thrive as a technology conscious citizen in a
+                            technology driven world.
+                        </p>
                     </div>
                 </div>
             </div>
-        </main>
+        </Content>
     </>)
 }
 
