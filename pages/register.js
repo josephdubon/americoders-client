@@ -8,69 +8,6 @@ const axios = require('axios')
 const {toast} = require('react-toastify')
 
 const Register = () => {
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [loading, setLoading] = useState(false)
-
-    // global state
-    const {
-        state: {user},
-    } = useContext(Context)
-
-    // router
-    const router = useRouter()
-
-    // condition redirect for logged-in user
-    useEffect(() => {
-        if (user !== null) router.push('/')
-    })
-
-    const handleSubmit = async (e) => {
-        // do not reload the page
-        e.preventDefault()
-
-        // send data to backend
-        try {
-            // activate load spinner
-            setLoading(true)
-            const {data} = await axios.post(`/api/register`, {
-                name, email, password
-            })
-
-            toast.success('Registration successful. Please login.', {
-                position: 'top-center',
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            })
-
-            // deactivate load spinner
-            setLoading(false)
-
-            // clear fields and redirect home
-            setName('')
-            setEmail('')
-            setPassword('')
-            await router.push('/login')
-        } catch (err) {
-            // deactivate load spinner
-            setLoading(false)
-
-            toast.error(err.response.data, {
-                position: 'top-center',
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            })
-        }
-    }
 
     return (<>
         {/* hero section */}
