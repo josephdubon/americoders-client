@@ -96,7 +96,8 @@ const Index = ({courses}) => {
                                 solve a puzzle?</p>
                             <p className='text-light'>
                                 Maybe you do, maybe you don't! Either way, we all deserve to feel that way, don't you
-                                agree?</p>
+                                agree? We can learn and master new skills while enjoying the time spent with the
+                                experience of trying something new.</p>
 
                             <p className='text-light fw-bold'>
                                 Projects: <br/>
