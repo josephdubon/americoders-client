@@ -173,15 +173,65 @@ const Index = ({courses}) => {
                         <div
                             className='row justify-content-center align-content-center text-center row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
                             {/* loop through the published courses */}
-                            {courses.map((course) => (
-                                    <div key={course._id}>
-                                        <CourseCard course={course}/>
-                                    </div>
-                                )
-                            )}
+                            <div>
+                                <Image
+                                    src='/images/branding/bg-images/americoders-kids-game-happy.jpg'
+                                    alt='Americoders'
+                                    loading='lazy'
+                                    preview={false}
+                                />
+                                <p className='lead text-muted'>Internet Safety for Kids</p>
+                            </div>
+                            <div>
+                                <Image
+                                    src='/images/branding/bg-images/americoders-scratch-game.jpg'
+                                    alt='Americoders'
+                                    loading='lazy'
+                                    preview={false}
+                                />
+                                <p className='lead text-muted'>Scratch/Scratch Junior - Introduction</p>
+                            </div>
+                            <div>
+                                <Image
+                                    src='/images/branding/bg-images/americoders-old-school-game.jpg'
+                                    alt='Americoders'
+                                    loading='lazy'
+                                    preview={false}
+                                />
+                                <p className='lead text-muted'>Old-School Game Creation - Introduction</p>
 
+                            </div>
+                            <div>
+                                <Image
+                                    src='/images/branding/bg-images/americoders-technology-unplugged.jpg'
+                                    alt='Americoders'
+                                    loading='lazy'
+                                    preview={false}
+                                />
+                                <p className='lead text-muted'>Technology Unplugged - Introduction</p>
+                            </div>
+                            <div>
+                                <Image
+                                    src='/images/branding/bg-images/americoders-teen-coding.jpg'
+                                    alt='Americoders'
+                                    loading='lazy'
+                                    preview={false}
+                                />
+                                <p className='lead text-muted'>Create Your First Website/Projects Portfolio</p>
 
+                            </div>
+                            <div>
+                                <Image
+                                    src='/images/branding/bg-images/americoders-teen-3d-printing.jpg    '
+                                    alt='Americoders'
+                                    loading='lazy'
+                                    preview={false}
+                                />
+                                <p className='lead text-muted'>Intro to 3D Modeling/3D Printing - Introduction</p>
+
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </Content>
