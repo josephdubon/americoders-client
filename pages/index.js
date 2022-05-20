@@ -118,8 +118,7 @@ const Index = ({courses}) => {
                             </p>
                             <p className='text-light'>
                                 Our habits determine our future. We have the option to not only survive but thrive in
-                                the coming future. We might not notice it right away -but we are living in and
-                                experiencing something really special.
+                                the coming future.
                             </p>
                             <p className='text-light fw-bold'>
                                 Technological advancements are emerging and
@@ -132,22 +131,18 @@ const Index = ({courses}) => {
                                 <svg className='bi' width='1em' height='1em'>
                                 </svg>
                             </div>
-                            <h2 className='text-light'>Break Assumptions</h2>
+                            <h2 className='text-light'>Community Building</h2>
                             <p className='text-light'>
-                                What is balance? What is the digital-age? Web3? Blockchain? Is the
-                                right approach to keep ourselves and children away from modern gadgets? No!
-                            </p>
-
-                            <p className='text-light'>
-                                The correct answer is to educate ourselves, we must adapt with a logical
-                                digital-approach.
-
-                                To put this knowledge and skill forward to witness and participate in
-                                the new opportunities the present and future offer us.
+                                Community building can develop a sense of dignity, and restore our sense of
+                                significance and relevance in our beautiful city of Reno, Nevada. Having a shared cause
+                                provides us with a sense of momentum and purpose.
                             </p>
                             <p className='text-light fw-bold'>
                                 Don't you want to experience and explore amazing new possibilities in this awesome new
                                 world?
+                            </p>
+                            <p className='text-light'>
+                                Wouldn't it be better if we experienced this and grew as a community/society?
                             </p>
 
                         </div>
