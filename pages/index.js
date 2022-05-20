@@ -27,10 +27,12 @@ const Index = ({courses}) => {
                                 alt='Americoders'
                                 loading='lazy'
                                 preview={false}
-                            />   <p className='lead text-muted fs-6'>
-                            Your kids are ready to learn to code, create, live, and prosper in this new digital-age ...are
-                            you?
-                        </p>
+                            />
+                            <p className='lead text-muted fs-6'>
+                                Your kids are ready to learn to code, create, live, and prosper in this new digital-age
+                                ...are
+                                you?
+                            </p>
                         </div>
                         <div className='col-lg-6'>
                             <h1 className='display-5 fw-bold lh-1 mb-3'>AMERICODERS</h1>
@@ -39,9 +41,12 @@ const Index = ({courses}) => {
                                 <br/>
                                 <br/>
                                 Welcome to the <strong className='text-primary fw-bold'>Americoders</strong> web-app.
-                                Thank you for your interest and support with this community project. We are an online
-                                learning platform dedicated to the technological development/education of the peoples of
-                                our community.
+                            </p>
+                            <p className='lead text-muted'>
+                                Thank you for your interest and support with this community project. We are
+                                an <strong>in-person</strong> and <strong>online</strong> learning platform dedicated to
+                                the
+                                technological development/education of the peoples of our community.
                             </p>
                             <p className='lead text-muted'>
                                 Join us as we educate, evolve, and adapt to this new digital age.
