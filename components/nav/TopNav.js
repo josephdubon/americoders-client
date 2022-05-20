@@ -107,17 +107,17 @@ const TopNav = () => {
             {/* not logged in user menu */}
             {user === null && (
                 <>
-                    <Item
-                        key='/login'
-                        onClick={(e) => {
-                            setCurrentPage(e.key)
-                        }}
-                        icon={<LoginOutlined/>}
-                    >
-                        <Link href='/login'>
-                            <a>Login</a>
-                        </Link>
-                    </Item>
+                    {/*<Item*/}
+                    {/*    key='/login'*/}
+                    {/*    onClick={(e) => {*/}
+                    {/*        setCurrentPage(e.key)*/}
+                    {/*    }}*/}
+                    {/*    icon={<LoginOutlined/>}*/}
+                    {/*>*/}
+                    {/*    <Link href='/login'>*/}
+                    {/*        <a>Login</a>*/}
+                    {/*    </Link>*/}
+                    {/*</Item>*/}
 
                     <Item
                         key='/register'
