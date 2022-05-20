@@ -129,10 +129,16 @@ const Register = () => {
             </div>
         </Content>
 
-            <div className='album py-5 bg-light'>
-                <div className='container'>
-                    {/* Registration Form */}
-                    <div className='container-fluid col-md-4 offset-md-4 pb-5'>
+        {/* mailing list form */}
+        <Content>
+            <div className='container px-4 py-5' id='sign-up'>
+                <h2 className='text-light pb-2 border-bottom'>Early Sign Up Form</h2>
+                <div className='row g-4 py-5 row-cols-1 row-cols-lg-2'>
+                    <div className='feature col'>
+                        <div className='feature-icon bg-primary bg-gradient'>
+                            <svg className='bi' width='1em' height='1em'>
+                            </svg>
+                        </div>
 
                         <form onSubmit={handleSubmit}>
                             <input
