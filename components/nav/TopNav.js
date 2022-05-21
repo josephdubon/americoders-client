@@ -1,5 +1,5 @@
 import {useContext, useEffect, useState} from 'react'
-import Link from 'next/Link'
+import Link from 'next/link'
 import axios from 'axios'
 import useRouter from 'next/router'
 import {toast} from 'react-toastify'
