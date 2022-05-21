@@ -46,7 +46,8 @@ export default function MailingListForm() {
     }
     return (<Layout
     >
-        <p className='lead text-light text-center ant-dropdown-menu-submenu-title'>Enter your email to join our early students list.</p>
+        <p className='lead text-light text-center ant-dropdown-menu-submenu-title'>Enter your email to join our early
+            students list.</p>
         <Form
             style={{width: '320px', margin: '0 auto'}}
             name='basic'
@@ -72,11 +73,7 @@ export default function MailingListForm() {
             </Form.Item>
 
             {/* submit button */}
-            <Form.Item
-                wrapperCol={{
-                    offset: 8, span: 16,
-                }}
-            >
+            <Form.Item className='text-center'>
                 <Button
                     type='primary'
                     htmlType='submit'

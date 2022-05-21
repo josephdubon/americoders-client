@@ -79,9 +79,6 @@ const Register = () => {
 
                         <h2 className='text-light'>Unlock a 20% Discount</h2>
                         <p className='text-light'>
-
-                        </p>
-                        <p className='text-light'>
                             Welcome to Americoders, the #1 online and in-person technology advocacy learning system for
                             kids and adults of all ages. We offer live, world-class, in-person computer science
                             workshops and courses in a mindful and peaceful, judgment-free zone.
