@@ -4,7 +4,7 @@ import {useRouter} from 'next/router'
 import axios from 'axios'
 import {toast} from 'react-toastify'
 
-const StudentRegistrationForm = () => {
+const StudentRegisterForm = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -107,3 +107,5 @@ const StudentRegistrationForm = () => {
         </form>
     </>)
 }
+
+export default StudentRegisterForm
