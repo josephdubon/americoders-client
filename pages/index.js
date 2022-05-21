@@ -28,11 +28,6 @@ const Index = ({courses}) => {
                                 loading='lazy'
                                 preview={false}
                             />
-                            <p className='lead text-muted fs-6'>
-                                Your kids are ready to learn to code, create, live, and prosper in this new digital-age
-                                ...are
-                                you?
-                            </p>
                         </div>
                         <div className='col-lg-6'>
                             <h1 className='display-5 fw-bold lh-1 mb-3'>AMERICODERS</h1>
