@@ -73,11 +73,7 @@ export default function MailingListForm() {
             </Form.Item>
 
             {/* submit button */}
-            <Form.Item
-                wrapperCol={{
-                    offset: 8, span: 16,
-                }}
-            >
+            <Form.Item className='text-center'>
                 <Button
                     type='primary'
                     htmlType='submit'
