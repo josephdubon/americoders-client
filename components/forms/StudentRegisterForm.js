@@ -3,6 +3,7 @@ import {Context} from '../../context'
 import {useRouter} from 'next/router'
 import axios from 'axios'
 import {toast} from 'react-toastify'
+import {SyncOutlined} from '@ant-design/icons'
 
 const StudentRegisterForm = () => {
     const [name, setName] = useState('')
