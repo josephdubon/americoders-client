@@ -158,7 +158,7 @@ const Index = ({courses}) => {
                         <div className='col-lg-6 col-md-8 mx-auto'>
                             <h1 className='fw-light'>Course and Project Examples</h1>
                             <p className='lead text-muted'>
-                                As predicted from years before computer science and coding has progressed from a hobby
+                                As predicted from years before, computer science and coding has progressed from a hobby
                                 to a critical career skill.
                             </p>
                             <p className='lead text-muted fw-bold'>
