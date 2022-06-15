@@ -73,7 +73,6 @@ const TopNav = () => {
                     label: `nav ${key}`,
                 }
             })}
-            className='mb-2'
         >
             <Item
                 key='/'
