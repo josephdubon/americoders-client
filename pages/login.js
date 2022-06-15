@@ -96,56 +96,59 @@ const Login = () => {
                             preview={false}
                         />
                     </div>
-                </div>
-            </section>
-
-            <div className='album py-5 bg-light'>
-                <div className='container'>
-                    {/* Login Form */}
-                    <div className='container-fluid col-md-4 offset-md-4 pb-5'>
-
-                        <form onSubmit={handleSubmit}>
-                            <input
-                                type='email'
-                                className='form-control mb-4 p-4'
-                                value={email}
-                                onChange={e => setEmail(e.target.value)}
-                                placeholder='Enter email'
-                                required
-                            />
-                            <input
-                                type='password'
-                                className='form-control mb-4 p-4'
-                                value={password}
-                                onChange={e => setPassword(e.target.value)}
-                                placeholder='Enter password'
-                                required
-                            />
-                            <div className='d-grid gap-2'>
-                                <button
-                                    type='submit'
-                                    className='btn btn-primary'
-                                    disabled={!email || !password || loading}
-                                >
-                                    {loading ? <SyncOutlined spin/> : 'Submit'}
-                                </button>
-                            </div>
-                        </form>
-
-                        {/*  register */}
-                        <p className='text-center p3'>
-                            Want to sign-up? <Link href='/register'><a>Register</a></Link>
+                    <div className='col-lg-6'>
+                        <h1 className='display-5 fw-bold lh-1 mb-3'>Login</h1>
+                        <p className='lead text-muted'>
+                            Welcome back, <strong className='text-primary fw-bold'>Americoder</strong>!
                         </p>
 
-                        {/* reset password */}
-                        <p className='text-center p3'>
-                            <Link href='/forgot-password'><a className='text-danger'>Forgot password?</a></Link>
-                        </p>
+                        {/* Login Form */}
+                        <div className='col-md-12 offset-md-12 pb-5'>
+
+                            <form onSubmit={handleSubmit}>
+                                <input
+                                    type='email'
+                                    className='form-control mb-4 p-4'
+                                    value={email}
+                                    onChange={e => setEmail(e.target.value)}
+                                    placeholder='Enter email'
+                                    required
+                                />
+                                <input
+                                    type='password'
+                                    className='form-control mb-4 p-4'
+                                    value={password}
+                                    onChange={e => setPassword(e.target.value)}
+                                    placeholder='Enter password'
+                                    required
+                                />
+                                <div className='d-grid gap-2'>
+                                    <button
+                                        type='submit'
+                                        className='btn btn-primary'
+                                        disabled={!email || !password || loading}
+                                    >
+                                        {loading ? <SyncOutlined spin/> : 'Submit'}
+                                    </button>
+                                </div>
+                            </form>
+
+                            {/*  register */}
+                            <p className='text-center p3'>
+                                Want to sign-up? <Link href='/register'><a>Register</a></Link>
+                            </p>
+
+                            {/* reset password */}
+                            <p className='text-center p3'>
+                                <Link href='/forgot-password'><a className='text-danger'>Forgot password?</a></Link>
+                            </p>
+
+                        </div>
 
                     </div>
                 </div>
             </div>
-        </main>
+        </Content>
     </>)
 }
 
