@@ -4,6 +4,9 @@ import {useRouter} from 'next/router'
 import {Context} from '../context'
 
 import {SyncOutlined} from '@ant-design/icons'
+import {Image, Layout} from 'antd'
+
+const {Content} = Layout
 
 const axios = require('axios')
 const {toast} = require('react-toastify')
