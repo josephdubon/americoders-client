@@ -96,7 +96,7 @@ const TopNav = () => {
                     }}
                     icon={<CarryOutOutlined/>}
                 >
-                    <Link href='/instructor/course/create'>
+                    <Link href={'/instructor/course/create'}>
                         <a>Create Course</a>
                     </Link>
                 </Item>
@@ -113,7 +113,7 @@ const TopNav = () => {
                         }}
                         icon={<LoginOutlined/>}
                     >
-                        <Link href='/login'>
+                        <Link href={'/login'}>
                             <a>Login</a>
                         </Link>
                     </Item>
@@ -125,7 +125,7 @@ const TopNav = () => {
                         }}
                         icon={<UserAddOutlined/>}
                     >
-                        <Link href='/register'>
+                        <Link href={'/register'}>
                             <a>Register</a>
                         </Link>
                     </Item>
@@ -150,7 +150,7 @@ const TopNav = () => {
                                 }}
                                 icon={<LoginOutlined/>}
                             >
-                                <Link href='/user'>
+                                <Link href={'/user'}>
                                     <a>Dashboard</a>
                                 </Link>
                             </Item>
@@ -177,7 +177,7 @@ const TopNav = () => {
                             setCurrentPage(e.key)
                         }}
                     >
-                        <Link href='/instructor'>
+                        <Link href={'/instructor'}>
                             <a>Instructor</a>
                         </Link>
                     </Item>
