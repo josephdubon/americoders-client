@@ -84,12 +84,17 @@ const Login = () => {
     }
 
     return (<>
-        <main>
-            <section className='py-5 text-center container'>
-                <div className='row py-lg-5'>
-                    <div className='col-lg-6 col-md-8 mx-auto'>
-                        <h1 className='fw-light'>Login</h1>
-
+        {/* hero section */}
+        <Content className='bg-light'>
+            <div className='container col-xxl-8 px-4 py-5'>
+                <div className='row flex-lg-row-reverse align-items-center justify-content-center g-5 py-5'>
+                    <div className='col-10 col-sm-8 col-lg-6'>
+                        <Image
+                            src='/images/branding/bg-images/americoders-student-female-laptop-fun.jpg'
+                            alt='Americoders'
+                            loading='lazy'
+                            preview={false}
+                        />
                     </div>
                 </div>
             </section>
