@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import {Image, Layout} from 'antd'
+import ForgotPasswordForm from '../components/forms/ForgotPasswordForm'
 
 const {Content} = Layout
 
-const ForgotPasswordForm = () => {
-
+const ForgotPassword = () => {
 
     return (<>
         {/* hero section */}
@@ -57,4 +57,4 @@ const ForgotPasswordForm = () => {
     </>)
 }
 
-export default ForgotPasswordForm
+export default ForgotPassword
