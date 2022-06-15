@@ -24,7 +24,7 @@ const ForgotPassword = () => {
                         </p>
                     </div>
                     <div className='col-lg-6'>
-                        <h1 className='display-5 fw-bold lh-1 mb-3'>ForgotPasswordForm</h1>
+                        <h1 className='display-5 fw-bold lh-1 mb-3'>Forgot Password Form</h1>
                         <p className='lead text-muted'>
                             Welcome back, <strong className='text-primary fw-bold'>Americoder</strong>!
                         </p>
