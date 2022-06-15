@@ -279,10 +279,10 @@ const Index = ({courses}) => {
                                     <ul className='list-unstyled mt-3 mb-4'>
                                         <li>Child + Parent Participation</li>
                                         <li>Attendance to Speakers and Public Events</li>
-                                        <li>Can Purchase Workshop/Course <strong>'Å La Carte'</strong></li>
+                                        <li>Can Purchase Workshop/Course 'A La Carte'</li>
                                         <br/>
                                         <li>'Hour of Code' Events</li>
-                                        <li>Free Courses Access on Web App</li>
+                                        <li>Access to Free Courses on Web App</li>
                                         <li>Email support</li>
                                     </ul>
                                     <Link href='/register'>
