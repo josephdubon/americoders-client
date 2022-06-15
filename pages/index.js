@@ -46,7 +46,7 @@ const Index = ({courses}) => {
 
                             {/* buttons */}
                             <div className='d-grid gap-2 d-md-flex justify-content-md-start'>
-                                <Link href='/register'>
+                                <Link href={'/register'}>
                                     <a>
 
                                         <button type='button' className='btn btn-primary btn-md px-4 me-md-2'>Register
@@ -54,7 +54,7 @@ const Index = ({courses}) => {
                                     </a>
                                 </Link>
 
-                                <Link href='/#more-info'>
+                                <Link href={'/#more-info'}>
                                     <a>
                                         <button type='button' className='btn btn-outline-secondary btn-md px-4'>More
                                             Info
@@ -62,7 +62,7 @@ const Index = ({courses}) => {
                                     </a>
                                 </Link>
 
-                                <Link href='/#course-list'>
+                                <Link href={'/#course-list'}>
                                     <a>
                                         <button type='button' className='btn btn-outline-secondary btn-md px-4'>Course
                                             List
