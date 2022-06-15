@@ -249,8 +249,8 @@ const Index = ({courses}) => {
                         <span className='text-light'>10 - 13</span>{' | '}
                         <span className='text-light'>14 - 17</span>
                     </p>
-                    <div className='row g-4 py-5 row-cols-1'>
-                        <p className='lead text-light'>
+                    <div className='row g-4 py-5 row-cols-1 text-center'>
+                        <p className='text-light'>
                             Join our community as we educate, evolve, and adapt to this new world.
                             <br/>
                             Learn to code,
@@ -259,7 +259,7 @@ const Index = ({courses}) => {
                             our
                             old-world.
                         </p>
-                        <p className='lead text-light'>
+                        <p className='text-light'>
                             Please <a href='mailto:scholarships@americoders.org'>email us here</a> to inquire about
                             scholarships and sponsorships.
                         </p>
