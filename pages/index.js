@@ -2,7 +2,7 @@ import axios from 'axios'
 import {Image, Layout} from 'antd'
 import Link from 'next/link'
 
-const {Header, Content, Footer} = Layout
+const {Content} = Layout
 
 const Index = ({courses}) => {
 
