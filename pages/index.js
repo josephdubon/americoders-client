@@ -49,14 +49,14 @@ const Index = ({courses}) => {
                                 <Link href='/register'>
                                     <a>
 
-                                        <button type='button' className='btn btn-primary btn-lg px-4 me-md-2'>Register
+                                        <button type='button' className='btn btn-primary btn-md px-4 me-md-2'>Register
                                         </button>
                                     </a>
                                 </Link>
 
                                 <Link href='/#more-info'>
                                     <a>
-                                        <button type='button' className='btn btn-outline-secondary btn-lg px-4'>More
+                                        <button type='button' className='btn btn-outline-secondary btn-md px-4'>More
                                             Info
                                         </button>
                                     </a>
@@ -64,7 +64,7 @@ const Index = ({courses}) => {
 
                                 <Link href='/#course-list'>
                                     <a>
-                                        <button type='button' className='btn btn-outline-secondary btn-lg px-4'>Course
+                                        <button type='button' className='btn btn-outline-secondary btn-md px-4'>Course
                                             List
                                         </button>
                                     </a>
@@ -281,8 +281,8 @@ const Index = ({courses}) => {
                                     </ul>
                                     <Link href='/register'>
                                         <a>
-                                            <button type='button' className='w-100 btn btn-lg btn-outline-danger'>
-                                                Registration Opening Soon
+                                            <button type='button' className='w-100 btn btn-md btn-outline-primary'>
+                                                Registration Open
                                             </button>
                                         </a>
                                     </Link>
@@ -308,7 +308,7 @@ const Index = ({courses}) => {
                                     </ul>
                                     <Link href='/register'>
                                         <a>
-                                            <button type='button' className='w-100 btn btn-lg btn-danger'>
+                                            <button type='button' className='w-100 btn btn-md btn-danger'>
                                                 Registration Opening Soon
                                             </button>
                                         </a>
@@ -335,7 +335,7 @@ const Index = ({courses}) => {
                                     </ul>
                                     <Link href='/register'>
                                         <a>
-                                            <button type='button' className='w-100 btn btn-lg btn-danger'>
+                                            <button type='button' className='w-100 btn btn-md btn-danger'>
                                                 Registration Opening Soon
                                             </button>
                                         </a>
