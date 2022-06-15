@@ -33,19 +33,17 @@ const Index = ({courses}) => {
                             <h1 className='display-5 fw-bold lh-1 mb-3'>AMERICODERS</h1>
                             <p className='lead text-muted'>
                                 Hello friend,
-                                <br/>
-                                <br/>
-                                Welcome to the <strong className='text-primary fw-bold'>Americoders</strong> web-app.
                             </p>
-                            <p className='lead text-muted'>
+                            <p className='text-muted'>
+                                Welcome to the <strong className='text-primary fw-bold'>Americoders</strong> web-app.
                                 Thank you for your interest and support with this community project. We are
                                 an <strong>in-person</strong> and <strong>online</strong> learning platform dedicated to
-                                the
-                                technological development/education of the peoples of our community.
+                                the technological development/education of the peoples of our community.
                             </p>
-                            <p className='lead text-muted'>
+                            <p className='text-muted'>
                                 Join us as we educate, evolve, and adapt to this new digital age.
                             </p>
+
                             {/* buttons */}
                             <div className='d-grid gap-2 d-md-flex justify-content-md-start'>
                                 <Link href='/register'>
