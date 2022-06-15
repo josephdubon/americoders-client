@@ -87,6 +87,7 @@ const Index = ({courses}) => {
                                 </svg>
                             </div>
 
+                            {/* first col */}
                             <h2 className='text-light'>Project Based Learning</h2>
                             <p className='text-light'>
                                 Positive examples of success. You know the feeling you get when
@@ -103,12 +104,13 @@ const Index = ({courses}) => {
                                 Websites | Apps | Games | Puzzles | Hardware Hacking
                             </p>
                         </div>
+
+                        {/* second col */}
                         <div className='feature col'>
                             <div className='feature-icon bg-primary bg-gradient'>
                                 <svg className='bi' width='1em' height='1em'>
                                 </svg>
                             </div>
-
                             <h2 className='text-light'>Mindfulness Awareness</h2>
                             <p className='text-light'>
                                 We must connect meaning with our actions. We hear modern terms but they are offered with
@@ -125,6 +127,7 @@ const Index = ({courses}) => {
                             </p>
                         </div>
 
+                        {/* third col */}
                         <div className='feature col'>
                             <div className='feature-icon bg-primary bg-gradient'>
                                 <svg className='bi' width='1em' height='1em'>
@@ -149,7 +152,7 @@ const Index = ({courses}) => {
                 </div>
             </Content>
 
-            {/* course album section */}
+            {/* course and project album section */}
             <Content className='bg-light'>
                 <section className='py-5 text-center container' id='course-list'>
                     <div className='row py-lg-5'>
@@ -171,6 +174,7 @@ const Index = ({courses}) => {
 
                         <div
                             className='row justify-content-center align-content-center text-center row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
+
                             {/* loop through the published courses */}
                             <div>
                                 <Image
@@ -235,6 +239,7 @@ const Index = ({courses}) => {
                 </div>
             </Content>
 
+            {/* pricing model section */}
             <Content>
                 {/* pricing model */}
                 <div className='container px-4 py-5' id='featured-3'>
@@ -258,10 +263,11 @@ const Index = ({courses}) => {
                             Please <a href='mailto:scholarships@americoders.org'>email us here</a> to inquire about
                             scholarships and sponsorships.
                         </p>
-
                     </div>
+
                     <div className='row g-4 py-5 row-cols-1 row-cols-lg-3 text-center'>
 
+                        {/* free tier */}
                         <div className='col'>
                             <div className='card mb-4 rounded-3 shadow-sm'>
                                 <div className='card-header py-3'>
@@ -289,6 +295,8 @@ const Index = ({courses}) => {
                                 </div>
                             </div>
                         </div>
+
+                        {/* pro tier */}
                         <div className='col'>
                             <div className='card mb-4 rounded-3 shadow-sm'>
                                 <div className='card-header py-3'>
@@ -316,6 +324,8 @@ const Index = ({courses}) => {
                                 </div>
                             </div>
                         </div>
+
+                        {/* enterprise tier */}
                         <div className='col'>
                             <div className='card mb-4 rounded-3 shadow-sm border-danger'>
                                 <div className='card-header py-3 text-white bg-danger border-danger'>
