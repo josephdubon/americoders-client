@@ -2,7 +2,7 @@ import axios from 'axios'
 import {Image, Layout} from 'antd'
 import Link from 'next/link'
 
-const {Header, Content, Footer} = Layout
+const {Content} = Layout
 
 const Index = ({courses}) => {
 
@@ -33,40 +33,38 @@ const Index = ({courses}) => {
                             <h1 className='display-5 fw-bold lh-1 mb-3'>AMERICODERS</h1>
                             <p className='lead text-muted'>
                                 Hello friend,
-                                <br/>
-                                <br/>
-                                Welcome to the <strong className='text-primary fw-bold'>Americoders</strong> web-app.
                             </p>
-                            <p className='lead text-muted'>
+                            <p className='text-muted'>
+                                Welcome to the <strong className='text-primary fw-bold'>Americoders</strong> web-app.
                                 Thank you for your interest and support with this community project. We are
                                 an <strong>in-person</strong> and <strong>online</strong> learning platform dedicated to
-                                the
-                                technological development/education of the peoples of our community.
+                                the technological development/education of the peoples of our community.
                             </p>
-                            <p className='lead text-muted'>
+                            <p className='text-muted'>
                                 Join us as we educate, evolve, and adapt to this new digital age.
                             </p>
+
                             {/* buttons */}
                             <div className='d-grid gap-2 d-md-flex justify-content-md-start'>
-                                <Link href='/register'>
+                                <Link href={'/register'}>
                                     <a>
 
-                                        <button type='button' className='btn btn-primary btn-lg px-4 me-md-2'>Register
+                                        <button type='button' className='btn btn-primary btn-md px-4 me-md-2'>Register
                                         </button>
                                     </a>
                                 </Link>
 
-                                <Link href='/#more-info'>
+                                <Link href={'/#more-info'}>
                                     <a>
-                                        <button type='button' className='btn btn-outline-secondary btn-lg px-4'>More
+                                        <button type='button' className='btn btn-outline-secondary btn-md px-4'>More
                                             Info
                                         </button>
                                     </a>
                                 </Link>
 
-                                <Link href='/#course-list'>
+                                <Link href={'/#course-list'}>
                                     <a>
-                                        <button type='button' className='btn btn-outline-secondary btn-lg px-4'>Course
+                                        <button type='button' className='btn btn-outline-secondary btn-md px-4'>Course
                                             List
                                         </button>
                                     </a>
@@ -89,6 +87,7 @@ const Index = ({courses}) => {
                                 </svg>
                             </div>
 
+                            {/* first col */}
                             <h2 className='text-light'>Project Based Learning</h2>
                             <p className='text-light'>
                                 Positive examples of success. You know the feeling you get when
@@ -105,12 +104,13 @@ const Index = ({courses}) => {
                                 Websites | Apps | Games | Puzzles | Hardware Hacking
                             </p>
                         </div>
+
+                        {/* second col */}
                         <div className='feature col'>
                             <div className='feature-icon bg-primary bg-gradient'>
                                 <svg className='bi' width='1em' height='1em'>
                                 </svg>
                             </div>
-
                             <h2 className='text-light'>Mindfulness Awareness</h2>
                             <p className='text-light'>
                                 We must connect meaning with our actions. We hear modern terms but they are offered with
@@ -127,6 +127,7 @@ const Index = ({courses}) => {
                             </p>
                         </div>
 
+                        {/* third col */}
                         <div className='feature col'>
                             <div className='feature-icon bg-primary bg-gradient'>
                                 <svg className='bi' width='1em' height='1em'>
@@ -151,14 +152,14 @@ const Index = ({courses}) => {
                 </div>
             </Content>
 
-            {/* course album section */}
+            {/* course and project album section */}
             <Content className='bg-light'>
                 <section className='py-5 text-center container' id='course-list'>
                     <div className='row py-lg-5'>
                         <div className='col-lg-6 col-md-8 mx-auto'>
                             <h1 className='fw-light'>Course and Project Examples</h1>
                             <p className='lead text-muted'>
-                                As predicted from years before computer science and coding has progressed from a hobby
+                                As predicted from years before, computer science and coding has progressed from a hobby
                                 to a critical career skill.
                             </p>
                             <p className='lead text-muted fw-bold'>
@@ -173,6 +174,7 @@ const Index = ({courses}) => {
 
                         <div
                             className='row justify-content-center align-content-center text-center row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
+
                             {/* loop through the published courses */}
                             <div>
                                 <Image
@@ -237,6 +239,7 @@ const Index = ({courses}) => {
                 </div>
             </Content>
 
+            {/* pricing model section */}
             <Content>
                 {/* pricing model */}
                 <div className='container px-4 py-5' id='featured-3'>
@@ -246,8 +249,8 @@ const Index = ({courses}) => {
                         <span className='text-light'>10 - 13</span>{' | '}
                         <span className='text-light'>14 - 17</span>
                     </p>
-                    <div className='row g-4 py-5 row-cols-1'>
-                        <p className='lead text-light'>
+                    <div className='row g-4 py-5 row-cols-1 text-center'>
+                        <p className='text-light'>
                             Join our community as we educate, evolve, and adapt to this new world.
                             <br/>
                             Learn to code,
@@ -256,14 +259,15 @@ const Index = ({courses}) => {
                             our
                             old-world.
                         </p>
-                        <p className='lead text-light'>
+                        <p className='text-light'>
                             Please <a href='mailto:scholarships@americoders.org'>email us here</a> to inquire about
                             scholarships and sponsorships.
                         </p>
-
                     </div>
+
                     <div className='row g-4 py-5 row-cols-1 row-cols-lg-3 text-center'>
 
+                        {/* free tier */}
                         <div className='col'>
                             <div className='card mb-4 rounded-3 shadow-sm'>
                                 <div className='card-header py-3'>
@@ -275,22 +279,24 @@ const Index = ({courses}) => {
                                     <ul className='list-unstyled mt-3 mb-4'>
                                         <li>Child + Parent Participation</li>
                                         <li>Attendance to Speakers and Public Events</li>
-                                        <li>Can Purchase Workshop/Course <strong>'Å La Carte'</strong></li>
+                                        <li>Can Purchase Workshop/Course 'A La Carte'</li>
                                         <br/>
                                         <li>'Hour of Code' Events</li>
-                                        <li>Free Courses Access on Web App</li>
+                                        <li>Access to Free Courses on Web App</li>
                                         <li>Email support</li>
                                     </ul>
-                                    <Link href='/register'>
+                                    <Link href={'/register'}>
                                         <a>
-                                            <button type='button' className='w-100 btn btn-lg btn-outline-danger'>
-                                                Registration Opening Soon
+                                            <button type='button' className='w-100 btn btn-md btn-outline-primary'>
+                                                Registration Open
                                             </button>
                                         </a>
                                     </Link>
                                 </div>
                             </div>
                         </div>
+
+                        {/* pro tier */}
                         <div className='col'>
                             <div className='card mb-4 rounded-3 shadow-sm'>
                                 <div className='card-header py-3'>
@@ -308,9 +314,9 @@ const Index = ({courses}) => {
                                         <li>Priority email support</li>
                                         <li>Help center access</li>
                                     </ul>
-                                    <Link href='/register'>
+                                    <Link href={'/register'}>
                                         <a>
-                                            <button type='button' className='w-100 btn btn-lg btn-danger'>
+                                            <button type='button' className='w-100 btn btn-md btn-danger'>
                                                 Registration Opening Soon
                                             </button>
                                         </a>
@@ -318,6 +324,8 @@ const Index = ({courses}) => {
                                 </div>
                             </div>
                         </div>
+
+                        {/* enterprise tier */}
                         <div className='col'>
                             <div className='card mb-4 rounded-3 shadow-sm border-danger'>
                                 <div className='card-header py-3 text-white bg-danger border-danger'>
@@ -335,9 +343,9 @@ const Index = ({courses}) => {
                                         <li>Priority Phone and email support</li>
                                         <li>Help center access</li>
                                     </ul>
-                                    <Link href='/register'>
+                                    <Link href={'/register'}>
                                         <a>
-                                            <button type='button' className='w-100 btn btn-lg btn-danger'>
+                                            <button type='button' className='w-100 btn btn-md btn-danger'>
                                                 Registration Opening Soon
                                             </button>
                                         </a>

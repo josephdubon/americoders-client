@@ -70,7 +70,7 @@ const CourseCreateForm = ({
                     {values.paid && <div className='form-group'>
                         <Select
                             size='large'
-                            tokenSeparators={[,]}
+                            tokenSeparators={[undefined,]}
                             defaultValue='$49.99'
                             className='w-100'
                             onChange={v => setValues({...values, price: v})}
@@ -128,7 +128,7 @@ const CourseCreateForm = ({
                     <Avatar
                         width={200}
                         src={values.image.Location}
-                    ></Avatar>
+                    >{''}</Avatar>
                 )}
 
                 {/* button */}

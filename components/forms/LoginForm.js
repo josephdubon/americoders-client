@@ -5,16 +5,17 @@ import axios from 'axios'
 import {toast} from 'react-toastify'
 import {SyncOutlined} from '@ant-design/icons'
 
-const StudentRegisterForm = () => {
-    const [name, setName] = useState('')
+const LoginForm = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
 
     // global state
     const {
-        state: {user},
+        state: {user}, // get user status from state
+        dispatch,
     } = useContext(Context)
+
 
     // router
     const router = useRouter()
@@ -22,7 +23,7 @@ const StudentRegisterForm = () => {
     // condition redirect for logged-in user
     useEffect(() => {
         if (user !== null) router.push('/user')
-    })
+    }, [user])
 
     const handleSubmit = async (e) => {
         // do not reload the page
@@ -32,11 +33,12 @@ const StudentRegisterForm = () => {
         try {
             // activate load spinner
             setLoading(true)
-            const {data} = await axios.post(`/api/register`, {
-                name, email, password
+            const {data} = await axios.post(`/api/login`, {
+                email, password
             })
 
-            toast.success('Registration successful. Please login.', {
+            // notification config
+            toast.success('Welcome to Americoders! What will you create to make the world a better place?', {
                 position: 'top-center',
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -46,14 +48,19 @@ const StudentRegisterForm = () => {
                 progress: undefined,
             })
 
-            // deactivate load spinner
-            setLoading(false)
+            // console.log('LOGIN RESPONSE', data)
+            dispatch({
+                type: 'LOGIN',
+                payload: data,
+            })
 
-            // clear fields and redirect home
-            setName('')
+            // save state in local storage
+            window.localStorage.setItem('user', JSON.stringify(data))
+
+            // clear fields and redirect
             setEmail('')
             setPassword('')
-            await router.push('/login')
+            await router.push('user')
         } catch (err) {
             // deactivate load spinner
             setLoading(false)
@@ -73,15 +80,7 @@ const StudentRegisterForm = () => {
     return (<>
         <form onSubmit={handleSubmit}>
             <input
-                type='text'
-                className='form-control mb-4 p-4'
-                value={name}
-                onChange={e => setName(e.target.value)}
-                placeholder='Enter name'
-                required
-            />
-            <input
-                type='text'
+                type='email'
                 className='form-control mb-4 p-4'
                 value={email}
                 onChange={e => setEmail(e.target.value)}
@@ -100,13 +99,14 @@ const StudentRegisterForm = () => {
                 <button
                     type='submit'
                     className='btn btn-primary'
-                    disabled={!name || !email || !password || loading}
+                    disabled={!email || !password || loading}
                 >
                     {loading ? <SyncOutlined spin/> : 'Submit'}
                 </button>
             </div>
         </form>
+
     </>)
 }
 
-export default StudentRegisterForm
+export default LoginForm

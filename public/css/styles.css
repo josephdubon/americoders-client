@@ -56,6 +56,10 @@ label {
     border-color: var(--blue) !important;
 }
 
+.btn-outline-primary:hover {
+    color: var(--white) !important;
+}
+
 .border-primary {
     border-color: var(--blue) !important;
 }
@@ -80,9 +84,9 @@ label {
 
 .hero-section {
     /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)),
-    url('/images/branding/bg-images/americoders-kids-laptop-fun.jpg');
+    /*background-image: linear-gradient(rgba(0, 0, 0, 0.5),*/
+    /*rgba(0, 0, 0, 0.5)),*/
+    /*url('/images/branding/bg-images/americoders-kids-laptop-fun.jpg');*/
     /* Set a specific height */
     height: 80vh;
     /* Position and center the image to scale nicely on all screens */
