@@ -21,7 +21,7 @@ const StudentRegisterForm = () => {
 
     // condition redirect for logged-in user
     useEffect(() => {
-        if (user !== null) router.push('/')
+        if (user !== null) router.push('/user')
     })
 
     const handleSubmit = async (e) => {
