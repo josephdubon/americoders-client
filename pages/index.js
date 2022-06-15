@@ -285,7 +285,7 @@ const Index = ({courses}) => {
                                         <li>Access to Free Courses on Web App</li>
                                         <li>Email support</li>
                                     </ul>
-                                    <Link href='/register'>
+                                    <Link href={'/register'}>
                                         <a>
                                             <button type='button' className='w-100 btn btn-md btn-outline-primary'>
                                                 Registration Open
@@ -314,7 +314,7 @@ const Index = ({courses}) => {
                                         <li>Priority email support</li>
                                         <li>Help center access</li>
                                     </ul>
-                                    <Link href='/register'>
+                                    <Link href={'/register'}>
                                         <a>
                                             <button type='button' className='w-100 btn btn-md btn-danger'>
                                                 Registration Opening Soon
@@ -343,7 +343,7 @@ const Index = ({courses}) => {
                                         <li>Priority Phone and email support</li>
                                         <li>Help center access</li>
                                     </ul>
-                                    <Link href='/register'>
+                                    <Link href={'/register'}>
                                         <a>
                                             <button type='button' className='w-100 btn btn-md btn-danger'>
                                                 Registration Opening Soon
