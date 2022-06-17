@@ -50,19 +50,74 @@ const UserIndex = () => {
                 className='d-flex justify-content-between display-1 text-danger p-5'
             />
         )}
-        <main>
-            <section className='py-5 text-center container'>
-                <div className='row py-lg-5'>
-                    <div className='col-lg-6 col-md-8 mx-auto'>
-                        <h1 className='fw-light'>User Dashboard</h1>
-
+        {/* hero section */}
+        <Content className='bg-light'>
+            <Divider children='Welcome Back, Americoder!' className='mt-0 pt-3'/>
+            <div className='container col-xxl-12 px-4 py-5'>
+                <div
+                    className='row align-items-center justify-content-center g-5 row-cols-sm-1 row-cols-md-2 row-cols-lg-3'>
+                    <div>
+                        {user ?
+                            (<>
+                                <h1 className='display-6 fw-bold lh-1 mb-3 '>{user.name}</h1>
+                                <Divider/>
+                                <p className='text-muted'><strong>Email:</strong> {user.email}</p>
+                                <p className='text-muted'><strong>Role:</strong> {user.role.join(', ')}</p>
+                                <p className='text-muted'>
+                                    <strong>Enrolled: </strong> {courses.length + ' '}
+                                    {user.courses.length >= 2 ? 'Course' : 'Courses'}
+                                </p>
+                                {/*<p className='text-muted'><strong>Member Since:</strong> {user.createdAt}</p>*/}
+                            </>)
+                            :
+                            (<>
+                                <p className='display-6 fw-bold lh-1 mb-3'>Welcome back!!</p>
+                            </>)}
                     </div>
-                </div>
-            </section>
 
-            <div className='album py-5 bg-light'>
-                <div className='container'>
-                    <div className='row row-cols-1 row-cols-sm-1 row-cols-md-1 g-1'>
+                    <div>
+                        {user ?
+                            (<>
+                                <Image
+                                    src={user.picture}
+                                    alt='Americoders'
+                                    loading='lazy'
+                                    preview={false}
+                                />
+                                <p className='form-text'>'Knowledge is power. Information is liberating. Education is
+                                    the premise of progress in every society, in every family.' <br/>
+                                    — Kofi Annan</p>
+                            </>) : <Image
+                                src='/images/avatars/avatar.png'
+                                alt='Americoders'
+                                loading='lazy'
+                                preview={false}
+                            />
+                        }
+                    </div>
+
+                    <div>
+                        <p className='text-muted'>Thank you for visiting us again. If you have not completed your
+                            enrolled courses, please do so.
+                        </p>
+                        <p className='text-muted'>Check the <Link href={'/#course-list'}><a>homepage</a></Link> for new
+                            courses. A
+                            new course will be added daily.</p>
+                    </div>
+
+                </div>
+            </div>
+        </Content>
+        {/*{user ? <pre>{JSON.stringify(user, null, 4)}</pre> : ''}*/}
+
+
+        {/* features section */}
+        <Content>
+            <div className='container px-4 py-5' id='more-info'>
+                <h2 className='text-light pb-2 border-bottom'>My Enrolled Courses</h2>
+                <div className='container col-xxl-12 px-4 py-5'>
+                    {/* first col */}
+                    <div className='feature col'>
                         {/* list all courses */}
                         {courses && courses.map(course => (<>
                             {/* parent media div */}
@@ -76,12 +131,12 @@ const UserIndex = () => {
                                     />
                                 </div>
                                 {/* media text body */}
-                                <div className='flex-grow-1 ms-3'>
+                                <div className='flex-grow-1 ms-3 text-white-50'>
                                     {/* title / link to course*/}
                                     <Link
                                         href={`/user/course/${course.slug}`}
                                     >
-                                        <a className='mt-2 text-primary'><h5 className='pt-2'>{course.name}</h5></a>
+                                        <a className='mt-2'><h5 className='pt-2 text-white'>{course.name}</h5></a>
                                     </Link>
                                     <p>{
                                         // show number of lessons in course
@@ -109,7 +164,7 @@ const UserIndex = () => {
                     </div>
                 </div>
             </div>
-        </main>
+        </Content>
     </UserRoute>)
 }
 
