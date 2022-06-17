@@ -3,8 +3,11 @@ import {Context} from '../../context'
 import UserRoute from '../../components/routes/UserRoute'
 import axios from 'axios'
 import {PlayCircleOutlined, SyncOutlined} from '@ant-design/icons'
-import {Avatar, Tooltip} from 'antd'
+import {Avatar, Divider, Image, Layout, Tooltip} from 'antd'
 import Link from 'next/link'
+
+
+const {Content} = Layout
 
 
 const UserIndex = () => {
