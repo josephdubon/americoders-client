@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'antd/dist/antd.css'
 import '../public/css/styles.css'
+import ParticlesEffect from '../components/effects/Particles'
 
 const {ToastContainer} = require('react-toastify')
 
@@ -32,6 +33,7 @@ function MyApp({Component, pageProps}) {
                 draggable
                 pauseOnHover
             />
+            <ParticlesEffect/>
             <TopNav/>
             <Component {...pageProps}/>
             <Footer/>
