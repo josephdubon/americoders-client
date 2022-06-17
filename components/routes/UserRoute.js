@@ -37,7 +37,7 @@ const UserRoute = ({children, showNav = true}) => {
             <>
                 <div className='container-fluid'>
                     <div className='row'>
-                        <div className='col-md-2'>
+                        <div className='col-md-2 mt-3'>
                             {/* only show UserNav when showNav is true, hide on false */}
                             {showNav && <UserNav/>}
                         </div>
