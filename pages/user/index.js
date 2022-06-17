@@ -43,7 +43,7 @@ const UserIndex = () => {
     }
 
 
-    return (<UserRoute>
+    return (<UserRoute className='container'>
         {loading && (
             <SyncOutlined
                 spin
