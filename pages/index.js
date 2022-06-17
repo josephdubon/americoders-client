@@ -1,6 +1,7 @@
 import axios from 'axios'
 import {Image, Layout} from 'antd'
 import Link from 'next/link'
+import CourseCard from '../components/cards/CourseCard'
 
 const {Content} = Layout
 
@@ -171,11 +172,20 @@ const Index = ({courses}) => {
                 </section>
                 <div className='album pb-5'>
                     <div className='container'>
-
                         <div
                             className='row justify-content-center align-content-center text-center row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
 
                             {/* loop through the published courses */}
+                            {courses.map((course) => (<div key={course._id}>
+                                {courses.map((course) => (
+                                        <div key={course._id}>
+                                            <CourseCard course={course}/>
+                                        </div>
+                                    )
+                                )}
+                            </div>))}
+                            {/* end loop */}
+
                             <div>
                                 <Image
                                     src='/images/branding/bg-images/americoders-kids-game-happy.jpg'
