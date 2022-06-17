@@ -19,7 +19,7 @@ const UserNav = () => {
     }, [isServer() && window.location.pathname])
     return (<>
         <div className='nav flex-column nav-pills'>
-            <Link href='/user'>
+            <Link href={'/user'}>
                 <a className={`nav-link ${currentPage === '/user' && 'active'}`}>Dashboard</a>
             </Link>
         </div>
