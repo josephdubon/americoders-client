@@ -103,6 +103,7 @@ const SingleCourse = () => {
                         {!collapsed && 'Lessons'}
                     </Button>
                     <Menu
+                        mode='inline'
                         defaultSelectedKeys={[clicked]}
                         inlineCollapsed={collapsed}
                         style={{height: '80vh', overflow: 'scroll'}}
