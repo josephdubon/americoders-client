@@ -41,9 +41,14 @@ label {
 
 /**/
 
+.ant-menu-dark {
+    background-color: var(--purple) !important;
+}
+
+.ant-menu-dark,
 .ant-layout,
 .ant-layout-content {
-    background-color: var(--dark-blue);
+    background-color: var(--purple);
 }
 
 .bg-primary,
