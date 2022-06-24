@@ -8,41 +8,37 @@ const {Content} = Layout
 const Index = ({courses}) => {
 
 
-    const contentStyle = {
-        height: '160px',
-        color: '#fff',
-        lineHeight: '160px',
-        textAlign: 'center',
-        background: '#364d79',
-    }
-
-
     return (<>
             {/* hero section */}
-            <Content className='bg-light'>
-                <div className='container col-xxl-8 px-4 py-5'>
+            <Content className='bg-light hero-section d-flex'>
+                <div className='container col-xxl-12 px-4 py-5'>
+                    <div className='title-large '>
+                        <h1 className='fw-bold text-white title-large lh-1 mb-3'>
+                            AMERICODERS
+                        </h1>
+                    </div>
                     <div className='row flex-lg-row-reverse align-items-center justify-content-center g-5 py-5'>
-                        <div className='col-10 col-sm-8 col-lg-6'>
+                        <div className='col-10 col-sm-8 col-lg-6 animate__animated animate__rubberBand'>
                             <Image
-                                src='/images/branding/bg-images/americoders-kids-laptop-fun.jpg'
+                                src='/images/branding/americoders-community-diversity.png'
                                 alt='Americoders'
                                 loading='lazy'
                                 preview={false}
+                                className='animate__animated animate__fadeIn grow'
                             />
                         </div>
-                        <div className='col-lg-6'>
-                            <h1 className='display-5 fw-bold lh-1 mb-3'>AMERICODERS</h1>
-                            <p className='lead text-muted'>
-                                Hello friend,
+
+                        <div className='col-lg-6 description-large bg-text'>
+                            <p className='text-white'>
+                                Hello friend, welcome!
                             </p>
-                            <p className='text-muted'>
-                                Welcome to the <strong className='text-primary fw-bold'>Americoders</strong> web-app.
+                            <p className='text-white'>
                                 Thank you for your interest and support with this community project. We are
-                                an <strong>in-person</strong> and <strong>online</strong> learning platform dedicated to
-                                the technological development/education of the peoples of our community.
+                                an <strong>in-person</strong> learning platform dedicated to
+                                the technological development/education of our community.
                             </p>
-                            <p className='text-muted'>
-                                Join us as we educate, evolve, and adapt to this new digital age.
+                            <p className='text-white'>
+                                Join us as we educate, evolve/adapt to this new digital-age.
                             </p>
 
                             {/* buttons */}
@@ -50,14 +46,16 @@ const Index = ({courses}) => {
                                 <Link href={'/register'}>
                                     <a>
 
-                                        <button type='button' className='btn btn-primary btn-md px-4 me-md-2'>Register
+                                        <button type='button'
+                                                className='btn btn-primary w-100 btn-lg px-4 me-md-2'>Register Here
                                         </button>
                                     </a>
                                 </Link>
 
                                 <Link href={'/#more-info'}>
                                     <a>
-                                        <button type='button' className='btn btn-outline-secondary btn-md px-4'>More
+                                        <button type='button'
+                                                className='btn btn-outline-secondary w-100 btn-lg px-4'>More
                                             Info
                                         </button>
                                     </a>
@@ -65,7 +63,8 @@ const Index = ({courses}) => {
 
                                 <Link href={'/#course-list'}>
                                     <a>
-                                        <button type='button' className='btn btn-outline-secondary btn-md px-4'>Course
+                                        <button type='button'
+                                                className='btn btn-outline-secondary w-100 btn-lg px-4 mb-5'>Course
                                             List
                                         </button>
                                     </a>
@@ -78,9 +77,9 @@ const Index = ({courses}) => {
             </Content>
 
             {/* features section */}
-            <Content>
+            <Content className='bg-body'>
                 <div className='container px-4 py-5' id='more-info'>
-                    <h2 className='text-light pb-2 border-bottom'>What do we do?</h2>
+                    <h2 className='pb-2 border-bottom'>What do we do?</h2>
                     <div className='row g-4 py-5 row-cols-1 row-cols-lg-3'>
                         <div className='feature col'>
                             <div className='feature-icon bg-primary bg-gradient'>
@@ -89,18 +88,18 @@ const Index = ({courses}) => {
                             </div>
 
                             {/* first col */}
-                            <h2 className='text-light'>Project Based Learning</h2>
-                            <p className='text-light'>
+                            <h2>Project Based Learning</h2>
+                            <p>
                                 Positive examples of success. You know the feeling you get when
                                 you have built something great from the ground up? Or the excitement when you finally
                                 learn something good enough that you can 'humble brag'? Do you know what it's like to
                                 solve a puzzle?</p>
-                            <p className='text-light'>
+                            <p>
                                 Maybe you do, maybe you don't! Either way, we all deserve to feel that way, don't you
                                 agree? We can learn and master new skills while enjoying the time spent with the
                                 experience of trying something new.</p>
 
-                            <p className='text-light fw-bold'>
+                            <p className=' fw-bold'>
                                 Projects: <br/>
                                 Websites | Apps | Games | Puzzles | Hardware Hacking
                             </p>
@@ -112,17 +111,17 @@ const Index = ({courses}) => {
                                 <svg className='bi' width='1em' height='1em'>
                                 </svg>
                             </div>
-                            <h2 className='text-light'>Mindfulness Awareness</h2>
-                            <p className='text-light'>
+                            <h2>Mindfulness Awareness</h2>
+                            <p>
                                 We must connect meaning with our actions. We hear modern terms but they are offered with
                                 no explanation of what they mean. Then we are left with assumptions and stereotypes.
                                 These create patterns and patterns turn into habits.
                             </p>
-                            <p className='text-light'>
+                            <p>
                                 Our habits determine our future. We have the option to not only survive but thrive in
                                 the coming future.
                             </p>
-                            <p className='text-light'>
+                            <p>
                                 There are many useful skills that our kids (and ourselves) can learn
                                 to get ahead in life, but few are as flexible and fun as the ability to code.
                             </p>
@@ -134,17 +133,17 @@ const Index = ({courses}) => {
                                 <svg className='bi' width='1em' height='1em'>
                                 </svg>
                             </div>
-                            <h2 className='text-light'>Community Building</h2>
-                            <p className='text-light'>
+                            <h2>Community Building</h2>
+                            <p>
                                 Community building can develop a sense of dignity, and restore our sense of
                                 significance and relevance in our beautiful city of Reno, Nevada. Having a shared cause
                                 provides us with a sense of momentum and purpose.
                             </p>
-                            <p className='text-light fw-bold'>
+                            <p className=' fw-bold'>
                                 Don't you want to experience and explore amazing new possibilities in this awesome new
                                 world?
                             </p>
-                            <p className='text-light'>
+                            <p>
                                 Wouldn't it be better if we experienced this and grew as a community/society?
                             </p>
 
@@ -154,7 +153,7 @@ const Index = ({courses}) => {
             </Content>
 
             {/* course and project album section */}
-            <Content className='bg-light'>
+            <Content>
                 <section className='py-5 text-center container' id='course-list'>
                     <div className='row py-lg-5'>
                         <div className='col-lg-6 col-md-8 mx-auto'>
