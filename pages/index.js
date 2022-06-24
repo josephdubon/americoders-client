@@ -27,19 +27,18 @@ const Index = ({courses}) => {
                                 className='animate__animated animate__fadeIn grow'
                             />
                         </div>
-                        <div className='col-lg-6'>
-                            <h1 className='display-5 fw-bold lh-1 mb-3'>AMERICODERS</h1>
-                            <p className='lead text-muted'>
-                                Hello friend,
+
+                        <div className='col-lg-6 description-large bg-text'>
+                            <p className='text-white'>
+                                Hello friend, welcome!
                             </p>
-                            <p className='text-muted'>
-                                Welcome to the <strong className='text-primary fw-bold'>Americoders</strong> web-app.
+                            <p className='text-white'>
                                 Thank you for your interest and support with this community project. We are
-                                an <strong>in-person</strong> and <strong>online</strong> learning platform dedicated to
-                                the technological development/education of the peoples of our community.
+                                an <strong>in-person</strong> learning platform dedicated to
+                                the technological development/education of our community.
                             </p>
-                            <p className='text-muted'>
-                                Join us as we educate, evolve, and adapt to this new digital age.
+                            <p className='text-white'>
+                                Join us as we educate, evolve/adapt to this new digital-age.
                             </p>
 
                             {/* buttons */}
