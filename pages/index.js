@@ -46,14 +46,16 @@ const Index = ({courses}) => {
                                 <Link href={'/register'}>
                                     <a>
 
-                                        <button type='button' className='btn btn-primary btn-md px-4 me-md-2'>Register
+                                        <button type='button'
+                                                className='btn btn-primary w-100 btn-lg px-4 me-md-2'>Register Here
                                         </button>
                                     </a>
                                 </Link>
 
                                 <Link href={'/#more-info'}>
                                     <a>
-                                        <button type='button' className='btn btn-outline-secondary btn-md px-4'>More
+                                        <button type='button'
+                                                className='btn btn-outline-secondary w-100 btn-lg px-4'>More
                                             Info
                                         </button>
                                     </a>
@@ -61,7 +63,8 @@ const Index = ({courses}) => {
 
                                 <Link href={'/#course-list'}>
                                     <a>
-                                        <button type='button' className='btn btn-outline-secondary btn-md px-4'>Course
+                                        <button type='button'
+                                                className='btn btn-outline-secondary w-100 btn-lg px-4 mb-5'>Course
                                             List
                                         </button>
                                     </a>
