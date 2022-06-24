@@ -108,4 +108,13 @@ label {
     text-shadow: black 10px 10px 25px;
 }
 
-/**/
+.description-large {
+    font-size: 1.5rem;
+    text-align: left;
+    color: var(--white);
+    text-shadow: black 10px 10px 25px;
+}
+
+.text-white {
+    text-shadow: black 10px 10px 25px;
+}
