@@ -157,12 +157,12 @@ const Index = ({courses}) => {
                 <section className='py-5 text-center container' id='course-list'>
                     <div className='row py-lg-5'>
                         <div className='col-lg-6 col-md-8 mx-auto'>
-                            <h1 className='fw-light'>Course and Project Examples</h1>
-                            <p className='lead text-muted'>
+                            <h1 className='text-white'>Course and Project Examples</h1>
+                            <p className='lead text-white'>
                                 As predicted from years before, computer science and coding has progressed from a hobby
                                 to a critical career skill.
                             </p>
-                            <p className='lead text-muted fw-bold'>
+                            <p className='lead text-white fw-bold'>
                                 Let's level-up by building some cool games and useful
                                 projects!
                             </p>
@@ -192,7 +192,7 @@ const Index = ({courses}) => {
                                     loading='lazy'
                                     preview={false}
                                 />
-                                <p className='lead text-muted'>Internet Safety for Kids</p>
+                                <p className='lead text-white'>Internet Safety for Kids</p>
                             </div>
                             <div>
                                 <Image
@@ -201,7 +201,7 @@ const Index = ({courses}) => {
                                     loading='lazy'
                                     preview={false}
                                 />
-                                <p className='lead text-muted'>Scratch/Scratch Junior - Introduction</p>
+                                <p className='lead text-white'>Scratch/Scratch Junior - Introduction</p>
                             </div>
                             <div>
                                 <Image
@@ -210,7 +210,7 @@ const Index = ({courses}) => {
                                     loading='lazy'
                                     preview={false}
                                 />
-                                <p className='lead text-muted'>Old-School Game Creation - Introduction</p>
+                                <p className='lead text-white'>Old-School Game Creation - Introduction</p>
 
                             </div>
                             <div>
@@ -220,7 +220,7 @@ const Index = ({courses}) => {
                                     loading='lazy'
                                     preview={false}
                                 />
-                                <p className='lead text-muted'>Technology Unplugged - Introduction</p>
+                                <p className='lead text-white'>Technology Unplugged - Introduction</p>
                             </div>
                             <div>
                                 <Image
@@ -229,7 +229,7 @@ const Index = ({courses}) => {
                                     loading='lazy'
                                     preview={false}
                                 />
-                                <p className='lead text-muted'>Create Your First Website/Projects Portfolio</p>
+                                <p className='lead text-white'>Create Your First Website/Projects Portfolio</p>
 
                             </div>
                             <div>
@@ -239,7 +239,7 @@ const Index = ({courses}) => {
                                     loading='lazy'
                                     preview={false}
                                 />
-                                <p className='lead text-muted'>Intro to 3D Modeling/3D Printing - Introduction</p>
+                                <p className='lead text-white'>Intro to 3D Modeling/3D Printing - Introduction</p>
 
                             </div>
                         </div>
