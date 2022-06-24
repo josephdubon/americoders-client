@@ -19,15 +19,21 @@ const Index = ({courses}) => {
 
     return (<>
             {/* hero section */}
-            <Content className='bg-light'>
-                <div className='container col-xxl-8 px-4 py-5'>
+            <Content className='bg-light hero-section d-flex'>
+                <div className='container col-xxl-12 px-4 py-5'>
+                    <div className='title-large '>
+                        <h1 className='fw-bold text-white title-large lh-1 mb-3'>
+                            AMERICODERS
+                        </h1>
+                    </div>
                     <div className='row flex-lg-row-reverse align-items-center justify-content-center g-5 py-5'>
-                        <div className='col-10 col-sm-8 col-lg-6'>
+                        <div className='col-10 col-sm-8 col-lg-6 animate__animated animate__rubberBand'>
                             <Image
-                                src='/images/branding/bg-images/americoders-kids-laptop-fun.jpg'
+                                src='/images/branding/americoders-community-diversity.png'
                                 alt='Americoders'
                                 loading='lazy'
                                 preview={false}
+                                className='animate__animated animate__fadeIn grow'
                             />
                         </div>
                         <div className='col-lg-6'>
