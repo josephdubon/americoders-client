@@ -44,10 +44,9 @@ export default function MailingListForm() {
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo)
     }
-    return (<Layout
-    >
-        <p className='lead text-light text-center ant-dropdown-menu-submenu-title'>Enter your email to join our early
-            students list.</p>
+    return (<Layout className='bg-body'>
+        <p className='lead text-dark text-center ant-dropdown-menu-submenu-title'>
+            Enter your email to join our mailing list.</p>
         <Form
             style={{width: '320px', margin: '0 auto'}}
             name='basic'
