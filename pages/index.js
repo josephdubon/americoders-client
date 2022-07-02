@@ -2,6 +2,7 @@ import axios from 'axios'
 import {Image, Layout} from 'antd'
 import Link from 'next/link'
 import CourseCard from '../components/cards/CourseCard'
+import MailingListForm from '../components/forms/MailingListForm'
 
 const {Content} = Layout
 
