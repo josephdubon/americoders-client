@@ -57,9 +57,7 @@ export default function MailingListForm() {
             onFinishFailed={onFinishFailed}
             autoComplete='off'
         >
-
             <Form.Item
-                label='Email'
                 name='email'
                 rules={[{
                     required: true, message: 'Please enter your email!',
