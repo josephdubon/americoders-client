@@ -249,6 +249,26 @@ const Index = ({courses}) => {
                 </div>
             </Content>
 
+            {/* mailing list */}
+            <Content className='bg-body'>
+                <div className='container px-4 py-5'>
+                    <div className='offset-lg-2 col-lg-8 col-md-12 col-12 text-center'>
+                        <span className='lead fs-5 text-muted ls-md text-uppercase fw-semi-bold'>
+                            computer science - mindfulness - life skills
+                        </span>
+
+                        <h1 className='display-4 fw-bold text-black lh-1 mb-3'>
+                            Join our mailing list
+                        </h1>
+
+                        <p className='lead text-black-50 px-lg-8 mb-6'>
+                            Stay up to date with the news and latest courses + lessons.
+                        </p>
+                        <MailingListForm/>
+                    </div>
+                </div>
+            </Content>
+
             {/* pricing model section */}
             <Content>
                 {/* pricing model */}
