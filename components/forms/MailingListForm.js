@@ -45,7 +45,7 @@ export default function MailingListForm() {
         console.log('Failed:', errorInfo)
     }
     return (<Layout className='bg-body'>
-        <p className='lead text-dark text-center ant-dropdown-menu-submenu-title'>
+        <p className='lead text-dark text-center'>
             Enter your email to join our mailing list.</p>
         <Form
             style={{width: '320px', margin: '0 auto'}}
