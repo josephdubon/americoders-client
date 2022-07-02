@@ -344,13 +344,11 @@ const Index = ({courses}) => {
                                         <li>Priority email support</li>
                                         <li>Help center access</li>
                                     </ul>
-                                    <Link href={'/register'}>
-                                        <a>
-                                            <button type='button' className='w-100 btn btn-md btn-danger'>
-                                                Registration Opening Soon
-                                            </button>
-                                        </a>
-                                    </Link>
+                                    <a>
+                                        <button type='button' className='w-100 btn btn-md btn-danger'>
+                                            Registration Opening Soon
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -373,13 +371,11 @@ const Index = ({courses}) => {
                                         <li>Priority Phone and email support</li>
                                         <li>Help center access</li>
                                     </ul>
-                                    <Link href={'/register'}>
-                                        <a>
-                                            <button type='button' className='w-100 btn btn-md btn-danger'>
-                                                Registration Opening Soon
-                                            </button>
-                                        </a>
-                                    </Link>
+                                    <a>
+                                        <button type='button' className='w-100 btn btn-md btn-danger'>
+                                            Registration Opening Soon
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
