@@ -2,6 +2,7 @@ import axios from 'axios'
 import {Image, Layout} from 'antd'
 import Link from 'next/link'
 import CourseCard from '../components/cards/CourseCard'
+import MailingListForm from '../components/forms/MailingListForm'
 
 const {Content} = Layout
 
@@ -248,6 +249,26 @@ const Index = ({courses}) => {
                 </div>
             </Content>
 
+            {/* mailing list */}
+            <Content className='bg-body'>
+                <div className='container px-4 py-5'>
+                    <div className='offset-lg-2 col-lg-8 col-md-12 col-12 text-center'>
+                        <span className='lead fs-5 text-muted ls-md text-uppercase fw-semi-bold'>
+                            computer science - mindfulness - life skills
+                        </span>
+
+                        <h1 className='display-4 fw-bold text-black lh-1 mb-3'>
+                            Join our mailing list
+                        </h1>
+
+                        <p className='lead text-black-50 px-lg-8 mb-6'>
+                            Stay up to date with the news and latest courses + lessons.
+                        </p>
+                        <MailingListForm/>
+                    </div>
+                </div>
+            </Content>
+
             {/* pricing model section */}
             <Content>
                 {/* pricing model */}
@@ -323,13 +344,11 @@ const Index = ({courses}) => {
                                         <li>Priority email support</li>
                                         <li>Help center access</li>
                                     </ul>
-                                    <Link href={'/register'}>
-                                        <a>
-                                            <button type='button' className='w-100 btn btn-md btn-danger'>
-                                                Registration Opening Soon
-                                            </button>
-                                        </a>
-                                    </Link>
+                                    <a>
+                                        <button type='button' className='w-100 btn btn-md btn-danger'>
+                                            Registration Opening Soon
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -352,13 +371,11 @@ const Index = ({courses}) => {
                                         <li>Priority Phone and email support</li>
                                         <li>Help center access</li>
                                     </ul>
-                                    <Link href={'/register'}>
-                                        <a>
-                                            <button type='button' className='w-100 btn btn-md btn-danger'>
-                                                Registration Opening Soon
-                                            </button>
-                                        </a>
-                                    </Link>
+                                    <a>
+                                        <button type='button' className='w-100 btn btn-md btn-danger'>
+                                            Registration Opening Soon
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
