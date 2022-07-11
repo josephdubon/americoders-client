@@ -260,7 +260,6 @@ const SingleCourse = () => {
                                             {/* html */}
                                             <AceDynamic
                                                 language={'xml'}
-                                                displayName={'HTML'}
                                                 value={html}
                                                 onChange={setHtml}
                                                 editorName={'HTML'}
@@ -277,7 +276,6 @@ const SingleCourse = () => {
                                             {/* css */}
                                             <AceDynamic
                                                 language={'css'}
-                                                displayName={'CSS'}
                                                 value={css}
                                                 onChange={setCss}
                                                 editorName={'CSS'}
@@ -294,7 +292,6 @@ const SingleCourse = () => {
                                             {/* javascript */}
                                             <AceDynamic
                                                 language={'javascript'}
-                                                displayName={'JavaScript'}
                                                 value={javascript}
                                                 onChange={setJavascript}
                                                 editorName={'JavaScript'}
