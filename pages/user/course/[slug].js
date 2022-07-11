@@ -2,8 +2,11 @@ import {createElement, useEffect, useState} from 'react'
 import {useRouter} from 'next/router'
 import axios from 'axios'
 import StudentRoute from '../../../components/routes/StudentRoute'
+
+// next.js renders pages server-side, giving a 'window object isn't available' error
+// fix: dynamically import the module containing the AceEditor:
+import dynamic from 'next/dynamic'
 import {Avatar, Button, Col, Menu, Row} from 'antd'
-import ReactPlayer from 'react-player'
 import ReactMarkdown from 'react-markdown'
 import {
     CheckCircleFilled,
@@ -12,6 +15,11 @@ import {
     MinusCircleFilled,
     PlayCircleOutlined
 } from '@ant-design/icons'
+
+const AceDynamic = dynamic(
+    () => import('../../../components/editor/AceAmericoders'),
+    {ssr: false}
+)
 
 const {Item} = Menu
 
@@ -147,42 +155,49 @@ const SingleCourse = () => {
                                         role='button'
                                         onClick={markIncomplete}
                                     >
-                    Mark as incomplete
-                  </span>
+                                        Mark as incomplete
+                                    </span>
                                 ) : (
                                     <span
                                         className='float-end'
                                         role='button'
                                         onClick={markComplete}>
-                    Mark as completed
-                  </span>
+                                        Mark as completed
+                                    </span>
                                 )}
                             </div>
 
                             {/* video area */}
-                            {course.lessons[clicked].video &&
-                                course.lessons[clicked].video.Location && (
-                                    <>
-                                        <div>
-                                            <ReactPlayer
-                                                className='player'
-                                                url={course.lessons[clicked].video.Location}
-                                                width='100%'
-                                                height='100%'
-                                                controls
-                                                onEnded={markComplete} // update lesson completed status on video complete
-                                            />
-                                        </div>
-                                    </>
-                                )}
+                            {/*{course.lessons[clicked].video &&*/}
+                            {/*    course.lessons[clicked].video.Location && (*/}
+                            {/*        <>*/}
+                            {/*            <div className='player'*/}
+                            {/*            >*/}
+                            {/*                <ReactPlayer*/}
+                            {/*                    url={course.lessons[clicked].video.Location}*/}
+                            {/*                    width='500px'*/}
+                            {/*                    height='100%'*/}
+                            {/*                    controls*/}
+                            {/*                    onEnded={markComplete} // update lesson completed status on video complete*/}
+                            {/*                />*/}
+                            {/*            </div>*/}
+                            {/*        </>*/}
+                            {/*    )}*/}
 
                             <div>
+
                                 {/* course description*/}
                                 <ReactMarkdown
                                     children={course.lessons[clicked].content}
                                     className='single-post'
                                 />
                             </div>
+
+                            {/* editor area */}
+                            <div className='editorArea'>
+                                <AceDynamic/>
+                            </div>
+
                         </>
                     ) : (
                         <div className='d-flex justify-content-center p-5'>
