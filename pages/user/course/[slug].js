@@ -235,7 +235,6 @@ const SingleCourse = () => {
                                                 </div>
                                                 <h2 className='lead title-large'>Are you stuck or getting
                                                     frustrated?</h2>
-                                                {/* video */}
                                                 <p className='text-white text-center lead fs-4'>Pause. Breathe. Try
                                                     again.</p>
                                                 <p className='text-white text-center lead fs-5'>Raise your hand and ask
