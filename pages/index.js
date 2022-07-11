@@ -176,14 +176,12 @@ const Index = ({courses}) => {
                             className='row justify-content-center align-content-center text-center row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
 
                             {/* loop through the published courses */}
-                            {courses.map((course) => (<div key={course._id}>
-                                {courses.map((course) => (
-                                        <div key={course._id}>
-                                            <CourseCard course={course}/>
-                                        </div>
-                                    )
-                                )}
-                            </div>))}
+                            {courses.map((course) => (
+                                    <div key={course._id}>
+                                        <CourseCard course={course}/>
+                                    </div>
+                                )
+                            )}
                             {/* end loop */}
 
                             <div>
