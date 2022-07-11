@@ -168,21 +168,21 @@ const SingleCourse = () => {
                             </div>
 
                             {/* video area */}
-                            {/*{course.lessons[clicked].video &&*/}
-                            {/*    course.lessons[clicked].video.Location && (*/}
-                            {/*        <>*/}
-                            {/*            <div className='player'*/}
-                            {/*            >*/}
-                            {/*                <ReactPlayer*/}
-                            {/*                    url={course.lessons[clicked].video.Location}*/}
-                            {/*                    width='500px'*/}
-                            {/*                    height='100%'*/}
-                            {/*                    controls*/}
-                            {/*                    onEnded={markComplete} // update lesson completed status on video complete*/}
-                            {/*                />*/}
-                            {/*            </div>*/}
-                            {/*        </>*/}
-                            {/*    )}*/}
+                            {course.lessons[clicked].video &&
+                                course.lessons[clicked].video.Location && (
+                                    <>
+                                        <div className='player'
+                                        >
+                                            <ReactPlayer
+                                                url={course.lessons[clicked].video.Location}
+                                                width='500px'
+                                                height='100%'
+                                                controls
+                                                onEnded={markComplete} // update lesson completed status on video complete
+                                            />
+                                        </div>
+                                    </>
+                                )}
 
                             <div>
 
