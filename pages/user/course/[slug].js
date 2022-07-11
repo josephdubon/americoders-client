@@ -150,29 +150,42 @@ const SingleCourse = () => {
 
                 {/* main content area */}
                 <div className='col'>
-
                     {/* top bar lesson title , completed status */}
                     {clicked !== -1 ? (
                         <>
-                            <div className='col alert alert-primary'>
-                                <strong>{course.lessons[clicked].title.substring(0, 30)}</strong>
-                                {completedLessons.includes(course.lessons[clicked]._id) ? (
-                                    <span
-                                        className='float-end'
-                                        role='button'
-                                        onClick={markIncomplete}
-                                    >
+                            {/* titles section */}
+                            <Content className='bg-body'>
+                                <div className='container-fluid px-4 py-5' id='more-info'>
+                                    {/* lesson title */}
+                                    <h2 className='pb-2 border-bottom'>
+                                        {course.lessons[clicked].title.substring(0, 30)}
+                                    </h2>
+
+                                    {/* mark as complete area */}
+                                    {completedLessons.includes(course.lessons[clicked]._id) ? (
+                                        <span
+                                            className='float-end'
+                                            role='button'
+                                            onClick={markIncomplete}
+                                        >
                                         Mark as incomplete
                                     </span>
-                                ) : (
-                                    <span
-                                        className='float-end'
-                                        role='button'
-                                        onClick={markComplete}>
+                                    ) : (
+                                        <span
+                                            className='float-end'
+                                            role='button'
+                                            onClick={markComplete}>
                                         Mark as completed
                                     </span>
-                                )}
-                            </div>
+                                    )}
+
+                                    {/* course description*/}
+                                    <div className='row g-4 py-5 rows-cols-1'>
+                                        <ReactMarkdown
+                                            children={course.lessons[clicked].content}
+                                            className='single-post'
+                                        />
+                                    </div>
 
                             {/* video area */}
                             {course.lessons[clicked].video &&
