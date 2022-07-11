@@ -223,7 +223,30 @@ label {
 
 /* video player */
 .player {
+    width: 100%;
+    /*display: flex;*/
+    /*!*justify-content: center;*!*/
+    /*align-items: center;*/
+}
+
+/* editor styles*/
+
+.topEditorArea {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+.editorArea {
     display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.editorContainer {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
+    flex-direction: column;
+    padding: .5rem;
+}
+
+.editorTitle {
 }
