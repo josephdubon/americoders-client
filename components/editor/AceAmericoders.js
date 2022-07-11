@@ -19,8 +19,8 @@ const AceBasic = (props) => {
     return (<>
         {/* editor top area */}
         <div className='editorContainer'>
-            <div className='editorTitle'>
-                <button className='btn btn-primary btn-sm px-4 me-md-2 mb-3'>Open/Close</button>
+            <div className='editorHeader'>
+                <button className='btn btn-primary btn-sm px-4 me-md-2'>Open/Close</button>
             </div>
 
             {/* editor area */}

@@ -246,5 +246,12 @@ label {
     padding: .5rem;
 }
 
-.editorTitle {
+.editorHeader {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--purple);
+    color: var(--white);
+    padding: .5rem .5rem .5rem 1rem;
+    border-top-right-radius: .5rem;
+    border-top-left-radius: .5rem;
 }
