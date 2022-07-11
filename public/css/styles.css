@@ -232,8 +232,6 @@ label {
 /* editor styles*/
 
 .topEditorArea {
-    background-color: var(--purple);
-    color: var(--white);
 }
 
 .editorArea {
