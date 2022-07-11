@@ -246,38 +246,61 @@ const SingleCourse = () => {
                                         </Content>
                                     </div>
 
-                            {/* editor area */}
+                                    {/* editor area */}
+                                    <div className='row g-4 py-5 row-cols-1 row-cols-lg-3'>
+                                        {/* first col */}
+                                        <div className='feature col'>
+                                            <div className='feature-icon bg-primary bg-gradient'>
+                                                <svg className='bi' width='1em' height='1em'>
+                                                </svg>
+                                            </div>
+                                            <h2>HTML</h2>
+                                            {/* html */}
+                                            <AceDynamic
+                                                language={'xml'}
+                                                displayName={'HTML'}
+                                                value={html}
+                                                onChange={setHtml}
+                                                editorName={'HTML'}
+                                            />
+                                        </div>
 
-                            {/* editors */}
-                            <div className='editorArea topEditorArea'>
-                                {/* html */}
-                                <AceDynamic
-                                    language={'xml'}
-                                    displayName={'HTML'}
-                                    value={html}
-                                    onChange={setHtml}
-                                    editorName={'HTML'}
-                                />
+                                        {/* second col */}
+                                        <div className='feature col'>
+                                            <div className='feature-icon bg-primary bg-gradient'>
+                                                <svg className='bi' width='1em' height='1em'>
+                                                </svg>
+                                            </div>
+                                            <h2>CSS</h2>
+                                            {/* css */}
+                                            <AceDynamic
+                                                language={'css'}
+                                                displayName={'CSS'}
+                                                value={css}
+                                                onChange={setCss}
+                                                editorName={'CSS'}
+                                            />
+                                        </div>
 
-                                {/* css */}
-                                <AceDynamic
-                                    language={'css'}
-                                    displayName={'CSS'}
-                                    value={css}
-                                    onChange={setCss}
-                                    editorName={'CSS'}
-                                />
-
-                                {/* javascript */}
-                                <AceDynamic
-                                    language={'javascript'}
-                                    displayName={'JavaScript'}
-                                    value={javascript}
-                                    onChange={setJavascript}
-                                    editorName={'JavaScript'}
-                                />
-
-                            </div>
+                                        {/* third col */}
+                                        <div className='feature col'>
+                                            <div className='feature-icon bg-primary bg-gradient'>
+                                                <svg className='bi' width='1em' height='1em'>
+                                                </svg>
+                                            </div>
+                                            <h2>JavaScript</h2>
+                                            {/* javascript */}
+                                            <AceDynamic
+                                                language={'javascript'}
+                                                displayName={'JavaScript'}
+                                                value={javascript}
+                                                onChange={setJavascript}
+                                                editorName={'JavaScript'}
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </Content>
 
                             {/* iframe render area */}
                             <div className='editorArea'>
