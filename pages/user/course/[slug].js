@@ -216,11 +216,14 @@ const SingleCourse = () => {
                                                             <svg className='bi' width='1em' height='1em'>
                                                             </svg>
                                                         </div>
-                                                        <h2>Need help?</h2>
-                                                        <div className='player'
-                                                        >
-                                                            <p>Watch video and then continue to code playground.</p>
-                                                        </div>
+                                                        <h2>Confused?</h2>
+                                                        <ul className='card-subtitle'>
+                                                            <li>Read over lesson once more</li>
+                                                            <li>Re-watch video (if there is one)</li>
+                                                            <li>Raise your hand!</li>
+                                                            <br/>
+                                                            <li>YOU CAN DO THIS!</li>
+                                                        </ul>
                                                     </div>
 
                                                 </>
