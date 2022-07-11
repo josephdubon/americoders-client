@@ -194,7 +194,11 @@ const SingleCourse = () => {
                             </div>
 
                             {/* editor area */}
-                            <div className='editorArea'>
+
+                            {/* editors */}
+                            <div className='editorArea topEditorArea'>
+                                <AceDynamic/>
+                                <AceDynamic/>
                                 <AceDynamic/>
                             </div>
 
