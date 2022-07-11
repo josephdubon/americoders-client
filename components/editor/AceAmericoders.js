@@ -7,7 +7,7 @@ import 'ace-builds/src-noconflict/theme-monokai'
 import 'ace-builds/src-noconflict/ext-language_tools'
 import {Button} from 'antd'
 
-const AceBasic = () => {
+const AceBasic = (props) => {
 
     // editor props
     const {
