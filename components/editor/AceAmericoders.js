@@ -11,7 +11,6 @@ const AceBasic = (props) => {
     // editor props
     const {
         language,
-        displayName,
         value,
         onChange,
         editorName,
@@ -21,8 +20,7 @@ const AceBasic = (props) => {
         {/* editor top area */}
         <div className='editorContainer'>
             <div className='editorTitle'>
-                {displayName}
-                <button className='btn btn-primary btn-sm px-4 me-md-2 m-3'>Open/Close</button>
+                <button className='btn btn-primary btn-sm px-4 me-md-2 mb-3'>Open/Close</button>
             </div>
 
             {/* editor area */}
