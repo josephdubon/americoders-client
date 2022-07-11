@@ -36,6 +36,7 @@ const AceBasic = (props) => {
             name={editorName}
             editorProps={{$blockScrolling: true}}
             highlightActiveLine={true}
+            wrapEnabled={true}
         />
     </>)
 }
