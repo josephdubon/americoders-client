@@ -201,9 +201,33 @@ const SingleCourse = () => {
 
                             {/* editors */}
                             <div className='editorArea topEditorArea'>
-                                <AceDynamic/>
-                                <AceDynamic/>
-                                <AceDynamic/>
+                                {/* html */}
+                                <AceDynamic
+                                    language={'xml'}
+                                    displayName={'HTML'}
+                                    value={html}
+                                    onChange={setHtml}
+                                    editorName={'HTML'}
+                                />
+
+                                {/* css */}
+                                <AceDynamic
+                                    language={'css'}
+                                    displayName={'CSS'}
+                                    value={css}
+                                    onChange={setCss}
+                                    editorName={'CSS'}
+                                />
+
+                                {/* javascript */}
+                                <AceDynamic
+                                    language={'javascript'}
+                                    displayName={'JavaScript'}
+                                    value={javascript}
+                                    onChange={setJavascript}
+                                    editorName={'JavaScript'}
+                                />
+
                             </div>
 
                             {/* iframe render area */}
