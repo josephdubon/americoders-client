@@ -220,3 +220,10 @@ label {
 .btn:hover, .grow:hover {
     transform: scale(1.1);
 }
+
+/* video player */
+.player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
