@@ -6,18 +6,25 @@ import 'ace-builds/src-noconflict/ext-language_tools'
 
 const AceBasic = () => {
 
-    function onChange(newValue) {
-        console.log('change', newValue)
-    }
+    // editor props
+    const {
+        language,
+        displayName,
+        value,
+        onChange,
+        editorName,
+    } = props
 
     return (<>
         {/* editor */}
         <AceEditor
-            mode='javascript'
+            value={value}
+            mode={language}
             theme='monokai'
             onChange={onChange}
-            name='Ace_Basic'
+            name={editorName}
             editorProps={{$blockScrolling: true}}
+            highlightActiveLine={true}
         />
     </>)
 }
