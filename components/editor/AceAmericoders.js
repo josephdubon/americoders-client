@@ -5,7 +5,6 @@ import 'ace-builds/src-noconflict/mode-css'
 import 'ace-builds/src-noconflict/mode-javascript'
 import 'ace-builds/src-noconflict/theme-monokai'
 import 'ace-builds/src-noconflict/ext-language_tools'
-import {Button} from 'antd'
 
 const AceBasic = (props) => {
 
@@ -23,21 +22,21 @@ const AceBasic = (props) => {
         <div className='editorContainer'>
             <div className='editorTitle'>
                 {displayName}
-                <Button>Open/Close</Button>
+                <button className='btn btn-primary btn-sm px-4 me-md-2 m-3'>Open/Close</button>
             </div>
-        </div>
 
-        {/* editor area */}
-        <AceEditor
-            value={value}
-            mode={language}
-            theme='monokai'
-            onChange={onChange}
-            name={editorName}
-            editorProps={{$blockScrolling: true}}
-            highlightActiveLine={true}
-            wrapEnabled={true}
-        />
+            {/* editor area */}
+            <AceEditor
+                value={value}
+                mode={language}
+                theme='monokai'
+                onChange={onChange}
+                name={editorName}
+                editorProps={{$blockScrolling: true}}
+                highlightActiveLine={true}
+                wrapEnabled={true}
+            />
+        </div>
     </>)
 }
 
