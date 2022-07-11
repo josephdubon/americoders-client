@@ -31,6 +31,10 @@ const SingleCourse = () => {
     const [course, setCourse] = useState({lessons: []}) // course.lessonn
     const [completedLessons, setCompletedLessons] = useState([])
 
+    const [html, setHtml] = useState('')
+    const [css, setCss] = useState('')
+    const [javascript, setJavascript] = useState('')
+
     // force stat update
     const [updateState, setUpdateState] = useState(false)
 
