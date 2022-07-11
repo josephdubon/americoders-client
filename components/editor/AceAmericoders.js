@@ -19,7 +19,15 @@ const AceBasic = (props) => {
     } = props
 
     return (<>
-        {/* editor */}
+        {/* editor top area */}
+        <div className='editorContainer'>
+            <div className='editorTitle'>
+                {displayName}
+                <Button>Open/Close</Button>
+            </div>
+        </div>
+
+        {/* editor area */}
         <AceEditor
             value={value}
             mode={language}
