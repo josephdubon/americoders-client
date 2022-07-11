@@ -133,7 +133,10 @@ const SingleCourse = () => {
                     </Menu>
                 </Col>
 
+                {/* main content area */}
                 <div className='col'>
+
+                    {/* top bar lesson title , completed status */}
                     {clicked !== -1 ? (
                         <>
                             <div className='col alert alert-primary'>
@@ -156,6 +159,7 @@ const SingleCourse = () => {
                                 )}
                             </div>
 
+                            {/* video area */}
                             {course.lessons[clicked].video &&
                                 course.lessons[clicked].video.Location && (
                                     <>
