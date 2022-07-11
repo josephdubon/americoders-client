@@ -187,22 +187,47 @@ const SingleCourse = () => {
                                         />
                                     </div>
 
-                            {/* video area */}
-                            {course.lessons[clicked].video &&
-                                course.lessons[clicked].video.Location && (
-                                    <>
-                                        <div className='player'
-                                        >
-                                            <ReactPlayer
-                                                url={course.lessons[clicked].video.Location}
-                                                width='500px'
-                                                height='100%'
-                                                controls
-                                                onEnded={markComplete} // update lesson completed status on video complete
-                                            />
-                                        </div>
-                                    </>
-                                )}
+                                    {/* video area */}
+                                    <div className='row g-4 py-5'>
+                                        {course.lessons[clicked].video &&
+                                            course.lessons[clicked].video.Location && (
+                                                <>
+                                                    {/* video col */}
+                                                    <div className='feature col'>
+                                                        <div className='feature-icon bg-primary bg-gradient'>
+                                                            <svg className='bi' width='1em' height='1em'>
+                                                            </svg>
+                                                        </div>
+                                                        <h2>Video</h2>
+                                                        <div className='player'
+                                                        >
+                                                            <ReactPlayer
+                                                                url={course.lessons[clicked].video.Location}
+                                                                width='auto'
+                                                                height='500px'
+                                                                controls
+                                                                onEnded={markComplete} // update lesson completed status on video complete
+                                                            />
+                                                        </div>
+                                                    </div>
+
+                                                    <div className='feature col'>
+                                                        <div className='feature-icon bg-primary bg-gradient'>
+                                                            <svg className='bi' width='1em' height='1em'>
+                                                            </svg>
+                                                        </div>
+                                                        <h2>Need help?</h2>
+                                                        <div className='player'
+                                                        >
+                                                            <p>Watch video and then continue to code playground.</p>
+                                                        </div>
+                                                    </div>
+
+                                                </>
+                                            )}
+                                        {/* description col*/}
+                                        <Content>
+                                            <div className='container px-4 py-5'>
 
                             <div>
 
