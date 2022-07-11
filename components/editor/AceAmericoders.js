@@ -35,6 +35,7 @@ const AceBasic = (props) => {
                 editorProps={{$blockScrolling: true}}
                 highlightActiveLine={true}
                 wrapEnabled={true}
+                width={'100%'}
             />
         </div>
     </>)
