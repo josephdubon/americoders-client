@@ -6,7 +6,7 @@ import StudentRoute from '../../../components/routes/StudentRoute'
 // next.js renders pages server-side, giving a 'window object isn't available' error
 // fix: dynamically import the module containing the AceEditor:
 import dynamic from 'next/dynamic'
-import {Avatar, Button, Col, Menu, Row} from 'antd'
+import {Avatar, Button, Col, Layout, Menu, Row} from 'antd'
 import ReactMarkdown from 'react-markdown'
 import {
     CheckCircleFilled,
@@ -15,6 +15,9 @@ import {
     MinusCircleFilled,
     PlayCircleOutlined
 } from '@ant-design/icons'
+import ReactPlayer from 'react-player'
+
+const {Content} = Layout
 
 const AceDynamic = dynamic(
     () => import('../../../components/editor/AceAmericoders'),
