@@ -55,6 +55,7 @@ const AceBasic = (props) => {
                     tabSize: 4
                 }}
                 width={'100%'}
+                className={'aceWrapper'}
             />
         </div>
     </>)
