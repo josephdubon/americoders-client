@@ -17,9 +17,12 @@ const AceBasic = (props) => {
         displayName
     } = props
 
+    const [open, setOpen] = useState(true)
+
+
     return (<>
         {/* editor top area */}
-        <div className='editorContainer'>
+        <div className={`editorContainer ${open ? '' : 'collapsed'}`}>
             <div className='editorHeader'>
                 <h2>{displayName}</h2>
                 <button
