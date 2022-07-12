@@ -259,15 +259,9 @@ const SingleCourse = () => {
                                         </div>
                                     </Content>
 
-                                    {/* editor area */}
-                                    <div className='row g-4 py-5 row-cols-1 row-cols-lg-3'>
-                                        {/* first col */}
-                                        <div className='feature col'>
-                                            <div className='feature-icon bg-primary bg-gradient'>
-                                                <svg className='bi' width='1em' height='1em'>
-                                                </svg>
-                                            </div>
-                                            <h2>HTML</h2>
+                                    <Content>
+                                        {/* editor area */}
+                                        <div className='container-fluid bg-body pane topPane'>
                                             {/* html */}
                                             <AceDynamic
                                                 language={'xml'}
