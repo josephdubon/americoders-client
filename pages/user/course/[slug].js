@@ -270,15 +270,7 @@ const SingleCourse = () => {
                                                 editorName={'HTML'}
                                                 displayName={'HTML'}
                                             />
-                                        </div>
 
-                                        {/* second col */}
-                                        <div className='feature col'>
-                                            <div className='feature-icon bg-primary bg-gradient'>
-                                                <svg className='bi' width='1em' height='1em'>
-                                                </svg>
-                                            </div>
-                                            <h2>CSS</h2>
                                             {/* css */}
                                             <AceDynamic
                                                 language={'css'}
@@ -286,7 +278,6 @@ const SingleCourse = () => {
                                                 onChange={setCss}
                                                 editorName={'CSS'}
                                             />
-                                        </div>
 
                                         {/* third col */}
                                         <div className='feature col'>
