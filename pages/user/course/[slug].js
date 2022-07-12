@@ -37,7 +37,7 @@ const SingleCourse = () => {
     const [html, setHtml] = useState('')
     const [css, setCss] = useState('')
     const [javascript, setJavascript] = useState('')
-
+    const [srcDoc, setSrcDoc] = useState('')
     // force stat update
     const [updateState, setUpdateState] = useState(false)
 
