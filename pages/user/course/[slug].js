@@ -277,21 +277,16 @@ const SingleCourse = () => {
                                                 value={css}
                                                 onChange={setCss}
                                                 editorName={'CSS'}
+                                                displayName={'CSS'}
                                             />
 
-                                        {/* third col */}
-                                        <div className='feature col'>
-                                            <div className='feature-icon bg-primary bg-gradient'>
-                                                <svg className='bi' width='1em' height='1em'>
-                                                </svg>
-                                            </div>
-                                            <h2>JavaScript</h2>
                                             {/* javascript */}
                                             <AceDynamic
                                                 language={'javascript'}
                                                 value={javascript}
                                                 onChange={setJavascript}
                                                 editorName={'JavaScript'}
+                                                displayName={'JavaScript'}
                                             />
                                         </div>
                                     </Content>
@@ -313,16 +308,6 @@ const SingleCourse = () => {
                                 </div>
                             </Content>
 
-                            {/* iframe render area */}
-                            <div className='editorArea'>
-                                <iframe
-                                    title={'output'}
-                                    sandbox={'allow-scripts'}
-                                    frameBorder={'0'}
-                                    width={'100%'}
-                                    height={'100%'}
-                                />
-                            </div>
 
                         </>
                     ) : (
