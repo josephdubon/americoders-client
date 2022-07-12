@@ -203,7 +203,7 @@ const SingleCourse = () => {
                                     </div>
 
                                     {/* video area */}
-                                    <div className='row g-4 py-5' mb-3>
+                                    <div className='row g-4 py-5 mb-3'>
                                         {course.lessons[clicked].video &&
                                             course.lessons[clicked].video.Location && (
                                                 <>
