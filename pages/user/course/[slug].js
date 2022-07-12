@@ -294,7 +294,22 @@ const SingleCourse = () => {
                                                 editorName={'JavaScript'}
                                             />
                                         </div>
-                                    </div>
+                                    </Content>
+
+                                    <Content>
+                                        {/* iframe render area */}
+                                        <div className='container-fluid bg-body editorArea'>
+                                            <iframe
+                                                srcDoc={srcDoc}
+                                                title={'output'}
+                                                sandbox={'allow-scripts'}
+                                                frameBorder={'0'}
+                                                width={'100%'}
+                                                height={'100% '}
+                                            />
+                                        </div>
+                                    </Content>
+
                                 </div>
                             </Content>
 
