@@ -14,13 +14,20 @@ const AceBasic = (props) => {
         value,
         onChange,
         editorName,
+        displayName
     } = props
 
     return (<>
         {/* editor top area */}
         <div className='editorContainer'>
             <div className='editorHeader'>
-                <button className='btn btn-primary btn-sm px-4 me-md-2'>Open/Close</button>
+                <h2>{displayName}</h2>
+                <button
+                    className='btn btn-primary btn-sm px-4 me-md-2'
+                    onClick={() => setOpen(prevOpen => !prevOpen)}
+                >
+                    {!open ? <ExpandAltOutlined /> : <ShrinkOutlined />}
+                </button>
             </div>
 
             {/* editor area */}
