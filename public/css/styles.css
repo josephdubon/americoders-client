@@ -230,20 +230,21 @@ label {
 }
 
 /* editor styles*/
-
-.topEditorArea {
-}
-
-.editorArea {
+.pane {
+    height: 50vh;
     display: flex;
 }
 
 .editorContainer {
-    display: flex;
     flex-grow: 1;
     flex-basis: 0;
+    display: flex;
     flex-direction: column;
     padding: .5rem;
+}
+
+.editorContainer.collapsed {
+    flex-grow: 0;
 }
 
 .editorHeader {
@@ -254,4 +255,26 @@ label {
     padding: .5rem .5rem .5rem 1rem;
     border-top-right-radius: .5rem;
     border-top-left-radius: .5rem;
+}
+
+.editorHeader h2 {
+    color: var(--white);
+}
+
+.editorArea {
+    border: var(--purple) 3px dashed;
+    padding: 0;
+    height: 50vh;
+}
+
+.ace_editor {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.aceWrapper {
+    flex-grow: 1;
+    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    overflow: hidden;
 }
