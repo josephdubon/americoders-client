@@ -169,9 +169,8 @@ const SingleCourse = () => {
                     {/* top bar lesson title , completed status */}
                     {clicked !== -1 ? (
                         <>
-                            {/* titles section */}
                             <Content className='bg-body'>
-                                <div className='container-fluid px-4 py-5' id='more-info'>
+                                <div className='container-fluid px-4 py-5'>
                                     {/* lesson title */}
                                     <h2 className='pb-2 border-bottom'>
                                         {course.lessons[clicked].title.substring(0, 30)}
@@ -204,7 +203,7 @@ const SingleCourse = () => {
                                     </div>
 
                                     {/* video area */}
-                                    <div className='row g-4 py-5'>
+                                    <div className='row g-4 py-5' mb-3>
                                         {course.lessons[clicked].video &&
                                             course.lessons[clicked].video.Location && (
                                                 <>
