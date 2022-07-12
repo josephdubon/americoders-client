@@ -53,6 +53,22 @@ const SingleCourse = () => {
         if (course) loadCompletedLessons()
     }, [course])
 
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setSrcDoc(`
+            <html lang='en'>
+            <body>${html}</body>
+            <style>${css}</style>
+            <script>${javascript}</script>
+            </html>
+             `)
+        }, 250)
+        // clear out on every update
+        return () => {
+            clearTimeout(timeout)
+        }
+    }, [html, css, javascript])
+
     const loadCourse = async () => {
         // collect data
         const {data} = await axios.get(`/api/user/course/${slug}`)
