@@ -268,6 +268,7 @@ const SingleCourse = () => {
                                                 value={html}
                                                 onChange={setHtml}
                                                 editorName={'HTML'}
+                                                displayName={'HTML'}
                                             />
                                         </div>
 
