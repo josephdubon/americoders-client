@@ -176,14 +176,12 @@ const Index = ({courses}) => {
                             className='row justify-content-center align-content-center text-center row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
 
                             {/* loop through the published courses */}
-                            {courses.map((course) => (<div key={course._id}>
-                                {courses.map((course) => (
-                                        <div key={course._id}>
-                                            <CourseCard course={course}/>
-                                        </div>
-                                    )
-                                )}
-                            </div>))}
+                            {courses.map((course) => (
+                                    <div key={course._id}>
+                                        <CourseCard course={course}/>
+                                    </div>
+                                )
+                            )}
                             {/* end loop */}
 
                             <div>
@@ -252,19 +250,23 @@ const Index = ({courses}) => {
             {/* mailing list */}
             <Content className='bg-body'>
                 <div className='container px-4 py-5'>
-                    <div className='offset-lg-2 col-lg-8 col-md-12 col-12 text-center'>
-                        <span className='lead fs-5 text-muted ls-md text-uppercase fw-semi-bold'>
-                            computer science - mindfulness - life skills
-                        </span>
+                    <div className='row py-lg-5 text-center'>
+                        <div className='col-lg-6 col-md-12 mx-auto'>
+                            <span className='lead fs-5 text-muted ls-md text-uppercase fw-semi-bold'>
+                                computer science - mindfulness - life skills
+                            </span>
 
-                        <h1 className='display-4 fw-bold text-black lh-1 mb-3'>
-                            Join our mailing list
-                        </h1>
+                            <h1 className='fw-bold text-black lh-1 mt-2 mb-3'>
+                                Join our mailing list
+                            </h1>
 
-                        <p className='lead text-black-50 px-lg-8 mb-6'>
-                            Stay up to date with the news and latest courses + lessons.
-                        </p>
-                        <MailingListForm/>
+                            <p className='lead text-black-50 px-lg-8 mb-6'>
+                                Stay up to date with the news and latest courses + lessons.
+                            </p>
+
+                            {/* mailing list */}
+                            <MailingListForm/>
+                        </div>
                     </div>
                 </div>
             </Content>

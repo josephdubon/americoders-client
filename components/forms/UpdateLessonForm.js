@@ -16,22 +16,61 @@ const UpdateLessonForm = ({
 
             {/*{JSON.stringify(current, null, 4)}*/}
             <form onSubmit={handleUpdateLesson}>
+                <p className='mb-1'>Title</p>
                 <input
                     type='text'
-                    className='form-control square'
+                    className='form-control square mb-3'
                     onChange={(e) => setCurrent({...current, title: e.target.value})}
                     value={current.title}
                     autoFocus
                     required
                 />
 
+                <p className='mb-1'>Content</p>
                 <textarea
                     className='form-control mt-3'
                     cols='7'
                     rows='7'
                     onChange={(e) => setCurrent({...current, content: e.target.value})}
                     value={current.content}
-                >{''}</textarea>
+                />
+
+                {/* code area */}
+                <div className='row form-group gap-2 mt-3 mb-3'>
+                    <div>
+                        <p className='mb-1'>HTML</p>
+                        <textarea
+                            className='form-control mt-3 col'
+                            cols='7'
+                            rows='7'
+                            onChange={(e) => setCurrent({...current, html: e.target.value})}
+                            value={current.html}
+                        />
+                    </div>
+
+                    <div>
+
+                        <p className='mb-1'>CSS</p>
+                        <textarea
+                            className='form-control mt-3 col'
+                            cols='7'
+                            rows='7'
+                            onChange={(e) => setCurrent({...current, css: e.target.value})}
+                            value={current.css}
+                        />
+                    </div>
+                    <div>
+                        <p className='mb-1'>JavaScript</p>
+                        <textarea
+                            className='form-control mt-3 col'
+                            cols='7'
+                            rows='7'
+                            onChange={(e) => setCurrent({...current, javascript: e.target.value})}
+                            value={current.javascript}
+                        />
+                    </div>
+
+                </div>
 
                 <div className='col d-grid gap-2'>
                     {!uploading && current.video && current.video.Location && (

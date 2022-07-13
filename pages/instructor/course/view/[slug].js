@@ -29,6 +29,9 @@ const CourseView = () => {
     const [values, setValues] = useState({
         title: '',
         content: '',
+        html: '',
+        css: '',
+        javascript: '',
         video: {},
     })
     const [uploading, setUploading] = useState(false)
@@ -78,6 +81,9 @@ const CourseView = () => {
                 ...values,
                 title: '',
                 content: '',
+                html: '',
+                css: '',
+                javascript: '',
                 video: {}, // video is an object
             })
             setProgress(0)
@@ -356,6 +362,7 @@ const CourseView = () => {
                                 <Modal
                                     title='+ Add Lesson'
                                     centered
+                                    width={'50vw'}
                                     visible={visible}
                                     onCancel={() => setVisible(false)}
                                     footer={null}

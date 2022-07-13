@@ -2,8 +2,11 @@ import {createElement, useEffect, useState} from 'react'
 import {useRouter} from 'next/router'
 import axios from 'axios'
 import StudentRoute from '../../../components/routes/StudentRoute'
-import {Avatar, Button, Col, Menu, Row} from 'antd'
-import ReactPlayer from 'react-player'
+
+// next.js renders pages server-side, giving a 'window object isn't available' error
+// fix: dynamically import the module containing the AceEditor:
+import dynamic from 'next/dynamic'
+import {Avatar, Button, Col, Layout, Menu, Row} from 'antd'
 import ReactMarkdown from 'react-markdown'
 import {
     CheckCircleFilled,
@@ -12,6 +15,15 @@ import {
     MinusCircleFilled,
     PlayCircleOutlined
 } from '@ant-design/icons'
+import ReactPlayer from 'react-player'
+import PlaygroundFrontEnd from '../../../components/editor/PlaygroundFrontEnd'
+
+const {Content} = Layout
+
+const AceDynamic = dynamic(
+    () => import('../../../components/editor/AceAmericoders'),
+    {ssr: false}
+)
 
 const {Item} = Menu
 
@@ -133,52 +145,117 @@ const SingleCourse = () => {
                     </Menu>
                 </Col>
 
+                {/* main content area */}
                 <div className='col'>
+                    {/* top bar lesson title , completed status */}
                     {clicked !== -1 ? (
                         <>
-                            <div className='col alert alert-primary'>
-                                <strong>{course.lessons[clicked].title.substring(0, 30)}</strong>
-                                {completedLessons.includes(course.lessons[clicked]._id) ? (
-                                    <span
-                                        className='float-end'
-                                        role='button'
-                                        onClick={markIncomplete}
-                                    >
-                    Mark as incomplete
-                  </span>
-                                ) : (
-                                    <span
-                                        className='float-end'
-                                        role='button'
-                                        onClick={markComplete}>
-                    Mark as completed
-                  </span>
-                                )}
-                            </div>
+                            <Content className='bg-body'>
+                                <div className='container-fluid px-4 py-5'>
+                                    {/* lesson title */}
+                                    <h2 className='pb-2 border-bottom'>
+                                        {course.lessons[clicked].title.substring(0, 30)}
+                                    </h2>
 
-                            {course.lessons[clicked].video &&
-                                course.lessons[clicked].video.Location && (
-                                    <>
-                                        <div>
-                                            <ReactPlayer
-                                                className='player'
-                                                url={course.lessons[clicked].video.Location}
-                                                width='100%'
-                                                height='100%'
-                                                controls
-                                                onEnded={markComplete} // update lesson completed status on video complete
-                                            />
+                                    {/* mark as complete area */}
+                                    {completedLessons.includes(course.lessons[clicked]._id) ? (
+                                        <span
+                                            className='float-end'
+                                            role='button'
+                                            onClick={markIncomplete}
+                                        >
+                                        Mark as incomplete
+                                    </span>
+                                    ) : (
+                                        <span
+                                            className='float-end'
+                                            role='button'
+                                            onClick={markComplete}>
+                                        Mark as completed
+                                    </span>
+                                    )}
+
+                                    {/* course description*/}
+                                    <div className='row g-4 py-5 rows-cols-1'>
+                                        <ReactMarkdown
+                                            children={course.lessons[clicked].content}
+                                            className='single-post'
+                                        />
+                                    </div>
+
+                                    {/* video area */}
+                                    <div className='row g-4 py-5 mb-3'>
+                                        {course.lessons[clicked].video &&
+                                            course.lessons[clicked].video.Location && (
+                                                <>
+                                                    {/* video col */}
+                                                    <div className='feature col'>
+                                                        <div className='feature-icon bg-primary bg-gradient'>
+                                                            <svg className='bi' width='1em' height='1em'>
+                                                            </svg>
+                                                        </div>
+                                                        <h2>Video</h2>
+                                                        <div className='player'
+                                                        >
+                                                            <ReactPlayer
+                                                                url={course.lessons[clicked].video.Location}
+                                                                width='auto'
+                                                                height='500px'
+                                                                controls
+                                                                onEnded={markComplete} // update lesson completed status on video complete
+                                                            />
+                                                        </div>
+                                                    </div>
+
+                                                    <div className='feature col'>
+                                                        <div className='feature-icon bg-primary bg-gradient'>
+                                                            <svg className='bi' width='1em' height='1em'>
+                                                            </svg>
+                                                        </div>
+                                                        <h2>Confused?</h2>
+                                                        <ul className='card-subtitle'>
+                                                            <li>Read over lesson once more</li>
+                                                            <li>Re-watch video (if there is one)</li>
+                                                            <li>Raise your hand!</li>
+                                                            <br/>
+                                                            <li>YOU CAN DO THIS!</li>
+                                                        </ul>
+                                                    </div>
+
+                                                </>
+                                            )}
+                                    </div>
+
+                                    {/* code editors */}
+                                    {course.lessons[clicked].html &&
+                                        course.lessons[clicked].css && course.lessons[clicked].css && (
+                                            <>
+                                                <PlaygroundFrontEnd
+                                                    htmlValue={course.lessons[clicked].content}
+                                                    cssValue={course.lessons[clicked].css}
+                                                    jsValue={course.lessons[clicked].javascript}
+                                                />
+                                            < />
+                                        )}
+
+                                    {/* description col*/}
+                                    <Content className='rounded-3 mt-3'>
+                                        <div className='container-fluid px-4 py-5 mb-5'>
+                                            <h2 className='lead title-large'>Are you stuck or getting
+                                                frustrated?</h2>
+                                            <p className='text-white text-center lead fs-4'>Pause. Breathe. Try
+                                                again.</p>
+                                            <p className='text-white text-center lead fs-5'>Raise your hand and ask
+                                                for
+                                                help! <br/>
+                                                We are all here to help, learn, and grow together.</p>
                                         </div>
-                                    </>
-                                )}
+                                    </Content>
 
-                            <div>
-                                {/* course description*/}
-                                <ReactMarkdown
-                                    children={course.lessons[clicked].content}
-                                    className='single-post'
-                                />
-                            </div>
+                                </div>
+                            </Content>
+
+
                         </>
                     ) : (
                         <div className='d-flex justify-content-center p-5'>

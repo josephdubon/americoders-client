@@ -45,7 +45,7 @@ const InstructorIndex = () => {
                 <div className='container'>
                     <div className='row row-cols-1 row-cols-sm-1 row-cols-md-1 g-1'>
                         {/* list all courses */}
-                        {courses && courses.map(course => (<>
+                        {courses && courses.map(course => (<div key={course._id}>
                             {/* parent media div */}
                             <div className='d-flex align-items-center pt-2'>
                                 {/* image media div */}
@@ -96,7 +96,7 @@ const InstructorIndex = () => {
                                     )}
                                 </div>
                             </div>
-                        </>))}
+                        </div>))}
                     </div>
                 </div>
             </div>

@@ -96,10 +96,16 @@ const SingleCourseHero = ({
                                         />
                                     </div>
                                 ) : (<>
-                                    <Image
-                                        src={image.Location}
-                                        alt={name}
-                                    />
+                                    {image && image.Location ?
+                                        <img src={image.Location}
+                                             alt={name}
+                                             style={{height: '240px', objectFit: 'cover'}}
+                                             className='p-1'
+                                        /> : <img src='/images/americoders-course.png'
+                                                  alt={name}
+                                                  style={{height: '240px', objectFit: 'cover'}}
+                                                  className='p-1'
+                                        />}
                                 </>)}
                                 {/* enroll button */}
                                 {loading ? <div className='d-flex justify-content-center'>
