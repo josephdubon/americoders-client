@@ -36,6 +36,38 @@ const AddLessonForm = ({
                     placeholder='Content'>
                 </textarea>
 
+
+                {/* code area */}
+                <div className='row form-group gap-2 mt-3 mb-3'>
+                    <textarea
+                        className='form-control mt-3 col'
+                        cols='7'
+                        rows='14'
+                        onChange={(e) => setValues({...values, html: e.target.value})}
+                        value={values.html}
+                        placeholder='HTML'>
+                    </textarea>
+
+                    <textarea
+                        className='form-control mt-3 col'
+                        cols='7'
+                        rows='14'
+                        onChange={(e) => setValues({...values, css: e.target.value})}
+                        value={values.css}
+                        placeholder='CSS'>
+
+                    </textarea>
+
+                    <textarea
+                        className='form-control mt-3 col'
+                        cols='7'
+                        rows='14'
+                        onChange={(e) => setValues({...values, javascript: e.target.value})}
+                        value={values.javascript}
+                        placeholder='JavaScript'>
+                    </textarea>
+                </div>
+
                 <div className='col d-grid gap-2'>
 
                     <label className='btn btn-dark btn-block text-left mt-3'>
