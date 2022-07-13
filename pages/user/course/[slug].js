@@ -29,6 +29,8 @@ const SingleCourse = () => {
     const [loading, setLoading] = useState(false)
     const [course, setCourse] = useState({lessons: []}) // course.lessonn
     const [completedLessons, setCompletedLessons] = useState([])
+    const [visible, setVisible] = useState(false)
+
 
     // force stat update
     const [updateState, setUpdateState] = useState(false)
