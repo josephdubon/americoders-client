@@ -39,7 +39,8 @@ const PlaygroundFrontEnd = ({htmlValue, cssValue, jsValue}) => {
                 {/* html */}
                 <AceDynamic
                     language={'xml'}
-                    value={html}
+                    value={htmlValue}
+                    defaultValue={htmlValue}
                     onChange={setHtml}
                     editorName={'HTML'}
                     displayName={'HTML'}
@@ -48,7 +49,8 @@ const PlaygroundFrontEnd = ({htmlValue, cssValue, jsValue}) => {
                 {/* css */}
                 <AceDynamic
                     language={'css'}
-                    value={css}
+                    value={cssValue}
+                    defaultValue={cssValue}
                     onChange={setCss}
                     editorName={'CSS'}
                     displayName={'CSS'}
@@ -57,7 +59,8 @@ const PlaygroundFrontEnd = ({htmlValue, cssValue, jsValue}) => {
                 {/* javascript */}
                 <AceDynamic
                     language={'javascript'}
-                    value={javascript}
+                    value={jsValue}
+                    defaultValue={jsValue}
                     onChange={setJavascript}
                     editorName={'JavaScript'}
                     displayName={'JavaScript'}
