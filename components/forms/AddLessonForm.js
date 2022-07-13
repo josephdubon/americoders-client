@@ -15,6 +15,7 @@ const AddLessonForm = ({
         <div className='container pt-3'>
 
             <form onSubmit={handleAddLesson}>
+                {/* title */}
                 <input
                     type='text'
                     className='form-control'
@@ -25,6 +26,7 @@ const AddLessonForm = ({
                     required
                 />
 
+                {/* content */}
                 <textarea
                     className='form-control mt-3'
                     cols='7'
