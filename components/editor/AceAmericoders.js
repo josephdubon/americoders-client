@@ -14,6 +14,7 @@ const AceBasic = (props) => {
     const {
         language,
         value,
+        defaultValue,
         onChange,
         editorName,
         displayName
