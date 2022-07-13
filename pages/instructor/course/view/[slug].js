@@ -29,6 +29,9 @@ const CourseView = () => {
     const [values, setValues] = useState({
         title: '',
         content: '',
+        html: '',
+        css: '',
+        javascript: '',
         video: {},
     })
     const [uploading, setUploading] = useState(false)
