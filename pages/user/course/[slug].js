@@ -107,7 +107,12 @@ const SingleCourse = () => {
 
     }
 
-    return (
+    return (<>
+        {loading && (<SyncOutlined
+            spin
+            className='d-flex justify-content-between display-1 text-danger p-5 center'
+        />)}
+
         <StudentRoute>
             <Row>
                 <Col>
