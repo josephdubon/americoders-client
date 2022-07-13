@@ -111,7 +111,7 @@ const UserIndex = () => {
         {/*{user ? <pre>{JSON.stringify(user, null, 4)}</pre> : ''}*/}
 
 
-        {/* features section */}
+        {/* enrolled courses section */}
         <Content>
             <div className='container px-4 py-5' id='more-info'>
                 <h2 className='text-light pb-2 border-bottom'>My Enrolled Courses</h2>
