@@ -30,12 +30,11 @@ const AddLessonForm = ({
                 <textarea
                     className='form-control mt-3'
                     cols='7'
-                    rows='7'
+                    rows='14'
                     onChange={(e) => setValues({...values, content: e.target.value})}
                     value={values.content}
-                    placeholder='Content'
-                >
-            </textarea>
+                    placeholder='Content'>
+                </textarea>
 
                 <div className='col d-grid gap-2'>
 
