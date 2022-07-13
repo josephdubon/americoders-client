@@ -114,46 +114,57 @@ const SingleCourse = () => {
         />)}
 
         <StudentRoute>
-            <Row>
-                <Col>
-                    <Button
-                        disabled={loading}
-                        onClick={() => setCollapsed(!collapsed)}
-                        className='text-primary mt-1 btn-block mb-2'
-                    >
-                        {createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}{' '}
-                        {!collapsed && 'Lessons'}
+
+            {/* top drawer lesson menu */}
+            <Space className='d-flex justify-content-center'>
+                <Button
+                    type='primary'
+                    onClick={showDrawer}
+                    className='text-primary mt-3 btn-block mb-3 text-white'
+                >
+                    {course.name} | Lessons Menu
+                </Button>
+            </Space>
+            <Drawer
+                title={course && course.name + ' | Lessons Menu'}
+                placement={'left'}
+                width={500}
+                onClose={onClose}
+                visible={visible}
+                extra={<Space>
+                    <Button type='primary' onClick={onClose}>
+                        Close
                     </Button>
-                    <Menu
-                        mode='inline'
-                        defaultSelectedKeys={[clicked]}
-                        inlineCollapsed={collapsed}
-                        style={{height: '80vh', overflow: 'scroll'}}
+                </Space>}
+            >
+                <Menu
+                    theme={'dark'}
+                    mode='inline'
+                    defaultSelectedKeys={[clicked]}
+                    inlineCollapsed={collapsed}
+                    className='p-3 pt-4'
+                    style={{height: '80vh', overflow: 'scroll'}}
+                >
+                    {course.lessons.map((lesson, index) => (<Item
+                        onClick={() => setClicked(index)}
+                        key={index}
+                        icon={<Avatar>{index + 1}</Avatar>}
                     >
-                        {course.lessons.map((lesson, index) => (
-                            <Item
-                                onClick={() => setClicked(index)}
-                                key={index}
-                                icon={<Avatar>{index + 1}</Avatar>}
-                            >
                                 <span style={{marginRight: '25px'}}>
                                     {lesson.title.substring(0, 30)}
                                 </span>
-                                {completedLessons.includes(lesson._id) ? (
-                                    <CheckCircleFilled
-                                        className='float-end text-primary ml-2'
-                                        style={{marginTop: '13px'}}
-                                    />
-                                ) : (
-                                    <MinusCircleFilled
-                                        className='float-end text-danger ml-2'
-                                        style={{marginTop: '13px'}}
-                                    />
-                                )}
-                            </Item>
-                        ))}
-                    </Menu>
-                </Col>
+                        {completedLessons.includes(lesson._id) ? (<CheckCircleFilled
+                            className='float-end text-primary ml-2'
+                            style={{marginTop: '13px'}}
+                        />) : (<MinusCircleFilled
+                            className='float-end text-danger ml-2'
+                            style={{marginTop: '13px'}}
+                        />)}
+                    </Item>))}
+                </Menu>
+            </Drawer>
+
+            <Row>
 
                 {/* main content area */}
                 <div className='col'>
