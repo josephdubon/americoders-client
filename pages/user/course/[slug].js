@@ -252,8 +252,6 @@ const SingleCourse = () => {
                                         </div>
                                     </Content>
 
-                                    {/* code editors */}
-                                    <PlaygroundFrontEnd/>
                                 </div>
                             </Content>
 
