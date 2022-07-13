@@ -362,6 +362,7 @@ const CourseView = () => {
                                 <Modal
                                     title='+ Add Lesson'
                                     centered
+                                    width={'50vw'}
                                     visible={visible}
                                     onCancel={() => setVisible(false)}
                                     footer={null}
