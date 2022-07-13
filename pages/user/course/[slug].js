@@ -27,6 +27,9 @@ const SingleCourse = () => {
     const router = useRouter()
     const {slug} = router.query
 
+    const currentYear = new Date().getFullYear()
+
+
     useEffect(() => {
         if (slug) loadCourse()
     }, [slug])
