@@ -13,11 +13,16 @@ const CourseCard = ({course}) => {
             <a>
                 <Card
                     className='mb-4'
-                    cover={<img src={image.Location}
-                                alt={name}
-                                style={{height: '240px', objectFit: 'cover'}}
-                                className='p-1'
-                    />}>
+                    cover={image && image.Location ?
+                        <img src={image.Location}
+                             alt={name}
+                             style={{height: '240px', objectFit: 'cover'}}
+                             className='p-1'
+                        /> : <img src='/images/americoders-course.png'
+                                  alt={name}
+                                  style={{height: '240px', objectFit: 'cover'}}
+                                  className='p-1'
+                        />}>
                     <h2 className='fw-bold'>{name}</h2>
                     <p>by {instructor.name}</p>
                     <Badge
