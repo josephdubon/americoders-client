@@ -9,7 +9,7 @@ const AceDynamic = dynamic(
     {ssr: false}
 )
 
-const PlaygroundFrontEnd = () => {
+const PlaygroundFrontEnd = ({htmlValue, cssValue, jsValue}) => {
     // set state
     const [html, setHtml] = useState('')
     const [css, setCss] = useState('')
