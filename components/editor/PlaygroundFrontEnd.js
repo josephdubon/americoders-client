@@ -11,9 +11,9 @@ const AceDynamic = dynamic(
 
 const PlaygroundFrontEnd = ({htmlValue, cssValue, jsValue}) => {
     // set state
-    const [html, setHtml] = useState('')
-    const [css, setCss] = useState('')
-    const [javascript, setJavascript] = useState('')
+    const [html, setHtml] = useState(htmlValue)
+    const [css, setCss] = useState(cssValue)
+    const [javascript, setJavascript] = useState(jsValue)
     const [srcDoc, setSrcDoc] = useState('')
 
     useEffect(() => {
