@@ -81,6 +81,9 @@ const CourseView = () => {
                 ...values,
                 title: '',
                 content: '',
+                html: '',
+                css: '',
+                javascript: '',
                 video: {}, // video is an object
             })
             setProgress(0)
