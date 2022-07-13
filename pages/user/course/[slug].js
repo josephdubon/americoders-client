@@ -151,6 +151,10 @@ const SingleCourse = () => {
                             />)}
                         </Item>))}
                     </Menu>
+                    <p className='modal-footer text-white shadow'>© {currentYear} Americoders | Questions or
+                        comments? <a
+                            href='mailto:questions@americoders.org'>Email us
+                            here</a></p>
                 </Drawer>
 
                 <Row>
