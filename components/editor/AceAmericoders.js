@@ -41,6 +41,7 @@ const AceBasic = (props) => {
                 value={value}
                 mode={language}
                 theme='dracula'
+                defaultValue={defaultValue}
                 onChange={onChange}
                 name={editorName}
                 editorProps={{$blockScrolling: true}}
