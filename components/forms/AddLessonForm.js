@@ -69,7 +69,6 @@ const AddLessonForm = ({
                 </div>
 
                 <div className='col d-grid gap-2'>
-
                     <label className='btn btn-dark btn-block text-left mt-3'>
                         {uploadButtonText}
                         <input
