@@ -226,6 +226,18 @@ const SingleCourse = () => {
                                             )}
                                     </div>
 
+                                    {/* code editors */}
+                                    {course.lessons[clicked].html &&
+                                        course.lessons[clicked].css && course.lessons[clicked].css && (
+                                            <>
+                                                <PlaygroundFrontEnd
+                                                    htmlValue={course.lessons[clicked].content}
+                                                    cssValue={course.lessons[clicked].css}
+                                                    jsValue={course.lessons[clicked].javascript}
+                                                />
+                                            < />
+                                        )}
+
                                     {/* description col*/}
                                     <Content className='rounded-3'>
                                         <div className='container-fluid px-4 py-5 mb-5'>
