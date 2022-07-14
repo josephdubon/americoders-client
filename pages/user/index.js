@@ -159,7 +159,7 @@ const UserIndex = () => {
                                     </Link>
                                 </div>
                             </div>
-                        </>))}
+                        </div>))}
                     </div>
                 </div>
             </div>
