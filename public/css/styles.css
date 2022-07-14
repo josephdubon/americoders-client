@@ -304,6 +304,10 @@ label {
     width: 100%;
 }
 
+.image-course video {
+    object-fit: cover;
+}
+
 /* lessons list */
 .lessons-list h4 {
     /*display: none !important;*/
