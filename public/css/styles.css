@@ -187,7 +187,8 @@ label {
 
 /* square frame around image */
 .squareFrame {
-    background: url('/images/branding/bg-images/americoders-sphere-space.png') fixed;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.5)), url('/images/branding/bg-images/americoders-particles-bg.svg');
     margin-left: auto;
     margin-right: auto;
     display: table-cell;
