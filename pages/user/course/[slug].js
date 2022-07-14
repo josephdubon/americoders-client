@@ -114,9 +114,8 @@ const SingleCourse = () => {
                     <Button
                         type='primary'
                         onClick={showDrawer}
-                        className='text-primary mt-3 btn-block mb-3 text-white'
-                    >
-                        {course.name} | Lessons Menu
+                        className='mt-3 btn-block mb-3 text-white'>
+                        Lessons Menu
                     </Button>
                 </Space>
                 <Drawer
