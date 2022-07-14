@@ -277,7 +277,6 @@ const SingleCourse = () => {
                             <>
                                 {/* hero section */}
                                 <Content className='bg-light'>
-                                    <Divider children='Welcome Back, Americoder!' className='mt-0 pt-3'/>
                                     <div className='container col-xxl-12 px-4 py-5'>
                                         <div
                                             className='row align-items-center justify-content-center g-5 row-cols-sm-1 row-cols-md-2 row-cols-lg-3'>
