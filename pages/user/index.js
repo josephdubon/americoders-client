@@ -5,6 +5,7 @@ import axios from 'axios'
 import {PlayCircleOutlined, SyncOutlined} from '@ant-design/icons'
 import {Avatar, Divider, Image, Layout, Tooltip} from 'antd'
 import Link from 'next/link'
+import Moment from 'moment'
 
 
 const {Content} = Layout
@@ -67,7 +68,8 @@ const UserIndex = () => {
                                     <strong>Enrolled: </strong> {courses.length + ' '}
                                     {user.courses.length >= 2 ? 'Course' : 'Courses'}
                                 </p>
-                                {/*<p className='text-muted'><strong>Member Since:</strong> {user.createdAt}</p>*/}
+                                <p className='text-muted'><strong>Member
+                                    Since:</strong> {Moment(user && user.createdAt, 'YYYYMMDD').fromNow()}</p>
                             </>)
                             :
                             (<>
