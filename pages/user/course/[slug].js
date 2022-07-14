@@ -287,6 +287,17 @@ const SingleCourse = () => {
                                                     (<>
                                                         <h1 className='display-6 fw-bold lh-1 mb-3 '>{course.name}</h1>
                                                         <Divider/>
+
+                                                        {/* category */}
+                                                        <Badge
+                                                            count={course.category}
+                                                            className='mb-3'
+                                                            style={{
+                                                                backgroundColor: '#03a9f4',
+                                                            }}
+                                                        />
+
+                                                        {/* title */}
                                                         <p className='text-muted'><strong>Course
                                                             Name: </strong>{course.name && course.name}</p>
                                                         <p className='text-muted'>
