@@ -276,58 +276,57 @@ const SingleCourse = () => {
                             </>
                         ) : (
                             <>
-                                {/* hero intro section */}
-                                <Content className='dark d-flex'>
+                                {/* hero section */}
+                                <Content className='bg-light'>
+                                    <Divider children='Welcome Back, Americoder!' className='mt-0 pt-3'/>
                                     <div className='container col-xxl-12 px-4 py-5'>
-                                        <div className='title-large '>
-                                            <h1 className='fw-bold text-white title-large lh-1 mb-3'>
-                                                {course.name}
-                                            </h1>
-                                        </div>
                                         <div
-                                            className='row flex-lg-row-reverse align-items-center justify-content-center g-5 py-5'>
-                                            <div
-                                                className='col-10 col-sm-8 col-lg-6'>
-                                                <Image
-                                                    src={course.image && course.image.Location ? course.image.Location : '/images/americoders-course.png'}
-                                                    alt={course.name}
-                                                    preview={false}
-                                                    loading='lazy'
-                                                    className='p1'
-                                                />
+                                            className='row align-items-center justify-content-center g-5 row-cols-sm-1 row-cols-md-2 row-cols-lg-3'>
+                                            <div>
+                                                {course ?
+                                                    (<>
+                                                        <h1 className='display-6 fw-bold lh-1 mb-3 '>{course.name}</h1>
+                                                        <Divider/>
+                                                        <p className='text-muted'><strong>Course
+                                                            Name: </strong>{course.name && course.name}</p>
+                                                        <p className='text-muted'>
+                                                            <strong>Categories: </strong>{course && course.category}</p>
+                                                        <p className='text-muted'>
+                                                            <strong>Lessons: </strong>{course.lessons && course.lessons.length}
+                                                        </p>
+                                                        <p className='text-muted'>
+                                                            <strong>Description: </strong>{course && course.description}
+                                                        </p>
+                                                        <p className='text-muted'><strong>Last
+                                                            Update: </strong>{Moment(course && course.updatedAt).format('LL')}
+                                                        </p>
+                                                    </>)
+                                                    :
+                                                    (<>
+                                                        <p className='display-6 fw-bold lh-1 mb-3'>Welcome back!!</p>
+                                                    </>)}
                                             </div>
 
-                                            <div className='col-lg-6 description-large bg-text'>
-                                                <p className='text-white fs-6'>
-                                                    Welcome! Please click the lessons menu at the top of the page to
-                                                    start learning.
-                                                </p>
-                                                <List
-                                                    bordered
-                                                    className='text-white'
-                                                >
-                                                    <List.Item className='text-white'>
-                                                        <strong>Course Name: </strong> {course.name && course.name}
-                                                    </List.Item>
+                                            <div>
+                                                {course && course.image ?
+                                                    (<>
+                                                        <div className='image-course'>
 
-                                                    <List.Item className='text-white'>
-                                                        <strong>{course && course.category >= 2 ? 'Categories: ' : 'Category: '} </strong> {course && course.category}
-                                                    </List.Item>
-
-                                                    <List.Item className='text-white'>
-                                                        <strong>Lessons: </strong> {course.lessons && course.lessons.length}
-                                                    </List.Item>
-
-                                                    <List.Item className='text-white'>
-                                                        <strong>Description: </strong> {course && course.description}
-                                                    </List.Item>
-
-                                                    <List.Item className='text-white'>
-                                                        <strong>Last
-                                                            Update: {Moment(course && course.updatedAt).format('LL')}
-                                                        </strong>
-                                                    </List.Item>
-                                                </List>
+                                                            <Image
+                                                                src={course.image && course.image.Location}
+                                                                alt='Americoders'
+                                                                loading='lazy'
+                                                                preview={false}
+                                                                className='squareFrame'
+                                                            />
+                                                        </div>
+                                                    </>) : <Image
+                                                        src='/images/americoders-course.png'
+                                                        alt='Americoders'
+                                                        loading='lazy'
+                                                        preview={false}
+                                                    />
+                                                }
                                             </div>
                                         </div>
                                     </div>
