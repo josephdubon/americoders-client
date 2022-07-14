@@ -101,8 +101,7 @@ const UserIndex = () => {
                             enrolled courses, please do so.
                         </p>
                         <p className='text-muted'>Check the <Link href={'/#course-list'}><a>homepage</a></Link> for new
-                            courses. A
-                            new course will be added daily.</p>
+                            courses.</p>
                     </div>
 
                 </div>
