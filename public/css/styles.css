@@ -293,3 +293,14 @@ label {
     background-size: cover;
     background-attachment: fixed;
 }
+
+/* images*/
+.image-course {
+    width: 100%;
+    height: auto;
+}
+
+.image-course img {
+    width: 100%;
+    max-height: 300px;
+}
