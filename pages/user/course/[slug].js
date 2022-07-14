@@ -109,7 +109,8 @@ const SingleCourse = () => {
                 />)}
 
                 {/* top drawer lesson menu */}
-                <Space className='d-flex justify-content-center'>
+                <Space className='d-flex justify-content-center bg-light'>
+                    {/* lessons menu link */}
                     <Button
                         type='primary'
                         onClick={showDrawer}
