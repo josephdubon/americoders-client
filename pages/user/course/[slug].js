@@ -102,12 +102,12 @@ const SingleCourse = () => {
     }
 
     return (<>
-            {loading && (<SyncOutlined
-                spin
-                className='d-flex justify-content-between display-1 p-5 center'
-            />)}
+            <StudentRoute className='container'>
+                {loading && (<SyncOutlined
+                    spin
+                    className='d-flex justify-content-between display-1 p-5 center'
+                />)}
 
-            <StudentRoute>
                 {/* top drawer lesson menu */}
                 <Space className='d-flex justify-content-center'>
                     <Button
