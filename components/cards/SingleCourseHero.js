@@ -94,7 +94,7 @@ const SingleCourseHero = ({
                                 {/*    }}*/}
                                 {/*>*/}
                                 <ReactPlayer
-                                    className='react-player-div'
+                                    className='p-1 squareFrame'
                                     url={lessons[0].video.Location}
                                     light={image.Location}
                                     width='100%'
