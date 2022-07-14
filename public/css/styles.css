@@ -89,7 +89,7 @@ label {
 
 .hero-section {
     /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5),
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6),
     rgba(0, 0, 0, 0.5)),
     url('/images/branding/bg-images/americoders-particles-bg.svg');
     /* Set a specific height */
