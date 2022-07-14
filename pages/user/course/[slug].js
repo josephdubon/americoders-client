@@ -117,6 +117,17 @@ const SingleCourse = () => {
                         className='mt-3 btn-block mb-3 text-white'>
                         Lessons Menu
                     </Button>
+
+                    {/* dashboard link */}
+                    <Link href={'/user'}>
+                        <a>
+                            <Button
+                                className='mt-3 btn-block mb-3'
+                            >
+                                Back to Dashboard
+                            </Button>
+                        </a>
+                    </Link>
                 </Space>
                 <Drawer
                     title={course && course.name + ' | Lessons Menu'}
