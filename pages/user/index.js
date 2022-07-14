@@ -112,7 +112,7 @@ const UserIndex = () => {
 
         {/* enrolled courses section */}
         <Content>
-            <div className='container px-4 py-5' id='more-info'>
+            <div className='container-fluid px-4 py-5' id='enrolled-courses'>
                 <h2 className='text-light pb-2 border-bottom'>My Enrolled Courses</h2>
                 <div className='container col-xxl-12 px-4 py-5'>
                     {/* first col */}
