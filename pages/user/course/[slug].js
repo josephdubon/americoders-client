@@ -172,7 +172,6 @@ const SingleCourse = () => {
                 </Drawer>
 
                 <Row>
-
                     {/* main content area */}
                     <div className='col'>
                         {/* top bar lesson title , completed status */}
