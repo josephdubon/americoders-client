@@ -66,7 +66,7 @@ const UserIndex = () => {
                                 <p className='text-muted'><strong>Role:</strong> {user.role.join(', ')}</p>
                                 <p className='text-muted'>
                                     <strong>Enrolled: </strong> {courses.length + ' '}
-                                    {user.courses.length >= 2 ? 'Course' : 'Courses'}
+                                    {user.courses.length <= 1 ? 'Course' : 'Courses'}
                                 </p>
                                 <p className='text-muted'><strong>Member
                                     Since:</strong> {Moment(user && user.createdAt, 'YYYYMMDD').fromNow()}</p>
