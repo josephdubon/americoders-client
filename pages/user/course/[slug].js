@@ -323,9 +323,9 @@ const SingleCourse = () => {
                                             </div>
 
                                             <div>
-                                                {course && course.image ?
-                                                    (<>
-                                                        <div className='image-course'>
+                                                <div className='image-course'>
+                                                    {course && course.image ?
+                                                        (<>
                                                             <Image
                                                                 src={course.image && course.image.Location}
                                                                 alt='Americoders'
@@ -333,15 +333,15 @@ const SingleCourse = () => {
                                                                 preview={false}
                                                                 className='p-1 squareFrame'
                                                             />
-                                                        </div>
-                                                    </>) : <Image
-                                                        src='/images/americoders-course.png'
-                                                        alt='Americoders'
-                                                        loading='lazy'
-                                                        preview={false}
-                                                        className='p-1 squareFrame'
-                                                    />
-                                                }
+                                                        </>) : <Image
+                                                            src='/images/americoders-course.png'
+                                                            alt='Americoders'
+                                                            loading='lazy'
+                                                            preview={false}
+                                                            className='p-1 squareFrame'
+                                                        />
+                                                    }
+                                                </div>
                                                 <p className='text-muted text-center'>Please click on the <strong
                                                     className='text-primary'>Lessons
                                                     Menu</strong> above to start learning!</p>
