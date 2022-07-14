@@ -331,7 +331,7 @@ const SingleCourse = () => {
                                                                 alt='Americoders'
                                                                 loading='lazy'
                                                                 preview={false}
-                                                                className='squareFrame'
+                                                                className='p-1 squareFrame'
                                                             />
                                                         </div>
                                                     </>) : <Image
@@ -339,6 +339,7 @@ const SingleCourse = () => {
                                                         alt='Americoders'
                                                         loading='lazy'
                                                         preview={false}
+                                                        className='p-1 squareFrame'
                                                     />
                                                 }
                                             </div>
