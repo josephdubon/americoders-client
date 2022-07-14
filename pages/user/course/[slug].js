@@ -331,6 +331,11 @@ const SingleCourse = () => {
                                         </div>
                                     </div>
                                 </Content>
+
+                                {/* cta banner */}
+                                <div>
+                                    <AskForHelp/>
+                                </div>
                             </>)}
                     </div>
                 </Row>
