@@ -342,6 +342,9 @@ const SingleCourse = () => {
                                                         className='p-1 squareFrame'
                                                     />
                                                 }
+                                                <p className='text-muted text-center'>Please click on the <strong
+                                                    className='text-primary'>Lessons
+                                                    Menu</strong> above to start learning!</p>
                                             </div>
                                         </div>
                                     </div>
