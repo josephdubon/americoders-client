@@ -86,12 +86,13 @@ const SingleCourseHero = ({
                     {/* course image and video */}
                     <div className='d-flex flex-column'>
                         {lessons[0].video && lessons[0].video.Location ? (
-                            <div
-                                onClick={() => {
-                                    setPreview(lessons[0].video.Location)
-                                    setShowModal(!showModal) // toggle modal
-                                }}
-                            >
+                            <div className='image-course'>
+                                {/*<div*/}
+                                {/*    onClick={() => {*/}
+                                {/*        setPreview(lessons[0].video.Location)*/}
+                                {/*        setShowModal(!showModal) // toggle modal*/}
+                                {/*    }}*/}
+                                {/*>*/}
                                 <ReactPlayer
                                     className='react-player-div'
                                     url={lessons[0].video.Location}
@@ -100,6 +101,7 @@ const SingleCourseHero = ({
                                     height='350px'
                                     controls
                                 />
+                                {/*</div>*/}
                             </div>
                         ) : (<>
                             <div className='image-course'>
