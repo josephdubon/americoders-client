@@ -7,6 +7,7 @@ import ReactMarkdown from 'react-markdown'
 import {CheckCircleFilled, MinusCircleFilled, SyncOutlined} from '@ant-design/icons'
 import ReactPlayer from 'react-player'
 import PlaygroundFrontEnd from '../../../components/editor/PlaygroundFrontEnd'
+import Moment from 'moment'
 
 const {Content} = Layout
 const {Item} = Menu
@@ -317,6 +318,12 @@ const SingleCourse = () => {
 
                                                     <List.Item className='text-white'>
                                                         <strong>Description: </strong> {course && course.description}
+                                                    </List.Item>
+
+                                                    <List.Item className='text-white'>
+                                                        <strong>Last
+                                                            Update: {Moment(course && course.updatedAt).format('LL')}
+                                                        </strong>
                                                     </List.Item>
                                                 </List>
                                             </div>
