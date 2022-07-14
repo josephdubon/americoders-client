@@ -118,7 +118,7 @@ const UserIndex = () => {
                     {/* first col */}
                     <div className='feature col'>
                         {/* list all courses */}
-                        {courses && courses.map(course => (<>
+                        {courses && courses.map(course => (<div key={course._id}>
                             {/* parent media div */}
                             <div className='d-flex align-items-center pt-2'>
                                 {/* image media div */}
