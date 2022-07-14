@@ -297,8 +297,7 @@ const SingleCourse = () => {
                                             <div className='col-lg-6 description-large bg-text'>
                                                 <p className='text-white fs-6'>
                                                     Welcome! Please click the lessons menu at the top of the page to
-                                                    start
-                                                    learning.
+                                                    start learning.
                                                 </p>
                                                 <List
                                                     bordered
