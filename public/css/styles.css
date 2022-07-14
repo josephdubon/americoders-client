@@ -304,3 +304,9 @@ label {
     width: 100%;
     max-height: 300px;
 }
+
+/* lessons list */
+.lessons-list h4 {
+    /*display: none !important;*/
+    color: var(--white);
+}
