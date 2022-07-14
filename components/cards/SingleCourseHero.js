@@ -97,8 +97,6 @@ const SingleCourseHero = ({
                                     className='p-1 squareFrame'
                                     url={lessons[0].video.Location}
                                     light={image.Location}
-                                    width='100%'
-                                    height='350px'
                                     controls
                                 />
                                 {/*</div>*/}
