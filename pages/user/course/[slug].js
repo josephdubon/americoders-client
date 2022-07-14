@@ -300,14 +300,18 @@ const SingleCourse = () => {
                                                         {/* title */}
                                                         <p className='text-muted'><strong>Course
                                                             Name: </strong>{course.name && course.name}</p>
-                                                        <p className='text-muted'>
-                                                            <strong>Categories: </strong>{course && course.category}</p>
+
+                                                        {/* lessons count */}
                                                         <p className='text-muted'>
                                                             <strong>Lessons: </strong>{course.lessons && course.lessons.length}
                                                         </p>
+
+                                                        {/* description */}
                                                         <p className='text-muted'>
                                                             <strong>Description: </strong>{course && course.description}
                                                         </p>
+
+                                                        {/* last update */}
                                                         <p className='text-muted'><strong>Last
                                                             Update: </strong>{Moment(course && course.updatedAt).format('LL')}
                                                         </p>
