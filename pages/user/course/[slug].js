@@ -326,7 +326,6 @@ const SingleCourse = () => {
                                                 {course && course.image ?
                                                     (<>
                                                         <div className='image-course'>
-
                                                             <Image
                                                                 src={course.image && course.image.Location}
                                                                 alt='Americoders'
