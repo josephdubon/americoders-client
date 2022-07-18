@@ -23,7 +23,7 @@ const Index = ({courses}) => {
             </Row>
 
             {/* hero section */}
-            <Row align={'middle'} justify={'center'} className='my-5'>
+            <Row align={'middle'} justify={'center'} className='py-5'>
                 {/* hero col 1/2 */}
                 <Col xs={22} lg={10} xl={11}>
                     <p className='description-large bg-text text-center'>
