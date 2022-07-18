@@ -249,24 +249,85 @@ const Index = ({courses}) => {
             </Row>
 
             {/* mailing list */}
-            <Content className='bg-body'>
-                <div className='container px-4 py-5'>
-                    <div className='row py-lg-5 text-center'>
-                        <div className='col-lg-6 col-md-12 mx-auto'>
-                            <span className='lead fs-5 text-muted ls-md text-uppercase fw-semi-bold'>
-                                computer science - mindfulness - life skills
+            <Row align={'middle'} justify={'center'} gutter={50} className='py-5 bg-light'>
+                {/* title area */}
+                <Col xs={22} md={20} lg={22} id='course-list'>
+                    <section className='text-center'>
+                        <span className='fs-5 text-muted ls-md text-uppercase'>
+                                technology education - arts - mindfulness
                             </span>
+                        <h1 className='fw-bold text-black lh-1 mt-2 mb-3'>
+                            Join our mailing list
+                        </h1>
 
-                            <h1 className='fw-bold text-black lh-1 mt-2 mb-3'>
-                                Join our mailing list
-                            </h1>
+                        <p className='text-black-50 mb-6 fs-6'>
+                            Stay up to date with the news and latest courses + lessons.
+                        </p>
 
-                            <p className='lead text-black-50 px-lg-8 mb-6'>
-                                Stay up to date with the news and latest courses + lessons.
-                            </p>
+                        {/* mailing list */}
+                        <MailingListForm className={'bg-light'}/>
+                    </section>
+                </Col>
+            </Row>
 
-                            {/* mailing list */}
-                            <MailingListForm/>
+            {/* features title section */}
+            <Row align={'middle'} justify={'center'}>
+                {/* brand title area */}
+                <Col xs={22} md={20} lg={22} className={'text-center'}>
+                    <div className='m-5'>
+                        <h2 className='text-white'>
+                            Pricing Model
+                        </h2>
+                        <Divider/>
+                        <p className='text-light fw-bolder'>Age groups:{' '}
+                            <span className='text-light'>7 - 9</span>{' | '}
+                            <span className='text-light'>10 - 13</span>{' | '}
+                            <span className='text-light'>14 - 17</span>
+                        </p>
+                        <p className='text-light'>
+                            Join our community as we educate, evolve, and adapt to this new world.
+                            <br/>
+                            Learn to code, create, live, and prosper in this new digital era while
+                            <br/>
+                            keeping intact the ethics and traditions of our old-world.
+                        </p>
+                        <p className='text-light'>
+                            Please <a href='mailto:scholarships@americoders.org'>email us here</a> to inquire about
+                            scholarships and sponsorships.
+                        </p>
+                    </div>
+                </Col>
+
+                {/* pricing model row section */}
+                <Row align={'top'} justify={'space-between'} gutter={50} className='my-5'>
+                    {/* features col 1/3 */}
+                    <Col xs={22} md={11} lg={7}>
+                        {/* free tier */}
+                        <div style={{width: '450px'}}
+                             className='card mb-4 rounded-3 shadow-sm border-primary text-center'>
+                            <div className='card-header py-3'>
+                                <h4 className='my-0 fw-normal'>Free</h4>
+                            </div>
+                            <div className='card-body'>
+                                <h1 className='card-title pricing-card-title'>$0<small
+                                    className='text-muted fw-light'>/mo</small></h1>
+                                <ul className='list-unstyled mt-3 mb-4'>
+                                    <li>Child + Parent Participation</li>
+                                    <li>Attendance to Speakers and Public Events</li>
+                                    <li>Can Purchase Workshop/Course 'A La Carte'</li>
+                                    <br/>
+                                    <li>'Hour of Code' Events</li>
+                                    <li>Access to Free Courses on Web App</li>
+                                    <li>Email support</li>
+                                </ul>
+                                <Link href={'/register'}>
+                                    <a>
+                                        <button type='button' className='w-100 btn btn-md btn-outline-primary'>
+                                            Registration Open
+                                        </button>
+                                    </a>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
