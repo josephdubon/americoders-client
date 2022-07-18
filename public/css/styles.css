@@ -313,3 +313,18 @@ label {
     /*display: none !important;*/
     color: var(--white);
 }
+
+/* markdown */
+.single-post-content {
+    width: 100%;
+    backdrop-filter: blur(1rem);
+}
+
+.single-post h1,
+.single-post h2,
+.single-post h3,
+.single-post h4,
+.single-post h5,
+.single-post p {
+    color: var(--white);
+}
