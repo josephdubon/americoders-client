@@ -154,18 +154,22 @@ const SingleCourse = () => {
                             here</a></p>
                 </Drawer>
 
-                <Row>
-                    {/* main content area */}
-                    <div className='col'>
-                        {/* top bar lesson title , completed status */}
-                        {clicked !== -1 ? (
-                            <>
-                                <Content className='bg-body'>
-                                    <div className='container-fluid px-4 py-5'>
-                                        {/* lesson title */}
-                                        <h2 className='pb-2 border-bottom'>
-                                            {course.lessons[clicked].title.substring(0, 30)}
-                                        </h2>
+                {/* main content area */}
+                <Content className='bg-light'>
+                    {/* top bar lesson title , completed status */}
+                    {clicked !== -1 ? (
+                        <>
+                            {/* lesson title area */}
+                            <Content className='bg-light'>
+                                <div className='container col-xxl-12 px-4 py-5'>
+                                    <div
+                                        className='row align-items-center justify-content-center g-5 row-cols-sm-1'>
+                                        <div>
+                                            {/* lesson title */}
+                                            <h2 className='pb-2'>
+                                                {course.lessons[clicked].title.substring(0, 30)}
+                                            </h2>
+                                            <Divider/>
 
                                         {/* mark as complete area */}
                                         {completedLessons.includes(course.lessons[clicked]._id) ? (
