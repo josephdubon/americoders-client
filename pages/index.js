@@ -3,6 +3,7 @@ import {Col, Layout, Row} from 'antd'
 import Link from 'next/link'
 import Image from 'next/image'
 import MailingListForm from '../components/forms/MailingListForm'
+import CourseCard from '../components/cards/CourseCard'
 
 const {Content} = Layout
 
