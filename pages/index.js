@@ -185,63 +185,76 @@ const Index = ({courses}) => {
                             )}
                             {/* end loop */}
 
-                            <div>
-                                <Image
-                                    src='/images/branding/bg-images/americoders-kids-game-happy.jpg'
-                                    alt='Americoders'
-                                    loading='lazy'
-                                    preview={false}
-                                />
-                                <p className='lead text-white'>Internet Safety for Kids</p>
-                            </div>
-                            <div>
-                                <Image
-                                    src='/images/branding/bg-images/americoders-scratch-game.jpg'
-                                    alt='Americoders'
-                                    loading='lazy'
-                                    preview={false}
-                                />
-                                <p className='lead text-white'>Scratch/Scratch Junior - Introduction</p>
-                            </div>
-                            <div>
-                                <Image
-                                    src='/images/branding/bg-images/americoders-old-school-game.jpg'
-                                    alt='Americoders'
-                                    loading='lazy'
-                                    preview={false}
-                                />
-                                <p className='lead text-white'>Old-School Game Creation - Introduction</p>
+                            {/*<div style={{height: '25px'}}>*/}
+                            {/*    <Image*/}
+                            {/*        layout='fill'*/}
+                            {/*        className='imageFit'*/}
+                            {/*        src='/images/branding/bg-images/americoders-kids-game-happy.jpg'*/}
+                            {/*        alt='Americoders'*/}
+                            {/*        loading='lazy'*/}
+                            {/*        preview={false}*/}
+                            {/*    />*/}
+                            {/*    <p className='lead text-white'>Internet Safety for Kids</p>*/}
+                            {/*</div>*/}
+                            {/*<div style={{height: '25px'}}>*/}
+                            {/*    <Image*/}
+                            {/*        layout='fill'*/}
+                            {/*        className='imageFit'*/}
+                            {/*        src='/images/branding/bg-images/americoders-scratch-game.jpg'*/}
+                            {/*        alt='Americoders'*/}
+                            {/*        loading='lazy'*/}
+                            {/*        preview={false}*/}
+                            {/*    />*/}
+                            {/*    <p className='lead text-white'>Scratch/Scratch Junior - Introduction</p>*/}
+                            {/*</div>*/}
+                            {/*<div style={{height: '25px'}}>*/}
+                            {/*    <Image*/}
+                            {/*        layout='fill'*/}
+                            {/*        className='imageFit'*/}
+                            {/*        src='/images/branding/bg-images/americoders-old-school-game.jpg'*/}
+                            {/*        alt='Americoders'*/}
+                            {/*        loading='lazy'*/}
+                            {/*        preview={false}*/}
+                            {/*    />*/}
+                            {/*    <p className='lead text-white'>Old-School Game Creation - Introduction</p>*/}
 
-                            </div>
-                            <div>
-                                <Image
-                                    src='/images/branding/bg-images/americoders-technology-unplugged.jpg'
-                                    alt='Americoders'
-                                    loading='lazy'
-                                    preview={false}
-                                />
-                                <p className='lead text-white'>Technology Unplugged - Introduction</p>
-                            </div>
-                            <div>
-                                <Image
-                                    src='/images/branding/bg-images/americoders-teen-coding.jpg'
-                                    alt='Americoders'
-                                    loading='lazy'
-                                    preview={false}
-                                />
-                                <p className='lead text-white'>Create Your First Website/Projects Portfolio</p>
+                            {/*</div>*/}
+                            {/*<div style={{height: '25px'}}>*/}
+                            {/*    <Image*/}
+                            {/*        layout='fill'*/}
+                            {/*        className='imageFit'*/}
+                            {/*        src='/images/branding/bg-images/americoders-technology-unplugged.jpg'*/}
+                            {/*        alt='Americoders'*/}
+                            {/*        loading='lazy'*/}
+                            {/*        preview={false}*/}
+                            {/*    />*/}
+                            {/*    <p className='lead text-white'>Technology Unplugged - Introduction</p>*/}
+                            {/*</div>*/}
+                            {/*<div style={{height: '25px'}}>*/}
+                            {/*    <Image*/}
+                            {/*        layout='fill'*/}
+                            {/*        className='imageFit'*/}
+                            {/*        src='/images/branding/bg-images/americoders-teen-coding.jpg'*/}
+                            {/*        alt='Americoders'*/}
+                            {/*        loading='lazy'*/}
+                            {/*        preview={false}*/}
+                            {/*    />*/}
+                            {/*    <p className='lead text-white'>Create Your First Website/Projects Portfolio</p>*/}
 
-                            </div>
-                            <div>
-                                <Image
-                                    src='/images/branding/bg-images/americoders-teen-3d-printing.jpg    '
-                                    alt='Americoders'
-                                    loading='lazy'
-                                    preview={false}
-                                />
-                                <p className='lead text-white'>Intro to 3D Modeling/3D Printing - Introduction</p>
+                            {/*</div>*/}
+                            {/*<div style={{height: '25px'}}>*/}
+                            {/*    <Image*/}
+                            {/*        layout='fill'*/}
+                            {/*        className='imageFit'*/}
+                            {/*        src='/images/branding/bg-images/americoders-teen-3d-printing.jpg    '*/}
+                            {/*        alt='Americoders'*/}
+                            {/*        loading='lazy'*/}
+                            {/*        preview={false}*/}
+                            {/*    />*/}
+                            {/*    <p className='lead text-white'>Intro to 3D Modeling/3D Printing - Introduction</p>*/}
 
-                            </div>
+                            {/*</div>*/}
+
                         </div>
 
                     </div>
