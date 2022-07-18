@@ -38,10 +38,7 @@ label {
 
 /**/
 
-
-/**/
-
-.ant-menu-dark {
+.siteNavigation {
     background-color: var(--purple) !important;
 }
 
