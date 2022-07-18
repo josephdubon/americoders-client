@@ -171,13 +171,13 @@ const SingleCourse = () => {
                                             </h2>
                                             <Divider/>
 
-                                        {/* mark as complete area */}
-                                        {completedLessons.includes(course.lessons[clicked]._id) ? (
-                                            <span
-                                                className='float-end'
-                                                role='button'
-                                                onClick={markIncomplete}
-                                            >
+                                            {/* mark as complete area */}
+                                            {completedLessons.includes(course.lessons[clicked]._id) ? (
+                                                <span
+                                                    className='float-end'
+                                                    role='button'
+                                                    onClick={markIncomplete}
+                                                >
                                         Mark as incomplete
                                     </span>
                                         ) : (
