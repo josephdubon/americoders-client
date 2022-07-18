@@ -45,6 +45,12 @@ label {
     background-color: var(--purple) !important;
 }
 
+/* images */
+.imageFit {
+    object-fit: contain;
+}
+
+/**/
 .ant-menu-dark,
 .ant-layout,
 .ant-layout-content {
