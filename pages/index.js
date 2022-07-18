@@ -189,7 +189,7 @@ const Index = ({courses}) => {
                     )}
                     {/* end loop */}
 
-                    <Col>
+                    <Col className={'mx-2'}>
                         <img
                             height={'340px'}
                             src='/images/branding/bg-images/americoders-scratch-game.jpg'
@@ -198,7 +198,7 @@ const Index = ({courses}) => {
                         />
                         <p className='lead text-white text-center fs-3'>Intro to Computer Science</p>
                     </Col>
-                    <Col>
+                    <Col className={'mx-2'}>
                         <img
                             height={'340px'}
                             src='/images/branding/bg-images/americoders-kids-game-happy.jpg'
@@ -207,7 +207,7 @@ const Index = ({courses}) => {
                         />
                         <p className='lead text-white text-center fs-3'>Internet Safety and Web Ethics</p>
                     </Col>
-                    <Col>
+                    <Col className={'mx-2'}>
                         <img
                             height={'340px'}
                             src='/images/branding/bg-images/americoders-old-school-game.jpg'
@@ -216,7 +216,7 @@ const Index = ({courses}) => {
                         />
                         <p className='lead text-white text-center fs-3'>Game Development - JS & Python</p>
                     </Col>
-                    <Col>
+                    <Col className={'mx-2'}>
                         <img
                             height={'340px'}
                             src='/images/branding/bg-images/americoders-technology-unplugged.jpg'
@@ -225,7 +225,7 @@ const Index = ({courses}) => {
                         />
                         <p className='lead text-white text-center fs-3'>Technology Unplugged - Introduction</p>
                     </Col>
-                    <Col>
+                    <Col className={'mx-2'}>
                         <img
                             height={'340px'}
                             src='/images/branding/bg-images/americoders-teen-coding.jpg'
@@ -234,7 +234,7 @@ const Index = ({courses}) => {
                         />
                         <p className='lead text-white text-center fs-3'>Create Your First Website/Projects Portfolio</p>
                     </Col>
-                    <Col>
+                    <Col className={'mx-2'}>
                         <img
                             height={'340px'}
                             src='/images/branding/bg-images/americoders-teen-3d-printing.jpg'
