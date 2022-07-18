@@ -35,7 +35,7 @@ const Index = ({courses}) => {
                         <br/>
                         We believe education should be an experience to foster growth
                         <br/>
-                        & development in STEM, Arts & Mindfulness Development.
+                        & advancements in STEM, Arts & Mindfulness Development.
                     </p>
 
                     {/* buttons */}
