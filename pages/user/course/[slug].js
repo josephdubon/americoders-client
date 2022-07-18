@@ -180,11 +180,11 @@ const SingleCourse = () => {
                                                 >
                                         Mark as incomplete
                                     </span>
-                                        ) : (
-                                            <span
-                                                className='float-end'
-                                                role='button'
-                                                onClick={markComplete}>
+                                            ) : (
+                                                <span
+                                                    className='float-end'
+                                                    role='button'
+                                                    onClick={markComplete}>
                                         Mark as completed
                                     </span>
                                         )}
