@@ -13,9 +13,9 @@ const Index = ({courses}) => {
             {/* page title */}
             <Row align={'middle'} justify={'center'} className={'pt-5'}>
                 {/* brand title area */}
-                <Col xs={22} md={20} lg={22}>
+                <Col xs={24}>
                     <div className='title-large '>
-                        <h1 className='fw-bold text-white title-large lh-1 mb-3'>
+                        <h1 className='fw-bold text-white display-3 lh-1 mb-3'>
                             AMERICODERS
                         </h1>
                     </div>
