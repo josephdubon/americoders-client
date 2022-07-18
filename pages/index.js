@@ -52,7 +52,7 @@ const Index = ({courses}) => {
                             <Link href={'/#course-list'}>
                                 <a>
                                     <button type='button'
-                                            className='btn btn-outline-secondary w-75 btn-lg px-4 mb-3'>Courses
+                                            className='btn btn-outline-secondary w-100 btn-lg mb-3'>Courses List
                                     </button>
                                 </a>
                             </Link>
