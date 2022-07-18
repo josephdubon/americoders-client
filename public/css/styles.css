@@ -258,36 +258,92 @@ label {
     border-top-left-radius: .5rem;
 }
 
-.editorHeader {
+/* browser template for editor preview */
+#browser {
     display: flex;
-    justify-content: space-between;
-    background-color: var(--purple);
-    color: var(--white);
-    padding: .5rem .5rem .5rem 1rem;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 100%;
+    background-color: #F4F4F4;
     border-top-right-radius: .5rem;
     border-top-left-radius: .5rem;
 }
 
-.editorHeader h2 {
+#browserTop {
+    background-color: #E3E5E9;
+    border-top-right-radius: .5rem;
+    border-top-left-radius: .5rem;
+    padding: 8px 15px;
+}
+
+#browserTitle {
+    background-color: var(--blue);
     color: var(--white);
+    width: 100%;
+    margin: 0;
+    padding: 8px;
+    border-top-right-radius: .5rem;
+    border-top-left-radius: .5rem;
 }
 
-.editorArea {
-    border: var(--purple) 3px dashed;
-    padding: 0;
-    height: 50vh;
+#closeBtn {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    margin-bottom: 5px;
+    background-color: #EC6D6B;
+    display: inline-block;
 }
 
-.ace_editor {
-    flex-grow: 1;
-    overflow: hidden;
+#minBtn {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background-color: #E7B846;
+    display: inline-block;
+    margin: 0 5px 5px 5px;
 }
 
-.aceWrapper {
-    flex-grow: 1;
-    border-bottom-right-radius: .5rem;
-    border-bottom-left-radius: .5rem;
-    overflow: hidden;
+#fullBtn {
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    margin-bottom: 5px;
+    background-color: #57BD82;
+    display: inline-block;
+}
+
+#back {
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-right: 10px solid #9FA2A8;
+    display: inline-block;
+    margin-bottom: 2px;
+}
+
+#forward {
+    width: 0;
+    height: 0;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 10px solid #b9b9b9;
+    display: inline-block;
+    margin: 5px 15px 2px 10px;
+}
+
+#url {
+    border-radius: 3px;
+    height: 18px;
+    width: 500px;
+    background-color: #fff;
+    display: inline-block;
+}
+
+#pageContent {
+    height: 100%;
+    padding: 10px;
 }
 
 /* drawer */
