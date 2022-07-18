@@ -11,7 +11,7 @@ const Index = ({courses}) => {
 
     return (<>
             {/* page title */}
-            <Row align={'middle'} justify={'center'}>
+            <Row align={'middle'} justify={'center'} className={'pt-5'}>
                 {/* brand title area */}
                 <Col xs={22} md={20} lg={22}>
                     <div className='title-large '>
