@@ -1,7 +1,7 @@
 import axios from 'axios'
-import {Image, Layout} from 'antd'
+import {Col, Layout, Row} from 'antd'
 import Link from 'next/link'
-import CourseCard from '../components/cards/CourseCard'
+import Image from 'next/image'
 import MailingListForm from '../components/forms/MailingListForm'
 
 const {Content} = Layout
@@ -10,72 +10,71 @@ const Index = ({courses}) => {
 
 
     return (<>
-            {/* hero section */}
-            <Content className='bg-light hero-section d-flex'>
-                <div className='container col-xxl-12 px-4 py-5'>
+            {/* page title */}
+            <Row align={'middle'} justify={'center'}>
+                {/* brand title area */}
+                <Col xs={22} md={20} lg={22}>
                     <div className='title-large '>
                         <h1 className='fw-bold text-white title-large lh-1 mb-3'>
                             AMERICODERS
                         </h1>
                     </div>
-                    <div className='row flex-lg-row-reverse align-items-center justify-content-center g-5 py-5'>
-                        <div className='col-10 col-sm-8 col-lg-6 animate__animated animate__rubberBand'>
-                            <Image
-                                src='/images/branding/americoders-community-diversity.png'
-                                alt='Americoders'
-                                loading='lazy'
-                                preview={false}
-                                className='animate__animated animate__fadeIn grow'
-                            />
-                        </div>
+                </Col>
+            </Row>
 
-                        <div className='col-lg-6 description-large bg-text'>
-                            <p className='text-white'>
-                                Hello friend, welcome!
-                            </p>
-                            <p className='text-white'>
-                                Thank you for your interest and support with this community project. We are
-                                an <strong>in-person</strong> learning platform dedicated to
-                                the technological development/education of our community.
-                            </p>
-                            <p className='text-white'>
-                                Join us as we educate, evolve/adapt to this new digital-age.
-                            </p>
+            {/* hero section */}
+            <Row align={'middle'} justify={'center'} gutter={12} className='my-5'>
+                {/* hero col 1/2 */}
+                <Col xs={22} lg={10} xl={11}>
+                    <p className='description-large bg-text'>
+                        Hello friend and welcome!
+                        <br/>
+                        <br/>
+                        We’re a community enrichment program in Reno, NV.
+                        <br/>
+                        We believe education should be an experience to foster growth & development in STEM, Arts &
+                        Mindfulness.
+                    </p>
 
-                            {/* buttons */}
-                            <div className='d-grid gap-2 d-md-flex justify-content-md-start'>
-                                <Link href={'/register'}>
-                                    <a>
+                    {/* buttons */}
+                    <Row align={'middle'} justify={'center'} gutter={12}>
+                        <Col xs={22} lg={8}>
+                            <Link href={'/register'}>
+                                <a>
+                                    <button type='button'
+                                            className='btn btn-primary w-100 btn-lg px-4 me-md-2'>Register
+                                    </button>
+                                </a>
+                            </Link>
+                        </Col>
 
-                                        <button type='button'
-                                                className='btn btn-primary w-100 btn-lg px-4 me-md-2'>Register Here
-                                        </button>
-                                    </a>
-                                </Link>
+                        <Col xs={22} lg={8}>
+                            <Link href={'/#course-list'}>
+                                <a>
+                                    <button type='button'
+                                            className='btn btn-outline-secondary w-100 btn-lg px-4'>Course
+                                        List
+                                    </button>
+                                </a>
+                            </Link>
+                        </Col>
+                    </Row>
+                </Col>
 
-                                <Link href={'/#more-info'}>
-                                    <a>
-                                        <button type='button'
-                                                className='btn btn-outline-secondary w-100 btn-lg px-4'>More
-                                            Info
-                                        </button>
-                                    </a>
-                                </Link>
-
-                                <Link href={'/#course-list'}>
-                                    <a>
-                                        <button type='button'
-                                                className='btn btn-outline-secondary w-100 btn-lg px-4 mb-5'>Course
-                                            List
-                                        </button>
-                                    </a>
-                                </Link>
-
-                            </div>
-                        </div>
+                {/* hero col 2/2 */}
+                <Col xs={22} lg={10} xl={11}>
+                    <div style={{height: '400px'}}>
+                        <Image
+                            src='/images/branding/americoders-community-diversity.png'
+                            alt='Americoders'
+                            layout={'fill'}
+                            className='imageFit'
+                            loading='lazy'
+                            preview={false}
+                        />
                     </div>
-                </div>
-            </Content>
+                </Col>
+            </Row>
 
             {/* features section */}
             <Content className='bg-body'>
