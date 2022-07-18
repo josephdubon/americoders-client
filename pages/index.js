@@ -65,7 +65,7 @@ const Index = ({courses}) => {
 
                 {/* hero col 2/2 */}
                 <Col xs={22} lg={10} xl={11}>
-                    <div style={{height: '400px'}}>
+                    <div style={{height: '300px'}}>
                         <Image
                             src='/images/branding/americoders-community-diversity.png'
                             alt='Americoders'
