@@ -164,110 +164,89 @@ const Index = ({courses}) => {
             </Row>
 
             {/* course and project album section */}
-            <Content>
-                <section className='py-5 text-center container' id='course-list'>
-                    <div className='row py-lg-5'>
-                        <div className='col-lg-6 col-md-8 mx-auto'>
-                            <h1 className='text-white'>Course and Project Examples</h1>
-                            <p className='lead text-white'>
-                                As predicted from years before, computer science and coding has progressed from a hobby
-                                to a critical career skill.
-                            </p>
-                            <p className='lead text-white fw-bold'>
-                                Let's level-up by building some cool games and useful
-                                projects!
-                            </p>
-                        </div>
-                    </div>
-                </section>
-                <div className='album pb-5'>
-                    <div className='container'>
-                        <div
-                            className='row justify-content-center align-content-center text-center row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
+            <Row align={'middle'} justify={'center'} gutter={50} className='my-5'>
+                {/* title area */}
+                <Col xs={22} md={20} lg={22} id='course-list'>
+                    <section className='text-center'>
+                        <h1 className='text-white'>Course and Project Examples</h1>
+                        <p className='lead text-white'>
+                            As predicted from years before, computer science and coding has progressed from a hobby
+                            to a critical career skill.
+                        </p>
+                        <p className='lead text-white fw-bold'>
+                            Let's level-up by building some cool games and useful
+                            projects!
+                        </p>
+                    </section>
+                </Col>
 
-                            {/* loop through the published courses */}
-                            {courses.map((course) => (
-                                    <div key={course._id}>
-                                        <CourseCard course={course}/>
-                                    </div>
-                                )
-                            )}
-                            {/* end loop */}
+                {/* courses list */}
+                <Row align={'top'} justify={'center'} gutter={50} className='my-5'>
+                    {/* loop through the published courses */}
+                    {/*{courses.map((course) => (*/}
+                    {/*        <Col key={course._id}>*/}
+                    {/*            <CourseCard course={course}/>*/}
+                    {/*        </Col>*/}
+                    {/*    )*/}
+                    )}
+                    {/* end loop */}
 
-                            {/*<div style={{height: '25px'}}>*/}
-                            {/*    <Image*/}
-                            {/*        layout='fill'*/}
-                            {/*        className='imageFit'*/}
-                            {/*        src='/images/branding/bg-images/americoders-kids-game-happy.jpg'*/}
-                            {/*        alt='Americoders'*/}
-                            {/*        loading='lazy'*/}
-                            {/*        preview={false}*/}
-                            {/*    />*/}
-                            {/*    <p className='lead text-white'>Internet Safety for Kids</p>*/}
-                            {/*</div>*/}
-                            {/*<div style={{height: '25px'}}>*/}
-                            {/*    <Image*/}
-                            {/*        layout='fill'*/}
-                            {/*        className='imageFit'*/}
-                            {/*        src='/images/branding/bg-images/americoders-scratch-game.jpg'*/}
-                            {/*        alt='Americoders'*/}
-                            {/*        loading='lazy'*/}
-                            {/*        preview={false}*/}
-                            {/*    />*/}
-                            {/*    <p className='lead text-white'>Scratch/Scratch Junior - Introduction</p>*/}
-                            {/*</div>*/}
-                            {/*<div style={{height: '25px'}}>*/}
-                            {/*    <Image*/}
-                            {/*        layout='fill'*/}
-                            {/*        className='imageFit'*/}
-                            {/*        src='/images/branding/bg-images/americoders-old-school-game.jpg'*/}
-                            {/*        alt='Americoders'*/}
-                            {/*        loading='lazy'*/}
-                            {/*        preview={false}*/}
-                            {/*    />*/}
-                            {/*    <p className='lead text-white'>Old-School Game Creation - Introduction</p>*/}
-
-                            {/*</div>*/}
-                            {/*<div style={{height: '25px'}}>*/}
-                            {/*    <Image*/}
-                            {/*        layout='fill'*/}
-                            {/*        className='imageFit'*/}
-                            {/*        src='/images/branding/bg-images/americoders-technology-unplugged.jpg'*/}
-                            {/*        alt='Americoders'*/}
-                            {/*        loading='lazy'*/}
-                            {/*        preview={false}*/}
-                            {/*    />*/}
-                            {/*    <p className='lead text-white'>Technology Unplugged - Introduction</p>*/}
-                            {/*</div>*/}
-                            {/*<div style={{height: '25px'}}>*/}
-                            {/*    <Image*/}
-                            {/*        layout='fill'*/}
-                            {/*        className='imageFit'*/}
-                            {/*        src='/images/branding/bg-images/americoders-teen-coding.jpg'*/}
-                            {/*        alt='Americoders'*/}
-                            {/*        loading='lazy'*/}
-                            {/*        preview={false}*/}
-                            {/*    />*/}
-                            {/*    <p className='lead text-white'>Create Your First Website/Projects Portfolio</p>*/}
-
-                            {/*</div>*/}
-                            {/*<div style={{height: '25px'}}>*/}
-                            {/*    <Image*/}
-                            {/*        layout='fill'*/}
-                            {/*        className='imageFit'*/}
-                            {/*        src='/images/branding/bg-images/americoders-teen-3d-printing.jpg    '*/}
-                            {/*        alt='Americoders'*/}
-                            {/*        loading='lazy'*/}
-                            {/*        preview={false}*/}
-                            {/*    />*/}
-                            {/*    <p className='lead text-white'>Intro to 3D Modeling/3D Printing - Introduction</p>*/}
-
-                            {/*</div>*/}
-
-                        </div>
-                    </div>
-                </div>
-            </Content>
+                    <Col>
+                        <img
+                            height={'340px'}
+                            src='/images/branding/bg-images/americoders-scratch-game.jpg'
+                            alt='Americoders'
+                            loading='lazy'
+                        />
+                        <p className='lead text-white text-center fs-3'>Intro to Computer Science</p>
+                    </Col>
+                    <Col>
+                        <img
+                            height={'340px'}
+                            src='/images/branding/bg-images/americoders-kids-game-happy.jpg'
+                            alt='Americoders'
+                            loading='lazy'
+                        />
+                        <p className='lead text-white text-center fs-3'>Internet Safety and Web Ethics</p>
+                    </Col>
+                    <Col>
+                        <img
+                            height={'340px'}
+                            src='/images/branding/bg-images/americoders-old-school-game.jpg'
+                            alt='Americoders'
+                            loading='lazy'
+                        />
+                        <p className='lead text-white text-center fs-3'>Game Development - JS & Python</p>
+                    </Col>
+                    <Col>
+                        <img
+                            height={'340px'}
+                            src='/images/branding/bg-images/americoders-technology-unplugged.jpg'
+                            alt='Americoders'
+                            loading='lazy'
+                        />
+                        <p className='lead text-white text-center fs-3'>Technology Unplugged - Introduction</p>
+                    </Col>
+                    <Col>
+                        <img
+                            height={'340px'}
+                            src='/images/branding/bg-images/americoders-teen-coding.jpg'
+                            alt='Americoders'
+                            loading='lazy'
+                        />
+                        <p className='lead text-white text-center fs-3'>Create Your First Website/Projects Portfolio</p>
+                    </Col>
+                    <Col>
+                        <img
+                            height={'340px'}
+                            src='/images/branding/bg-images/americoders-teen-3d-printing.jpg'
+                            alt='Americoders'
+                            loading='lazy'
+                        />
+                        <p className='lead text-white text-center fs-3'>Hardware Hacking and Breakdowns</p>
+                    </Col>
+                </Row>
+            </Row>
 
             {/* mailing list */}
             <Content className='bg-body'>
