@@ -301,33 +301,34 @@ const SingleCourse = () => {
                                                 </>)}
                                         </div>
 
-                                            <div>
-                                                <div className='image-course'>
-                                                    {course && course.image ?
-                                                        (<>
-                                                            <Image
-                                                                src={course.image && course.image.Location}
-                                                                alt='Americoders'
-                                                                loading='lazy'
-                                                                preview={false}
-                                                                className='p-1 squareFrame'
-                                                            />
-                                                        </>) : <Image
-                                                            src='/images/americoders-course.png'
+                                        {/* course image */}
+                                        <div>
+                                            <div className='image-course'>
+                                                {course && course.image ?
+                                                    (<>
+                                                        <Image
+                                                            src={course.image && course.image.Location}
                                                             alt='Americoders'
                                                             loading='lazy'
                                                             preview={false}
                                                             className='p-1 squareFrame'
                                                         />
-                                                    }
-                                                </div>
-                                                <p className='text-muted text-center'>Please click on the <strong
-                                                    className='text-primary'>Lessons
-                                                    Menu</strong> above to start learning!</p>
+                                                    </>) : <Image
+                                                        src='/images/americoders-course.png'
+                                                        alt='Americoders'
+                                                        loading='lazy'
+                                                        preview={false}
+                                                        className='p-1 squareFrame'
+                                                    />
+                                                }
                                             </div>
+                                            <p className='text-muted text-center'>Please click on the <strong
+                                                className='text-primary'>Lessons
+                                                Menu</strong> above to start learning!</p>
                                         </div>
                                     </div>
-                                </Content>
+                                </div>
+                            </Content>
 
                                 {/* cta banner */}
                                 <div>
