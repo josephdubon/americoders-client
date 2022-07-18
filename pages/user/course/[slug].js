@@ -187,7 +187,11 @@ const SingleCourse = () => {
                                                     onClick={markComplete}>
                                         Mark as completed
                                     </span>
-                                        )}
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                            </Content>
 
                                         {/* course description*/}
                                         <div className='row g-4 py-5 rows-cols-1'>
