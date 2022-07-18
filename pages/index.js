@@ -329,125 +329,66 @@ const Index = ({courses}) => {
                                 </Link>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </Content>
+                    </Col>
 
-            {/* pricing model section */}
-            <Content>
-                {/* pricing model */}
-                <div className='container px-4 py-5' id='featured-3'>
-                    <h2 className='text-light pb-2 border-bottom'>Pricing Model</h2>
-                    <p className='text-light fw-bolder'>Age groups:{' '}
-                        <span className='text-light'>7 - 9</span>{' | '}
-                        <span className='text-light'>10 - 13</span>{' | '}
-                        <span className='text-light'>14 - 17</span>
-                    </p>
-                    <div className='row g-4 py-5 row-cols-1 text-center'>
-                        <p className='text-light'>
-                            Join our community as we educate, evolve, and adapt to this new world.
-                            <br/>
-                            Learn to code,
-                            create,
-                            live, and prosper in this new digital era while keeping intact the ethics and traditions of
-                            our
-                            old-world.
-                        </p>
-                        <p className='text-light'>
-                            Please <a href='mailto:scholarships@americoders.org'>email us here</a> to inquire about
-                            scholarships and sponsorships.
-                        </p>
-                    </div>
-
-                    <div className='row g-4 py-5 row-cols-1 row-cols-lg-3 text-center'>
-
-                        {/* free tier */}
-                        <div className='col'>
-                            <div className='card mb-4 rounded-3 shadow-sm'>
-                                <div className='card-header py-3'>
-                                    <h4 className='my-0 fw-normal'>Free</h4>
-                                </div>
-                                <div className='card-body'>
-                                    <h1 className='card-title pricing-card-title'>$0<small
-                                        className='text-muted fw-light'>/mo</small></h1>
-                                    <ul className='list-unstyled mt-3 mb-4'>
-                                        <li>Child + Parent Participation</li>
-                                        <li>Attendance to Speakers and Public Events</li>
-                                        <li>Can Purchase Workshop/Course 'A La Carte'</li>
-                                        <br/>
-                                        <li>'Hour of Code' Events</li>
-                                        <li>Access to Free Courses on Web App</li>
-                                        <li>Email support</li>
-                                    </ul>
-                                    <Link href={'/register'}>
-                                        <a>
-                                            <button type='button' className='w-100 btn btn-md btn-outline-primary'>
-                                                Registration Open
-                                            </button>
-                                        </a>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-
+                    {/* features col 2/3 */}
+                    <Col xs={22} md={11} lg={7}>
                         {/* pro tier */}
-                        <div className='col'>
-                            <div className='card mb-4 rounded-3 shadow-sm'>
-                                <div className='card-header py-3'>
-                                    <h4 className='my-0 fw-normal'>Pro</h4>
-                                </div>
-                                <div className='card-body'>
-                                    <h1 className='card-title pricing-card-title'>$149<small
-                                        className='text-muted fw-light'>/mo</small></h1>
-                                    <ul className='list-unstyled mt-3 mb-4'>
-                                        <li>Child + Parent Participation</li>
-                                        <li>2x in-person workshop per month</li>
-                                        <br/>
-                                        <li>Access to online workshops/courses.</li>
-                                        <li>Hour of Code Events, Special Access</li>
-                                        <li>Priority email support</li>
-                                        <li>Help center access</li>
-                                    </ul>
-                                    <a>
-                                        <button type='button' className='w-100 btn btn-md btn-danger'>
-                                            Registration Opening Soon
-                                        </button>
-                                    </a>
-                                </div>
+                        <div style={{width: '450px'}} className='card mb-4 rounded-3 shadow-sm border text-center'>
+                            <div className='card-header py-3'>
+                                <h4 className='my-0 fw-normal'>Pro</h4>
+                            </div>
+                            <div className='card-body'>
+                                <h1 className='card-title pricing-card-title'>$149<small
+                                    className='text-muted fw-light'>/mo</small></h1>
+                                <ul className='list-unstyled mt-3 mb-4'>
+                                    <li>Child + Parent Participation</li>
+                                    <li>2x in-person workshop per month</li>
+                                    <br/>
+                                    <li>Access to online workshops/courses.</li>
+                                    <li>Hour of Code Events, Special Access</li>
+                                    <li>Priority email support</li>
+                                    <li>Help center access</li>
+                                </ul>
+                                <a>
+                                    <button type='button' className='w-100 btn btn-md btn-primary'>
+                                        Registration Opening Soon
+                                    </button>
+                                </a>
                             </div>
                         </div>
+                    </Col>
 
+                    {/* features col 3/3 */}
+                    <Col xs={22} lg={7}>
                         {/* enterprise tier */}
-                        <div className='col'>
-                            <div className='card mb-4 rounded-3 shadow-sm border-danger'>
-                                <div className='card-header py-3 text-white bg-danger border-danger'>
-                                    <h4 className='my-0 fw-normal text-light'>Enterprise</h4>
-                                </div>
-                                <div className='card-body'>
-                                    <h1 className='card-title pricing-card-title'>$225<small
-                                        className='text-muted fw-light'>/mo</small></h1>
-                                    <ul className='list-unstyled mt-3 mb-4'>
-                                        <li>Child + Parent Participation</li>
-                                        <li>4x in-person workshop per month</li>
-                                        <br/>
-                                        <li>Access to online workshops/courses.</li>
-                                        <li>Hour of Code Events, Special Access</li>
-                                        <li>Priority Phone and email support</li>
-                                        <li>Help center access</li>
-                                    </ul>
-                                    <a>
-                                        <button type='button' className='w-100 btn btn-md btn-danger'>
-                                            Registration Opening Soon
-                                        </button>
-                                    </a>
-                                </div>
+                        <div style={{width: '450px'}}
+                             className='card mb-4 rounded-3 shadow-sm border-danger text-center'>
+                            <div className='card-header py-3 text-white bg-danger border-danger'>
+                                <h4 className='my-0 fw-normal text-light'>Enterprise</h4>
+                            </div>
+                            <div className='card-body'>
+                                <h1 className='card-title pricing-card-title'>$225<small
+                                    className='text-muted fw-light'>/mo</small></h1>
+                                <ul className='list-unstyled mt-3 mb-4'>
+                                    <li>Child + Parent Participation</li>
+                                    <li>4x in-person workshop per month</li>
+                                    <br/>
+                                    <li>Access to online workshops/courses.</li>
+                                    <li>Hour of Code Events, Special Access</li>
+                                    <li>Priority Phone and email support</li>
+                                    <li>Help center access</li>
+                                </ul>
+                                <a>
+                                    <button type='button' className='w-100 btn btn-md btn-danger'>
+                                        Registration Opening Soon
+                                    </button>
+                                </a>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-
-            </Content>
+                    </Col>
+                </Row>
+            </Row>
         </>
     )
 }
