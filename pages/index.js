@@ -82,8 +82,8 @@ const Index = ({courses}) => {
             <Row align={'middle'} justify={'center'} className='bg-light'>
                 {/* brand title area */}
                 <Col xs={22} md={20} lg={22}>
-                    <div>
-                        <h2 className='p-5 border-bottom'>
+                    <div className='m-5'>
+                        <h2>
                             What do we do?
                         </h2>
                     </div>
