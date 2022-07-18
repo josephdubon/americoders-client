@@ -61,8 +61,6 @@ const TopNav = () => {
     }
 
     return (<>
-
-
         {/* main menu */}
         <Menu
             theme='dark'
