@@ -10,6 +10,7 @@ import ReactPlayer from 'react-player'
 import PlaygroundFrontEnd from '../../../components/editor/PlaygroundFrontEnd'
 import Moment from 'moment'
 import AskForHelp from '../../../components/banners/AskForHelp'
+import LessonsNav from '../../../components/nav/Course/LessonsNav'
 
 const {Content} = Layout
 const {Item} = Menu
@@ -108,27 +109,10 @@ const SingleCourse = () => {
                     className='d-flex justify-content-between display-1 p-5 center'
                 />)}
 
-                {/* top drawer lesson menu */}
-                <Space className='d-flex justify-content-center bg-light'>
-                    {/* lessons menu link */}
-                    <Button
-                        type='primary'
-                        onClick={showDrawer}
-                        className='mt-3 btn-block mb-3 text-white'>
-                        Lessons Menu
-                    </Button>
+                {/* lessons nav */}
+                <LessonsNav showDrawer={showDrawer}/>
 
-                    {/* dashboard link */}
-                    <Link href={'/user'}>
-                        <a>
-                            <Button
-                                className='mt-3 btn-block mb-3'
-                            >
-                                Back to Dashboard
-                            </Button>
-                        </a>
-                    </Link>
-                </Space>
+                {/* lessons menu items */}
                 <Drawer
                     title={course && course.name + ' | Lessons Menu'}
                     placement={'left'}
