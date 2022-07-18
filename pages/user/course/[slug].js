@@ -193,13 +193,20 @@ const SingleCourse = () => {
                                 </div>
                             </Content>
 
-                                        {/* course description*/}
-                                        <div className='row g-4 py-5 rows-cols-1'>
+                            {/* lesson markdown md mdx content */}
+                            <Content>
+                                <div className='container col-xxl-12 px-4 py-5'>
+                                    <div
+                                        className='row align-items-center justify-content-center g-5 row-cols-sm-1'>
+                                        <div className='text-white'>
                                             <ReactMarkdown
                                                 children={course.lessons[clicked].content}
-                                                className='single-post'
+                                                className='single-post single-post-content'
                                             />
                                         </div>
+                                    </div>
+                                </div>
+                            </Content>
 
                                         {/* video area */}
                                         <div className='row g-4 py-5 mb-3'>
