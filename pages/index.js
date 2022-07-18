@@ -27,14 +27,15 @@ const Index = ({courses}) => {
             <Row align={'middle'} justify={'center'} gutter={12} className='my-5'>
                 {/* hero col 1/2 */}
                 <Col xs={22} lg={10} xl={11}>
-                    <p className='description-large bg-text'>
-                        Hello friend and welcome!
+                    <p className='description-large bg-text text-center'>
+                        Hello friends and welcome to our web-app!
                         <br/>
                         <br/>
                         We’re a community enrichment program in Reno, NV.
                         <br/>
-                        We believe education should be an experience to foster growth & development in STEM, Arts &
-                        Mindfulness.
+                        We believe education should be an experience to foster growth
+                        <br/>
+                        & development in STEM, Arts & Mindfulness Development.
                     </p>
 
                     {/* buttons */}
