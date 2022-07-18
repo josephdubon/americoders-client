@@ -267,39 +267,39 @@ const SingleCourse = () => {
                                                     <h1 className='display-6 fw-bold lh-1 mb-3 '>{course.name}</h1>
                                                     <Divider/>
 
-                                                        {/* category */}
-                                                        <Badge
-                                                            count={course.category}
-                                                            className='mb-3'
-                                                            style={{
-                                                                backgroundColor: '#03a9f4',
-                                                            }}
-                                                        />
+                                                    {/* category */}
+                                                    <Badge
+                                                        count={course.category}
+                                                        className='mb-3'
+                                                        style={{
+                                                            backgroundColor: '#03a9f4',
+                                                        }}
+                                                    />
 
-                                                        {/* title */}
-                                                        <p className='text-muted'><strong>Course
-                                                            Name: </strong>{course.name && course.name}</p>
+                                                    {/* title */}
+                                                    <p className='text-muted'><strong>Course
+                                                        Name: </strong>{course.name && course.name}</p>
 
-                                                        {/* lessons count */}
-                                                        <p className='text-muted'>
-                                                            <strong>Lessons: </strong>{course.lessons && course.lessons.length}
-                                                        </p>
+                                                    {/* lessons count */}
+                                                    <p className='text-muted'>
+                                                        <strong>Lessons: </strong>{course.lessons && course.lessons.length}
+                                                    </p>
 
-                                                        {/* description */}
-                                                        <p className='text-muted'>
-                                                            <strong>Description: </strong>{course && course.description}
-                                                        </p>
+                                                    {/* description */}
+                                                    <p className='text-muted'>
+                                                        <strong>Description: </strong>{course && course.description}
+                                                    </p>
 
-                                                        {/* last update */}
-                                                        <p className='text-muted'><strong>Last
-                                                            Update: </strong>{Moment(course && course.updatedAt).format('LL')}
-                                                        </p>
-                                                    </>)
-                                                    :
-                                                    (<>
-                                                        <p className='display-6 fw-bold lh-1 mb-3'>Welcome back!!</p>
-                                                    </>)}
-                                            </div>
+                                                    {/* last update */}
+                                                    <p className='text-muted'><strong>Last
+                                                        Update: </strong>{Moment(course && course.updatedAt).format('LL')}
+                                                    </p>
+                                                </>)
+                                                :
+                                                (<>
+                                                    <p className='display-6 fw-bold lh-1 mb-3'>Welcome back!!</p>
+                                                </>)}
+                                        </div>
 
                                             <div>
                                                 <div className='image-course'>
