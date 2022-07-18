@@ -2,7 +2,7 @@ import {useEffect} from 'react'
 
 import TopNav from '../components/nav/TopNav'
 import {Provider} from '../context'
-import {Col, Layout, Row} from 'antd'
+import {Layout} from 'antd'
 import 'react-toastify/dist/ReactToastify.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'antd/dist/antd.css'
@@ -10,7 +10,6 @@ import '../public/css/styles.css'
 import ParticlesEffect from '../components/effects/Particles'
 import 'animate.css'
 import SiteFooter from '../components/footer/SiteFooter'
-import Link from 'next/link'
 
 const {Header, Footer, Content} = Layout
 
@@ -58,11 +57,7 @@ function MyApp({Component, pageProps}) {
 
                 {/* main content area */}
                 <Content>
-                    <Row align={'middle'} justify={'center'} wrap={true}>
-                        <Col xl={24}>
-                            <Component {...pageProps}/>
-                        </Col>
-                    </Row>
+                    <Component {...pageProps}/>
                 </Content>
 
                 {/* main footer area */}
