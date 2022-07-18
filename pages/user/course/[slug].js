@@ -208,44 +208,32 @@ const SingleCourse = () => {
                                 </div>
                             </Content>
 
-                                        {/* video area */}
-                                        <div className='row g-4 py-5 mb-3'>
-                                            {course.lessons[clicked].video &&
-                                                course.lessons[clicked].video.Location && (
-                                                    <>
-                                                        {/* video col */}
-                                                        <div className='feature col'>
-                                                            <div className='feature-icon bg-primary bg-gradient'>
-                                                                <svg className='bi' width='1em' height='1em'>
-                                                                </svg>
-                                                            </div>
-                                                            <h2>Video</h2>
-                                                            <div className='player'
-                                                            >
-                                                                <ReactPlayer
-                                                                    url={course.lessons[clicked].video.Location}
-                                                                    width='auto'
-                                                                    height='500px'
-                                                                    controls
-                                                                    onEnded={markComplete} // update lesson completed status on video complete
-                                                                />
-                                                            </div>
+                            {/* lesson video content */}
+                            <Content className='bg-light'>
+                                <div
+                                    className='container px-4 py-5 '>
+                                    {course.lessons[clicked].video &&
+                                        course.lessons[clicked].video.Location && (
+                                            <>
+                                                <div className='row'>
+                                                    {/* video col */}
+                                                    <div className='feature col-lg-12'>
+                                                        <h2>Video</h2>
+                                                        <Divider/>
+                                                        <div className='d-flex w-100'>
+                                                            <ReactPlayer
+                                                                url={course.lessons[clicked].video.Location}
+                                                                controls
+                                                                onEnded={markComplete} // update lesson completed status on video complete
+                                                                className='p-1 squareFrame'
+                                                            />
                                                         </div>
-
-                                                        <div className='feature col'>
-                                                            <div className='feature-icon bg-primary bg-gradient'>
-                                                                <svg className='bi' width='1em' height='1em'>
-                                                                </svg>
-                                                            </div>
-                                                            <h2>Confused?</h2>
-                                                            <ul className='card-subtitle'>
-                                                                <li>Read over lesson once more</li>
-                                                                <li>Re-watch video (if there is one)</li>
-                                                                <li>Raise your hand!</li>
-                                                                <br/>
-                                                                <li>YOU CAN DO THIS!</li>
-                                                            </ul>
-                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </>
+                                        )}
+                                </div>
+                            </Content>
 
                                                     </>
                                                 )}
