@@ -1,6 +1,10 @@
-import {Layout} from 'antd'
+import {Collapse, Layout} from 'antd'
 import dynamic from 'next/dynamic'
-import {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
+import {CaretRightOutlined} from '@ant-design/icons'
+
+const {Panel} = Collapse
+
 
 const {Content} = Layout
 
