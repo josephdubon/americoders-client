@@ -39,7 +39,7 @@ const SingleCourseHero = ({
         <Content className='bg-light'>
             <div className='container col-xxl-12 px-4 py-5'>
                 <div
-                    className='row align-items-center justify-content-center g-5 row-cols-sm-1 row-cols-md-2 row-cols-lg-3'>
+                    className='row align-items-center justify-content-center g-5 row-cols-sm-1 row-cols-md-2'>
                     <div>
                         {course ?
                             (<>
