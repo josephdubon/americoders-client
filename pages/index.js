@@ -25,25 +25,24 @@ const Index = ({courses}) => {
             {/* hero section */}
             <Row align={'middle'} justify={'center'} className='py-5'>
                 {/* hero col 1/2 */}
-                <Col xs={22} lg={10} xl={11}>
+                <Col xs={24} lg={12}>
                     <p className='description-large bg-text text-center'>
-                        Hello friends and welcome to our web-app!
+                        We are a community enrichment program in Reno, Nevada.
                         <br/>
                         <br/>
-                        We’re a community enrichment program in Reno, NV.
+                        We believe education should be an
+                        experience to foster growth & advancements in STEM, Arts, & Mindfulness Development.
                         <br/>
-                        We believe education should be an experience to foster growth
                         <br/>
-                        & advancements in STEM, Arts & Mindfulness Development.
                     </p>
 
                     {/* buttons */}
-                    <Row align={'middle'} justify={'center'}>
+                    <Row align={'middle'} justify={'space-around'}>
                         <Col xs={22} lg={8}>
-                            <Link href={'/register'}>
+                            <Link href={'/#more-info'}>
                                 <a>
                                     <button type='button'
-                                            className='btn btn-primary w-75 btn-lg px-4 me-md-2 mb-3'>Registration
+                                            className='btn btn-primary w-100 btn-lg mb-3'>More Info
                                     </button>
                                 </a>
                             </Link>
