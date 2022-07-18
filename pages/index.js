@@ -256,7 +256,6 @@ const Index = ({courses}) => {
                             {/*</div>*/}
 
                         </div>
-
                     </div>
                 </div>
             </Content>
