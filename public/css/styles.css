@@ -237,6 +237,7 @@ label {
 }
 
 .editorContainer {
+    background-color: var(--purple);
     flex-grow: 1;
     flex-basis: 0;
     display: flex;
