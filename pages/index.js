@@ -181,7 +181,7 @@ const Index = ({courses}) => {
                 </Col>
 
                 {/* courses list */}
-                <Row align={'top'} justify={'center'} gutter={50} className='my-5'>
+                <Row align={'top'} justify={'center'} gutter={50} className='py-5'>
                     {/* loop through the published courses */}
                     {/*{courses.map((course) => (*/}
                     {/*        <Col key={course._id}>*/}
