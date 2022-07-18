@@ -48,11 +48,11 @@ function MyApp({Component, pageProps}) {
                 {/* header area / nav area */}
                 <Header>
                     {/* logo */}
-                    <Link href={'/'}>
-                        <a>
-                            <div className='logo'/>
-                        </a>
-                    </Link>
+                    {/*<Link href={'/'}>*/}
+                    {/*    <a>*/}
+                    {/*        <div className='logo'/>*/}
+                    {/*    </a>*/}
+                    {/*</Link>*/}
                     <TopNav/>
                 </Header>
 
