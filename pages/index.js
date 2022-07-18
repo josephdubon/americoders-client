@@ -24,7 +24,7 @@ const Index = ({courses}) => {
             </Row>
 
             {/* hero section */}
-            <Row align={'middle'} justify={'center'} gutter={12} className='my-5'>
+            <Row align={'middle'} justify={'center'} className='my-5'>
                 {/* hero col 1/2 */}
                 <Col xs={22} lg={10} xl={11}>
                     <p className='description-large bg-text text-center'>
@@ -39,7 +39,7 @@ const Index = ({courses}) => {
                     </p>
 
                     {/* buttons */}
-                    <Row align={'middle'} justify={'center'} gutter={12}>
+                    <Row align={'middle'} justify={'center'}>
                         <Col xs={22} lg={8}>
                             <Link href={'/register'}>
                                 <a>
@@ -91,11 +91,10 @@ const Index = ({courses}) => {
                 </Col>
 
                 {/* features row section */}
-                <Row align={'top'} justify={'center'} gutter={50} className='my-5'>
+                <Row align={'top'} justify={'center'} className='my-5'>
                     {/* features col 1/3 */}
                     <Col xs={22} md={11} lg={7}>
                         <div className='feature-icon bg-primary bg-gradient text-center'>
-                            icon here
                             <svg className='bi' width='1em' height='1em'>
                             </svg>
                         </div>
@@ -164,7 +163,7 @@ const Index = ({courses}) => {
             </Row>
 
             {/* course and project album section */}
-            <Row align={'middle'} justify={'center'} gutter={50} className='my-5'>
+            <Row align={'middle'} justify={'center'} className='my-5'>
                 {/* title area */}
                 <Col xs={22} md={20} lg={22} id='course-list'>
                     <section className='text-center'>
@@ -181,7 +180,7 @@ const Index = ({courses}) => {
                 </Col>
 
                 {/* courses list */}
-                <Row align={'top'} justify={'center'} gutter={50} className='py-5'>
+                <Row align={'top'} justify={'center'} className='py-5'>
                     {/* loop through the published courses */}
                     {/*{courses.map((course) => (*/}
                     {/*        <Col key={course._id}>*/}
@@ -249,7 +248,7 @@ const Index = ({courses}) => {
             </Row>
 
             {/* mailing list */}
-            <Row align={'middle'} justify={'center'} gutter={50} className='py-5 bg-light'>
+            <Row align={'middle'} justify={'center'} className='py-5 bg-light'>
                 {/* title area */}
                 <Col xs={22} md={20} lg={22} id='course-list'>
                     <section className='text-center'>
