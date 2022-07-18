@@ -235,42 +235,37 @@ const SingleCourse = () => {
                                 </div>
                             </Content>
 
-                                                    </>
-                                                )}
-                                        </div>
-
-                                        {/* code editors */}
-                                        {course.lessons[clicked].html &&
-                                            course.lessons[clicked].css && course.lessons[clicked].css && (
-                                                <>
-                                                    <PlaygroundFrontEnd
-                                                        htmlValue={course.lessons[clicked].content}
-                                                        cssValue={course.lessons[clicked].css}
-                                                        jsValue={course.lessons[clicked].javascript}
-                                                    />
-                                                < />
-                                            )}
-
+                            {/* lesson code editor content */}
+                            <Content>
+                                <div
+                                    className='container px-0 py-5'>
+                                    {/* code editors */}
+                                    {course.lessons[clicked].html &&
+                                        course.lessons[clicked].css && course.lessons[clicked].css && (
+                                            <>
+                                                <PlaygroundFrontEnd
+                                                    htmlValue={course.lessons[clicked].html}
+                                                    cssValue={course.lessons[clicked].css}
+                                                    jsValue={course.lessons[clicked].javascript}
+                                                />
+                                            < />
+                                        )}
+                                </div>
+                            </Content>
+                            <AskForHelp/>
+                        </>
+                    ) : (
+                        <>
+                            {/* hero section */}
+                            <Content className='bg-light'>
+                                <div className='container col-xxl-12 px-4 py-5'>
+                                    <div
+                                        className='row align-items-center justify-content-center g-5 row-cols-sm-1 row-cols-md-2'>
                                         <div>
-                                            <AskForHelp/>
-                                        </div>
-                                    </div>
-                                </Content>
-
-
-                            </>
-                        ) : (
-                            <>
-                                {/* hero section */}
-                                <Content className='bg-light'>
-                                    <div className='container col-xxl-12 px-4 py-5'>
-                                        <div
-                                            className='row align-items-center justify-content-center g-5 row-cols-sm-1 row-cols-md-2 row-cols-lg-3'>
-                                            <div>
-                                                {course ?
-                                                    (<>
-                                                        <h1 className='display-6 fw-bold lh-1 mb-3 '>{course.name}</h1>
-                                                        <Divider/>
+                                            {course ?
+                                                (<>
+                                                    <h1 className='display-6 fw-bold lh-1 mb-3 '>{course.name}</h1>
+                                                    <Divider/>
 
                                                         {/* category */}
                                                         <Badge
