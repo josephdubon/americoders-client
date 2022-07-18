@@ -86,6 +86,7 @@ const Index = ({courses}) => {
                         <h2>
                             What do we do?
                         </h2>
+                        <Divider/>
                     </div>
                 </Col>
 
