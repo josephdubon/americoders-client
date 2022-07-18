@@ -26,15 +26,6 @@ const AceBasic = (props) => {
     return (<>
         {/* editor top area */}
         <div className={`editorContainer ${open ? '' : 'collapsed'}`}>
-            <div className='editorHeader'>
-                <h2>{displayName}</h2>
-                <button
-                    className='btn btn-primary btn-sm px-4 me-md-2'
-                    onClick={() => setOpen(prevOpen => !prevOpen)}
-                >
-                    {!open ? <ExpandAltOutlined /> : <ShrinkOutlined />}
-                </button>
-            </div>
 
             {/* editor area */}
             <AceEditor

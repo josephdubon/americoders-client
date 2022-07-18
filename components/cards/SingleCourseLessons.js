@@ -1,5 +1,6 @@
-import {Avatar, List} from 'antd'
+import {Avatar, Layout, List} from 'antd'
 
+const {Content} = Layout
 const {Item} = List
 
 const SingleCourseLessons = ({
@@ -8,15 +9,16 @@ const SingleCourseLessons = ({
                                  showModal,
                                  setShowModal,
                              }) => {
-    return (
-        <div className='container'>
-            <div className='row'>
-                <div className='col lesson-list'>
-                    {lessons && <h4>{lessons.length} Lessons</h4>}
-                    <hr/>
+    return (<>
+        <Content className='rounded-3 mt-3 hero-section'>
+            <div className='container px-4 py-5 mb-5 lessons-list text-white'>
+                {lessons && <h4 className='text-white'>{lessons.length} Lessons</h4>}
+                <hr/>
+                <div className='lessons-list'>
                     <List
                         itemLayout='horizontal'
                         dataSource={lessons}
+                        className='text-white'
                         renderItem={(item, index) => (
                             <Item>
                                 <Item.Meta
@@ -38,10 +40,11 @@ const SingleCourseLessons = ({
                             </Item>
                         )}
                     />
+
                 </div>
             </div>
-        </div>
-    )
+        </Content>
+    </>)
 }
 
 export default SingleCourseLessons

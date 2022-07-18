@@ -44,7 +44,7 @@ export default function MailingListForm() {
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo)
     }
-    return (<Layout className='bg-body'>
+    return (<Layout className='bg-light'>
         <p className='lead text-dark text-center form-text'>
             Please enter your email to join our mailing list.</p>
         <Form

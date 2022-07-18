@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const Footer = () => {
+const SiteFooter = () => {
     return (<>
         <footer className='text-muted py-5'>
             <div className='container'>
@@ -18,4 +18,4 @@ const Footer = () => {
     </>)
 }
 
-export default Footer
+export default SiteFooter

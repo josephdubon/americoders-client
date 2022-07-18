@@ -1,6 +1,10 @@
-import {Layout} from 'antd'
+import {Collapse, Layout} from 'antd'
 import dynamic from 'next/dynamic'
-import {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
+import {CaretRightOutlined} from '@ant-design/icons'
+
+const {Panel} = Collapse
+
 
 const {Content} = Layout
 
@@ -35,51 +39,88 @@ const PlaygroundFrontEnd = ({htmlValue, cssValue, jsValue}) => {
     return (<>
         <Content>
             {/* editor area */}
-            <div className='container-fluid bg-body pane topPane'>
-                {/* html */}
-                <AceDynamic
-                    language={'xml'}
-                    value={htmlValue}
-                    defaultValue={htmlValue}
-                    onChange={setHtml}
-                    editorName={'HTML'}
-                    displayName={'HTML'}
-                />
+            <div className='container-full row'>
+                <div className='col'>
 
-                {/* css */}
-                <AceDynamic
-                    language={'css'}
-                    value={cssValue}
-                    defaultValue={cssValue}
-                    onChange={setCss}
-                    editorName={'CSS'}
-                    displayName={'CSS'}
-                />
+                    <Collapse
+                        defaultActiveKey={['1']}
+                        className='editorCollapse'
+                        ghost
+                        accordion
+                        expandIcon={({isActive}) => <CaretRightOutlined rotate={isActive ? 90 : 0}/>}
+                    >
+                        {/* html */}
+                        <Panel header='HTML' key='1'>
+                            <AceDynamic
+                                language={'xml'}
+                                value={htmlValue}
+                                defaultValue={htmlValue}
+                                onChange={setHtml}
+                                editorName={'HTML'}
+                                displayName={'HTML'}
+                            />
+                        </Panel>
 
-                {/* javascript */}
-                <AceDynamic
-                    language={'javascript'}
-                    value={jsValue}
-                    defaultValue={jsValue}
-                    onChange={setJavascript}
-                    editorName={'JavaScript'}
-                    displayName={'JavaScript'}
-                />
+                        {/* css */}
+                        <Panel header='CSS' key='2'>
+                            <AceDynamic
+                                language={'css'}
+                                value={cssValue}
+                                defaultValue={cssValue}
+                                onChange={setCss}
+                                editorName={'CSS'}
+                                displayName={'CSS'}
+                            />
+                        </Panel>
+
+                        {/* javascript */}
+                        <Panel header='JavaScript' key='3'>
+                            <AceDynamic
+                                language={'javascript'}
+                                value={jsValue}
+                                defaultValue={jsValue}
+                                onChange={setJavascript}
+                                editorName={'JavaScript'}
+                                displayName={'JavaScript'}
+                            />
+                        </Panel>
+                    </Collapse>
+                </div>
+
+                {/* iframe render area */}
+                <div className='col'>
+                    <div id='browser'>
+                        <div id='browserTitle'>Code Live Preview:</div>
+                        <div id='browserTop'>
+                            <div id='closeBtn'/>
+                            <div id='minBtn'/>
+                            <div id='fullBtn'/>
+                            <div id='full'/>
+                            <div id='back'/>
+                            <div id='forward'/>
+                            <div id='url'/>
+                        </div>
+                        <div id='pageContent'>
+
+                            {/* iframe area */}
+                            <div className='bg-body p-2 h-100'>
+                                <iframe
+                                    srcDoc={srcDoc}
+                                    title={'output'}
+                                    sandbox={'allow-scripts'}
+                                    frameBorder={'0'}
+                                    className='editorArea'
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
         </Content>
 
-        <Content>
-            {/* iframe render area */}
-            <div className='container-fluid bg-body editorArea'>
-                <iframe
-                    srcDoc={srcDoc}
-                    title={'output'}
-                    sandbox={'allow-scripts'}
-                    frameBorder={'0'}
-                    width={'100%'}
-                    height={'100% '}
-                />
-            </div>
+        <Content className='editorArea'>
         </Content>
     </>)
 }

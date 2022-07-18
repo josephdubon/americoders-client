@@ -5,6 +5,7 @@ import axios from 'axios'
 import {PlayCircleOutlined, SyncOutlined} from '@ant-design/icons'
 import {Avatar, Divider, Image, Layout, Tooltip} from 'antd'
 import Link from 'next/link'
+import Moment from 'moment'
 
 
 const {Content} = Layout
@@ -65,9 +66,10 @@ const UserIndex = () => {
                                 <p className='text-muted'><strong>Role:</strong> {user.role.join(', ')}</p>
                                 <p className='text-muted'>
                                     <strong>Enrolled: </strong> {courses.length + ' '}
-                                    {user.courses.length >= 2 ? 'Course' : 'Courses'}
+                                    {user.courses.length <= 1 ? 'Course' : 'Courses'}
                                 </p>
-                                {/*<p className='text-muted'><strong>Member Since:</strong> {user.createdAt}</p>*/}
+                                <p className='text-muted'><strong>Member
+                                    Since:</strong> {Moment(user && user.createdAt, 'YYYYMMDD').fromNow()}</p>
                             </>)
                             :
                             (<>
@@ -101,8 +103,7 @@ const UserIndex = () => {
                             enrolled courses, please do so.
                         </p>
                         <p className='text-muted'>Check the <Link href={'/#course-list'}><a>homepage</a></Link> for new
-                            courses. A
-                            new course will be added daily.</p>
+                            courses.</p>
                     </div>
 
                 </div>
@@ -111,15 +112,15 @@ const UserIndex = () => {
         {/*{user ? <pre>{JSON.stringify(user, null, 4)}</pre> : ''}*/}
 
 
-        {/* features section */}
+        {/* enrolled courses section */}
         <Content>
-            <div className='container px-4 py-5' id='more-info'>
+            <div className='container-fluid px-4 py-5' id='enrolled-courses'>
                 <h2 className='text-light pb-2 border-bottom'>My Enrolled Courses</h2>
                 <div className='container col-xxl-12 px-4 py-5'>
                     {/* first col */}
                     <div className='feature col'>
                         {/* list all courses */}
-                        {courses && courses.map(course => (<>
+                        {courses && courses.map(course => (<div key={course._id}>
                             {/* parent media div */}
                             <div className='d-flex align-items-center pt-2'>
                                 {/* image media div */}
@@ -160,7 +161,7 @@ const UserIndex = () => {
                                     </Link>
                                 </div>
                             </div>
-                        </>))}
+                        </div>))}
                     </div>
                 </div>
             </div>

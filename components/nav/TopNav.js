@@ -61,9 +61,13 @@ const TopNav = () => {
     }
 
     return (<>
+
+
+        {/* main menu */}
         <Menu
             theme='dark'
             mode='horizontal'
+            className='siteNavigation'
             selectedKeys={[currentPage]}
             defaultSelectedKeys={[currentPage]}
             items={new Array(15).fill(null).map((_, index) => {

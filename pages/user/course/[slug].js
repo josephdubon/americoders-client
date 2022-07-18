@@ -1,39 +1,27 @@
-import {createElement, useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 import {useRouter} from 'next/router'
 import axios from 'axios'
 import StudentRoute from '../../../components/routes/StudentRoute'
-
-// next.js renders pages server-side, giving a 'window object isn't available' error
-// fix: dynamically import the module containing the AceEditor:
-import dynamic from 'next/dynamic'
-import {Avatar, Button, Col, Layout, Menu, Row} from 'antd'
+import {Avatar, Badge, Button, Divider, Drawer, Image, Layout, Menu, Space} from 'antd'
 import ReactMarkdown from 'react-markdown'
-import {
-    CheckCircleFilled,
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
-    MinusCircleFilled,
-    PlayCircleOutlined
-} from '@ant-design/icons'
+import {CheckCircleFilled, MinusCircleFilled, SyncOutlined} from '@ant-design/icons'
 import ReactPlayer from 'react-player'
 import PlaygroundFrontEnd from '../../../components/editor/PlaygroundFrontEnd'
+import Moment from 'moment'
+import AskForHelp from '../../../components/banners/AskForHelp'
+import LessonsNav from '../../../components/nav/Course/LessonsNav'
 
 const {Content} = Layout
-
-const AceDynamic = dynamic(
-    () => import('../../../components/editor/AceAmericoders'),
-    {ssr: false}
-)
-
 const {Item} = Menu
 
 const SingleCourse = () => {
     // state
     const [clicked, setClicked] = useState(-1)
-    const [collapsed, setCollapsed] = useState(false)
     const [loading, setLoading] = useState(false)
     const [course, setCourse] = useState({lessons: []}) // course.lessonn
     const [completedLessons, setCompletedLessons] = useState([])
+    const [visible, setVisible] = useState(false)
+
 
     // force stat update
     const [updateState, setUpdateState] = useState(false)
@@ -42,6 +30,9 @@ const SingleCourse = () => {
     const router = useRouter()
     const {slug} = router.query
 
+    const currentYear = new Date().getFullYear()
+
+
     useEffect(() => {
         if (slug) loadCourse()
     }, [slug])
@@ -49,6 +40,14 @@ const SingleCourse = () => {
     useEffect(() => {
         if (course) loadCompletedLessons()
     }, [course])
+
+    const showDrawer = () => {
+        setVisible(true)
+    }
+
+    const onClose = () => {
+        setVisible(false)
+    }
 
     const loadCourse = async () => {
         // collect data
@@ -102,172 +101,243 @@ const SingleCourse = () => {
 
     }
 
-    return (
-        <StudentRoute>
-            <Row>
-                <Col>
-                    <Button
-                        disabled={loading}
-                        onClick={() => setCollapsed(!collapsed)}
-                        className='text-primary mt-1 btn-block mb-2'
-                    >
-                        {createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined)}{' '}
-                        {!collapsed && 'Lessons'}
-                    </Button>
+    return (<>
+            <StudentRoute className='container'>
+                {loading && (<SyncOutlined
+                    spin
+                    className='d-flex justify-content-between display-1 p-5 center'
+                />)}
+
+                {/* lessons nav */}
+                <LessonsNav showDrawer={showDrawer}/>
+
+                {/* lessons menu items */}
+                <Drawer
+                    title={course && course.name + ' | Lessons Menu'}
+                    placement={'left'}
+                    width={500}
+                    onClose={onClose}
+                    visible={visible}
+                    extra={<Space>
+                        <Button type='primary' onClick={onClose}>
+                            Close
+                        </Button>
+                    </Space>}
+                >
                     <Menu
+                        theme={'dark'}
                         mode='inline'
                         defaultSelectedKeys={[clicked]}
-                        inlineCollapsed={collapsed}
+                        className='p-3 pt-4'
                         style={{height: '80vh', overflow: 'scroll'}}
                     >
-                        {course.lessons.map((lesson, index) => (
-                            <Item
-                                onClick={() => setClicked(index)}
-                                key={index}
-                                icon={<Avatar>{index + 1}</Avatar>}
-                            >
+                        {course.lessons.map((lesson, index) => (<Item
+                            onClick={() => setClicked(index)}
+                            key={index}
+                            icon={<Avatar>{index + 1}</Avatar>}
+                        >
                                 <span style={{marginRight: '25px'}}>
                                     {lesson.title.substring(0, 30)}
                                 </span>
-                                {completedLessons.includes(lesson._id) ? (
-                                    <CheckCircleFilled
-                                        className='float-end text-primary ml-2'
-                                        style={{marginTop: '13px'}}
-                                    />
-                                ) : (
-                                    <MinusCircleFilled
-                                        className='float-end text-danger ml-2'
-                                        style={{marginTop: '13px'}}
-                                    />
-                                )}
-                            </Item>
-                        ))}
+                            {completedLessons.includes(lesson._id) ? (<CheckCircleFilled
+                                className='float-end text-primary ml-2'
+                                style={{marginTop: '13px'}}
+                            />) : (<MinusCircleFilled
+                                className='float-end text-danger ml-2'
+                                style={{marginTop: '13px'}}
+                            />)}
+                        </Item>))}
                     </Menu>
-                </Col>
+                    <p className='modal-footer text-white shadow'>© {currentYear} Americoders | Questions or
+                        comments? <a
+                            href='mailto:questions@americoders.org'>Email us
+                            here</a></p>
+                </Drawer>
 
                 {/* main content area */}
-                <div className='col'>
+                <Content className='bg-light'>
                     {/* top bar lesson title , completed status */}
                     {clicked !== -1 ? (
                         <>
-                            <Content className='bg-body'>
-                                <div className='container-fluid px-4 py-5'>
-                                    {/* lesson title */}
-                                    <h2 className='pb-2 border-bottom'>
-                                        {course.lessons[clicked].title.substring(0, 30)}
-                                    </h2>
+                            {/* lesson title area */}
+                            <Content className='bg-light'>
+                                <div className='container col-xxl-12 px-4 py-5'>
+                                    <div
+                                        className='row align-items-center justify-content-center g-5 row-cols-sm-1'>
+                                        <div>
+                                            {/* lesson title */}
+                                            <h2 className='pb-2'>
+                                                {course.lessons[clicked].title.substring(0, 30)}
+                                            </h2>
+                                            <Divider/>
 
-                                    {/* mark as complete area */}
-                                    {completedLessons.includes(course.lessons[clicked]._id) ? (
-                                        <span
-                                            className='float-end'
-                                            role='button'
-                                            onClick={markIncomplete}
-                                        >
+                                            {/* mark as complete area */}
+                                            {completedLessons.includes(course.lessons[clicked]._id) ? (
+                                                <span
+                                                    className='float-end'
+                                                    role='button'
+                                                    onClick={markIncomplete}
+                                                >
                                         Mark as incomplete
                                     </span>
-                                    ) : (
-                                        <span
-                                            className='float-end'
-                                            role='button'
-                                            onClick={markComplete}>
+                                            ) : (
+                                                <span
+                                                    className='float-end'
+                                                    role='button'
+                                                    onClick={markComplete}>
                                         Mark as completed
                                     </span>
-                                    )}
-
-                                    {/* course description*/}
-                                    <div className='row g-4 py-5 rows-cols-1'>
-                                        <ReactMarkdown
-                                            children={course.lessons[clicked].content}
-                                            className='single-post'
-                                        />
+                                            )}
+                                        </div>
                                     </div>
+                                </div>
+                            </Content>
 
-                                    {/* video area */}
-                                    <div className='row g-4 py-5 mb-3'>
-                                        {course.lessons[clicked].video &&
-                                            course.lessons[clicked].video.Location && (
-                                                <>
+                            {/* lesson markdown md mdx content */}
+                            <Content>
+                                <div className='container col-xxl-12 px-4 py-5'>
+                                    <div
+                                        className='row align-items-center justify-content-center g-5 row-cols-sm-1'>
+                                        <div className='text-white'>
+                                            <ReactMarkdown
+                                                children={course.lessons[clicked].content}
+                                                className='single-post single-post-content'
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </Content>
+
+                            {/* lesson video content */}
+                            <Content className='bg-light'>
+                                <div
+                                    className='container px-4 py-5 '>
+                                    {course.lessons[clicked].video &&
+                                        course.lessons[clicked].video.Location && (
+                                            <>
+                                                <div className='row'>
                                                     {/* video col */}
-                                                    <div className='feature col'>
-                                                        <div className='feature-icon bg-primary bg-gradient'>
-                                                            <svg className='bi' width='1em' height='1em'>
-                                                            </svg>
-                                                        </div>
+                                                    <div className='feature col-lg-12'>
                                                         <h2>Video</h2>
-                                                        <div className='player'
-                                                        >
+                                                        <Divider/>
+                                                        <div className='d-flex w-100'>
                                                             <ReactPlayer
                                                                 url={course.lessons[clicked].video.Location}
-                                                                width='auto'
-                                                                height='500px'
                                                                 controls
                                                                 onEnded={markComplete} // update lesson completed status on video complete
+                                                                className='p-1 squareFrame'
                                                             />
                                                         </div>
                                                     </div>
+                                                </div>
+                                            </>
+                                        )}
+                                </div>
+                            </Content>
 
-                                                    <div className='feature col'>
-                                                        <div className='feature-icon bg-primary bg-gradient'>
-                                                            <svg className='bi' width='1em' height='1em'>
-                                                            </svg>
-                                                        </div>
-                                                        <h2>Confused?</h2>
-                                                        <ul className='card-subtitle'>
-                                                            <li>Read over lesson once more</li>
-                                                            <li>Re-watch video (if there is one)</li>
-                                                            <li>Raise your hand!</li>
-                                                            <br/>
-                                                            <li>YOU CAN DO THIS!</li>
-                                                        </ul>
-                                                    </div>
-
-                                                </>
-                                            )}
-                                    </div>
-
+                            {/* lesson code editor content */}
+                            <Content>
+                                <div
+                                    className='container px-0 py-5'>
                                     {/* code editors */}
                                     {course.lessons[clicked].html &&
                                         course.lessons[clicked].css && course.lessons[clicked].css && (
                                             <>
                                                 <PlaygroundFrontEnd
-                                                    htmlValue={course.lessons[clicked].content}
+                                                    htmlValue={course.lessons[clicked].html}
                                                     cssValue={course.lessons[clicked].css}
                                                     jsValue={course.lessons[clicked].javascript}
                                                 />
                                             < />
                                         )}
+                                </div>
+                            </Content>
+                            <AskForHelp/>
+                        </>
+                    ) : (
+                        <>
+                            {/* hero section */}
+                            <Content className='bg-light'>
+                                <div className='container col-xxl-12 px-4 py-5'>
+                                    <div
+                                        className='row align-items-center justify-content-center g-5 row-cols-sm-1 row-cols-md-2'>
+                                        <div>
+                                            {course ?
+                                                (<>
+                                                    <h1 className='display-6 fw-bold lh-1 mb-3 '>{course.name}</h1>
+                                                    <Divider/>
 
-                                    {/* description col*/}
-                                    <Content className='rounded-3 mt-3'>
-                                        <div className='container-fluid px-4 py-5 mb-5'>
-                                            <h2 className='lead title-large'>Are you stuck or getting
-                                                frustrated?</h2>
-                                            <p className='text-white text-center lead fs-4'>Pause. Breathe. Try
-                                                again.</p>
-                                            <p className='text-white text-center lead fs-5'>Raise your hand and ask
-                                                for
-                                                help! <br/>
-                                                We are all here to help, learn, and grow together.</p>
+                                                    {/* category */}
+                                                    <Badge
+                                                        count={course.category}
+                                                        className='mb-3'
+                                                        style={{
+                                                            backgroundColor: '#03a9f4',
+                                                        }}
+                                                    />
+
+                                                    {/* title */}
+                                                    <p className='text-muted'><strong>Course
+                                                        Name: </strong>{course.name && course.name}</p>
+
+                                                    {/* lessons count */}
+                                                    <p className='text-muted'>
+                                                        <strong>Lessons: </strong>{course.lessons && course.lessons.length}
+                                                    </p>
+
+                                                    {/* description */}
+                                                    <p className='text-muted'>
+                                                        <strong>Description: </strong>{course && course.description}
+                                                    </p>
+
+                                                    {/* last update */}
+                                                    <p className='text-muted'><strong>Last
+                                                        Update: </strong>{Moment(course && course.updatedAt).format('LL')}
+                                                    </p>
+                                                </>)
+                                                :
+                                                (<>
+                                                    <p className='display-6 fw-bold lh-1 mb-3'>Welcome back!!</p>
+                                                </>)}
                                         </div>
-                                    </Content>
 
+                                        {/* course image */}
+                                        <div>
+                                            <div className='image-course'>
+                                                {course && course.image ?
+                                                    (<>
+                                                        <Image
+                                                            src={course.image && course.image.Location}
+                                                            alt='Americoders'
+                                                            loading='lazy'
+                                                            preview={false}
+                                                            className='p-1 squareFrame'
+                                                        />
+                                                    </>) : <Image
+                                                        src='/images/americoders-course.png'
+                                                        alt='Americoders'
+                                                        loading='lazy'
+                                                        preview={false}
+                                                        className='p-1 squareFrame'
+                                                    />
+                                                }
+                                            </div>
+                                            <p className='text-muted text-center'>Please click on the <strong
+                                                className='text-primary'>Lessons
+                                                Menu</strong> above to start learning!</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </Content>
 
-
-                        </>
-                    ) : (
-                        <div className='d-flex justify-content-center p-5'>
-                            <div className='text-center p-5'>
-                                <PlayCircleOutlined className='text-primary display-1 p-5'/>
-                                <p className='lead'>Welcome! Click on the lessons to start learning</p>
+                            {/* cta banner */}
+                            <div>
+                                <AskForHelp className={'p-0 m-0'}/>
                             </div>
-                        </div>
-                    )}
-                </div>
-            </Row>
-        </StudentRoute>
+                        </>)}
+                </Content>
+            </StudentRoute>
+        </>
     )
 }
 
