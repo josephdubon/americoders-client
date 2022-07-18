@@ -93,14 +93,14 @@ const Index = ({courses}) => {
                 {/* features row section */}
                 <Row align={'top'} justify={'center'} gutter={50} className='my-5'>
                     {/* features col 1/3 */}
-                    <Col xs={7}>
+                    <Col xs={22} md={11} lg={7}>
                         <div className='feature-icon bg-primary bg-gradient text-center'>
                             icon here
                             <svg className='bi' width='1em' height='1em'>
                             </svg>
                         </div>
 
-                        <h2>Project Based Learning</h2>
+                        <h2 className='my-3'>Project Based Learning</h2>
                         <p>
                             Positive examples of success. You know the feeling you get when
                             you have built something great from the ground up? Or the excitement when you finally
@@ -113,17 +113,18 @@ const Index = ({courses}) => {
 
                         <p className='fw-bold'>
                             Projects: <br/>
-                            Websites | Apps | Games | Puzzles | Hardware Hacking
+                            Safety and Ethics, Website and Apps Development | Cool Games, Challenging Puzzles | Hardware
+                            Hacking, Breakdowns, and Fixes.
                         </p>
                     </Col>
 
                     {/* features col 2/3 */}
-                    <Col xs={7}>
+                    <Col xs={22} md={11} lg={7}>
                         <div className='feature-icon bg-primary bg-gradient'>
                             <svg className='bi' width='1em' height='1em'>
                             </svg>
                         </div>
-                        <h2>Mindfulness Awareness</h2>
+                        <h2 className='my-3'>Mindfulness Awareness</h2>
                         <p>
                             We must connect meaning with our actions. We hear modern terms but they are offered with
                             no explanation of what they mean. Then we are left with assumptions and stereotypes.
@@ -139,13 +140,13 @@ const Index = ({courses}) => {
                         </p>
                     </Col>
 
-                    {/* features col 2/3 */}
-                    <Col xs={7}>
+                    {/* features col 3/3 */}
+                    <Col xs={22} lg={7}>
                         <div className='feature-icon bg-primary bg-gradient'>
                             <svg className='bi' width='1em' height='1em'>
                             </svg>
                         </div>
-                        <h2>Community Building</h2>
+                        <h2 className='my-3'>Community Building</h2>
                         <p>
                             Community building can develop a sense of dignity, and restore our sense of
                             significance and relevance in our beautiful city of Reno, Nevada. Having a shared cause
