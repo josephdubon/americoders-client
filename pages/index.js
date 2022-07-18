@@ -307,7 +307,7 @@ const Index = ({courses}) => {
                 {/* pricing model row section */}
                 <Row align={'top'} justify={'center'}>
                     {/* features col 1/3 */}
-                    <Col xs={24} md={12} lg={8} className={'mx-3'}>
+                    <Col xs={24} sm={12} lg={8} className={'px-3'}>
                         {/* pro tier */}
                         <div style={{width: '100%'}}
                              className='card mb-4 rounded-3 shadow-sm border text-center'>
@@ -338,7 +338,7 @@ const Index = ({courses}) => {
                     </Col>
 
                     {/* features col 2/3 */}
-                    <Col xs={24} md={12} lg={8} className={'mx-3'}>
+                    <Col xs={24} sm={12} lg={8} className={'px-3'}>
                         {/* pro tier */}
                         <div style={{width: '100%'}}
                              className='card mb-4 rounded-3 shadow-sm border text-center'>
@@ -358,7 +358,7 @@ const Index = ({courses}) => {
                                     <li>Help center access</li>
                                 </ul>
                                 <a>
-                                    <button type='button' className='w-100 btn btn-md btn-primary'>
+                                    <button type='button' className='w-100 btn btn-sm btn-primary'>
                                         Registration Opening Soon
                                     </button>
                                 </a>
@@ -367,7 +367,7 @@ const Index = ({courses}) => {
                     </Col>
 
                     {/* features col 3/3 */}
-                    <Col xs={24} md={12} lg={8} className={'mx-3'}>
+                    <Col xs={24} sm={12} lg={8} className={'px-3'}>
                         {/* enterprise tier */}
                         <div style={{width: '100%'}}
                              className='card mb-4 rounded-3 shadow-sm border-danger text-center'>
@@ -387,7 +387,7 @@ const Index = ({courses}) => {
                                     <li>Help center access</li>
                                 </ul>
                                 <a>
-                                    <button type='button' className='w-100 btn btn-md btn-danger'>
+                                    <button type='button' className='w-100 btn btn-sm btn-danger'>
                                         Registration Opening Soon
                                     </button>
                                 </a>
