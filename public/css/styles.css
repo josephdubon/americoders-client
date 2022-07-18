@@ -226,11 +226,8 @@ label {
 }
 
 /* video player */
-.player {
-    width: 100%;
-    /*display: flex;*/
-    /*!*justify-content: center;*!*/
-    /*align-items: center;*/
+.player video {
+    object-fit: cover;
 }
 
 /* editor styles*/
