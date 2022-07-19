@@ -169,7 +169,7 @@ const Index = ({courses}) => {
                 <Col xs={24} md={8} lg={8} className='m-5'>
                     <Image
                         preview={false}
-                        src='/images/branding/bg-images/americoders-scratch-game.jpg'
+                        src='/images/branding/misc/americoders-scratch-game.jpg'
                         alt='Americoders'
                         loading='lazy'
                     />
@@ -179,7 +179,7 @@ const Index = ({courses}) => {
                 <Col xs={24} md={8} lg={8} className='m-5'>
                     <Image
                         preview={false}
-                        src='/images/branding/bg-images/americoders-kids-game-happy.jpg'
+                        src='/images/branding/misc/americoders-kids-game-happy.jpg'
                         alt='Americoders'
                         loading='lazy'
                     />
@@ -189,7 +189,7 @@ const Index = ({courses}) => {
                 <Col xs={24} md={8} lg={8} className='m-5'>
                     <Image
                         preview={false}
-                        src='/images/branding/bg-images/americoders-old-school-game.jpg'
+                        src='/images/branding/misc/americoders-old-school-game.jpg'
                         alt='Americoders'
                         loading='lazy'
                     />
@@ -199,7 +199,7 @@ const Index = ({courses}) => {
                 <Col xs={24} md={8} lg={8} className='m-5'>
                     <Image
                         preview={false}
-                        src='/images/branding/bg-images/americoders-technology-unplugged.jpg'
+                        src='/images/branding/misc/americoders-technology-unplugged.jpg'
                         alt='Americoders'
                         loading='lazy'
                     />
@@ -209,7 +209,7 @@ const Index = ({courses}) => {
                 <Col xs={24} md={8} lg={8} className='m-5'>
                     <Image
                         preview={false}
-                        src='/images/branding/bg-images/americoders-teen-coding.jpg'
+                        src='/images/branding/misc/americoders-teen-coding.jpg'
                         alt='Americoders'
                         loading='lazy'
                     />
@@ -219,7 +219,7 @@ const Index = ({courses}) => {
                 <Col xs={24} md={8} className='m-5'>
                     <Image
                         preview={false}
-                        src='/images/branding/bg-images/americoders-teen-3d-printing.jpg'
+                        src='/images/branding/misc/americoders-teen-3d-printing.jpg'
                         alt='Americoders'
                         loading='lazy'
                     />
