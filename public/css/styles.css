@@ -93,16 +93,17 @@ label {
 
 .hero-section {
     /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.5)),
-    url('/images/branding/misc/americoders-particles-bg.svg');
+    background-image: radial-gradient(rgba(0, 0, 0, .8),
+    rgba(0, 0, 0, .2)),
+    url('/images/branding/bg/americoders-flag-painted-shadows.jpg');
     /* Set a specific height */
     height: 100%;
+    width: 100vw;
+    align-items: start !important;
     /* Position and center the image to scale nicely on all screens */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
 }
 
 .title-large {
