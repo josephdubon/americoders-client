@@ -26,20 +26,18 @@ const Index = ({courses}) => {
                             <div className='d-grid gap-2 d-sm-flex justify-content-sm-center'>
                                 <Link href={'/#more-info'}><a>
                                     <button type='button'
-                                            className='btn btn-primary w-100 btn-lg mb-5'>More Info
+                                            className='btn btn-primary btn-lg px-4 me-sm-3 fw-bold'>More Info
                                     </button>
-                                </a>
-                            </Link>
-                        </Col>
+                                </a></Link>
 
-                        <Col xs={24} lg={8}>
-                            <Link href={'/#course-list'}>
-                                <a>
-                                    <button type='button'
-                                            className='btn btn-outline-secondary w-100 btn-lg mb-5'>Courses List
-                                    </button>
-                                </a>
-                            </Link>
+                                <Link href={'/#course-list'}>
+                                    <a>
+                                        <button type='button' className='btn btn-outline-light btn-lg px-4'>Course
+                                            Examples
+                                        </button>
+                                    </a>
+                                </Link>
+                            </div>
                         </Col>
                     </Row>
                 </Col>
