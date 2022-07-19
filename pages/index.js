@@ -280,38 +280,38 @@ const Index = ({courses}) => {
                 </div>
             </Col>
 
-                {/* pricing model row section */}
-                <Row align={'top'} justify={'center'}>
-                    {/* features col 1/3 */}
-                    <Col xs={24} sm={12} lg={8} className={'px-3'}>
-                        {/* pro tier */}
-                        <div style={{width: '100%'}}
-                             className='card mb-4 rounded-3 shadow-sm border text-center'>
-                            <div className='card-header py-3'>
-                                <h4 className='my-0 fw-normal'>Community</h4>
-                            </div>
-                            <div className='card-body'>
-                                <h1 className='card-title pricing-card-title'>$0<small
-                                    className='text-muted fw-light'>/mo</small></h1>
-                                <ul className='list-unstyled mt-3 mb-4'>
-                                    <li>Child + Parent Participation</li>
-                                    <li>Attendance to Speakers and Public Events</li>
-                                    <li>Can Purchase Workshop/Course</li>
-                                    <br/>
-                                    <li>'Hour of Code' Events</li>
-                                    <li>Access to Free Courses on Web App</li>
-                                    <li>Email support</li>
-                                </ul>
-                                <Link href={'/register'}>
-                                    <a>
-                                        <button type='button' className='w-100 btn btn-md btn-outline-primary'>
-                                            Registration Open
-                                        </button>
-                                    </a>
-                                </Link>
-                            </div>
+            {/* pricing model row section */}
+            <Row align={'top'} justify={'center'}>
+                {/* features col 1/3 */}
+                <Col xs={24} sm={12} lg={8} className={'px-3'}>
+                    {/* pro tier */}
+                    <div style={{width: '100%'}}
+                         className='card mb-4 rounded-3 shadow-sm border text-center'>
+                        <div className='card-header py-3'>
+                            <h4 className='my-0 fw-normal'>Community</h4>
                         </div>
-                    </Col>
+                        <div className='card-body'>
+                            <h1 className='card-title pricing-card-title'>$0<small
+                                className='text-muted fw-light'>/mo</small></h1>
+                            <ul className='list-unstyled mt-3 mb-4'>
+                                <li>Child + Parent Participation</li>
+                                <li>Attendance to Speakers and Public Events</li>
+                                <li>Can Purchase Workshop/Course</li>
+                                <br/>
+                                <li>'Hour of Code' Events</li>
+                                <li>Access to Free Courses on Web App</li>
+                                <li>Email support</li>
+                            </ul>
+                            <Link href={'/register'}>
+                                <a>
+                                    <button type='button' className='w-100 btn btn-md btn-outline-primary'>
+                                        Registration Open
+                                    </button>
+                                </a>
+                            </Link>
+                        </div>
+                    </div>
+                </Col>
 
                 {/* features col 2/3 */}
                 <Col xs={24} sm={12} lg={8} className={'px-3'}>
