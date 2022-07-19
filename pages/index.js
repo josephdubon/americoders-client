@@ -58,15 +58,7 @@ const Index = ({courses}) => {
 
 
         {/* features title section */}
-        <Row align={'middle'} justify={'center'} className='container py-5 text-white' id={'more-info'}>
-            {/* brand title area */}
-            <Col xs={24}>
-                <h2 className='text-white'>
-                    What do we do?
-                </h2>
-                <Divider/>
-            </Col>
-
+        <Row align={'middle'} justify={'center'} className='container pt-5 text-white' id={'more-info'}>
             {/* features row section */}
             <Row align={'top'} justify={'center'} className='pb-5'>
                 {/* features col 1/3 */}
