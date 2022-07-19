@@ -2,6 +2,7 @@ import axios from 'axios'
 import {Col, Divider, Image, Layout, Row} from 'antd'
 import Link from 'next/link'
 import MailingListForm from '../components/forms/MailingListForm'
+import {PageHead} from '../components/head/PageHead'
 // import CourseCard from '../components/cards/CourseCard'
 
 const {Content} = Layout
@@ -10,6 +11,9 @@ const Index = ({courses}) => {
 
 
     return (<>
+        {/* page head section*/}
+        <PageHead title={'Home'}/>
+
         {/* hero section */}
         <Row align={'middle'} justify={'center'}>
             {/* brand title area */}
