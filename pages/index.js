@@ -15,32 +15,38 @@ const Index = ({courses}) => {
         <Row align={'middle'} justify={'center'}>
             {/* brand title area */}
             <Col xs={24}>
-                <div className='text-secondary px-4 py-5 text-center'>
-                    <div className='py-5'>
-                        <h1 className='display-5 fw-bold text-white text-uppercase'>Americoders</h1>
-                        <Col lg={12} className='mx-auto'>
-                            <p className='text-white-50 fs-5 mb-4'>
-                                We are a community enrichment program in Reno, Nevada. We believe education should be an
-                                experience to foster growth & advancements in STEM, Arts, & Mindfulness Development. We
-                                believe this begins with a sense of pride in our community and country.
-                            </p>
-                            <div className='d-grid gap-2 d-sm-flex justify-content-sm-center'>
+                <div className='text-secondary px-4 py-5 text-center hero-section vh-50'>
+                    <h1 className='display-5 fw-bold text-white text-uppercase'>Americoders</h1>
+                    <Col lg={12} className='mx-auto'>
+                        <p className='text-white text-shadow-black fs-5 mb-4'>
+                            We are a community enrichment program formed in the heart of the Biggest Little City in the
+                            World: Reno, Nevada. We believe education should be an experience to foster growth &
+                            advancements in STEM, Arts, & Mindfulness Development.
+                            <br/>
+                            <br/>
+                            We believe this begins with a sense of pride in our community, environment, and country.
+                            Join us as we evolve, adapt, and educate ourselves to thrive in this current and coming
+                            future.
+                        </p>
+                        <Row justify={'center'}>
+                            <Col lg>
                                 <Link href={'/#more-info'}><a>
                                     <button type='button'
-                                            className='btn btn-primary btn-lg px-4 me-sm-3 fw-bold'>More Info
+                                            className='btn btn-primary btn-lg shadow px-4 me-sm-3 fw-bold'>More Info
                                     </button>
                                 </a></Link>
+                            </Col>
 
-                                <Link href={'/#course-list'}>
-                                    <a>
-                                        <button type='button' className='btn btn-outline-light btn-lg px-4'>Course
-                                            Examples
-                                        </button>
-                                    </a>
-                                </Link>
-                            </div>
-                        </Col>
-                    </div>
+                            <Link href={'/#course-list'}>
+                                <a>
+                                    <button type='button'
+                                            className='btn btn-outline-light btn-lg shadow px-4'>Course
+                                        Examples
+                                    </button>
+                                </a>
+                            </Link>
+                        </Row>
+                    </Col>
                 </div>
             </Col>
         </Row>
