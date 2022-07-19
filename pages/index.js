@@ -39,21 +39,10 @@ const Index = ({courses}) => {
                                 </Link>
                             </div>
                         </Col>
-                    </Row>
-                </Col>
-
-                {/* hero col 2/2 */}
-                <Col xs={24} lg={12}>
-                    <Image
-                        src='/images/branding/americoders-community-diversity.png'
-                        alt='Americoders'
-                        layout={'fill'}
-                        className='imageFit'
-                        loading='lazy'
-                        preview={false}
-                    />
-                </Col>
-            </Row>
+                    </div>
+                </div>
+            </Col>
+        </Row>
 
             {/* features title section */}
             <Row align={'middle'} justify={'center'} className='container py-5 text-white' id={'more-info'}>
