@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {Col, Divider, Image, Row} from 'antd'
+import {Col, Image, Row} from 'antd'
 import Link from 'next/link'
 import MailingListForm from '../components/forms/MailingListForm'
 import {PageHead} from '../components/head/PageHead'
