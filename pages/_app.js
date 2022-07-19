@@ -56,7 +56,7 @@ function MyApp({Component, pageProps}) {
                 </Header>
 
                 {/* main content area */}
-                <Content>
+                <Content className='container'>
                     <Component {...pageProps}/>
                 </Content>
 
