@@ -69,22 +69,25 @@ const Index = ({courses}) => {
                     </div>
 
                     <div className={'px-3'}>
-                        <h2 className='py-3 text-white'>Project Based Learning</h2>
-                        <p>
-                            Positive examples of success. You know the feeling you get when
-                            you have built something great from the ground up? Or the excitement when you finally
-                            learn something good enough that you can 'humble brag'? Do you know what it's like to
-                            solve a puzzle?</p>
-                        <p>
-                            Maybe you do, maybe you don't! Either way, we all deserve to feel that way, don't you
-                            agree? We can learn and master new skills while enjoying the time spent with the
-                            experience of trying something new.</p>
-
-                        <p className='fw-bold'>
-                            Projects: <br/>
-                            Safety and Ethics, Website and Apps Development | Cool Games, Challenging Puzzles |
-                            Hardware
-                            Hacking, Breakdowns, and Fixes.
+                        <h2 className='py-3 text-white text-center'>Project Based Learning</h2>
+                        <p className='text-white'>
+                            'Project Based Learning (PBL) is a teaching method in which students learn by actively
+                            engaging in real-world and personally meaningful projects.' -PBS
+                        </p>
+                        <p className='text-white'>
+                            Americoders students work projects from 1 week to 1 month periods of time. This is a great
+                            method to engage in asking complex questions while gaining real-world problem solving
+                            experience. Once completed students present their projects to a live audience and proudly
+                            demonstrate their newly acquired skill-set.
+                            <br/>
+                            <br/>
+                            <span className='text-capitalize'>
+                                Skills developed: critical thinking, collaboration, creativity, and communication skills.
+                            </span>
+                            <br/>
+                            <br/>
+                            Participating in project based learning will bring out a creative and problem solving side
+                            of us we might not have even known existed.
                         </p>
                     </div>
 
