@@ -100,7 +100,7 @@ const Index = ({courses}) => {
                         </svg>
                     </div>
                     <div className='px-3'>
-                        <h2 className='py-3 text-white'>Mindfulness Awareness</h2>
+                        <h2 className='py-3 text-white text-center'>Mindfulness Awareness</h2>
                         <p>
                             We must connect meaning with our actions. We hear modern terms but they are offered with
                             no explanation of what they mean. Then we are left with assumptions and stereotypes.
@@ -124,7 +124,7 @@ const Index = ({courses}) => {
                         </svg>
                     </div>
                     <div className={'px-3'}>
-                        <h2 className='py-3 text-white'>Community Building</h2>
+                        <h2 className='py-3 text-white text-center'>Community Building</h2>
                         <p>
                             Community building can develop a sense of dignity, and restore our sense of
                             significance and relevance in our beautiful city of Reno, Nevada. Having a shared cause
