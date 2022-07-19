@@ -133,8 +133,6 @@ const Index = ({courses}) => {
                         <p className='fw-bold'>
                             Don't you want to experience and explore amazing new possibilities in this awesome new
                             world?
-                        </p>
-                        <p>
                             Wouldn't it be better if we experienced this and grew as a community/society?
                         </p>
                     </div>
