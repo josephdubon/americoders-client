@@ -3,6 +3,7 @@ import {Col, Divider, Image, Row} from 'antd'
 import Link from 'next/link'
 import MailingListForm from '../components/forms/MailingListForm'
 import {PageHead} from '../components/head/PageHead'
+import {RocketOutlined, StarOutlined} from '@ant-design/icons'
 // import CourseCard from '../components/cards/CourseCard'
 
 const Index = ({courses}) => {
