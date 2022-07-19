@@ -26,6 +26,9 @@ function MyApp({Component, pageProps}) {
     return (
         // wrap app in provider for access to state
         <Provider>
+            {/* page head section*/}
+            <PageHead title={'Americoders 🇺🇸'}/>
+
             {/* parent layout */}
             <Layout>
                 {/* notifications */}
