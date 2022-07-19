@@ -111,8 +111,8 @@ const Index = ({courses}) => {
                             the coming future.
                         </p>
                         <p>
-                            There are many useful skills that our kids (and ourselves) can learn
-                            to get ahead in life, but few are as flexible and fun as the ability to code.
+                            There are many useful skills that our kids (and ourselves) can learn to get ahead in life,
+                            but few are as flexible and fun as the ability to code.
                         </p>
                     </div>
                 </Col>
