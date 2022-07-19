@@ -10,33 +10,21 @@ const Index = ({courses}) => {
 
 
     return (<>
-            {/* page title */}
-            <Row align={'middle'} justify={'center'} className='container my-5'>
-                {/* brand title area */}
-                <Col xs={24}>
-                    <h1 className='fw-bold text-white text-center lh-1'>
-                        AMERICODERS
-                    </h1>
-                </Col>
-            </Row>
-
-            {/* hero section */}
-            <Row align={'middle'} justify={'space-around'} className='container my-5'>
-                {/* hero col 1/2 */}
-                <Col xs={24} lg={12}>
-                    <p className='description-large bg-text text-center'>
-                        We are a community enrichment program in Reno, Nevada.
-                        <br/>
-                        <br/>
-                        We believe education should be an
-                        experience to foster growth & advancements in STEM, Arts, & Mindfulness Development.
-                    </p>
-
-                    {/* buttons */}
-                    <Row align={'middle'} justify={'space-around'}>
-                        <Col xs={24} lg={8}>
-                            <Link href={'/#more-info'}>
-                                <a>
+        {/* hero section */}
+        <Row align={'middle'} justify={'center'}>
+            {/* brand title area */}
+            <Col xs={24}>
+                <div className='text-secondary px-4 py-5 text-center'>
+                    <div className='py-5'>
+                        <h1 className='display-5 fw-bold text-white text-uppercase'>Americoders</h1>
+                        <Col lg={12} className='mx-auto'>
+                            <p className='text-white-50 fs-5 mb-4'>
+                                We are a community enrichment program in Reno, Nevada. We believe education should be an
+                                experience to foster growth & advancements in STEM, Arts, & Mindfulness Development. We
+                                believe this begins with a sense of pride in our community and country.
+                            </p>
+                            <div className='d-grid gap-2 d-sm-flex justify-content-sm-center'>
+                                <Link href={'/#more-info'}><a>
                                     <button type='button'
                                             className='btn btn-primary w-100 btn-lg mb-5'>More Info
                                     </button>
