@@ -7,7 +7,6 @@ import {PageHead} from '../components/head/PageHead'
 
 const Index = ({courses}) => {
 
-
     return (<>
         {/* page head section*/}
         <PageHead title={'Home'}/>
