@@ -13,8 +13,7 @@ const Index = ({courses}) => {
         <PageHead title={'Home'}/>
 
         {/* hero section */}
-        <Row align={'middle'} justify={'center'}>
-            {/* brand title area */}
+        <Row align={'middle'} justify={'center'} className='text-secondary px-4 py-5 text-center hero-section'>
             <Col xs={24}>
                 <div className='text-secondary px-4 py-5 text-center hero-section vh-50'>
                     <h1 className='display-5 fw-bold text-white text-uppercase'>Americoders</h1>
