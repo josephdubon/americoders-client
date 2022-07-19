@@ -10,6 +10,7 @@ import '../public/css/styles.css'
 import ParticlesEffect from '../components/effects/Particles'
 import 'animate.css'
 import SiteFooter from '../components/footer/SiteFooter'
+import {PageHead} from '../components/head/PageHead'
 
 const {Header, Footer, Content} = Layout
 
