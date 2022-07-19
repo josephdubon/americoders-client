@@ -28,7 +28,7 @@ const Index = ({courses}) => {
                     <StarOutlined className='display-5 text-white mx-auto'/>
                     <RocketOutlined className='display-5 text-white mx-auto'/>
                 </Row>
-                <div md={24} className='mx-auto container'>
+                <div md={24} className='container'>
                     <p className='text-white text-shadow-black fs-5 mb-4'>
                         We're a community enrichment program founded in the heart of the Biggest Little City
                         in the World: Reno, Nevada. We believe education should be an experience to foster growth &
