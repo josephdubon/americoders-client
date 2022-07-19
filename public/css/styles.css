@@ -1,4 +1,15 @@
 @import './parent.css';
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,200&family=Roboto&display=swap');
+
+/* font styles */
+body, .btn {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+}
 
 /* bootstrap 5 removed these, this is just a workaround */
 .form-group {
