@@ -1,4 +1,15 @@
 @import './parent.css';
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,200&family=Roboto&display=swap');
+
+/* font styles */
+body, .btn {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+}
 
 /* bootstrap 5 removed these, this is just a workaround */
 .form-group {
@@ -50,7 +61,8 @@ label {
 /**/
 .ant-menu-dark,
 .ant-layout,
-.ant-layout-content {
+.ant-layout-content,
+.ant-layout-header {
     background-color: var(--purple);
 }
 
@@ -91,17 +103,18 @@ label {
 /**/
 
 .hero-section {
-    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.5)),
-    url('/images/branding/bg-images/americoders-particles-bg.svg');
-    /* Set a specific height */
-    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    background-image: linear-gradient(0deg, rgba(10, 9, 40, .45) 25%, rgba(10, 9, 40, 1) 100%),
+    url('/images/branding/bg/americoders-kids-laptop-fun.jpg');
     /* Position and center the image to scale nicely on all screens */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    min-height: 75vh;
 }
 
 .title-large {
@@ -119,7 +132,7 @@ label {
 }
 
 .text-white {
-    text-shadow: black 10px 10px 25px;
+    text-shadow: black 5px 8px 4px;
 }
 
 

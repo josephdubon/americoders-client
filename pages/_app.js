@@ -10,6 +10,7 @@ import '../public/css/styles.css'
 import ParticlesEffect from '../components/effects/Particles'
 import 'animate.css'
 import SiteFooter from '../components/footer/SiteFooter'
+import {PageHead} from '../components/head/PageHead'
 
 const {Header, Footer, Content} = Layout
 
@@ -26,6 +27,9 @@ function MyApp({Component, pageProps}) {
     return (
         // wrap app in provider for access to state
         <Provider>
+            {/* page head section*/}
+            <PageHead title={'Americoders 🇺🇸'}/>
+
             {/* parent layout */}
             <Layout>
                 {/* notifications */}
