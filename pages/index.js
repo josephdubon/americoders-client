@@ -62,7 +62,7 @@ const Index = ({courses}) => {
             {/* features row section */}
             <Row align={'top'} justify={'center'} className='pb-5'>
                 {/* features col 1/3 */}
-                <Col xs={24} md={12} lg={8}>
+                <Col xs={24}>
                     <div className='feature-icon bg-primary bg-gradient text-center'>
                         <svg className='bi' width='1em' height='1em'>
                         </svg>
@@ -91,7 +91,7 @@ const Index = ({courses}) => {
                 </Col>
 
                 {/* features col 2/3 */}
-                <Col xs={24} md={12} lg={8}>
+                <Col xs={24}>
                     <div className='feature-icon bg-primary bg-gradient'>
                         <svg className='bi' width='1em' height='1em'>
                         </svg>
@@ -115,7 +115,7 @@ const Index = ({courses}) => {
                 </Col>
 
                 {/* features col 3/3 */}
-                <Col xs={24} lg={8}>
+                <Col xs={24}>
                     <div className='feature-icon bg-primary bg-gradient'>
                         <svg className='bi' width='1em' height='1em'>
                         </svg>
