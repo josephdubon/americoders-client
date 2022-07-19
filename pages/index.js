@@ -43,16 +43,15 @@ const Index = ({courses}) => {
                             </a></Link>
                         </Col>
 
-                            <Link href={'/#course-list'}>
-                                <a>
-                                    <button type='button'
-                                            className='btn btn-outline-light btn-lg shadow px-4'>Course
-                                        Examples
-                                    </button>
-                                </a>
-                            </Link>
-                        </Row>
-                    </Col>
+                        <Link href={'/#course-list'}>
+                            <a>
+                                <button type='button'
+                                        className='btn btn-outline-light btn-lg shadow px-4'>
+                                        Course                                    Examples
+                                </button>
+                            </a>
+                        </Link>
+                    </Row>
                 </div>
             </Col>
         </Row>
