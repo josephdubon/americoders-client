@@ -1,0 +1,18 @@
+.heroSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    min-height: 75vh;
+    text-align: center;
+    text-shadow: black 5px 5px 4px;
+    /*background-image: linear-gradient(0deg, rgba(10, 9, 40, .45) 33.3%, rgba(10, 9, 40, 1) 100%),*/
+    /*url('/images/branding/bg/americoders-classroom-studying-problem-solving.jpg');*/
+    /* Position and center the image to scale nicely on all screens */
+    background-attachment: fixed;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 15px;
+}
