@@ -55,7 +55,7 @@ label {
 
 /* images */
 .imageFit {
-    object-fit: contain;
+    object-fit: cover;
 }
 
 /**/
