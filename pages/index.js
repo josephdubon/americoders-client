@@ -3,7 +3,7 @@ import {Col, Image, Row} from 'antd'
 import Link from 'next/link'
 import MailingListForm from '../components/forms/MailingListForm'
 import {PageHead} from '../components/head/PageHead'
-import {RocketOutlined, StarOutlined} from '@ant-design/icons'
+import HeroSection from '../components/structure/HeroSection'
 // import CourseCard from '../components/cards/CourseCard'
 
 const Index = ({courses}) => {
@@ -51,49 +51,13 @@ const Index = ({courses}) => {
         <PageHead title={'Home'}/>
 
         {/* hero section */}
-        <Row align={'middle'} justify={'center'} className='text-secondary px-4 py-5 text-center hero-section'>
-            <Col xs={24}>
-                {/* title */}
-                <h1 className='display-5 text-white text-uppercase'>Americoders</h1>
-                <h5 className='text-white text-capitalize fw-light mb-4'>
-                    educate - evolve - adapt - thrive
-                </h5>
-
-                {/* icons */}
-                <Row justify={'center'} align={'middle'} className='mb-3 container'>
-                    <StarOutlined className='display-5 text-white mx-auto'/>
-                    <RocketOutlined className='display-5 text-white mx-auto'/>
-                    <StarOutlined className='display-5 text-white mx-auto'/>
-                    <RocketOutlined className='display-5 text-white mx-auto'/>
-                </Row>
-                <div md={24} className='container'>
-                    <p className='text-white text-shadow-black fs-5 mb-4'>
-                        We're a community enrichment program founded in the heart of the Biggest Little City
-                        in the World: Reno, Nevada. We believe education should be an experience to foster growth &
-                        advancements in STEM, Arts, & Mindfulness Development.
-                    </p>
-                    <Row justify={'center'}>
-                        <Col lg>
-                            <Link href={'/#more-info'}><a>
-                                <button type='button'
-                                        className='btn btn-primary btn-lg shadow px-4 me-sm-3 fw-bold'>More Info
-                                </button>
-                            </a></Link>
-                        </Col>
-
-                        <Link href={'/#course-list'}>
-                            <a>
-                                <button type='button'
-                                        className='btn btn-outline-light btn-lg shadow px-4'>
-                                    Course Examples
-                                </button>
-                            </a>
-                        </Link>
-                    </Row>
-                </div>
-            </Col>
-        </Row>
-
+        <HeroSection
+            heroImageUrl={'/images/branding/bg/americoders-classroom-studying-problem-solving.jpg'}
+            heroTitle={'Americoders'}
+            heroSubTitle={'educate - evolve - adapt - thrive'}
+            heroIntro={heroIntroContent()}
+            heroExtraContent={heroExtraContent()}
+        />
 
         {/* features title section */}
         <Row align={'middle'} justify={'center'} className='container pt-5 text-white' id={'more-info'}>
