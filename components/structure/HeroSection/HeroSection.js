@@ -12,7 +12,6 @@ export default function HeroSection({
                                     }) {
 
     return (<>
-        {/* hero section */}
         <Row
             align={'middle'}
             justify={'center'}
