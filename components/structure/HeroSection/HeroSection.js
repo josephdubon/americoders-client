@@ -26,17 +26,18 @@ export default function HeroSection({
                 md={22}
                 lg={20}
                 xl={18}
+                className='container'
             >
                 {/* hero content */}
 
                 {/* hero titles */}
-                <h1 className='display-5 text-white text-uppercase'>{heroTitle}</h1>
+                <h1 className='display-4 text-white text-uppercase'>{heroTitle}</h1>
                 <h5 className='text-white text-capitalize fw-light mb-4'>
                     {heroSubTitle}
                 </h5>
 
                 {/* hero intro */}
-                <p className='text-white fs-5'>
+                <p className='text-white fs-4'>
                     {heroIntro}
                 </p>
 
