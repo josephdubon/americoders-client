@@ -100,39 +100,20 @@ label {
 .ant-menu-item-selected {
 }
 
-/**/
-
-.hero-section {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
-    align-content: center;
-    background-image: linear-gradient(0deg, rgba(10, 9, 40, .45) 25%, rgba(10, 9, 40, 1) 100%),
-    url('/images/branding/bg/americoders-kids-laptop-fun.jpg');
-    /* Position and center the image to scale nicely on all screens */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 75vh;
-}
-
 .title-large {
     font-size: 4rem;
     text-align: center;
     color: var(--white);
-    text-shadow: black 10px 10px 25px;
 }
 
 .description-large {
     font-size: 1.5rem;
     text-align: left;
     color: var(--white);
-    text-shadow: black 10px 10px 25px;
 }
 
-.text-white {
-    text-shadow: black 5px 8px 4px;
+.text-shadow {
+    text-shadow: black 5px 5px 4px;
 }
 
 
