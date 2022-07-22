@@ -3,7 +3,8 @@ import {Col, Image, Row} from 'antd'
 import Link from 'next/link'
 import MailingListForm from '../components/forms/MailingListForm'
 import {PageHead} from '../components/head/PageHead'
-import HeroSection from '../components/structure/HeroSection'
+import HeroSection from '../components/structure/HeroSection/HeroSection'
+import FeaturesSectionLeft from '../components/structure/FeatureSectionLeft/FeaturesSectionLeft'
 // import CourseCard from '../components/cards/CourseCard'
 
 const Index = ({courses}) => {
@@ -46,6 +47,33 @@ const Index = ({courses}) => {
         </>)
     }
 
+    const featuredContent = () => {
+        return (<>
+            <p className='text-white fs-5 px-3'>
+                We practice a sustained process of learning in which we can immerse ourselves in
+                multiple disciplines, simultaneously.
+                <br/>
+                <br/>
+                We engage in tailor-made projects that provoke students to instinctively ask complex
+                questions all while gaining real-world problem solving
+                experience in a monitored environment.
+            </p>
+
+            {/* testimonial */}
+            <Col xs={22} sm={18} className='mx-auto m-5'>
+                <p className='text-white text-center w-100'>
+                        <span className='fw-bolder'>
+                            "Participating in project based learning with Americoders brought out a creative and problem
+                            solving
+                            side of me that didn't even know existed! I feel I have the tools to become a great problem
+                            solver
+                            and thinker."
+                        </span> - Ennio D - age 10
+                </p>
+            </Col>
+        </>)
+    }
+
     return (<>
         {/* page head section*/}
         <PageHead title={'Home'}/>
@@ -57,6 +85,12 @@ const Index = ({courses}) => {
             heroSubTitle={'educate - evolve - adapt - thrive'}
             heroIntro={heroIntroContent()}
             heroExtraContent={heroExtraContent()}
+        />
+
+        <FeaturesSectionLeft
+            featuredImage={'/images/branding/misc/americoders-robotics-project-student.jpg'}
+            featuredTitle={'Project Based Learning'}
+            featuredContent={featuredContent()}
         />
 
         {/* features title section */}
