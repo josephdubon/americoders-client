@@ -75,10 +75,8 @@ const Index = ({courses}) => {
     }
 
     return (<>
-        {/* page head section*/}
         <PageHead title={'Home'}/>
 
-        {/* hero section */}
         <HeroSection
             heroImageUrl={'/images/branding/bg/americoders-classroom-studying-problem-solving.jpg'}
             heroTitle={'Americoders'}
