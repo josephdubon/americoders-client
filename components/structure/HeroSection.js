@@ -18,7 +18,7 @@ export default function HeroSection({
             justify={'center'}
             className={styles['heroSection']}
             style={{
-                backgroundImage: `linear-gradient(0deg, rgba(10, 9, 40, .45) 33.3%, rgba(10, 9, 40, 1) 100%),
+                backgroundImage: `linear-gradient(180deg, rgba(10,9,40) 15%, rgba(10,9,40,0) 100%, rgba(10,9,40) 15%),
                 url(${heroImageUrl})`
             }}
         >
