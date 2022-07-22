@@ -8,6 +8,44 @@ import {RocketOutlined, StarOutlined} from '@ant-design/icons'
 
 const Index = ({courses}) => {
 
+    const heroIntroContent = () => {
+        return (<>
+            We're a community enrichment program founded in the heart of the Biggest Little City
+            in the World, Reno, Nevada.
+            <br/>
+            We believe education should be an experience to foster growth &
+            advancements in STEM, Arts, & Mindfulness Development.
+        </>)
+    }
+
+    const heroExtraContent = () => {
+        return (<>
+            <Row
+                align={'middle'}
+                justify={'center'}
+            >
+                <Col xs={24} sm={12} md={6}>
+                    <Link href={'/#more-info'}><a>
+                        <button type='button'
+                                className='btn btn-primary btn-lg shadow px-4 my-2'>More Info
+                        </button>
+                    </a></Link>
+                </Col>
+
+                <Col xs={24} sm={12} md={6}>
+                    <Link href={'/#course-list'}>
+                        <a>
+                            <button type='button'
+                                    className='btn btn-outline-light btn-lg shadow px-4 my-2'>
+                                Course Examples
+                            </button>
+                        </a>
+                    </Link>
+                </Col>
+            </Row>
+        </>)
+    }
+
     return (<>
         {/* page head section*/}
         <PageHead title={'Home'}/>
