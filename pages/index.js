@@ -3,157 +3,151 @@ import {Col, Image, Row} from 'antd'
 import Link from 'next/link'
 import MailingListForm from '../components/forms/MailingListForm'
 import {PageHead} from '../components/head/PageHead'
-import {RocketOutlined, StarOutlined} from '@ant-design/icons'
+import HeroSection from '../components/structure/HeroSection/HeroSection'
+import FeatureSectionLeft from '../components/structure/FeatureSectionLeft/FeatureSectionLeft'
+import FeatureSectionRight from '../components/structure/FeatureSectionRight/FeatureSectionRight'
 // import CourseCard from '../components/cards/CourseCard'
 
 const Index = ({courses}) => {
 
-    return (<>
-        {/* page head section*/}
-        <PageHead title={'Home'}/>
+    const heroIntroContent = () => {
+        return (<>
+            We're a community enrichment program founded in the heart of the Biggest Little City
+            in the World, Reno, Nevada.
+            <br/>
+            We believe education should be an experience to foster growth &
+            advancements in STEM, Arts, & Mindfulness Development.
+        </>)
+    }
 
-        {/* hero section */}
-        <Row align={'middle'} justify={'center'} className='text-secondary px-4 py-5 text-center hero-section'>
-            <Col xs={24}>
-                {/* title */}
-                <h1 className='display-5 text-white text-uppercase'>Americoders</h1>
-                <h5 className='text-white text-capitalize fw-light mb-4'>
-                    educate - evolve - adapt - thrive
-                </h5>
-
-                {/* icons */}
-                <Row justify={'center'} align={'middle'} className='mb-3 container'>
-                    <StarOutlined className='display-5 text-white mx-auto'/>
-                    <RocketOutlined className='display-5 text-white mx-auto'/>
-                    <StarOutlined className='display-5 text-white mx-auto'/>
-                    <RocketOutlined className='display-5 text-white mx-auto'/>
-                </Row>
-                <div md={24} className='container'>
-                    <p className='text-white text-shadow-black fs-5 mb-4'>
-                        We're a community enrichment program founded in the heart of the Biggest Little City
-                        in the World: Reno, Nevada. We believe education should be an experience to foster growth &
-                        advancements in STEM, Arts, & Mindfulness Development.
-                    </p>
-                    <Row justify={'center'}>
-                        <Col lg>
-                            <Link href={'/#more-info'}><a>
-                                <button type='button'
-                                        className='btn btn-primary btn-lg shadow px-4 me-sm-3 fw-bold'>More Info
-                                </button>
-                            </a></Link>
-                        </Col>
-
-                        <Link href={'/#course-list'}>
-                            <a>
-                                <button type='button'
-                                        className='btn btn-outline-light btn-lg shadow px-4'>
-                                    Course Examples
-                                </button>
-                            </a>
-                        </Link>
-                    </Row>
-                </div>
-            </Col>
-        </Row>
-
-
-        {/* features title section */}
-        <Row align={'middle'} justify={'center'} className='container pt-5 text-white' id={'more-info'}>
-            {/* features row section */}
-            <Row align={'top'} justify={'center'} className='pb-5'>
-                {/* features col 1/3 */}
-                <Col xs={24}>
-                    <div className='feature-icon bg-primary bg-gradient text-center'>
-                        <svg className='bi' width='1em' height='1em'>
-                        </svg>
-                    </div>
-
-                    <div className={'px-3'}>
-                        <h2 className='py-3 text-white text-center'>Project Based Learning</h2>
-                        <p className='text-white'>
-                            'Project Based Learning (PBL) is a teaching method in which students learn by actively
-                            engaging in real-world and personally meaningful projects.' -PBS
-                        </p>
-                        <p className='text-white'>
-                            Americoders students work projects from 1 week to 1 month periods of time. This is a great
-                            method to engage in asking complex questions while gaining real-world problem solving
-                            experience. Once completed students present their projects to a live audience and proudly
-                            demonstrate their newly acquired skill-set.
-                            <br/>
-                            <br/>
-                            <span className='text-capitalize'>
-                                Skills developed: critical thinking, collaboration, creativity, and communication skills.
-                            </span>
-                            <br/>
-                            <br/>
-                            Participating in project based learning will bring out a creative and problem solving side
-                            of us we might not have even known existed.
-                        </p>
-                    </div>
-
+    const heroExtraContent = () => {
+        return (<>
+            <Row
+                align={'middle'}
+                justify={'center'}
+            >
+                <Col xs={24} sm={12} md={6}>
+                    <Link href={'/#more-info'}><a>
+                        <button type='button'
+                                className='btn btn-primary btn-lg shadow px-4 my-2'>More Info
+                        </button>
+                    </a></Link>
                 </Col>
 
-                {/* features col 2/3 */}
-                <Col xs={24}>
-                    <div className='feature-icon bg-primary bg-gradient'>
-                        <svg className='bi' width='1em' height='1em'>
-                        </svg>
-                    </div>
-                    <div className='px-3'>
-                        <h2 className='py-3 text-white text-center'>Mindfulness Awareness</h2>
-                        <p>
-                            We must connect meaning with our actions. We hear modern terms but they are offered with
-                            no explanation of what they mean. Then we are left with assumptions and stereotypes.
-                            These create patterns and patterns turn into habits.
-                        </p>
-                        <p>
-                            Our habits determine our future. We have the option to not only survive but thrive in
-                            the coming future.
-                        </p>
-                        <p>
-                            There are many useful skills that our kids (and ourselves) can learn to get ahead in life,
-                            but few are as flexible and fun as the ability to code.
-                        </p>
-                    </div>
-                </Col>
-
-                {/* features col 3/3 */}
-                <Col xs={24}>
-                    <div className='feature-icon bg-primary bg-gradient'>
-                        <svg className='bi' width='1em' height='1em'>
-                        </svg>
-                    </div>
-                    <div className={'px-3'}>
-                        <h2 className='py-3 text-white text-center'>Community Building</h2>
-                        <p>
-                            Community building can develop a sense of dignity, and restore our sense of
-                            significance and relevance in our beautiful city of Reno, Nevada. Having a shared cause
-                            provides us with a sense of momentum and purpose.
-                        </p>
-                        <p className='fw-bold'>
-                            Don't you want to experience and explore amazing new possibilities in this awesome new
-                            world?
-                            Wouldn't it be better if we experienced this and grew as a community/society?
-                        </p>
-                    </div>
+                <Col xs={24} sm={12} md={6}>
+                    <Link href={'/#course-list'}>
+                        <a>
+                            <button type='button'
+                                    className='btn btn-outline-light btn-lg shadow px-4 my-2'>
+                                Course Examples
+                            </button>
+                        </a>
+                    </Link>
                 </Col>
             </Row>
-        </Row>
+        </>)
+    }
+
+    const featuredContentLeft = () => {
+        return (<>
+            <p className='text-white fs-5 px-3'>
+                We practice a sustained process of learning in which we can immerse ourselves in
+                multiple disciplines, simultaneously.
+                <br/>
+                <br/>
+                We engage in tailor-made projects that provoke students to instinctively ask complex
+                questions all while gaining real-world problem solving
+                experience in a monitored environment.
+            </p>
+
+            <Col xs={22} sm={18} className='mx-auto m-5'>
+                <p className='text-white text-center w-100'>
+                        <span className='fw-bolder'>
+                            "Participating in project based learning with Americoders brought out a creative and problem
+                            solving side of me that didn't even know existed! I feel I have the tools to become a great
+                            problem solver and thinker."
+                        </span> - Ennio D - age 10
+                </p>
+            </Col>
+        </>)
+    }
+
+    const featuredContentRight = () => {
+        return (<>
+            <p className='text-white text-end fs-5 px-3'>
+                We must connect meaning with our actions. We hear modern terms but they are offered with
+                no explanation of what they mean.
+                <br/>
+                <br/>
+                Then we are left with assumptions and stereotypes.
+                These create patterns and patterns turn into habits. Our habits determine our future.
+                <br/>
+                <br/>
+                We begin our project/workshop adventures with five
+                minutes of breathing-exercise and guided-meditation.
+            </p>
+        </>)
+    }
+
+    const featuredContentLeft_2 = () => {
+        return (<>
+            <p className='text-white fs-5 px-3'>
+                We practice a sustained process of learning in which we can immerse ourselves in
+                multiple disciplines, simultaneously.
+                <br/>
+                <br/>
+                We engage in tailor-made projects that provoke students to instinctively ask complex
+                questions all while gaining real-world problem solving
+                experience in a monitored environment.
+            </p>
+
+            <Col xs={22} sm={18} className='mx-auto m-5'>
+                <p className='text-white text-center w-100'>
+                        <span className='fw-bolder'>
+                            "Participating in project based learning with Americoders brought out a creative and problem
+                            solving side of me that didn't even know existed! I feel I have the tools to become a great
+                            problem solver and thinker."
+                        </span> - Ennio D - age 10
+                </p>
+            </Col>
+        </>)
+    }
+
+    return (<>
+        <PageHead title={'Home'}/>
+
+        <HeroSection
+            heroImageUrl={'/images/branding/bg/americoders-classroom-studying-problem-solving.jpg'}
+            heroTitle={'Americoders'}
+            heroSubTitle={'educate - evolve - adapt - thrive'}
+            heroIntro={heroIntroContent()}
+            heroExtraContent={heroExtraContent()}
+        />
+
+        <FeatureSectionLeft
+            featuredImage={'/images/branding/misc/americoders-robotics-project-student.jpg'}
+            featuredTitle={'Project Based Learning'}
+            featuredContent={featuredContentLeft()}
+        />
+
+        <FeatureSectionRight
+            featuredImage={'/images/branding/misc/americoders-mom-daughter-team-meditation.jpg'}
+            featuredTitle={'Mindfulness Awareness'}
+            featuredContent={featuredContentRight()}
+        />
+
+        <FeatureSectionLeft
+            featuredImage={'/images/branding/misc/americoders-kids-community-friends.jpg'}
+            featuredTitle={'Community Building'}
+            featuredContent={featuredContentLeft_2()}
+        />
 
         {/* course and project album section */}
-        <Row align={'middle'} justify={'center'} className='py-5 container text-white'>
+        <Row align={'middle'} justify={'center'} className='py-5 container text-white text-center'>
             {/* title area */}
             <Col xs={24} id='course-list'>
-                <div className='feature-icon bg-primary bg-gradient'>
-                    <svg className='bi' width='1em' height='1em'>
-                    </svg>
-                </div>
                 <div className={'px-3'}>
                     <h2 className='py-3 text-white'>Course and Project Examples</h2>
-                    <p>
-                        As predicted from years before, computer science and coding has progressed from a hobby
-                        to a critical career skill.
-                    </p>
                     <p className='fw-bold'>
                         Let's level-up by creating some cool games and projects!
                     </p>
@@ -176,9 +170,10 @@ const Index = ({courses}) => {
                         preview={false}
                         src='/images/branding/misc/americoders-scratch-game.jpg'
                         alt='Americoders'
+                        className='bg-body rounded-3 p-3'
                         loading='lazy'
                     />
-                    <p className='lead text-white text-center'>Introduction to Computer Science</p>
+                    <p className='lead text-white text-center'>Introduction to Coding</p>
                 </Col>
 
                 <Col xs={24} md={8} lg={8} className='m-5'>
@@ -186,9 +181,10 @@ const Index = ({courses}) => {
                         preview={false}
                         src='/images/branding/misc/americoders-kids-game-happy.jpg'
                         alt='Americoders'
+                        className='bg-body rounded-3 p-3'
                         loading='lazy'
                     />
-                    <p className='lead text-white text-center'>Internet Safety and Web Ethics</p>
+                    <p className='lead text-white text-center'>Internet Safety</p>
                 </Col>
 
                 <Col xs={24} md={8} lg={8} className='m-5'>
@@ -196,9 +192,10 @@ const Index = ({courses}) => {
                         preview={false}
                         src='/images/branding/misc/americoders-old-school-game.jpg'
                         alt='Americoders'
+                        className='bg-body rounded-3 p-3'
                         loading='lazy'
                     />
-                    <p className='lead text-white text-center'>Game Development - JS & Python</p>
+                    <p className='lead text-white text-center'>Game Development</p>
                 </Col>
 
                 <Col xs={24} md={8} lg={8} className='m-5'>
@@ -206,9 +203,10 @@ const Index = ({courses}) => {
                         preview={false}
                         src='/images/branding/misc/americoders-technology-unplugged.jpg'
                         alt='Americoders'
+                        className='bg-body rounded-3 p-3'
                         loading='lazy'
                     />
-                    <p className='lead text-white text-center'>Technology Unplugged - Introduction</p>
+                    <p className='lead text-white text-center'>Technology Unplugged</p>
                 </Col>
 
                 <Col xs={24} md={8} lg={8} className='m-5'>
@@ -216,6 +214,7 @@ const Index = ({courses}) => {
                         preview={false}
                         src='/images/branding/misc/americoders-teen-coding.jpg'
                         alt='Americoders'
+                        className='bg-body rounded-3 p-3'
                         loading='lazy'
                     />
                     <p className='lead text-white text-center'>Create a Projects Portfolio</p>
@@ -226,9 +225,10 @@ const Index = ({courses}) => {
                         preview={false}
                         src='/images/branding/misc/americoders-teen-3d-printing.jpg'
                         alt='Americoders'
+                        className='bg-body rounded-3 p-3'
                         loading='lazy'
                     />
-                    <p className='lead text-white text-center'>Hardware Hacking, Breakdown/Fixes</p>
+                    <p className='lead text-white text-center'>Hardware Breakdown/Fixes</p>
                 </Col>
             </Row>
         </Row>
