@@ -72,6 +72,47 @@ const Index = ({courses}) => {
         </>)
     }
 
+    const featuredContentRight = () => {
+        return (<>
+            <p className='text-white text-end fs-5 px-3'>
+                We must connect meaning with our actions. We hear modern terms but they are offered with
+                no explanation of what they mean.
+                <br/>
+                <br/>
+                Then we are left with assumptions and stereotypes.
+                These create patterns and patterns turn into habits. Our habits determine our future.
+                <br/>
+                <br/>
+                We begin our project/workshop adventures with five
+                minutes of breathing-exercise and guided-meditation.
+            </p>
+        </>)
+    }
+
+    const featuredContentLeft_2 = () => {
+        return (<>
+            <p className='text-white fs-5 px-3'>
+                We practice a sustained process of learning in which we can immerse ourselves in
+                multiple disciplines, simultaneously.
+                <br/>
+                <br/>
+                We engage in tailor-made projects that provoke students to instinctively ask complex
+                questions all while gaining real-world problem solving
+                experience in a monitored environment.
+            </p>
+
+            <Col xs={22} sm={18} className='mx-auto m-5'>
+                <p className='text-white text-center w-100'>
+                        <span className='fw-bolder'>
+                            "Participating in project based learning with Americoders brought out a creative and problem
+                            solving side of me that didn't even know existed! I feel I have the tools to become a great
+                            problem solver and thinker."
+                        </span> - Ennio D - age 10
+                </p>
+            </Col>
+        </>)
+    }
+
     return (<>
         <PageHead title={'Home'}/>
 
