@@ -48,7 +48,7 @@ const Index = ({courses}) => {
         </>)
     }
 
-    const featuredContent = () => {
+    const featuredContentLeft = () => {
         return (<>
             <p className='text-white fs-5 px-3'>
                 We practice a sustained process of learning in which we can immerse ourselves in
