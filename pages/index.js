@@ -64,10 +64,8 @@ const Index = ({courses}) => {
                 <p className='text-white text-center w-100'>
                         <span className='fw-bolder'>
                             "Participating in project based learning with Americoders brought out a creative and problem
-                            solving
-                            side of me that didn't even know existed! I feel I have the tools to become a great problem
-                            solver
-                            and thinker."
+                            solving side of me that didn't even know existed! I feel I have the tools to become a great
+                            problem solver and thinker."
                         </span> - Ennio D - age 10
                 </p>
             </Col>
