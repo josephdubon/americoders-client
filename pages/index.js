@@ -124,10 +124,10 @@ const Index = ({courses}) => {
             heroExtraContent={heroExtraContent()}
         />
 
-        <FeaturesSectionLeft
+        <FeatureSectionLeft
             featuredImage={'/images/branding/misc/americoders-robotics-project-student.jpg'}
             featuredTitle={'Project Based Learning'}
-            featuredContent={featuredContent()}
+            featuredContent={featuredContentLeft()}
         />
 
         {/* features title section */}
