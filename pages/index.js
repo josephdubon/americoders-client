@@ -136,54 +136,11 @@ const Index = ({courses}) => {
             featuredContent={featuredContentRight()}
         />
 
-                </Col>
-
-                {/* features col 2/3 */}
-                <Col xs={24}>
-                    <div className='feature-icon bg-primary bg-gradient'>
-                        <svg className='bi' width='1em' height='1em'>
-                        </svg>
-                    </div>
-                    <div className='px-3'>
-                        <h2 className='py-3 text-white text-center'>Mindfulness Awareness</h2>
-                        <p>
-                            We must connect meaning with our actions. We hear modern terms but they are offered with
-                            no explanation of what they mean. Then we are left with assumptions and stereotypes.
-                            These create patterns and patterns turn into habits.
-                        </p>
-                        <p>
-                            Our habits determine our future. We have the option to not only survive but thrive in
-                            the coming future.
-                        </p>
-                        <p>
-                            There are many useful skills that our kids (and ourselves) can learn to get ahead in life,
-                            but few are as flexible and fun as the ability to code.
-                        </p>
-                    </div>
-                </Col>
-
-                {/* features col 3/3 */}
-                <Col xs={24}>
-                    <div className='feature-icon bg-primary bg-gradient'>
-                        <svg className='bi' width='1em' height='1em'>
-                        </svg>
-                    </div>
-                    <div className={'px-3'}>
-                        <h2 className='py-3 text-white text-center'>Community Building</h2>
-                        <p>
-                            Community building can develop a sense of dignity, and restore our sense of
-                            significance and relevance in our beautiful city of Reno, Nevada. Having a shared cause
-                            provides us with a sense of momentum and purpose.
-                        </p>
-                        <p className='fw-bold'>
-                            Don't you want to experience and explore amazing new possibilities in this awesome new
-                            world?
-                            Wouldn't it be better if we experienced this and grew as a community/society?
-                        </p>
-                    </div>
-                </Col>
-            </Row>
-        </Row>
+        <FeatureSectionLeft
+            featuredImage={'/images/branding/misc/americoders-kids-community-friends.jpg'}
+            featuredTitle={'Community Building'}
+            featuredContent={featuredContentLeft_2()}
+        />
 
         {/* course and project album section */}
         <Row align={'middle'} justify={'center'} className='py-5 container text-white'>
