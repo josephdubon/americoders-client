@@ -130,39 +130,11 @@ const Index = ({courses}) => {
             featuredContent={featuredContentLeft()}
         />
 
-        {/* features title section */}
-        <Row align={'middle'} justify={'center'} className='container pt-5 text-white' id={'more-info'}>
-            {/* features row section */}
-            <Row align={'top'} justify={'center'} className='pb-5'>
-                {/* features col 1/3 */}
-                <Col xs={24}>
-                    <div className='feature-icon bg-primary bg-gradient text-center'>
-                        <svg className='bi' width='1em' height='1em'>
-                        </svg>
-                    </div>
-
-                    <div className={'px-3'}>
-                        <h2 className='py-3 text-white text-center'>Project Based Learning</h2>
-                        <p className='text-white'>
-                            'Project Based Learning (PBL) is a teaching method in which students learn by actively
-                            engaging in real-world and personally meaningful projects.' -PBS
-                        </p>
-                        <p className='text-white'>
-                            Americoders students work projects from 1 week to 1 month periods of time. This is a great
-                            method to engage in asking complex questions while gaining real-world problem solving
-                            experience. Once completed students present their projects to a live audience and proudly
-                            demonstrate their newly acquired skill-set.
-                            <br/>
-                            <br/>
-                            <span className='text-capitalize'>
-                                Skills developed: critical thinking, collaboration, creativity, and communication skills.
-                            </span>
-                            <br/>
-                            <br/>
-                            Participating in project based learning will bring out a creative and problem solving side
-                            of us we might not have even known existed.
-                        </p>
-                    </div>
+        <FeatureSectionRight
+            featuredImage={'/images/branding/misc/americoders-mom-daughter-team-meditation.jpg'}
+            featuredTitle={'Mindfulness Awareness'}
+            featuredContent={featuredContentRight()}
+        />
 
                 </Col>
 
