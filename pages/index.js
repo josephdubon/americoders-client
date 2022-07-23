@@ -60,7 +60,6 @@ const Index = ({courses}) => {
                 experience in a monitored environment.
             </p>
 
-            {/* testimonial */}
             <Col xs={22} sm={18} className='mx-auto m-5'>
                 <p className='text-white text-center w-100'>
                         <span className='fw-bolder'>
