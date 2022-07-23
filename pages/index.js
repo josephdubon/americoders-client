@@ -143,7 +143,7 @@ const Index = ({courses}) => {
         />
 
         {/* course and project album section */}
-        <Row align={'middle'} justify={'center'} className='py-5 container text-white'>
+        <Row align={'middle'} justify={'center'} className='py-5 container text-white text-center'>
             {/* title area */}
             <Col xs={24} id='course-list'>
                 <div className='feature-icon bg-primary bg-gradient'>
