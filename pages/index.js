@@ -148,10 +148,6 @@ const Index = ({courses}) => {
             <Col xs={24} id='course-list'>
                 <div className={'px-3'}>
                     <h2 className='py-3 text-white'>Course and Project Examples</h2>
-                    <p>
-                        As predicted from years before, computer science and coding has progressed from a hobby
-                        to a critical career skill.
-                    </p>
                     <p className='fw-bold'>
                         Let's level-up by creating some cool games and projects!
                     </p>
