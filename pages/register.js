@@ -14,7 +14,7 @@ const Register = () => {
                 <div className='row flex-lg-row-reverse align-items-center justify-content-center g-5 py-5'>
                     <div className='col-10 col-sm-8 col-lg-6'>
                         <Image
-                            src='/images/branding/bg-images/americoders-student-male-programming.jpg'
+                            src='/images/branding/misc/americoders-student-male-programming.jpg'
                             alt='Americoders'
                             loading='lazy'
                             title='We offer live, world-class, in-person computer science workshops and courses in a
