@@ -124,23 +124,25 @@ const Index = ({courses}) => {
             heroExtraContent={heroExtraContent()}
         />
 
-        <FeatureSectionLeft
-            featuredImage={'/images/branding/misc/americoders-robotics-project-student.jpg'}
-            featuredTitle={'Project Based Learning'}
-            featuredContent={featuredContentLeft()}
-        />
+        <div id='more-info'>
+            <FeatureSectionLeft
+                featuredImage={'/images/branding/misc/americoders-robotics-project-student.jpg'}
+                featuredTitle={'Project Based Learning'}
+                featuredContent={featuredContentLeft()}
+            />
 
-        <FeatureSectionRight
-            featuredImage={'/images/branding/misc/americoders-mom-daughter-team-meditation.jpg'}
-            featuredTitle={'Mindfulness Awareness'}
-            featuredContent={featuredContentRight()}
-        />
+            <FeatureSectionRight
+                featuredImage={'/images/branding/misc/americoders-mom-daughter-team-meditation.jpg'}
+                featuredTitle={'Mindfulness Awareness'}
+                featuredContent={featuredContentRight()}
+            />
 
-        <FeatureSectionLeft
-            featuredImage={'/images/branding/misc/americoders-kids-community-friends.jpg'}
-            featuredTitle={'Community Building'}
-            featuredContent={featuredContentLeft_2()}
-        />
+            <FeatureSectionLeft
+                featuredImage={'/images/branding/misc/americoders-kids-community-friends.jpg'}
+                featuredTitle={'Community Building'}
+                featuredContent={featuredContentLeft_2()}
+            />
+        </div>
 
         {/* course and project album section */}
         <Row align={'middle'} justify={'center'} className='py-5 container text-white text-center'>
