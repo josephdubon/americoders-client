@@ -146,10 +146,6 @@ const Index = ({courses}) => {
         <Row align={'middle'} justify={'center'} className='py-5 container text-white text-center'>
             {/* title area */}
             <Col xs={24} id='course-list'>
-                <div className='feature-icon bg-primary bg-gradient'>
-                    <svg className='bi' width='1em' height='1em'>
-                    </svg>
-                </div>
                 <div className={'px-3'}>
                     <h2 className='py-3 text-white'>Course and Project Examples</h2>
                     <p>
