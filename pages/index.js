@@ -62,11 +62,10 @@ const Index = ({courses}) => {
 
             <Col xs={22} sm={18} className='mx-auto m-5'>
                 <p className='text-white text-center w-100'>
-                        <span className='fw-bolder'>
-                            "Participating in project based learning with Americoders brought out a creative and problem
-                            solving side of me that didn't even know existed! I feel I have the tools to become a great
-                            problem solver and thinker."
-                        </span> - Ennio D - age 10
+                    "Participating in project based learning with Americoders brought out a creative and problem
+                    solving side of me that I didn't even know existed! I feel I have the tools to become a great
+                    problem solver and thinker."
+                    - Ennio D, Age 10
                 </p>
             </Col>
         </>)
