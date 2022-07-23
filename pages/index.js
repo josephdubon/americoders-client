@@ -50,7 +50,7 @@ const Index = ({courses}) => {
 
     const featuredContentLeft = () => {
         return (<>
-            <p className='text-white fs-5 px-3'>
+            <p className='text-white fs-5 px-5'>
                 We practice a sustained process of learning in which we can immerse ourselves in
                 multiple disciplines, simultaneously.
                 <br/>
