@@ -1,6 +1,6 @@
 import {Col, Image, Row} from 'antd'
 
-export default function FeatureSectionRight({featuredImage, featuredTitle, featuredContent}) {
+export default function FeatureSectionLeft({featuredImage, featuredTitle, featuredContent}) {
     return (<>
         <Row
             align={'middle'}
