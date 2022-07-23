@@ -73,42 +73,37 @@ const Index = ({courses}) => {
 
     const featuredContentRight = () => {
         return (<>
-            <p className='text-white text-end fs-5 px-3'>
+            <p className='text-white text-end fs-5 px-5'>
                 We must connect meaning with our actions. We hear modern terms but they are offered with
                 no explanation of what they mean.
                 <br/>
                 <br/>
-                Then we are left with assumptions and stereotypes.
-                These create patterns and patterns turn into habits. Our habits determine our future.
+                Then we are left with assumptions and stereotypes. These create patterns and patterns turn into habits.
+                Our habits determine our future. Join us as we educate and adapt to understand and break negative
+                stereotypes, destroy assumptions, and replace them all with verified knowledge.
                 <br/>
                 <br/>
-                We begin our project/workshop adventures with five
-                minutes of breathing-exercise and guided-meditation.
+                We begin our project/workshop adventures with five minutes of breathing-exercise and guided-meditation.
             </p>
         </>)
     }
 
     const featuredContentLeft_2 = () => {
         return (<>
-            <p className='text-white fs-5 px-3'>
-                We practice a sustained process of learning in which we can immerse ourselves in
-                multiple disciplines, simultaneously.
+            <p className='text-white fs-5 px-5'>
+                We can develop a natural state of dignity, pride, and restore our sense of significance in our community
+                of Reno, NV. We hear about how we are becoming a 'tech-city' but we will be left behind unless we become
+                'tech-citizens'.
                 <br/>
                 <br/>
-                We engage in tailor-made projects that provoke students to instinctively ask complex
-                questions all while gaining real-world problem solving
-                experience in a monitored environment.
+                Having a shared cause provides us with a sense of momentum and purpose. Let's experience and explore
+                amazing new possibilities in this awesome new world while advancing and leveling up our knowledge as a
+                community.
+                <br/>
+                <br/>
+                Don't we deserve the opportunity to learn the knowledge to benefit in this digital world? Yes, we do!
+                And so do our children.
             </p>
-
-            <Col xs={22} sm={18} className='mx-auto m-5'>
-                <p className='text-white text-center w-100'>
-                        <span className='fw-bolder'>
-                            "Participating in project based learning with Americoders brought out a creative and problem
-                            solving side of me that didn't even know existed! I feel I have the tools to become a great
-                            problem solver and thinker."
-                        </span> - Ennio D - age 10
-                </p>
-            </Col>
         </>)
     }
 
