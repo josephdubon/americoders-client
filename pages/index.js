@@ -170,9 +170,10 @@ const Index = ({courses}) => {
                         preview={false}
                         src='/images/branding/misc/americoders-scratch-game.jpg'
                         alt='Americoders'
+                        className='bg-body rounded-3 p-3'
                         loading='lazy'
                     />
-                    <p className='lead text-white text-center'>Introduction to Computer Science</p>
+                    <p className='lead text-white text-center'>Introduction to Coding</p>
                 </Col>
 
                 <Col xs={24} md={8} lg={8} className='m-5'>
@@ -180,9 +181,10 @@ const Index = ({courses}) => {
                         preview={false}
                         src='/images/branding/misc/americoders-kids-game-happy.jpg'
                         alt='Americoders'
+                        className='bg-body rounded-3 p-3'
                         loading='lazy'
                     />
-                    <p className='lead text-white text-center'>Internet Safety and Web Ethics</p>
+                    <p className='lead text-white text-center'>Internet Safety</p>
                 </Col>
 
                 <Col xs={24} md={8} lg={8} className='m-5'>
@@ -190,9 +192,10 @@ const Index = ({courses}) => {
                         preview={false}
                         src='/images/branding/misc/americoders-old-school-game.jpg'
                         alt='Americoders'
+                        className='bg-body rounded-3 p-3'
                         loading='lazy'
                     />
-                    <p className='lead text-white text-center'>Game Development - JS & Python</p>
+                    <p className='lead text-white text-center'>Game Development</p>
                 </Col>
 
                 <Col xs={24} md={8} lg={8} className='m-5'>
@@ -200,9 +203,10 @@ const Index = ({courses}) => {
                         preview={false}
                         src='/images/branding/misc/americoders-technology-unplugged.jpg'
                         alt='Americoders'
+                        className='bg-body rounded-3 p-3'
                         loading='lazy'
                     />
-                    <p className='lead text-white text-center'>Technology Unplugged - Introduction</p>
+                    <p className='lead text-white text-center'>Technology Unplugged</p>
                 </Col>
 
                 <Col xs={24} md={8} lg={8} className='m-5'>
@@ -210,6 +214,7 @@ const Index = ({courses}) => {
                         preview={false}
                         src='/images/branding/misc/americoders-teen-coding.jpg'
                         alt='Americoders'
+                        className='bg-body rounded-3 p-3'
                         loading='lazy'
                     />
                     <p className='lead text-white text-center'>Create a Projects Portfolio</p>
@@ -220,9 +225,10 @@ const Index = ({courses}) => {
                         preview={false}
                         src='/images/branding/misc/americoders-teen-3d-printing.jpg'
                         alt='Americoders'
+                        className='bg-body rounded-3 p-3'
                         loading='lazy'
                     />
-                    <p className='lead text-white text-center'>Hardware Hacking, Breakdown/Fixes</p>
+                    <p className='lead text-white text-center'>Hardware Breakdown/Fixes</p>
                 </Col>
             </Row>
         </Row>
