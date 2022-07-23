@@ -13,7 +13,7 @@ const Login = () => {
                 <div className='row flex-lg-row-reverse align-items-center justify-content-center g-5 py-5'>
                     <div className='col-10 col-sm-8 col-lg-6'>
                         <Image
-                            src='/images/branding/bg-images/americoders-student-female-laptop-fun.jpg'
+                            src='/images/branding/misc/americoders-student-female-laptop-fun.jpg'
                             alt='Americoders'
                             loading='lazy'
                             preview={false}
