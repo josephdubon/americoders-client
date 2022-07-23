@@ -255,16 +255,14 @@ const Index = ({courses}) => {
         <Row align={'middle'} justify={'center'} className='container py-5'>
             {/* brand title area */}
             <Col xs={24}>
-                <div className='feature-icon bg-primary bg-gradient'>
-                    <svg className='bi' width='1em' height='1em'>
-                    </svg>
-                </div>
-                <div className={'px-3'}>
-                    <h2 className='py-3 text-white'>Pricing Models</h2>
+                <div className='px-3 text-center'>
+                    <h2 className='py-3 text-white'>Program Starting End of Summer 2022...</h2>
                     <p className='text-light fw-bolder'>Age groups:{' '}
                         <span className='text-light'>7 - 9</span>{' | '}
                         <span className='text-light'>10 - 13</span>{' | '}
-                        <span className='text-light'>14 - 17</span>
+                        <span className='text-light'>14 - 17</span>{' | '}
+                        <span className='text-light'>18 - 20</span>{' | '}
+                        <span className='text-light'>21 +</span>
                     </p>
                     <p className='text-light'>
                         Join our community as we educate, evolve, and adapt to this new world.
@@ -281,97 +279,69 @@ const Index = ({courses}) => {
                 </div>
             </Col>
 
-            {/* pricing model row section */}
-            <Row align={'top'} justify={'center'}>
-                {/* features col 1/3 */}
-                <Col xs={24} sm={12} lg={8} className={'px-3'}>
-                    {/* pro tier */}
-                    <div style={{width: '100%'}}
-                         className='card mb-4 rounded-3 shadow-sm border text-center'>
-                        <div className='card-header py-3'>
-                            <h4 className='my-0 fw-normal'>Community</h4>
-                        </div>
-                        <div className='card-body'>
-                            <h1 className='card-title pricing-card-title'>$0<small
-                                className='text-muted fw-light'>/mo</small></h1>
-                            <ul className='list-unstyled mt-3 mb-4'>
-                                <li>Child + Parent Participation</li>
-                                <li>Attendance to Speakers and Public Events</li>
-                                <li>Can Purchase Workshop/Course</li>
-                                <br/>
-                                <li>'Hour of Code' Events</li>
-                                <li>Access to Free Courses on Web App</li>
-                                <li>Email support</li>
-                            </ul>
-                            <Link href={'/register'}>
-                                <a>
-                                    <button type='button' className='w-100 btn btn-md btn-outline-primary'>
-                                        Registration Open
-                                    </button>
-                                </a>
-                            </Link>
-                        </div>
-                    </div>
-                </Col>
+            {/*/!* pricing model row section *!/*/}
+            {/*<Row align={'middle'} justify={'center'}>*/}
+            {/*    /!* features col 1/3 *!/*/}
+            {/*    <Col xs={24} sm={12}>*/}
+            {/*        /!* pro tier *!/*/}
+            {/*        <div style={{width: '100%'}}*/}
+            {/*             className='card mb-4 rounded-3 shadow-sm border text-center'>*/}
+            {/*            <div className='card-header py-3'>*/}
+            {/*                <h4 className='my-0 fw-normal'>Community</h4>*/}
+            {/*            </div>*/}
+            {/*            <div className='card-body'>*/}
+            {/*                <h1 className='card-title pricing-card-title'>$0<small*/}
+            {/*                    className='text-muted fw-light'>/mo</small></h1>*/}
+            {/*                <ul className='list-unstyled mt-3 mb-4'>*/}
+            {/*                    <li>Child + Parent Participation</li>*/}
+            {/*                    <li>Attendance to Online, Public Events</li>*/}
+            {/*                    <li>Can Purchase Workshop/Course</li>*/}
+            {/*                    <br/>*/}
+            {/*                    <li>'Hour of Code' Events</li>*/}
+            {/*                    <li>Access to Free Courses on Web App</li>*/}
+            {/*                    <li>Email support</li>*/}
+            {/*                </ul>*/}
+            {/*                <Link href={'/register'}>*/}
+            {/*                    <a>*/}
+            {/*                        <button type='button' className='w-100 btn btn-md btn-outline-primary'>*/}
+            {/*                            Registration Open*/}
+            {/*                        </button>*/}
+            {/*                    </a>*/}
+            {/*                </Link>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*    </Col>*/}
 
-                {/* features col 2/3 */}
-                <Col xs={24} sm={12} lg={8} className={'px-3'}>
-                    {/* pro tier */}
-                    <div style={{width: '100%'}}
-                         className='card mb-4 rounded-3 shadow-sm border text-center'>
-                        <div className='card-header py-3'>
-                            <h4 className='my-0 fw-normal'>Pro</h4>
-                        </div>
-                        <div className='card-body'>
-                            <h1 className='card-title pricing-card-title'>$149<small
-                                className='text-muted fw-light'>/mo</small></h1>
-                            <ul className='list-unstyled mt-3 mb-4'>
-                                <li>Child + Parent Participation</li>
-                                <li>2x in-person workshop per month</li>
-                                <br/>
-                                <li>Access to online workshops/courses.</li>
-                                <li>Hour of Code Events, Special Access</li>
-                                <li>Priority email support</li>
-                                <li>Help center access</li>
-                            </ul>
-                            <a>
-                                <button type='button' className='w-100 btn btn-sm btn-primary'>
-                                    Registration Opening Soon
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                </Col>
+            {/*    /!* features col 2/3 *!/*/}
+            {/*    <Col xs={24} sm={12}>*/}
+            {/*        /!* pro tier *!/*/}
+            {/*        <div style={{width: '100%'}}*/}
+            {/*             className='card mb-4 rounded-3 shadow-sm border text-center'>*/}
+            {/*            <div className='card-header py-3'>*/}
+            {/*                <h4 className='my-0 fw-normal'>Professional</h4>*/}
+            {/*            </div>*/}
+            {/*            <div className='card-body'>*/}
+            {/*                <h1 className='card-title pricing-card-title'>$149<small*/}
+            {/*                    className='text-muted fw-light'>/mo</small></h1>*/}
+            {/*                <ul className='list-unstyled mt-3 mb-4'>*/}
+            {/*                    <li>Child + Parent Participation</li>*/}
+            {/*                    <li>2x in-person workshop per month</li>*/}
+            {/*                    <br/>*/}
+            {/*                    <li>Access to online workshops/courses.</li>*/}
+            {/*                    <li>Hour of Code Events, Special Access</li>*/}
+            {/*                    <li>Priority email support</li>*/}
+            {/*                    <li>Help center access</li>*/}
+            {/*                </ul>*/}
+            {/*                <a>*/}
+            {/*                    <button type='button' className='w-100 btn btn-sm btn-primary'>*/}
+            {/*                        Registration Opening Soon*/}
+            {/*                    </button>*/}
+            {/*                </a>*/}
+            {/*            </div>*/}
+            {/*        </div>*/}
+            {/*    </Col>*/}
 
-                {/* features col 3/3 */}
-                <Col xs={24} sm={12} lg={8} className={'px-3'}>
-                    {/* enterprise tier */}
-                    <div style={{width: '100%'}}
-                         className='card mb-4 rounded-3 shadow-sm border-danger text-center'>
-                        <div className='card-header py-3 text-white bg-danger border-danger'>
-                            <h4 className='my-0 fw-normal text-light'>Enterprise</h4>
-                        </div>
-                        <div className='card-body'>
-                            <h1 className='card-title pricing-card-title'>$225<small
-                                className='text-muted fw-light'>/mo</small></h1>
-                            <ul className='list-unstyled mt-3 mb-4'>
-                                <li>Child + Parent Participation</li>
-                                <li>4x in-person workshop per month</li>
-                                <br/>
-                                <li>Access to online workshops/courses.</li>
-                                <li>Hour of Code Events, Special Access</li>
-                                <li>Priority Phone and email support</li>
-                                <li>Help center access</li>
-                            </ul>
-                            <a>
-                                <button type='button' className='w-100 btn btn-sm btn-danger'>
-                                    Registration Opening Soon
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                </Col>
-            </Row>
+            {/*</Row>*/}
         </Row>
     </>)
 }
