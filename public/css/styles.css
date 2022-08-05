@@ -1,5 +1,9 @@
+/* default root styles: colors etc */
 @import './parent.css';
+
+/* site default fonts */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;1,200&family=Roboto&display=swap');
+
 
 /* font styles */
 body, .btn {
@@ -67,7 +71,7 @@ label {
 }
 
 .btn {
-    opacity: .75 ;
+    opacity: .75;
 }
 
 .bg-primary,
