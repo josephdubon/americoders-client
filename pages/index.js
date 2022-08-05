@@ -109,6 +109,41 @@ const Index = ({courses}) => {
         </>)
     }
 
+    const ctaProgramStart = () => {
+        return (<>
+            <p>
+                Join our community as we educate, evolve, and adapt to this new world.
+                Learn to code, create, live, and prosper in this new digital era while
+                keeping intact the ethics and traditions of our old-world.
+            </p>
+        </>)
+    }
+
+    const customFormElement = () => {
+        return (<>
+            <MailingListForm className={'bg-dark'}/>
+        </>)
+    }
+
+    const ctaButtonContent = () => {
+        return (<>
+            <Row
+                align={'middle'}
+                justify={'center'}
+                className={'text-center'}
+            >
+                <Col xs={24}>
+                    {/*<Link href={'/#more-info'}><a>*/}
+                    <button type='button'
+                            className='btn btn-secondary btn-lg shadow px-4 my-2'>
+                        Registration Opening Soon!!
+                    </button>
+                    {/*</a></Link>*/}
+                </Col>
+            </Row>
+        </>)
+    }
+
     return (<>
         <PageHead title={'Home'}/>
 
