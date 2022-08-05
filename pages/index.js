@@ -109,6 +109,41 @@ const Index = ({courses}) => {
         </>)
     }
 
+    const ctaProgramStart = () => {
+        return (<>
+            <p>
+                Join our community as we educate, evolve, and adapt to this new world.
+                Learn to code, create, live, and prosper in this new digital era while
+                keeping intact the ethics and traditions of our old-world.
+            </p>
+        </>)
+    }
+
+    const customFormElement = () => {
+        return (<>
+            <MailingListForm className={'bg-dark'}/>
+        </>)
+    }
+
+    const ctaButtonContent = () => {
+        return (<>
+            <Row
+                align={'middle'}
+                justify={'center'}
+                className={'text-center'}
+            >
+                <Col xs={24}>
+                    {/*<Link href={'/#more-info'}><a>*/}
+                    <button type='button'
+                            className='btn btn-secondary btn-lg shadow px-4 my-2'>
+                        Registration Opening Soon!!
+                    </button>
+                    {/*</a></Link>*/}
+                </Col>
+            </Row>
+        </>)
+    }
+
     return (<>
         <PageHead title={'Home'}/>
 
@@ -232,119 +267,22 @@ const Index = ({courses}) => {
         </Row>
 
         {/* mailing list */}
-        <Row align={'middle'} justify={'center'} className='py-5 container-fluid bg-light'>
-            {/* title area */}
-            <Col xs={24} md={20} lg={24} id='course-list'>
-                <section className='text-center'>
-                        <span className='fs-5 text-muted ls-md text-uppercase'>
-                                technology education - arts - mindfulness
-                            </span>
-                    <h1 className='fw-bold text-black lh-1 mt-2 mb-3'>
-                        Join our mailing list
-                    </h1>
+        <CallToAction
+            subTitle={'TECHNOLOGY, ARTS, MINDFULNESS EDUCATION'}
+            mainTitle={'Join Our Mailing List'}
+            subTitle2={'Stay up to date with the news and latest courses + lessons.'}
+            formElement={customFormElement()}
+        />
 
-                    <p className='text-black-50 mb-6 fs-6'>
-                        Stay up to date with the news and latest courses + lessons.
-                    </p>
+        {/* sign up for next cohort */}
+        <CallToActionImage
+            featuredImage={'/images/branding/misc/americoders-kids-laptop-fun.jpg'}
+            subTitle={'Program Starting'}
+            mainTitle={'Fall Semester 2022'}
+            subTitle2={ctaProgramStart()}
+            ctaButtons={ctaButtonContent()}
 
-                    {/* mailing list */}
-                    <MailingListForm className={'bg-light'}/>
-                </section>
-            </Col>
-        </Row>
-
-        {/* features title section */}
-        <Row align={'middle'} justify={'center'} className='container py-5'>
-            {/* brand title area */}
-            <Col xs={24}>
-                <div className='px-3 text-center'>
-                    <h2 className='py-3 text-white'>Program Starting End of Summer 2022...</h2>
-                    <p className='text-light fw-bolder'>Age groups:{' '}
-                        <span className='text-light'>7 - 9</span>{' | '}
-                        <span className='text-light'>10 - 13</span>{' | '}
-                        <span className='text-light'>14 - 17</span>{' | '}
-                        <span className='text-light'>18 - 20</span>{' | '}
-                        <span className='text-light'>21 +</span>
-                    </p>
-                    <p className='text-light'>
-                        Join our community as we educate, evolve, and adapt to this new world.
-                        <br/>
-                        Learn to code, create, live, and prosper in this new digital era while
-                        <br/>
-                        keeping intact the ethics and traditions of our old-world.
-                    </p>
-                    <p className='text-light'>
-                        Please <a href='mailto:scholarships@americoders.org'>email us here</a> to inquire
-                        about
-                        scholarships and sponsorships.
-                    </p>
-                </div>
-            </Col>
-
-            {/*/!* pricing model row section *!/*/}
-            {/*<Row align={'middle'} justify={'center'}>*/}
-            {/*    /!* features col 1/3 *!/*/}
-            {/*    <Col xs={24} sm={12}>*/}
-            {/*        /!* pro tier *!/*/}
-            {/*        <div style={{width: '100%'}}*/}
-            {/*             className='card mb-4 rounded-3 shadow-sm border text-center'>*/}
-            {/*            <div className='card-header py-3'>*/}
-            {/*                <h4 className='my-0 fw-normal'>Community</h4>*/}
-            {/*            </div>*/}
-            {/*            <div className='card-body'>*/}
-            {/*                <h1 className='card-title pricing-card-title'>$0<small*/}
-            {/*                    className='text-muted fw-light'>/mo</small></h1>*/}
-            {/*                <ul className='list-unstyled mt-3 mb-4'>*/}
-            {/*                    <li>Child + Parent Participation</li>*/}
-            {/*                    <li>Attendance to Online, Public Events</li>*/}
-            {/*                    <li>Can Purchase Workshop/Course</li>*/}
-            {/*                    <br/>*/}
-            {/*                    <li>'Hour of Code' Events</li>*/}
-            {/*                    <li>Access to Free Courses on Web App</li>*/}
-            {/*                    <li>Email support</li>*/}
-            {/*                </ul>*/}
-            {/*                <Link href={'/register'}>*/}
-            {/*                    <a>*/}
-            {/*                        <button type='button' className='w-100 btn btn-md btn-outline-primary'>*/}
-            {/*                            Registration Open*/}
-            {/*                        </button>*/}
-            {/*                    </a>*/}
-            {/*                </Link>*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*    </Col>*/}
-
-            {/*    /!* features col 2/3 *!/*/}
-            {/*    <Col xs={24} sm={12}>*/}
-            {/*        /!* pro tier *!/*/}
-            {/*        <div style={{width: '100%'}}*/}
-            {/*             className='card mb-4 rounded-3 shadow-sm border text-center'>*/}
-            {/*            <div className='card-header py-3'>*/}
-            {/*                <h4 className='my-0 fw-normal'>Professional</h4>*/}
-            {/*            </div>*/}
-            {/*            <div className='card-body'>*/}
-            {/*                <h1 className='card-title pricing-card-title'>$149<small*/}
-            {/*                    className='text-muted fw-light'>/mo</small></h1>*/}
-            {/*                <ul className='list-unstyled mt-3 mb-4'>*/}
-            {/*                    <li>Child + Parent Participation</li>*/}
-            {/*                    <li>2x in-person workshop per month</li>*/}
-            {/*                    <br/>*/}
-            {/*                    <li>Access to online workshops/courses.</li>*/}
-            {/*                    <li>Hour of Code Events, Special Access</li>*/}
-            {/*                    <li>Priority email support</li>*/}
-            {/*                    <li>Help center access</li>*/}
-            {/*                </ul>*/}
-            {/*                <a>*/}
-            {/*                    <button type='button' className='w-100 btn btn-sm btn-primary'>*/}
-            {/*                        Registration Opening Soon*/}
-            {/*                    </button>*/}
-            {/*                </a>*/}
-            {/*            </div>*/}
-            {/*        </div>*/}
-            {/*    </Col>*/}
-
-            {/*</Row>*/}
-        </Row>
+        />
     </>)
 }
 
