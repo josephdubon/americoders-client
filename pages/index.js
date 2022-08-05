@@ -1,7 +1,6 @@
 import axios from 'axios'
 import {Col, Image, Row} from 'antd'
 import Link from 'next/link'
-import MailingListForm from '../components/forms/MailingListForm'
 import {PageHead} from '../components/head/PageHead'
 import HeroSection from '../components/structure/HeroSection/HeroSection'
 import FeatureSectionLeft from '../components/structure/FeatureSectionLeft/FeatureSectionLeft'
