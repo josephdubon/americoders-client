@@ -5,6 +5,9 @@ import {PageHead} from '../components/head/PageHead'
 import HeroSection from '../components/structure/HeroSection/HeroSection'
 import FeatureSectionLeft from '../components/structure/FeatureSectionLeft/FeatureSectionLeft'
 import FeatureSectionRight from '../components/structure/FeatureSectionRight/FeatureSectionRight'
+import CallToAction from '../components/banners/CallToAction'
+import MailingListForm from '../components/forms/MailingListForm'
+import CallToActionImage from '../components/banners/CallToActionImage'
 // import CourseCard from '../components/cards/CourseCard'
 
 const Index = ({courses}) => {
