@@ -28,6 +28,7 @@ export default function CallToActionImage({ctaButtons, featuredImage, subTitle, 
                 <p className='fs-5 mb-0 ls-md text-uppercase text-white text-center'>
                     {subTitle}
                 </p>
+
                 <h1 className='fw-bold text-white lh-1 mt-2 mb-3 text-center'>
                     {mainTitle}
                 </h1>
@@ -36,9 +37,8 @@ export default function CallToActionImage({ctaButtons, featuredImage, subTitle, 
                     {subTitle2}
                 </p>
 
-            {/* buttons */}
+                {/* buttons */}
                 {ctaButtons}
-
             </Col>
         </Row>
     </>)
