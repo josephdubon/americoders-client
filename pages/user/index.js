@@ -53,7 +53,7 @@ const UserIndex = () => {
             />
         )}
 
-        <PageHead title={user.name}/>
+        <PageHead title={user && user.name}/>
 
         {/* hero section */}
         <Content className='bg-light'>
@@ -65,6 +65,9 @@ const UserIndex = () => {
                         {user ?
                             (<>
                                 <h1 className='display-6 fw-bold lh-1 mb-3 '>{user.name}</h1>
+                                <p className='form-text'>
+                                    <Link href={'/update-user/'}><a>Update User</a></Link>
+                                </p>
                                 <Divider/>
                                 <p className='text-muted'><strong>Email:</strong> {user.email}</p>
                                 <p className='text-muted'><strong>Role:</strong> {user.role.join(', ')}</p>
