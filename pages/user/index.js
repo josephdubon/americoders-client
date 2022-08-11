@@ -6,6 +6,7 @@ import {PlayCircleOutlined, SyncOutlined} from '@ant-design/icons'
 import {Avatar, Divider, Image, Layout, Tooltip} from 'antd'
 import Link from 'next/link'
 import Moment from 'moment'
+import {PageHead} from '../../components/head/PageHead'
 
 
 const {Content} = Layout
@@ -51,6 +52,9 @@ const UserIndex = () => {
                 className='d-flex justify-content-between display-1 text-danger p-5'
             />
         )}
+
+        <PageHead title={user.name}/>
+
         {/* hero section */}
         <Content className='bg-light'>
             <Divider children='Welcome Back, Americoder!' className='mt-0 pt-3'/>

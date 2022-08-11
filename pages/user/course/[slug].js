@@ -10,6 +10,7 @@ import PlaygroundFrontEnd from '../../../components/editor/PlaygroundFrontEnd'
 import Moment from 'moment'
 import AskForHelp from '../../../components/banners/AskForHelp'
 import LessonsNav from '../../../components/nav/Course/LessonsNav'
+import {PageHead} from '../../../components/head/PageHead'
 
 const {Content} = Layout
 const {Item} = Menu
@@ -102,6 +103,10 @@ const SingleCourse = () => {
     }
 
     return (<>
+
+            <PageHead title={course.name}/>
+
+
             <StudentRoute className='container'>
                 {loading && (<SyncOutlined
                     spin

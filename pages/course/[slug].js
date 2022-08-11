@@ -7,6 +7,7 @@ import SingleCourseLessons from '../../components/cards/SingleCourseLessons'
 import {Context} from '../../context'
 import {toast} from 'react-toastify'
 import {loadStripe} from '@stripe/stripe-js'
+import {PageHead} from '../../components/head/PageHead'
 
 const Stripe = require('stripe')
 
@@ -140,6 +141,9 @@ const SingleCourse = ({course}) => {
     }
 
     return (<>
+
+        <PageHead title={course.name}/>
+
         <SingleCourseHero
             course={course}
             showModal={showModal}

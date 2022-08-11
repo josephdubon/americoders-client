@@ -5,6 +5,7 @@ import InstructorRoute from '../../components/routes/InstructorRoute'
 import {Avatar, Tooltip} from 'antd'
 import Link from 'next/link'
 import {CheckCircleOutlined, CloseCircleOutlined} from '@ant-design/icons'
+import {PageHead} from '../../components/head/PageHead'
 
 const InstructorIndex = () => {
     // state
@@ -32,6 +33,9 @@ const InstructorIndex = () => {
 
 
     return (<InstructorRoute>
+
+        <PageHead title={'Instructor Dashboard'}/>
+
         <main>
             <section className='py-5 text-center container'>
                 <div className='row py-lg-5'>
