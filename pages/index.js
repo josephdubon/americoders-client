@@ -111,11 +111,9 @@ const Index = ({courses}) => {
 
     const ctaProgramStart = () => {
         return (<>
-            <p>
-                Join our community as we educate, evolve, and adapt to this new world.
-                Learn to code, create, live, and prosper in this new digital era while
-                keeping intact the ethics and traditions of our old-world.
-            </p>
+            Join our community as we educate, evolve, and adapt to this new world.
+            Learn to code, create, live, and prosper in this new digital era while
+            keeping intact the ethics and traditions of our old-world.
         </>)
     }
 
