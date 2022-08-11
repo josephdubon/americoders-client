@@ -268,12 +268,14 @@ const Index = ({courses}) => {
         </Row>
 
         {/* mailing list */}
-        <CallToAction
-            subTitle={'TECHNOLOGY, ARTS, MINDFULNESS EDUCATION'}
-            mainTitle={'Join Our Mailing List'}
-            subTitle2={'Stay up to date with the news and latest courses + lessons.'}
-            formElement={customFormElement()}
-        />
+        <div id='mailing-list'>
+            <CallToAction
+                subTitle={'TECHNOLOGY, ARTS, MINDFULNESS EDUCATION'}
+                mainTitle={'Join Our Mailing List'}
+                subTitle2={'Stay up to date with the news and latest courses + lessons.'}
+                formElement={customFormElement()}
+            />
+        </div>
 
         {/* sign up for next cohort */}
         <CallToActionImage
@@ -282,7 +284,6 @@ const Index = ({courses}) => {
             mainTitle={'Fall Semester 2022'}
             subTitle2={ctaProgramStart()}
             ctaButtons={ctaButtonContent()}
-
         />
     </>)
 }
