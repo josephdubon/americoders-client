@@ -131,12 +131,15 @@ const Index = ({courses}) => {
                 className={'text-center'}
             >
                 <Col xs={24}>
-                    {/*<Link href={'/#more-info'}><a>*/}
-                    <button type='button'
-                            className='btn btn-secondary btn-lg shadow px-4 my-2'>
-                        Registration Opening Soon!!
-                    </button>
-                    {/*</a></Link>*/}
+                    <Link href={'/#mailing-list'}><a>
+                        <button type='button'
+                                className='btn btn-secondary btn-lg shadow px-4 my-2'>
+                            Registration Opening Soon!!
+                            <br/>
+                            <hr/>
+                            Sign up to mailing list for updates.
+                        </button>
+                    </a></Link>
                 </Col>
             </Row>
         </>)
