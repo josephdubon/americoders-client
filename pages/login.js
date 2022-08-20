@@ -29,7 +29,7 @@ const Login = () => {
                             Welcome back, <strong className='text-primary fw-bold'>Americoder</strong>!
                         </p>
                         <p className=' text-muted mt-2'>
-                            Thanks for visiting again! Always rememeber to reach out if you have any questions or
+                            Thanks for visiting again! Always remember to reach out if you have any questions or
                             comments.
                         </p>
 
