@@ -11,6 +11,8 @@ import ParticlesEffect from '../components/effects/Particles'
 import 'animate.css'
 import SiteFooter from '../components/footer/SiteFooter'
 import {PageHead} from '../components/head/PageHead'
+import {DevSupport} from "@react-buddy/ide-toolbox";
+import {ComponentPreviews, useInitial} from "../dev";
 
 const {Header, Footer, Content} = Layout
 
@@ -61,7 +63,11 @@ function MyApp({Component, pageProps}) {
 
                 {/* main content area */}
                 <Content>
-                    <Component {...pageProps}/>
+                    <DevSupport ComponentPreviews={ComponentPreviews}
+                                useInitialHook={useInitial}
+                    >
+                        <Component {...pageProps}/>
+                    </DevSupport>
                 </Content>
 
                 {/* main footer area */}
