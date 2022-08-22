@@ -9,6 +9,7 @@ import {useRouter} from 'next/router'
 import {Avatar, List, Modal} from 'antd'
 import Item from 'antd/lib/list/Item'
 import {DeleteOutlined} from '@ant-design/icons'
+import {PageHead} from '../../../../components/head/PageHead'
 
 const EditCourse = () => {
     // state
@@ -304,6 +305,9 @@ const EditCourse = () => {
     }
 
     return (<InstructorRoute>
+        <PageHead title={`Edit ${values.name}`}/>
+
+
         <main>
             <section className='py-5 text-center container'>
                 <div className='row py-lg-5'>

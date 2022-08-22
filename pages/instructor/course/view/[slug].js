@@ -15,6 +15,7 @@ import ReactMarkdown from 'react-markdown'
 import AddLessonForm from '../../../../components/forms/AddLessonForm'
 import {toast} from 'react-toastify'
 import Item from 'antd/lib/list/Item'
+import {PageHead} from '../../../../components/head/PageHead'
 
 
 const CourseView = () => {
@@ -260,6 +261,8 @@ const CourseView = () => {
     }
 
     return (<InstructorRoute>
+        <PageHead title={course.name}/>
+
         <main>
             <section className='py-5 text-center container'>
                 <div className='row py-lg-5'>

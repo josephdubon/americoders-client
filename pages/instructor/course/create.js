@@ -5,6 +5,7 @@ import InstructorRoute from '../../../components/routes/InstructorRoute'
 import CourseCreateForm from '../../../components/forms/CourseCreateForm'
 import {toast} from 'react-toastify'
 import {useRouter} from 'next/router'
+import {PageHead} from '../../../components/head/PageHead'
 
 const CreateCourse = () => {
     // router
@@ -146,6 +147,8 @@ const CreateCourse = () => {
     }
 
     return (<InstructorRoute>
+        <PageHead title={'Create Course'}/>
+
         <main>
             <section className='py-5 text-center container'>
                 <div className='row py-lg-5'>

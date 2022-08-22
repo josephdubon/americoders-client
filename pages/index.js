@@ -111,11 +111,9 @@ const Index = ({courses}) => {
 
     const ctaProgramStart = () => {
         return (<>
-            <p>
-                Join our community as we educate, evolve, and adapt to this new world.
-                Learn to code, create, live, and prosper in this new digital era while
-                keeping intact the ethics and traditions of our old-world.
-            </p>
+            Join our community as we educate, evolve, and adapt to this new world.
+            Learn to code, create, live, and prosper in this new digital era while
+            keeping intact the ethics and traditions of our old-world.
         </>)
     }
 
@@ -133,12 +131,15 @@ const Index = ({courses}) => {
                 className={'text-center'}
             >
                 <Col xs={24}>
-                    {/*<Link href={'/#more-info'}><a>*/}
-                    <button type='button'
-                            className='btn btn-secondary btn-lg shadow px-4 my-2'>
-                        Registration Opening Soon!!
-                    </button>
-                    {/*</a></Link>*/}
+                    <Link href={'/#mailing-list'}><a>
+                        <button type='button'
+                                className='btn btn-secondary btn-lg shadow px-4 my-2'>
+                            Registration Opening Soon!!
+                            <br/>
+                            <hr/>
+                            Sign up to mailing list for updates.
+                        </button>
+                    </a></Link>
                 </Col>
             </Row>
         </>)
@@ -267,12 +268,14 @@ const Index = ({courses}) => {
         </Row>
 
         {/* mailing list */}
-        <CallToAction
-            subTitle={'TECHNOLOGY, ARTS, MINDFULNESS EDUCATION'}
-            mainTitle={'Join Our Mailing List'}
-            subTitle2={'Stay up to date with the news and latest courses + lessons.'}
-            formElement={customFormElement()}
-        />
+        <div id='mailing-list'>
+            <CallToAction
+                subTitle={'TECHNOLOGY, ARTS, MINDFULNESS EDUCATION'}
+                mainTitle={'Join Our Mailing List'}
+                subTitle2={'Stay up to date with the news and latest courses + lessons.'}
+                formElement={customFormElement()}
+            />
+        </div>
 
         {/* sign up for next cohort */}
         <CallToActionImage
@@ -281,7 +284,6 @@ const Index = ({courses}) => {
             mainTitle={'Fall Semester 2022'}
             subTitle2={ctaProgramStart()}
             ctaButtons={ctaButtonContent()}
-
         />
     </>)
 }

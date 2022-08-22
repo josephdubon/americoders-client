@@ -4,6 +4,7 @@ import {DollarOutlined, SettingOutlined, SyncOutlined} from '@ant-design/icons'
 import {Col, Row} from 'antd'
 import axios from 'axios'
 import {stripeCurrencyFormatter} from '../../utils/helpers'
+import {PageHead} from '../../components/head/PageHead'
 
 const InstructorRevenue = () => {
     // state
@@ -47,6 +48,9 @@ const InstructorRevenue = () => {
 
     return (
         <InstructorRoute>
+
+            <PageHead title={'Revenue'}/>
+
             <Row className='pt-2'>
                 <Col className='col-md-8 offset-md-2 bg-light p-5'>
                     <h2>
