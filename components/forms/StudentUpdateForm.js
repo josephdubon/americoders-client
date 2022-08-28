@@ -77,38 +77,38 @@ const StudentUpdateForm = () => {
     return (<>
         <form onSubmit={handleSubmit}>
 
-            <p className='form-text'>Update First Name</p>
+            <p className='form-text'>First Name</p>
             <input
                 type='text'
                 className='form-control mb-4 p-4'
-                defaultValue={firstName}
                 onChange={e => setFirstName(e.target.value)}
                 placeholder={user && user.firstName}
+                required
             />
 
-            <p className='form-text'>Update Last Name</p>
+            <p className='form-text'>Last Name</p>
             <input
                 type='text'
                 className='form-control mb-4 p-4'
-                defaultValue={lastName}
                 onChange={e => setLastName(e.target.value)}
                 placeholder={user && user.lastName}
+                required
             />
 
-            <p className='form-text'>Update Bio</p>
+            <p className='form-text'>Bio</p>
             <input
                 type='text'
                 className='form-control mb-4 p-4'
-                defaultValue={bio}
                 onChange={e => setBio(e.target.value)}
                 placeholder={user && user.bio}
+                required
             />
 
             <p className='form-text'>Confirm Email</p>
             <input
                 type='text'
                 className='form-control mb-4 p-4'
-                defaultValue={email}
+                // defaultValue={user && user.email}
                 onChange={e => setEmail(e.target.value)}
                 placeholder={user && user.email}
                 required
