@@ -31,9 +31,13 @@ export default function UpdateUser() {
                     <div className='col-lg-6'>
                         <h1 className='display-5 fw-bold lh-1 mb-3'>Update User Details</h1>
                         <p className='text-body text-muted'>
-                            Review your details before submitting the form.
+                            Please re-enter your details to confirm/update.
                         </p>
 
+                        {/* go back */}
+                        <p className='small '>
+                            Change your mind? <Link href={'/user'}><a>Go Back</a></Link>
+                        </p>
 
                         {/* Update User Form */}
                         <div className='col-md-12 offset-md-12 pb-5'>
@@ -41,10 +45,6 @@ export default function UpdateUser() {
                             <StudentUpdateForm />
                             <br/>
 
-                            {/* go back */}
-                            <p className='form-text text-center p3'>
-                                Change your mind? <Link href={'/user'}><a>Go Back</a></Link>
-                            </p>
                         </div>
 
                     </div>
