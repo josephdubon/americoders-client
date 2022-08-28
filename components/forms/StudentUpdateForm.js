@@ -6,8 +6,10 @@ import {toast} from 'react-toastify'
 import {SyncOutlined} from '@ant-design/icons'
 
 const StudentUpdateForm = () => {
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
+    const [firstName, setFirstName] = useState(user && user.firstName)
+    const [lastName, setLastName] = useState(user && user.lastName)
+    const [bio, setBio] = useState(user && user.bio)
+    const [email, setEmail] = useState(user && user.email)
     const [loading, setLoading] = useState(false)
 
     // global state
@@ -34,11 +36,13 @@ const StudentUpdateForm = () => {
 
             // update user data in db
             const {data} = await axios.post(`/api/update-user`, {
-                name, email
+                firstName, lastName, bio, email
             })
 
             // update user state
-            user.name = name
+            user.firstName = firstName
+            user.lastName = lastName
+            user.bio = bio
 
             toast.success('User update successful.', {
                 position: 'top-center',
@@ -52,10 +56,7 @@ const StudentUpdateForm = () => {
 
             // deactivate load spinner
             setLoading(false)
-
-            // clear fields and redirect home
-            setName('')
-            setEmail('')
+            
             await router.push('/login')
         } catch (err) {
             // deactivate load spinner
@@ -75,14 +76,32 @@ const StudentUpdateForm = () => {
 
     return (<>
         <form onSubmit={handleSubmit}>
-            <p className='form-text'>Update Name</p>
+
+            <p className='form-text'>Update First Name</p>
             <input
                 type='text'
                 className='form-control mb-4 p-4'
-                defaultValue={name}
-                onChange={e => setName(e.target.value)}
-                placeholder={user && user.name}
-                // required
+                defaultValue={firstName}
+                onChange={e => setFirstName(e.target.value)}
+                placeholder={user && user.firstName}
+            />
+
+            <p className='form-text'>Update Last Name</p>
+            <input
+                type='text'
+                className='form-control mb-4 p-4'
+                defaultValue={lastName}
+                onChange={e => setLastName(e.target.value)}
+                placeholder={user && user.lastName}
+            />
+
+            <p className='form-text'>Update Bio</p>
+            <input
+                type='text'
+                className='form-control mb-4 p-4'
+                defaultValue={bio}
+                onChange={e => setBio(e.target.value)}
+                placeholder={user && user.bio}
             />
 
             <p className='form-text'>Confirm Email</p>
@@ -92,14 +111,14 @@ const StudentUpdateForm = () => {
                 defaultValue={email}
                 onChange={e => setEmail(e.target.value)}
                 placeholder={user && user.email}
-                // required
+                required
             />
 
             <div className='d-grid gap-2'>
                 <button
                     type='submit'
                     className='btn btn-primary'
-                    disabled={!name || !email || loading}
+                    disabled={!email || loading}
                 >
                     {loading ? <SyncOutlined spin/> : 'Submit'}
                 </button>
