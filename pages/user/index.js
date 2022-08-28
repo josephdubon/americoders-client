@@ -53,7 +53,7 @@ const UserIndex = () => {
             />
         )}
 
-        <PageHead title={user && user.name}/>
+        <PageHead title={`Welcome back, ${user && user.firstName} ${user && user.lastName}!`}/>
 
         {/* hero section */}
         <Content className='bg-light'>
