@@ -68,6 +68,7 @@ const UserIndex = () => {
                                 <p className='small text-uppercase fw-bolder'>
                                     <Link href={'/update-user/'}><a>Update User</a></Link>
                                 </p>
+                                <p className='text-muted'><strong>Bio:</strong> {user.bio}</p>
                                 <Divider/>
                                 <p className='text-muted'><strong>Email:</strong> {user.email}</p>
                                 <p className='text-muted'><strong>Role:</strong> {user.role.join(', ')}</p>
