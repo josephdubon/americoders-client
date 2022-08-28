@@ -64,8 +64,8 @@ const UserIndex = () => {
                     <div>
                         {user ?
                             (<>
-                                <h1 className='display-6 fw-bold lh-1 mb-3 '>{user.name}</h1>
-                                <p className='form-text'>
+                                <h1 className='display-6 fw-bold lh-1 mb-3 '>{user.firstName} {user.lastName}</h1>
+                                <p className='small text-uppercase fw-bolder'>
                                     <Link href={'/update-user/'}><a>Update User</a></Link>
                                 </p>
                                 <Divider/>
