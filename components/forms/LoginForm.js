@@ -48,6 +48,9 @@ const LoginForm = () => {
                 progress: undefined,
             })
 
+            // deactivate load spinner
+            setLoading(false)
+
             // console.log('LOGIN RESPONSE', data)
             dispatch({
                 type: 'LOGIN',
