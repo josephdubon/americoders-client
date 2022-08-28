@@ -31,9 +31,14 @@ const StudentUpdateForm = () => {
         try {
             // activate load spinner
             setLoading(true)
+
+            // update user data in db
             const {data} = await axios.post(`/api/update-user`, {
                 name, email
             })
+
+            // update user state
+            user.name = name
 
             toast.success('User update successful.', {
                 position: 'top-center',
