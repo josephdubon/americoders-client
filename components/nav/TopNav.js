@@ -140,7 +140,7 @@ const TopNav = () => {
                     <SubMenu
                         key='#submenu'
                         icon={<CoffeeOutlined/>}
-                        title={user && user.name}
+                        title={`${user && user.firstName} ${user && user.lastName}`}
                         style={{marginLeft: 'auto'}} // float nav item to the right
                     >
                         {/* ItemGroup for multiple items in submenu */}
