@@ -19,7 +19,6 @@ import styles
 import { Context } from '../../context'
 import useRouter from 'next/router'
 import axios from 'axios'
-import { toast } from 'react-toastify'
 import Link from 'next/link'
 import CustomDropdown from '../CustomDropdown/CustomDropdown'
 
@@ -54,15 +53,15 @@ export default function HeaderLinks (props) {
     const { data } = await axios.get('/api/logout')
 
     // notification config
-    toast(data.message, {
-      position: 'top-center',
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    })
+    // toast(data.message, {
+    //   position: 'top-center',
+    //   autoClose: 5000,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    // })
 
     await router.push('/login')
   }
