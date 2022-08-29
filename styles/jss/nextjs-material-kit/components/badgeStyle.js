@@ -5,7 +5,7 @@ import {
   successColor,
   infoColor,
   roseColor
-} from "/styles/jss/nextjs-material-kit.js";
+} from '../../nextjs-material-kit';
 
 const badgeStyle = {
   badge: {
