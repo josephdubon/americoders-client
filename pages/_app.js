@@ -1,18 +1,14 @@
-import {useEffect} from 'react'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from 'next/app'
+import Router from 'next/router'
 
-import TopNav from '../components/nav/TopNav'
-import {Provider} from '../context'
-import {Layout} from 'antd'
-import 'react-toastify/dist/ReactToastify.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'antd/dist/antd.css'
-import '../public/css/styles.css'
-import ParticlesEffect from '../components/effects/Particles'
-import 'animate.css'
-import SiteFooter from '../components/footer/SiteFooter'
-import {PageHead} from '../components/head/PageHead'
-import {DevSupport} from "@react-buddy/ide-toolbox";
-import {ComponentPreviews, useInitial} from "../dev";
+import PageChange from '../components/PageChange/PageChange.js'
+
+import '/styles/scss/nextjs-material-kit.scss?v=1.2.0'
+import { ToastContainer } from 'react-toastify'
+import { PageHead } from '../components/PageHead/PageHead'
+import { Provider } from '../context'
 
 const {Header, Footer, Content} = Layout
 
