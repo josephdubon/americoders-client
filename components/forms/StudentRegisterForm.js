@@ -30,10 +30,16 @@ const StudentRegisterForm = () => {
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
 
-    // global state
-    const {
-        state: {user},
-    } = useContext(Context)
+  const [cardAnimaton, setCardAnimation] = React.useState('cardHidden')
+  setTimeout(function () {
+    setCardAnimation('')
+  }, 700)
+  const classes = useStyles()
+
+  // global state
+  const {
+    state: { user },
+  } = useContext(Context)
 
     // router
     const router = useRouter()
