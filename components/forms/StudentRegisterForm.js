@@ -41,97 +41,184 @@ const StudentRegisterForm = () => {
     state: { user },
   } = useContext(Context)
 
-    // router
-    const router = useRouter()
+  // router
+  const router = useRouter()
 
-    // condition redirect for logged-in user
-    useEffect(() => {
-        if (user !== null) router.push('/user')
-    })
+  // condition redirect for logged-in user
+  useEffect(() => {
+    if (user !== null) router.push('/user')
+  })
 
-    const handleSubmit = async (e) => {
-        // do not reload the page
-        e.preventDefault()
+  const handleSubmit = async (e) => {
+    // do not reload the page
+    e.preventDefault()
 
-        // send data to backend
-        try {
-            // activate load spinner
-            setLoading(true)
-            const {data} = await axios.post(`/api/register`, {
-                name, email, password
-            })
+    // send data to backend
+    try {
+      // activate load spinner
+      setLoading(true)
+      const { data } = await axios.post(`/api/register`, {
+        firstName, lastName, bio, email, password,
+      })
 
-            toast.success('Registration successful. Please login.', {
-                position: 'top-center',
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            })
+      // toast.success('Registration successful. Please login.', {
+      //   position: 'top-center',
+      //   autoClose: 5000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      // })
 
-            // deactivate load spinner
-            setLoading(false)
+      // deactivate load spinner
+      setLoading(false)
 
-            // clear fields and redirect home
-            setName('')
-            setEmail('')
-            setPassword('')
-            await router.push('/login')
-        } catch (err) {
-            // deactivate load spinner
-            setLoading(false)
+      await router.push('/login')
+    } catch (err) {
+      // deactivate load spinner
+      setLoading(false)
 
-            toast.error(err.response.data, {
-                position: 'top-center',
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            })
-        }
+      // toast.error(err.response.data, {
+      //   position: 'top-center',
+      //   autoClose: 5000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      // })
     }
+  }
 
-    return (<>
-        <form onSubmit={handleSubmit}>
-            <input
-                type='text'
-                className='form-control mb-4 p-4'
-                value={name}
-                onChange={e => setName(e.target.value)}
-                placeholder='Enter name'
-                required
-            />
-            <input
-                type='text'
-                className='form-control mb-4 p-4'
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                placeholder='Enter email'
-                required
-            />
-            <input
-                type='password'
-                className='form-control mb-4 p-4'
-                value={password}
-                onChange={e => setPassword(e.target.value)}
-                placeholder='Enter password'
-                required
-            />
-            <div className='d-grid gap-2'>
-                <button
-                    type='submit'
-                    className='btn btn-primary'
-                    disabled={!name || !email || !password || loading}
-                >
-                    {loading ? <SyncOutlined spin/> : 'Submit'}
-                </button>
-            </div>
-        </form>
-    </>)
+  return (<>
+    <form
+      className={classes.form}
+      onSubmit={handleSubmit}>
+      <CardHeader color="primary" className={classes.cardHeader}>
+        <h4>Register</h4>
+      </CardHeader>
+
+      <p className={classes.divider}>
+        Hello, future Americoder!
+      </p>
+
+      <CardBody>
+        {/* first name */}
+        <CustomInput
+          labelText="First Name"
+          id="firstName"
+          formControlProps={{
+            fullWidth: true,
+          }}
+          inputProps={{
+            type: 'firstName',
+            value: firstName,
+            required: true,
+            onChange: e => setFirstName(e.target.value),
+            endAdornment: (
+              <InputAdornment position="end">
+                <Person className={classes.inputIconsColor}/>
+              </InputAdornment>
+            ),
+          }}
+        />
+
+        {/* last name */}
+        <CustomInput
+          labelText="Last Name"
+          id="lastName"
+          formControlProps={{
+            fullWidth: true,
+          }}
+          inputProps={{
+            type: 'lastName',
+            value: lastName,
+            onChange: e => setLastName(e.target.value),
+            endAdornment: (
+              <InputAdornment position="end">
+                <AccountBox className={classes.inputIconsColor}/>
+              </InputAdornment>
+            ),
+          }}
+        />
+
+        {/* email */}
+        <CustomInput
+          labelText="Email"
+          id="email"
+          formControlProps={{
+            fullWidth: true,
+          }}
+          inputProps={{
+            type: 'email',
+            value: email,
+            required: true,
+            onChange: e => setEmail(e.target.value),
+            endAdornment: (
+              <InputAdornment position="end">
+                <AlternateEmail className={classes.inputIconsColor}/>
+              </InputAdornment>
+            ),
+          }}
+        />
+
+        {/* short bio */}
+        <CustomInput
+          labelText="Short Bio"
+          id="bio"
+          formControlProps={{
+            fullWidth: true,
+          }}
+          inputProps={{
+            type: 'bio',
+            value: bio,
+            onChange: e => setBio(e.target.value),
+            endAdornment: (
+              <InputAdornment position="end">
+                <EmojiPeople className={classes.inputIconsColor}/>
+              </InputAdornment>
+            ),
+          }}
+        />
+
+        <CustomInput
+          labelText="Password"
+          id="password"
+          formControlProps={{
+            fullWidth: true,
+          }}
+          inputProps={{
+            type: 'password',
+            value: password,
+            required: true,
+            onChange: e => setPassword(e.target.value),
+            endAdornment: (
+              <InputAdornment position="end">
+                <Icon className={classes.inputIconsColor}>
+                  password
+                </Icon>
+              </InputAdornment>
+            ),
+            autoComplete: 'off',
+          }}
+        />
+
+      </CardBody>
+
+
+      <CardFooter className={classes.cardFooter}>
+        <Button
+          type="submit"
+          color="primary"
+          size="lg"
+          disabled={!firstName || !email || !password || loading}
+        >
+          I want to be an Americoder!
+        </Button>
+      </CardFooter>
+    </form>
+  </>)
 }
 
 export default StudentRegisterForm
