@@ -27,68 +27,41 @@ Router.events.on('routeChangeError', () => {
   document.body.classList.remove('body-page-transition')
 })
 
+export default class MyApp extends App {
+  static async getInitialProps ({ Component, router, ctx }) {
+    let pageProps = {}
 
-const {ToastContainer} = require('react-toastify')
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx)
+    }
 
+    return { pageProps }
+  }
 
-function MyApp({Component, pageProps}) {
-    // add this for bootstrap js components to render correctly
-    useEffect(() => {
-        import('bootstrap/dist/js/bootstrap')
-    }, [])
+  render () {
+    const { Component, pageProps } = this.props
 
     return (
-        // wrap app in provider for access to state
+      <>
+        {/* wrap app in provider for access to state */}
         <Provider>
-            {/* page head section*/}
-            <PageHead title={'Americoders 🇺🇸'}/>
-
-            {/* parent layout */}
-            <Layout>
-                {/* notifications */}
-                <ToastContainer
-                    position='top-center'
-                    autoClose={5000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                />
-
-                {/* bg effect */}
-                <ParticlesEffect/>
-
-                {/* header area / nav area */}
-                <Header>
-                    {/* logo */}
-                    {/*<Link href={'/'}>*/}
-                    {/*    <a>*/}
-                    {/*        <div className='logo'/>*/}
-                    {/*    </a>*/}
-                    {/*</Link>*/}
-                    <TopNav/>
-                </Header>
-
-                {/* main content area */}
-                <Content>
-                    <DevSupport ComponentPreviews={ComponentPreviews}
-                                useInitialHook={useInitial}
-                    >
-                        <Component {...pageProps}/>
-                    </DevSupport>
-                </Content>
-
-                {/* main footer area */}
-                <Footer>
-                    <SiteFooter/>
-                </Footer>
-            </Layout>
-
+          {/* page head section*/}
+          <PageHead title={'Americoders 🇺🇸'}/>
+          {/* notifications */}
+          <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
+          <Component {...pageProps} />
         </Provider>
+      </>
     )
+  }
 }
-
-export default MyApp
