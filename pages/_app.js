@@ -10,7 +10,22 @@ import { ToastContainer } from 'react-toastify'
 import { PageHead } from '../components/PageHead/PageHead'
 import { Provider } from '../context'
 
-const {Header, Footer, Content} = Layout
+Router.events.on('routeChangeStart', (url) => {
+  console.log(`Loading: ${url}`)
+  document.body.classList.add('body-page-transition')
+  ReactDOM.render(
+    <PageChange path={url}/>,
+    document.getElementById('page-transition'),
+  )
+})
+Router.events.on('routeChangeComplete', () => {
+  ReactDOM.unmountComponentAtNode(document.getElementById('page-transition'))
+  document.body.classList.remove('body-page-transition')
+})
+Router.events.on('routeChangeError', () => {
+  ReactDOM.unmountComponentAtNode(document.getElementById('page-transition'))
+  document.body.classList.remove('body-page-transition')
+})
 
 
 const {ToastContainer} = require('react-toastify')
