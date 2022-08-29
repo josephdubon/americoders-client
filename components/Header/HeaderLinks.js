@@ -9,7 +9,7 @@ import Tooltip from '@material-ui/core/Tooltip'
 import Icon from '@material-ui/core/Icon'
 
 // @material-ui/icons
-import { HowToReg } from '@material-ui/icons'
+import { Dashboard, HowToReg, PersonOutline } from '@material-ui/icons'
 
 // core components
 import Button from '../../components/CustomButtons/Button.js'
