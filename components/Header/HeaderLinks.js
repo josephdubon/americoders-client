@@ -72,30 +72,21 @@ export default function HeaderLinks (props) {
 
       {/* start nav items */}
 
-      {/*<ListItem className={classes.listItem}>*/}
-      {/*  <CustomDropdown*/}
-      {/*    noLiPadding*/}
-      {/*    navDropdown*/}
-      {/*    buttonText="Components"*/}
-      {/*    buttonProps={{*/}
-      {/*      className: classes.navLink,*/}
-      {/*      color: "transparent"*/}
-      {/*    }}*/}
-      {/*    buttonIcon={Apps}*/}
-      {/*    dropdownList={[*/}
-      {/*      <Link href="/components">*/}
-      {/*        <a className={classes.dropdownLink}>All components</a>*/}
-      {/*      </Link>,*/}
-      {/*      <a*/}
-      {/*        href="https://creativetimofficial.github.io/nextjs-material-kit/#/documentation?ref=njsmk-navbar"*/}
-      {/*        target="_blank"*/}
-      {/*        className={classes.dropdownLink}*/}
-      {/*      >*/}
-      {/*        Documentation*/}
-      {/*      </a>*/}
-      {/*    ]}*/}
-      {/*  />*/}
-      {/*</ListItem>*/}
+      {/* conditional render of content depending on user role (instructor or subscriber) */}
+      {user && user.role && user.role.includes('Instructor') ? (<>
+        {/* Instructor Role */}
+        <ListItem className={classes.listItem}>
+          <Link href={'/instructor/course/create'}>
+            <Button
+              color="transparent"
+              className={classes.navLink}
+            >
+              <Icon className={classes.icons}>create</Icon> Create Course
+            </Button>
+          </Link>
+        </ListItem>
+      </>) : (<>
+      </>)}
 
       {/* login */}
       <ListItem className={classes.listItem}>
