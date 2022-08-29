@@ -69,9 +69,7 @@ export default function HeaderLinks (props) {
 
   return (
     <List className={classes.list}>
-
       {/* start nav items */}
-
       {/* conditional render of content depending on user role (instructor or subscriber) */}
       {user && user.role && user.role.includes('Instructor') ? (<>
         {/* Instructor Role */}
@@ -190,45 +188,6 @@ export default function HeaderLinks (props) {
           </Button>
         </Tooltip>
       </ListItem>
-
-      {/* facebook */}
-      {/*<ListItem className={classes.listItem}>*/}
-      {/*  <Tooltip*/}
-      {/*    id="instagram-facebook"*/}
-      {/*    title="Follow us on facebook"*/}
-      {/*    placement={'top'}*/}
-      {/*    classes={{ tooltip: classes.tooltip }}*/}
-      {/*  >*/}
-      {/*    <Button*/}
-      {/*      color="transparent"*/}
-      {/*      href="https://www.facebook.com/CreativeTim?ref=creativetim"*/}
-      {/*      target="_blank"*/}
-      {/*      className={classes.navLink}*/}
-      {/*    >*/}
-      {/*      <i className={classes.socialIcons + ' fab fa-facebook'}/>*/}
-      {/*    </Button>*/}
-      {/*  </Tooltip>*/}
-      {/*</ListItem>*/}
-
-      {/* instagram */}
-      {/*<ListItem className={classes.listItem}>*/}
-      {/*  <Tooltip*/}
-      {/*    id="instagram-tooltip"*/}
-      {/*    title="Follow us on instagram"*/}
-      {/*    placement={'top'}*/}
-      {/*    classes={{ tooltip: classes.tooltip }}*/}
-      {/*  >*/}
-      {/*    <Button*/}
-      {/*      color="transparent"*/}
-      {/*      href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"*/}
-      {/*      target="_blank"*/}
-      {/*      className={classes.navLink}*/}
-      {/*    >*/}
-      {/*      <i className={classes.socialIcons + ' fab fa-instagram'}/>*/}
-      {/*    </Button>*/}
-      {/*  </Tooltip>*/}
-      {/*</ListItem>*/}
-      {/* end nav items */}
     </List>
   )
 }
