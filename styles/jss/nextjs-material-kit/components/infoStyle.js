@@ -7,8 +7,7 @@ import {
   roseColor,
   grayColor,
   title
-} from "/styles/jss/nextjs-material-kit.js";
-
+} from '../../nextjs-material-kit';
 const infoStyle = {
   infoArea: {
     maxWidth: "360px",

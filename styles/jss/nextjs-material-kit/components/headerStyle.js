@@ -11,8 +11,7 @@ import {
   transition,
   boxShadow,
   drawerWidth
-} from "/styles/jss/nextjs-material-kit.js";
-
+} from '../../nextjs-material-kit';
 const headerStyle = {
   appBar: {
     display: "flex",

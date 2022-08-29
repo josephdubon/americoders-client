@@ -1,4 +1,4 @@
-import { container } from "/styles/jss/nextjs-material-kit.js";
+import { container } from '../../../nextjs-material-kit';
 
 const loginStyle = {
   section: {
