@@ -18,15 +18,21 @@ import { makeStyles } from '@material-ui/core/styles'
 const useStyles = makeStyles(styles)
 
 const LoginForm = () => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [loading, setLoading] = useState(false)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [loading, setLoading] = useState(false)
 
-    // global state
-    const {
-        state: {user}, // get user status from state
-        dispatch,
-    } = useContext(Context)
+  const [cardAnimaton, setCardAnimation] = React.useState('cardHidden')
+  setTimeout(function () {
+    setCardAnimation('')
+  }, 700)
+  const classes = useStyles()
+
+  // global state
+  const {
+    state: { user }, // get user status from state
+    dispatch,
+  } = useContext(Context)
 
 
     // router
