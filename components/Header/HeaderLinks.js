@@ -88,30 +88,86 @@ export default function HeaderLinks (props) {
       </>) : (<>
       </>)}
 
-      {/* login */}
-      <ListItem className={classes.listItem}>
-        <Button
-          href="https://www.creative-tim.com/product/nextjs-material-kit-pro?ref=njsmk-navbar"
-          color="transparent"
-          target="_blank"
-          className={classes.navLink}
-        >
-          <Icon className={classes.icons}>login</Icon> Login
-        </Button>
-      </ListItem>
+      {/* not logged in user menu */}
+      {user === null && (
+        <>
+          {/* login */}
+          <ListItem className={classes.listItem}>
+            <Link href={'/login'}>
+              <Button
+                color="transparent"
+                className={classes.navLink}
+              >
+                <Icon className={classes.icons}>login</Icon> Login
+              </Button>
+            </Link>
+          </ListItem>
 
-      {/* signup */}
-      <ListItem className={classes.listItem}>
-        <Button
-          href="https://www.creative-tim.com/product/nextjs-material-kit?ref=njsmk-navbar"
-          color="transparent"
-          target="_blank"
-          className={classes.navLink}
-        >
-          <HowToReg
-            className={classes.icons}/> Signup
-        </Button>
-      </ListItem>
+          {/* signup */}
+          <ListItem className={classes.listItem}>
+            <Link href={'/register'}>
+              <Button
+                color="transparent"
+                className={classes.navLink}
+              >
+                <HowToReg
+                  className={classes.icons}/> Register
+              </Button>
+            </Link>
+          </ListItem>
+        </>
+      )}
+      {/* end main nav items */}
+
+      {/* logged in user menu */}
+      {user !== null && (
+        <>
+          <ListItem className={classes.listItem}>
+            <CustomDropdown
+              noLiPadding
+              navDropdown
+              buttonText={`${user && user.firstName} ${user && user.lastName}`}
+              buttonProps={{
+                className: classes.navLink,
+                color: 'transparent',
+              }}
+              buttonIcon={PersonOutline}
+              dropdownList={[
+                <Link href={'/user'}>
+                  <a className={classes.dropdownLink}>Dashboard</a>
+                </Link>,
+                <a
+                  onClick={logout}
+                  className={classes.dropdownLink}
+                >
+                  Logout
+                </a>,
+              ]}
+            />
+          </ListItem>
+        </>
+      )}
+
+      {/* user is instructor menu */}
+      {user && user.role && user.role.includes('Instructor') && (
+        <>
+          {/* signup */}
+          <ListItem className={classes.listItem}>
+            <Link href={'/instructor'}>
+              <Button
+                color="transparent"
+                className={classes.navLink}
+              >
+                <Dashboard
+                  className={classes.icons}/> Instructor Dashboard
+              </Button>
+            </Link>
+          </ListItem>
+        </>
+      )}
+
+      {/* start social media nav items */}
+      {/* twitter */}
       <ListItem className={classes.listItem}>
         {/*<Tooltip title="Delete">
           <IconButton aria-label="Delete">
