@@ -1,9 +1,26 @@
-import {useContext, useEffect, useState} from 'react'
-import {Context} from '../../context'
-import {useRouter} from 'next/router'
+import React, { useContext, useEffect, useState } from 'react'
+import { Context } from '../../context'
+import { useRouter } from 'next/router'
 import axios from 'axios'
-import {toast} from 'react-toastify'
-import {SyncOutlined} from '@ant-design/icons'
+import { toast } from 'react-toastify'
+import CardHeader from '../Card/CardHeader'
+import CardBody from '../Card/CardBody'
+import CustomInput from '../CustomInput/CustomInput'
+import InputAdornment from '@material-ui/core/InputAdornment'
+import Icon from '@material-ui/core/Icon'
+import CardFooter from '../Card/CardFooter'
+import Button from '../CustomButtons/Button'
+
+import styles from '../../styles/jss/nextjs-material-kit/pages/loginPage.js'
+import { makeStyles } from '@material-ui/core/styles'
+import {
+  AccountBox,
+  AlternateEmail,
+  EmojiPeople,
+  Person,
+} from '@material-ui/icons'
+
+const useStyles = makeStyles(styles)
 
 const StudentRegisterForm = () => {
     const [name, setName] = useState('')
