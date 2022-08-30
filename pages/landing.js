@@ -76,6 +76,7 @@ export default function LandingPage (props) {
           </GridContainer>
         </div>
       </Parallax>
+
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           {/*<p>start</p>*/}
