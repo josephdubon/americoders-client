@@ -24,6 +24,7 @@ export default function LoginPage (props) {
   const { ...rest } = props
   return (
     <div>
+      <PageHead title={'Login, Embrace the Knowledge'}/>
       <Header
         absolute
         color="transparent"
