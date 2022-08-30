@@ -48,17 +48,17 @@ export default class MyApp extends App {
           {/* page head section*/}
           <PageHead title={'Americoders 🇺🇸'}/>
           {/* notifications */}
-          <ToastContainer
-            position="top-center"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
+          {/*<ToastContainer*/}
+          {/*  position="top-center"*/}
+          {/*  autoClose={5000}*/}
+          {/*  hideProgressBar={false}*/}
+          {/*  newestOnTop={false}*/}
+          {/*  closeOnClick*/}
+          {/*  rtl={false}*/}
+          {/*  pauseOnFocusLoss*/}
+          {/*  draggable*/}
+          {/*  pauseOnHover*/}
+          {/*/>*/}
           <Component {...pageProps} />
         </Provider>
       </>
