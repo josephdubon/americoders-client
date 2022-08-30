@@ -147,31 +147,35 @@ export default function ProfilePage (props) {
                         <GridContainer justify="center">
 
                           {/* list all courses */}
-                          {courses && courses.map(course => (
-                            <GridItem xs={12} sm={12} md={4} key={course._id}
-                                      className={classes.marginBottom}>
-                              <Link
-                                href={`/user/course/${course.slug}`}
-                              >
-                                <a>
-                                  <img
-                                    alt="..."
-                                    src={course.image
-                                      ? course.image.Location
-                                      : '/images/americoders-course.png'}
-                                    className={navImageClasses}
-                                  />
-                                  <h6 className={classes.marginBottom}>
-                                    {course.name}
-                                  </h6>
-                                </a>
-                              </Link>
-                              <p className={classes.description}>
-                                {/* show number of lessons in course */}
-                                {course.lessons.length} Lessons
-                              </p>
-                            </GridItem>
-                          ))}
+                          {courses && courses.length > 0
+                            ? courses.map(
+                              course => (
+                                <GridItem xs={12} sm={12} md={4}
+                                          key={course._id}
+                                          className={classes.marginBottom}>
+                                  <Link
+                                    href={`/user/course/${course.slug}`}
+                                  >
+                                    <a>
+                                      <img
+                                        alt="..."
+                                        src={course.image
+                                          ? course.image.Location
+                                          : '/images/americoders-course.png'}
+                                        className={navImageClasses}
+                                      />
+                                      <h6 className={classes.marginBottom}>
+                                        {course.name}
+                                      </h6>
+                                    </a>
+                                  </Link>
+                                  <p className={classes.description}>
+                                    {/* show number of lessons in course */}
+                                    {course.lessons.length} Lessons
+                                  </p>
+                                </GridItem>
+                              ))
+                            : ('You are not enrolled in any courses ...yet!')}
                         </GridContainer>
                       ),
                     },
