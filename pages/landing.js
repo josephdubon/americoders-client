@@ -33,6 +33,7 @@ export default function LandingPage (props) {
   const { ...rest } = props
   return (
     <div>
+      {/* header section / nav */}
       <PageHead title={'Welcome! We are a tech learning platform.'}/>
       <Header
         color="transparent"
@@ -46,6 +47,8 @@ export default function LandingPage (props) {
         }}
         {...rest}
       />
+
+      {/* hero section */}
       <Parallax filter responsive
                 image="/img/stock/branding/bg/americoders-kids-laptop-fun.jpg">
         <div className={classes.container}>
