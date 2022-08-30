@@ -1,21 +1,22 @@
-import React from "react";
+import React from 'react'
 // react components for routing our app without refresh
-import Link from "next/link";
+import Link from 'next/link'
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles'
 // @material-ui/icons
 
 // core components
-import GridContainer from "/components/Grid/GridContainer.js";
-import GridItem from "/components/Grid/GridItem.js";
-import Button from "/components/CustomButtons/Button.js";
+import GridContainer from '../../components/Grid/GridContainer.js'
+import GridItem from '../../components/Grid/GridItem.js'
+import Button from '../../components/CustomButtons/Button.js'
 
-import styles from "/styles/jss/nextjs-material-kit/pages/componentsSections/exampleStyle.js";
+import styles
+  from '../../styles/jss/nextjs-material-kit/pages/componentsSections/exampleStyle.js'
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles)
 
-export default function SectionExamples() {
-  const classes = useStyles();
+export default function SectionExamples () {
+  const classes = useStyles()
   return (
     <div className={classes.section}>
       <div className={classes.container}>
@@ -28,9 +29,9 @@ export default function SectionExamples() {
                   alt="..."
                   className={
                     classes.imgRaised +
-                    " " +
+                    ' ' +
                     classes.imgRounded +
-                    " " +
+                    ' ' +
                     classes.imgFluid
                   }
                 />
@@ -48,9 +49,9 @@ export default function SectionExamples() {
                   alt="..."
                   className={
                     classes.imgRaised +
-                    " " +
+                    ' ' +
                     classes.imgRounded +
-                    " " +
+                    ' ' +
                     classes.imgFluid
                   }
                 />
@@ -63,5 +64,5 @@ export default function SectionExamples() {
         </GridContainer>
       </div>
     </div>
-  );
+  )
 }
