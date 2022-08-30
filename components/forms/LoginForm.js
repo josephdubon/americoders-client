@@ -2,18 +2,17 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Context } from '../../context'
 import { useRouter } from 'next/router'
 import axios from 'axios'
-import { toast } from 'react-toastify'
 import CardHeader from '../Card/CardHeader'
 import Button from '../CustomButtons/Button'
 import CardBody from '../Card/CardBody'
 import CustomInput from '../CustomInput/CustomInput'
 import InputAdornment from '@material-ui/core/InputAdornment'
-import Email from '@material-ui/icons/Email'
 import Icon from '@material-ui/core/Icon'
 import CardFooter from '../Card/CardFooter'
 
 import styles from '../../styles/jss/nextjs-material-kit/pages/loginPage.js'
 import { makeStyles } from '@material-ui/core/styles'
+import { AlternateEmail } from '@material-ui/icons'
 
 const useStyles = makeStyles(styles)
 
