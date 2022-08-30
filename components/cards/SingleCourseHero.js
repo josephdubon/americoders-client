@@ -59,7 +59,7 @@ const SingleCourseHero = ({
                                 <p className='lead text-muted'>{description && description.substring(0, 160)}</p>
 
                                 {/* author */}
-                                <p className='text-muted'><strong>Created by: </strong> {instructor.name}</p>
+                                <p className='text-muted'><strong>Created by: </strong> {instructor && instructor.name}</p>
 
                                 {/* last update */}
                                 <p className='text-muted'><strong>Last
