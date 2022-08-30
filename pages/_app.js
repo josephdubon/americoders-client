@@ -6,7 +6,6 @@ import Router from 'next/router'
 import PageChange from '../components/PageChange/PageChange.js'
 
 import '/styles/scss/nextjs-material-kit.scss?v=1.2.0'
-import { ToastContainer } from 'react-toastify'
 import { PageHead } from '../components/PageHead/PageHead'
 import { Provider } from '../context'
 
