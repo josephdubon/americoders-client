@@ -14,9 +14,7 @@ import styles from '../styles/jss/nextjs-material-kit/pages/loginPage.js'
 import LoginForm from '../components/forms/LoginForm'
 import StudentRegisterForm from '../components/forms/StudentRegisterForm'
 
-const {Content} = Layout
-
-const Register = () => {
+const useStyles = makeStyles(styles)
 
 
     return (<>
