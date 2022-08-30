@@ -21,7 +21,7 @@ export default function CoursesSection () {
   const classes = useStyles()
   const imageClasses = classNames(
     classes.imgRaised,
-    classes.imgRoundedCircle,
+    classes.imgRounded,
     classes.imgFluid,
   )
   return (
