@@ -151,7 +151,7 @@ const LoginForm = () => {
             onChange: e => setEmail(e.target.value),
             endAdornment: (
               <InputAdornment position="end">
-                <Email className={classes.inputIconsColor}/>
+                <AlternateEmail className={classes.inputIconsColor}/>
               </InputAdornment>
             ),
           }}
@@ -169,7 +169,7 @@ const LoginForm = () => {
             endAdornment: (
               <InputAdornment position="end">
                 <Icon className={classes.inputIconsColor}>
-                  lock_outline
+                  password
                 </Icon>
               </InputAdornment>
             ),
