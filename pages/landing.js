@@ -52,8 +52,8 @@ export default function LandingPage (props) {
       <Parallax filter responsive
                 image="/img/stock/branding/bg/americoders-classroom-studying-problem-solving.jpg">
         <div className={classes.container}>
-          <GridContainer>
-            <GridItem xs={12} sm={12} md={6}>
+          <GridContainer justify={'center'}>
+            <GridItem xs={12} sm={12} md={8}>
               <h1 className={classes.title}>Welcome to Americoders</h1>
               <h4>
                 We're a community enrichment program founded in the heart of the
