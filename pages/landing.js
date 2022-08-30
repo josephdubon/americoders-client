@@ -77,6 +77,17 @@ export default function LandingPage (props) {
       </Parallax>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
+          {/*<p>start</p>*/}
+          {/*loop through the published courses*/}
+          {/*{props.courses.map((course) => (*/}
+          {/*    <Col key={course._id}>*/}
+          {/*      <CourseCard course={course}/>*/}
+          {/*    </Col>*/}
+          {/*  ),*/}
+          {/*)}*/}
+          {/*end loop*/}
+          {/*<p>end</p>*/}
+
           <ProductSection/>
           <TeamSection/>
           <WorkSection/>
