@@ -22,6 +22,9 @@ import ProductSection
 import TeamSection from '../pages-sections/LandingPage-Sections/TeamSection.js'
 import WorkSection from '../pages-sections/LandingPage-Sections/WorkSection.js'
 import { PageHead } from '../components/PageHead/PageHead'
+import axios from 'axios'
+import { Col } from 'antd'
+import CourseCard from '../components/cards/CourseCard'
 
 const dashboardRoutes = []
 
