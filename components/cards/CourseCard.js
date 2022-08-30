@@ -24,7 +24,7 @@ const CourseCard = ({course}) => {
                                   className='p-1'
                         />}>
                     <h2 className='fw-bold'>{name}</h2>
-                    <p>by {instructor.name}</p>
+                    <p>by {instructor && instructor.name}</p>
                     <Badge
                         count={category}
                         style={{backgroundColor: '#03a9f4'}}
