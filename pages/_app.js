@@ -45,7 +45,7 @@ export default class MyApp extends App {
         {/* wrap app in provider for access to state */}
         <Provider>
           {/* page head section*/}
-          <PageHead title={'Americoders 🇺🇸'}/>
+          <PageHead title={'Americoders'}/>
           {/* notifications */}
           {/*<ToastContainer*/}
           {/*  position="top-center"*/}
