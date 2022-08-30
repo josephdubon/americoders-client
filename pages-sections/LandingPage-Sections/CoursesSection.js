@@ -104,6 +104,81 @@ export default function CoursesSection () {
               </CardFooter>
             </Card>
           </GridItem>
+
+          {/* card start */}
+          <GridItem xs={12} sm={12} md={4}>
+            <Card plain>
+              <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
+                <img
+                  src="/images/branding/misc/americoders-technology-unplugged.jpg"
+                  alt="..."
+                  className={imageClasses}
+                />
+              </GridItem>
+              <h4 className={classes.cardTitle}>
+                Technology Unplugged
+                <br/>
+                <small className={classes.smallTitle}>Turn The Screen Off And Go
+                                                      outside</small>
+              </h4>
+              <CardBody>
+                {' '}
+              </CardBody>
+              <CardFooter className={classes.justifyCenter}>
+                {' '}
+              </CardFooter>
+            </Card>
+          </GridItem>
+
+          {/* card start */}
+          <GridItem xs={12} sm={12} md={4}>
+            <Card plain>
+              <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
+                <img
+                  src="/images/branding/misc/americoders-teen-coding.jpg"
+                  alt="..."
+                  className={imageClasses}
+                />
+              </GridItem>
+              <h4 className={classes.cardTitle}>
+                Create a Projects Portfolio
+                <br/>
+                <small className={classes.smallTitle}>Show Off Your Code and
+                                                      program logic!</small>
+              </h4>
+              <CardBody>
+                {' '}
+              </CardBody>
+              <CardFooter className={classes.justifyCenter}>
+                {''}
+              </CardFooter>
+            </Card>
+          </GridItem>
+
+          {/* card start */}
+          <GridItem xs={12} sm={12} md={4}>
+            <Card plain>
+              <GridItem xs={12} sm={12} md={6} className={classes.itemGrid}>
+                <img
+                  src="/images/branding/misc/americoders-teen-3d-printing.jpg"
+                  alt="..."
+                  className={imageClasses}
+                />
+              </GridItem>
+              <h4 className={classes.cardTitle}>
+                Hardware Hacking
+                <br/>
+                <small className={classes.smallTitle}>Let's Build And Break Some
+                                                      Stuff!</small>
+              </h4>
+              <CardBody>
+                {' '}
+              </CardBody>
+              <CardFooter className={classes.justifyCenter}>
+                {' '}
+              </CardFooter>
+            </Card>
+          </GridItem>
         </GridContainer>
       </div>
     </div>
