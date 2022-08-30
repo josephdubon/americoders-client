@@ -219,6 +219,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-/pages/_old/
-/pages/components.js
-!/pages/components.js
+
+*/pages/_old/dev_page.js
