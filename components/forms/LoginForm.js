@@ -54,18 +54,18 @@ const LoginForm = () => {
         email, password,
       })
 
-      // notification config
-      toast.success(
-        'Welcome to Americoders! What will you create to make the world a better place?',
-        {
-          position: 'top-center',
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-        })
+      // // notification config
+      // toast.success(
+      //   'Welcome to Americoders! What will you create to make the world a better place?',
+      //   {
+      //     position: 'top-center',
+      //     autoClose: 5000,
+      //     hideProgressBar: false,
+      //     closeOnClick: true,
+      //     pauseOnHover: true,
+      //     draggable: true,
+      //     progress: undefined,
+      //   })
 
       // deactivate load spinner
       setLoading(false)
@@ -87,17 +87,17 @@ const LoginForm = () => {
       // deactivate load spinner
       setLoading(false)
 
-            toast.error(err.response.data, {
-                position: 'top-center',
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            })
-        }
+      // toast.error(err.response.data, {
+      //   position: 'top-center',
+      //   autoClose: 5000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      // })
     }
+  }
 
   return (<>
     <form
