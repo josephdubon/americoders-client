@@ -100,8 +100,7 @@ export async function getServerSideProps () {
   // collect courses data
   const { data } = await axios.get(`${process.env.API}/courses`) // full path of server here
 
-  console.log(data)
-
+  // console.log(data)
   return {
     props: {
       courses: data, // return data as props
