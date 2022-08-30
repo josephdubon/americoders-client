@@ -80,7 +80,7 @@ const primaryColor = '#003399'
 const warningColor = '#BF8848'
 const dangerColor = '#CC0000'
 const successColor = '#6699FF'
-const infoColor = '#CCFFCC'
+const infoColor = '#00b900'
 const roseColor = '#e91e63'
 const grayColor = '#CCCCCC'
 
