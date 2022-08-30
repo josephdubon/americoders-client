@@ -12,6 +12,7 @@ import Card from '../components/Card/Card.js'
 
 import styles from '../styles/jss/nextjs-material-kit/pages/loginPage.js'
 import LoginForm from '../components/forms/LoginForm'
+import { PageHead } from '../components/PageHead/PageHead'
 
 const useStyles = makeStyles(styles)
 
