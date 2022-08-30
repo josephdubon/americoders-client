@@ -90,8 +90,8 @@ export default function LandingPage (props) {
           {/*end loop*/}
           {/*<p>end</p>*/}
 
-          <ProductSection/>
-          <TeamSection/>
+          <FeatureSection/>
+          <CoursesSection/>
           <WorkSection/>
         </div>
       </div>
