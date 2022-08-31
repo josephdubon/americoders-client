@@ -10,7 +10,6 @@ import InfoArea from '../../components/InfoArea/InfoArea.js'
 
 import styles
   from '../../styles/jss/nextjs-material-kit/pages/landingPageSections/productStyle.js'
-import { Col } from 'antd'
 import FeaturedSectionLeft
   from '../../components/FeaturedSectionLeft/FeaturedSectionLeft'
 import FeaturedSectionRight
