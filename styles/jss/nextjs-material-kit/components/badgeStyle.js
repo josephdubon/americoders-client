@@ -1,48 +1,48 @@
 import {
-  primaryColor,
-  warningColor,
   dangerColor,
-  successColor,
   infoColor,
-  roseColor
-} from '../../nextjs-material-kit';
+  primaryColor,
+  roseColor,
+  successColor,
+  warningColor,
+} from '../../nextjs-material-kit'
 
 const badgeStyle = {
   badge: {
-    marginRight: "3px",
-    borderRadius: "12px",
-    padding: "5px 12px",
-    textTransform: "uppercase",
-    fontSize: "10px",
-    fontWeight: "500",
-    lineHeight: "1",
-    color: "#fff",
-    textAlign: "center",
-    whiteSpace: "nowrap",
-    verticalAlign: "baseline",
-    display: "inline-block"
+    marginRight: '3px',
+    borderRadius: '12px',
+    padding: '5px 12px',
+    textTransform: 'uppercase',
+    fontSize: '10px',
+    fontWeight: '500',
+    lineHeight: '1',
+    color: '#fff',
+    textAlign: 'center',
+    whiteSpace: 'nowrap',
+    verticalAlign: 'baseline',
+    display: 'inline-block',
   },
   primary: {
-    backgroundColor: primaryColor
+    backgroundColor: primaryColor,
   },
   warning: {
-    backgroundColor: warningColor
+    backgroundColor: warningColor,
   },
   danger: {
-    backgroundColor: dangerColor
+    backgroundColor: dangerColor,
   },
   success: {
-    backgroundColor: successColor
+    backgroundColor: successColor,
   },
   info: {
-    backgroundColor: infoColor
+    backgroundColor: infoColor,
   },
   rose: {
-    backgroundColor: roseColor
+    backgroundColor: roseColor,
   },
   gray: {
-    backgroundColor: "#6c757d"
-  }
-};
+    backgroundColor: '#6c757d',
+  },
+}
 
-export default badgeStyle;
+export default badgeStyle
