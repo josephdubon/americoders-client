@@ -127,7 +127,7 @@ export default function LandingPage (props) {
           {/*  announcement section */}
           <FeaturedSectionRight title={'Fall Semester 2022'}
                                 description={announcement()}
-                                imageUrl={'/images/branding/misc/americoders-kids-laptop-fun.jpg'}
+                                imageUrl={'/images/thumbnail/americoders-kids-laptop-fun.jpg'}
                                 imgAlt={'americoders-robotics-project-student'}/>
           / >
         </div>
