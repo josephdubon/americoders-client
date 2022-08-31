@@ -37,6 +37,38 @@ export default function LandingPage (props) {
   const classes = useStyles()
   const { ...rest } = props
 
+  function announcement () {
+    return (<>
+      <p className={classes.description}>
+        <strong>PROGRAM STARTING SOON</strong>
+        <br/>
+        Join our community as we educate, evolve,
+        and adapt to this new world.
+        Learn to code, create, live, and prosper
+        in this new digital era while
+        keeping intact the ethics and traditions
+        of our old-world.
+      </p>
+      <br/>
+      <div style={{ textAlign: 'center' }}>
+        <Link href={'register'}>
+          <a>
+            <Button
+              color="danger"
+              size="lg"
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fas fa-play"/>
+              Register Now
+            </Button>
+          </a>
+        </Link>
+      </div>
+    </>)
+  }
+
   return (
     <div>
       {/* header section / nav */}
