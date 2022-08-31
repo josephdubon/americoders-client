@@ -8,7 +8,12 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles(styles)
 
-export default function FeaturedSectionLeft ({ title, description, imageUrl, imageAlt }) {
+export default function FeaturedSectionLeft ({
+  title,
+  description,
+  imageUrl,
+  imageAlt,
+}) {
   const classes = useStyles()
 
   return (<>
