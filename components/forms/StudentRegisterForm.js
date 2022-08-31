@@ -11,7 +11,7 @@ import Icon from '@material-ui/core/Icon'
 import CardFooter from '../Card/CardFooter'
 import Button from '../CustomButtons/Button'
 
-import styles from '../../styles/jss/nextjs-material-kit/pages/loginPage.js'
+import styles from '../../styles/jss/americoders/pages/loginPage.js'
 import { makeStyles } from '@material-ui/core/styles'
 import {
   AccountBox,

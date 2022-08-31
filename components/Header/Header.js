@@ -16,7 +16,7 @@ import Drawer from '@material-ui/core/Drawer'
 import Menu from '@material-ui/icons/Menu'
 // core components
 import styles
-  from '../../styles/jss/nextjs-material-kit/components/headerStyle.js'
+  from '../../styles/jss/americoders/components/headerStyle.js'
 
 const useStyles = makeStyles(styles)
 

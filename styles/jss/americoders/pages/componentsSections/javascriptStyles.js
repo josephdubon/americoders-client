@@ -1,8 +1,8 @@
 import { container, title } from "/styles/jss/americoders.js";
 
-import modalStyle from "/styles/jss/nextjs-material-kit/modalStyle.js";
-import tooltipsStyle from "/styles/jss/nextjs-material-kit/tooltipsStyle.js";
-import popoverStyles from "/styles/jss/nextjs-material-kit/popoverStyles.js";
+import modalStyle from "/styles/jss/americoders/modalStyle.js";
+import tooltipsStyle from "/styles/jss/americoders/tooltipsStyle.js";
+import popoverStyles from "/styles/jss/americoders/popoverStyles.js";
 
 const javascriptStyles = {
   section: {

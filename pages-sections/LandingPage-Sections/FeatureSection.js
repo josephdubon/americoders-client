@@ -9,7 +9,7 @@ import GridItem from '../../components/Grid/GridItem.js'
 import InfoArea from '../../components/InfoArea/InfoArea.js'
 
 import styles
-  from '../../styles/jss/nextjs-material-kit/pages/landingPageSections/productStyle.js'
+  from '../../styles/jss/americoders/pages/landingPageSections/productStyle.js'
 import FeaturedSectionLeft
   from '../../components/FeaturedSectionLeft/FeaturedSectionLeft'
 import FeaturedSectionRight

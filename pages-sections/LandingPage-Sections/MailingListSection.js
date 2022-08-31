@@ -8,7 +8,7 @@ import GridContainer from '../../components/Grid/GridContainer.js'
 import GridItem from '../../components/Grid/GridItem.js'
 
 import styles
-  from '../../styles/jss/nextjs-material-kit/pages/landingPageSections/workStyle.js'
+  from '../../styles/jss/americoders/pages/landingPageSections/workStyle.js'
 import MailingListForm from '../../components/forms/MailingListForm'
 
 const useStyles = makeStyles(styles)

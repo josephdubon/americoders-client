@@ -10,7 +10,7 @@ import InputAdornment from '@material-ui/core/InputAdornment'
 import Icon from '@material-ui/core/Icon'
 import CardFooter from '../Card/CardFooter'
 
-import styles from '../../styles/jss/nextjs-material-kit/pages/loginPage.js'
+import styles from '../../styles/jss/americoders/pages/loginPage.js'
 import { makeStyles } from '@material-ui/core/styles'
 import { AlternateEmail } from '@material-ui/icons'
 

@@ -1,18 +1,19 @@
 /*eslint-disable*/
-import React from "react";
+import React from 'react'
 // @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from '@material-ui/core/styles'
 // @material-ui/icons
-import GridContainer from "/components/Grid/GridContainer.js";
-import GridItem from "/components/Grid/GridItem.js";
-import Button from "/components/CustomButtons/Button.js";
+import GridContainer from '/components/Grid/GridContainer.js'
+import GridItem from '/components/Grid/GridItem.js'
+import Button from '/components/CustomButtons/Button.js'
 // core components
-import styles from "/styles/jss/nextjs-material-kit/pages/componentsSections/downloadStyle.js";
+import styles
+  from '/styles/jss/americoders/pages/componentsSections/downloadStyle.js'
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles(styles)
 
-export default function SectionDownload() {
-  const classes = useStyles();
+export default function SectionDownload () {
+  const classes = useStyles()
   return (
     <div className={classes.section}>
       <div className={classes.container}>
@@ -30,7 +31,7 @@ export default function SectionDownload() {
             <Button
               color="primary"
               size="lg"
-              href="https://www.creative-tim.com/product/nextjs-material-kit?ref=njsmk-download-section"
+              href=""
               target="_blank"
             >
               Free NextJS Download
@@ -41,19 +42,19 @@ export default function SectionDownload() {
               href="https://www.creative-tim.com/product/material-kit-react?ref=njsmk-download-section"
               target="_blank"
             >
-              Free React Downoad
+              Free React Download
             </Button>
           </GridItem>
         </GridContainer>
-        <br />
-        <br />
+        <br/>
+        <br/>
         <GridContainer className={classes.textCenter} justify="center">
           <GridItem xs={12} sm={12} md={8}>
             <h2>Want more?</h2>
             <h4>
-              We've just launched{" "}
+              We've just launched{' '}
               <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                NextJS Material Kit PRO{" "}
+                Americoders {' '}
               </a>
               .It has a huge number of components, sections and example pages.
               Start Your Development With A Badass Material-UI and NexJS Kit
@@ -67,7 +68,7 @@ export default function SectionDownload() {
               href="https://www.creative-tim.com/product/nextjs-material-kit-pro?ref=njsmk-download-section"
               target="_blank"
             >
-              NextJS Material Kit PRO
+              Americoders 
             </Button>
             <Button
               color="rose"
@@ -75,29 +76,29 @@ export default function SectionDownload() {
               href="https://www.creative-tim.com/product/material-kit-pro-react?ref=njsmk-download-section"
               target="_blank"
             >
-              Material Kit PRO React
+              Material Kit  React
             </Button>
           </GridItem>
         </GridContainer>
-        <div className={classes.textCenter + " " + classes.sharingArea}>
+        <div className={classes.textCenter + ' ' + classes.sharingArea}>
           <GridContainer justify="center">
             <h3>Thank you for supporting us!</h3>
           </GridContainer>
           <Button color="twitter">
-            <i className={classes.socials + " fab fa-twitter"} /> Tweet
+            <i className={classes.socials + ' fab fa-twitter'}/> Tweet
           </Button>
           <Button color="facebook">
-            <i className={classes.socials + " fab fa-facebook-square"} /> Share
+            <i className={classes.socials + ' fab fa-facebook-square'}/> Share
           </Button>
           <Button color="google">
-            <i className={classes.socials + " fab fa-google-plus-g"} />
+            <i className={classes.socials + ' fab fa-google-plus-g'}/>
             Share
           </Button>
           <Button color="github">
-            <i className={classes.socials + " fab fa-github"} /> Star
+            <i className={classes.socials + ' fab fa-github'}/> Star
           </Button>
         </div>
       </div>
     </div>
-  );
+  )
 }

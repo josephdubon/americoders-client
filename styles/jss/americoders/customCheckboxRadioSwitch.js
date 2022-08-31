@@ -4,7 +4,7 @@ import {
   roseColor,
   grayColor,
   hexToRGBAlpha
-} from "/styles/jss/americoders.js";
+} from '../americoders';
 
 const customCheckboxRadioSwitch = {
   checkRoot: {

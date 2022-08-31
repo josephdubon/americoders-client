@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import { makeStyles } from '@material-ui/core/styles'
 // core components
 import styles
-  from '../../styles/jss/nextjs-material-kit/components/typographyStyle.js'
+  from '../../styles/jss/americoders/components/typographyStyle.js'
 
 const useStyles = makeStyles(styles)
 

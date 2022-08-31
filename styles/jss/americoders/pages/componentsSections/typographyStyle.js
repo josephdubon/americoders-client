@@ -1,6 +1,6 @@
 import { container, title } from "/styles/jss/americoders.js";
 
-import imagesStyles from "/styles/jss/nextjs-material-kit/imagesStyles.js";
+import imagesStyles from "/styles/jss/americoders/imagesStyles.js";
 
 const typographyStyle = {
   section: {

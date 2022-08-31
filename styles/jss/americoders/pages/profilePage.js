@@ -1,7 +1,7 @@
 import { container, title } from '../../americoders'
 
 import imagesStyle
-  from '../../../../styles/jss/nextjs-material-kit/imagesStyles.js'
+  from '../imagesStyles.js'
 
 const profilePageStyle = {
   container,

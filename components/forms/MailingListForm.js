@@ -5,7 +5,7 @@ import React, { useState } from 'react'
 import GridContainer from '../Grid/GridContainer'
 import GridItem from '../Grid/GridItem'
 import CustomInput from '../CustomInput/CustomInput'
-import styles from '../../styles/jss/nextjs-material-kit/pages/landingPage.js'
+import styles from '../../styles/jss/americoders/pages/landingPage.js'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles(styles)

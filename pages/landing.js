@@ -14,7 +14,7 @@ import Button from '../components/CustomButtons/Button.js'
 import HeaderLinks from '../components/Header/HeaderLinks.js'
 import Parallax from '../components/Parallax/Parallax.js'
 
-import styles from '../styles/jss/nextjs-material-kit/pages/landingPage.js'
+import styles from '../styles/jss/americoders/pages/landingPage.js'
 
 // Sections for this page
 import FeatureSection

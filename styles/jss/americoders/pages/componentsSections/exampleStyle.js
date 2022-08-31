@@ -1,6 +1,6 @@
 import { containerFluid } from "/styles/jss/americoders.js";
 
-import imagesStyle from "/styles/jss/nextjs-material-kit/imagesStyles.js";
+import imagesStyle from "/styles/jss/americoders/imagesStyles.js";
 
 const exampleStyle = {
   section: {

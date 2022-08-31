@@ -28,7 +28,7 @@ import SectionLogin from "/pages-sections/Components-Sections/SectionLogin.js";
 import SectionExamples from "/pages-sections/Components-Sections/SectionExamples.js";
 import SectionDownload from "/pages-sections/Components-Sections/SectionDownload.js";
 
-import styles from "/styles/jss/nextjs-material-kit/pages/components.js";
+import styles from "/styles/jss/americoders/pages/components.js";
 
 const useStyles = makeStyles(styles);
 
@@ -38,7 +38,7 @@ export default function Components(props) {
   return (
     <div>
       <Header
-        brand="NextJS Material Kit"
+        brand="Americoders"
         rightLinks={<HeaderLinks />}
         fixed
         color="transparent"
@@ -53,7 +53,7 @@ export default function Components(props) {
           <GridContainer>
             <GridItem>
               <div className={classes.brand}>
-                <h1 className={classes.title}>NextJS Material Kit.</h1>
+                <h1 className={classes.title}>Americoders.</h1>
                 <h3 className={classes.subtitle}>
                   A Badass Material Kit based on Material-UI and NextJS.
                 </h3>

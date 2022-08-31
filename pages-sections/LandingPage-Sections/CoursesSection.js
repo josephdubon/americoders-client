@@ -13,7 +13,7 @@ import CardBody from '../../components/Card/CardBody.js'
 import CardFooter from '../../components/Card/CardFooter.js'
 
 import styles
-  from '../../styles/jss/nextjs-material-kit/pages/landingPageSections/coursesStyle.js'
+  from '../../styles/jss/americoders/pages/landingPageSections/coursesStyle.js'
 
 const useStyles = makeStyles(styles)
 

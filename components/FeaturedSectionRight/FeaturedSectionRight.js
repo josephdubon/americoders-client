@@ -3,7 +3,7 @@ import GridItem from '../Grid/GridItem'
 import Image from 'next/image'
 import React from 'react'
 import styles
-  from '../../styles/jss/nextjs-material-kit/pages/landingPageSections/productStyle.js'
+  from '../../styles/jss/americoders/pages/landingPageSections/productStyle.js'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles(styles)

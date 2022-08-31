@@ -11,7 +11,7 @@ import GridItem from '../../components/Grid/GridItem.js'
 import Button from '../../components/CustomButtons/Button.js'
 
 import styles
-  from '../../styles/jss/nextjs-material-kit/pages/componentsSections/exampleStyle.js'
+  from '../../styles/jss/americoders/pages/componentsSections/exampleStyle.js'
 
 const useStyles = makeStyles(styles)
 

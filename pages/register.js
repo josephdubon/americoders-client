@@ -10,7 +10,7 @@ import GridContainer from '../components/Grid/GridContainer.js'
 import GridItem from '../components/Grid/GridItem.js'
 import Card from '../components/Card/Card.js'
 
-import styles from '../styles/jss/nextjs-material-kit/pages/loginPage.js'
+import styles from '../styles/jss/americoders/pages/loginPage.js'
 import LoginForm from '../components/forms/LoginForm'
 import StudentRegisterForm from '../components/forms/StudentRegisterForm'
 
@@ -36,7 +36,7 @@ export default function RegisterPage (props) {
       <div
         className={classes.pageHeader}
         style={{
-          backgroundImage: 'url(\'/images/branding/misc/americoders-community-hands-friends.jpg\')',
+          backgroundImage: 'url(\'/images/original/americoders-community-hands-friends.jpg\')',
           backgroundSize: 'cover',
           backgroundPosition: 'top center',
         }}

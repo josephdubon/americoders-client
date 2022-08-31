@@ -16,7 +16,7 @@ import Parallax from '../components/Parallax/Parallax.js'
 
 import { Context } from '../context'
 
-import styles from '../styles/jss/nextjs-material-kit/pages/profilePage.js'
+import styles from '../styles/jss/americoders/pages/profilePage.js'
 import axios from 'axios'
 import Moment from 'moment/moment'
 import { School } from '@material-ui/icons'

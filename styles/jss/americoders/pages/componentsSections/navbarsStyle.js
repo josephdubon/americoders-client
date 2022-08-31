@@ -3,7 +3,7 @@ import {
   title,
   grayColor
 } from "/styles/jss/americoders.js";
-import headerLinksStyle from "/styles/jss/nextjs-material-kit/components/headerLinksStyle.js";
+import headerLinksStyle from "/styles/jss/americoders/components/headerLinksStyle.js";
 
 const navbarsStyle = (theme) => ({
   section: {
