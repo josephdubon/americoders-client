@@ -41,8 +41,7 @@ export default function FeatureSection () {
           "Participating in project based learning with Americoders brought out
           a creative and problem
           solving side of me that I didn't even know existed! I feel I have the
-          tools to become a great
-          problem solver and thinker."
+          tools to become a great problem solver and thinker."
           - Ennio D, Age 10
         </p>
       </Col>
