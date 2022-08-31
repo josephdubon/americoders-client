@@ -21,9 +21,13 @@ import FeatureSection
   from '../pages-sections/LandingPage-Sections/FeatureSection.js'
 import CoursesSection
   from '../pages-sections/LandingPage-Sections/CoursesSection.js'
-import WorkSection from '../pages-sections/LandingPage-Sections/WorkSection.js'
+import MailingListSection
+  from '../pages-sections/LandingPage-Sections/MailingListSection.js'
 import { PageHead } from '../components/PageHead/PageHead'
 import axios from 'axios'
+import FeaturedSectionRight
+  from '../components/FeaturedSectionRight/FeaturedSectionRight'
+import Link from 'next/link'
 
 const dashboardRoutes = []
 
