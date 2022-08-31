@@ -106,6 +106,12 @@ export default function LandingPage (props) {
 
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
+
+          {/* 3 row feature section */}
+          <FeatureSection id={'more-info'}/>
+
+          {/* 3 col course examples area */}
+          <CoursesSection/>
           {/*<p>start</p>*/}
           {/*loop through the published courses*/}
           {/*{props.courses.map((course) => (*/}
