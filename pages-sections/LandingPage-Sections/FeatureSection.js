@@ -23,7 +23,7 @@ export default function FeatureSection () {
 
   const featuredContentLeft = () => {
     return (<>
-      <p className={classes.description}>
+      <span className={classes.description}>
         We practice a sustained process of learning in which we can immerse
         ourselves in
         multiple disciplines, simultaneously.
@@ -33,23 +33,24 @@ export default function FeatureSection () {
         ask complex
         questions all while gaining real-world problem solving
         experience in a monitored environment.
-      </p>
+      </span>
 
-      <Col xs={22} sm={18} className="mx-auto m-5">
-        <p className={classes.quote}>
+      <br/>
+      <br/>
+
+      <span className={classes.quote}>
           "Participating in project based learning with Americoders brought out
-          a creative and problem
-          solving side of me that I didn't even know existed! I feel I have the
+          a creative and problem solving side of me that I didn't even know existed! I feel I have the
           tools to become a great problem solver and thinker."
+        <br/>
           - Ennio D, Age 10
-        </p>
-      </Col>
+        </span>
     </>)
   }
 
   const featuredContentRight = () => {
     return (<>
-      <p className={classes.description}>
+      <span className={classes.description}>
         We must connect meaning with our actions. We hear modern terms but they
         are offered with
         no explanation of what they mean.
@@ -61,17 +62,19 @@ export default function FeatureSection () {
         understand and break negative
         stereotypes, destroy assumptions, and replace them all with verified
         knowledge.
-      </p>
-      <p className={classes.quote}>
+      </span>
+      <br/>
+      <br/>
+      <span className={classes.quote}>
         We begin our project/workshop adventures with five minutes of
         breathing-exercise and guided-meditation.
-      </p>
+      </span>
     </>)
   }
 
   const featuredContentLeft_2 = () => {
     return (<>
-      <p className={classes.description}>
+      <span className={classes.description}>
         We can develop a natural state of dignity, pride, and restore our sense
         of significance in our community
         of Reno, NV. We hear about how we are becoming a 'tech-city' but we will
@@ -84,52 +87,56 @@ export default function FeatureSection () {
         amazing new possibilities in this awesome new world while advancing and
         leveling up our knowledge as a
         community.
-      </p>
-      <p className={classes.quote}>
+      </span>
+      <br/>
+      <br/>
+      <span className={classes.quote}>
         Don't we deserve the opportunity to learn the knowledge to benefit in
         this digital world?
         <br/>
-        Yes, we do!
-        <br/>
-        <strong>And so do our children</strong>.
-      </p>
+        Yes, we do! <strong>And so do our children</strong>.
+      </span>
     </>)
   }
 
   function computers101Description () {
     return (<>
-      <p className={classes.description}>
+      <span className={classes.description}>
         Desktop? Laptop? Tablet? Smartphone? Apple? Windows? Linux?! Uhh..?!
         <br/>
         <br/>
         Learn the fundamentals of computers, our devices. Let figure out how and
         when to use them to get the most benefit.
-      </p>
-      <p className={classes.quote}>
+      </span>
+      <br/>
+      <br/>
+      <span className={classes.quote}>
         So many cool new gadgets, so little time!
-      </p>
+      </span>
     </>)
   }
 
   function internetWeb101Description () {
     return (<>
-      <p className={classes.description}>
+      <span className={classes.description}>
         Do you know the difference between a web browser and a web server? What
         about the internet and the web?
         <br/>
         <br/>
         Join us as we explore the internet and
         learn the basics of the internet/web.
-      </p>
-      <p className={classes.quote}>
+      </span>
+      <br/>
+      <br/>
+      <span className={classes.quote}>
         "What in the world-wide-web is a blockchain?! ...and do I need one?"
-      </p>
+      </span>
     </>)
   }
 
   function digitalLifeBalance101Description () {
     return (<>
-      <p className={classes.description}>
+      <span className={classes.description}>
         How much is too much? Is my kid spending too much time playing video
         games? ...Am I?
         <br/>
@@ -137,10 +144,12 @@ export default function FeatureSection () {
         It's difficult to find the correct balance between on/off screen
         time. Let's explore and find tailor made solutions to our
         own needs.
-      </p>
-      <p className={classes.quote}>
+      </span>
+      <br/>
+      <br/>
+      <span className={classes.quote}>
         "...just 1 more hour of video games and I'm done!"
-      </p>
+      </span>
     </>)
   }
 
