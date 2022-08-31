@@ -29,7 +29,7 @@ export default function LoginPage (props) {
       <Header
         absolute
         color="transparent"
-        brand="Americoders"
+        brand="AMERICODERS"
         rightLinks={<HeaderLinks/>}
         {...rest}
       />

@@ -28,7 +28,7 @@ export default function RegisterPage (props) {
       <Header
         absolute
         color="transparent"
-        brand="Americoders"
+        brand="AMERICODERS"
         rightLinks={<HeaderLinks/>}
         {...rest}
       />

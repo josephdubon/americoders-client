@@ -65,7 +65,7 @@ export default function ProfilePage (props) {
       user.lastName}!`}/>
       <Header
         color="transparent"
-        brand="Americoders"
+        brand="AMERICODERS"
         rightLinks={<HeaderLinks/>}
         fixed
         changeColorOnScroll={{
