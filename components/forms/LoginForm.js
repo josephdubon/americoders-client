@@ -140,7 +140,7 @@ const LoginForm = () => {
       <p className={classes.divider}>Code to Live, Live to Code</p>
       <CardBody>
         <CustomInput
-          labelText="Email..."
+          labelText="Email"
           id="email"
           formControlProps={{
             fullWidth: true,
