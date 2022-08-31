@@ -157,19 +157,19 @@ export default function FeatureSection () {
     {/* product area 1 */}
     <FeaturedSectionLeft title={'PROJECT BASED LEARNING'}
                          description={featuredContentLeft()}
-                         imageUrl={'/images/branding/misc/americoders-robotics-project-student.jpg'}
+                         imageUrl={'/images/thumbnail/americoders-robotics-project-student.jpg'}
                          imgAlt={'americoders-robotics-project-student'}/>
 
     {/* product area 2 */}
     <FeaturedSectionRight title={'MINDFULNESS AWARENESS'}
                           description={featuredContentRight()}
-                          imageUrl={'/images/branding/misc/americoders-mom-daughter-team-meditation.jpg'}
+                          imageUrl={'/images/thumbnail/americoders-mom-daughter-team-meditation.jpg'}
                           imgAlt={'americoders-robotics-project-student'}/>
 
     {/* product area 3 */}
     <FeaturedSectionLeft title={'COMMUNITY BUILDING'}
                          description={featuredContentLeft_2()}
-                         imageUrl={'/images/branding/misc/americoders-kids-community-friends.jpg'}
+                         imageUrl={'/images/thumbnail/americoders-kids-community-friends.jpg'}
                          imgAlt={'americoders-robotics-project-student'}/>
 
     {/**/}
