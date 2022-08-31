@@ -27,7 +27,6 @@ import { PageHead } from '../components/PageHead/PageHead'
 import axios from 'axios'
 import FeaturedSectionRight
   from '../components/FeaturedSectionRight/FeaturedSectionRight'
-import Link from 'next/link'
 
 const dashboardRoutes = []
 
