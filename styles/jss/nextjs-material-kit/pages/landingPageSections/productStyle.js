@@ -29,6 +29,7 @@ const productStyle = {
     textAlign: 'center',
   },
   imageBox: {
+    width: '100%',
     minHeight: '320px',
   },
   image: {
