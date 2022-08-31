@@ -159,14 +159,12 @@ export default function FeatureSection () {
                          description={featuredContentLeft()}
                          imageUrl={'/images/branding/misc/americoders-robotics-project-student.jpg'}
                          imgAlt={'americoders-robotics-project-student'}/>
-    / >
 
     {/* product area 2 */}
     <FeaturedSectionRight title={'MINDFULNESS AWARENESS'}
                           description={featuredContentRight()}
                           imageUrl={'/images/branding/misc/americoders-mom-daughter-team-meditation.jpg'}
                           imgAlt={'americoders-robotics-project-student'}/>
-    / >
 
     {/* product area 3 */}
     <FeaturedSectionLeft title={'COMMUNITY BUILDING'}
