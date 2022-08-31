@@ -1,85 +1,90 @@
-import {Button, Form, Input, Layout} from 'antd'
-import {useRouter} from 'next/router'
+import Button from '../CustomButtons/Button'
+import { useRouter } from 'next/router'
 import axios from 'axios'
-import {toast} from 'react-toastify'
-import {useState} from 'react'
+import React, { useState } from 'react'
+import GridContainer from '../Grid/GridContainer'
+import GridItem from '../Grid/GridItem'
+import CustomInput from '../CustomInput/CustomInput'
+import styles from '../../styles/jss/nextjs-material-kit/pages/landingPage.js'
+import { makeStyles } from '@material-ui/core/styles'
 
-export default function MailingListForm() {
-    // set state
-    const [email, setEmail] = useState(null)
-    const [loading, setLoading] = useState(false)
+const useStyles = makeStyles(styles)
 
-    // router config
-    const router = useRouter()
+export default function MailingListForm () {
+  // set state
+  const [email, setEmail] = useState(null)
+  const [loading, setLoading] = useState(false)
 
-    // api request
-    const subscribe = () => {
-        // update state
-        setLoading(true)
+  // router config
+  const router = useRouter()
 
-        // make request
-        axios
-            .put('/api/mailing-list', {
-                email,
-            })
-            .then((result) => {
-                if (result.status === 200) {
-                    toast.success(result.data.message)
-                    setLoading(false)
-                }
-            })
-            .catch((err) => {
-                console.log(err)
-                setLoading(false)
-            })
-    }
+  const classes = useStyles()
 
-    const onFinish = (values) => {
-        console.log('Success:', values)
-        setEmail(null)
-        router.push('/thankyou').then(r => toast.success('Thank you!'))
+  // api request
+  const subscribe = () => {
+    // update state
+    setLoading(true)
 
-    }
+    // make request
+    axios.put('/api/mailing-list', {
+      email,
+    }).then((result) => {
+      if (result.status === 200) {
+        router.push('/thankyou')
+        setLoading(false)
+      }
+    }).catch((err) => {
+      console.log(err)
+      setLoading(false)
+    })
+  }
 
-    const onFinishFailed = (errorInfo) => {
-        console.log('Failed:', errorInfo)
-    }
-    return (<Layout className='bg-light'>
-        <p className='lead text-dark text-center form-text'>
-            Please enter your email to join our mailing list.</p>
-        <Form
-            style={{width: '320px', margin: '0 auto'}}
-            name='basic'
-            initialValues={{
-                remember: true,
+  const onFinish = (values) => {
+    console.log('Success:', values)
+    setEmail(null)
+    router.push('/thankyou')
+
+  }
+
+  const onFinishFailed = (errorInfo) => {
+    console.log('Failed:', errorInfo)
+  }
+
+  return (<>
+    <p className="lead text-dark text-center form-text">
+      Please enter your email to join our mailing list.</p>
+    <form
+      onSubmit={subscribe}
+      name="basic"
+      initialValues={{
+        remember: true,
+      }}
+      autoComplete="off">
+      <GridContainer>
+
+        <GridItem xs={12} sm={12} md={6}>
+          <CustomInput
+            labelText="Your Email"
+            name="email"
+            id="email"
+            formControlProps={{
+              fullWidth: true,
+              onChange: (e) => setEmail(e.target.value),
             }}
-            onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
-            autoComplete='off'
-        >
-            <Form.Item
-                name='email'
-                rules={[{
-                    required: true, message: 'Please enter your email!',
-                },]}
-                onChange={(e) => {
-                    setEmail(e.target.value)
-                }}
-            >
-                <Input/>
-            </Form.Item>
-
-            {/* submit button */}
-            <Form.Item className='text-center'>
-                <Button
-                    type='primary'
-                    htmlType='submit'
-                    onClick={subscribe}
-                    className={`btn ml-3 ${loading ? 'btn-disabled loading' : 'btn-primary'}`}
-                >
-                    Submit
-                </Button>
-            </Form.Item>
-        </Form>
-    </Layout>)
+          />
+        </GridItem>
+        <hr/>
+        <GridItem xs={12} sm={12} md={4} className={classes.textCenter}>
+          <Button
+            type="submit"
+            color="primary"
+            size="lg"
+            disabled={!email || loading}
+          >
+            Beam Me Up, Scotty!
+          </Button>
+        </GridItem>
+      </GridContainer>
+    </form>
+  </>)
 }
