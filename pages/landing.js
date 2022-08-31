@@ -51,20 +51,14 @@ export default function LandingPage (props) {
       </p>
       <br/>
       <div style={{ textAlign: 'center' }}>
-        <Link href={'register'}>
-          <a>
-            <Button
-              color="danger"
-              size="lg"
-              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&="
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="fas fa-play"/>
-              Register Now
-            </Button>
-          </a>
-        </Link>
+        <Button
+          href={'register'}
+          color="danger"
+          size="lg"
+        >
+          <i className="fas fa-play"/>
+          Register Now
+        </Button>
       </div>
     </>)
   }
