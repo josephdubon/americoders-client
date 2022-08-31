@@ -76,13 +76,14 @@ const defaultFont = {
 //   --purple: #0a0928;
 // }
 
-const primaryColor = '#003399'
-const warningColor = '#BF8848'
+const primaryColor = '#090979'
+const warningColor = '#a20621'
 const dangerColor = '#CC0000'
 const successColor = '#6699FF'
-const infoColor = '#00b900'
+const infoColor = '#CCFFCC'
 const roseColor = '#e91e63'
 const grayColor = '#CCCCCC'
+const whiteColor = '#F2F2F2'
 
 const primaryBoxShadow = {
   boxShadow: `0 12px 20px -10px ${hexToRGBAlpha(primaryColor,
