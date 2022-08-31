@@ -99,17 +99,6 @@ export default function LandingPage (props) {
                 We believe education should be an experience to foster growth &
                 advancements in STEM, Arts, & Mindfulness Development.
               </h4>
-              <br/>
-              <Button
-                color="danger"
-                size="lg"
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&="
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="fas fa-play"/>
-                Watch video
-              </Button>
             </GridItem>
           </GridContainer>
         </div>
