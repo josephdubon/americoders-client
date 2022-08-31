@@ -36,7 +36,7 @@ export default function RegisterPage (props) {
       <div
         className={classes.pageHeader}
         style={{
-          backgroundImage: 'url(\'/img/bg7.jpg\')',
+          backgroundImage: 'url(\'/images/branding/misc/americoders-community-hands-friends.jpg\')',
           backgroundSize: 'cover',
           backgroundPosition: 'top center',
         }}
