@@ -85,7 +85,12 @@ export default function LandingPage (props) {
         <div className={classes.container}>
           <GridContainer justify={'center'}>
             <GridItem xs={12} sm={12} md={8}>
-              <h1 className={classes.title}>Welcome to Americoders</h1>
+              <h1 className={classes.title}>Welcome to
+                <br/>Americoders</h1>
+              <br/>
+              <h1 className={classes.title}>
+                ✩✩✩✩✩✩✩✩✩
+              </h1>
               <h4 className={classes.subTitle}>
                 We're a community enrichment program founded in the heart of the
                 Biggest Little City in the World, Reno, Nevada.
