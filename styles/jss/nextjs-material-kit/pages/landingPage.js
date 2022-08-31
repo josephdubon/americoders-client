@@ -20,6 +20,12 @@ const landingPageStyle = {
     maxWidth: '500px',
     margin: '10px auto 0',
   },
+  description: {
+    color: '#999',
+    fontSize: '1.1rem',
+    textAlign: 'left',
+    margin: '.5rem 1rem',
+  },
   main: {
     background: '#FFFFFF',
     position: 'relative',
