@@ -74,7 +74,8 @@ export default function MailingListForm () {
           />
         </GridItem>
         <hr/>
-        <GridItem xs={12} sm={12} md={4} className={classes.textCenter}>
+        <GridItem xs={12} sm={12} md={4} className={classes.textCenter}
+                  style={{ textAlign: 'center' }}>
           <Button
             type="submit"
             color="primary"
