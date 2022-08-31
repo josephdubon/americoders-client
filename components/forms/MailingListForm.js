@@ -56,7 +56,7 @@ export default function MailingListForm () {
     <form
       onSubmit={subscribe}
       name="basic"
-      initialValues={{
+      initialvalues={{
         remember: true,
       }}
       autoComplete="off">
