@@ -13,8 +13,9 @@ const parallaxStyle = (theme) => ({
     alignItems: 'center',
   },
   filter: {
-    "&:before": {
-      background: "rgba(0, 0, 0, 0.5)",
+    '&:before': {
+      backgroundColor: 'rgb(63,94,251, .1)',
+      background: 'linear-gradient(90deg, rgba(2,0,36,.8) 0%, rgba(9,9,121,.8) 23%, rgba(162,6,33,.8) 53%, rgba(242,242,242,1) 100%)',
     },
     '&:after,&:before': {
       position: 'absolute',
