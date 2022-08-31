@@ -6,7 +6,7 @@ import {
   successColor,
   warningColor,
   dangerColor
-} from '../../nextjs-material-kit';
+} from '../../americoders';
 const navPillsStyle = (theme) => ({
   root: {
     marginTop: "20px",

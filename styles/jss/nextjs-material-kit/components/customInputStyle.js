@@ -3,7 +3,7 @@ import {
   dangerColor,
   successColor,
   defaultFont
-} from '../../nextjs-material-kit';
+} from '../../americoders';
 const customInputStyle = {
   disabled: {
     "&:before": {

@@ -1,4 +1,4 @@
-import { container } from '../../nextjs-material-kit'
+import { container } from '../../americoders'
 
 const componentsStyle = {
   container,

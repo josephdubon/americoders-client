@@ -1,4 +1,4 @@
-import { title } from '../../../nextjs-material-kit'
+import { title } from '../../../americoders'
 
 const workStyle = {
   section: {

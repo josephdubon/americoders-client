@@ -7,7 +7,7 @@ import {
   roseColor,
   grayColor,
   title
-} from '../../nextjs-material-kit';
+} from '../../americoders';
 const infoStyle = {
   infoArea: {
     maxWidth: "360px",

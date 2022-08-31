@@ -5,7 +5,7 @@ import {
   roseColor,
   successColor,
   warningColor,
-} from '../../nextjs-material-kit'
+} from '../../americoders'
 
 const badgeStyle = {
   badge: {

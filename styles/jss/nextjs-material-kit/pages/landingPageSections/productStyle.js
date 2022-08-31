@@ -1,4 +1,4 @@
-import { title } from '../../../nextjs-material-kit'
+import { title } from '../../../americoders'
 
 const productStyle = {
   section: {
@@ -19,7 +19,7 @@ const productStyle = {
   description: {
     color: '#999',
     fontSize: '1.1rem',
-    textAlign: 'left',
+    textAlign: 'center',
     margin: '.5rem 1rem',
   },
   quote: {
@@ -27,7 +27,6 @@ const productStyle = {
     fontSize: '.8rem',
     fontWeight: '400',
     textAlign: 'center',
-    margin: '.5rem 4rem',
   },
   imageBox: {
     minHeight: '320px',

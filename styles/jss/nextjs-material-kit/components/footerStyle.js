@@ -1,4 +1,4 @@
-import { container, primaryColor } from '../../nextjs-material-kit';
+import { container, primaryColor } from '../../americoders';
 const footerStyle = {
   block: {
     color: "inherit",

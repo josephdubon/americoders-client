@@ -6,7 +6,7 @@ import {
   warningBoxShadow,
   dangerBoxShadow,
   container
-} from '../../nextjs-material-kit';
+} from '../../americoders';
 const snackbarContentStyle = {
   root: {
     ...defaultFont,

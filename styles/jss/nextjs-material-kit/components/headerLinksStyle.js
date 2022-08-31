@@ -1,4 +1,4 @@
-import { defaultFont } from '../../nextjs-material-kit';
+import { defaultFont } from '../../americoders';
 import tooltip from "/styles/jss/nextjs-material-kit/tooltipsStyle.js";
 
 const headerLinksStyle = (theme) => ({

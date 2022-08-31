@@ -1,4 +1,4 @@
-import { container, title } from '../../nextjs-material-kit'
+import { container, title } from '../../americoders'
 
 import imagesStyle
   from '../../../../styles/jss/nextjs-material-kit/imagesStyles.js'

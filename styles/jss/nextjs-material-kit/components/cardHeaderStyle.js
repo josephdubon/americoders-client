@@ -4,7 +4,7 @@ import {
   primaryCardHeader,
   successCardHeader,
   warningCardHeader,
-} from '../../nextjs-material-kit'
+} from '../../americoders'
 
 const cardHeaderStyle = {
   cardHeader: {

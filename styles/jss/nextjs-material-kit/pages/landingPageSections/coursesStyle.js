@@ -1,4 +1,4 @@
-import { cardTitle, title } from '../../../nextjs-material-kit'
+import { cardTitle, title } from '../../../americoders'
 import imagesStyle
   from '../../../../../styles/jss/nextjs-material-kit/imagesStyles.js'
 

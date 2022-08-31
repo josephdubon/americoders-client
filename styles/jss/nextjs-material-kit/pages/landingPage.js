@@ -1,4 +1,4 @@
-import { container, title } from '../../nextjs-material-kit'
+import { container, title } from '../../americoders'
 
 const landingPageStyle = {
   container: {

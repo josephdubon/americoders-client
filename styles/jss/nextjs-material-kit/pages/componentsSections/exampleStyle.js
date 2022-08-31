@@ -1,4 +1,4 @@
-import { containerFluid } from "/styles/jss/nextjs-material-kit.js";
+import { containerFluid } from "/styles/jss/americoders.js";
 
 import imagesStyle from "/styles/jss/nextjs-material-kit/imagesStyles.js";
 

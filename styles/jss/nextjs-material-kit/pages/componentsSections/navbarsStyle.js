@@ -2,7 +2,7 @@ import {
   container,
   title,
   grayColor
-} from "/styles/jss/nextjs-material-kit.js";
+} from "/styles/jss/americoders.js";
 import headerLinksStyle from "/styles/jss/nextjs-material-kit/components/headerLinksStyle.js";
 
 const navbarsStyle = (theme) => ({

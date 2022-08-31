@@ -1,4 +1,4 @@
-import { container, title } from "/styles/jss/nextjs-material-kit.js";
+import { container, title } from "/styles/jss/americoders.js";
 
 const notificationsStyles = {
   section: {

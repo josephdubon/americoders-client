@@ -7,7 +7,7 @@ import {
   warningColor,
   dangerColor,
   roseColor
-} from '../../nextjs-material-kit';
+} from '../../americoders';
 const paginationStyle = {
   pagination: {
     display: "inline-block",
