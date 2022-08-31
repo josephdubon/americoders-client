@@ -123,9 +123,15 @@ export default function LandingPage (props) {
           {/*end loop*/}
           {/*<p>end</p>*/}
 
-          <FeatureSection/>
-          <CoursesSection/>
-          <WorkSection/>
+          {/* join mailing list area */}
+          <MailingListSection/>
+
+          {/*  announcement section */}
+          <FeaturedSectionRight title={'Fall Semester 2022'}
+                                description={announcement()}
+                                imageUrl={'/images/branding/misc/americoders-kids-laptop-fun.jpg'}
+                                imgAlt={'americoders-robotics-project-student'}/>
+          / >
         </div>
       </div>
       <Footer/>
