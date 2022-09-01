@@ -61,7 +61,7 @@ const InstructorRevenue = () => {
             Revenue Report <DollarOutlined className="float-end"/>{' '}
           </h2>
           <small>You get paid directly from Stripe to your bank account every 48
-            hours.</small>
+                 hours.</small>
           <hr/>
           <h4>
             Pending balance {balance.pending &&

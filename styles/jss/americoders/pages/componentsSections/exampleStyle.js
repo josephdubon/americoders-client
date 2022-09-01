@@ -1,19 +1,19 @@
-import { containerFluid } from "/styles/jss/americoders.js";
+import { containerFluid } from '/styles/jss/americoders.js'
 
-import imagesStyle from "/styles/jss/americoders/imagesStyles.js";
+import imagesStyle from '/styles/jss/americoders/imagesStyles.js'
 
 const exampleStyle = {
   section: {
-    padding: "70px 0"
+    padding: '70px 0',
   },
   container: {
     ...containerFluid,
-    textAlign: "center !important"
+    textAlign: 'center !important',
   },
   ...imagesStyle,
   link: {
-    textDecoration: "none"
-  }
-};
+    textDecoration: 'none',
+  },
+}
 
-export default exampleStyle;
+export default exampleStyle

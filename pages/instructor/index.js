@@ -77,20 +77,25 @@ const InstructorIndex = () => {
                     // show requirements message
                     course.lessons.length < 5 ? (
                         <p style={myStyle} className="text-warning">At least 5
-                          lessons are required
-                          to publish a course.</p>
+                                                                    lessons are
+                                                                    required
+                                                                    to publish a
+                                                                    course.</p>
                       ) :
                       // show success message
                       course.published ? (
                           <p style={myStyle} className="text-success">Your course
-                            is live in the
-                            marketplace.</p>
+                                                                      is live in
+                                                                      the
+                                                                      marketplace.</p>
                         ) :
                         // show 'ready to publish' message
                         (
                           <p style={myStyle} className="text-success">Your
-                            course is ready to
-                            be published.</p>
+                                                                      course is
+                                                                      ready to
+                                                                      be
+                                                                      published.</p>
                         )}
                 </div>
                 <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">

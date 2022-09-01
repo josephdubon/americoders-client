@@ -167,10 +167,10 @@ const SingleCourse = () => {
           </Menu>
           <p
             className="modal-footer text-white shadow">© {currentYear} Americoders
-            | Questions or
-            comments? <a
+                                                       | Questions or
+                                                       comments? <a
               href="mailto:questions@americoders.org">Email us
-              here</a></p>
+                                                      here</a></p>
         </Drawer>
 
         {/* main content area */}
@@ -301,7 +301,8 @@ const SingleCourse = () => {
 
                           {/* title */}
                           <p className="text-muted"><strong>Course
-                            Name: </strong>{course.name && course.name}</p>
+                                                            Name: </strong>{course.name &&
+                            course.name}</p>
 
                           {/* lessons count */}
                           <p className="text-muted">
@@ -317,14 +318,14 @@ const SingleCourse = () => {
 
                           {/* last update */}
                           <p className="text-muted"><strong>Last
-                            Update: </strong>{Moment(
+                                                            Update: </strong>{Moment(
                             course && course.updatedAt).format('LL')}
                           </p>
                         </>)
                         :
                         (<>
                           <p className="display-6 fw-bold lh-1 mb-3">Welcome
-                            back!!</p>
+                                                                     back!!</p>
                         </>)}
                     </div>
 
@@ -350,9 +351,10 @@ const SingleCourse = () => {
                         }
                       </div>
                       <p className="text-muted text-center">Please click on
-                        the <strong
+                                                            the <strong
                           className="text-primary">Lessons
-                          Menu</strong> above to start learning!</p>
+                                                   Menu</strong> above to start
+                                                            learning!</p>
                     </div>
                   </div>
                 </div>

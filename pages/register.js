@@ -11,7 +11,6 @@ import GridItem from '../components/Grid/GridItem.js'
 import Card from '../components/Card/Card.js'
 
 import styles from '../styles/jss/americoders/pages/loginPage.js'
-import LoginForm from '../components/forms/LoginForm'
 import StudentRegisterForm from '../components/forms/StudentRegisterForm'
 
 const useStyles = makeStyles(styles)

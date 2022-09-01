@@ -1,6 +1,5 @@
 import { cardTitle, title } from '../../../americoders'
-import imagesStyle
-  from '../../imagesStyles.js'
+import imagesStyle from '../../imagesStyles.js'
 
 const coursesStyle = {
   section: {

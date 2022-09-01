@@ -9,8 +9,7 @@ import FormControl from '@material-ui/core/FormControl'
 import InputLabel from '@material-ui/core/InputLabel'
 import Input from '@material-ui/core/Input'
 
-import styles
-  from '../../styles/jss/americoders/components/customInputStyle.js'
+import styles from '../../styles/jss/americoders/components/customInputStyle.js'
 
 const useStyles = makeStyles(styles)
 

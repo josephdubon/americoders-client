@@ -68,7 +68,7 @@ export default function SectionDownload () {
               href="https://www.creative-tim.com/product/nextjs-material-kit-pro?ref=njsmk-download-section"
               target="_blank"
             >
-              Americoders 
+              Americoders
             </Button>
             <Button
               color="rose"
@@ -76,7 +76,7 @@ export default function SectionDownload () {
               href="https://www.creative-tim.com/product/material-kit-pro-react?ref=njsmk-download-section"
               target="_blank"
             >
-              Material Kit  React
+              Material Kit React
             </Button>
           </GridItem>
         </GridContainer>

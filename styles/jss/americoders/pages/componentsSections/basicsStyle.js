@@ -1,31 +1,32 @@
-import { container, title } from "/styles/jss/americoders.js";
-import customCheckboxRadioSwitch from "/styles/jss/americoders/customCheckboxRadioSwitch.js";
+import { container, title } from '/styles/jss/americoders.js'
+import customCheckboxRadioSwitch
+  from '/styles/jss/americoders/customCheckboxRadioSwitch.js'
 
 const basicsStyle = {
   sections: {
-    padding: "70px 0"
+    padding: '70px 0',
   },
   container,
   title: {
     ...title,
-    marginTop: "30px",
-    minHeight: "32px",
-    textDecoration: "none"
+    marginTop: '30px',
+    minHeight: '32px',
+    textDecoration: 'none',
   },
   space50: {
-    height: "50px",
-    display: "block"
+    height: '50px',
+    display: 'block',
   },
   space70: {
-    height: "70px",
-    display: "block"
+    height: '70px',
+    display: 'block',
   },
   icons: {
-    width: "17px",
-    height: "17px",
-    color: "#FFFFFF"
+    width: '17px',
+    height: '17px',
+    color: '#FFFFFF',
   },
-  ...customCheckboxRadioSwitch
-};
+  ...customCheckboxRadioSwitch,
+}
 
-export default basicsStyle;
+export default basicsStyle

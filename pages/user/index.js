@@ -74,7 +74,8 @@ export default function ProfilePage (props) {
         }}
         {...rest}
       />
-      <Parallax small filter image="/images/americoders-community-diversity.png"/>
+      <Parallax small filter
+                image="/images/americoders-community-diversity.png"/>
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
           <div className={classes.container}>

@@ -54,7 +54,7 @@ const BecomeInstructor = () => {
             <h1 className="fw-light">Become Instructor</h1>
             <UserSwitchOutlined className="display-1 pb-3"/>
             <p className="lead text-muted">Setup payout to publish courses on
-              Americoders.</p>
+                                           Americoders.</p>
 
             <Button
               className="mb-3"
