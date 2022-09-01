@@ -42,7 +42,9 @@ const UserRoute = ({ children, showNav = true }) => {
               {/* only show UserNav when showNav is true, hide on false */}
               {showNav && <HeaderUser/>}
             </div>
-            <div className="col-md-10">{children}</div>
+            <div className="col-md-10">
+              {children}
+            </div>
           </div>
         </div>
       </>
