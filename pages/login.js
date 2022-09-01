@@ -51,7 +51,7 @@ export default function LoginPage (props) {
                            justifyContent="center"
                            alignItems="center"
             >
-              <GridItem xs={12} sm={6} md={4}>
+              <GridItem xs={10} sm={10} md={12}>
                 <Card className={classes[cardAnimaton]}>
                   {/* login form */}
                   <LoginForm/>
