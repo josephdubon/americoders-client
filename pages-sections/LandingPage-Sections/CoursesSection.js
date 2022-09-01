@@ -42,15 +42,12 @@ export default function CoursesSection () {
               <h4 className={classes.cardTitle}>
                 Introduction to Coding
                 <br/>
-                <small className={classes.smallTitle}>Python, JavaScript,
-                                                      Scratch,
-                                                      EarSketch..</small>
+                <small className={classes.smallTitle}>Python, Javascript,
+                                                      Scratch, EarSketch</small>
               </h4>
               <CardBody>
-                {' '}
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
-                {' '}
               </CardFooter>
             </Card>
           </GridItem>
@@ -68,14 +65,15 @@ export default function CoursesSection () {
               <h4 className={classes.cardTitle}>
                 Internet Safety
                 <br/>
-                <small className={classes.smallTitle}>Privacy, Safe Habits,
-                                                      Ethics</small>
+                <small className={classes.smallTitle}>Are we dedicating enough
+                                                      time to the safety and
+                                                      protection of our children
+                                                      while they are
+                                                      online?</small>
               </h4>
               <CardBody>
-                {' '}
               </CardBody>
               <CardFooter className={classes.justifyCenter}>
-                {''}
               </CardFooter>
             </Card>
           </GridItem>
@@ -93,8 +91,8 @@ export default function CoursesSection () {
               <h4 className={classes.cardTitle}>
                 Game Development
                 <br/>
-                <small className={classes.smallTitle}>Python/JS Game
-                                                      Engines</small>
+                <small className={classes.smallTitle}>Python, Javascript, and
+                                                      Custom Game Engine</small>
               </h4>
               <CardBody>
                 {' '}
@@ -118,8 +116,10 @@ export default function CoursesSection () {
               <h4 className={classes.cardTitle}>
                 Technology Unplugged
                 <br/>
-                <small className={classes.smallTitle}>Turn The Screen Off And Go
-                                                      outside</small>
+                <small className={classes.smallTitle}>Let's turn the screen off
+                                                      and learn in the real
+                                                      world for a
+                                                      change.</small>
               </h4>
               <CardBody>
                 {' '}
@@ -143,8 +143,9 @@ export default function CoursesSection () {
               <h4 className={classes.cardTitle}>
                 Create a Projects Portfolio
                 <br/>
-                <small className={classes.smallTitle}>Show Off Your Code and
-                                                      program logic!</small>
+                <small className={classes.smallTitle}>Show off your code and
+                                                      game/program
+                                                      collection.</small>
               </h4>
               <CardBody>
                 {' '}
@@ -169,7 +170,10 @@ export default function CoursesSection () {
                 Hardware Hacking
                 <br/>
                 <small className={classes.smallTitle}>Let's Build And Break Some
-                                                      Stuff!</small>
+                                                      Stuff! We can learn a
+                                                      whole lot by taking apart
+                                                      and putting thing back
+                                                      together.</small>
               </h4>
               <CardBody>
                 {' '}
