@@ -90,16 +90,46 @@ const StudentUpdateForm = () => {
   }
 
   return (<>
-    <form onSubmit={handleSubmit}>
+      <form
+        className={classes.form}
+        onSubmit={handleSubmit}>
+        <CardHeader color="primary" className={classes.cardHeader}>
+          <h4>Update User Details</h4>
+        </CardHeader>
 
-      <p className="form-text">First Name</p>
-      <input
-        type="text"
-        className="form-control mb-4 p-4"
-        onChange={e => setFirstName(e.target.value)}
-        placeholder={user && user.firstName}
-        required
-      />
+        <p className={classes.divider}>
+          Confirm your email and click submit to save your changes.
+          <br/>
+          <strong>
+            🚨 You will be redirected to a login page after saving.
+          </strong>
+          <br/>
+          <small>
+            Change your mind? Click <Link href={'/user'}><a>here</a></Link> to
+            go back to your profile.
+          </small>
+        </p>
+
+        <CardBody>
+          {/* first name */}
+          <CustomInput
+            labelText="First Name"
+            id="firstName"
+            formControlProps={{
+              fullWidth: true,
+            }}
+            inputProps={{
+              type: 'firstName',
+              value: firstName,
+              required: true,
+              onChange: e => setFirstName(e.target.value),
+              endAdornment: (
+                <InputAdornment position="end">
+                  <Person className={classes.inputIconsColor}/>
+                </InputAdornment>
+              ),
+            }}
+          />
 
       <p className="form-text">Last Name</p>
       <input
