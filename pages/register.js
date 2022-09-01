@@ -11,7 +11,7 @@ import Card from '../components/Card/Card.js'
 
 import styles from '../styles/jss/americoders/pages/loginPage.js'
 import StudentRegisterForm from '../components/forms/StudentRegisterForm'
-// import Footer from '../components/footer/Footer'
+import Footer from '../components/Footer/Footer'
 
 const useStyles = makeStyles(styles)
 
@@ -59,7 +59,7 @@ export default function RegisterPage (props) {
             </GridContainer>
           </GridContainer>
         </div>
-        {/*<Footer whiteFont/>*/}
+        <Footer whiteFont/>
       </div>
     </div>
   )

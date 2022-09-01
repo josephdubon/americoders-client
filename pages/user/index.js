@@ -6,7 +6,6 @@ import { makeStyles } from '@material-ui/core/styles'
 // @material-ui/icons
 // core components
 import Header from '../../components/Header/Header.js'
-// import Footer from '../../components/Footer/Footer.js'
 import GridContainer from '../../components/Grid/GridContainer.js'
 import GridItem from '../../components/Grid/GridItem.js'
 import HeaderLinks from '../../components/Header/HeaderLinks.js'
@@ -22,6 +21,7 @@ import UserRoute from '../../components/routes/UserRoute'
 import { PageHead } from '../../components/PageHead/PageHead'
 import Link from 'next/link'
 import Moment from 'moment'
+import Footer from '../../components/Footer/Footer'
 
 const useStyles = makeStyles(styles)
 
@@ -202,80 +202,6 @@ export default function ProfilePage (props) {
                           </GridContainer>
                         ),
                       },
-                      // {
-                      //   tabButton: 'Work',
-                      //   tabIcon: Palette,
-                      //   tabContent: (
-                      //     <GridContainer justify="center">
-                      //       <GridItem xs={12} sm={12} md={4}>
-                      //         <img
-                      //           alt="..."
-                      //           src="/img/examples/olu-eletu.jpg"
-                      //           className={navImageClasses}
-                      //         />
-                      //         <img
-                      //           alt="..."
-                      //           src="/img/examples/clem-onojeghuo.jpg"
-                      //           className={navImageClasses}
-                      //         />
-                      //         <img
-                      //           alt="..."
-                      //           src="/img/examples/cynthia-del-rio.jpg"
-                      //           className={navImageClasses}
-                      //         />
-                      //       </GridItem>
-                      //       <GridItem xs={12} sm={12} md={4}>
-                      //         <img
-                      //           alt="..."
-                      //           src="/img/examples/mariya-georgieva.jpg"
-                      //           className={navImageClasses}
-                      //         />
-                      //         <img
-                      //           alt="..."
-                      //           src="/img/examples/clem-onojegaw.jpg"
-                      //           className={navImageClasses}
-                      //         />
-                      //       </GridItem>
-                      //     </GridContainer>
-                      //   ),
-                      // },
-                      // {
-                      //   tabButton: 'Favorite',
-                      //   tabIcon: Favorite,
-                      //   tabContent: (
-                      //     <GridContainer justify="center">
-                      //       <GridItem xs={12} sm={12} md={4}>
-                      //         <img
-                      //           alt="..."
-                      //           src="/img/examples/mariya-georgieva.jpg"
-                      //           className={navImageClasses}
-                      //         />
-                      //         <img
-                      //           alt="..."
-                      //           src="/img/examples/studio-3.jpg"
-                      //           className={navImageClasses}
-                      //         />
-                      //       </GridItem>
-                      //       <GridItem xs={12} sm={12} md={4}>
-                      //         <img
-                      //           alt="..."
-                      //           src="/img/examples/clem-onojeghuo.jpg"
-                      //           className={navImageClasses}
-                      //         />
-                      //         <img
-                      //           alt="..."
-                      //           src="/img/examples/olu-eletu.jpg"
-                      //           className={navImageClasses}
-                      //         />
-                      //         <img
-                      //           alt="..."
-                      //           src="/img/examples/studio-1.jpg"
-                      //           className={navImageClasses}
-                      //         />
-                      //       </GridItem>
-                      //     </GridContainer>
-                      //   ),
-                      // },
                     ]}
                   />
                 </GridItem>

@@ -5,15 +5,14 @@ import { makeStyles } from '@material-ui/core/styles'
 // core components
 import Header from '../../components/Header/Header.js'
 import HeaderLinks from '../../components/Header/HeaderLinks.js'
-// import Footer from '../../components/Footer/Footer.js'
 import GridContainer from '../../components/Grid/GridContainer.js'
 import GridItem from '../../components/Grid/GridItem.js'
 import Card from '../../components/Card/Card.js'
 
 import styles from '../../styles/jss/americoders/pages/loginPage.js'
-import StudentRegisterForm from '../../components/forms/StudentRegisterForm'
 import UserRoute from '../../components/routes/UserRoute'
 import StudentUpdateForm from '../../components/forms/StudentUpdateForm'
+import Footer from '../../components/Footer/Footer'
 
 const useStyles = makeStyles(styles)
 
@@ -62,7 +61,7 @@ export default function RegisterPage (props) {
             </GridContainer>
           </GridContainer>
         </div>
-        {/*<Footer whiteFont/>*/}
+        <Footer whiteFont/>
       </div>
     </UserRoute>
   )
