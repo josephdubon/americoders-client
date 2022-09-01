@@ -11,6 +11,7 @@ const productStyle = {
     marginTop: '30px',
     minHeight: '32px',
     textDecoration: 'none',
+    textAlign: 'center',
   },
   subtitle: {
     ...title,
@@ -18,7 +19,8 @@ const productStyle = {
   },
   description: {
     color: '#999',
-    fontSize: '1.1rem',
+    fontSize: '1.125rem',
+    lineHeight: '1.5em',
     textAlign: 'center',
     margin: '.5rem 1rem',
   },
