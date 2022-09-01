@@ -18,24 +18,33 @@ export default function FeaturedSectionLeft ({
 
   return (<>
     <div className={classes.section}>
-      <GridContainer justify="center">
-        <GridItem xs={12} sm={12} md={8}>
-          <h2 className={classes.title}>{title}</h2>
-          <h5 className={classes.description}>
-            {description}
-          </h5>
-        </GridItem>
-        <GridItem xs={12} sm={12} md={4} class>
-          <div className={classes.imageBox}>
-            <Image
-              src={imageUrl}
-              layout={'fill'}
-              objectFit={'cover'}
-              alt={imageAlt}
-              className={classes.image}
-            />
-          </div>
-        </GridItem>
+      <GridContainer
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <GridContainer direction="row"
+                       justifyContent="center"
+                       alignItems="center"
+                       spacing={2}>
+          <GridItem xs={12} sm={12} md={8}>
+            <h2 className={classes.title}>{title}</h2>
+            <h5 className={classes.description}>
+              {description}
+            </h5>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={4}>
+            <div className={classes.imageBox}>
+              <Image
+                src={imageUrl}
+                width={800}
+                height={533}
+                alt={imageAlt}
+                className={classes.image}
+              />
+            </div>
+          </GridItem>
+        </GridContainer>
       </GridContainer>
     </div>
   </>)
