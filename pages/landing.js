@@ -83,21 +83,32 @@ export default function LandingPage (props) {
       <Parallax filter responsive
                 image="/images/original/reno_downtown.png">
         <div className={classes.container}>
-          <GridContainer justify={'center'}>
-            <GridItem xs={12} sm={12} md={8}>
-              <h1 className={classes.title}>Welcome to
-                <br/>Americoders</h1>
-              <br/>
-              <h1 className={classes.title}>
-                ✩✩✩✩✩✩✩✩✩
-              </h1>
-              <h4 className={classes.subTitle}>
-                We're a community enrichment program founded in the heart of the
-                Biggest Little City in the World, Reno, Nevada.
-                We believe education should be an experience to foster growth &
-                advancements in STEM, Arts, & Mindfulness Development.
-              </h4>
-            </GridItem>
+          <GridContainer
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <GridContainer direction="row"
+                           justifyContent="center"
+                           alignItems="center"
+            >
+              <GridItem xs={10} sm={12} md={8}>
+                <h1 className={classes.title}>Welcome to
+                  <br/>Americoders</h1>
+                <br/>
+                <h1 className={classes.title}>
+                  ✩✩✩✩✩✩✩✩✩
+                </h1>
+                <h4 className={classes.subTitle}>
+                  We're a community enrichment program founded in the heart of
+                  the
+                  Biggest Little City in the World, Reno, Nevada.
+                  We believe education should be an experience to foster growth
+                  &
+                  advancements in STEM, Arts, & Mindfulness Development.
+                </h4>
+              </GridItem>
+            </GridContainer>
           </GridContainer>
         </div>
       </Parallax>
