@@ -35,6 +35,10 @@ const headerLinksStyle = (theme) => ({
   listItemText: {
     padding: '0 !important',
   },
+  drawerLinks: {
+    color: '#999',
+    margin: '0 2rem',
+  },
   navLink: {
     color: 'inherit',
     position: 'relative',
