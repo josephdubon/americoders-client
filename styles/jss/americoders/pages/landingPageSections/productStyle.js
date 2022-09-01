@@ -28,12 +28,9 @@ const productStyle = {
     fontWeight: '400',
     textAlign: 'center',
   },
-  imageBox: {
-    width: '100%',
-    minHeight: '320px',
-  },
+
   image: {
-    borderRadius: '2.5rem',
+    borderRadius: '2rem',
   },
 }
 
