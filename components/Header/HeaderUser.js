@@ -19,7 +19,6 @@ import { drawerWidth } from '../../styles/jss/americoders'
 import { Edit, Home, Person } from '@material-ui/icons'
 import Link from 'next/link'
 import Divider from '@material-ui/core/Divider'
-import GridContainer from '../Grid/GridContainer'
 import GridItem from '../Grid/GridItem'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -95,69 +94,59 @@ export default function UserRoute ({ children, showNav = true, props }) {
                 }}>{user && user.firstName}'s Menu</h6>
 
                 {/* start menu items */}
-                <GridContainer
-                  direction="row"
-                  justifyContent="flex-end"
-                  alignItems="center"
-                >
-                  <GridContainer direction="row"
-                                 justifyContent="center"
-                                 alignItems="center"
-                                 spacing={2}>
-                    <GridItem xs={12} sm={12} md={12}>
-                      <List>
-                        {/* dashboard */}
-                        <Link href={'/user'} disablePadding button>
-                          <a>
-                            <ListItem href={'/user'} disablePadding button>
-                              <ListItemButton>
-                                <ListItemText className={classes.drawerLinks}
-                                              primary="View Profile"/>
-                              </ListItemButton>
-                              <ListItemIcon>
-                                <Person/>
-                              </ListItemIcon>
-                            </ListItem>
-                          </a>
-                        </Link>
 
-                        {/* update user */}
-                        <Link href={'/user/update-user'} disablePadding button>
-                          <a>
-                            <ListItem disablePadding>
-                              <ListItemButton>
-                                <ListItemText className={classes.drawerLinks}
-                                              primary="Edit Profile"/>
-                              </ListItemButton>
-                              <ListItemIcon>
-                                <Edit/>
-                              </ListItemIcon>
-                            </ListItem>
-                          </a>
-                        </Link>
+                <GridItem xs={12} sm={12} md={12}>
+                  <List>
+                    {/* dashboard */}
+                    <Link href={'/user'} disablePadding button>
+                      <a>
+                        <ListItem href={'/user'} disablePadding>
+                          <ListItemButton>
+                            <ListItemText className={classes.drawerLinks}
+                                          primary="View Profile"/>
+                          </ListItemButton>
+                          <ListItemIcon>
+                            <Person/>
+                          </ListItemIcon>
+                        </ListItem>
+                      </a>
+                    </Link>
 
-                        {/* bottom half */}
-                        <Divider/>
+                    {/* update user */}
+                    <Link href={'/user/update-user'} disablePadding button>
+                      <a>
+                        <ListItem disablePadding>
+                          <ListItemButton>
+                            <ListItemText className={classes.drawerLinks}
+                                          primary="Edit Profile"/>
+                          </ListItemButton>
+                          <ListItemIcon>
+                            <Edit/>
+                          </ListItemIcon>
+                        </ListItem>
+                      </a>
+                    </Link>
 
-                        {/* back home */}
-                        <Link href={'/landing'} as={'/home'} disablePadding
-                              button>
-                          <a>
-                            <ListItem disablePadding button>
-                              <ListItemButton>
-                                <ListItemText className={classes.drawerLinks}
-                                              primary="Back Home"/>
-                              </ListItemButton>
-                              <ListItemIcon>
-                                <Home/>
-                              </ListItemIcon>
-                            </ListItem>
-                          </a>
-                        </Link>
-                      </List>
-                    </GridItem>
-                  </GridContainer>
-                </GridContainer>
+                    {/* bottom half */}
+                    <Divider/>
+
+                    {/* back home */}
+                    <Link href={'/landing'} as={'/home'} disablePadding
+                          button>
+                      <a>
+                        <ListItem disablePadding>
+                          <ListItemButton>
+                            <ListItemText className={classes.drawerLinks}
+                                          primary="Home"/>
+                          </ListItemButton>
+                          <ListItemIcon>
+                            <Home/>
+                          </ListItemIcon>
+                        </ListItem>
+                      </a>
+                    </Link>
+                  </List>
+                </GridItem>
                 {/*  end menu items*/}
               </Box>
             </Drawer>
