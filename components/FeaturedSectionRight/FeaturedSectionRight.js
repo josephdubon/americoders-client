@@ -31,8 +31,8 @@ export default function FeaturedSectionRight ({
           <div className={classes.imageBox}>
             <Image
               src={imageUrl}
-              layout={'fill'}
-              objectFit={'cover'}
+              width={800}
+              height={533}
               alt={imageAlt}
               className={classes.image}
             />
