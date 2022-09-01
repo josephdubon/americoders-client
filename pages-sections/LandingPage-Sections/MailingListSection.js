@@ -26,7 +26,7 @@ export default function MailingListSection () {
                        justifyContent="center"
                        alignItems="center"
         >
-          <GridItem cs={12} sm={12} md={8}>
+          <GridItem cs={12} sm={12} md={12}>
             {/* title */}
             <h2 className={classes.title}>
               Join Our Mailing List
