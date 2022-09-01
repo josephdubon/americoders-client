@@ -101,19 +101,13 @@ export default function ProfilePage (props) {
                       />
                     </div>
 
-                  <div className={classes.name}>
-                    {/* name */}
-                    <h3 className={classes.title}>
-                      {`${user && user.firstName} ${user && user.lastName}`}
-                    </h3>
-                    <br/>
-                    <Link href={'/update-user/'}>
-                      <a style={{
-                        fontSize: '12px',
-                        textTransform: 'uppercase',
-                      }}>Confirm or Update Details</a>
-                    </Link>
-                    <h5>{user && user.email}</h5>
+                    <div className={classes.name}>
+                      {/* name */}
+                      <h3 className={classes.title}>
+                        {`${user && user.firstName} ${user && user.lastName}`}
+                      </h3>
+                      <br/>
+                      <h5>{user && user.email}</h5>
 
                     {/* user details */}
                     <h6>Role: {user && user.role.join(', ')}</h6>
