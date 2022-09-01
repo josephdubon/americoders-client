@@ -5,16 +5,16 @@ import axios from 'axios'
 import { SyncOutlined } from '@ant-design/icons'
 
 const StudentUpdateForm = () => {
+  // global state
+  const {
+    state: { user },
+  } = useContext(Context)
+
   const [firstName, setFirstName] = useState(user && user.firstName)
   const [lastName, setLastName] = useState(user && user.lastName)
   const [bio, setBio] = useState(user && user.bio)
   const [email, setEmail] = useState(user && user.email)
   const [loading, setLoading] = useState(false)
-
-  // global state
-  const {
-    state: { user },
-  } = useContext(Context)
 
   // router
   const router = useRouter()
