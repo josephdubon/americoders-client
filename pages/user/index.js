@@ -119,19 +119,20 @@ export default function ProfilePage (props) {
                         'YYYYMMDD').
                         fromNow()}</h6>
 
-                    {/* icons */}
-                    {/*<Button justIcon link className={classes.margin5}>*/}
-                    {/*  <i className={'fab fa-twitter'}/>*/}
-                    {/*</Button>*/}
-                    {/*<Button justIcon link className={classes.margin5}>*/}
-                    {/*  <i className={'fab fa-instagram'}/>*/}
-                    {/*</Button>*/}
-                    {/*<Button justIcon link className={classes.margin5}>*/}
-                    {/*  <i className={'fab fa-facebook'}/>*/}
-                    {/*</Button>*/}
+                      {/* icons */}
+                      {/*<Button justIcon link className={classes.margin5}>*/}
+                      {/*  <i className={'fab fa-twitter'}/>*/}
+                      {/*</Button>*/}
+                      {/*<Button justIcon link className={classes.margin5}>*/}
+                      {/*  <i className={'fab fa-instagram'}/>*/}
+                      {/*</Button>*/}
+                      {/*<Button justIcon link className={classes.margin5}>*/}
+                      {/*  <i className={'fab fa-facebook'}/>*/}
+                      {/*</Button>*/}
+                    </div>
                   </div>
-                </div>
-              </GridItem>
+                </GridItem>
+              </GridContainer>
             </GridContainer>
 
             <div className={classes.description}>
