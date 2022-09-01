@@ -109,15 +109,15 @@ export default function ProfilePage (props) {
                       <br/>
                       <h5>{user && user.email}</h5>
 
-                    {/* user details */}
-                    <h6>Role: {user && user.role.join(', ')}</h6>
-                    <h6>Enrolled: {courses && courses.length + ' '}
-                      {user && user.courses.length !== 1
-                        ? 'Courses'
-                        : 'Course'}</h6>
-                    <h6>Member Since: {Moment(user && user.createdAt,
-                      'YYYYMMDD').
-                      fromNow()}</h6>
+                      {/* user details */}
+                      <h6>Role: {user && user.role.join(', ')}</h6>
+                      <h6>Enrolled: {courses && courses.length + ' '}
+                        {user && user.courses.length !== 1
+                          ? 'Courses'
+                          : 'Course'}</h6>
+                      <h6>Member Since: {Moment(user && user.createdAt,
+                        'YYYYMMDD').
+                        fromNow()}</h6>
 
                     {/* icons */}
                     {/*<Button justIcon link className={classes.margin5}>*/}
