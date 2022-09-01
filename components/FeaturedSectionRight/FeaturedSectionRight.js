@@ -41,9 +41,7 @@ export default function FeaturedSectionRight ({
 
         <GridItem xs={12} sm={12} md={8}>
           <h2 className={classes.title}>{title}</h2>
-          <h5 className={classes.description}>
-            {description}
-          </h5>
+          <h5 className={classes.description}>{description}</h5>
         </GridItem>
       </GridContainer>
     </div>
