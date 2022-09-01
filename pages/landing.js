@@ -26,7 +26,7 @@ import { PageHead } from '../components/PageHead/PageHead'
 import axios from 'axios'
 import FeaturedSectionRight
   from '../components/FeaturedSectionRight/FeaturedSectionRight'
-import { Footer } from 'antd/es/layout/layout'
+import Footer from '../components/Footer/Footer'
 
 const dashboardRoutes = []
 
