@@ -38,6 +38,7 @@ const StudentUpdateForm = () => {
   useEffect(() => {
     if (user === null) router.push('/register')
   })
+  const classes = useStyles()
 
   const handleSubmit = async (e) => {
     // do not reload the page
