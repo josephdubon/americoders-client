@@ -30,9 +30,11 @@ const StudentRegisterForm = () => {
   const [loading, setLoading] = useState(false)
 
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden')
+
   setTimeout(function () {
     setCardAnimation('')
   }, 700)
+
   const classes = useStyles()
 
   // global state
