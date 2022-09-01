@@ -32,20 +32,21 @@ export default function MailingListSection () {
               Join Our Mailing List
             </h2>
 
-          {/* subtitle */}
-          <h3 className={classes.subtitle}>
-            Get a discount on our next course!
-          </h3>
+            {/* subtitle */}
+            <h3 className={classes.subtitle}>
+              Get a discount on our next course!
+            </h3>
 
-          {/* description */}
-          <h4 className={classes.description}>
-            Stay up to date with the news and latest updates from Americoders.
-          </h4>
-          <MailingListForm/>
-          <br/>
-          <br/>
-          <br/>
-        </GridItem>
+            {/* description */}
+            <h4 className={classes.description}>
+              Stay up to date with the news and latest updates from Americoders.
+            </h4>
+            <MailingListForm/>
+            <br/>
+            <br/>
+            <br/>
+          </GridItem>
+        </GridContainer>
       </GridContainer>
     </div>
   )
