@@ -1,111 +1,199 @@
-import {useContext, useEffect, useState} from 'react'
-import {Context} from '../../context'
-import {useRouter} from 'next/router'
+import { useContext, useEffect, useState } from 'react'
+import { Context } from '../../context'
+import { useRouter } from 'next/router'
 import axios from 'axios'
-import {toast} from 'react-toastify'
-import {SyncOutlined} from '@ant-design/icons'
+import CardHeader from '../Card/CardHeader'
+import CardBody from '../Card/CardBody'
+import CustomInput from '../CustomInput/CustomInput'
+import InputAdornment from '@material-ui/core/InputAdornment'
+import {
+  AccountBox,
+  AlternateEmail,
+  EmojiPeople,
+  Person,
+} from '@material-ui/icons'
+import CardFooter from '../Card/CardFooter'
+import Button from '../CustomButtons/Button'
+import { makeStyles } from '@material-ui/core/styles'
+import styles from '../../styles/jss/americoders/pages/loginPage'
+import Link from 'next/link'
+
+const useStyles = makeStyles(styles)
 
 const StudentUpdateForm = () => {
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [loading, setLoading] = useState(false)
+  // global state
+  const {
+    state: { user },
+  } = useContext(Context)
 
-    // global state
-    const {
-        state: {user},
-    } = useContext(Context)
+  const [firstName, setFirstName] = useState(user && user.firstName)
+  const [lastName, setLastName] = useState(user && user.lastName)
+  const [bio, setBio] = useState(user && user.bio)
+  const [email, setEmail] = useState(user && user.email)
+  const [loading, setLoading] = useState(false)
 
-    // router
-    const router = useRouter()
+  const { state, dispatch } = useContext(Context)
 
-    // condition redirect for logged-in user
-    useEffect(() => {
-        if (user === null) router.push('/register')
+  // router
+  const router = useRouter()
+
+  // condition redirect for logged-in user
+  useEffect(() => {
+    if (user === null) router.push('/login')
+  })
+  const classes = useStyles()
+
+  const logout = async () => {
+    dispatch({
+      type: 'LOGOUT',
     })
+  }
 
-    const handleSubmit = async (e) => {
-        // do not reload the page
-        e.preventDefault()
+  const handleSubmit = async (e) => {
+    // do not reload the page
+    e.preventDefault()
 
-        // send data to backend
-        try {
-            // activate load spinner
-            setLoading(true)
+    // send data to backend
+    try {
+      // activate load spinner
+      setLoading(true)
 
-            // update user data in db
-            const {data} = await axios.post(`/api/update-user`, {
-                name, email
-            })
+      // update user data in db
+      const { data } = await axios.post(`/api/update-user`, {
+        firstName, lastName, bio, email,
+      })
 
-            // update user state
-            user.name = name
+      // update user state
+      user.firstName = firstName
+      user.lastName = lastName
+      user.bio = bio
 
-            toast.success('User update successful.', {
-                position: 'top-center',
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            })
+      // deactivate load spinner
+      setLoading(false)
 
-            // deactivate load spinner
-            setLoading(false)
+      await logout()
+    } catch (err) {
+      // deactivate load spinner
+      setLoading(false)
 
-            // clear fields and redirect home
-            setName('')
-            setEmail('')
-            await router.push('/login')
-        } catch (err) {
-            // deactivate load spinner
-            setLoading(false)
-
-            toast.error(err.response.data, {
-                position: 'top-center',
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-            })
-        }
     }
+  }
 
-    return (<>
-        <form onSubmit={handleSubmit}>
-            <p className='form-text'>Update Name</p>
-            <input
-                type='text'
-                className='form-control mb-4 p-4'
-                defaultValue={name}
-                onChange={e => setName(e.target.value)}
-                placeholder={user && user.name}
-                // required
-            />
+  return (<>
+      <form
+        className={classes.form}
+        onSubmit={handleSubmit}>
+        <CardHeader color="primary" className={classes.cardHeader}>
+          <h4>Update User Details</h4>
+        </CardHeader>
 
-            <p className='form-text'>Confirm Email</p>
-            <input
-                type='text'
-                className='form-control mb-4 p-4'
-                defaultValue={email}
-                onChange={e => setEmail(e.target.value)}
-                placeholder={user && user.email}
-                // required
-            />
+        <p className={classes.divider}>
+          Confirm your email and click submit to save your changes.
+          <br/>
+          <strong>
+            🚨 You will be redirected to a login page after saving.
+          </strong>
+          <br/>
+          <small>
+            Change your mind? Click <Link href={'/user'}><a>here</a></Link> to
+            go back to your profile.
+          </small>
+        </p>
 
-            <div className='d-grid gap-2'>
-                <button
-                    type='submit'
-                    className='btn btn-primary'
-                    disabled={!name || !email || loading}
-                >
-                    {loading ? <SyncOutlined spin/> : 'Submit'}
-                </button>
-            </div>
-        </form>
-    </>)
+        <CardBody>
+          {/* first name */}
+          <CustomInput
+            labelText="First Name"
+            id="firstName"
+            formControlProps={{
+              fullWidth: true,
+            }}
+            inputProps={{
+              type: 'firstName',
+              value: firstName,
+              required: true,
+              onChange: e => setFirstName(e.target.value),
+              endAdornment: (
+                <InputAdornment position="end">
+                  <Person className={classes.inputIconsColor}/>
+                </InputAdornment>
+              ),
+            }}
+          />
+
+          {/* last name */}
+          <CustomInput
+            labelText="Last Name"
+            id="lastName"
+            formControlProps={{
+              fullWidth: true,
+            }}
+            inputProps={{
+              type: 'lastName',
+
+              value: lastName,
+              onChange: e => setLastName(e.target.value),
+              endAdornment: (
+                <InputAdornment position="end">
+                  <AccountBox className={classes.inputIconsColor}/>
+                </InputAdornment>
+              ),
+            }}
+          />
+
+          {/* short bio */}
+          <CustomInput
+            labelText="Short Bio"
+            id="bio"
+            formControlProps={{
+              fullWidth: true,
+            }}
+            inputProps={{
+              type: 'bio',
+              value: bio,
+              onChange: e => setBio(e.target.value),
+              endAdornment: (
+                <InputAdornment position="end">
+                  <EmojiPeople className={classes.inputIconsColor}/>
+                </InputAdornment>
+              ),
+            }}
+          />
+
+          {/* email */}
+          <CustomInput
+            labelText="Confirm Email"
+            id="email"
+            formControlProps={{
+              fullWidth: true,
+            }}
+            inputProps={{
+              type: 'email',
+              // value: email,
+              required: true,
+              onChange: e => setEmail(e.target.value),
+              endAdornment: (
+                <InputAdornment position="end">
+                  <AlternateEmail className={classes.inputIconsColor}/>
+                </InputAdornment>
+              ),
+            }}
+          />
+
+        </CardBody>
+        <CardFooter className={classes.cardFooter}>
+          <Button
+            type="submit"
+            color="danger"
+            size="lg"
+            disabled={!email || loading}
+          >
+            Save Changes
+          </Button>
+        </CardFooter>
+      </form>
+    </>
+  )
 }
 
 export default StudentUpdateForm

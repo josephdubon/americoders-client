@@ -1,5 +1,11 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+}
+
 module.exports = {
-    images: {
-        domains: ['americodersbucket.s3.us-west-2.amazonaws.com']
-    }
+  nextConfig,
+  images: {
+    domains: ['americodersbucket.s3.us-west-2.amazonaws.com'],
+  },
 }

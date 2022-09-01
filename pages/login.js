@@ -1,59 +1,67 @@
-import Link from 'next/link'
-import {Image, Layout} from 'antd'
+import React from 'react'
+// @material-ui/core components
+import { makeStyles } from '@material-ui/core/styles'
+// @material-ui/icons
+// core components
+import Header from '../components/Header/Header.js'
+import HeaderLinks from '../components/Header/HeaderLinks.js'
+import Footer from '../components/Footer/Footer.js'
+import GridContainer from '../components/Grid/GridContainer.js'
+import GridItem from '../components/Grid/GridItem.js'
+import Card from '../components/Card/Card.js'
+
+import styles from '../styles/jss/americoders/pages/loginPage.js'
 import LoginForm from '../components/forms/LoginForm'
+import { PageHead } from '../components/PageHead/PageHead'
 
-const {Content} = Layout
+const useStyles = makeStyles(styles)
 
-const Login = () => {
-
-    return (<>
-        {/* hero section */}
-        <Content className='bg-light'>
-            <div className='container col-xxl-8 px-4 py-5'>
-                <div className='row flex-lg-row-reverse align-items-center justify-content-center g-5 py-5'>
-                    <div className='col-10 col-sm-8 col-lg-6'>
-                        <Image
-                            src='/images/branding/misc/americoders-student-female-laptop-fun.jpg'
-                            alt='Americoders'
-                            loading='lazy'
-                            preview={false}
-                        />
-                        <p className=' text-muted mt-2'>
-                            Thank you for your patience as we build out our system. We are currently in development of
-                            our courses/workshops. Please keep checking back for new content!
-                        </p>
-                    </div>
-                    <div className='col-lg-6'>
-                        <h1 className='display-5 fw-bold lh-1 mb-3'>Login</h1>
-                        <p className='lead text-muted'>
-                            Welcome back, <strong className='text-primary fw-bold'>Americoder</strong>!
-                        </p>
-                        <p className=' text-muted mt-2'>
-                            Thanks for visiting again! Always remember to reach out if you have any questions or
-                            comments.
-                        </p>
-
-                        {/* Login Form */}
-                        <div className='col-md-12 offset-md-12 pb-5'>
-
-                            {/* login form */}
-                            <LoginForm/>
-                            <br/>
-
-                            {/*  register */}
-                            <p className='form-text text-center p3'>
-                                Want to sign-up? <Link href={'/register'}><a>Register</a></Link>
-                                <br/>
-                                {/* reset password */}
-                                <Link href={'/forgot-password'}><a className='text-danger'>Forgot password?</a></Link>
-                            </p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </Content>
-    </>)
+export default function LoginPage (props) {
+  const [cardAnimaton, setCardAnimation] = React.useState('cardHidden')
+  setTimeout(function () {
+    setCardAnimation('')
+  }, 700)
+  const classes = useStyles()
+  const { ...rest } = props
+  return (
+    <div>
+      <PageHead title={'Login, Embrace the Knowledge'}/>
+      <Header
+        absolute
+        color="transparent"
+        brand="AMERICODERS"
+        rightLinks={<HeaderLinks/>}
+        {...rest}
+      />
+      <div
+        className={classes.pageHeader}
+        style={{
+          backgroundImage: 'url(\'/images/original/americoders-mindful-meditation-teen.jpg\')',
+          backgroundSize: 'cover',
+          backgroundPosition: 'top center',
+        }}
+      >
+        <div className={classes.container}>
+          <GridContainer
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <GridContainer direction="row"
+                           justifyContent="center"
+                           alignItems="center"
+            >
+              <GridItem xs={10} sm={10} md={12}>
+                <Card className={classes[cardAnimaton]}>
+                  {/* login form */}
+                  <LoginForm/>
+                </Card>
+              </GridItem>
+            </GridContainer>
+          </GridContainer>
+        </div>
+        <Footer whiteFont/>
+      </div>
+    </div>
+  )
 }
-
-export default Login

@@ -1,179 +1,290 @@
-import {useContext, useEffect, useState} from 'react'
-import {Context} from '../../context'
-import UserRoute from '../../components/routes/UserRoute'
+import React, { useContext, useEffect, useState } from 'react'
+// nodejs library that concatenates classes
+import classNames from 'classnames'
+// @material-ui/core components
+import { makeStyles } from '@material-ui/core/styles'
+// @material-ui/icons
+// core components
+import Header from '../../components/Header/Header.js'
+import Footer from '../../components/Footer/Footer.js'
+import GridContainer from '../../components/Grid/GridContainer.js'
+import GridItem from '../../components/Grid/GridItem.js'
+import HeaderLinks from '../../components/Header/HeaderLinks.js'
+import NavPills from '../../components/NavPills/NavPills.js'
+import Parallax from '../../components/Parallax/Parallax.js'
+
+import { Context } from '../../context'
+
+import styles from '../../styles/jss/americoders/pages/profilePage.js'
 import axios from 'axios'
-import {PlayCircleOutlined, SyncOutlined} from '@ant-design/icons'
-import {Avatar, Divider, Image, Layout, Tooltip} from 'antd'
+import { School } from '@material-ui/icons'
+import UserRoute from '../../components/routes/UserRoute'
+import { PageHead } from '../../components/PageHead/PageHead'
 import Link from 'next/link'
 import Moment from 'moment'
-import {PageHead} from '../../components/head/PageHead'
 
+const useStyles = makeStyles(styles)
 
-const {Content} = Layout
+export default function ProfilePage (props) {
+  // state
+  const [courses, setCourses] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [drawerStatus, setDrawerStatus] = useState(false)
 
+  // get user
+  const {
+    state: { user },
+  } = useContext(Context)
 
-const UserIndex = () => {
-    // state
-    const [courses, setCourses] = useState([])
-    const [loading, setLoading] = useState(false)
+  useEffect(() => {
+    loadCourses()
+  }, [])
 
-    // get user
-    const {
-        state: {user},
-    } = useContext(Context)
+  const loadCourses = async () => {
+    // update state
+    setLoading(true)
 
-    useEffect(() => {
-        loadCourses()
-    }, [])
+    // get data
+    const { data } = await axios.get('/api/user-courses')
 
-    const loadCourses = async () => {
-        // update state
-        setLoading(true)
+    // update state
+    setCourses(data)
+    setLoading(false)
+  }
 
-        // get data
-        const {data} = await axios.get('/api/user-courses')
+  const classes = useStyles()
+  const { ...rest } = props
+  const imageClasses = classNames(
+    classes.imgRaised,
+    classes.imgFluid,
+  )
+  const navImageClasses = classNames(classes.imgRounded, classes.imgGallery)
 
-        // update state
-        setCourses(data)
-        setLoading(false)
-    }
-
-    // style
-    const myStyle = {
-        marginTop: '-15px',
-        fontSize: '10px',
-    }
-
-
-    return (<UserRoute className='container'>
-        {loading && (
-            <SyncOutlined
-                spin
-                className='d-flex justify-content-between display-1 text-danger p-5'
-            />
-        )}
-
-        <PageHead title={user && user.name}/>
-
-        {/* hero section */}
-        <Content className='bg-light'>
-            <Divider children='Welcome Back, Americoder!' className='mt-0 pt-3'/>
-            <div className='container col-xxl-12 px-4 py-5'>
-                <div
-                    className='row align-items-center justify-content-center g-5 row-cols-sm-1 row-cols-md-2 row-cols-lg-3'>
+  return (
+    <UserRoute>
+      <PageHead title={`Welcome back, ${user && user.firstName} ${user &&
+      user.lastName}!`}/>
+      <Header
+        color="transparent"
+        brand="AMERICODERS"
+        rightLinks={<HeaderLinks/>}
+        fixed
+        changeColorOnScroll={{
+          height: 200,
+          color: 'white',
+        }}
+        {...rest}
+        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      />
+      <Parallax small filter
+                image="/images/americoders-community-diversity.png"/>
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        <div>
+          <div className={classes.container}>
+            <GridContainer
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <GridContainer direction="row"
+                             justifyContent="center"
+                             alignItems="center"
+                             spacing={2}>
+                <GridItem xs={12} sm={12} md={12}>
+                  <div className={classes.profile}>
                     <div>
-                        {user ?
-                            (<>
-                                <h1 className='display-6 fw-bold lh-1 mb-3 '>{user.name}</h1>
-                                <p className='form-text'>
-                                    <Link href={'/update-user/'}><a>Update User</a></Link>
-                                </p>
-                                <Divider/>
-                                <p className='text-muted'><strong>Email:</strong> {user.email}</p>
-                                <p className='text-muted'><strong>Role:</strong> {user.role.join(', ')}</p>
-                                <p className='text-muted'>
-                                    <strong>Enrolled: </strong> {courses.length + ' '}
-                                    {user.courses.length <= 1 ? 'Course' : 'Courses'}
-                                </p>
-                                <p className='text-muted'><strong>Member
-                                    Since:</strong> {Moment(user && user.createdAt, 'YYYYMMDD').fromNow()}</p>
-                            </>)
-                            :
-                            (<>
-                                <p className='display-6 fw-bold lh-1 mb-3'>Welcome back!!</p>
-                            </>)}
+                      <img
+                        src={user && user.picture}
+                        alt="..."
+                        className={imageClasses}
+                        style={{ marginBottom: '25px' }}
+                      />
                     </div>
 
-                    <div>
-                        {user ?
-                            (<>
-                                <Image
-                                    src={user.picture}
-                                    alt='Americoders'
-                                    loading='lazy'
-                                    preview={false}
-                                />
-                                <p className='form-text'>'Knowledge is power. Information is liberating. Education is
-                                    the premise of progress in every society, in every family.' <br/>
-                                    — Kofi Annan</p>
-                            </>) : <Image
-                                src='/images/avatars/avatar.png'
-                                alt='Americoders'
-                                loading='lazy'
-                                preview={false}
-                            />
-                        }
-                    </div>
+                    <div className={classes.name}>
+                      {/* name */}
+                      <h3 className={classes.title}>
+                        {`${user && user.firstName} ${user && user.lastName}`}
+                      </h3>
+                      <br/>
+                      <h5>{user && user.email}</h5>
 
-                    <div>
-                        <p className='text-muted'>Thank you for visiting us again. If you have not completed your
-                            enrolled courses, please do so.
-                        </p>
-                        <p className='text-muted'>Check the <Link href={'/#course-list'}><a>homepage</a></Link> for new
-                            courses.</p>
-                    </div>
+                      {/* user details */}
+                      <h6>Role: {user && user.role.join(', ')}</h6>
+                      <h6>Enrolled: {courses && courses.length + ' '}
+                        {user && user.courses.length !== 1
+                          ? 'Courses'
+                          : 'Course'}</h6>
+                      <h6>Member Since: {Moment(user && user.createdAt,
+                        'YYYYMMDD').
+                        fromNow()}</h6>
 
-                </div>
+                      {/* icons */}
+                      {/*<Button justIcon link className={classes.margin5}>*/}
+                      {/*  <i className={'fab fa-twitter'}/>*/}
+                      {/*</Button>*/}
+                      {/*<Button justIcon link className={classes.margin5}>*/}
+                      {/*  <i className={'fab fa-instagram'}/>*/}
+                      {/*</Button>*/}
+                      {/*<Button justIcon link className={classes.margin5}>*/}
+                      {/*  <i className={'fab fa-facebook'}/>*/}
+                      {/*</Button>*/}
+                    </div>
+                  </div>
+                </GridItem>
+              </GridContainer>
+            </GridContainer>
+
+            <div className={classes.description}>
+              <p>
+                {user && user.bio}
+              </p>
             </div>
-        </Content>
-        {/*{user ? <pre>{JSON.stringify(user, null, 4)}</pre> : ''}*/}
-
-
-        {/* enrolled courses section */}
-        <Content>
-            <div className='container-fluid px-4 py-5' id='enrolled-courses'>
-                <h2 className='text-light pb-2 border-bottom'>My Enrolled Courses</h2>
-                <div className='container col-xxl-12 px-4 py-5'>
-                    {/* first col */}
-                    <div className='feature col'>
-                        {/* list all courses */}
-                        {courses && courses.map(course => (<div key={course._id}>
-                            {/* parent media div */}
-                            <div className='d-flex align-items-center pt-2'>
-                                {/* image media div */}
-                                <div className='flex-shrink-0'>
-                                    {/* image source */}
-                                    <Avatar
-                                        size={80}
-                                        src={course.image ? course.image.Location : '/images/americoders-course.png'}
-                                    />
-                                </div>
-                                {/* media text body */}
-                                <div className='flex-grow-1 ms-3 text-white-50'>
-                                    {/* title / link to course*/}
-                                    <Link
+            <GridContainer
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <GridContainer direction="row"
+                             justifyContent="center"
+                             alignItems="center"
+                             spacing={2}>
+                <GridItem xs={12} sm={12} md={12}
+                          className={classes.navWrapper}>
+                  <NavPills
+                    alignCenter
+                    color="primary"
+                    tabs={[
+                      {
+                        tabButton: 'My Courses',
+                        tabIcon: School,
+                        tabContent: (
+                          <GridContainer
+                            direction="row"
+                            justifyContent="center"
+                            alignItems="center"
+                          >
+                            <GridContainer direction="row"
+                                           justifyContent="center"
+                                           alignItems="center"
+                                           spacing={2}>
+                              {/* list all courses */}
+                              {courses && courses.length > 0
+                                ? courses.map(
+                                  course => (
+                                    <GridItem xs={12} sm={12} md={4}
+                                              key={course._id}
+                                              className={classes.marginBottom}>
+                                      <Link
                                         href={`/user/course/${course.slug}`}
-                                    >
-                                        <a className='mt-2'><h5 className='pt-2 text-white'>{course.name}</h5></a>
-                                    </Link>
-                                    <p>{
-                                        // show number of lessons in course
-                                        course.lessons.length} Lessons</p>
-                                    {
-                                        // show requirements message
-                                        <p style={myStyle} className='text-primary'>
-                                            By {course.instructor.name}
-                                        </p>
-                                    }
-                                </div>
-                                <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3'>
-                                    <Link
-                                        href={`/user/course/${course.slug}`}
-                                    >
+                                      >
                                         <a>
-                                            <Tooltip title='Go to course'>
-                                                <PlayCircleOutlined className='h5 text-primary'/>
-                                            </Tooltip>
+                                          <img
+                                            alt="..."
+                                            src={course.image
+                                              ? course.image.Location
+                                              : '/images/americoders-course.png'}
+                                            className={navImageClasses}
+                                          />
+                                          <h6 className={classes.marginBottom}>
+                                            {course.name}
+                                          </h6>
                                         </a>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>))}
-                    </div>
-                </div>
-            </div>
-        </Content>
-    </UserRoute>)
+                                      </Link>
+                                      <p className={classes.description}>
+                                        {/* show number of lessons in course */}
+                                        {course.lessons.length} Lessons
+                                      </p>
+                                    </GridItem>
+                                  ))
+                                : ('You are not enrolled in any courses ...yet!')}
+                            </GridContainer>
+                          </GridContainer>
+                        ),
+                      },
+                      // {
+                      //   tabButton: 'Work',
+                      //   tabIcon: Palette,
+                      //   tabContent: (
+                      //     <GridContainer justify="center">
+                      //       <GridItem xs={12} sm={12} md={4}>
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/olu-eletu.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/clem-onojeghuo.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/cynthia-del-rio.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //       </GridItem>
+                      //       <GridItem xs={12} sm={12} md={4}>
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/mariya-georgieva.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/clem-onojegaw.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //       </GridItem>
+                      //     </GridContainer>
+                      //   ),
+                      // },
+                      // {
+                      //   tabButton: 'Favorite',
+                      //   tabIcon: Favorite,
+                      //   tabContent: (
+                      //     <GridContainer justify="center">
+                      //       <GridItem xs={12} sm={12} md={4}>
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/mariya-georgieva.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/studio-3.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //       </GridItem>
+                      //       <GridItem xs={12} sm={12} md={4}>
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/clem-onojeghuo.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/olu-eletu.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/studio-1.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //       </GridItem>
+                      //     </GridContainer>
+                      //   ),
+                      // },
+                    ]}
+                  />
+                </GridItem>
+              </GridContainer>
+            </GridContainer>
+          </div>
+        </div>
+      </div>
+      <Footer/>
+    </UserRoute>
+  )
 }
-
-export default UserIndex

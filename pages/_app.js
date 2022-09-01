@@ -1,83 +1,66 @@
-import {useEffect} from 'react'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from 'next/app'
+import Router from 'next/router'
 
-import TopNav from '../components/nav/TopNav'
-import {Provider} from '../context'
-import {Layout} from 'antd'
-import 'react-toastify/dist/ReactToastify.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'antd/dist/antd.css'
-import '../public/css/styles.css'
-import ParticlesEffect from '../components/effects/Particles'
-import 'animate.css'
-import SiteFooter from '../components/footer/SiteFooter'
-import {PageHead} from '../components/head/PageHead'
-import {DevSupport} from "@react-buddy/ide-toolbox";
-import {ComponentPreviews, useInitial} from "../dev";
+import PageChange from '../components/PageChange/PageChange.js'
 
-const {Header, Footer, Content} = Layout
+import '/styles/scss/americoders.scss?v=1.2.0'
+import { PageHead } from '../components/PageHead/PageHead'
+import { Provider } from '../context'
 
+Router.events.on('routeChangeStart', (url) => {
+  console.log(`Loading: ${url}`)
+  document.body.classList.add('body-page-transition')
+  ReactDOM.render(
+    <PageChange path={url}/>,
+    document.getElementById('page-transition'),
+  )
+})
+Router.events.on('routeChangeComplete', () => {
+  ReactDOM.unmountComponentAtNode(document.getElementById('page-transition'))
+  document.body.classList.remove('body-page-transition')
+})
+Router.events.on('routeChangeError', () => {
+  ReactDOM.unmountComponentAtNode(document.getElementById('page-transition'))
+  document.body.classList.remove('body-page-transition')
+})
 
-const {ToastContainer} = require('react-toastify')
+export default class MyApp extends App {
+  static async getInitialProps ({ Component, router, ctx }) {
+    let pageProps = {}
 
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx)
+    }
 
-function MyApp({Component, pageProps}) {
-    // add this for bootstrap js components to render correctly
-    useEffect(() => {
-        import('bootstrap/dist/js/bootstrap')
-    }, [])
+    return { pageProps }
+  }
+
+  render () {
+    const { Component, pageProps } = this.props
 
     return (
-        // wrap app in provider for access to state
+      <>
+        {/* wrap app in provider for access to state */}
         <Provider>
-            {/* page head section*/}
-            <PageHead title={'Americoders 🇺🇸'}/>
-
-            {/* parent layout */}
-            <Layout>
-                {/* notifications */}
-                <ToastContainer
-                    position='top-center'
-                    autoClose={5000}
-                    hideProgressBar={false}
-                    newestOnTop={false}
-                    closeOnClick
-                    rtl={false}
-                    pauseOnFocusLoss
-                    draggable
-                    pauseOnHover
-                />
-
-                {/* bg effect */}
-                <ParticlesEffect/>
-
-                {/* header area / nav area */}
-                <Header>
-                    {/* logo */}
-                    {/*<Link href={'/'}>*/}
-                    {/*    <a>*/}
-                    {/*        <div className='logo'/>*/}
-                    {/*    </a>*/}
-                    {/*</Link>*/}
-                    <TopNav/>
-                </Header>
-
-                {/* main content area */}
-                <Content>
-                    <DevSupport ComponentPreviews={ComponentPreviews}
-                                useInitialHook={useInitial}
-                    >
-                        <Component {...pageProps}/>
-                    </DevSupport>
-                </Content>
-
-                {/* main footer area */}
-                <Footer>
-                    <SiteFooter/>
-                </Footer>
-            </Layout>
-
+          {/* page head section*/}
+          <PageHead title={'Americoders'}/>
+          {/* notifications */}
+          {/*<ToastContainer*/}
+          {/*  position="top-center"*/}
+          {/*  autoClose={5000}*/}
+          {/*  hideProgressBar={false}*/}
+          {/*  newestOnTop={false}*/}
+          {/*  closeOnClick*/}
+          {/*  rtl={false}*/}
+          {/*  pauseOnFocusLoss*/}
+          {/*  draggable*/}
+          {/*  pauseOnHover*/}
+          {/*/>*/}
+          <Component {...pageProps} />
         </Provider>
+      </>
     )
+  }
 }
-
-export default MyApp
