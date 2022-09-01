@@ -2,7 +2,22 @@ import { useContext, useEffect, useState } from 'react'
 import { Context } from '../../context'
 import { useRouter } from 'next/router'
 import axios from 'axios'
-import { SyncOutlined } from '@ant-design/icons'
+import CardHeader from '../Card/CardHeader'
+import CardBody from '../Card/CardBody'
+import CustomInput from '../CustomInput/CustomInput'
+import InputAdornment from '@material-ui/core/InputAdornment'
+import {
+  AccountBox,
+  AlternateEmail,
+  EmojiPeople,
+  Person,
+} from '@material-ui/icons'
+import CardFooter from '../Card/CardFooter'
+import Button from '../CustomButtons/Button'
+import { makeStyles } from '@material-ui/core/styles'
+import styles from '../../styles/jss/americoders/pages/loginPage'
+
+const useStyles = makeStyles(styles)
 
 const StudentUpdateForm = () => {
   // global state
