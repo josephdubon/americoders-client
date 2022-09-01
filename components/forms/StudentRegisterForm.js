@@ -202,14 +202,11 @@ const StudentRegisterForm = () => {
             autoComplete: 'off',
           }}
         />
-
       </CardBody>
-
-
       <CardFooter className={classes.cardFooter}>
         <Button
           type="submit"
-          color="primary"
+          color="danger"
           size="lg"
           disabled={!firstName || !email || !password || loading}
         >

@@ -180,7 +180,7 @@ const LoginForm = () => {
       <CardFooter className={classes.cardFooter}>
         <Button
           type="submit"
-          color="primary"
+          color="danger"
           size="lg"
           disabled={!email || !password || loading}
         >
