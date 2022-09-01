@@ -17,9 +17,17 @@ export default function FeaturedSectionRight ({
   const classes = useStyles()
 
   return (<>
-    <div className={classes.section}>
-      <GridContainer justify="center">
-        <GridItem xs={12} sm={12} md={4} class>
+    <GridContainer
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <GridContainer direction="row"
+                     justifyContent="center"
+                     alignItems="center"
+                     spacing={2}>
+
+        <GridItem xs={12} sm={12} md={4}>
           <div className={classes.imageBox}>
             <Image
               src={imageUrl}
