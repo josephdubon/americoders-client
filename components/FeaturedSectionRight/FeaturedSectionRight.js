@@ -44,6 +44,7 @@ export default function FeaturedSectionRight ({
           <h5 className={classes.description}>{description}</h5>
         </GridItem>
       </GridContainer>
-    </div>
+
+    </GridContainer>
   </>)
 }
