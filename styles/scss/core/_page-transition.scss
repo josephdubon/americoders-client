@@ -1,5 +1,6 @@
-.body-page-transition{
+.body-page-transition {
   overflow: hidden;
+
   #page-transition {
     position: fixed;
     z-index: 9999;
@@ -10,11 +11,12 @@
     align-items: center;
   }
 
-  #page-transition > div{
-    &:after{
+  #page-transition > div {
+    &:after {
       content: "";
-      background-image: url("/images/original/americoders-kids-laptop-fun.jpg");
+      background-image: url("/images/original/reno_downtown.png");
       background-size: cover;
+      background-position: center bottom;
       position: fixed;
       z-index: 9998;
       width: 100%;
@@ -22,6 +24,7 @@
       top: 0;
       left: 0;
     }
+
     &:before {
       top: 0;
       left: 0;
