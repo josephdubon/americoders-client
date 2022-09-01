@@ -17,12 +17,20 @@ export default function MailingListSection () {
   const classes = useStyles()
   return (
     <div>
-      <GridContainer justify="center">
-        <GridItem cs={12} sm={12} md={8}>
-          {/* title */}
-          <h2 className={classes.title}>
-            Join Our Mailing List
-          </h2>
+      <GridContainer
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <GridContainer direction="row"
+                       justifyContent="center"
+                       alignItems="center"
+        >
+          <GridItem cs={12} sm={12} md={8}>
+            {/* title */}
+            <h2 className={classes.title}>
+              Join Our Mailing List
+            </h2>
 
           {/* subtitle */}
           <h3 className={classes.subtitle}>
