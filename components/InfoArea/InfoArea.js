@@ -6,7 +6,7 @@ import classNames from 'classnames'
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles'
 
-import styles from '/styles/jss/americoders/components/infoStyle.js'
+import styles from '../../styles/jss/americoders/components/infoStyle.js'
 
 const useStyles = makeStyles(styles)
 
