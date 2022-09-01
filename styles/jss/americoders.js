@@ -21,7 +21,7 @@ const hexToRGBAlpha = function (hexColor, alpha) {
   return `rgba(${rgb.r},${rgb.g},${rgb.b},${alpha})`
 }
 
-const drawerWidth = 320
+const drawerWidth = 420
 
 const transition = {
   transition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
