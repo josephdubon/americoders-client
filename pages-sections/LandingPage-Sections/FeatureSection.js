@@ -134,7 +134,8 @@ export default function FeatureSection () {
         <GridItem xs={12} sm={12} md={4}>
           <InfoArea
             title="Internet/Web 101"
-            description={internetWeb101Description()}
+            description="Join us as we explore the internet and learn the
+            basics of the internet/web."
             icon={SignalWifi4Bar}
             iconColor="info"
             vertical
