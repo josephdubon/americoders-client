@@ -74,6 +74,7 @@ export default function ProfilePage (props) {
           color: 'white',
         }}
         {...rest}
+        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
       />
       <Parallax small filter
                 image="/images/americoders-community-diversity.png"/>
