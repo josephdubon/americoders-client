@@ -99,60 +99,6 @@ export default function FeatureSection () {
     </>)
   }
 
-  function computers101Description () {
-    return (<>
-      <span className={classes.description}>
-        Desktop? Laptop? Tablet? Smartphone? Apple? Windows? Linux?! Uhh..?!
-        <br/>
-        <br/>
-        Learn the fundamentals of computers, our devices. Let figure out how and
-        when to use them to get the most benefit.
-      </span>
-      <br/>
-      <br/>
-      <span className={classes.quote}>
-        So many cool new gadgets, so little time!
-      </span>
-    </>)
-  }
-
-  function internetWeb101Description () {
-    return (<>
-      <span className={classes.description}>
-        Do you know the difference between a web browser and a web server? What
-        about the internet and the web?
-        <br/>
-        <br/>
-        Join us as we explore the internet and
-        learn the basics of the internet/web.
-      </span>
-      <br/>
-      <br/>
-      <span className={classes.quote}>
-        "What in the world-wide-web is a blockchain?! ...and do I need one?"
-      </span>
-    </>)
-  }
-
-  function digitalLifeBalance101Description () {
-    return (<>
-      <span className={classes.description}>
-        How much is too much? Is my kid spending too much time playing video
-        games? ...Am I?
-        <br/>
-        <br/>
-        It's difficult to find the correct balance between on/off screen
-        time. Let's explore and find tailor made solutions to our
-        own needs.
-      </span>
-      <br/>
-      <br/>
-      <span className={classes.quote}>
-        "...just 1 more hour of video games and I'm done!"
-      </span>
-    </>)
-  }
-
   return (<>
     {/* product area 1 */}
     <FeaturedSectionLeft title={'PROJECT BASED LEARNING'}
