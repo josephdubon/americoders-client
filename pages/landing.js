@@ -81,7 +81,7 @@ export default function LandingPage (props) {
 
       {/* hero section */}
       <Parallax filter responsive
-                image="/img/stock/branding/bg/americoders-classroom-studying-problem-solving.jpg">
+                image="/images/original/reno_downtown.png">
         <div className={classes.container}>
           <GridContainer justify={'center'}>
             <GridItem xs={12} sm={12} md={8}>
