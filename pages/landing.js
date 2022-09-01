@@ -63,7 +63,7 @@ export default function LandingPage (props) {
   }
 
   return (
-    <div>
+    <>
       {/* header section / nav */}
       <PageHead title={'Welcome! We are a tech learning platform.'}/>
       <Header
@@ -133,7 +133,7 @@ export default function LandingPage (props) {
         </div>
       </div>
       <Footer/>
-    </div>
+    </>
   )
 }
 
