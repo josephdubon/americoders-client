@@ -92,13 +92,13 @@ export default function LandingPage (props) {
                            justifyContent="center"
                            alignItems="center"
             >
-              <GridItem xs={10} sm={12} md={8}>
-                <h1 className={classes.title}>Welcome to
-                  <br/>Americoders</h1>
+              <GridItem xs={12} sm={12} md={8}>
+                <h2 className={classes.title}>Welcome to
+                  <br/>Americoders</h2>
                 <br/>
-                <h1 className={classes.title}>
-                  ✩✩✩✩✩✩✩✩✩
-                </h1>
+                <h2 className={classes.title}>
+                  ✩✩✩✩✩
+                </h2>
                 <h4 className={classes.subTitle}>
                   We're a community enrichment program founded in the heart of
                   the
