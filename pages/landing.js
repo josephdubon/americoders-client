@@ -92,7 +92,7 @@ export default function LandingPage (props) {
                            justifyContent="center"
                            alignItems="center"
             >
-              <GridItem xs={12} sm={12} md={8}>
+              <GridItem xs={10} sm={10} md={8}>
                 <h2 className={classes.title}>Welcome to
                   <br/>Americoders</h2>
                 <br/>
