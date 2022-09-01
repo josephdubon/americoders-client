@@ -21,7 +21,7 @@ const hexToRGBAlpha = function (hexColor, alpha) {
   return `rgba(${rgb.r},${rgb.g},${rgb.b},${alpha})`
 }
 
-const drawerWidth = 260
+const drawerWidth = 320
 
 const transition = {
   transition: 'all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)',
@@ -82,7 +82,7 @@ const dangerColor = '#CC0000'
 const successColor = '#6699FF'
 const infoColor = '#CCFFCC'
 const roseColor = '#e91e63'
-const grayColor = '#CCCCCC'
+const grayColor = '#4D4D4D'
 const whiteColor = '#F2F2F2'
 
 const primaryBoxShadow = {
