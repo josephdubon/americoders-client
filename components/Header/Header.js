@@ -62,6 +62,7 @@ export default function Header (props) {
       <Button className={classes.title}>{brand}</Button>
     </Link>
   )
+
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
