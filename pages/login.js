@@ -42,13 +42,22 @@ export default function LoginPage (props) {
         }}
       >
         <div className={classes.container}>
-          <GridContainer justify="center">
-            <GridItem xs={12} sm={6} md={4}>
-              <Card className={classes[cardAnimaton]}>
-                {/* login form */}
-                <LoginForm/>
-              </Card>
-            </GridItem>
+          <GridContainer
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <GridContainer direction="row"
+                           justifyContent="center"
+                           alignItems="center"
+            >
+              <GridItem xs={12} sm={6} md={4}>
+                <Card className={classes[cardAnimaton]}>
+                  {/* login form */}
+                  <LoginForm/>
+                </Card>
+              </GridItem>
+            </GridContainer>
           </GridContainer>
         </div>
         <Footer whiteFont/>
