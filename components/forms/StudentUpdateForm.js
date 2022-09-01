@@ -16,6 +16,7 @@ import CardFooter from '../Card/CardFooter'
 import Button from '../CustomButtons/Button'
 import { makeStyles } from '@material-ui/core/styles'
 import styles from '../../styles/jss/americoders/pages/loginPage'
+import Link from 'next/link'
 
 const useStyles = makeStyles(styles)
 
@@ -31,14 +32,22 @@ const StudentUpdateForm = () => {
   const [email, setEmail] = useState(user && user.email)
   const [loading, setLoading] = useState(false)
 
+  const { state, dispatch } = useContext(Context)
+
   // router
   const router = useRouter()
 
   // condition redirect for logged-in user
   useEffect(() => {
-    if (user === null) router.push('/register')
+    if (user === null) router.push('/login')
   })
   const classes = useStyles()
+
+  const logout = async () => {
+    dispatch({
+      type: 'LOGOUT',
+    })
+  }
 
   const handleSubmit = async (e) => {
     // do not reload the page
@@ -59,33 +68,14 @@ const StudentUpdateForm = () => {
       user.lastName = lastName
       user.bio = bio
 
-      // toast.success('User update successful.', {
-      //     position: 'top-center',
-      //     autoClose: 5000,
-      //     hideProgressBar: false,
-      //     closeOnClick: true,
-      //     pauseOnHover: true,
-      //     draggable: true,
-      //     progress: undefined,
-      // })
-
       // deactivate load spinner
       setLoading(false)
 
-      await router.push('/login')
+      await logout()
     } catch (err) {
       // deactivate load spinner
       setLoading(false)
 
-      // toast.error(err.response.data, {
-      //     position: 'top-center',
-      //     autoClose: 5000,
-      //     hideProgressBar: false,
-      //     closeOnClick: true,
-      //     pauseOnHover: true,
-      //     draggable: true,
-      //     progress: undefined,
-      // })
     }
   }
 
@@ -131,45 +121,79 @@ const StudentUpdateForm = () => {
             }}
           />
 
-      <p className="form-text">Last Name</p>
-      <input
-        type="text"
-        className="form-control mb-4 p-4"
-        onChange={e => setLastName(e.target.value)}
-        placeholder={user && user.lastName}
-        required
-      />
+          {/* last name */}
+          <CustomInput
+            labelText="Last Name"
+            id="lastName"
+            formControlProps={{
+              fullWidth: true,
+            }}
+            inputProps={{
+              type: 'lastName',
 
-      <p className="form-text">Bio</p>
-      <input
-        type="text"
-        className="form-control mb-4 p-4"
-        onChange={e => setBio(e.target.value)}
-        placeholder={user && user.bio}
-        required
-      />
+              value: lastName,
+              onChange: e => setLastName(e.target.value),
+              endAdornment: (
+                <InputAdornment position="end">
+                  <AccountBox className={classes.inputIconsColor}/>
+                </InputAdornment>
+              ),
+            }}
+          />
 
-      <p className="form-text">Confirm Email</p>
-      <input
-        type="text"
-        className="form-control mb-4 p-4"
-        // defaultValue={user && user.email}
-        onChange={e => setEmail(e.target.value)}
-        placeholder={user && user.email}
-        required
-      />
+          {/* short bio */}
+          <CustomInput
+            labelText="Short Bio"
+            id="bio"
+            formControlProps={{
+              fullWidth: true,
+            }}
+            inputProps={{
+              type: 'bio',
+              value: bio,
+              onChange: e => setBio(e.target.value),
+              endAdornment: (
+                <InputAdornment position="end">
+                  <EmojiPeople className={classes.inputIconsColor}/>
+                </InputAdornment>
+              ),
+            }}
+          />
 
-      <div className="d-grid gap-2">
-        <button
-          type="submit"
-          className="btn btn-primary"
-          disabled={!email || loading}
-        >
-          {loading ? <SyncOutlined spin/> : 'Submit'}
-        </button>
-      </div>
-    </form>
-  </>)
+          {/* email */}
+          <CustomInput
+            labelText="Confirm Email"
+            id="email"
+            formControlProps={{
+              fullWidth: true,
+            }}
+            inputProps={{
+              type: 'email',
+              // value: email,
+              required: true,
+              onChange: e => setEmail(e.target.value),
+              endAdornment: (
+                <InputAdornment position="end">
+                  <AlternateEmail className={classes.inputIconsColor}/>
+                </InputAdornment>
+              ),
+            }}
+          />
+
+        </CardBody>
+        <CardFooter className={classes.cardFooter}>
+          <Button
+            type="submit"
+            color="danger"
+            size="lg"
+            disabled={!email || loading}
+          >
+            Save Changes
+          </Button>
+        </CardFooter>
+      </form>
+    </>
+  )
 }
 
 export default StudentUpdateForm
