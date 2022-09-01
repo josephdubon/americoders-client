@@ -103,19 +103,19 @@ export default function FeatureSection () {
     {/* product area 1 */}
     <FeaturedSectionLeft title={'PROJECT BASED LEARNING'}
                          description={featuredContentLeft()}
-                         imageUrl={'/images/thumbnail/americoders-robotics-project-student.jpg'}
+                         imageUrl={'/images/original/americoders-robotics-project-student.jpg'}
                          imgAlt={'americoders-robotics-project-student'}/>
 
     {/* product area 2 */}
     <FeaturedSectionRight title={'MINDFULNESS AWARENESS'}
                           description={featuredContentRight()}
-                          imageUrl={'/images/thumbnail/americoders-mom-daughter-team-meditation.jpg'}
+                          imageUrl={'/images/original/americoders-mom-daughter-team-meditation.jpg'}
                           imgAlt={'americoders-robotics-project-student'}/>
 
     {/* product area 3 */}
     <FeaturedSectionLeft title={'COMMUNITY BUILDING'}
                          description={featuredContentLeft_2()}
-                         imageUrl={'/images/thumbnail/americoders-kids-community-friends.jpg'}
+                         imageUrl={'/images/original/americoders-kids-community-friends.jpg'}
                          imgAlt={'americoders-robotics-project-student'}/>
 
     {/**/}
@@ -124,7 +124,8 @@ export default function FeatureSection () {
         <GridItem xs={12} sm={12} md={4}>
           <InfoArea
             title="Computers 101"
-            description={computers101Description()}
+            description="Learn the fundamentals of our daily devices. Let's
+            figure out how and when to use them to get the most benefit."
             icon={Phonelink}
             iconColor="danger"
             vertical
@@ -142,7 +143,9 @@ export default function FeatureSection () {
         <GridItem xs={12} sm={12} md={4}>
           <InfoArea
             title="Digital/Life Balance 101"
-            description={digitalLifeBalance101Description()}
+            description="It's difficult to find the correct balance between
+            on/off screen time. Let's explore and find tailor made solutions to
+            our own needs."
             icon={NaturePeople}
             iconColor="primary"
             vertical
