@@ -81,17 +81,25 @@ export default function ProfilePage (props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
           <div className={classes.container}>
-            <GridContainer justify="center">
-              <GridItem xs={12} sm={12} md={6}>
-                <div className={classes.profile}>
-                  <div>
-                    <img
-                      src={user && user.picture}
-                      alt="..."
-                      className={imageClasses}
-                      style={{ marginBottom: '25px' }}
-                    />
-                  </div>
+            <GridContainer
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <GridContainer direction="row"
+                             justifyContent="center"
+                             alignItems="center"
+                             spacing={2}>
+                <GridItem xs={12} sm={12} md={12}>
+                  <div className={classes.profile}>
+                    <div>
+                      <img
+                        src={user && user.picture}
+                        alt="..."
+                        className={imageClasses}
+                        style={{ marginBottom: '25px' }}
+                      />
+                    </div>
 
                   <div className={classes.name}>
                     {/* name */}
