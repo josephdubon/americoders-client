@@ -140,128 +140,146 @@ export default function ProfilePage (props) {
                 {user && user.bio}
               </p>
             </div>
-            <GridContainer justify="center">
-              <GridItem xs={12} sm={12} md={8} className={classes.navWrapper}>
-                <NavPills
-                  alignCenter
-                  color="primary"
-                  tabs={[
-                    {
-                      tabButton: 'My Courses',
-                      tabIcon: School,
-                      tabContent: (
-                        <GridContainer justify="center">
-
-                          {/* list all courses */}
-                          {courses && courses.length > 0
-                            ? courses.map(
-                              course => (
-                                <GridItem xs={12} sm={12} md={4}
-                                          key={course._id}
-                                          className={classes.marginBottom}>
-                                  <Link
-                                    href={`/user/course/${course.slug}`}
-                                  >
-                                    <a>
-                                      <img
-                                        alt="..."
-                                        src={course.image
-                                          ? course.image.Location
-                                          : '/images/americoders-course.png'}
-                                        className={navImageClasses}
-                                      />
-                                      <h6 className={classes.marginBottom}>
-                                        {course.name}
-                                      </h6>
-                                    </a>
-                                  </Link>
-                                  <p className={classes.description}>
-                                    {/* show number of lessons in course */}
-                                    {course.lessons.length} Lessons
-                                  </p>
-                                </GridItem>
-                              ))
-                            : ('You are not enrolled in any courses ...yet!')}
-                        </GridContainer>
-                      ),
-                    },
-                    // {
-                    //   tabButton: 'Work',
-                    //   tabIcon: Palette,
-                    //   tabContent: (
-                    //     <GridContainer justify="center">
-                    //       <GridItem xs={12} sm={12} md={4}>
-                    //         <img
-                    //           alt="..."
-                    //           src="/img/examples/olu-eletu.jpg"
-                    //           className={navImageClasses}
-                    //         />
-                    //         <img
-                    //           alt="..."
-                    //           src="/img/examples/clem-onojeghuo.jpg"
-                    //           className={navImageClasses}
-                    //         />
-                    //         <img
-                    //           alt="..."
-                    //           src="/img/examples/cynthia-del-rio.jpg"
-                    //           className={navImageClasses}
-                    //         />
-                    //       </GridItem>
-                    //       <GridItem xs={12} sm={12} md={4}>
-                    //         <img
-                    //           alt="..."
-                    //           src="/img/examples/mariya-georgieva.jpg"
-                    //           className={navImageClasses}
-                    //         />
-                    //         <img
-                    //           alt="..."
-                    //           src="/img/examples/clem-onojegaw.jpg"
-                    //           className={navImageClasses}
-                    //         />
-                    //       </GridItem>
-                    //     </GridContainer>
-                    //   ),
-                    // },
-                    // {
-                    //   tabButton: 'Favorite',
-                    //   tabIcon: Favorite,
-                    //   tabContent: (
-                    //     <GridContainer justify="center">
-                    //       <GridItem xs={12} sm={12} md={4}>
-                    //         <img
-                    //           alt="..."
-                    //           src="/img/examples/mariya-georgieva.jpg"
-                    //           className={navImageClasses}
-                    //         />
-                    //         <img
-                    //           alt="..."
-                    //           src="/img/examples/studio-3.jpg"
-                    //           className={navImageClasses}
-                    //         />
-                    //       </GridItem>
-                    //       <GridItem xs={12} sm={12} md={4}>
-                    //         <img
-                    //           alt="..."
-                    //           src="/img/examples/clem-onojeghuo.jpg"
-                    //           className={navImageClasses}
-                    //         />
-                    //         <img
-                    //           alt="..."
-                    //           src="/img/examples/olu-eletu.jpg"
-                    //           className={navImageClasses}
-                    //         />
-                    //         <img
-                    //           alt="..."
-                    //           src="/img/examples/studio-1.jpg"
-                    //           className={navImageClasses}
-                    //         />
-                    //       </GridItem>
-                    //     </GridContainer>
-                    //   ),
-                    // },
-                  ]}
-                />
-              </GridItem>
+            <GridContainer
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <GridContainer direction="row"
+                             justifyContent="center"
+                             alignItems="center"
+                             spacing={2}>
+                <GridItem xs={12} sm={12} md={12}
+                          className={classes.navWrapper}>
+                  <NavPills
+                    alignCenter
+                    color="primary"
+                    tabs={[
+                      {
+                        tabButton: 'My Courses',
+                        tabIcon: School,
+                        tabContent: (
+                          <GridContainer
+                            direction="row"
+                            justifyContent="center"
+                            alignItems="center"
+                          >
+                            <GridContainer direction="row"
+                                           justifyContent="center"
+                                           alignItems="center"
+                                           spacing={2}>
+                              {/* list all courses */}
+                              {courses && courses.length > 0
+                                ? courses.map(
+                                  course => (
+                                    <GridItem xs={12} sm={12} md={4}
+                                              key={course._id}
+                                              className={classes.marginBottom}>
+                                      <Link
+                                        href={`/user/course/${course.slug}`}
+                                      >
+                                        <a>
+                                          <img
+                                            alt="..."
+                                            src={course.image
+                                              ? course.image.Location
+                                              : '/images/americoders-course.png'}
+                                            className={navImageClasses}
+                                          />
+                                          <h6 className={classes.marginBottom}>
+                                            {course.name}
+                                          </h6>
+                                        </a>
+                                      </Link>
+                                      <p className={classes.description}>
+                                        {/* show number of lessons in course */}
+                                        {course.lessons.length} Lessons
+                                      </p>
+                                    </GridItem>
+                                  ))
+                                : ('You are not enrolled in any courses ...yet!')}
+                            </GridContainer>
+                          </GridContainer>
+                        ),
+                      },
+                      // {
+                      //   tabButton: 'Work',
+                      //   tabIcon: Palette,
+                      //   tabContent: (
+                      //     <GridContainer justify="center">
+                      //       <GridItem xs={12} sm={12} md={4}>
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/olu-eletu.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/clem-onojeghuo.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/cynthia-del-rio.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //       </GridItem>
+                      //       <GridItem xs={12} sm={12} md={4}>
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/mariya-georgieva.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/clem-onojegaw.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //       </GridItem>
+                      //     </GridContainer>
+                      //   ),
+                      // },
+                      // {
+                      //   tabButton: 'Favorite',
+                      //   tabIcon: Favorite,
+                      //   tabContent: (
+                      //     <GridContainer justify="center">
+                      //       <GridItem xs={12} sm={12} md={4}>
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/mariya-georgieva.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/studio-3.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //       </GridItem>
+                      //       <GridItem xs={12} sm={12} md={4}>
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/clem-onojeghuo.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/olu-eletu.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //         <img
+                      //           alt="..."
+                      //           src="/img/examples/studio-1.jpg"
+                      //           className={navImageClasses}
+                      //         />
+                      //       </GridItem>
+                      //     </GridContainer>
+                      //   ),
+                      // },
+                    ]}
+                  />
+                </GridItem>
+              </GridContainer>
             </GridContainer>
           </div>
         </div>
