@@ -9,7 +9,7 @@ import { List } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
 // @material-ui/icons
-import styles from '/styles/jss/americoders/components/footerStyle.js'
+import styles from '../../styles/jss/americoders/components/footerStyle.js'
 import Link from 'next/link'
 import { ListItem } from '@mui/material'
 
