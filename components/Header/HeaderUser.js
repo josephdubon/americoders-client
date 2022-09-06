@@ -76,6 +76,7 @@ export default function UserRoute ({ children, showNav = true, props }) {
       // if ok is true, show child element
       <>
         <PageHead title={'Welcome! We are a tech learning platform.'}/>
+
         {/* only show UserNav when showNav is true, hide on false */}
         {showNav &&
           <>
