@@ -1,3 +1,12 @@
+/*
+* This file is unused
+* But you can use this as a user ONLY menu that will render for only logged in users when wrapped in <UserRoute>
+
+*
+*
+*
+*
+* */
 import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
