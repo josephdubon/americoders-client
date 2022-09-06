@@ -33,6 +33,8 @@ class MyDocument extends Document {
         <div id="page-transition"></div>
         <Main/>
         <NextScript/>
+        <script src="https://skillful-unreal.americoders.org/script.js"
+                data-site={process.env.NEXT_PUBLIC_MY_FATHOM_SITE_ID} defer></script>
         </body>
       </Html>
     )
