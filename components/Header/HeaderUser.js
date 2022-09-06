@@ -81,8 +81,9 @@ export default function UserRoute ({ children, showNav = true, props }) {
         {showNav &&
           <>
             <Drawer
-              variant="permanent"
+              variant="temporary"
               anchor="left"
+              open={drawerStatus}
               sx={{
                 width: drawerWidth,
                 flexShrink: 0,
