@@ -30,7 +30,6 @@ export default function ProfilePage (props) {
   // state
   const [courses, setCourses] = useState([])
   const [loading, setLoading] = useState(false)
-  const [drawerStatus, setDrawerStatus] = useState(false)
 
   // get user
   const {
