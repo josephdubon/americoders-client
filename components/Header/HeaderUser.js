@@ -1,3 +1,12 @@
+/*
+* This file is unused
+* But you can use this as a user ONLY menu that will render for only logged in users when wrapped in <UserRoute>
+
+*
+*
+*
+*
+* */
 import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
@@ -21,11 +30,12 @@ import Link from 'next/link'
 import Divider from '@material-ui/core/Divider'
 import GridItem from '../Grid/GridItem'
 import { makeStyles } from '@material-ui/core/styles'
+import Button from '../CustomButtons/Button'
 
 export default function UserRoute ({ children, showNav = true, props }) {
   // state
   const [ok, setOk] = useState(false)
-  const [drawerStatus, setDrawerStatus] = useState(true)
+  const [drawerStatus, setDrawerStatus] = useState(false)
 
   // get user
   const {
@@ -56,11 +66,6 @@ export default function UserRoute ({ children, showNav = true, props }) {
     }
   }
 
-  // toggleDrawer
-  const toggleDrawer = () => {
-    setDrawerStatus(!drawerStatus)
-  }
-
   return (<>
     {!ok ? (
       // if ok is false, show loading screen
@@ -71,12 +76,14 @@ export default function UserRoute ({ children, showNav = true, props }) {
       // if ok is true, show child element
       <>
         <PageHead title={'Welcome! We are a tech learning platform.'}/>
+
         {/* only show UserNav when showNav is true, hide on false */}
         {showNav &&
           <>
             <Drawer
-              variant="permanent"
+              variant="temporary"
               anchor="left"
+              open={drawerStatus}
               sx={{
                 width: drawerWidth,
                 flexShrink: 0,
@@ -94,6 +101,7 @@ export default function UserRoute ({ children, showNav = true, props }) {
                 }}>{user && user.firstName}'s Menu</h6>
 
                 {/* start menu items */}
+                <Button onClick={() => {setDrawerStatus(false)}}></Button>
 
                 <GridItem xs={12} sm={12} md={12}>
                   <List>

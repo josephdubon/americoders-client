@@ -22,6 +22,7 @@ import { PageHead } from '../../components/PageHead/PageHead'
 import Link from 'next/link'
 import Moment from 'moment'
 import Footer from '../../components/Footer/Footer'
+import Button from '../../components/CustomButtons/Button'
 
 const useStyles = makeStyles(styles)
 
@@ -29,7 +30,6 @@ export default function ProfilePage (props) {
   // state
   const [courses, setCourses] = useState([])
   const [loading, setLoading] = useState(false)
-  const [drawerStatus, setDrawerStatus] = useState(false)
 
   // get user
   const {
@@ -107,6 +107,15 @@ export default function ProfilePage (props) {
                         {`${user && user.firstName} ${user && user.lastName}`}
                       </h3>
                       <br/>
+                      {/* update user */}
+                      <Link href={'/user/update-user'} disablePadding button>
+                        <a>
+                          <Button
+                            size="sm"
+                            color="warning">Edit Profile</Button>
+                        </a>
+                      </Link>
+                      <br/>
                       <h5>{user && user.email}</h5>
 
                       {/* user details */}
@@ -116,19 +125,8 @@ export default function ProfilePage (props) {
                           ? 'Courses'
                           : 'Course'}</h6>
                       <h6>Member Since: {Moment(user && user.createdAt,
-                        'YYYYMMDD').
-                        fromNow()}</h6>
+                        'YYYYMMDD').fromNow()}</h6>
 
-                      {/* icons */}
-                      {/*<Button justIcon link className={classes.margin5}>*/}
-                      {/*  <i className={'fab fa-twitter'}/>*/}
-                      {/*</Button>*/}
-                      {/*<Button justIcon link className={classes.margin5}>*/}
-                      {/*  <i className={'fab fa-instagram'}/>*/}
-                      {/*</Button>*/}
-                      {/*<Button justIcon link className={classes.margin5}>*/}
-                      {/*  <i className={'fab fa-facebook'}/>*/}
-                      {/*</Button>*/}
                     </div>
                   </div>
                 </GridItem>
