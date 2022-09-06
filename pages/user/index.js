@@ -22,6 +22,7 @@ import { PageHead } from '../../components/PageHead/PageHead'
 import Link from 'next/link'
 import Moment from 'moment'
 import Footer from '../../components/Footer/Footer'
+import Button from '../../components/CustomButtons/Button'
 
 const useStyles = makeStyles(styles)
 
@@ -106,6 +107,15 @@ export default function ProfilePage (props) {
                       <h3 className={classes.title}>
                         {`${user && user.firstName} ${user && user.lastName}`}
                       </h3>
+                      <br/>
+                      {/* update user */}
+                      <Link href={'/user/update-user'} disablePadding button>
+                        <a>
+                          <Button
+                            size="sm"
+                            color="warning">Edit Profile</Button>
+                        </a>
+                      </Link>
                       <br/>
                       <h5>{user && user.email}</h5>
 
