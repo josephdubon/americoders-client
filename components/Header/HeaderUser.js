@@ -35,7 +35,7 @@ import Button from '../CustomButtons/Button'
 export default function UserRoute ({ children, showNav = true, props }) {
   // state
   const [ok, setOk] = useState(false)
-  const [drawerStatus, setDrawerStatus] = useState(true)
+  const [drawerStatus, setDrawerStatus] = useState(false)
 
   // get user
   const {
