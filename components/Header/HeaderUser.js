@@ -66,11 +66,6 @@ export default function UserRoute ({ children, showNav = true, props }) {
     }
   }
 
-  // toggleDrawer
-  const toggleDrawer = () => {
-    setDrawerStatus(!drawerStatus)
-  }
-
   return (<>
     {!ok ? (
       // if ok is false, show loading screen
