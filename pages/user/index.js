@@ -125,8 +125,7 @@ export default function ProfilePage (props) {
                           ? 'Courses'
                           : 'Course'}</h6>
                       <h6>Member Since: {Moment(user && user.createdAt,
-                        'YYYYMMDD').
-                        fromNow()}</h6>
+                        'YYYYMMDD').fromNow()}</h6>
 
                       {/* icons */}
                       {/*<Button justIcon link className={classes.margin5}>*/}
