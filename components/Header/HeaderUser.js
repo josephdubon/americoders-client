@@ -21,6 +21,7 @@ import Link from 'next/link'
 import Divider from '@material-ui/core/Divider'
 import GridItem from '../Grid/GridItem'
 import { makeStyles } from '@material-ui/core/styles'
+import Button from '../CustomButtons/Button'
 
 export default function UserRoute ({ children, showNav = true, props }) {
   // state
