@@ -101,6 +101,7 @@ export default function UserRoute ({ children, showNav = true, props }) {
                 }}>{user && user.firstName}'s Menu</h6>
 
                 {/* start menu items */}
+                <Button onClick={() => {setDrawerStatus(false)}}></Button>
 
                 <GridItem xs={12} sm={12} md={12}>
                   <List>
