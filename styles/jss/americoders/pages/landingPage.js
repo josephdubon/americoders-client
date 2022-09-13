@@ -16,9 +16,10 @@ const landingPageStyle = {
     textDecoration: 'none',
   },
   subtitle: {
-    fontSize: '1.313rem',
-    maxWidth: '500px',
-    margin: '10px auto 0',
+    fontSize: '1.3rem',
+    fontWeight: '600',
+    textAlign: 'justify',
+    margin: '2.5rem auto',
   },
   description: {
     color: '#999',
