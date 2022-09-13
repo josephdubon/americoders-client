@@ -12,6 +12,7 @@ import Card from '../components/Card/Card.js'
 import styles from '../styles/jss/americoders/pages/loginPage.js'
 import StudentRegisterForm from '../components/forms/StudentRegisterForm'
 import Footer from '../components/Footer/Footer'
+import NavLogo from '../public/images/logo/americoders-logo-simple_white.svg'
 
 const useStyles = makeStyles(styles)
 
@@ -27,7 +28,7 @@ export default function RegisterPage (props) {
       <Header
         absolute
         color="transparent"
-        brand="AMERICODERS"
+        brand={NavLogo}
         rightLinks={<HeaderLinks/>}
         {...rest}
       />

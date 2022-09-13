@@ -13,6 +13,7 @@ import styles from '../styles/jss/americoders/pages/loginPage.js'
 import LoginForm from '../components/forms/LoginForm'
 import { PageHead } from '../components/PageHead/PageHead'
 import Footer from '../components/Footer/Footer'
+import NavLogo from '../public/images/logo/americoders-logo-simple_white.svg'
 
 const useStyles = makeStyles(styles)
 
@@ -29,7 +30,7 @@ export default function LoginPage (props) {
       <Header
         absolute
         color="transparent"
-        brand="AMERICODERS"
+        brand={NavLogo}
         rightLinks={<HeaderLinks/>}
         {...rest}
       />

@@ -16,6 +16,7 @@ import Drawer from '@material-ui/core/Drawer'
 import Menu from '@material-ui/icons/Menu'
 // core components
 import styles from '../../styles/jss/americoders/components/headerStyle.js'
+import Image from 'next/image'
 
 const useStyles = makeStyles(styles)
 
@@ -59,7 +60,11 @@ export default function Header (props) {
   })
   const brandComponent = (
     <Link href="/landing" as="/home">
-      <Button className={classes.title}>{brand}</Button>
+      <a>
+        <Image
+          src={brand}
+        />
+      </a>
     </Link>
   )
 

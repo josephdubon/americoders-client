@@ -28,6 +28,10 @@ import FeaturedSectionRight
   from '../components/FeaturedSectionRight/FeaturedSectionRight'
 import Footer from '../components/Footer/Footer'
 
+import Logo from '../public/images/logo/americoders-logo_white.svg'
+import NavLogo from '../public/images/logo/americoders-logo-simple_white.svg'
+import Image from 'next/image'
+
 const dashboardRoutes = []
 
 const useStyles = makeStyles(styles)
@@ -69,7 +73,7 @@ export default function LandingPage (props) {
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        brand="AMERICODERS"
+        brand={NavLogo}
         rightLinks={<HeaderLinks/>}
         fixed
         changeColorOnScroll={{
@@ -93,13 +97,13 @@ export default function LandingPage (props) {
                            alignItems="center"
             >
               <GridItem xs={10} sm={10} md={8}>
-                <h2 className={classes.title}>Welcome to
-                  <br/>Americoders</h2>
-                <br/>
-                <h2 className={classes.title}>
-                  ✩✩✩✩✩
-                </h2>
-                <h4 className={classes.subTitle}>
+                <Image
+                  src={Logo}
+                  width={800}
+                  height={200}
+                  className={classes.logo}
+                  alt={'Logo for Americoders'}/>
+                <h4 className={classes.subtitle}>
                   We're a community enrichment program founded in the heart of
                   the
                   Biggest Little City in the World, Reno, Nevada.
