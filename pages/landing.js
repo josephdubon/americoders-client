@@ -74,7 +74,7 @@ export default function LandingPage (props) {
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        brand="AMERICODERS"
+        brand={NavLogo}
         rightLinks={<HeaderLinks/>}
         fixed
         changeColorOnScroll={{
