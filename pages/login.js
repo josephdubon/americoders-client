@@ -30,7 +30,7 @@ export default function LoginPage (props) {
       <Header
         absolute
         color="transparent"
-        brand="AMERICODERS"
+        brand={NavLogo}
         rightLinks={<HeaderLinks/>}
         {...rest}
       />
