@@ -6,6 +6,8 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 
 // core components
 import { infoColor, title } from '../../styles/jss/americoders.js'
+import Image from 'next/image'
+import Logo from '../../public/images/logo/americoders-logo_white.svg'
 
 const useStyles = makeStyles({
   progress: {
@@ -36,9 +38,13 @@ export default function PageChange (props) {
   return (
     <div>
       <div className={classes.wrapperDiv}>
-        <div className={classes.iconWrapper}>
-          <CircularProgress className={classes.progress}/>
-        </div>
+        <Image
+          src={Logo}
+          width={800}
+          height={200}
+          alt={'Logo for Americoders'}
+          className={classes.bgAnimation}
+        />
         <h4 className={classes.title}>
           Loading page contents for: {props.path}
         </h4>
