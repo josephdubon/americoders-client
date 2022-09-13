@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import IconButton from '@material-ui/core/IconButton'
+import Button from '@material-ui/core/Button'
 import Hidden from '@material-ui/core/Hidden'
 import Drawer from '@material-ui/core/Drawer'
 // @material-ui/icons
@@ -16,7 +17,6 @@ import Menu from '@material-ui/icons/Menu'
 // core components
 import styles from '../../styles/jss/americoders/components/headerStyle.js'
 import Image from 'next/image'
-import Logo from '../../public/images/logo/americoders-logo-simple_white.svg'
 
 const useStyles = makeStyles(styles)
 
