@@ -28,6 +28,11 @@ import FeaturedSectionRight
   from '../components/FeaturedSectionRight/FeaturedSectionRight'
 import Footer from '../components/Footer/Footer'
 
+import Logo from '../public/images/logo/americoders-logo_white.svg'
+import NavLogo from '../public/images/logo/americoders-logo-simple_white.svg'
+import Image from 'next/image'
+import Divider from '@material-ui/core/Divider'
+
 const dashboardRoutes = []
 
 const useStyles = makeStyles(styles)
