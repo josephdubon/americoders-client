@@ -16,6 +16,7 @@ import Menu from '@material-ui/icons/Menu'
 // core components
 import styles from '../../styles/jss/americoders/components/headerStyle.js'
 import Image from 'next/image'
+import Logo from '../../public/images/logo/americoders-logo-simple_white.svg'
 
 const useStyles = makeStyles(styles)
 
