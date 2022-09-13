@@ -23,6 +23,7 @@ import Link from 'next/link'
 import Moment from 'moment'
 import Footer from '../../components/Footer/Footer'
 import Button from '../../components/CustomButtons/Button'
+import NavLogo from '../../public/images/logo/americoders-logo-simple_white.svg'
 
 const useStyles = makeStyles(styles)
 
@@ -66,7 +67,7 @@ export default function ProfilePage (props) {
       user.lastName}!`}/>
       <Header
         color="transparent"
-        brand="AMERICODERS"
+        brand={NavLogo}
         rightLinks={<HeaderLinks/>}
         fixed
         changeColorOnScroll={{
