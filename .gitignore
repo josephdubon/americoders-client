@@ -224,4 +224,4 @@ Temporary Items
 /pages/_old/Components-Sections/
 /pages/_old/
 !/components/_old/
-!/pnpm-lock.yaml
+pnpm-lock.yaml
