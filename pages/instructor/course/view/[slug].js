@@ -1,22 +1,22 @@
-import {useEffect, useState} from 'react'
-import {useRouter} from 'next/router'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
 import axios from 'axios'
 import InstructorRoute from '../../../../components/routes/InstructorRoute'
 import {
-    CheckOutlined,
-    CloseOutlined,
-    EditOutlined,
-    QuestionOutlined,
-    UploadOutlined,
-    UserSwitchOutlined
+  CheckOutlined,
+  CloseOutlined,
+  EditOutlined,
+  QuestionOutlined,
+  UploadOutlined,
+  UserSwitchOutlined
 } from '@ant-design/icons'
-import {Avatar, Button, List, Modal, Tooltip} from 'antd'
+import { Avatar, Button, List, Modal, Tooltip } from 'antd'
 import ReactMarkdown from 'react-markdown'
 import AddLessonForm from '../../../../components/forms/AddLessonForm'
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
+// import Item from 'antd/lib/list/Item'
+import { PageHead } from '../../../../components/head/PageHead'
 import Item from 'antd/lib/list/Item'
-import {PageHead} from '../../../../components/head/PageHead'
-
 
 const CourseView = () => {
     // style
