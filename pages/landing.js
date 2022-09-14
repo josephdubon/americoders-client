@@ -31,6 +31,14 @@ import Footer from '../components/Footer/Footer'
 import Logo from '../public/images/logo/americoders-logo_white.svg'
 import NavLogo from '../public/images/logo/americoders-logo-simple_white.svg'
 import Image from 'next/image'
+import CardHeader from '../components/Card/CardHeader.js'
+import CardBody from '../components/Card/CardBody'
+import CardFooter from '../components/Card/CardFooter'
+import Card from '../components/Card/Card'
+import MailingListForm from '../components/forms/MailingListForm'
+import Link from 'next/link'
+import { currencyFormatter } from '../utils/helpers'
+import Badge from '../components/Badge/Badge.js'
 
 const dashboardRoutes = []
 
@@ -125,19 +133,82 @@ export default function LandingPage (props) {
 
           {/* 3 col course examples area */}
           <CoursesSection/>
-          {/*<p>start</p>*/}
-          {/*loop through the published courses*/}
-          {/*{props.courses.map((course) => (*/}
-          {/*    <Col key={course._id}>*/}
-          {/*      <CourseCard course={course}/>*/}
-          {/*    </Col>*/}
-          {/*  ),*/}
-          {/*)}*/}
-          {/*end loop*/}
-          {/*<p>end</p>*/}
 
           {/* join mailing list area */}
           <MailingListSection/>
+
+          {/* live and upcoming workshops area*/}
+          <div>
+            <GridContainer
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <GridContainer direction="row"
+                             justifyContent="center"
+                             alignItems="center"
+              >
+                <GridItem cs={12} sm={12} md={12}>
+                  {/* title */}
+                  <h2 className={classes.sectionTitle}>
+                    Live and Upcoming Workshops
+                  </h2>
+                </GridItem>
+
+                {/* loop through the published courses */}
+                {props.courses.map(course => (
+                    <GridItem xs={12} md={6} lg={4} key={course._id}>
+                      <p style={{ color: 'black' }}>
+                        {/*{JSON.stringify(course, null, 2)}*/}
+                      </p>
+                      <Card>
+                        <img
+                          style={{ height: '18rem', width: '100%', objectFit: 'cover', display: 'block' }}
+                          className={classes.imgCardTop}
+                          src={course.image && course.image.Location}
+                          alt="Card-img-cap"
+                        />
+                        <CardBody>
+                          {/* course name */}
+                          <h4 className={classes.cardTitle}>{course.name}</h4>
+
+                          {/*<p>by {course.instructor.name}</p>*/}
+                          {/* categories */}
+                          <Badge color="success">
+                            {course.category}
+                          </Badge>
+
+                          {/* course price */}
+                          <h4 className={classes.description}>{course.paid ? currencyFormatter({
+                            amount: course.price,
+                            currency: 'usd',
+                          }) : 'Free'}</h4>
+
+                          {/* action button */}
+                          <Link
+                            href={`/course/${course.slug}`}
+                          >
+                            <a>
+                              <Button
+                                color="primary"
+                                size="lg"
+                              >More Info</Button>
+                            </a>
+                          </Link>
+                        </CardBody>
+                      </Card>
+                    </GridItem>
+                  ),
+                )}
+              </GridContainer>
+            </GridContainer>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+          </div>
 
           {/*  announcement section */}
           <FeaturedSectionRight title={'Fall Semester 2022'}

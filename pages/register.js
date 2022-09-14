@@ -51,7 +51,7 @@ export default function RegisterPage (props) {
                            justifyContent="center"
                            alignItems="center"
             >
-              <GridItem xs={10} sm={8} md={8}>
+              <GridItem xs={10} sm={6} md={6}>
                 <Card className={classes[cardAnimaton]}>
                   {/* register form */}
                   <StudentRegisterForm/>
