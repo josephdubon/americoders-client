@@ -139,6 +139,7 @@ export default function ProfilePage (props) {
                 {user && user.bio}
               </p>
             </div>
+
             <GridContainer
               direction="row"
               justifyContent="center"

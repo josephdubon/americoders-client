@@ -1,4 +1,4 @@
-import { container, title } from '../../americoders'
+import { cardTitle, container, title } from '../../americoders'
 
 const landingPageStyle = {
   container: {
@@ -15,17 +15,36 @@ const landingPageStyle = {
     color: '#FFFFFF',
     textDecoration: 'none',
   },
+  cardTitle,
+  sectionTitle: {
+    ...title,
+    marginBottom: '50px',
+    marginTop: '30px',
+    minHeight: '32px',
+    textDecoration: 'none',
+    textAlign: 'center',
+  },
   subtitle: {
     fontSize: '1.3rem',
     fontWeight: '600',
-    textAlign: 'justify',
+    textAlign: 'left',
     margin: '2.5rem auto',
   },
   description: {
     color: '#999',
     fontSize: '1.1rem',
     textAlign: 'left',
-    margin: '.5rem 1rem',
+    textTransform: 'uppercase'
+  },
+  price: {
+    ...title,
+    fontSize: '2.275rem',
+    display: 'inline-block',
+    position: 'relative',
+    marginTop: '30px',
+    minHeight: '32px',
+    color: '#FFFFFF',
+    textDecoration: 'none',
   },
   main: {
     background: '#FFFFFF',
