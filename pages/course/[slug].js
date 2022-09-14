@@ -215,6 +215,7 @@ const SingleCourse = ({ course }) => {
                 setPreview={setPreview}
                 showModal={showModal}
                 setShowModal={setShowModal}
+                course={course}
               />
               <PreviewModal
                 showModal={showModal}
