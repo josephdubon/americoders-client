@@ -14,6 +14,7 @@ import { truncate } from 'lodash-es'
 import Badge from '../Badge/Badge.js'
 import Button from '../CustomButtons/Button'
 import moment from 'moment'
+import { Tooltip } from '@mui/material'
 
 const dashboardRoutes = []
 
@@ -36,9 +37,6 @@ const SingleCourseHero = (props) => {
   const classes = useStyles()
 
   const { ...rest } = props
-
-  const todayDate = moment().format('YYYY-MM-DD')
-  const disabledDate = moment('20221008').format('YYYY-MM-DD')
 
   return (<>
     {/* header section / nav */}
@@ -83,8 +81,15 @@ const SingleCourseHero = (props) => {
                   {truncate(props.course.description, { length: 240, omission: '...' })}
                 </h4>
 
-                {/* author */}
-                <p className="text-muted"><strong>Created by: </strong> {props.course.instructor.lastName}</p>
+                {/* start date */}
+                <h5 className={classes.subtitle}><strong>Start
+                  Date: </strong> {moment(props.course.eventStartDate).calendar()}
+                </h5>
+
+                {/* start date */}
+                <h5 className={classes.subtitle}><strong>End
+                  Date: </strong> {moment(props.course.eventEndDate).calendar()}</h5>
+
 
                 {/* price */}
                 <h4 className={classes.price}>
@@ -101,19 +106,26 @@ const SingleCourseHero = (props) => {
                   <LoadingOutlined className="h1 text-danger"/>
                 </div> : (
                   <div>
-                    <Button
-                      color="danger"
-                      icon={<SafetyOutlined/>}
-                      size="lg"
-                      disabled={todayDate < disabledDate} // disable button if todays date is less than disabled date
-                      onClick={paid ? props.handlePaidEnrollment : props.handleFreeEnrollment}
+                    <Tooltip
+                      id="tooltip-top"
+                      title="Tooltip on top"
+                      placement="top"
+                      classes={{ tooltip: classes.tooltip }}
                     >
-                      {user
-                        ? props.enrolled.status
-                          ? 'Go to course'
-                          : 'Enroll'
-                        : 'Login to enroll'}
-                    </Button>
+                      <Button
+                        color="danger"
+                        icon={<SafetyOutlined/>}
+                        size="lg"
+                        disabled={true} // disable button for now
+                        onClick={paid ? props.handlePaidEnrollment : props.handleFreeEnrollment}
+                      >
+                        {user
+                          ? props.enrolled.status
+                            ? 'Go to course'
+                            : 'Enroll'
+                          : 'Login to enroll'}
+                      </Button>
+                    </Tooltip>
                   </div>
                 )}
 
