@@ -1,4 +1,4 @@
-import { container, title } from '../../americoders'
+import { cardTitle, container, title } from '../../americoders'
 
 const landingPageStyle = {
   container: {
