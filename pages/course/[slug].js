@@ -185,7 +185,6 @@ const SingleCourse = ({ course }) => {
                 url={course.lessons[0].video.Location}
                 light={course.image.Location}
                 width={'100%'}
-                controls
               />
             </GridItem>
           ) : (<>
