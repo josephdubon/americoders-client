@@ -27,7 +27,7 @@ const landingPageStyle = {
   subtitle: {
     fontSize: '1.3rem',
     fontWeight: '600',
-    textAlign: 'justify',
+    textAlign: 'left',
     margin: '2.5rem auto',
   },
   description: {
