@@ -92,6 +92,36 @@ const CourseCreateForm = ({
           />
         </div>
 
+        {/* start date */}
+        <div className="form-group ">
+          <p>
+            Start Date:
+            <input
+              type="datetime-local"
+              name="eventStartDate"
+              className="form-control"
+              value={values.eventStartDate}
+              placeholder="Event Start Date"
+              onChange={handleChange}
+            />
+          </p>
+        </div>
+
+        {/* end date */}
+        <div className="form-group ">
+          <p>
+            End Date:
+            <input
+              type="datetime-local"
+              name="eventEndDate"
+              className="form-control"
+              value={values.eventEndDate}
+              placeholder="Event Start Date"
+              onChange={handleChange}
+            />
+          </p>
+        </div>
+
         {/* image upload */}
         <div className="form-row">
           <div className="col">
