@@ -75,7 +75,7 @@ const SingleCourseHero = (props) => {
 
               {/* course description */}
               <h4 className={classes.subtitle} style={{ textAlign: 'center' }}>
-                {truncate(props.course.description, { length: 240, omission: '...' },)}
+                {props.course.description}
               </h4>
               {/* enroll button */}
               {loading ? <div className="d-flex justify-content-center">
