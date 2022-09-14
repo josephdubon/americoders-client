@@ -176,7 +176,6 @@ const SingleCourse = ({ course }) => {
           justifyContent="center"
           alignItems="center"
         >
-
           {course.lessons[0].video && course.lessons[0].video.Location ? (
             <GridItem cs={12} sm={12} md={6}
                       onClick={() => {
