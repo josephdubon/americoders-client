@@ -20,6 +20,8 @@ const EditCourse = () => {
         uploading: false,
         paid: true,
         category: '',
+        eventStartDate: '',
+        eventEndDate: '',
         loading: false,
         lessons: [],
     })
