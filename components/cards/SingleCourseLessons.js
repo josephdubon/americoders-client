@@ -21,7 +21,8 @@ const styles = {
     color: '#999',
     fontSize: '1.1rem',
     textAlign: 'left',
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    margin: '0 10px 0 0',
   }
 }
 
@@ -47,9 +48,7 @@ const SingleCourseLessons = ({
         <List>
           {lessons.map((lesson) => (
             <ListItem>
-              <ListItemIcon>
-                <School className={classes.icon}/>
-              </ListItemIcon>
+              <School className={classes.icon}/>
               <ListItemText
                 primary={truncate(lesson.title, { length: 24 })}
               />
