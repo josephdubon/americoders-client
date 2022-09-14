@@ -194,11 +194,13 @@ const SingleCourse = ({ course }) => {
           ) : (<>
             <GridItem cs={12} sm={12} md={6}>
               {course.image && course.image.Location ?
-                <Image src={image.Location}
-                       alt={name}
+                <Image src={course.image.Location}
+                       alt={course.name}
                        preview={false}
+                       width={'100%'}
                 /> : <Image src="/images/americoders-course.png"
-                            alt={name}
+                            alt={course.name}
+                            width={'100%'}
                             className="p-1 squareFrame"
                 />
               }
