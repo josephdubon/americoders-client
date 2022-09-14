@@ -48,9 +48,7 @@ const SingleCourseLessons = ({
         <List>
           {lessons.map((lesson) => (
             <ListItem>
-              <ListItemIcon>
-                <School className={classes.icon}/>
-              </ListItemIcon>
+              <School className={classes.icon}/>
               <ListItemText
                 primary={truncate(lesson.title, { length: 24 })}
               />
