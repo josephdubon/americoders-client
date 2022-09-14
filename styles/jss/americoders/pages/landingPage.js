@@ -8,6 +8,7 @@ const landingPageStyle = {
   },
   title: {
     ...title,
+    fontSize: '2rem',
     display: 'inline-block',
     position: 'relative',
     marginTop: '30px',
@@ -19,13 +20,13 @@ const landingPageStyle = {
   sectionTitle: {
     ...title,
     marginBottom: '50px',
-    marginTop: '30px',
+    marginTop: '60px',
     minHeight: '32px',
     textDecoration: 'none',
     textAlign: 'center',
   },
   subtitle: {
-    fontSize: '1.3rem',
+    fontSize: '1rem',
     fontWeight: '600',
     textAlign: 'left',
     margin: '2.5rem auto',
@@ -38,7 +39,7 @@ const landingPageStyle = {
   },
   price: {
     ...title,
-    fontSize: '2.275rem',
+    fontSize: '2rem',
     display: 'inline-block',
     position: 'relative',
     marginTop: '30px',

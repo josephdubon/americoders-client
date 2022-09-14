@@ -69,7 +69,7 @@ const SingleCourseHero = (props) => {
             >
               <GridItem xs={10} sm={10} md={12}>
                 {/* course name */}
-                <h1 className={classes.title}>{props.course && props.course.name}</h1>
+                <h4 className={classes.title}>{props.course && props.course.name}</h4>
                 <br/>
                 {/* category */}
                 <Badge color="success">
@@ -82,14 +82,14 @@ const SingleCourseHero = (props) => {
                 </h4>
 
                 {/* start date */}
-                <h5 className={classes.subtitle}><strong>Start
+                <p className={classes.subtitle}><strong>Start
                   Date: </strong> {moment(props.course.eventStartDate).calendar()}
-                </h5>
+                </p>
 
                 {/* start date */}
-                <h5 className={classes.subtitle}><strong>End
-                  Date: </strong> {moment(props.course.eventEndDate).calendar()}</h5>
-
+                <p className={classes.subtitle}><strong>End
+                  Date: </strong> {moment(props.course.eventEndDate).calendar()}
+                </p>
 
                 {/* price */}
                 <h4 className={classes.price}>
