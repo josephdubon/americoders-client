@@ -16,6 +16,14 @@ const landingPageStyle = {
     color: '#FFFFFF',
     textDecoration: 'none',
   },
+  eventDetailsTitle: {
+    ...title,
+    fontSize: '1rem',
+    display: 'inline-block',
+    position: 'relative',
+    color: '#FFFFFF',
+    textDecoration: 'none',
+  },
   cardTitle,
   sectionTitle: {
     ...title,
@@ -40,7 +48,6 @@ const landingPageStyle = {
   price: {
     ...title,
     fontSize: '2rem',
-    display: 'inline-block',
     position: 'relative',
     marginTop: '30px',
     minHeight: '32px',

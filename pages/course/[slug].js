@@ -151,7 +151,7 @@ const SingleCourse = ({ course }) => {
 
   return (<>
 
-    <PageHead title={course.name}/>
+    <PageHead title={course && course.name}/>
 
     <SingleCourseHero
       course={course}
@@ -174,7 +174,7 @@ const SingleCourse = ({ course }) => {
           justifyContent="center"
           alignItems="center"
         >
-          {course.lessons[0].video && course.lessons[0].video.Location ? (
+          {course && course.lessons[0].video && course.lessons[0].video.Location ? (
             <GridItem cs={12} sm={12} md={6}
                       onClick={() => {
                         setPreview(course.lessons[0].video.Location)
@@ -189,7 +189,7 @@ const SingleCourse = ({ course }) => {
             </GridItem>
           ) : (<>
             <GridItem cs={12} sm={12} md={6}>
-              {course.image && course.image.Location ?
+              {course && course.image && course.image.Location ?
                 <>
                   <img src={course.image.Location}
                        alt={course.name}
@@ -199,7 +199,7 @@ const SingleCourse = ({ course }) => {
                   />
                 </>
                 : <img src="/images/americoders-course.png"
-                       alt={course.name}
+                       alt={course && course.name}
                        width={'100%'}
                        height={'420px'}
                        style={{ margin: '2.275rem 0', objectFit: 'cover' }}
@@ -209,7 +209,7 @@ const SingleCourse = ({ course }) => {
           </>)
           }
           <GridItem cs={12} sm={12} md={6}>
-            {course.lessons && (<>
+            {course && course.lessons && (<>
               <SingleCourseLessons
                 lessons={course.lessons}
                 setPreview={setPreview}

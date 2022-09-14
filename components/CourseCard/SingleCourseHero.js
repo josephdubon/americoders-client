@@ -63,76 +63,80 @@ const SingleCourseHero = (props) => {
             justifyContent="center"
             alignItems="center"
           >
-            <GridContainer direction="row"
-                           justifyContent="center"
-                           alignItems="center"
-            >
-              <GridItem xs={10} sm={10} md={12}>
-                {/* course name */}
-                <h4 className={classes.title}>{props.course && props.course.name}</h4>
-                <br/>
-                {/* category */}
-                <Badge color="success">
-                  {props.course.category}
-                </Badge>
 
-                {/* course description */}
-                <h4 className={classes.subtitle}>
-                  {truncate(props.course.description, { length: 240, omission: '...' })}
-                </h4>
+            <GridItem xs={10} sm={10} md={6} style={{ textAlign: 'center' }}>
+              {/* course name */}
+              <h4 className={classes.title}>{props.course && props.course.name}</h4>
+              <br/>
+              {/* category */}
+              <Badge color="success">
+                {props.course.category}
+              </Badge>
 
-                {/* start date */}
-                <p className={classes.subtitle}><strong>Start
-                  Date: </strong> {moment(props.course.eventStartDate).calendar()}
-                </p>
-
-                {/* start date */}
-                <p className={classes.subtitle}><strong>End
-                  Date: </strong> {moment(props.course.eventEndDate).calendar()}
-                </p>
-
-                {/* price */}
-                <h4 className={classes.price}>
-                  {
-                    paid ? currencyFormatter({
-                      amount: price,
-                      currency: 'usd',
-                    }) : 'Free'
-                  }
-                </h4>
-
-                {/* enroll button */}
-                {loading ? <div className="d-flex justify-content-center">
-                  <LoadingOutlined className="h1 text-danger"/>
-                </div> : (
-                  <div>
-                    <Tooltip
-                      id="tooltip-top"
-                      title="Tooltip on top"
-                      placement="top"
-                      classes={{ tooltip: classes.tooltip }}
+              {/* course description */}
+              <h4 className={classes.subtitle} style={{ textAlign: 'center' }}>
+                {truncate(props.course.description, { length: 240, omission: '...' },)}
+              </h4>
+              {/* enroll button */}
+              {loading ? <div className="d-flex justify-content-center">
+                <LoadingOutlined className="h1 text-danger"/>
+              </div> : (
+                <div>
+                  <Tooltip
+                    id="tooltip-top"
+                    title="Tooltip on top"
+                    placement="top"
+                    classes={{ tooltip: classes.tooltip }}
+                  >
+                    <Button
+                      color="danger"
+                      icon={<SafetyOutlined/>}
+                      size="lg"
+                      disabled={true} // disable button for now
+                      onClick={paid ? props.handlePaidEnrollment : props.handleFreeEnrollment}
                     >
-                      <Button
-                        color="danger"
-                        icon={<SafetyOutlined/>}
-                        size="lg"
-                        disabled={true} // disable button for now
-                        onClick={paid ? props.handlePaidEnrollment : props.handleFreeEnrollment}
-                      >
-                        {user
-                          ? props.enrolled.status
-                            ? 'Go to course'
-                            : 'Enroll'
-                          : 'Login to enroll'}
-                      </Button>
-                    </Tooltip>
-                  </div>
-                )}
+                      {user
+                        ? props.enrolled.status
+                          ? 'Go to course'
+                          : 'Enroll'
+                        : 'Login to enroll'}
+                    </Button>
+                  </Tooltip>
+                </div>
+              )}
+            </GridItem>
+            {/* event date and price details */}
+            <GridItem xs={10} sm={10} md={6} style={{ textAlign: 'left' }}>
+              <h4 className={classes.eventDetailsTitle}>
+                Event Details
+                <br/>
+                <br/>
+                <strong>Address: </strong> {props.course.eventLocation}
+                <br/>
+                <br/>
 
-              </GridItem>
-              <GridItem>
-              </GridItem>
-            </GridContainer>
+                {/* start date */}
+                <strong>Start
+                  Date: </strong> {moment(props.course.eventStartDate).calendar()}
+                <br/>
+
+                {/* start date */}
+                <strong>End
+                  Date: </strong> {moment(props.course.eventEndDate).calendar()}
+              </h4>
+
+              {/* price */}
+              <h4 className={classes.price}>
+                {
+                  paid ? currencyFormatter({
+                    amount: price,
+                    currency: 'usd',
+                  }) : 'Free'
+                }
+              </h4>
+            </GridItem>
+            <GridItem>
+            </GridItem>
           </GridContainer>
         </div>
       </Parallax>

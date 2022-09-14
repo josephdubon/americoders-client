@@ -19,6 +19,9 @@ const CreateCourse = () => {
         uploading: false,
         paid: true,
         category: '',
+        eventStartDate: '',
+        eventEndDate: '',
+        eventLocation: '',
         loading: false,
     })
 
