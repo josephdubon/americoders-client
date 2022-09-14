@@ -15,6 +15,15 @@ const landingPageStyle = {
     color: '#FFFFFF',
     textDecoration: 'none',
   },
+  cardTitle,
+  sectionTitle: {
+    ...title,
+    marginBottom: '50px',
+    marginTop: '30px',
+    minHeight: '32px',
+    textDecoration: 'none',
+    textAlign: 'center',
+  },
   subtitle: {
     fontSize: '1.3rem',
     fontWeight: '600',
@@ -25,7 +34,7 @@ const landingPageStyle = {
     color: '#999',
     fontSize: '1.1rem',
     textAlign: 'left',
-    margin: '.5rem 1rem',
+    textTransform: 'uppercase'
   },
   main: {
     background: '#FFFFFF',
