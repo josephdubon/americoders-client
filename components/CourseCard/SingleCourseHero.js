@@ -63,18 +63,15 @@ const SingleCourseHero = (props) => {
             justifyContent="center"
             alignItems="center"
           >
-            <GridContainer direction="row"
-                           justifyContent="center"
-                           alignItems="center"
-            >
-              <GridItem xs={10} sm={10} md={12}>
-                {/* course name */}
-                <h4 className={classes.title}>{props.course && props.course.name}</h4>
-                <br/>
-                {/* category */}
-                <Badge color="success">
-                  {props.course.category}
-                </Badge>
+
+            <GridItem xs={10} sm={10} md={6} style={{ textAlign: 'center' }}>
+              {/* course name */}
+              <h4 className={classes.title}>{props.course && props.course.name}</h4>
+              <br/>
+              {/* category */}
+              <Badge color="success">
+                {props.course.category}
+              </Badge>
 
               {/* course description */}
               <h4 className={classes.subtitle} style={{ textAlign: 'center' }}>
