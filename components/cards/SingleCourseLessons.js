@@ -21,7 +21,8 @@ const styles = {
     color: '#999',
     fontSize: '1.1rem',
     textAlign: 'left',
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    margin: '0 10px 0 0',
   }
 }
 
