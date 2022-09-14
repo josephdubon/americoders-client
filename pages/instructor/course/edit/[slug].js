@@ -22,6 +22,7 @@ const EditCourse = () => {
         category: '',
         eventStartDate: '',
         eventEndDate: '',
+        eventLocation: '',
         loading: false,
         lessons: [],
     })
