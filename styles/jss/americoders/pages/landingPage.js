@@ -36,6 +36,16 @@ const landingPageStyle = {
     textAlign: 'left',
     textTransform: 'uppercase'
   },
+  price: {
+    ...title,
+    fontSize: '2.275rem',
+    display: 'inline-block',
+    position: 'relative',
+    marginTop: '30px',
+    minHeight: '32px',
+    color: '#FFFFFF',
+    textDecoration: 'none',
+  },
   main: {
     background: '#FFFFFF',
     position: 'relative',
