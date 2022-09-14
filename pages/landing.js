@@ -189,7 +189,10 @@ export default function LandingPage (props) {
                             href={`/course/${course.slug}`}
                           >
                             <a>
-                              <Button size={'md'} color={'primary'}>More Info</Button>
+                              <Button
+                                color="primary"
+                                size="lg"
+                              >More Info</Button>
                             </a>
                           </Link>
                         </CardBody>
