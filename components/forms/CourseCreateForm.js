@@ -122,6 +122,21 @@ const CourseCreateForm = ({
           </p>
         </div>
 
+        {/* event location */}
+        <div className="form-group ">
+          <p>
+            Event Location:
+            <input
+              type="location"
+              name="eventLocation"
+              className="form-control"
+              value={values.eventLocation}
+              placeholder="Event Location"
+              onChange={handleChange}
+            />
+          </p>
+        </div>
+
         {/* image upload */}
         <div className="form-row">
           <div className="col">
