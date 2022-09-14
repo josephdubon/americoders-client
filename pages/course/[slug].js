@@ -190,14 +190,19 @@ const SingleCourse = ({ course }) => {
           ) : (<>
             <GridItem cs={12} sm={12} md={6}>
               {course.image && course.image.Location ?
-                <Image src={course.image.Location}
+                <>
+                  <img src={course.image.Location}
                        alt={course.name}
-                       preview={false}
                        width={'100%'}
-                /> : <Image src="/images/americoders-course.png"
-                            alt={course.name}
-                            width={'100%'}
-                            className="p-1 squareFrame"
+                       height={'420px'}
+                       style={{ margin: '2.275rem 0', objectFit: 'cover' }}
+                  />
+                </>
+                : <img src="/images/americoders-course.png"
+                       alt={course.name}
+                       width={'100%'}
+                       height={'420px'}
+                       style={{ margin: '2.275rem 0', objectFit: 'cover' }}
                 />
               }
             </GridItem>
