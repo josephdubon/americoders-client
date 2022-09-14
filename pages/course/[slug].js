@@ -12,14 +12,12 @@ import classNames from 'classnames'
 import GridContainer from '../../components/Grid/GridContainer'
 import GridItem from '../../components/Grid/GridItem'
 import ReactPlayer from 'react-player'
-import { Image } from 'antd'
 import Footer from '../../components/Footer/Footer'
 import { makeStyles } from '@material-ui/core/styles'
 import styles from '../../styles/jss/americoders/pages/landingPage'
 
 const Stripe = require('stripe')
 
-const dashboardRoutes = []
 const useStyles = makeStyles(styles)
 
 const SingleCourse = ({ course }) => {
