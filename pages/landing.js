@@ -186,7 +186,7 @@ export default function LandingPage (props) {
 
                           {/* action button */}
                           <Link
-                            href={`/user/course/${course.slug}`}
+                            href={`/course/${course.slug}`}
                           >
                             <a>
                               <Button size={'md'} color={'primary'}>More Info</Button>
