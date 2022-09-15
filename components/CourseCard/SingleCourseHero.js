@@ -95,6 +95,33 @@ const SingleCourseHero = (props) => {
                   }) : 'Free'
                 }
               </h4>
+              {/* enroll button */}
+              {loading ? <div className="d-flex justify-content-center">
+                <LoadingOutlined className="h1 text-danger"/>
+              </div> : (
+                <div>
+                  <Tooltip
+                    id="tooltip-top"
+                    title="Tooltip on top"
+                    placement="top"
+                    classes={{ tooltip: classes.tooltip }}
+                  >
+                    <Button
+                      color="primary"
+                      icon={<SafetyOutlined/>}
+                      size="md"
+                      disabled={true} // disable button for now
+                      onClick={paid ? props.handlePaidEnrollment : props.handleFreeEnrollment}
+                    >
+                      {user
+                        ? props.enrolled.status
+                          ? 'Go to course'
+                          : 'Enroll'
+                        : 'Login to enroll'}
+                    </Button>
+                  </Tooltip>
+                </div>
+              )}
             </GridItem>
             <GridItem>
             </GridItem>
