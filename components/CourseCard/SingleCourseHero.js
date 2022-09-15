@@ -15,6 +15,7 @@ import Badge from '../Badge/Badge.js'
 import Button from '../CustomButtons/Button'
 import moment from 'moment'
 import { Tooltip } from '@mui/material'
+import parse from 'html-react-parser'
 
 const dashboardRoutes = []
 
@@ -75,7 +76,7 @@ const SingleCourseHero = (props) => {
 
               {/* course description */}
               <h4 className={classes.subtitle} style={{ textAlign: 'center' }}>
-                {props.course.description}
+                {parse(props.course.description)}
               </h4>
               {/* enroll button */}
               {loading ? <div className="d-flex justify-content-center">
