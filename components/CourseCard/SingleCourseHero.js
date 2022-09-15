@@ -71,7 +71,7 @@ const SingleCourseHero = (props) => {
               <p className={classes.courseTitle}>{props.course && props.course.name}</p>
 
               {/* course description */}
-              <h4 className={classes.subtitle} style={{ textAlign: 'center' }}>
+              <p className={classes.subtitle} style={{ textAlign: 'center' }}>
                 {parse(props.course.description)}
               </h4>
               {/* enroll button */}
