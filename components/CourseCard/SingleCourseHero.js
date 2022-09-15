@@ -82,11 +82,8 @@ const SingleCourseHero = (props) => {
                 <br/>
 
                 {/* start date */}
-                {moment(props.course.eventStartDate).calendar()}
-              </h4>
-
-              {/* price */}
-              <h4 className={classes.price}>
+                {moment(props.course.eventStartDate).calendar()} {' / '}
+                {/* price */}
                 {
                   paid ? currencyFormatter({
                     amount: price,
