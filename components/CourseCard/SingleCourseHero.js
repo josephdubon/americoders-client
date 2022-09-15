@@ -56,10 +56,18 @@ const SingleCourseHero = (props) => {
 
     {/* hero section */}
     {props.course ?
-      <Parallax filter
-                image={props.course.image && props.course.image.Location}
-                style={{ height: '100vh' }}
-      >
+      <GridContainer
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        className={classes.overlay}
+        style={{
+          width: '100%',
+          height: '100vh',
+          background: `linear-gradient(90deg, rgba(2,0,36,.8) 0%, rgba(9,9,121,.8) 23%, rgba(162,6,33,.8) 53%, rgba(242,242,242,1) 100%), url(${props.course.image && props.course.image.Location})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+        }}>
         <div className={classes.container}>
           <GridContainer
             direction="row"
