@@ -148,7 +148,7 @@ const SingleCourseHero = (props) => {
             </GridItem>
           </GridContainer>
         </div>
-      </Parallax>
+      </GridContainer>
       :
       (<>
           <p className="display-6 fw-bold lh-1 mb-3">Welcome back!!</p>
