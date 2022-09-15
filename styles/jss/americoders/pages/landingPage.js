@@ -51,10 +51,6 @@ const landingPageStyle = {
   },
   price: {
     ...title,
-    fontSize: '2rem',
-    position: 'relative',
-    marginTop: '30px',
-    minHeight: '32px',
     color: '#FFFFFF',
     textDecoration: 'none',
   },
