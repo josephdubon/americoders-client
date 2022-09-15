@@ -19,8 +19,6 @@ const landingPageStyle = {
   eventDetailsTitle: {
     ...title,
     fontSize: '1rem',
-    display: 'inline-block',
-    position: 'relative',
     color: '#FFFFFF',
     textDecoration: 'none',
   },
