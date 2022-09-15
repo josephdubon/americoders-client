@@ -83,13 +83,7 @@ const SingleCourseHero = (props) => {
                 <br/>
 
                 {/* start date */}
-                <strong>Start
-                  Date: </strong> {moment(props.course.eventStartDate).calendar()}
-                <br/>
-
-                {/* start date */}
-                <strong>End
-                  Date: </strong> {moment(props.course.eventEndDate).calendar()}
+                {moment(props.course.eventStartDate).calendar()}
               </h4>
 
               {/* price */}
