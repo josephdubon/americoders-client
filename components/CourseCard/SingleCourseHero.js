@@ -100,7 +100,7 @@ const SingleCourseHero = (props) => {
                     <Button
                       color="danger"
                       icon={<SafetyOutlined/>}
-                      size="sm"
+                      size="md"
                       disabled={true} // disable button for now
                       onClick={paid ? props.handlePaidEnrollment : props.handleFreeEnrollment}
                     >
