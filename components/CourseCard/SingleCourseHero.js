@@ -73,34 +73,7 @@ const SingleCourseHero = (props) => {
               {/* course description */}
               <p className={classes.subtitle} style={{ textAlign: 'center' }}>
                 {parse(props.course.description)}
-              </h4>
-              {/* enroll button */}
-              {loading ? <div className="d-flex justify-content-center">
-                <LoadingOutlined className="h1 text-danger"/>
-              </div> : (
-                <div>
-                  <Tooltip
-                    id="tooltip-top"
-                    title="Tooltip on top"
-                    placement="top"
-                    classes={{ tooltip: classes.tooltip }}
-                  >
-                    <Button
-                      color="danger"
-                      icon={<SafetyOutlined/>}
-                      size="md"
-                      disabled={true} // disable button for now
-                      onClick={paid ? props.handlePaidEnrollment : props.handleFreeEnrollment}
-                    >
-                      {user
-                        ? props.enrolled.status
-                          ? 'Go to course'
-                          : 'Enroll'
-                        : 'Login to enroll'}
-                    </Button>
-                  </Tooltip>
-                </div>
-              )}
+              </p>
             </GridItem>
             {/* event date and price details */}
             <GridItem xs={10} sm={10} md={6} style={{ textAlign: 'left' }}>
