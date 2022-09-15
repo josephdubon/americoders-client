@@ -56,8 +56,10 @@ const SingleCourseHero = (props) => {
 
     {/* hero section */}
     {props.course ?
-      <Parallax filter responsive
-                image={props.course.image && props.course.image.Location}>
+      <Parallax filter
+                image={props.course.image && props.course.image.Location}
+                style={{ height: '100vh' }}
+      >
         <div className={classes.container}>
           <GridContainer
             direction="row"
@@ -92,7 +94,7 @@ const SingleCourseHero = (props) => {
                     <Button
                       color="danger"
                       icon={<SafetyOutlined/>}
-                      size="lg"
+                      size="sm"
                       disabled={true} // disable button for now
                       onClick={paid ? props.handlePaidEnrollment : props.handleFreeEnrollment}
                     >
