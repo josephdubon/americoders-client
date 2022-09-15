@@ -69,9 +69,8 @@ const PreviewModal = ({ showModal, setShowModal, preview }) => {
       <DialogActions
         className={classes.modalFooter + ' ' + classes.modalFooterCenter}
       >
-        <Button onClick={() => setShowModal(false)}>Never Mind</Button>
-        <Button onClick={() => setShowModal(false)} color="success">
-          Yes
+        <Button onClick={() => setShowModal(false)} color="danger">
+          Close
         </Button>
       </DialogActions>
     </Dialog>
