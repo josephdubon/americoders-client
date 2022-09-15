@@ -53,13 +53,11 @@ const PreviewModal = ({ showModal, setShowModal, preview }) => {
         >
           <Close className={classes.modalClose}/>
         </IconButton>
-        <h4 className={classes.modalTitle}>Course Preview</h4>
       </DialogTitle>
       <DialogContent
         id="modal-slide-description"
         className={classes.modalBody}
       >
-        <h5>Are you sure you want to do this?</h5>
         <ReactPlayer
           url={preview}
           playing={showModal}
