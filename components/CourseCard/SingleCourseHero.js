@@ -78,9 +78,6 @@ const SingleCourseHero = (props) => {
             {/* event date and price details */}
             <GridItem xs={10} sm={10} md={6} style={{ textAlign: 'left' }}>
               <h4 className={classes.eventDetailsTitle}>
-                Event Details
-                <br/>
-                <br/>
                 <strong>Address: </strong> {props.course.eventLocation}
                 <br/>
                 <br/>
