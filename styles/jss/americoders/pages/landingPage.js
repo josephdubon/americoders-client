@@ -22,6 +22,12 @@ const landingPageStyle = {
     color: '#FFFFFF',
     textDecoration: 'none',
   },
+  courseTitle: {
+    ...title,
+    fontSize: '1.175rem',
+    color: '#FFFFFF',
+    textDecoration: 'none',
+  },
   cardTitle,
   sectionTitle: {
     ...title,
