@@ -260,7 +260,7 @@ const SingleCourse = ({ course }) => {
                        alt={course.name}
                        width={'100%'}
                        height={'420px'}
-                       style={{ margin: '2.275rem 0', objectFit: 'cover' }}
+                       style={{ margin: '2.275rem 0', objectFit: 'cover', borderRadius: '2rem' }}
                   />
                 </>
                 : <img src="/images/americoders-course.png"
