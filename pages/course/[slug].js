@@ -36,6 +36,12 @@ const SingleCourse = ({ course }) => {
     state: { user },
   } = useContext(Context)
 
+  // destructure course items
+  const {
+    price,
+    paid,
+  } = course
+
   const classes = useStyles()
 
   // make request to backend
