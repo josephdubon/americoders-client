@@ -48,9 +48,10 @@ const SingleCourseHero = (props) => {
 
     {/* hero section */}
     {props.course ?
-      <Parallax filter
-                image="/images/original/reno_downtown.png"
-      >
+      <Parallax filter responsive
+                image={props.course.image && props.course.image ?
+                  props.course.image.Location :
+                  '/images/original/reno_downtown.png'}>
         <div className={classes.container}>
           <GridContainer
             direction="row"
