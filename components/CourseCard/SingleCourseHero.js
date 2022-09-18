@@ -69,9 +69,9 @@ const SingleCourseHero = (props) => {
               {/* course name */}
               <p className={classes.courseTitle}>{props.course && props.course.name}</p>
 
-              {/* course description */}
+              {/* course intro */}
               <p className={classes.subtitle} style={{ textAlign: 'center' }}>
-                {parse(props.course.description)}
+                {parse(props.course.intro)}
               </p>
             </GridItem>
             {/* event date and price details */}
