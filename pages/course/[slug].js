@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import SingleCourseHero from '../../components/CourseCard/SingleCourseHero'
@@ -15,6 +15,10 @@ import ReactPlayer from 'react-player'
 import Footer from '../../components/Footer/Footer'
 import { makeStyles } from '@material-ui/core/styles'
 import styles from '../../styles/jss/americoders/pages/landingPage'
+import { SafetyCheck, HourglassBottom } from '@material-ui/icons'
+import { Tooltip } from '@mui/material'
+import Button from '../../components/CustomButtons/Button'
+import CoursesFeatureSection from '../../pages-sections/CoursesPage-Sections/CoursesFeatureSection'
 
 const Stripe = require('stripe')
 
