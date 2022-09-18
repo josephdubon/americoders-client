@@ -36,6 +36,21 @@ const CourseCreateForm = ({
           />
         </div>
 
+        {/* intro */}
+        <div className="form-group">
+                <textarea
+                  name="intro"
+                  id=""
+                  cols="7"
+                  rows="3"
+                  className="form-control"
+                  value={values.intro}
+                  placeholder="Description"
+                  onChange={handleChange}
+                >
+                </textarea>
+        </div>
+
         {/* description */}
         <div className="form-group">
                 <textarea
@@ -45,7 +60,7 @@ const CourseCreateForm = ({
                   rows="7"
                   className="form-control"
                   value={values.description}
-                  placeholder="Description"
+                  placeholder="Short Intro"
                   onChange={handleChange}
                 >
                 </textarea>
