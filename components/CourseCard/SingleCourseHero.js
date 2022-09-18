@@ -58,62 +58,17 @@ const SingleCourseHero = (props) => {
             justifyContent="center"
             alignItems="center"
           >
-
-            <GridItem xs={10} sm={10} md={6} style={{ textAlign: 'center' }}>
-              {/* course name */}
-              <p className={classes.courseTitle}>{props.course && props.course.name}</p>
-
-              {/* course intro */}
-              <p className={classes.subtitle} style={{ textAlign: 'center' }}>
-                {parse(props.course.intro)}
-              </p>
-            </GridItem>
-            {/* event date and price details */}
-            <GridItem xs={10} sm={10} md={6} style={{ textAlign: 'left' }}>
-              <h4 className={classes.eventDetailsTitle}>
-                {props.course.eventLocation}
-                <br/>
-
-                {/* start date */}
-                {moment(props.course.eventStartDate).calendar()} {' / '}
-                {/* price */}
-                {
-                  paid ? currencyFormatter({
-                    amount: price,
-                    currency: 'usd',
-                  }) : 'Free'
-                }
-              </h4>
-              {/* enroll button */}
-              {loading ? <div className="d-flex justify-content-center">
-                <LoadingOutlined className="h1 text-danger"/>
-              </div> : (
-                <div>
-                  <Tooltip
-                    id="tooltip-top"
-                    title="Tooltip on top"
-                    placement="top"
-                    classes={{ tooltip: classes.tooltip }}
-                  >
-                    <Button
-                      color="primary"
-                      icon={<SafetyOutlined/>}
-                      size="md"
-                      disabled={true} // disable button for now
-                      onClick={paid ? props.handlePaidEnrollment : props.handleFreeEnrollment}
-                    >
-                      {user
-                        ? props.enrolled.status
-                          ? 'Go to course'
-                          : 'Enroll'
-                        : 'Login to enroll'}
-                    </Button>
-                  </Tooltip>
-                </div>
-              )}
-            </GridItem>
-            <GridItem>
-            </GridItem>
+            <GridContainer direction="row"
+                           justifyContent="center"
+                           alignItems="center"
+            >
+              <GridItem xs={10} sm={12} md={12}>
+                <h1 className={classes.courseTitle}>{props.course.name}</h1>
+                <h4 className={classes.intro}>
+                  {props.course.intro}
+                </h4>
+              </GridItem>
+            </GridContainer>
           </GridContainer>
         </div>
       </Parallax>
