@@ -57,7 +57,6 @@ const SingleCourseHero = (props) => {
       <Parallax filter
                 image="/images/original/reno_downtown.png"
       >
-
         <div className={classes.container}>
           <GridContainer
             direction="row"
