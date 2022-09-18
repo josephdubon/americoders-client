@@ -1,5 +1,3 @@
-import { currencyFormatter } from '../../utils/helpers'
-import { LoadingOutlined, SafetyOutlined } from '@ant-design/icons'
 import Header from '../Header/Header'
 import NavLogo from '../../public/images/logo/americoders-logo-simple_white.svg'
 import HeaderLinks from '../Header/HeaderLinks'
