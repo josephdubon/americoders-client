@@ -215,7 +215,7 @@ const SingleCourse = ({ course }) => {
                     icon={<SafetyCheck/>}
                     size="lg"
                     fullWidth
-                    // disabled={true} // disable button for now
+                    disabled={true} // disable button for now
                     onClick={paid ? handlePaidEnrollment : handleFreeEnrollment}
                   >
                     {user
