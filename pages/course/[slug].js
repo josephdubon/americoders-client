@@ -185,6 +185,59 @@ const SingleCourse = ({ course }) => {
           direction="row"
           justifyContent="center"
           alignItems="center"
+          style={{ marginTop: '4rem', marginBottom: '8rem' }}
+        >
+          <GridItem xs={12} sm={12} md={8}>
+            <h1 className={classes.title} style={{ color: '#3C4858' }}>Are You Ready To Enroll?</h1>
+            <h4 className={classes.subtitle} style={{ color: '#3C4858', fontSize: '1.175rem' }}>
+              Because we are ready for you to come learn with us!
+              <br/>
+              SMASH the enroll button below to get to our enrollment page.
+              <br/>
+              <br/>
+              If you have any questions, please contact us at <a
+              href="mailto:events@americoders.org">events@americoders.org</a>
+            </h4>
+          </GridItem>
+          <GridItem xs={12} sm={8} md={6}>
+            {loading ? <div className="d-flex justify-content-center">
+              <HourglassBottom className="h1 text-danger"/>
+            </div> : (
+              <div>
+                <Tooltip
+                  id="tooltip-top"
+                  title="Tooltip on top"
+                  placement="top"
+                  classes={{ tooltip: classes.tooltip }}
+                >
+                  <Button
+                    color="primary"
+                    icon={<SafetyCheck/>}
+                    size="lg"
+                    fullWidth
+                    // disabled={true} // disable button for now
+                    onClick={paid ? handlePaidEnrollment : handleFreeEnrollment}
+                  >
+                    {user
+                      ? enrolled.status
+                        ? 'Go to course'
+                        : 'Enroll'
+                      : 'Login to enroll'}
+                  </Button>
+                </Tooltip>
+              </div>
+            )}
+          </GridItem>
+        </GridContainer>
+      </div>
+
+
+      {/* video and lessons preview section */}
+      <div className={classes.container}>
+        <GridContainer
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
         >
           {course && course.lessons[0].video && course.lessons[0].video.Location ? (
             <GridItem cs={12} sm={12} md={6}
