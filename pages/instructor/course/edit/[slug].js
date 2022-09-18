@@ -16,6 +16,7 @@ const EditCourse = () => {
     const [values, setValues] = useState({
         name: '',
         description: '',
+        intro: '',
         price: '49.99',
         uploading: false,
         paid: true,
