@@ -6,9 +6,14 @@ const landingPageStyle = {
     color: '#FFFFFF',
     ...container,
   },
+  sections: {
+    paddingTop: '30px',
+    minHeight: '32px',
+  },
   title: {
     ...title,
-    fontSize: '2rem',
+    fontSize: '2.275rem',
+    textAlign: 'center',
     display: 'inline-block',
     position: 'relative',
     marginTop: '30px',
@@ -16,15 +21,15 @@ const landingPageStyle = {
     color: '#FFFFFF',
     textDecoration: 'none',
   },
-  eventDetailsTitle: {
+  enrollSection: {
     ...title,
     fontSize: '1rem',
-    color: '#FFFFFF',
     textDecoration: 'none',
+    textAlign: 'center',
   },
   courseTitle: {
     ...title,
-    fontSize: '1.175rem',
+    fontSize: '2.275rem',
     color: '#FFFFFF',
     textDecoration: 'none',
   },
@@ -43,8 +48,16 @@ const landingPageStyle = {
     textAlign: 'left',
     margin: '2.5rem auto',
   },
+  intro: {
+    fontSize: '1.175rem',
+    fontWeight: '500',
+    textAlign: 'center',
+    textTransform: 'uppercase',
+    width: '100%',
+    margin: '2.5rem auto',
+  },
   description: {
-    color: '#999',
+    color: '#3C4858',
     fontSize: '1.1rem',
     textAlign: 'left',
     textTransform: 'uppercase'
