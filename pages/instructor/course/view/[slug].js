@@ -65,7 +65,7 @@ const CourseView = () => {
     const { data } = await axios.post(`/api/instructor/student-count`, {
       courseId: course._id,
     })
-    console.log('STUDENT COUNT => ', data)
+    // console.log('STUDENT COUNT => ', data)
     setStudents(data.length)
   }
 
