@@ -31,6 +31,7 @@ const landingPageStyle = {
     ...title,
     fontSize: '2.275rem',
     color: '#FFFFFF',
+    textAlign: 'center',
     textDecoration: 'none',
   },
   cardTitle,
