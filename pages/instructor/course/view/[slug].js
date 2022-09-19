@@ -348,6 +348,8 @@ const CourseView = () => {
                   <h5 className="pt-2">{course.name}</h5>
                   <p> {course.lessons && course.lessons.length} Lessons</p>
 
+                  <p style={myStyle}>{course.ages}</p>
+
                   <p style={myStyle}>{course.category}</p>
                 </div>
 
