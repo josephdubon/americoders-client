@@ -191,6 +191,7 @@ export default function LandingPage (props) {
                           >
                             <a>
                               <Button
+                                fullWidth
                                 color="primary"
                                 size="lg"
                               >More Info</Button>
