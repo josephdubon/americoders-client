@@ -1,15 +1,16 @@
-import {useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Resizer from 'react-image-file-resizer'
 import InstructorRoute from '../../../../components/routes/InstructorRoute'
 import CourseCreateForm from '../../../../components/forms/CourseCreateForm'
 import UpdateLessonForm from '../../../../components/forms/UpdateLessonForm'
-import {toast} from 'react-toastify'
-import {useRouter} from 'next/router'
-import {Avatar, List, Modal} from 'antd'
+import { toast } from 'react-toastify'
+import { useRouter } from 'next/router'
+import { Avatar, List, Modal } from 'antd'
 import Item from 'antd/lib/list/Item'
-import {DeleteOutlined} from '@ant-design/icons'
-import {PageHead} from '../../../../components/head/PageHead'
+import { DeleteOutlined } from '@ant-design/icons'
+import { PageHead } from '../../../../components/head/PageHead'
+import UpdateEventForm from '../../../../components/forms/UpdateEventForm'
 
 const EditCourse = () => {
     // state
