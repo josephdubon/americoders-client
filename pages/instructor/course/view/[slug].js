@@ -13,6 +13,7 @@ import {
 import { Avatar, Button, List, Modal, Tooltip } from 'antd'
 import ReactMarkdown from 'react-markdown'
 import AddLessonForm from '../../../../components/forms/AddLessonForm'
+import AddEventForm from '../../../../components/forms/AddEventForm'
 import { toast } from 'react-toastify'
 // import Item from 'antd/lib/list/Item'
 import { PageHead } from '../../../../components/head/PageHead'
