@@ -27,10 +27,10 @@ const EditCourse = () => {
     event: [],
   })
 
-    // set image initial state to an empty object
-    const [image, setImage] = useState({})
-    const [preview, setPreview] = useState('')
-    const [uploadButtonText, setUploadButtonText] = useState('Upload Image')
+  // set image initial state to an empty object
+  const [image, setImage] = useState({})
+  const [preview, setPreview] = useState('')
+  const [uploadButtonText, setUploadButtonText] = useState('Upload Image')
 
     // set state for lessons update
     const [visible, setVisible] = useState(false)
