@@ -179,6 +179,7 @@ const SingleCourse = ({ course }) => {
 
     <div className={classNames(classes.main, classes.mainRaised)}>
       <div className={classes.container}>
+
         <CoursesFeatureSection course={course}/>
 
         <GridContainer
