@@ -35,6 +35,14 @@ const CourseView = () => {
     javascript: '',
     video: {},
   })
+  const [eventVisible, setEventVisible] = useState(false)
+  const [eventValues, setEventValues] = useState({
+    title: '',
+    description: '',
+    startDate: '',
+    endDate: '',
+    location: '',
+  })
   const [uploading, setUploading] = useState(false)
   const [uploadButtonText, setUploadButtonText] = useState('Upload video')
   const [progress, setProgress] = useState(0)
