@@ -462,6 +462,61 @@ const CourseView = () => {
                 </div>
               </div>
 
+              {/* new events area  */}
+              <div className="row">
+                <Button
+                  onClick={() => setEventVisible(true)} // update state for modal
+                  className="col-md-6 offset-md-3 text-center"
+                  type="primary"
+                  shape="round"
+                  icon={<UploadOutlined/>}
+                  size="large"
+                >
+                  Add Event
+                </Button>
+
+                {/* modal for event */}
+                <Modal
+                  title="+ Add Event"
+                  centered
+                  width={'50vw'}
+                  visible={eventVisible}
+                  onCancel={() => setEventVisible(false)}
+                  footer={null}
+                >
+                  {/* render form component */}
+                  <AddEventForm
+                    eventValues={eventValues}
+                    setEventValues={setEventValues}
+                    handleAddEvent={handleAddEvent}
+                  />
+                </Modal>
+
+                {/* events list */}
+                <div className="row pb-5">
+                  <div className="col lesson-list">
+                    <h4>{course && course.event && course.event.length} Events</h4>
+                    <List
+                      itemLayout="horizontal"
+                      dataSource={course && course.event}
+                      renderItem={(item, index) => (
+                        // list each item with index number next to title
+                        <Item>
+                          <Item.Meta
+                            avatar={<Avatar>{index + 1}</Avatar>}
+                            title={item.title}
+                            content={item.description}
+                          >
+                          </Item.Meta>
+                        </Item>
+                      )}>
+                      <span>{}</span>
+                    </List>
+                  </div>
+                </div>
+              </div>
+
+              {/**/}
             </>)}
 
           </div>
