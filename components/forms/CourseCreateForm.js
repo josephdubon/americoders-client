@@ -66,6 +66,21 @@ const CourseCreateForm = ({
                 </textarea>
         </div>
 
+        {/* ages */}
+        <div className="form-group">
+                <textarea
+                  name="ages"
+                  id=""
+                  cols="7"
+                  rows="6"
+                  className="form-control"
+                  value={values.ages}
+                  placeholder="Ages"
+                  onChange={handleChange}
+                >
+                </textarea>
+        </div>
+
         {/* paid or free course */}
         <div className="form-row">
           <div className="col">
