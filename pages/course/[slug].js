@@ -189,19 +189,19 @@ const SingleCourse = ({ course }) => {
           alignItems="center"
           style={{ marginTop: '4rem', marginBottom: '8rem' }}
         >
-          <GridItem xs={12} sm={12} md={8}>
+          <GridItem xs={12} sm={12} md={6}>
             <h1 className={classes.title} style={{ color: '#3C4858' }}>Are You Ready To Enroll?</h1>
             <h4 className={classes.subtitle} style={{ color: '#3C4858', fontSize: '1.175rem' }}>
               Because we are ready for you to come learn with us!
-              <br/>
-              SMASH the enroll button below to get to our enrollment page.
-              <br/>
               <br/>
               If you have any questions, please contact us at <a
               href="mailto:events@americoders.org">events@americoders.org</a>
             </h4>
           </GridItem>
-          <GridItem xs={12} sm={8} md={6}>
+          <GridItem xs={12} sm={12} md={6}>
+            <h4 className={classes.subtitle} style={{ color: '#3C4858', fontSize: '1.175rem' }}>
+              SMASH the enroll button below to get to our enrollment page.
+            </h4>
             {loading ? <div className="d-flex justify-content-center">
               <HourglassBottom className="h1 text-danger"/>
             </div> : (
