@@ -4,7 +4,7 @@ import HeaderLinks from '../Header/HeaderLinks'
 import Parallax from '../Parallax/Parallax'
 import GridContainer from '../Grid/GridContainer'
 import GridItem from '../Grid/GridItem'
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import styles from '../../styles/jss/americoders/pages/landingPage'
 import { Context } from '../../context'
@@ -14,8 +14,6 @@ const dashboardRoutes = []
 const useStyles = makeStyles(styles)
 
 const SingleCourseHero = (props) => {
-  // state
-  const [loading, setLoading] = useState(false)
 
   const {
     state: { user },
@@ -62,7 +60,7 @@ const SingleCourseHero = (props) => {
                            justifyContent="center"
                            alignItems="center"
             >
-              <GridItem xs={10} sm={12} md={12}>
+              <GridItem xs={10} sm={10} md={10}>
                 <h1 className={classes.courseTitle}>{props.course.name}</h1>
                 <h4 className={classes.intro}>
                   {props.course.intro}
