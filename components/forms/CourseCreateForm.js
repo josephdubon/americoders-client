@@ -45,7 +45,7 @@ const CourseCreateForm = ({
                   rows="3"
                   className="form-control"
                   value={values.intro}
-                  placeholder="Description"
+                  placeholder="Short Intro"
                   onChange={handleChange}
                 >
                 </textarea>
@@ -60,7 +60,7 @@ const CourseCreateForm = ({
                   rows="6"
                   className="form-control"
                   value={values.description}
-                  placeholder="Short Intro"
+                  placeholder="Description"
                   onChange={handleChange}
                 >
                 </textarea>
