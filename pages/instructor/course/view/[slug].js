@@ -77,6 +77,55 @@ const CourseView = () => {
     setCourse(data)
   }
 
+  //start
+  // add-event functions
+  const handleAddEvent = async e => {
+    e.preventDefault()
+    try {
+      // get request for data
+      const { data } = await axios.post(`/api/course/event/${slug}/${course.instructor._id}`,
+        eventValues) // lesson content from values
+
+      // update state
+      setEventValues({
+        ...eventValues,
+        title: '',
+        description: '',
+        startDate: '',
+        endDate: '',
+        location: '',
+      })
+      setVisible(false)
+      setCourse(data)
+
+      // notification config
+      toast.success('Event added!', {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+
+    } catch (err) {
+      console.log('HANDLE EVENT: ', err)
+
+      // notification config
+      toast.error('Event add failed!', {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+    }
+  }
+  //end
+
   // add-lesson functions
   const handleAddLesson = async e => {
     e.preventDefault()
