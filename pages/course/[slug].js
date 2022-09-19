@@ -182,6 +182,7 @@ const SingleCourse = ({ course }) => {
 
         <CoursesFeatureSection course={course}/>
 
+        {/* enroll section */}
         <GridContainer
           direction="row"
           justifyContent="center"
