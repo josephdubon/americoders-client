@@ -39,6 +39,7 @@ import MailingListForm from '../components/forms/MailingListForm'
 import Link from 'next/link'
 import { currencyFormatter } from '../utils/helpers'
 import Badge from '../components/Badge/Badge.js'
+import moment from 'moment'
 
 const dashboardRoutes = []
 
@@ -184,6 +185,9 @@ export default function LandingPage (props) {
                             currency: 'usd',
                           }) : 'Free'}</h4>
 
+                          <h6 className={classes.description}>{moment(course.event[0].startDate).calendar()}
+                            <br/>
+                            {course.event[0].location}</h6>
                           {/* action button */}
                           <Link
                             href={`/course/${course.slug}`}
