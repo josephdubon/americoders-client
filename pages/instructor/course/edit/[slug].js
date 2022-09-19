@@ -18,6 +18,7 @@ const EditCourse = () => {
     name: '',
     description: '',
     intro: '',
+    ages: 'All Ages',
     price: '49.99',
     uploading: false,
     paid: true,
