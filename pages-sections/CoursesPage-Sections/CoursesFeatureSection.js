@@ -10,11 +10,7 @@ import InfoArea from '../../components/InfoArea/InfoArea.js'
 
 import styles
   from '../../styles/jss/americoders/pages/landingPageSections/productStyle.js'
-import FeaturedSectionLeft
-  from '../../components/FeaturedSectionLeft/FeaturedSectionLeft'
-import FeaturedSectionRight
-  from '../../components/FeaturedSectionRight/FeaturedSectionRight'
-import { Map, Phonelink, MonetizationOn, Today, Money } from '@material-ui/icons'
+import { Map, MonetizationOn, Today, } from '@material-ui/icons'
 import parse from 'html-react-parser'
 import moment from 'moment'
 import { currencyFormatter } from '../../utils/helpers'
@@ -41,19 +37,23 @@ export default function CoursesFeatureSection ({ course }) {
     {/**/}
     <div className={classes.section}>
       <GridContainer>
+
+        {/* calendar*/}
         <GridItem xs={12} sm={12} md={4}>
           <InfoArea
             title="Calendar"
-            description={moment(course.eventStartDate).calendar()}
+            description={moment(course.event[0].startDate).calendar()}
             icon={Today}
             iconColor="danger"
             vertical
           />
         </GridItem>
+
+        {/* Location */}
         <GridItem xs={12} sm={12} md={4}>
           <InfoArea
             title="Location"
-            description={course.eventLocation}
+            description={course.event[0].location}
             icon={Map}
             iconColor="primary"
             vertical
