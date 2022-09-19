@@ -13,8 +13,8 @@ import {
 import { Avatar, Button, List, Modal, Tooltip } from 'antd'
 import ReactMarkdown from 'react-markdown'
 import AddLessonForm from '../../../../components/forms/AddLessonForm'
+import AddEventForm from '../../../../components/forms/AddEventForm'
 import { toast } from 'react-toastify'
-// import Item from 'antd/lib/list/Item'
 import { PageHead } from '../../../../components/head/PageHead'
 import Item from 'antd/lib/list/Item'
 
@@ -34,6 +34,14 @@ const CourseView = () => {
     css: '',
     javascript: '',
     video: {},
+  })
+  const [eventVisible, setEventVisible] = useState(false)
+  const [eventValues, setEventValues] = useState({
+    title: '',
+    description: '',
+    startDate: '',
+    endDate: '',
+    location: '',
   })
   const [uploading, setUploading] = useState(false)
   const [uploadButtonText, setUploadButtonText] = useState('Upload video')
@@ -57,7 +65,7 @@ const CourseView = () => {
     const { data } = await axios.post(`/api/instructor/student-count`, {
       courseId: course._id,
     })
-    console.log('STUDENT COUNT => ', data)
+    // console.log('STUDENT COUNT => ', data)
     setStudents(data.length)
   }
 
@@ -68,6 +76,55 @@ const CourseView = () => {
     // update state with course
     setCourse(data)
   }
+
+  //start
+  // add-event functions
+  const handleAddEvent = async e => {
+    e.preventDefault()
+    try {
+      // get request for data
+      const { data } = await axios.post(`/api/course/event/${slug}/${course.instructor._id}`,
+        eventValues) // lesson content from values
+
+      // update state
+      setEventValues({
+        ...eventValues,
+        title: '',
+        description: '',
+        startDate: '',
+        endDate: '',
+        location: '',
+      })
+      setVisible(false)
+      setCourse(data)
+
+      // notification config
+      toast.success('Event added!', {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+
+    } catch (err) {
+      console.log('HANDLE EVENT: ', err)
+
+      // notification config
+      toast.error('Event add failed!', {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+    }
+  }
+  //end
 
   // add-lesson functions
   const handleAddLesson = async e => {
@@ -405,6 +462,61 @@ const CourseView = () => {
                 </div>
               </div>
 
+              {/* new events area  */}
+              <div className="row">
+                <Button
+                  onClick={() => setEventVisible(true)} // update state for modal
+                  className="col-md-6 offset-md-3 text-center"
+                  type="primary"
+                  shape="round"
+                  icon={<UploadOutlined/>}
+                  size="large"
+                >
+                  Add Event
+                </Button>
+
+                {/* modal for event */}
+                <Modal
+                  title="+ Add Event"
+                  centered
+                  width={'50vw'}
+                  visible={eventVisible}
+                  onCancel={() => setEventVisible(false)}
+                  footer={null}
+                >
+                  {/* render form component */}
+                  <AddEventForm
+                    eventValues={eventValues}
+                    setEventValues={setEventValues}
+                    handleAddEvent={handleAddEvent}
+                  />
+                </Modal>
+
+                {/* events list */}
+                <div className="row pb-5">
+                  <div className="col lesson-list">
+                    <h4>{course && course.event && course.event.length} Events</h4>
+                    <List
+                      itemLayout="horizontal"
+                      dataSource={course && course.event}
+                      renderItem={(item, index) => (
+                        // list each item with index number next to title
+                        <Item>
+                          <Item.Meta
+                            avatar={<Avatar>{index + 1}</Avatar>}
+                            title={item.title}
+                            content={item.description}
+                          >
+                          </Item.Meta>
+                        </Item>
+                      )}>
+                      <span>{}</span>
+                    </List>
+                  </div>
+                </div>
+              </div>
+
+              {/**/}
             </>)}
 
           </div>

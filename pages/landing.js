@@ -31,14 +31,12 @@ import Footer from '../components/Footer/Footer'
 import Logo from '../public/images/logo/americoders-logo_white.svg'
 import NavLogo from '../public/images/logo/americoders-logo-simple_white.svg'
 import Image from 'next/image'
-import CardHeader from '../components/Card/CardHeader.js'
 import CardBody from '../components/Card/CardBody'
-import CardFooter from '../components/Card/CardFooter'
 import Card from '../components/Card/Card'
-import MailingListForm from '../components/forms/MailingListForm'
 import Link from 'next/link'
 import { currencyFormatter } from '../utils/helpers'
 import Badge from '../components/Badge/Badge.js'
+import moment from 'moment'
 
 const dashboardRoutes = []
 
@@ -184,12 +182,16 @@ export default function LandingPage (props) {
                             currency: 'usd',
                           }) : 'Free'}</h4>
 
+                          <h6 className={classes.description}>{moment(course.event[0].startDate).calendar()}
+                            <br/>
+                            {course.event[0].location}</h6>
                           {/* action button */}
                           <Link
                             href={`/course/${course.slug}`}
                           >
                             <a>
                               <Button
+                                fullWidth
                                 color="primary"
                                 size="lg"
                               >More Info</Button>
