@@ -13,21 +13,19 @@ import { PageHead } from '../../../../components/head/PageHead'
 import UpdateEventForm from '../../../../components/forms/UpdateEventForm'
 
 const EditCourse = () => {
-    // state
-    const [values, setValues] = useState({
-        name: '',
-        description: '',
-        intro: '',
-        price: '49.99',
-        uploading: false,
-        paid: true,
-        category: '',
-        eventStartDate: '',
-        eventEndDate: '',
-        eventLocation: '',
-        loading: false,
-        lessons: [],
-    })
+  // state
+  const [values, setValues] = useState({
+    name: '',
+    description: '',
+    intro: '',
+    price: '49.99',
+    uploading: false,
+    paid: true,
+    category: '',
+    loading: false,
+    lessons: [],
+    event: [],
+  })
 
     // set image initial state to an empty object
     const [image, setImage] = useState({})
