@@ -16,7 +16,7 @@ import Footer from '../../components/Footer/Footer'
 import { makeStyles } from '@material-ui/core/styles'
 import styles from '../../styles/jss/americoders/pages/landingPage'
 import CoursesFeatureSection from '../../pages-sections/CoursesPage-Sections/CoursesFeatureSection'
-import { HourglassBottom, SafetyCheck } from '@material-ui/icons'
+import { HourglassFull, Check } from '@material-ui/icons'
 import { Tooltip } from '@mui/material'
 import Button from '../../components/CustomButtons/Button'
 
@@ -203,7 +203,7 @@ const SingleCourse = ({ course }) => {
               SMASH the enroll button below to get to our enrollment page.
             </h4>
             {loading ? <div className="d-flex justify-content-center">
-              <HourglassBottom className="h1 text-danger"/>
+              <HourglassFull className="h1 text-danger"/>
             </div> : (
               <div>
                 <Tooltip
@@ -214,7 +214,7 @@ const SingleCourse = ({ course }) => {
                 >
                   <Button
                     color="primary"
-                    icon={<SafetyCheck/>}
+                    icon={<Check/>}
                     size="lg"
                     fullWidth
                     disabled={true} // disable button for now
