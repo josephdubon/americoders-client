@@ -42,7 +42,7 @@ export default function CoursesFeatureSection ({ course }) {
         <GridItem xs={12} sm={12} md={4}>
           <InfoArea
             title="Calendar"
-            description={moment(course.event[0].startDate).calendar()}
+            description={`${moment(course.event[0].startDate).calendar()} - ${moment(course.event[0].endDate).calendar()}`}
             icon={Today}
             iconColor="danger"
             vertical
