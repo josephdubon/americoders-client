@@ -51,9 +51,9 @@ const CreateCourse = () => {
         // resize image
         Resizer.imageFileResizer(
             imagePreview,
-            720,
-            500,
-            'JPEG',
+            1920,
+            1080,
+            'PNG',
             100,
             0,
             async (uri) => {
