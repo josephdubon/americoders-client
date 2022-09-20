@@ -182,7 +182,7 @@ export default function LandingPage (props) {
                             currency: 'usd',
                           }) : 'Free'}</h4>
 
-                          <h6 className={classes.description}>{course.event && moment(course.event[0].startDate).calendar()}
+                          <h6 className={classes.description}>{course.event && moment(course.event[0].startDate).calendar()} - {course.event && moment(course.event[0].endDate).calendar()}
                             <br/>
                             {course.event[0].location}</h6>
                           {/* action button */}
