@@ -62,14 +62,6 @@ const SingleCourse = (props, { courses }) => {
     if (course) loadCompletedLessons()
   }, [course])
 
-  const showDrawer = () => {
-    setVisible(true)
-  }
-
-  const onClose = () => {
-    setVisible(false)
-  }
-
   const loadCourse = async () => {
     // collect data
     const { data } = await axios.get(`/api/user/course/${slug}`)
