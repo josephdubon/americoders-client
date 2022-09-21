@@ -16,21 +16,21 @@ const PlaygroundFrontEnd = ({ htmlValue }) => {
   const [html, setHtml] = useState(htmlValue)
   const [srcDoc, setSrcDoc] = useState('')
 
-    useEffect(() => {
-        const timeout = setTimeout(() => {
-            setSrcDoc(`
+  const classes = useStyles(styles)
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setSrcDoc(`
             <html lang='en'>
             <body>${html}</body>
-            <style>${css}</style>
-            <script>${javascript}</script>
             </html>
              `)
-        }, 250)
-        // clear out on every update
-        return () => {
-            clearTimeout(timeout)
-        }
-    }, [html, css, javascript])
+    }, 250)
+    // clear out on every update
+    return () => {
+      clearTimeout(timeout)
+    }
+  }, [html])
 
     return (<>
         <Content>
