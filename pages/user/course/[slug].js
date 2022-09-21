@@ -27,7 +27,7 @@ const SingleCourse = (props, { courses }) => {
   // state
   const [clicked, setClicked] = useState(-1)
   const [loading, setLoading] = useState(false)
-  const [course, setCourse] = useState({ lessons: [] }) // course.lessonn
+  const [course, setCourse] = useState({ lessons: [] }) // course.lesson
   const [completedLessons, setCompletedLessons] = useState([])
   const [visible, setVisible] = useState(false)
 
