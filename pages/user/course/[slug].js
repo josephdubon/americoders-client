@@ -143,33 +143,13 @@ const SingleCourse = (props, { courses }) => {
           className="d-flex justify-content-between display-1 p-5 center"
         />)}
 
-        {/* lessons nav */}
-        <LessonsNav showDrawer={showDrawer}/>
-
-        {/* lessons menu items */}
-        <Drawer
-          title={course && course.name + ' | Lessons Menu'}
-          placement={'left'}
-          width={500}
-          onClose={onClose}
-          open={visible}
-          extra={<Space>
-            <Button type="primary" onClick={onClose}>
-              Close
-            </Button>
-          </Space>}
-        >
-          <Menu
-            theme={'dark'}
-            mode="inline"
-            defaultSelectedKeys={[clicked]}
-            className="p-3 pt-4"
-            style={{ height: '80vh', overflow: 'scroll' }}
-          >
-            {course.lessons.map((lesson, index) => (<Item
-              onClick={() => setClicked(index)}
-              key={index}
-              icon={<Avatar>{index + 1}</Avatar>}
+        {/* parallax hero section */}
+        <Parallax small filter image={course.image && course.image.Location}>
+          <div className={classes.container}>
+            <GridContainer
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
             >
                                 <span style={{ marginRight: '25px' }}>
                                     {lesson.title.substring(0, 30)}
