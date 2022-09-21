@@ -23,7 +23,7 @@ import MenuItem from '@mui/material/MenuItem'
 
 const useStyles = makeStyles(styles)
 
-const SingleCourse = () => {
+const SingleCourse = (props, { courses }) => {
   // state
   const [clicked, setClicked] = useState(-1)
   const [loading, setLoading] = useState(false)
