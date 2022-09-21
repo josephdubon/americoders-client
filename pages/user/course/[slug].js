@@ -113,13 +113,31 @@ const SingleCourse = (props, { courses }) => {
     }
 
   }
+  const dashboardRoutes = []
+  const { ...rest } = props
 
   return (<>
-
+      {/* page title meta */}
       <PageHead title={course.name}/>
 
-
+      {/* student route wrapper */}
       <StudentRoute className="container">
+
+        {/* header and nav */}
+        <Header
+          color="transparent"
+          routes={dashboardRoutes}
+          brand={NavLogo}
+          rightLinks={<HeaderLinks/>}
+          fixed
+          changeColorOnScroll={{
+            height: 400,
+            color: 'white',
+          }}
+          {...rest}
+        />
+
+        {/* loading area */}
         {loading && (<SyncOutlined
           spin
           className="d-flex justify-content-between display-1 p-5 center"
