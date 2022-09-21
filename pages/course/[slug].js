@@ -217,7 +217,6 @@ const SingleCourse = ({ course }) => {
                     icon={<Check/>}
                     size="lg"
                     fullWidth
-                    disabled={true} // disable button for now
                     onClick={paid ? handlePaidEnrollment : handleFreeEnrollment}
                   >
                     {user
