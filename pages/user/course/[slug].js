@@ -21,8 +21,7 @@ import ReactPlayer from 'react-player'
 import ReactMarkdown from 'react-markdown'
 import MenuItem from '@mui/material/MenuItem'
 
-const { Content } = Layout
-const { Item } = Menu
+const useStyles = makeStyles(styles)
 
 const SingleCourse = () => {
   // state
