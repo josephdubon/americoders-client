@@ -1,7 +1,11 @@
-import {Collapse, Layout} from 'antd'
+import { Collapse, Layout } from 'antd'
 import dynamic from 'next/dynamic'
-import React, {useEffect, useState} from 'react'
-import {CaretRightOutlined} from '@ant-design/icons'
+import React, { useEffect, useState } from 'react'
+import { CaretRightOutlined } from '@ant-design/icons'
+import GridContainer from '../Grid/GridContainer'
+import GridItem from '../Grid/GridItem'
+import { makeStyles } from '@material-ui/core/styles'
+import styles from '../../styles/jss/americoders/pages/coursePage'
 
 const {Panel} = Collapse
 
