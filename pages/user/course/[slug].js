@@ -274,20 +274,26 @@ const SingleCourse = (props, { courses }) => {
                   </GridContainer>
                 </GridContainer>
 
-              {/* lesson markdown md mdx content */}
-              <Content>
-                <div className="container col-xxl-12 px-4 py-5">
-                  <div
-                    className="row align-items-center justify-content-center g-5 row-cols-sm-1">
-                    <div className="text-white">
+                {/* lesson markdown md mdx content */}
+                <GridContainer
+                  justifyContent="center"
+                  alignItems="center"
+                  direction="row"
+                >
+                  <GridContainer
+                    justifyContent="center"
+                    alignItems="center"
+                    direction="row"
+                  >
+                    <GridItem xs={10} sm={10} md={12}
+                              className={classNames(classes.lightSubtitle, classes.gridItemContainer)}>
                       <ReactMarkdown
+                        className={classes.markdown}
                         children={course.lessons[clicked].content}
-                        className="single-post single-post-content"
                       />
-                    </div>
-                  </div>
-                </div>
-              </Content>
+                    </GridItem>
+                  </GridContainer>
+                </GridContainer>
 
               {/* lesson video content */}
               <Content className="bg-light">
