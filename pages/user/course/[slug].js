@@ -247,32 +247,32 @@ const SingleCourse = (props, { courses }) => {
                     <GridItem xs={10} sm={10} md={12}
                               className={classNames(classes.lightSubtitle, classes.gridItemContainer)}>
                       {/* lesson title */}
-                      <h2 className="pb-2">
+                      <h2 className={classes.lightTitle}>
                         {course.lessons[clicked].title.substring(0, 30)}
                       </h2>
-                      <Divider/>
-
                       {/* mark as complete area */}
                       {completedLessons.includes(course.lessons[clicked]._id) ? (
-                        <span
+                        <Button
+                          fullWidth
+                          size={'sm'}
+                          color={'danger'}
                           className="float-end"
-                          role="button"
                           onClick={markIncomplete}
                         >
-                                        Mark as incomplete
-                                    </span>
+                          Mark lesson as incomplete
+                        </Button>
                       ) : (
-                        <span
-                          className="float-end"
-                          role="button"
+                        <Button
+                          fullWidth
+                          size={'sm'}
+                          color={'success'}
                           onClick={markComplete}>
-                                        Mark as completed
-                                    </span>
+                          Mark lesson as completed
+                        </Button>
                       )}
-                    </div>
-                  </div>
-                </div>
-              </Content>
+                    </GridItem>
+                  </GridContainer>
+                </GridContainer>
 
               {/* lesson markdown md mdx content */}
               <Content>
