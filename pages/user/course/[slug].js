@@ -151,23 +151,81 @@ const SingleCourse = (props, { courses }) => {
               justifyContent="center"
               alignItems="center"
             >
-                                <span style={{ marginRight: '25px' }}>
-                                    {lesson.title.substring(0, 30)}
-                                </span>
-              {completedLessons.includes(lesson._id) ? (<CheckCircleFilled
-                className="float-end text-primary ml-2"
-                style={{ marginTop: '13px' }}
-              />) : (<MinusCircleFilled
-                className="float-end text-danger ml-2"
-                style={{ marginTop: '13px' }}
-              />)}
-            </Item>))}
-          </Menu>
-          <p className="modal-footer text-white shadow">© {currentYear} Americoders | Questions or
-            comments? <a
-              href="mailto:questions@americoders.org">Email us
-              here</a></p>
-        </Drawer>
+              <GridContainer direction="row"
+                             justifyContent="center"
+                             alignItems="center"
+              >
+                {/* title and intro */}
+                <GridItem xs={10} sm={10} md={8}>
+                  {/* will take you to course home view*/}
+                  <h1
+                    onClick={() => setClicked(-1)}
+                    className={classes.title}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    {course.name}
+                  </h1>
+
+                  {/* lessons drawer menu button */}
+                  <GridItem>
+                    {/* toggle lessons menu button */}
+                    <Button
+                      fullWidth
+                      color={'primary'}
+                      aria-controls={open ? 'lessonsMenu' : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={open ? 'true' : undefined}
+                      onClick={menuToggle}
+                    >
+                      Lessons Menu
+                    </Button>
+
+                    {/* lessons menu */}
+                    <GridContainer
+                      justifyContent="space-between"
+                      alignItems="space-between"
+                    >
+                      <Menu
+                        id="lessonsMenu"
+                        anchorEl={anchorEl}
+                        open={open}
+                        onClose={handleClose}
+                        MenuListProps={{
+                          'aria-labelledby': 'basic-button',
+                        }}
+                      >
+                        <h4 className={classes.lightSubtitle}>
+                          Lessons Menu
+                        </h4>
+                        {/* lessons menu items loop */}
+                        {course.lessons.map((lesson, index) => (
+                          // close menu and open lesson on click
+                          <MenuItem
+                            onClick={() => {
+                              handleClose()
+                              setClicked(index)
+                            }}
+                            key={index}
+                            style={{
+                              color: completedLessons.includes(lesson._id) ? 'green' : 'black',
+                              margin: '.775rem'
+                            }}
+                          >
+                            {lesson.title.substring(0, 30)}
+                            {/* mark items complete/not complete */}
+                            {completedLessons.includes(lesson._id) ? (
+                              <CheckCircleFilled style={{ color: 'green' }}/>
+                            ) : (<MinusCircleFilled style={{ color: 'lightgrey' }}/>)}
+                          </MenuItem>
+                        ))}
+                      </Menu>
+                    </GridContainer>
+                  </GridItem>
+                </GridItem>
+              </GridContainer>
+            </GridContainer>
+          </div>
+        </Parallax>
 
         {/* main content area */}
         <Content className="bg-light">
