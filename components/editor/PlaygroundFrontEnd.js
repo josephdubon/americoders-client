@@ -5,11 +5,6 @@ import GridItem from '../Grid/GridItem'
 import { makeStyles } from '@material-ui/core/styles'
 import styles from '../../styles/jss/americoders/pages/coursePage'
 
-const {Panel} = Collapse
-
-
-const {Content} = Layout
-
 const AceDynamic = dynamic(
     () => import('../../components/editor/AceAmericoders'),
     {ssr: false}
