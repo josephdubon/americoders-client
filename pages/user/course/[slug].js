@@ -324,71 +324,22 @@ const SingleCourse = (props, { courses }) => {
                   </GridContainer>
                 </GridContainer>
 
-              {/* lesson code editor content */}
-              <Content>
-                <div
-                  className="container px-0 py-5">
-                  {/* code editors */}
-                  {course.lessons[clicked].html &&
-                    course.lessons[clicked].css && course.lessons[clicked].css && (
-                      <>
-                        <PlaygroundFrontEnd
-                          htmlValue={course.lessons[clicked].html}
-                          cssValue={course.lessons[clicked].css}
-                          jsValue={course.lessons[clicked].javascript}
-                        />
-                      < />
-                    )}
-                </div>
-              </Content>
-              <AskForHelp/>
-            </>
-          ) : (
-            <>
-              {/* hero section */}
-              <Content className="bg-light">
-                <div className="container col-xxl-12 px-4 py-5">
-                  <div
-                    className="row align-items-center justify-content-center g-5 row-cols-sm-1 row-cols-md-2">
-                    <div>
-                      {course ?
-                        (<>
-                          <h1 className="display-6 fw-bold lh-1 mb-3 ">{course.name}</h1>
-                          <Divider/>
-
-                          {/* category */}
-                          <Badge
-                            count={course.category}
-                            className="mb-3"
-                            style={{
-                              backgroundColor: '#03a9f4',
-                            }}
-                          />
-
-                          {/* title */}
-                          <p className="text-muted"><strong>Course
-                            Name: </strong>{course.name && course.name}</p>
-
-                          {/* lessons count */}
-                          <p className="text-muted">
-                            <strong>Lessons: </strong>{course.lessons && course.lessons.length}
-                          </p>
-
-                          {/* description */}
-                          <p className="text-muted">
-                            <strong>Description: </strong>{course && course.description}
-                          </p>
-
-                          {/* last update */}
-                          <p className="text-muted"><strong>Last
-                            Update: </strong>{Moment(course && course.updatedAt).format('LL')}
-                          </p>
-                        </>)
-                        :
-                        (<>
-                          <p className="display-6 fw-bold lh-1 mb-3">Welcome back!!</p>
-                        </>)}
-                    </div>
+                {/* lesson code editor content */}
+                <GridContainer
+                  justifyContent="center"
+                  alignItems="stretch"
+                  direction="column"
+                >
+                  <GridContainer
+                    justifyContent="center"
+                    alignItems="center"
+                    direction="row"
+                  >
+                    {/* code editors */}
+                    {course.lessons[clicked].html && (<>
+                      <h2 className={classNames(classes.gridItemContainer, classes.lightTitle)}>Code Sandbox</h2>
+                      <PlaygroundFrontEnd htmlValue={course.lessons[clicked].html}/>
+                    </>)}
 
                     {/* course image */}
                     <div>
