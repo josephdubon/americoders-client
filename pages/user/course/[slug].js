@@ -30,6 +30,18 @@ const SingleCourse = (props, { courses }) => {
   const [course, setCourse] = useState({ lessons: [] }) // course.lesson
   const [completedLessons, setCompletedLessons] = useState([])
   const [visible, setVisible] = useState(false)
+  const [anchorEl, setAnchorEl] = useState(null)
+  const open = Boolean(anchorEl)
+
+  // handle menu click
+  const menuToggle = (event) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  // handle menu close
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
 
   // force stat update
   const [updateState, setUpdateState] = useState(false)
