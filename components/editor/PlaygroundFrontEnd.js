@@ -46,42 +46,26 @@ const PlaygroundFrontEnd = ({ htmlValue }) => {
       />
     </GridItem>
 
-                {/* iframe render area */}
-                <div className='col'>
-                    <div id='browser'>
-                        <div id='browserTitle'>Code Live Preview:</div>
-                        <div id='browserTop'>
-                            <div id='closeBtn'/>
-                            <div id='minBtn'/>
-                            <div id='fullBtn'/>
-                            <div id='full'/>
-                            <div id='back'/>
-                            <div id='forward'/>
-                            <div id='url'/>
-                        </div>
-                        <div id='pageContent'>
+    {/* iframe render area */}
+    <GridItem xs={10} sm={10} md={6} style={{ margin: '2rem 0' }}>
+      <div className={classes.editorRenderBox}>
+        <div className={classes.editorRenderBoxTop}>
+          <span className={classes.editorRenderBoxDot}></span>
+          <span className={classes.editorRenderBoxDot}></span>
+          <span className={classes.editorRenderBoxDot}></span>
+        </div>
 
-                            {/* iframe area */}
-                            <div className='bg-body p-2 h-100'>
-                                <iframe
-                                    srcDoc={srcDoc}
-                                    title={'output'}
-                                    sandbox={'allow-scripts'}
-                                    frameBorder={'0'}
-                                    className='editorArea'
-                                />
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </Content>
-
-        <Content className='editorArea'>
-        </Content>
-    </>)
+        <div className={classes.editorRenderBoxContent}>
+          <iframe
+            srcDoc={srcDoc}
+            title={'output'}
+            frameBorder={0}
+            sandbox={'allow-scripts'}
+          />
+        </div>
+      </div>
+    </GridItem>
+  </>)
 }
 
 export default PlaygroundFrontEnd
