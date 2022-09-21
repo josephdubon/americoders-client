@@ -5,8 +5,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import styles from '../../styles/jss/americoders/pages/coursePage'
 
 const AceDynamic = dynamic(
-    () => import('../../components/editor/AceAmericoders'),
-    {ssr: false}
+  () => import('../../components/editor/AceAmericoders'),
+  { ssr: false }
 )
 
 const PlaygroundFrontEnd = ({htmlValue, cssValue, jsValue}) => {
