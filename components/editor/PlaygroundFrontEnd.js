@@ -32,56 +32,19 @@ const PlaygroundFrontEnd = ({ htmlValue }) => {
     }
   }, [html])
 
-    return (<>
-        <Content>
-            {/* editor area */}
-            <div className='container-full row'>
-                <div className='col'>
-
-                    <Collapse
-                        defaultActiveKey={['1']}
-                        className='editorCollapse'
-                        ghost
-                        accordion
-                        expandIcon={({isActive}) => <CaretRightOutlined rotate={isActive ? 90 : 0}/>}
-                    >
-                        {/* html */}
-                        <Panel header='HTML' key='1'>
-                            <AceDynamic
-                                language={'xml'}
-                                value={htmlValue}
-                                defaultValue={htmlValue}
-                                onChange={setHtml}
-                                editorName={'HTML'}
-                                displayName={'HTML'}
-                            />
-                        </Panel>
-
-                        {/* css */}
-                        <Panel header='CSS' key='2'>
-                            <AceDynamic
-                                language={'css'}
-                                value={cssValue}
-                                defaultValue={cssValue}
-                                onChange={setCss}
-                                editorName={'CSS'}
-                                displayName={'CSS'}
-                            />
-                        </Panel>
-
-                        {/* javascript */}
-                        <Panel header='JavaScript' key='3'>
-                            <AceDynamic
-                                language={'javascript'}
-                                value={jsValue}
-                                defaultValue={jsValue}
-                                onChange={setJavascript}
-                                editorName={'JavaScript'}
-                                displayName={'JavaScript'}
-                            />
-                        </Panel>
-                    </Collapse>
-                </div>
+  return (<>
+    {/* editor area */}
+    <GridItem xs={10} sm={10} md={6}>
+      <AceDynamic
+        language={'xml'}
+        value={htmlValue}
+        defaultValue={htmlValue}
+        onChange={setHtml}
+        editorName={'HTML'}
+        displayName={'HTML'}
+        className={classes.aceEditor}
+      />
+    </GridItem>
 
                 {/* iframe render area */}
                 <div className='col'>
