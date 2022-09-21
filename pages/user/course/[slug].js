@@ -341,41 +341,60 @@ const SingleCourse = (props, { courses }) => {
                       <PlaygroundFrontEnd htmlValue={course.lessons[clicked].html}/>
                     </>)}
 
-                    {/* course image */}
-                    <div>
-                      <div className="image-course">
-                        {course && course.image ?
-                          (<>
-                            <Image
-                              src={course.image && course.image.Location}
-                              alt="Americoders"
-                              loading="lazy"
-                              preview={false}
-                              className="p-1 squareFrame"
-                            />
-                          </>) : <Image
-                            src="/images/americoders-course.png"
-                            alt="Americoders"
-                            loading="lazy"
-                            preview={false}
-                            className="p-1 squareFrame"
-                          />
-                        }
-                      </div>
-                      <p className="text-muted text-center">Please click on the <strong
-                        className="text-primary">Lessons
-                        Menu</strong> above to start learning!</p>
-                    </div>
-                  </div>
-                </div>
-              </Content>
+                    {/* mark course complete button */}
+                    {completedLessons.includes(course.lessons[clicked]._id) ? (
+                      <>
+                        <Button
+                          size={'sm'}
+                          color={'danger'}
+                          className="float-end"
+                          onClick={markIncomplete}
+                        >
+                          Mark lesson as incomplete
+                        </Button>
+                      </>
+                    ) : (
+                      <Button
+                        size={'sm'}
+                        color={'success'}
+                        onClick={markComplete}>
+                        Mark lesson as completed
+                      </Button>
+                    )}
+                  </GridContainer>
+                </GridContainer>
+              </>
+            ) : (
+              <>
+                {/* course intro section */}
+                <GridContainer
+                  direction="row"
+                  justifyContent="center"
+                  alignItems="center"
+                >
+                  <GridContainer direction="row"
+                                 justifyContent="center"
+                                 alignItems="center"
+                  >
+                    {/* title and intro */}
+                    <GridItem xs={10} sm={10} md={8}
+                              className={classNames(classes.lightSubtitle, classes.gridItemContainer)}>
+                      <h5 className={classes.lightTitle}>CLick the lessons menu to begin!</h5>
 
-              {/* cta banner */}
-              <div>
-                <AskForHelp className={'p-0 m-0'}/>
-              </div>
-            </>)}
-        </Content>
+                      {/* welcoming message to user */}
+                      <h4 className={classes.lightSubtitle}>
+                        Good luck on your journey!
+                        <br/>
+                        If you need any help please raise your hand.
+                      </h4>
+                    </GridItem>
+                  </GridContainer>
+                </GridContainer>
+              </>)}
+            {/*end*/}
+          </div>
+        </div>
+        <Footer/>
       </StudentRoute>
     </>
   )
