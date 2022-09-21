@@ -5,6 +5,19 @@ const coursePageStyle = {
     zIndex: '12',
     ...container,
   },
+  menu: {
+    textAlign: 'center',
+  },
+  menuTitle: {
+    ...title,
+    marginTop: '30px',
+    minWidth: '250px',
+    minHeight: '32px',
+    textDecoration: 'none',
+  },
+  menuItem: {
+    textAlign: 'left',
+  },
   gridItemContainer: {
     zIndex: '12',
     ...container,
