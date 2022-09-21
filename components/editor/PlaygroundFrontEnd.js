@@ -9,12 +9,12 @@ const AceDynamic = dynamic(
   { ssr: false }
 )
 
-const PlaygroundFrontEnd = ({htmlValue, cssValue, jsValue}) => {
-    // set state
-    const [html, setHtml] = useState(htmlValue)
-    const [css, setCss] = useState(cssValue)
-    const [javascript, setJavascript] = useState(jsValue)
-    const [srcDoc, setSrcDoc] = useState('')
+const useStyles = makeStyles(styles)
+
+const PlaygroundFrontEnd = ({ htmlValue }) => {
+  // set state
+  const [html, setHtml] = useState(htmlValue)
+  const [srcDoc, setSrcDoc] = useState('')
 
     useEffect(() => {
         const timeout = setTimeout(() => {
