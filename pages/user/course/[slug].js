@@ -295,32 +295,34 @@ const SingleCourse = (props, { courses }) => {
                   </GridContainer>
                 </GridContainer>
 
-              {/* lesson video content */}
-              <Content className="bg-light">
-                <div
-                  className="container px-4 py-5 ">
-                  {course.lessons[clicked].video &&
-                    course.lessons[clicked].video.Location && (
-                      <>
-                        <div className="row">
+                {/* lesson video content */}
+                <GridContainer
+                  justifyContent="center"
+                  alignItems="center"
+                  direction="column"
+                >
+                  <GridContainer
+                    justifyContent="center"
+                    alignItems="center"
+                    direction="row"
+                  >
+                    <GridItem xs={10} sm={10} md={12}
+                              className={classNames(classes.lightSubtitle, classes.gridItemContainer)}>
+                      {course.lessons[clicked].video &&
+                        course.lessons[clicked].video.Location && (<>
+                          <h2 className={classes.lightTitle}>Video</h2>
                           {/* video col */}
-                          <div className="feature col-lg-12">
-                            <h2>Video</h2>
-                            <Divider/>
-                            <div className="d-flex w-100">
-                              <ReactPlayer
-                                url={course.lessons[clicked].video.Location}
-                                controls
-                                onEnded={markComplete} // update lesson completed status on video complete
-                                className="p-1 squareFrame"
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      </>
-                    )}
-                </div>
-              </Content>
+                          <ReactPlayer
+                            url={course.lessons[clicked].video.Location}
+                            light={course.image && course.image.Location}
+                            controls
+                            onEnded={markComplete} // update lesson completed status on video complete
+                            className={classes.courseVideo}
+                          />
+                        </>)}
+                    </GridItem>
+                  </GridContainer>
+                </GridContainer>
 
               {/* lesson code editor content */}
               <Content>
