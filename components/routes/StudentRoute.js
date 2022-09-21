@@ -35,9 +35,7 @@ const StudentRoute = ({ children, showNav = true }) => {
     ) : (
       // if ok is true, show child element
       <>
-        <div className="container-fluid p-0">
-          {children}
-        </div>
+        {children}
       </>
     )}
   </>)
