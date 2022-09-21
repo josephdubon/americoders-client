@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios'
 import StudentRoute from '../../../components/routes/StudentRoute'
-import { CheckCircleFilled, MinusCircleFilled, SyncOutlined } from '@ant-design/icons'
+import { SyncOutlined } from '@ant-design/icons'
 import { PageHead } from '../../../components/head/PageHead'
 import NavLogo from '../../../public/images/logo/americoders-logo-simple_white.svg'
 import HeaderLinks from '../../../components/Header/HeaderLinks'
@@ -15,7 +15,7 @@ import GridItem from '../../../components/Grid/GridItem'
 import classNames from 'classnames'
 import Button from '../../../components/CustomButtons/Button'
 import Footer from '../../../components/Footer/Footer'
-import { Avatar, Menu } from '@material-ui/core'
+import { Menu } from '@material-ui/core'
 import PlaygroundFrontEnd from '../../../components/editor/PlaygroundFrontEnd'
 import ReactPlayer from 'react-player'
 import ReactMarkdown from 'react-markdown'
@@ -29,7 +29,6 @@ const SingleCourse = (props, { courses }) => {
   const [loading, setLoading] = useState(false)
   const [course, setCourse] = useState({ lessons: [] }) // course.lesson
   const [completedLessons, setCompletedLessons] = useState([])
-  const [visible, setVisible] = useState(false)
   const [anchorEl, setAnchorEl] = useState(null)
   const open = Boolean(anchorEl)
 
@@ -49,8 +48,6 @@ const SingleCourse = (props, { courses }) => {
   // router
   const router = useRouter()
   const { slug } = router.query
-
-  const currentYear = new Date().getFullYear()
 
   const classes = useStyles(styles)
 
@@ -190,33 +187,38 @@ const SingleCourse = (props, { courses }) => {
                         anchorEl={anchorEl}
                         open={open}
                         onClose={handleClose}
-                        MenuListProps={{
-                          'aria-labelledby': 'basic-button',
-                        }}
+                        className={classes.menu}
                       >
-                        <h4 className={classes.lightSubtitle}>
+                        <h4 className={classes.menuTitle}>
                           Lessons Menu
                         </h4>
                         {/* lessons menu items loop */}
                         {course.lessons.map((lesson, index) => (
                           // close menu and open lesson on click
-                          <MenuItem
-                            onClick={() => {
-                              handleClose()
-                              setClicked(index)
-                            }}
-                            key={index}
-                            style={{
-                              color: completedLessons.includes(lesson._id) ? 'green' : 'black',
-                              margin: '.775rem'
-                            }}
+                          <GridContainer
+                            justifyContent="center"
+                            alignItems="center"
                           >
-                            {lesson.title.substring(0, 30)}
-                            {/* mark items complete/not complete */}
-                            {completedLessons.includes(lesson._id) ? (
-                              <CheckCircleFilled style={{ color: 'green' }}/>
-                            ) : (<MinusCircleFilled style={{ color: 'lightgrey' }}/>)}
-                          </MenuItem>
+                            <GridContainer
+                            justifyContent="center"
+                            alignItems="center"
+                            >
+                              <MenuItem
+                                onClick={() => {
+                                  handleClose()
+                                  setClicked(index)
+                                }}
+                                key={index}
+                                classes={classes.menuItem}
+                                style={{
+                                  color: completedLessons.includes(lesson._id) ? 'green' : 'black',
+                                  margin: '.775rem'
+                                }}
+                              >
+                                {lesson.title.substring(0, 30)}
+                              </MenuItem>
+                            </GridContainer>
+                          </GridContainer>
                         ))}
                       </Menu>
                     </GridContainer>
