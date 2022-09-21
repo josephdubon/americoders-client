@@ -52,6 +52,8 @@ const SingleCourse = (props, { courses }) => {
 
   const currentYear = new Date().getFullYear()
 
+  const classes = useStyles(styles)
+
   useEffect(() => {
     if (slug) loadCourse()
   }, [slug])
