@@ -217,7 +217,6 @@ export default function LandingPage (props) {
                                 description={announcement()}
                                 imageUrl={'/images/original/americoders-kids-laptop-fun.jpg'}
                                 imgAlt={'americoders-robotics-project-student'}/>
-          / >
         </div>
       </div>
       <Footer/>
