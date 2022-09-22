@@ -43,7 +43,7 @@ export default function CoursesSection () {
                 Introduction to Coding
                 <br/>
                 <small className={classes.smallTitle}>Python, Javascript,
-                                                      Scratch, EarSketch</small>
+                  Scratch, EarSketch</small>
               </h4>
               <CardBody>
               </CardBody>
@@ -66,10 +66,10 @@ export default function CoursesSection () {
                 Internet Safety
                 <br/>
                 <small className={classes.smallTitle}>Are we dedicating enough
-                                                      time to the safety and
-                                                      protection of our children
-                                                      while they are
-                                                      online?</small>
+                  time to the safety and
+                  protection of our children
+                  while they are
+                  online?</small>
               </h4>
               <CardBody>
               </CardBody>
@@ -92,7 +92,7 @@ export default function CoursesSection () {
                 Game Development
                 <br/>
                 <small className={classes.smallTitle}>Python, Javascript, and
-                                                      Custom Game Engine</small>
+                  Custom Game Engine</small>
               </h4>
               <CardBody>
                 {' '}
@@ -117,9 +117,9 @@ export default function CoursesSection () {
                 Technology Unplugged
                 <br/>
                 <small className={classes.smallTitle}>Let's turn the screen off
-                                                      and learn in the real
-                                                      world for a
-                                                      change.</small>
+                  and learn in the real
+                  world for a
+                  change.</small>
               </h4>
               <CardBody>
                 {' '}
@@ -144,8 +144,8 @@ export default function CoursesSection () {
                 Create a Projects Portfolio
                 <br/>
                 <small className={classes.smallTitle}>Show off your code and
-                                                      game/program
-                                                      collection.</small>
+                  game/program
+                  collection.</small>
               </h4>
               <CardBody>
                 {' '}
@@ -170,10 +170,10 @@ export default function CoursesSection () {
                 Hardware Hacking
                 <br/>
                 <small className={classes.smallTitle}>Let's Build And Break Some
-                                                      Stuff! We can learn a
-                                                      whole lot by taking apart
-                                                      and putting thing back
-                                                      together.</small>
+                  Stuff! We can learn a
+                  whole lot by taking apart
+                  and putting things back
+                  together.</small>
               </h4>
               <CardBody>
                 {' '}

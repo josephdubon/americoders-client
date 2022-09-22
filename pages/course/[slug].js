@@ -208,7 +208,7 @@ const SingleCourse = ({ course }) => {
               <div>
                 <Tooltip
                   id="tooltip-top"
-                  title="Tooltip on top"
+                  title="Let's do this!"
                   placement="top"
                   classes={{ tooltip: classes.tooltip }}
                 >
