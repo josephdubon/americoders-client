@@ -240,9 +240,10 @@ const StudentRegisterForm = () => {
               fontWeight: '600'
             }}>Must be minimum 13 years old to register.</span>
           <br/>
-          By registering for an account, I agree to Americoders {' '}
-          <Link href={'/legal/terms-of-use'}><a className={classes.legalFooterLink}>Terms of Use</a></Link> and {' '}
-          <Link href={'/legal/privacy-policy'}><a className={classes.legalFooterLink}>Privacy Policy</a></Link>.
+          By registering for an account, I agree to the Americoders {' '}
+          <Link href={'/legal/2022-terms-and-conditions'}><a className={classes.legalFooterLink}>Terms &
+            Conditions</a></Link> and {' '}
+          <Link href={'/legal/2022-privacy-policy'}><a className={classes.legalFooterLink}>Privacy Policy</a></Link>.
         </Typography>
       </GridItem>
     </GridContainer>
