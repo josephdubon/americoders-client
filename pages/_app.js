@@ -10,7 +10,7 @@ import { PageHead } from '../components/PageHead/PageHead'
 import { Provider } from '../context'
 
 Router.events.on('routeChangeStart', (url) => {
-  console.log(`Loading: ${url}`)
+  // console.log(`Loading: ${url}`)
   document.body.classList.add('body-page-transition')
   ReactDOM.render(
     <PageChange path={url}/>,
