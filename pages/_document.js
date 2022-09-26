@@ -30,12 +30,12 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           {/* termly legal docs script */}
-          <script
+          <Script
             type="text/javascript"
             src={'https://app.termly.io/embed.min.js'}
             data-auto-block="on"
             data-website-uuid="a9d82342-1f11-4be9-ab0a-a2bcfaf09c65"
-          ></script>
+          ></Script>
         </Head>
         <body>
         <div id="page-transition"></div>
