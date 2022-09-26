@@ -28,6 +28,13 @@ class MyDocument extends Document {
             href={'https://use.fontawesome.com/releases/v5.0.10/css/all.css'}
             rel="stylesheet"
           />
+          {/* termly legal docs script */}
+          <script
+            type="text/javascript"
+            src={'https://app.termly.io/embed.min.js'}
+            data-auto-block="on"
+            data-website-uuid="a9d82342-1f11-4be9-ab0a-a2bcfaf09c65"
+          ></script>
         </Head>
         <body>
         <div id="page-transition"></div>
