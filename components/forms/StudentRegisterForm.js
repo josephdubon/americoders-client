@@ -219,8 +219,26 @@ const StudentRegisterForm = () => {
         >
           I want to be an Americoder!
         </Button>
+
       </CardFooter>
     </form>
+    <GridContainer
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <GridItem xs={10} sm={10} md={8}>
+        <Typography
+          variant="caption"
+          display="block"
+          gutterBottom
+          className={classes.legalFooter}>
+          By registering for an account, I agree to Americoders
+          <Link href={'/legal/terms-of-use'}><a className={classes.legalFooterLink}>Terms of Use</a></Link> and
+          <Link href={'/legal/privacy-policy'}><a className={classes.legalFooterLink}>Privacy Policy</a></Link>
+        </Typography>
+      </GridItem>
+    </GridContainer>
   </>)
 }
 
