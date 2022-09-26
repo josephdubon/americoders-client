@@ -86,7 +86,7 @@ const signupPageStyle = {
   legalFooter: {
     textAlign: 'center',
     padding: '0',
-    margin: '1rem 0 1rem 0',
+    margin: '0 0 1rem 0',
   },
   legalFooterLink: {
     color: dangerColor,
