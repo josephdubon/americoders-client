@@ -1,6 +1,7 @@
 import React from 'react'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/styles'
+import Script from 'next/script'
 
 class MyDocument extends Document {
   render () {
@@ -40,8 +41,8 @@ class MyDocument extends Document {
         <div id="page-transition"></div>
         <Main/>
         <NextScript/>
-        <script src="https://skillful-unreal.americoders.org/script.js"
-                data-site={process.env.NEXT_PUBLIC_MY_FATHOM_SITE_ID} defer></script>
+        <Script src={'https://skillful-unreal.americoders.org/script.js'}
+                data-site={process.env.NEXT_PUBLIC_MY_FATHOM_SITE_ID} defer></Script>
         </body>
       </Html>
     )
