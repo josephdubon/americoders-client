@@ -18,6 +18,11 @@ import {
   EmojiPeople,
   Person,
 } from '@material-ui/icons'
+import { toast } from 'react-toastify'
+import { Typography } from '@mui/material'
+import GridContainer from '../Grid/GridContainer'
+import GridItem from '../Grid/GridItem'
+import Link from 'next/link'
 
 const useStyles = makeStyles(styles)
 
@@ -62,15 +67,15 @@ const StudentRegisterForm = () => {
         firstName, lastName, bio, email, password,
       })
 
-      // toast.success('Registration successful. Please login.', {
-      //   position: 'top-center',
-      //   autoClose: 5000,
-      //   hideProgressBar: false,
-      //   closeOnClick: true,
-      //   pauseOnHover: true,
-      //   draggable: true,
-      //   progress: undefined,
-      // })
+      toast.success('Registration successful. Please login.', {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
 
       // deactivate load spinner
       setLoading(false)
@@ -80,15 +85,15 @@ const StudentRegisterForm = () => {
       // deactivate load spinner
       setLoading(false)
 
-      // toast.error(err.response.data, {
-      //   position: 'top-center',
-      //   autoClose: 5000,
-      //   hideProgressBar: false,
-      //   closeOnClick: true,
-      //   pauseOnHover: true,
-      //   draggable: true,
-      //   progress: undefined,
-      // })
+      toast.error(err.response.data, {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
     }
   }
 
@@ -214,8 +219,34 @@ const StudentRegisterForm = () => {
         >
           I want to be an Americoder!
         </Button>
+
       </CardFooter>
     </form>
+    <GridContainer
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <GridItem xs={10} sm={10} md={8}>
+        <Typography
+          variant="caption"
+          display="block"
+          gutterBottom
+          className={classes.legalFooter}
+        >
+          <span
+            style={{
+              textTransform: 'uppercase',
+              fontWeight: '600'
+            }}>Must be minimum 13 years old to register.</span>
+          <br/>
+          By registering for an account, I agree to the Americoders {' '}
+          <Link href={'/legal/2022-terms-and-conditions'}><a className={classes.legalFooterLink}>Terms &
+            Conditions</a></Link> and {' '}
+          <Link href={'/legal/2022-privacy-policy'}><a className={classes.legalFooterLink}>Privacy Policy</a></Link>.
+        </Typography>
+      </GridItem>
+    </GridContainer>
   </>)
 }
 

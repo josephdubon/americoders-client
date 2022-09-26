@@ -1,4 +1,4 @@
-import { container } from '../../americoders'
+import { container, dangerColor } from '../../americoders'
 
 const signupPageStyle = {
   container: {
@@ -82,6 +82,14 @@ const signupPageStyle = {
     marginTop: '1rem',
     textAlign: 'center',
     padding: '0',
+  },
+  legalFooter: {
+    textAlign: 'center',
+    padding: '0',
+    margin: '0 0 1rem 0',
+  },
+  legalFooterLink: {
+    color: dangerColor,
   },
   inputIconsColor: {
     color: '#495057',

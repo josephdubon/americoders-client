@@ -1,6 +1,7 @@
 import React from 'react'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/styles'
+import Script from 'next/script'
 
 class MyDocument extends Document {
   render () {
@@ -25,16 +26,23 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet"/>
           <link
-            href="https://use.fontawesome.com/releases/v5.0.10/css/all.css"
+            href={'https://use.fontawesome.com/releases/v5.0.10/css/all.css'}
             rel="stylesheet"
           />
+          {/* termly legal docs script */}
+          <Script
+            type="text/javascript"
+            src={'https://app.termly.io/embed.min.js'}
+            data-auto-block="on"
+            data-website-uuid="a9d82342-1f11-4be9-ab0a-a2bcfaf09c65"
+          ></Script>
         </Head>
         <body>
         <div id="page-transition"></div>
         <Main/>
         <NextScript/>
-        <script src="https://skillful-unreal.americoders.org/script.js"
-                data-site={process.env.NEXT_PUBLIC_MY_FATHOM_SITE_ID} defer></script>
+        <Script src={'https://skillful-unreal.americoders.org/script.js'}
+                data-site={process.env.NEXT_PUBLIC_MY_FATHOM_SITE_ID} defer></Script>
         </body>
       </Html>
     )
