@@ -338,19 +338,48 @@ const SingleCourse = (props, { courses }) => {
                     alignItems="center"
                     direction="row"
                   >
-                    {/* code editors */}
                     {course.lessons[clicked].html && (<>
                       <h2 className={classNames(classes.gridItemContainer, classes.lightTitle)}>Code Sandbox</h2>
                       <PlaygroundFrontEnd htmlValue={course.lessons[clicked].html}/>
                     </>)}
+                  </GridContainer>
+                </GridContainer>
 
-                    {/* mark course complete button */}
+                {/* Replit editor content */}
+                <GridContainer
+                  justifyContent="center"
+                  alignItems="stretch"
+                  direction="column"
+                >
+                  <GridContainer
+                    justifyContent="center"
+                    alignItems="center"
+                    direction="row"
+                  >
+                    {/*{course.lessons[clicked].replitUrl && (<>*/}
+                      <h2 className={classNames(classes.gridItemContainer, classes.lightTitle)}>EarSketch Studio</h2>
+                      <EarSketch/>
+                    {/*</>)}*/}
+                  </GridContainer>
+                </GridContainer>
+
+                {/* mark course complete button */}
+                <GridContainer
+                  justifyContent="center"
+                  alignItems="stretch"
+                  direction="column"
+                >
+                  <GridContainer
+                    justifyContent="center"
+                    alignItems="center"
+                    direction="row"
+                  >
                     {completedLessons.includes(course.lessons[clicked]._id) ? (
                       <>
                         <Button
                           size={'sm'}
                           color={'danger'}
-                          className="float-end"
+                          style={{ margin: '1.175rem' }}
                           onClick={markIncomplete}
                         >
                           Mark lesson as incomplete
@@ -360,6 +389,7 @@ const SingleCourse = (props, { courses }) => {
                       <Button
                         size={'sm'}
                         color={'success'}
+                        style={{ margin: '1.175rem' }}
                         onClick={markComplete}>
                         Mark lesson as completed
                       </Button>
