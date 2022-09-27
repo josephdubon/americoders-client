@@ -41,7 +41,6 @@ class MyDocument extends Document {
         <div id="page-transition"></div>
         <Main/>
         <NextScript/>
-        <Script defer data-domain="americoders.org" src={'https://plausible.io/js/plausible.js'}></Script>
         </body>
       </Html>
     )
