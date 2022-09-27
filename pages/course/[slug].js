@@ -161,7 +161,8 @@ const SingleCourse = ({ course }) => {
 
   return (<>
 
-    <PageHead title={course && course.name} />
+    {/* page title area */}
+    <PageHead title={course && course.name}/>
 
     <SingleCourseHero
       course={course}
@@ -180,7 +181,7 @@ const SingleCourse = ({ course }) => {
     <div className={classNames(classes.main, classes.mainRaised)}>
       <div className={classes.container}>
 
-        <CoursesFeatureSection course={course} />
+        <CoursesFeatureSection course={course}/>
 
         {/* enroll section */}
         <GridContainer
@@ -193,9 +194,9 @@ const SingleCourse = ({ course }) => {
             <h1 className={classes.title} style={{ color: '#3C4858' }}>Are You Ready To Enroll?</h1>
             <h4 className={classes.subtitle} style={{ color: '#3C4858', fontSize: '1.175rem' }}>
               Because we are ready for you to come learn with us!
-              <br />
+              <br/>
               If you have any questions, please contact us at <a
-                href="mailto:events@americoders.org">events@americoders.org</a>
+              href="mailto:events@americoders.org">events@americoders.org</a>
             </h4>
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
@@ -203,7 +204,7 @@ const SingleCourse = ({ course }) => {
               SMASH the enroll button below to get to our enrollment page.
             </h4>
             {loading ? <div className="d-flex justify-content-center">
-              <HourglassFull className="h1 text-danger" />
+              <HourglassFull className="h1 text-danger"/>
             </div> : (
               <div>
                 <Tooltip
@@ -214,7 +215,7 @@ const SingleCourse = ({ course }) => {
                 >
                   <Button
                     color="primary"
-                    icon={<Check />}
+                    icon={<Check/>}
                     size="lg"
                     fullWidth
                     onClick={paid ? handlePaidEnrollment : handleFreeEnrollment}
@@ -241,10 +242,10 @@ const SingleCourse = ({ course }) => {
         >
           {course && course.lessons[0].video && course.lessons[0].video.Location ? (
             <GridItem cs={12} sm={12} md={6}
-              onClick={() => {
-                setPreview(course.lessons[0].video.Location)
-                setShowModal(!showModal) // toggle modal
-              }}
+                      onClick={() => {
+                        setPreview(course.lessons[0].video.Location)
+                        setShowModal(!showModal) // toggle modal
+                      }}
             >
               <ReactPlayer
                 url={course.lessons[0].video.Location}
@@ -257,17 +258,17 @@ const SingleCourse = ({ course }) => {
               {course && course.image && course.image.Location ?
                 <>
                   <img src={course.image.Location}
-                    alt={course.name}
-                    width={'100%'}
-                    height={'420px'}
-                    style={{ margin: '2.275rem 0', objectFit: 'cover', borderRadius: '2rem' }}
+                       alt={course.name}
+                       width={'100%'}
+                       height={'420px'}
+                       style={{ margin: '2.275rem 0', objectFit: 'cover', borderRadius: '2rem' }}
                   />
                 </>
                 : <img src="/images/americoders-course.png"
-                  alt={course && course.name}
-                  width={'100%'}
-                  height={'420px'}
-                  style={{ margin: '2.275rem 0', objectFit: 'cover' }}
+                       alt={course && course.name}
+                       width={'100%'}
+                       height={'420px'}
+                       style={{ margin: '2.275rem 0', objectFit: 'cover' }}
                 />
               }
             </GridItem>
@@ -293,11 +294,11 @@ const SingleCourse = ({ course }) => {
         </GridContainer>
       </div>
     </div>
-    <Footer />
+    <Footer/>
   </>)
 }
 
-export async function getServerSideProps({ query }) {
+export async function getServerSideProps ({ query }) {
   const { data } = await axios.get(`${process.env.API}/course/${query.slug}`)
   return {
     props: {
