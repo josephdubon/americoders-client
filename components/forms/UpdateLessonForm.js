@@ -121,11 +121,10 @@ const UpdateLessonForm = ({
         <div className="d-flex justify-content-between">
           <span className="pt-3 badge text-black">Preview</span>
           <Switch
-            className="float-end mt-2"
+            defaultChecked={current.free_preview}
             disabled={uploading}
-            checked={current.free_preview}
             name="free_preview"
-            onChange={(v) => setCurrent({ ...current, free_preview: v })}
+            onChange={(v) => setCurrent({ ...current, free_preview: v.target.checked })}
           />
         </div>
 
