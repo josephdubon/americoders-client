@@ -395,7 +395,7 @@ const SingleCourse = (props, { courses }) => {
                     alignItems="center"
                     direction="row"
                   >
-                    {course.lessons[clicked].earsketch === true && (
+                    {course.lessons[clicked].earsketch === true ? (
                       <>
                         <h2
                           className={classNames(
@@ -407,7 +407,7 @@ const SingleCourse = (props, { courses }) => {
                         </h2>
                         <EarSketch/>
                       </>
-                    )}
+                    ):('')}
                   </GridContainer>
                 </GridContainer>
 
