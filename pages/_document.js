@@ -2,6 +2,7 @@ import React from 'react'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/styles'
 import Script from 'next/script'
+import { javascript } from '@codemirror/lang-javascript'
 
 class MyDocument extends Document {
   render () {
@@ -35,8 +36,13 @@ class MyDocument extends Document {
             src={'https://app.termly.io/embed.min.js'}
             data-auto-block="on"
             data-website-uuid="a9d82342-1f11-4be9-ab0a-a2bcfaf09c65"
-          ></Script>
-          <Script defer data-domain="americoders.org" src="https://plausible.io/js/plausible.js"></Script>
+          > </Script>
+
+          {/* plausible analytics */}
+          <Script type="text/javascript"
+                  defer
+                  data-domain="americoders.org"
+                  src={'https://plausible.io/js/plausible.js'}> </Script>
         </Head>
         <body>
         <div id="page-transition"></div>
