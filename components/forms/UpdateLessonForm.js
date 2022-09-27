@@ -88,7 +88,6 @@ const UpdateLessonForm = ({
               defaultChecked={current.earsketch}
               onChange={(e) => setCurrent({ ...current, earsketch: e.target.checked })}
             />
-            {console.log('current.earsketch', current.earsketch)}
           </div>
         </div>
 
