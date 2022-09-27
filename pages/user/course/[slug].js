@@ -345,7 +345,7 @@ const SingleCourse = (props, { courses }) => {
                   </GridContainer>
                 </GridContainer>
 
-                {/* Replit editor content */}
+                {/* EarSketch editor content */}
                 <GridContainer
                   justifyContent="center"
                   alignItems="stretch"
@@ -356,10 +356,10 @@ const SingleCourse = (props, { courses }) => {
                     alignItems="center"
                     direction="row"
                   >
-                    {/*{course.lessons[clicked].replitUrl && (<>*/}
+                    {course.lessons[clicked].earSketch && (<>
                       <h2 className={classNames(classes.gridItemContainer, classes.lightTitle)}>EarSketch Studio</h2>
                       <EarSketch/>
-                    {/*</>)}*/}
+                    </>)}
                   </GridContainer>
                 </GridContainer>
 
