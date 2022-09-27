@@ -395,10 +395,19 @@ const SingleCourse = (props, { courses }) => {
                     alignItems="center"
                     direction="row"
                   >
-                    {course.lessons[clicked].earSketch && (<>
-                      <h2 className={classNames(classes.gridItemContainer, classes.lightTitle)}>EarSketch Studio</h2>
-                      <EarSketch/>
-                    </>)}
+                    {course.lessons[clicked].earsketch === true && (
+                      <>
+                        <h2
+                          className={classNames(
+                            classes.gridItemContainer,
+                            classes.lightTitle
+                          )}
+                        >
+                          EarSketch Studio
+                        </h2>
+                        <EarSketch/>
+                      </>
+                    )}
                   </GridContainer>
                 </GridContainer>
 
