@@ -201,8 +201,8 @@ const SingleCourse = (props, { courses }) => {
                             alignItems="center"
                           >
                             <GridContainer
-                            justifyContent="center"
-                            alignItems="center"
+                              justifyContent="center"
+                              alignItems="center"
                             >
                               <MenuItem
                                 onClick={() => {
