@@ -96,7 +96,6 @@ const AddLessonForm = ({
               hidden // hide generic upload button and layout
             />
           </label>
-
           {!uploading && values.video.Location && (
             <Tooltip title="Remove">
                             <span onClick={handleRemoveVideo} className="pt-1 pl-3">
@@ -104,7 +103,6 @@ const AddLessonForm = ({
                             </span>
             </Tooltip>
           )}
-
           {progress > 0 && (
             <Progress
               className="d-flex justify-content-center pt-2"
