@@ -41,8 +41,7 @@ class MyDocument extends Document {
         <div id="page-transition"></div>
         <Main/>
         <NextScript/>
-        <Script src={'https://skillful-unreal.americoders.org/script.js'}
-                data-site={process.env.NEXT_PUBLIC_MY_FATHOM_SITE_ID} defer></Script>
+        <Script defer data-domain="americoders.org" src={'https://plausible.io/js/plausible.js'}></Script>
         </body>
       </Html>
     )
