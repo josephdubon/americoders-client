@@ -75,7 +75,6 @@ const AddLessonForm = ({
         <div className="row form-group gap-2 mt-3 mb-3">
           <div className="row form-group gap-2 mt-3 mb-3">
             <p>EarSketch Lesson?</p>
-
             {/* true */}
             {/*  toggle input if current.earsketch value is true */}
             <Switch
