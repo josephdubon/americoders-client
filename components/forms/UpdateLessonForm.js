@@ -84,10 +84,9 @@ const UpdateLessonForm = ({
             {/* true */}
             {/*  toggle input if current.earsketch value is true */}
             <Switch
-              checkedChildren="Yes"
-              unCheckedChildren="No"
+              size='medium'
               defaultChecked={current.earsketch}
-              onChange={(e) => setCurrent({ ...current, earsketch: e })}
+              onChange={(e) => setCurrent({ ...current, earsketch: e.target.checked })}
             />
             {console.log('current.earsketch', current.earsketch)}
           </div>
