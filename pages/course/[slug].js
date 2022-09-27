@@ -232,7 +232,6 @@ const SingleCourse = ({ course }) => {
         </GridContainer>
       </div>
 
-
       {/* video and lessons preview section */}
       <div className={classes.container}>
         <GridContainer
@@ -294,11 +293,11 @@ const SingleCourse = ({ course }) => {
         </GridContainer>
       </div>
     </div>
-    <Footer/>
+    <Footer />
   </>)
 }
 
-export async function getServerSideProps ({ query }) {
+export async function getServerSideProps({ query }) {
   const { data } = await axios.get(`${process.env.API}/course/${query.slug}`)
   return {
     props: {
