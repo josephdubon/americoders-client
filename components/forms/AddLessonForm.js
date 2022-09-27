@@ -81,7 +81,7 @@ const AddLessonForm = ({
               checkedChildren="Yes"
               unCheckedChildren="No"
               defaultChecked={values.earsketch}
-              onChange={(e) => setValues({ ...values, earsketch: e })}
+              onChange={(e) => setValues({ ...values, earsketch: e.target.checked })}
             />
           </div>
         </div>
