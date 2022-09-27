@@ -161,6 +161,7 @@ const SingleCourse = ({ course }) => {
 
   return (<>
 
+    {/* page title area */}
     <PageHead title={course && course.name}/>
 
     <SingleCourseHero
@@ -231,7 +232,6 @@ const SingleCourse = ({ course }) => {
           </GridItem>
         </GridContainer>
       </div>
-
 
       {/* video and lessons preview section */}
       <div className={classes.container}>

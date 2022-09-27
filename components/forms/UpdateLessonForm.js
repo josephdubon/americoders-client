@@ -1,5 +1,7 @@
-import { Button, Progress, Switch } from 'antd'
+import {  Progress } from 'antd'
 import ReactPlayer from 'react-player'
+import { Switch } from '@mui/material'
+import Button from '../CustomButtons/Button'
 
 const UpdateLessonForm = ({
   current,
@@ -11,9 +13,7 @@ const UpdateLessonForm = ({
   progress,
 }) => {
   return (
-
     <div className="container pt-3">
-
       {/*{JSON.stringify(current, null, 4)}*/}
       <form onSubmit={handleUpdateLesson}>
         <p className="mb-1">Title</p>
@@ -38,6 +38,8 @@ const UpdateLessonForm = ({
         {/* code area */}
         <div className="row form-group gap-2 mt-3 mb-3">
           <div>
+
+            {/*html*/}
             <p className="mb-1">HTML</p>
             <textarea
               className="form-control mt-3 col"
@@ -48,8 +50,8 @@ const UpdateLessonForm = ({
             />
           </div>
 
+          {/* css */}
           <div>
-
             <p className="mb-1">CSS</p>
             <textarea
               className="form-control mt-3 col"
@@ -59,20 +61,37 @@ const UpdateLessonForm = ({
               value={current.css}
             />
           </div>
+
+          {/* javascript */}
           <div>
             <p className="mb-1">JavaScript</p>
             <textarea
               className="form-control mt-3 col"
               cols="7"
               rows="7"
-              onChange={(e) => setCurrent(
-                { ...current, javascript: e.target.value })}
+              onChange={(e) =>
+                setCurrent({ ...current, javascript: e.target.value })
+              }
               value={current.javascript}
             />
           </div>
-
         </div>
 
+        {/* earsketch area */}
+        <div className="row form-group gap-2 mt-3 mb-3">
+          <div className="row form-group gap-2 mt-3 mb-3">
+            <p>EarSketch Lesson?</p>
+            {/* true */}
+            {/*  toggle input if current.earsketch value is true */}
+            <Switch
+              size='medium'
+              defaultChecked={current.earsketch}
+              onChange={(e) => setCurrent({ ...current, earsketch: e.target.checked })}
+            />
+          </div>
+        </div>
+
+        {/* video area */}
         <div className="col d-grid gap-2">
           {!uploading && current.video && current.video.Location && (
             <div className="pt-2 d-flex justify-content-center">
@@ -102,11 +121,10 @@ const UpdateLessonForm = ({
         <div className="d-flex justify-content-between">
           <span className="pt-3 badge text-black">Preview</span>
           <Switch
-            className="float-end mt-2"
+            defaultChecked={current.free_preview}
             disabled={uploading}
-            checked={current.free_preview}
             name="free_preview"
-            onChange={(v) => setCurrent({ ...current, free_preview: v })}
+            onChange={(v) => setCurrent({ ...current, free_preview: v.target.checked })}
           />
         </div>
 

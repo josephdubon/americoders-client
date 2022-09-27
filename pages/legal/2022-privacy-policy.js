@@ -52,12 +52,12 @@ export default function PrivacyPolicy (props) {
             <GridItem xs={12} sm={12} md={12}>
               <div name="termly-embed" data-id="42c8cee9-804e-44c8-b962-929436eacf72" data-type="iframe"></div>
               <Script type="text/javascript">{`(function(d, s, id) {
-                  var js, tjs = d.getElementsByTagName(s)[0];
-                  if (d.getElementById(id)) return;
-                  js = d.createElement(s); js.id = id;
-                  js.src = "https://app.termly.io/embed-policy.min.js";
-                  tjs.parentNode.insertBefore(js, tjs);
-                }(document, 'script', 'termly-jssdk'));`}</Script>
+                var js, tjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "https://app.termly.io/embed-policy.min.js";
+                tjs.parentNode.insertBefore(js, tjs);
+              }(document, 'script', 'termly-jssdk'));`}</Script>
             </GridItem>
           </GridContainer>
         </div>

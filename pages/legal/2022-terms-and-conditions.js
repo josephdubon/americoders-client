@@ -15,8 +15,6 @@ import Script from 'next/script'
 const useStyles = makeStyles(styles)
 
 export default function TermsAndConditions (props) {
-  // state
-
   const classes = useStyles()
   const { ...rest } = props
 
