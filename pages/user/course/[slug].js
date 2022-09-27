@@ -77,7 +77,7 @@ const SingleCourse = (props, { courses }) => {
   const markComplete = async () => {
     const { data } = await axios.post(`/api/mark-complete`, {
       courseId: course._id,
-      lessonId: course.lessons[clicked]._id
+      lessonId: course.lessons[clicked]._id,
     })
     setCompletedLessons([...completedLessons, course.lessons[clicked]._id])
     setUpdateState(!updateState)
@@ -87,7 +87,7 @@ const SingleCourse = (props, { courses }) => {
     try {
       const { data } = await axios.post(`/api/mark-incomplete`, {
         courseId: course._id,
-        lessonId: course.lessons[clicked]._id
+        lessonId: course.lessons[clicked]._id,
       })
 
       console.log(data)
@@ -109,18 +109,17 @@ const SingleCourse = (props, { courses }) => {
     } catch (err) {
       console.log(err)
     }
-
   }
   const dashboardRoutes = []
   const { ...rest } = props
 
-  return (<>
+  return (
+    <>
       {/* page title meta */}
       <PageHead title={course.name}/>
 
       {/* student route wrapper */}
       <StudentRoute className="container">
-
         {/* header and nav */}
         <Header
           color="transparent"
@@ -136,10 +135,12 @@ const SingleCourse = (props, { courses }) => {
         />
 
         {/* loading area */}
-        {loading && (<SyncOutlined
-          spin
-          className="d-flex justify-content-between display-1 p-5 center"
-        />)}
+        {loading && (
+          <SyncOutlined
+            spin
+            className="d-flex justify-content-between display-1 p-5 center"
+          />
+        )}
 
         {/* parallax hero section */}
         <Parallax small filter image={course.image && course.image.Location}>
@@ -149,9 +150,10 @@ const SingleCourse = (props, { courses }) => {
               justifyContent="center"
               alignItems="center"
             >
-              <GridContainer direction="row"
-                             justifyContent="center"
-                             alignItems="center"
+              <GridContainer
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
               >
                 {/* title and intro */}
                 <GridItem xs={10} sm={10} md={8}>
@@ -190,9 +192,7 @@ const SingleCourse = (props, { courses }) => {
                         onClose={handleClose}
                         className={classes.menu}
                       >
-                        <h4 className={classes.menuTitle}>
-                          Lessons Menu
-                        </h4>
+                        <h4 className={classes.menuTitle}>Lessons Menu</h4>
                         {/* lessons menu items loop */}
                         {course.lessons.map((lesson, index) => (
                           // close menu and open lesson on click
@@ -212,8 +212,10 @@ const SingleCourse = (props, { courses }) => {
                                 key={index}
                                 classes={classes.menuItem}
                                 style={{
-                                  color: completedLessons.includes(lesson._id) ? 'green' : 'black',
-                                  margin: '.775rem'
+                                  color: completedLessons.includes(lesson._id)
+                                    ? 'green'
+                                    : 'black',
+                                  margin: '.775rem',
                                 }}
                               >
                                 {lesson.title.substring(0, 30)}
@@ -247,14 +249,23 @@ const SingleCourse = (props, { courses }) => {
                     alignItems="center"
                     direction="row"
                   >
-                    <GridItem xs={10} sm={10} md={12}
-                              className={classNames(classes.lightSubtitle, classes.gridItemContainer)}>
+                    <GridItem
+                      xs={10}
+                      sm={10}
+                      md={12}
+                      className={classNames(
+                        classes.lightSubtitle,
+                        classes.gridItemContainer
+                      )}
+                    >
                       {/* lesson title */}
                       <h2 className={classes.lightTitle}>
                         {course.lessons[clicked].title.substring(0, 30)}
                       </h2>
                       {/* mark as complete area */}
-                      {completedLessons.includes(course.lessons[clicked]._id) ? (
+                      {completedLessons.includes(
+                        course.lessons[clicked]._id
+                      ) ? (
                         <Button
                           fullWidth
                           size={'sm'}
@@ -269,7 +280,8 @@ const SingleCourse = (props, { courses }) => {
                           fullWidth
                           size={'sm'}
                           color={'success'}
-                          onClick={markComplete}>
+                          onClick={markComplete}
+                        >
                           Mark lesson as completed
                         </Button>
                       )}
@@ -288,8 +300,15 @@ const SingleCourse = (props, { courses }) => {
                     alignItems="center"
                     direction="row"
                   >
-                    <GridItem xs={10} sm={10} md={12}
-                              className={classNames(classes.lightSubtitle, classes.gridItemContainer)}>
+                    <GridItem
+                      xs={10}
+                      sm={10}
+                      md={12}
+                      className={classNames(
+                        classes.lightSubtitle,
+                        classes.gridItemContainer
+                      )}
+                    >
                       <ReactMarkdown
                         className={classes.markdown}
                         children={course.lessons[clicked].content}
@@ -309,20 +328,29 @@ const SingleCourse = (props, { courses }) => {
                     alignItems="center"
                     direction="row"
                   >
-                    <GridItem xs={10} sm={10} md={12}
-                              className={classNames(classes.lightSubtitle, classes.gridItemContainer)}>
+                    <GridItem
+                      xs={10}
+                      sm={10}
+                      md={12}
+                      className={classNames(
+                        classes.lightSubtitle,
+                        classes.gridItemContainer
+                      )}
+                    >
                       {course.lessons[clicked].video &&
-                        course.lessons[clicked].video.Location && (<>
-                          <h2 className={classes.lightTitle}>Video</h2>
-                          {/* video col */}
-                          <ReactPlayer
-                            url={course.lessons[clicked].video.Location}
-                            light={course.image && course.image.Location}
-                            controls
-                            onEnded={markComplete} // update lesson completed status on video complete
-                            className={classes.courseVideo}
-                          />
-                        </>)}
+                        course.lessons[clicked].video.Location && (
+                          <>
+                            <h2 className={classes.lightTitle}>Video</h2>
+                            {/* video col */}
+                            <ReactPlayer
+                              url={course.lessons[clicked].video.Location}
+                              light={course.image && course.image.Location}
+                              controls
+                              onEnded={markComplete} // update lesson completed status on video complete
+                              className={classes.courseVideo}
+                            />
+                          </>
+                        )}
                     </GridItem>
                   </GridContainer>
                 </GridContainer>
@@ -338,10 +366,21 @@ const SingleCourse = (props, { courses }) => {
                     alignItems="center"
                     direction="row"
                   >
-                    {course.lessons[clicked].html && (<>
-                      <h2 className={classNames(classes.gridItemContainer, classes.lightTitle)}>Code Sandbox</h2>
-                      <PlaygroundFrontEnd htmlValue={course.lessons[clicked].html}/>
-                    </>)}
+                    {course.lessons[clicked].html && (
+                      <>
+                        <h2
+                          className={classNames(
+                            classes.gridItemContainer,
+                            classes.lightTitle
+                          )}
+                        >
+                          Code Sandbox
+                        </h2>
+                        <PlaygroundFrontEnd
+                          htmlValue={course.lessons[clicked].html}
+                        />
+                      </>
+                    )}
                   </GridContainer>
                 </GridContainer>
 
@@ -390,7 +429,8 @@ const SingleCourse = (props, { courses }) => {
                         size={'sm'}
                         color={'success'}
                         style={{ margin: '1.175rem' }}
-                        onClick={markComplete}>
+                        onClick={markComplete}
+                      >
                         Mark lesson as completed
                       </Button>
                     )}
@@ -405,14 +445,24 @@ const SingleCourse = (props, { courses }) => {
                   justifyContent="center"
                   alignItems="center"
                 >
-                  <GridContainer direction="row"
-                                 justifyContent="center"
-                                 alignItems="center"
+                  <GridContainer
+                    direction="row"
+                    justifyContent="center"
+                    alignItems="center"
                   >
                     {/* title and intro */}
-                    <GridItem xs={10} sm={10} md={8}
-                              className={classNames(classes.lightSubtitle, classes.gridItemContainer)}>
-                      <h5 className={classes.lightTitle}>CLick the lessons menu to begin!</h5>
+                    <GridItem
+                      xs={10}
+                      sm={10}
+                      md={8}
+                      className={classNames(
+                        classes.lightSubtitle,
+                        classes.gridItemContainer
+                      )}
+                    >
+                      <h5 className={classes.lightTitle}>
+                        CLick the lessons menu to begin!
+                      </h5>
 
                       {/* welcoming message to user */}
                       <h4 className={classes.lightSubtitle}>
@@ -423,7 +473,8 @@ const SingleCourse = (props, { courses }) => {
                     </GridItem>
                   </GridContainer>
                 </GridContainer>
-              </>)}
+              </>
+            )}
             {/*end*/}
           </div>
         </div>
