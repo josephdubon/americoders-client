@@ -78,8 +78,7 @@ const AddLessonForm = ({
             {/* true */}
             {/*  toggle input if current.earsketch value is true */}
             <Switch
-              checkedChildren="Yes"
-              unCheckedChildren="No"
+              size={'medium'}
               defaultChecked={values.earsketch}
               onChange={(e) => setValues({ ...values, earsketch: e.target.checked })}
             />
