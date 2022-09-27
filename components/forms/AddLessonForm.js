@@ -71,16 +71,33 @@ const AddLessonForm = ({
                     </textarea>
         </div>
 
-                <div className='col d-grid gap-2'>
-                    <label className='btn btn-dark btn-block text-left mt-3'>
-                        {uploadButtonText}
-                        <input
-                            onChange={handleVideo}
-                            type='file'
-                            accept='video/*'
-                            hidden // hide generic upload button and layout
-                        />
-                    </label>
+        {/* earsketch area */}
+        <div className="row form-group gap-2 mt-3 mb-3">
+          <div className="row form-group gap-2 mt-3 mb-3">
+            <p>EarSketch Lesson?</p>
+
+            {/* true */}
+            {/*  toggle input if current.earsketch value is true */}
+            <Switch
+              checkedChildren="Yes"
+              unCheckedChildren="No"
+              defaultChecked={values.earsketch}
+              onChange={(e) => setValues({ ...values, earsketch: e })}
+            />
+          </div>
+        </div>
+
+        {/* video section */}
+        <div className="col d-grid gap-2">
+          <label className="btn btn-dark btn-block text-left mt-3">
+            {uploadButtonText}
+            <input
+              onChange={handleVideo}
+              type="file"
+              accept="video/*"
+              hidden // hide generic upload button and layout
+            />
+          </label>
 
           {!uploading && values.video.Location && (
             <Tooltip title="Remove">
