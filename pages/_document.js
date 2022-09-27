@@ -36,12 +36,12 @@ class MyDocument extends Document {
             data-auto-block="on"
             data-website-uuid="a9d82342-1f11-4be9-ab0a-a2bcfaf09c65"
           ></Script>
+          <Script defer data-domain="americoders.org" src="https://plausible.io/js/plausible.js"></Script>
         </Head>
         <body>
         <div id="page-transition"></div>
         <Main/>
         <NextScript/>
-        <Script defer data-domain="americoders.org" src='https://plausible.io/js/plausible.js'></Script>
         </body>
       </Html>
     )
