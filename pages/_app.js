@@ -9,6 +9,9 @@ import '/styles/scss/americoders.scss?v=1.2.0'
 import { PageHead } from '../components/PageHead/PageHead'
 import { Provider } from '../context'
 
+import PlausibleProvider from 'next-plausible'
+import { ToastContainer } from 'react-toastify'
+
 Router.events.on('routeChangeStart', (url) => {
   // console.log(`Loading: ${url}`)
   document.body.classList.add('body-page-transition')
@@ -42,24 +45,31 @@ export default class MyApp extends App {
 
     return (
       <>
-        {/* wrap app in provider for access to state */}
-        <Provider>
-          {/* page head section*/}
-          <PageHead title={'Americoders'}/>
-          {/* notifications */}
-          {/*<ToastContainer*/}
-          {/*  position="top-center"*/}
-          {/*  autoClose={5000}*/}
-          {/*  hideProgressBar={false}*/}
-          {/*  newestOnTop={false}*/}
-          {/*  closeOnClick*/}
-          {/*  rtl={false}*/}
-          {/*  pauseOnFocusLoss*/}
-          {/*  draggable*/}
-          {/*  pauseOnHover*/}
-          {/*/>*/}
-          <Component {...pageProps} />
-        </Provider>
+        {/* plausible analytics */}
+        <PlausibleProvider
+          domain="americoders.org"
+          trackOutboundLinks={true}
+          trackFileDownloads={true}
+        >
+          {/* wrap app in provider for access to state */}
+          <Provider>
+            {/* page head section*/}
+            <PageHead title={'Americoders'}/>
+            {/* notifications */}
+            <ToastContainer
+              position="top-center"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
+            <Component {...pageProps} />
+          </Provider>
+        </PlausibleProvider>
       </>
     )
   }
