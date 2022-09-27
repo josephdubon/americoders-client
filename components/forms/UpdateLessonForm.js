@@ -1,5 +1,7 @@
-import { Button, Progress, Switch } from 'antd'
+import {  Progress } from 'antd'
 import ReactPlayer from 'react-player'
+import { Switch } from '@mui/material'
+import Button from '../CustomButtons/Button'
 
 const UpdateLessonForm = ({
   current,
