@@ -75,6 +75,21 @@ const UpdateLessonForm = ({
           </div>
         </div>
 
+        {/* earsketch area */}
+        <div className="row form-group gap-2 mt-3 mb-3">
+          <div className="row form-group gap-2 mt-3 mb-3">
+            <p>EarSketch Lesson?</p>
+
+            {/* true */}
+            {/*  toggle input if current.earsketch value is true */}
+            <Switch
+              checkedChildren="Yes"
+              unCheckedChildren="No"
+              defaultChecked={current.earsketch}
+              onChange={(e) => setCurrent({ ...current, earsketch: e })}
+            />
+            {console.log('current.earsketch', current.earsketch)}
+          </div>
         </div>
 
         {/* video area */}
