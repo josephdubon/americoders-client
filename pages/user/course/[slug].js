@@ -20,6 +20,7 @@ import PlaygroundFrontEnd from '../../../components/editor/PlaygroundFrontEnd'
 import ReactPlayer from 'react-player'
 import ReactMarkdown from 'react-markdown'
 import MenuItem from '@mui/material/MenuItem'
+import EarSketch from '../../../components/editor/EarSketch'
 
 const useStyles = makeStyles(styles)
 
