@@ -1,6 +1,8 @@
-import { Button, Progress, Tooltip } from 'antd'
+import { Progress } from 'antd'
 import { CloseCircleFilled } from '@ant-design/icons'
-import { Switch } from '@mui/material'
+import { Switch, TextField } from '@mui/material'
+import Button from '../CustomButtons/Button'
+import { Tooltip } from '@material-ui/core'
 
 const AddLessonForm = ({
   values,
@@ -10,14 +12,18 @@ const AddLessonForm = ({
   handleRemoveVideo,
   progress,
   uploading,
-  uploadButtonText
+  uploadButtonText,
 }) => {
   return (<>
     <div className="container pt-3">
 
       <form onSubmit={handleAddLesson}>
         {/* title */}
-        <input
+        <TextField
+          label="Name"
+          multiline
+          fullWidth
+          rowsMax={2}
           type="text"
           className="form-control"
           onChange={(e) => setValues({ ...values, title: e.target.value })}
@@ -28,48 +34,50 @@ const AddLessonForm = ({
         />
 
         {/* content */}
-        <textarea
-          className="form-control mt-3"
-          cols="7"
-          rows="14"
+        <TextField
+          label="Content"
+          multiline
+          fullWidth
+          rows={14}
+          type="text"
           onChange={(e) => setValues({ ...values, content: e.target.value })}
           value={values.content}
           placeholder="Content">
-                </textarea>
+        </TextField>
 
+        {/* html */}
+        <TextField
+          label="HTML"
+          multiline
+          fullWidth
+          rows={14}
+          onChange={(e) => setValues({ ...values, html: e.target.value })}
+          value={values.html}
+          placeholder="HTML">
+        </TextField>
 
-        {/* code area */}
-        <div className="row form-group gap-2 mt-3 mb-3">
-          {/* html */}
-          <textarea
-            className="form-control mt-3 col"
-            cols="7"
-            rows="14"
-            onChange={(e) => setValues({ ...values, html: e.target.value })}
-            value={values.html}
-            placeholder="HTML">
-                    </textarea>
+        {/* css */}
+        <TextField
+          label="CSS"
+          multiline
+          fullWidth
+          rows={14}
+          onChange={(e) => setValues({ ...values, css: e.target.value })}
+          value={values.css}
+          placeholder="CSS">
+        </TextField>
 
-          {/* css */}
-          <textarea
-            className="form-control mt-3 col"
-            cols="7"
-            rows="14"
-            onChange={(e) => setValues({ ...values, css: e.target.value })}
-            value={values.css}
-            placeholder="CSS">
-                    </textarea>
-
-          {/* javascript */}
-          <textarea
-            className="form-control mt-3 col"
-            cols="7"
-            rows="14"
-            onChange={(e) => setValues({ ...values, javascript: e.target.value })}
-            value={values.javascript}
-            placeholder="JavaScript">
-                    </textarea>
-        </div>
+        {/* javascript */}
+        <TextField
+          label="Javascript"
+          multiline
+          fullWidth
+          rows={14}
+          onChange={(e) => setValues(
+            { ...values, javascript: e.target.value })}
+          value={values.javascript}
+          placeholder="JavaScript">
+        </TextField>
 
         {/* earsketch area */}
         <div className="row form-group gap-2 mt-3 mb-3">
@@ -80,14 +88,17 @@ const AddLessonForm = ({
             <Switch
               size={'medium'}
               defaultChecked={values.earsketch}
-              onChange={(e) => setValues({ ...values, earsketch: e.target.checked })}
+              onChange={(e) => setValues(
+                { ...values, earsketch: e.target.checked })}
             />
           </div>
         </div>
 
         {/* video section */}
-        <div className="col d-grid gap-2">
-          <label className="btn btn-dark btn-block text-left mt-3">
+        <Button
+          color="success"
+        >
+          <label style={{ color: '#FFFFFF' }}>
             {uploadButtonText}
             <input
               onChange={handleVideo}
@@ -96,32 +107,34 @@ const AddLessonForm = ({
               hidden // hide generic upload button and layout
             />
           </label>
-          {!uploading && values.video.Location && (
-            <Tooltip title="Remove">
-                            <span onClick={handleRemoveVideo} className="pt-1 pl-3">
-                                <CloseCircleFilled className="text-danger d-flex justify-content-center pt-4"/>
+        </Button>
+        {!uploading && values.video.Location && (
+          <Tooltip title="Remove">
+                            <span onClick={handleRemoveVideo}
+                                  className="pt-1 pl-3">
+                                <CloseCircleFilled
+                                  className="text-danger d-flex justify-content-center pt-4"/>
                             </span>
-            </Tooltip>
-          )}
-          {progress > 0 && (
-            <Progress
-              className="d-flex justify-content-center pt-2"
-              percent={progress}
-              steps={10}
-            />
-          )}
+          </Tooltip>
+        )}
+        {progress > 0 && (
+          <Progress
+            className="d-flex justify-content-center pt-2"
+            percent={progress}
+            steps={10}
+          />
+        )}
 
-          <Button
-            onClick={handleAddLesson}
-            className="col mt-3"
-            size="large"
-            type="primary"
-            shape="round"
-            loading={uploading}
-          >
-            Save
-          </Button>
-        </div>
+        <Button
+          fullWidth
+          onClick={handleAddLesson}
+          size="lg"
+          color="primary"
+          shape="round"
+          loading={uploading}
+        >
+          Save
+        </Button>
 
       </form>
     </div>
