@@ -17,6 +17,7 @@ import Button from '../CustomButtons/Button'
 import { makeStyles } from '@material-ui/core/styles'
 import styles from '../../styles/jss/americoders/pages/loginPage'
 import Link from 'next/link'
+import { toast } from 'react-toastify'
 
 const useStyles = makeStyles(styles)
 
@@ -71,11 +72,31 @@ const StudentUpdateForm = () => {
       // deactivate load spinner
       setLoading(false)
 
+      // notification config
+      toast.success('Woo Hoo! Your profile is updated. Please log back in 😎', {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+
       await logout()
     } catch (err) {
       // deactivate load spinner
       setLoading(false)
-
+      // notification config
+      toast.error(err.response.data, {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
     }
   }
 
