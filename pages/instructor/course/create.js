@@ -1,13 +1,27 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import Resizer from 'react-image-file-resizer'
-import InstructorRoute from '../../../components/routes/InstructorRoute'
-import CourseCreateForm from '../../../components/forms/CourseCreateForm'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/router'
 import { PageHead } from '../../../components/head/PageHead'
+import Header from '../../../components/Header/Header'
+import NavLogo
+  from '../../../public/images/logo/americoders-logo-simple_white.svg'
+import HeaderLinks from '../../../components/Header/HeaderLinks'
+import GridContainer from '../../../components/Grid/GridContainer'
+import GridItem from '../../../components/Grid/GridItem'
+import Card from '../../../components/Card/Card'
 
-const CreateCourse = () => {
+import CardHeader from '../../../components/Card/CardHeader'
+import CardBody from '../../../components/Card/CardBody'
+import Footer from '../../../components/Footer/Footer'
+import { makeStyles } from '@material-ui/core/styles'
+import styles from '../../../styles/jss/americoders/pages/loginPage'
+import CourseCreateForm from '../../../components/forms/CourseCreateForm'
+
+const useStyles = makeStyles(styles)
+
+const CreateCourse = (props) => {
   // router
   const router = useRouter()
 
@@ -25,12 +39,19 @@ const CreateCourse = () => {
     loading: false,
   })
 
+  const [cardAnimaton, setCardAnimation] = React.useState('cardHidden')
+  setTimeout(function () {
+    setCardAnimation('')
+  }, 700)
+  const classes = useStyles()
+  const { ...rest } = props
+
+  // form logic: values
   // set image initial state to an empty object
   const [image, setImage] = useState({})
   const [preview, setPreview] = useState('')
   const [uploadButtonText, setUploadButtonText] = useState('Upload Image')
 
-  // form logic: values
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value })
   }
@@ -120,6 +141,7 @@ const CreateCourse = () => {
         ...values, // unpack all the values from state
         image, // include image with post request
       })
+
       // notification config
       toast.success('Excellent! Now you can start adding lessons', {
         position: 'top-center',
@@ -134,6 +156,7 @@ const CreateCourse = () => {
       // redirect to instructor page
       await router.push('/instructor')
     } catch (err) {
+      setLoading(false)
       // notification config
       toast.error(err.response.data, {
         position: 'top-center',
@@ -144,43 +167,60 @@ const CreateCourse = () => {
         draggable: true,
         progress: undefined,
       })
-
     }
 
   }
 
-  return (<InstructorRoute>
-    <PageHead title={'Create Course'}/>
+  return (<>
+    <PageHead title={'Create New Course Form'}/>
 
-    <main>
-      <section className="py-5 text-center container">
-        <div className="row py-lg-5">
-          <div className="col-lg-6 col-md-8 mx-auto">
-            <h1 className="fw-light">Create Course</h1>
-          </div>
-        </div>
-      </section>
+    <Header
+      absolute
+      color="transparent"
+      brand={NavLogo}
+      rightLinks={<HeaderLinks/>}
+      {...rest}
+    />
 
-      <div className="album py-5 bg-light">
-        <div className="container">
-          <div className="container-fluid col-md-12 offset-md-12 pb-5">
-
-            {/* use props for form function and values */}
-            <CourseCreateForm
-              handleSubmit={handleSubmit}
-              handleImage={handleImage}
-              handleImageRemove={handleImageRemove}
-              handleChange={handleChange}
-              values={values}
-              setValues={setValues}
-              preview={preview}
-              uploadButtonText={uploadButtonText}
-            />
-          </div>
-        </div>
+    <div
+      className={classes.pageHeader}
+      style={{
+        backgroundImage: 'url(\'/images/original/americoders-community-hands-friends.jpg\')',
+        backgroundSize: 'cover',
+        backgroundPosition: 'top center',
+      }}
+    >
+      <div className={classes.container}>
+        <GridContainer
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <GridContainer direction="row"
+                         justifyContent="center"
+                         alignItems="center"
+          >
+            <GridItem xs={10} sm={8} md={11}>
+              <Card className={classes[cardAnimaton]}>
+                {/* create course form */}
+                {/* use props for form function and values */}
+                <CourseCreateForm
+                  handleSubmit={handleSubmit}
+                  handleImage={handleImage}
+                  handleImageRemove={handleImageRemove}
+                  handleChange={handleChange}
+                  values={values}
+                  setValues={setValues}
+                  preview={preview}
+                  uploadButtonText={uploadButtonText}
+                /> </Card>
+            </GridItem>
+          </GridContainer>
+        </GridContainer>
       </div>
-    </main>
-  </InstructorRoute>)
+      <Footer whiteFont/>
+    </div>
+  </>)
 }
 
 export default CreateCourse
