@@ -49,6 +49,7 @@ export default function Footer (props) {
         <div className={classes.right}>
           &copy; {1900 + new Date().getYear()}
           {' '}
+          {/* link back home */}
           <Link href={'/landing'}>
             <a className={aClasses}>
               AMERICODERS
