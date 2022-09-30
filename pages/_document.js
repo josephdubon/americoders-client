@@ -2,7 +2,6 @@ import React from 'react'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/styles'
 import Script from 'next/script'
-import { javascript } from '@codemirror/lang-javascript'
 
 class MyDocument extends Document {
   render () {
