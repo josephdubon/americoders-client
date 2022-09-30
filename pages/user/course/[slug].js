@@ -4,7 +4,8 @@ import axios from 'axios'
 import StudentRoute from '../../../components/routes/StudentRoute'
 import { SyncOutlined } from '@ant-design/icons'
 import { PageHead } from '../../../components/head/PageHead'
-import NavLogo from '../../../public/images/logo/americoders-logo-simple_white.svg'
+import NavLogo
+  from '../../../public/images/logo/americoders-logo-simple_white.svg'
 import HeaderLinks from '../../../components/Header/HeaderLinks'
 import Header from '../../../components/Header/Header'
 import Parallax from '../../../components/Parallax/Parallax'
@@ -255,7 +256,7 @@ const SingleCourse = (props, { courses }) => {
                       md={12}
                       className={classNames(
                         classes.lightSubtitle,
-                        classes.gridItemContainer
+                        classes.gridItemContainer,
                       )}
                     >
                       {/* lesson title */}
@@ -264,7 +265,7 @@ const SingleCourse = (props, { courses }) => {
                       </h2>
                       {/* mark as complete area */}
                       {completedLessons.includes(
-                        course.lessons[clicked]._id
+                        course.lessons[clicked]._id,
                       ) ? (
                         <Button
                           fullWidth
@@ -306,7 +307,7 @@ const SingleCourse = (props, { courses }) => {
                       md={12}
                       className={classNames(
                         classes.lightSubtitle,
-                        classes.gridItemContainer
+                        classes.gridItemContainer,
                       )}
                     >
                       <ReactMarkdown
@@ -334,7 +335,7 @@ const SingleCourse = (props, { courses }) => {
                       md={12}
                       className={classNames(
                         classes.lightSubtitle,
-                        classes.gridItemContainer
+                        classes.gridItemContainer,
                       )}
                     >
                       {course.lessons[clicked].video &&
@@ -371,7 +372,7 @@ const SingleCourse = (props, { courses }) => {
                         <h2
                           className={classNames(
                             classes.gridItemContainer,
-                            classes.lightTitle
+                            classes.lightTitle,
                           )}
                         >
                           Code Sandbox
@@ -400,14 +401,14 @@ const SingleCourse = (props, { courses }) => {
                         <h2
                           className={classNames(
                             classes.gridItemContainer,
-                            classes.lightTitle
+                            classes.lightTitle,
                           )}
                         >
                           EarSketch Studio
                         </h2>
                         <EarSketch/>
                       </>
-                    ):('')}
+                    ) : ('')}
                   </GridContainer>
                 </GridContainer>
 
@@ -466,7 +467,7 @@ const SingleCourse = (props, { courses }) => {
                       md={8}
                       className={classNames(
                         classes.lightSubtitle,
-                        classes.gridItemContainer
+                        classes.gridItemContainer,
                       )}
                     >
                       <h5 className={classes.lightTitle}>
