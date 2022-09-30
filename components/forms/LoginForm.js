@@ -17,6 +17,7 @@ import GridContainer from '../Grid/GridContainer'
 import GridItem from '../Grid/GridItem'
 import { Typography } from '@mui/material'
 import Link from 'next/link'
+import { toast } from 'react-toastify'
 
 const useStyles = makeStyles(styles)
 
