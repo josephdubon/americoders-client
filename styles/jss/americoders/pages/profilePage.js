@@ -36,11 +36,18 @@ const profilePageStyle = {
   },
   title: {
     ...title,
-    display: 'inline-block',
-    position: 'relative',
+    textAlign: 'center',
     marginTop: '30px',
     minHeight: '32px',
     textDecoration: 'none',
+  },
+  courseImage: {
+    width: '100%',
+    height: 'auto',
+  },
+  listsContainer: {
+    textAlign: 'center',
+    listStyle: 'none',
   },
   socials: {
     marginTop: '0',
