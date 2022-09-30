@@ -57,11 +57,9 @@ export default function Header (props) {
     [classes.fixed]: fixed,
   })
   const brandComponent = (
-    <Link href="/landing" as="/home">
+    <Link href="/landing">
       <a>
-        <Image
-          src={brand}
-        />
+        <span className={classes.title}>AMERICODERS</span>
       </a>
     </Link>
   )
