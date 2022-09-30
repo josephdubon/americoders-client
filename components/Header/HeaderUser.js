@@ -139,7 +139,7 @@ export default function UserRoute ({ children, showNav = true, props }) {
                     <Divider/>
 
                     {/* back home */}
-                    <Link href={'/landing'} as={'/home'} disablePadding
+                    <Link href={'/landing'} disablePadding
                           button>
                       <a>
                         <ListItem disablePadding>
