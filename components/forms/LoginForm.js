@@ -91,15 +91,15 @@ const LoginForm = () => {
       // deactivate load spinner
       setLoading(false)
 
-      // toast.error(err.response.data, {
-      //   position: 'top-center',
-      //   autoClose: 5000,
-      //   hideProgressBar: false,
-      //   closeOnClick: true,
-      //   pauseOnHover: true,
-      //   draggable: true,
-      //   progress: undefined,
-      // })
+      toast.error(err.response.data, {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
     }
   }
 
@@ -208,11 +208,11 @@ const LoginForm = () => {
           Do you need an account?
           <br/>
           Click {' '}
-          <Link href={'/register'}><a className={classes.registerFooterLink}>here</a></Link> to register!
+          <Link href={'/register'}><a
+            className={classes.registerFooterLink}>here</a></Link> to register!
         </Typography>
       </GridItem>
     </GridContainer>
-
   </>)
 }
 
