@@ -3,7 +3,8 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 import SingleCourseHero from '../../components/CourseCard/SingleCourseHero'
 import PreviewModal from '../../components/modal/PreviewModal'
-import SingleCourseLessons from '../../components/CourseCard/SingleCourseLessons'
+import SingleCourseLessons
+  from '../../components/CourseCard/SingleCourseLessons'
 import { Context } from '../../context'
 import { toast } from 'react-toastify'
 import { loadStripe } from '@stripe/stripe-js'
@@ -15,8 +16,9 @@ import ReactPlayer from 'react-player'
 import Footer from '../../components/Footer/Footer'
 import { makeStyles } from '@material-ui/core/styles'
 import styles from '../../styles/jss/americoders/pages/landingPage'
-import CoursesFeatureSection from '../../pages-sections/CoursesPage-Sections/CoursesFeatureSection'
-import { HourglassFull, Check } from '@material-ui/icons'
+import CoursesFeatureSection
+  from '../../pages-sections/CoursesPage-Sections/CoursesFeatureSection'
+import { Check, HourglassFull } from '@material-ui/icons'
 import { Tooltip } from '@mui/material'
 import Button from '../../components/CustomButtons/Button'
 
@@ -71,7 +73,8 @@ const SingleCourse = ({ course }) => {
       if (!user) await router.push('/login')
 
       // check if already enrolled and redirect to course page
-      if (enrolled.status) return router.push(`/user/course/${enrolled.course.slug}`)
+      if (enrolled.status) return router.push(
+        `/user/course/${enrolled.course.slug}`)
 
       // collect data
       const { data } = await axios.post(`/api/paid-enrollment/${course._id}`)
@@ -119,7 +122,8 @@ const SingleCourse = ({ course }) => {
       if (!user) await router.push('/login')
 
       // check if already enrolled and redirect to course page
-      if (enrolled.status) return router.push(`/user/course/${enrolled.course.slug}`)
+      if (enrolled.status) return router.push(
+        `/user/course/${enrolled.course.slug}`)
 
       // update state
       setLoading(true)
@@ -180,9 +184,7 @@ const SingleCourse = ({ course }) => {
 
     <div className={classNames(classes.main, classes.mainRaised)}>
       <div className={classes.container}>
-
         <CoursesFeatureSection course={course}/>
-
         {/* enroll section */}
         <GridContainer
           direction="row"
@@ -191,8 +193,11 @@ const SingleCourse = ({ course }) => {
           style={{ marginTop: '4rem', marginBottom: '8rem' }}
         >
           <GridItem xs={12} sm={12} md={6}>
-            <h1 className={classes.title} style={{ color: '#3C4858' }}>Are You Ready To Enroll?</h1>
-            <h4 className={classes.subtitle} style={{ color: '#3C4858', fontSize: '1.175rem' }}>
+            <h1 className={classes.title} style={{ color: '#3C4858' }}>Are You
+                                                                       Ready To
+                                                                       Enroll?</h1>
+            <h4 className={classes.subtitle}
+                style={{ color: '#3C4858', fontSize: '1.175rem' }}>
               Because we are ready for you to come learn with us!
               <br/>
               If you have any questions, please contact us at <a
@@ -200,7 +205,8 @@ const SingleCourse = ({ course }) => {
             </h4>
           </GridItem>
           <GridItem xs={12} sm={12} md={6}>
-            <h4 className={classes.subtitle} style={{ color: '#3C4858', fontSize: '1.175rem' }}>
+            <h4 className={classes.subtitle}
+                style={{ color: '#3C4858', fontSize: '1.175rem' }}>
               SMASH the enroll button below to get to our enrollment page.
             </h4>
             {loading ? <div className="d-flex justify-content-center">
@@ -240,39 +246,45 @@ const SingleCourse = ({ course }) => {
           justifyContent="center"
           alignItems="center"
         >
-          {course && course.lessons[0].video && course.lessons[0].video.Location ? (
-            <GridItem cs={12} sm={12} md={6}
-                      onClick={() => {
-                        setPreview(course.lessons[0].video.Location)
-                        setShowModal(!showModal) // toggle modal
-                      }}
-            >
-              <ReactPlayer
-                url={course.lessons[0].video.Location}
-                light={course.image.Location}
-                width={'100%'}
-              />
-            </GridItem>
-          ) : (<>
-            <GridItem cs={12} sm={12} md={6}>
-              {course && course.image && course.image.Location ?
-                <>
-                  <img src={course.image.Location}
-                       alt={course.name}
-                       width={'100%'}
-                       height={'420px'}
-                       style={{ margin: '2.275rem 0', objectFit: 'cover', borderRadius: '2rem' }}
-                  />
-                </>
-                : <img src="/images/americoders-course.png"
-                       alt={course && course.name}
-                       width={'100%'}
-                       height={'420px'}
-                       style={{ margin: '2.275rem 0', objectFit: 'cover' }}
+          {course && course.lessons[0].video && course.lessons[0].video.Location
+            ? (
+              <GridItem cs={12} sm={12} md={6}
+                        onClick={() => {
+                          setPreview(course.lessons[0].video.Location)
+                          setShowModal(!showModal) // toggle modal
+                        }}
+              >
+                <ReactPlayer
+                  url={course.lessons[0].video.Location}
+                  light={course.image.Location}
+                  width={'100%'}
                 />
-              }
-            </GridItem>
-          </>)
+              </GridItem>
+            )
+            : (<>
+              <GridItem cs={12} sm={12} md={6}>
+                {course && course.image && course.image.Location ?
+                  <>
+                    <img src={course.image.Location}
+                         alt={course.name}
+                         width={'100%'}
+                         height={'420px'}
+                         style={{
+                           margin: '2.275rem 0',
+                           objectFit: 'cover',
+                           borderRadius: '2rem',
+                         }}
+                    />
+                  </>
+                  : <img src="/images/americoders-course.png"
+                         alt={course && course.name}
+                         width={'100%'}
+                         height={'420px'}
+                         style={{ margin: '2.275rem 0', objectFit: 'cover' }}
+                  />
+                }
+              </GridItem>
+            </>)
           }
           <GridItem cs={12} sm={12} md={6}>
             {course && course.lessons && (<>

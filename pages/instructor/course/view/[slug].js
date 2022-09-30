@@ -1,24 +1,43 @@
-import { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import axios from 'axios'
-import InstructorRoute from '../../../../components/routes/InstructorRoute'
 import {
   CheckOutlined,
   CloseOutlined,
   EditOutlined,
   QuestionOutlined,
   UploadOutlined,
-  UserSwitchOutlined
+  UserSwitchOutlined,
 } from '@ant-design/icons'
-import { Avatar, Button, List, Modal, Tooltip } from 'antd'
+import { List } from 'antd'
 import ReactMarkdown from 'react-markdown'
 import AddLessonForm from '../../../../components/forms/AddLessonForm'
 import AddEventForm from '../../../../components/forms/AddEventForm'
 import { toast } from 'react-toastify'
 import { PageHead } from '../../../../components/head/PageHead'
-import Item from 'antd/lib/list/Item'
+import Header from '../../../../components/Header/Header'
+import NavLogo
+  from '../../../../public/images/logo/americoders-logo-simple_white.svg'
+import HeaderLinks from '../../../../components/Header/HeaderLinks'
+import Parallax from '../../../../components/Parallax/Parallax'
+import classNames from 'classnames'
+import GridContainer from '../../../../components/Grid/GridContainer'
+import GridItem from '../../../../components/Grid/GridItem'
+import { Context } from '../../../../context'
+import { makeStyles } from '@material-ui/core/styles'
+import styles from '../../../../styles/jss/americoders/pages/profilePage'
+import Image from 'next/image'
+import { Dialog, ListItem, ListItemText, Tooltip } from '@mui/material'
+import Button from '../../../../components/CustomButtons/Button'
 
-const CourseView = () => {
+const useStyles = makeStyles(styles)
+
+const CourseView = (props) => {
+  // user state
+  const {
+    state: { user },
+  } = useContext(Context)
+
   // style
   const myStyle = {
     marginTop: '-15px', fontSize: '10px',
@@ -27,12 +46,14 @@ const CourseView = () => {
   // state
   const [course, setCourse] = useState({})
   const [visible, setVisible] = useState(false)
+  const [visibleEvent, setVisibleEvent] = useState(false)
   const [values, setValues] = useState({
     title: '',
     content: '',
     html: '',
     css: '',
     javascript: '',
+    earsketch: null,
     video: {},
   })
   const [eventVisible, setEventVisible] = useState(false)
@@ -83,7 +104,8 @@ const CourseView = () => {
     e.preventDefault()
     try {
       // get request for data
-      const { data } = await axios.post(`/api/course/event/${slug}/${course.instructor._id}`,
+      const { data } = await axios.post(
+        `/api/course/event/${slug}/${course.instructor._id}`,
         eventValues) // lesson content from values
 
       // update state
@@ -95,7 +117,7 @@ const CourseView = () => {
         endDate: '',
         location: '',
       })
-      setVisible(false)
+      setVisibleEvent(false)
       setCourse(data)
 
       // notification config
@@ -131,7 +153,8 @@ const CourseView = () => {
     e.preventDefault()
     try {
       // get request for data
-      const { data } = await axios.post(`/api/course/lesson/${slug}/${course.instructor._id}`,
+      const { data } = await axios.post(
+        `/api/course/lesson/${slug}/${course.instructor._id}`,
         values) // lesson content from values
 
       // update state
@@ -142,6 +165,7 @@ const CourseView = () => {
         html: '',
         css: '',
         javascript: '',
+        earsketch: null,
         video: {}, // video is an object
       })
       setProgress(0)
@@ -190,7 +214,8 @@ const CourseView = () => {
       videoData.append('video', file)
 
       // save progress bar and send video as form data to backend
-      const { data } = await axios.post(`/api/course/upload-video/${course.instructor._id}`,
+      const { data } = await axios.post(
+        `/api/course/upload-video/${course.instructor._id}`,
         videoData, {
           onUploadProgress: (e) => {
             setProgress(Math.round((100 * e.loaded) / e.total))
@@ -221,9 +246,8 @@ const CourseView = () => {
 
       const { data } = await axios.post(
         `/api/course/remove-video/${course.instructor._id}`,
-        values.video
+        values.video,
       )
-
       setProgress(0)
       setValues({ ...values, video: {} })
       setUploading(false)
@@ -245,7 +269,8 @@ const CourseView = () => {
   const handlePublish = async () => {
     try {
       // confirm publish
-      let answer = window.confirm('Once you publish the course will be live on the platform for the students to enroll.')
+      let answer = window.confirm(
+        'Once you publish the course will be live on the platform for the students to enroll.')
 
       if (!answer) return
 
@@ -281,7 +306,8 @@ const CourseView = () => {
   const handleUnpublish = async () => {
     try {
       // confirm publish
-      let answer = window.confirm('Once you unpublish the course will be not be live on the platform for the students to enroll.')
+      let answer = window.confirm(
+        'Once you unpublish the course will be not be live on the platform for the students to enroll.')
 
       if (!answer) return
 
@@ -315,47 +341,75 @@ const CourseView = () => {
     }
 
   }
+  const classes = useStyles()
+  const { ...rest } = props
 
-  return (<InstructorRoute>
-    <PageHead title={course.name}/>
+  return (
+    <>
+      {/* meta data */}
+      <PageHead title={course.name}/>
 
-    <main>
-      <section className="py-5 text-center container">
-        <div className="row py-lg-5">
-          <div className="col-lg-6 col-md-8 mx-auto">
-            <h1 className="fw-light">{course && course.name}</h1>
-          </div>
-        </div>
-      </section>
+      {/* navigation */}
+      <Header
+        color="transparent"
+        brand={NavLogo}
+        rightLinks={<HeaderLinks/>}
+        fixed
+        changeColorOnScroll={{
+          height: 200,
+          color: 'white',
+        }}
+        {...rest}
+        sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      />
 
-      <div className="album py-5 bg-light">
-        <div className="container">
-          <div className="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-1">
-            {course && (<>
-              <div className="d-flex align-items-center pt-2">
-                {/* image media div */}
-                <div className="flex-shrink-0">
-                  {/* image source */}
-                  <Avatar
-                    size={80}
-                    src={course.image ? course.image.Location : '/images/americoders-course.png'}
-                  />
-                </div>
+      {/* hero section */}
+      <Parallax small filter
+                image="/images/americoders-community-diversity.png"/>
 
-                {/* media text body */}
-                <div className="flex-grow-1 ms-3">
-                  {/* course name and lesson count */}
-                  <h5 className="pt-2">{course.name}</h5>
-                  <p> {course.lessons && course.lessons.length} Lessons</p>
+      {/* main content */}
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        <div className={classes.container}>
+          {/* flex container */}
+          <GridContainer direction="row"
+                         justifyContent="space-evenly"
+                         alignItems="center"
+                         spacing={2}>
+            {/* intro */}
+            <GridItem xs={11} sm={10} md={12}>
+              <h2 className={classes.title}>{course && course.name}</h2>
+            </GridItem>
+            <GridContainer
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+            >
+              {/* image col */}
+              <GridItem xs={11} sm={11} md={6}>
+                <Image
+                  src={course.image && course.image.Location}
+                  alt={course && course.name}
+                  width={200}
+                  height={200}
+                  className={classes.image}
+                  rounded
+                />
+              </GridItem>
 
-                  <p style={myStyle}>{course.ages}</p>
+              {/* details column */}
+              <GridItem xs={12} sm={12} md={12} style={{ textAlign: 'center' }}>
+                {/* course name and lesson count */}
+                <h5 className="pt-2">{course.name}</h5>
+                <p> {course.lessons && course.lessons.length} Lessons</p>
+                <p style={myStyle}>{course.ages}</p>
+                <p style={myStyle}>{course.category}</p>
 
-                  <p style={myStyle}>{course.category}</p>
-                </div>
-
-                {/* action icons */}
-                {/* student count */}
-                <div className="d-flex mr-4 gap-3">
+                {/* action buttons */}
+                <GridContainer
+                  direction="row"
+                  justifyContent="space-evenly"
+                  alignItems="center"
+                >
                   <Tooltip title={`${students} Currently Enrolled`}>
                     <UserSwitchOutlined
                       onClick={() =>
@@ -377,8 +431,10 @@ const CourseView = () => {
 
                   {/* render publish icon if min of 6 lessons is met */}
                   {course.lessons && course.lessons.length < 5 ?
-                    <Tooltip title="Minimum of 5 lessons required to publish">
-                      <QuestionOutlined role="button" className="h5 text-danger"/>
+                    <Tooltip
+                      title="Minimum of 5 lessons required to publish">
+                      <QuestionOutlined role="button"
+                                        className="h5 text-danger"/>
                     </Tooltip> : course.published ? (
 
                       // unpublish
@@ -397,135 +453,148 @@ const CourseView = () => {
                       </Tooltip>
                     )
                   }
-                </div>
-              </div>
+                </GridContainer>
+              </GridItem>
+            </GridContainer>
+          </GridContainer>
 
-              <hr/>
-
-              {/* course description */}
-              <div className="row row-ols-1 g-3">
+          <GridContainer
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+            spacing={2}
+          >
+            {/* course description */}
+            <GridItem xs={11} sm={11} md={12} style={{ margin: '1.75rem' }}>
+              <h4 style={{
+                textAlign: 'center',
+                fontWeight: '600',
+                textTransform: 'uppercase',
+              }}>Course Description</h4>
+              <GridItem xs={12} sm={12} md={12} style={{ textAlign: 'center' }}>
                 <ReactMarkdown children={course.description}/>
-              </div>
+              </GridItem>
+            </GridItem>
+          </GridContainer>
 
-              <div className="row">
-                <Button
-                  onClick={() => setVisible(true)} // update state for modal
-                  className="col-md-6 offset-md-3 text-center"
-                  type="primary"
-                  shape="round"
-                  icon={<UploadOutlined/>}
-                  size="large"
-                >
-                  Add lesson
-                </Button>
+          {/* lessons and events area */}
+          <GridContainer
+            direction="row"
+            justifyContent="center"
+            alignItems="flex-start"
+            spacing={2}
+            className={classes.listsContainer}
+          >
+            <GridItem xs={11} sm={11} md={4}>
+              <Button
+                onClick={() => setVisible(true)} // update state for modal
+                type="primary"
+                shape="round"
+                color={'primary'}
+                icon={<UploadOutlined/>}
+                size="large"
+              >
+                Add lesson
+              </Button>
 
-                {/* modal for lesson */}
-                <Modal
-                  title="+ Add Lesson"
-                  centered
-                  width={'50vw'}
-                  visible={visible}
-                  onCancel={() => setVisible(false)}
-                  footer={null}
-                >
-                  {/* render form component */}
-                  <AddLessonForm
-                    values={values}
-                    setValues={setValues}
-                    handleAddLesson={handleAddLesson}
-                    handleVideo={handleVideo}
-                    handleRemoveVideo={handleRemoveVideo}
-                    uploading={uploading}
-                    uploadButtonText={uploadButtonText}
-                    progress={progress}
-                  />
-                </Modal>
+              {/* lessons list */}
+              <h6>{course && course.lessons &&
+                course.lessons.length} Lessons</h6>
+              <List
+                itemLayout="horizontal"
+                dataSource={course && course.lessons}
+                renderItem={(item, index) => (
+                  // list each item with index number next to title
+                  <ListItem style={{ textAlign: 'left' }}>
+                    <ListItemText primary={index + 1} secondary={item.title}/>
+                  </ListItem>
+                )}>
+              </List>
+            </GridItem>
 
-                {/* lessons list */}
-                <div className="row pb-5">
-                  <div className="col lesson-list">
-                    <h4>{course && course.lessons && course.lessons.length} Lessons</h4>
-                    <List
-                      itemLayout="horizontal"
-                      dataSource={course && course.lessons}
-                      renderItem={(item, index) => (
-                        // list each item with index number next to title
-                        <Item>
-                          <Item.Meta
-                            avatar={<Avatar>{index + 1}</Avatar>}
-                            title={item.title}
-                          >
-                          </Item.Meta>
-                        </Item>
-                      )}>
-                      <span>{}</span>
-                    </List>
-                  </div>
-                </div>
-              </div>
+            {/* events list */}
+            <GridItem xs={11} sm={11} md={4}>
+              <Button
+                onClick={() => setVisibleEvent(true)} // update state for modal
+                type="primary"
+                shape="round"
+                color={'success'}
+                icon={<UploadOutlined/>}
+                size="large"
+              >
+                Add Event
+              </Button>
 
-              {/* new events area  */}
-              <div className="row">
-                <Button
-                  onClick={() => setEventVisible(true)} // update state for modal
-                  className="col-md-6 offset-md-3 text-center"
-                  type="primary"
-                  shape="round"
-                  icon={<UploadOutlined/>}
-                  size="large"
-                >
-                  Add Event
-                </Button>
+              {/* events list */}
+              <h6>{course && course.event &&
+                course.event.length} Events</h6>
+              <List
+                itemLayout="horizontal"
+                dataSource={course && course.event}
+                renderItem={(item, index) => (
+                  // list each item with index number next to title
+                  <ListItem style={{ textAlign: 'left' }}>
+                    <ListItemText primary={index + 1} secondary={item.title}/>
+                  </ListItem>
+                )}>
+              </List>
+            </GridItem>
+          </GridContainer>
 
-                {/* modal for event */}
-                <Modal
-                  title="+ Add Event"
-                  centered
-                  width={'50vw'}
-                  visible={eventVisible}
-                  onCancel={() => setEventVisible(false)}
-                  footer={null}
-                >
-                  {/* render form component */}
-                  <AddEventForm
-                    eventValues={eventValues}
-                    setEventValues={setEventValues}
-                    handleAddEvent={handleAddEvent}
-                  />
-                </Modal>
+          {course && (<>
+            {/* modal for lesson */}
+            <Dialog
+              title="+ Add Lesson"
+              centered
+              width={'50vw'}
+              open={visible}
+              onClose={() => setVisible(false)}
+              footer={null}
+            >
+              <h4 className={classes.title}>Add Lesson Form</h4>
+              <GridItem xs={10} md={12}>
+                {/* render form component */}
+                <AddLessonForm
+                  values={values}
+                  setValues={setValues}
+                  handleAddLesson={handleAddLesson}
+                  handleVideo={handleVideo}
+                  handleRemoveVideo={handleRemoveVideo}
+                  uploading={uploading}
+                  uploadButtonText={uploadButtonText}
+                  progress={progress}
+                />
+              </GridItem>
+            </Dialog>
 
-                {/* events list */}
-                <div className="row pb-5">
-                  <div className="col lesson-list">
-                    <h4>{course && course.event && course.event.length} Events</h4>
-                    <List
-                      itemLayout="horizontal"
-                      dataSource={course && course.event}
-                      renderItem={(item, index) => (
-                        // list each item with index number next to title
-                        <Item>
-                          <Item.Meta
-                            avatar={<Avatar>{index + 1}</Avatar>}
-                            title={item.title}
-                            content={item.description}
-                          >
-                          </Item.Meta>
-                        </Item>
-                      )}>
-                      <span>{}</span>
-                    </List>
-                  </div>
-                </div>
-              </div>
+            {/* modal for event */}
+            <Dialog
+              title="+ Add Event"
+              centered
+              width={'50vw'}
+              open={visibleEvent}
+              onClose={() => setVisibleEvent(false)}
+              footer={null}
+            >
+              {/* render form component */}
+              <h4 className={classes.title}>Event Form</h4>
+              <GridItem xs={10} md={12}>
+                {/* render form component */}
+                <AddEventForm
+                  eventValues={eventValues}
+                  setEventValues={setEventValues}
+                  handleAddEvent={handleAddEvent}
+                />
+              </GridItem>
+            </Dialog>
 
-              {/**/}
-            </>)}
+            {/**/}
+          </>)}
 
-          </div>
+          {/*  events area */}
         </div>
       </div>
-    </main>
-  </InstructorRoute>)
+    </>)
 
 }
 
