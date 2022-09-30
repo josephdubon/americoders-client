@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { Context } from '../../context'
 import Link from 'next/link'
-import { CheckCircleOutlined, CloseCircleOutlined } from '@ant-design/icons'
 import { PageHead } from '../../components/head/PageHead'
 import Header from '../../components/Header/Header'
 import NavLogo from '../../public/images/logo/americoders-logo-simple_white.svg'
@@ -13,11 +12,16 @@ import GridContainer from '../../components/Grid/GridContainer'
 import GridItem from '../../components/Grid/GridItem'
 import Moment from 'moment/moment'
 import NavPills from '../../components/NavPills/NavPills'
-import { School } from '@material-ui/icons'
+import { Check, Clear, School } from '@material-ui/icons'
 import Footer from '../../components/Footer/Footer'
 import { makeStyles } from '@material-ui/core/styles'
 import styles from '../../styles/jss/americoders/pages/profilePage'
-import { Avatar, Tooltip } from '@material-ui/core'
+import { Tooltip } from '@material-ui/core'
+import CardBody from '../../components/Card/CardBody'
+import Badge from '../../components/Badge/Badge'
+import { currencyFormatter } from '../../utils/helpers'
+import Button from '../../components/CustomButtons/Button'
+import Card from '../../components/Card/Card'
 
 const useStyles = makeStyles(styles)
 
@@ -25,6 +29,8 @@ const InstructorIndex = (props) => {
   // state
   const [courses, setCourses] = useState([]) // initialize courses state with empty array
   const [anchorEl, setAnchorEl] = useState(null)
+
+  // user state
   const {
     state: { user },
   } = useContext(Context)
@@ -44,6 +50,18 @@ const InstructorIndex = (props) => {
   const myStyle = {
     marginTop: '-15px',
     fontSize: '10px',
+  }
+
+  const successStyle = {
+    marginTop: '-15px',
+    fontSize: '1.175rem',
+    color: 'blue',
+  }
+
+  const cancelStyle = {
+    marginTop: '-15px',
+    fontSize: '1.175rem',
+    color: 'red',
   }
 
   const classes = useStyles()
@@ -152,68 +170,115 @@ const InstructorIndex = (props) => {
 
                             {/* list all courses */}
                             {courses &&
-                              courses.map(course => (<div key={course._id}>
-                                {/* parent media div */}
-                                <GridContainer
-                                  justifyContent="center"
-                                  alignItems="center"
+                              courses.map(course => (
+                                <GridItem
+                                  xs={12} sm={12} md={6}
+                                  key={course._id}
                                 >
-                                  {/* image media div */}
-                                  <GridItem xs={11} sm={11} md={2}>
-                                    {/* image source */}
-                                    <Avatar
-                                      size={80}
+                                  <Card>
+                                    <img
+                                      style={{
+                                        height: '18rem',
+                                        width: '100%',
+                                        objectFit: 'cover',
+                                        display: 'block',
+                                      }}
+                                      className={classes.imgCardTop}
                                       src={course.image
                                         ? course.image.Location
                                         : '/images/americoders-course.png'}
+                                      alt="Card-img-cap"
                                     />
-                                  </GridItem>
+                                    <CardBody>
+                                      {/* course name */}
+                                      <h4
+                                        className={classes.cardTitle}>{course.name}</h4>
 
-                                  {/* media text body */}
-                                  <GridItem xs={11} sm={11} md={8}>
-                                    {/* title / link to course*/}
-                                    <Link
-                                      href={`/instructor/course/view/${course.slug}`}
-                                    >
-                                      <a><h5>{course.name}</h5></a>
-                                    </Link>
-                                    <p>{
-                                      // show number of lessons in course
-                                      course.lessons.length} Lessons</p>
-                                    {
-                                      // show requirements message
-                                      course.lessons.length < 5 ? (
-                                          <p style={myStyle}
-                                             className="text-warning">At least 5 lessons are required to publish a
-                                                                      course.</p>
-                                        ) :
-                                        // show success message
-                                        course.published ? (
-                                            <p style={myStyle}
-                                               className="text-success">Your course is live in the marketplace.</p>
-                                          ) :
-                                          // show 'ready to publish' message
-                                          (
-                                            <p style={myStyle}
-                                               className="text-success">Your course is ready to be published.</p>
-                                          )}
-                                  </GridItem>
+                                      {/*<p>by {course.instructor.name}</p>*/}
+                                      {/* categories */}
+                                      <Badge color="success">
+                                        {course.category}
+                                      </Badge>
 
-                                  <GridItem xs={11} sm={11} md={2}>
-                                    {course.published ? (
-                                      <Tooltip title="Published">
-                                        <CheckCircleOutlined
-                                          className="h5 text-success"/>
-                                      </Tooltip>
-                                    ) : (
-                                      <Tooltip title="Unpublished">
-                                        <CloseCircleOutlined
-                                          className="h5 text-warning"/>
-                                      </Tooltip>
-                                    )}
-                                  </GridItem>
-                                </GridContainer>
-                              </div>))}
+                                      {/* course price */}
+                                      <h4
+                                        className={classes.description}>{course.paid
+                                        ? currencyFormatter({
+                                          amount: course.price,
+                                          currency: 'usd',
+                                        })
+                                        : 'Free'}</h4>
+
+                                      <h6 className={classes.description}>
+                                        <p>{
+                                          // show number of lessons in course
+                                          course.lessons.length} Lessons</p>
+                                        {
+                                          // show requirements message
+                                          course.lessons.length < 5 ? (
+                                              <p style={myStyle}
+                                                 className="text-warning">5
+                                                                          lessons
+                                                                          are
+                                                                          required
+                                                                          to
+                                                                          publish
+                                                                          a
+                                                                          course.</p>
+                                            ) :
+                                            // show success message
+                                            course.published ? (
+                                                <p style={myStyle}
+                                                   className="text-success">Your
+                                                                            course
+                                                                            is
+                                                                            live
+                                                                            in
+                                                                            the
+                                                                            marketplace.</p>
+                                              ) :
+                                              // show 'ready to publish' message
+                                              (
+                                                <p style={myStyle}
+                                                   className="text-success">Your
+                                                                            course
+                                                                            is
+                                                                            ready
+                                                                            to
+                                                                            be
+                                                                            published.</p>
+                                              )}
+                                      </h6>
+
+                                      {course.published ? (
+                                        <Tooltip
+                                          title="Published"
+                                          style={successStyle}>
+                                          <Check/>
+                                        </Tooltip>
+                                      ) : (
+                                        <Tooltip
+                                          title="Unpublished"
+                                          style={cancelStyle}>
+                                          <Clear/>
+                                        </Tooltip>
+                                      )}
+
+                                      {/* action button */}
+                                      <Link
+                                        href={`/instructor/course/view/${course.slug}`}
+                                      >
+                                        <a>
+                                          <Button
+                                            fullWidth
+                                            color="primary"
+                                            size="lg"
+                                          >Details</Button>
+                                        </a>
+                                      </Link>
+                                    </CardBody>
+                                  </Card>
+                                </GridItem>))}
                           </GridContainer>
                         </GridContainer>
                       ),
