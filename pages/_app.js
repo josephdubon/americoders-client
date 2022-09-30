@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from 'next/app'
 import Router from 'next/router'
+import Head from 'next/head'
 
 import PageChange from '../components/PageChange/PageChange.js'
 
@@ -9,13 +10,13 @@ import '/styles/scss/americoders.scss?v=1.2.0'
 import { PageHead } from '../components/PageHead/PageHead'
 import { Provider } from '../context'
 
-
 // analytics tracking
 import PlausibleProvider from 'next-plausible'
 
 // notifications
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import Script from 'next/script'
 
 Router.events.on('routeChangeStart', (url) => {
   // console.log(`Loading: ${url}`)
