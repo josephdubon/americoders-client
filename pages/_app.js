@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from 'next/app'
 import Router from 'next/router'
-import Head from 'next/head'
 
 import PageChange from '../components/PageChange/PageChange.js'
 
@@ -16,7 +15,6 @@ import PlausibleProvider from 'next-plausible'
 // notifications
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import Script from 'next/script'
 
 Router.events.on('routeChangeStart', (url) => {
   // console.log(`Loading: ${url}`)
@@ -51,17 +49,6 @@ export default class MyApp extends App {
 
     return (
       <>
-
-        {/* head scripts */}
-        <Head>
-          <Script
-            type="text/javascript"
-            src={'https://app.termly.io/embed.min.js'}
-            data-auto-block="on"
-            data-website-uuid="a9d82342-1f11-4be9-ab0a-a2bcfaf09c65"
-          ></Script>
-        </Head>
-
         {/* plausible analytics */}
         <PlausibleProvider
           domain="americoders.org"
