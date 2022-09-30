@@ -19,10 +19,12 @@ import { makeStyles } from '@material-ui/core/styles'
 import styles from '../../styles/jss/americoders/pages/profilePage'
 import { Avatar, Tooltip } from '@material-ui/core'
 
-const InstructorIndex = () => {
+const useStyles = makeStyles(styles)
+
+const InstructorIndex = (props) => {
   // state
   const [courses, setCourses] = useState([]) // initialize courses state with empty array
-
+  const [anchorEl, setAnchorEl] = useState(null)
   const {
     state: { user },
   } = useContext(Context)
