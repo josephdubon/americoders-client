@@ -1,7 +1,6 @@
 import React from 'react'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/styles'
-import Script from 'next/script'
 
 class MyDocument extends Document {
   render () {
@@ -29,19 +28,13 @@ class MyDocument extends Document {
             href={'https://use.fontawesome.com/releases/v5.0.10/css/all.css'}
             rel="stylesheet"
           />
-          {/* termly legal docs script */}
-          <Script
+          {/* cookies consent */}
+          <script
             type="text/javascript"
             src={'https://app.termly.io/embed.min.js'}
-            data-auto-block="on"
+            data-auto-block="off"
             data-website-uuid="a9d82342-1f11-4be9-ab0a-a2bcfaf09c65"
-          > </Script>
-
-          {/* plausible analytics */}
-          <Script type="text/javascript"
-                  defer
-                  data-domain="americoders.org"
-                  src={'https://plausible.io/js/plausible.js'}> </Script>
+          ></script>
         </Head>
         <body>
         <div id="page-transition"></div>

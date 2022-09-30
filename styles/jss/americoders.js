@@ -67,6 +67,13 @@ const defaultFont = {
   lineHeight: '1.5em',
 }
 
+const brandFont = {
+  fontFamily: '"Poppins", "Roboto", serif',
+  fontWeight: '400',
+  fontStyle: 'normal',
+  fontHeight: '100%',
+}
+
 // :root {
 //   --white: #F5F7F6;
 //   --gold: #BF8848;
@@ -189,6 +196,7 @@ export {
   container,
   containerFluid,
   boxShadow,
+  brandFont,
   card,
   defaultFont,
   primaryColor,

@@ -9,7 +9,6 @@ import '/styles/scss/americoders.scss?v=1.2.0'
 import { PageHead } from '../components/PageHead/PageHead'
 import { Provider } from '../context'
 
-
 // analytics tracking
 import PlausibleProvider from 'next-plausible'
 
