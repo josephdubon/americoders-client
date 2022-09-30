@@ -58,17 +58,17 @@ const LoginForm = () => {
       })
 
       // // notification config
-      // toast.success(
-      //   'Welcome to Americoders! What will you create to make the world a better place?',
-      //   {
-      //     position: 'top-center',
-      //     autoClose: 5000,
-      //     hideProgressBar: false,
-      //     closeOnClick: true,
-      //     pauseOnHover: true,
-      //     draggable: true,
-      //     progress: undefined,
-      //   })
+      toast.success(
+        'Welcome to Americoders! What will you create to make the world a better place?',
+        {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
 
       // deactivate load spinner
       setLoading(false)
