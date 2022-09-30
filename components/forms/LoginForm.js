@@ -13,6 +13,11 @@ import CardFooter from '../Card/CardFooter'
 import styles from '../../styles/jss/americoders/pages/loginPage.js'
 import { makeStyles } from '@material-ui/core/styles'
 import { AlternateEmail } from '@material-ui/icons'
+import GridContainer from '../Grid/GridContainer'
+import GridItem from '../Grid/GridItem'
+import { Typography } from '@mui/material'
+import Link from 'next/link'
+import { toast } from 'react-toastify'
 
 const useStyles = makeStyles(styles)
 
@@ -54,17 +59,17 @@ const LoginForm = () => {
       })
 
       // // notification config
-      // toast.success(
-      //   'Welcome to Americoders! What will you create to make the world a better place?',
-      //   {
-      //     position: 'top-center',
-      //     autoClose: 5000,
-      //     hideProgressBar: false,
-      //     closeOnClick: true,
-      //     pauseOnHover: true,
-      //     draggable: true,
-      //     progress: undefined,
-      //   })
+      toast.success(
+        'Welcome to Americoders! What will you create to make the world a better place?',
+        {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
 
       // deactivate load spinner
       setLoading(false)
@@ -188,6 +193,26 @@ const LoginForm = () => {
         </Button>
       </CardFooter>
     </form>
+    <GridContainer
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+    >
+      <GridItem xs={10} sm={10} md={8}>
+        <Typography
+          variant="caption"
+          display="block"
+          gutterBottom
+          className={classes.registerFooter}
+        >
+          Do you need an account?
+          <br/>
+          Click {' '}
+          <Link href={'/register'}><a className={classes.registerFooterLink}>here</a></Link> to register!
+        </Typography>
+      </GridItem>
+    </GridContainer>
+
   </>)
 }
 

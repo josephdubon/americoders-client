@@ -9,7 +9,7 @@ import Tooltip from '@material-ui/core/Tooltip'
 import Icon from '@material-ui/core/Icon'
 
 // @material-ui/icons
-import { Dashboard, HowToReg, PersonOutline } from '@material-ui/icons'
+import { HowToReg, PersonOutline, School } from '@material-ui/icons'
 
 // core components
 import Button from '../../components/CustomButtons/Button.js'
@@ -149,15 +149,36 @@ export default function HeaderLinks (props) {
         <>
           {/* signup */}
           <ListItem className={classes.listItem}>
-            <Link href={'/instructor'}>
-              <Button
-                color="transparent"
-                className={classes.navLink}
-              >
-                <Dashboard
-                  className={classes.icons}/> Instructor Dashboard
-              </Button>
-            </Link>
+            <CustomDropdown
+              noLiPadding
+              navDropdown
+              buttonText={'Instructor Menu'}
+              buttonProps={{
+                className: classes.navLink,
+                color: 'transparent',
+              }}
+              buttonIcon={School}
+              dropdownList={[
+
+                <Link href={'/instructor'}>
+                  <a className={classes.dropdownLink}>Dashboard</a>
+                </Link>,
+                <Link href={'/instructor/course/create'}>
+                  <a className={classes.dropdownLink}>Create Course</a>
+                </Link>,
+                <Link href={'/instructor/revenue'}>
+                  <a className={classes.dropdownLink}>Revenue</a>
+                </Link>,
+                <a
+                  onClick={logout}
+                  className={classes.dropdownLink}
+                >
+                  Logout
+                </a>,
+
+              ]}
+            />
+
           </ListItem>
         </>
       )}
@@ -165,11 +186,6 @@ export default function HeaderLinks (props) {
       {/* start social media nav items */}
       {/* twitter */}
       <ListItem className={classes.listItem}>
-        {/*<Tooltip title="Delete">
-          <IconButton aria-label="Delete">
-            <DeleteIcon />
-          </IconButton>
-        </Tooltip>*/}
         <Tooltip
           id="instagram-twitter"
           title="Follow us on twitter"
@@ -183,6 +199,25 @@ export default function HeaderLinks (props) {
             className={classes.navLink}
           >
             <i className={classes.socialIcons + ' fab fa-twitter'}/>
+          </Button>
+        </Tooltip>
+      </ListItem>
+
+      {/* instagram */}
+      <ListItem className={classes.listItem}>
+        <Tooltip
+          id="instagram-twitter"
+          title="Follow us on twitter"
+          placement={'top'}
+          classes={{ tooltip: classes.tooltip }}
+        >
+          <Button
+            href="https://instagram.com/americoders"
+            target="_blank"
+            color="transparent"
+            className={classes.navLink}
+          >
+            <i className={classes.socialIcons + ' fab fa-instagram'}/>
           </Button>
         </Tooltip>
       </ListItem>
