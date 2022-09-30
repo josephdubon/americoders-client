@@ -202,6 +202,25 @@ export default function HeaderLinks (props) {
           </Button>
         </Tooltip>
       </ListItem>
+
+      {/* instagram */}
+      <ListItem className={classes.listItem}>
+        <Tooltip
+          id="instagram-twitter"
+          title="Follow us on twitter"
+          placement={'top'}
+          classes={{ tooltip: classes.tooltip }}
+        >
+          <Button
+            href="https://instagram.com/americoders"
+            target="_blank"
+            color="transparent"
+            className={classes.navLink}
+          >
+            <i className={classes.socialIcons + ' fab fa-instagram'}/>
+          </Button>
+        </Tooltip>
+      </ListItem>
     </List>
   )
 }
