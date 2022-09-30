@@ -1,8 +1,8 @@
 import {
   boxShadow,
+  brandFont,
   container,
   dangerColor,
-  defaultFont,
   drawerWidth,
   hexToRGBAlpha,
   infoColor,
@@ -53,17 +53,18 @@ const headerStyle = {
     flex: 1,
   },
   title: {
-    ...defaultFont,
+    ...brandFont,
     lineHeight: '30px',
-    fontSize: '18px',
+    fontWeight: '700',
     borderRadius: '3px',
     textTransform: 'none',
-    color: 'inherit',
+    color: '#fff',
     padding: '8px 16px',
     letterSpacing: 'unset',
+    transition: 'all .2s ease-in-out',
     '&:hover,&:focus': {
-      color: 'inherit',
-      background: 'transparent',
+      color: '#fff',
+      background: 'rgba(200, 200, 200, 0.2)',
     },
   },
   appResponsive: {
