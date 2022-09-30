@@ -28,9 +28,6 @@ class MyDocument extends Document {
             href={'https://use.fontawesome.com/releases/v5.0.10/css/all.css'}
             rel="stylesheet"
           />
-          {/* adobe fonts */}
-          <link rel="stylesheet" href={'https://use.typekit.net/hlo5wuc.css'}/>
-
           {/* cookies consent */}
           <script
             type="text/javascript"
