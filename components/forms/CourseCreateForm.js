@@ -1,7 +1,16 @@
 import { SaveOutlined } from '@ant-design/icons'
-import { Avatar, Badge, Button, Select } from 'antd'
+import { Avatar, Badge } from 'antd'
+import React from 'react'
+import { TextField } from '@mui/material'
+import CardHeader from '../Card/CardHeader'
+import styles from '../../styles/jss/americoders/pages/loginPage.js'
+import { makeStyles } from '@material-ui/core/styles'
+import CardBody from '../Card/CardBody'
+import MenuItem from '@mui/material/MenuItem'
+import Button from '../CustomButtons/Button'
+import GridItem from '../Grid/GridItem'
 
-const { Option } = Select
+const useStyles = makeStyles(styles)
 
 const CourseCreateForm = ({
   handleChange,
@@ -17,117 +26,115 @@ const CourseCreateForm = ({
   // price dropdown logic
   const children = []
   for (let i = 49.99; i <= 100.99; i++) {
-    children.push(<Option key={i.toFixed(2)}>${i.toFixed(2)}</Option>)
+    children.push(<MenuItem key={i.toFixed(2)}>${i.toFixed(2)}</MenuItem>)
   }
+
+  const classes = useStyles()
 
   return (<>
     {/* confirm values exist and then render form */}
     {values && (
-      <form onSubmit={handleSubmit}>
-        <div className="form-group ">
-          {/* name */}
-          <input
+      <form
+        className={classes.form}
+        onSubmit={handleSubmit}
+      >
+
+        {/* form title */}
+        <CardHeader color="primary" className={classes.cardHeader}>
+          <h4>Create New Course Form</h4>
+        </CardHeader>
+        <CardBody>
+
+          {/*  name field */}
+          <TextField
+            id="standard-multiline-flexible"
+            label="Name"
+            multiline
+            fullWidth
+            rowsMax={2}
             type="text"
             name="name"
             className="form-control"
             value={values.name}
             placeholder="Name"
             onChange={handleChange}
+            variant="standard"
           />
-        </div>
 
-        {/* intro */}
-        <div className="form-group">
-                <textarea
-                  name="intro"
-                  id=""
-                  cols="7"
-                  rows="3"
-                  className="form-control"
-                  value={values.intro}
-                  placeholder="Short Intro"
-                  onChange={handleChange}
-                >
-                </textarea>
-        </div>
-
-        {/* description */}
-        <div className="form-group">
-                <textarea
-                  name="description"
-                  id=""
-                  cols="7"
-                  rows="6"
-                  className="form-control"
-                  value={values.description}
-                  placeholder="Description"
-                  onChange={handleChange}
-                >
-                </textarea>
-        </div>
-
-        {/* ages */}
-        <div className="form-group">
-                <textarea
-                  name="ages"
-                  id=""
-                  cols="7"
-                  rows="6"
-                  className="form-control"
-                  value={values.ages}
-                  placeholder="Ages"
-                  onChange={handleChange}
-                >
-                </textarea>
-        </div>
-
-        {/* paid or free course */}
-        <div className="form-row">
-          <div className="col">
-            <div className="form-group d-grid">
-              <Select
-                size="large"
-                value={values.paid}
-                onChange={(v) => setValues({ ...values, paid: v, price: 0 })}
-              >
-                <Option value={true}>Paid</Option>
-                <Option value={false}>Free</Option>
-              </Select>
-            </div>
-          </div>
-
-          {/* price dropdown */}
-          {values.paid && <div className="form-group">
-            <Select
-              size="large"
-              tokenSeparators={[undefined]}
-              defaultValue="$49.99"
-              className="w-100"
-              onChange={v => setValues({ ...values, price: v })}
-            >
-              {children}
-            </Select>
-          </div>}
-        </div>
-
-        {/* category */}
-        <div className="form-group ">
-          <input
+          {/*  category field */}
+          <TextField
+            id="standard-multiline-flexible"
+            label="Category"
+            multiline
+            fullWidth
+            rowsMax={2}
             type="text"
             name="category"
             className="form-control"
             value={values.category}
             placeholder="Category"
             onChange={handleChange}
+            variant="standard"
           />
-        </div>
 
-        {/* image upload */}
-        <div className="form-row">
-          <div className="col">
-            <div className="form-group d-grid">
+          {/*  ages field */}
+          <TextField
+            id="standard-multiline-flexible"
+            label="Age Group"
+            multiline
+            fullWidth
+            rowsMax={2}
+            type="text"
+            name="ages"
+            className="form-control"
+            value={values.ages}
+            placeholder="Age Group"
+            onChange={handleChange}
+            variant="standard"
+          />
+
+          {/* intro field */}
+          <TextField
+            id="standard-multiline-flexible"
+            label="Short Intro"
+            multiline
+            fullWidth
+            rowsMax={2}
+            type="text"
+            name="intro"
+            className="form-control"
+            value={values.intro}
+            placeholder="Short Intro"
+            onChange={handleChange}
+            variant="standard"
+          />
+
+          {/*  description field */}
+          <TextField
+            id="standard-multiline-flexible"
+            label="Description"
+            multiline
+            fullWidth
+            rows={6}
+            type="text"
+            name="description"
+            className="form-control"
+            value={values.description}
+            placeholder="Description"
+            onChange={handleChange}
+            variant="standard"
+          />
+
+          {/* image upload */}
+          <GridItem xs={10} sm={10} md={12}
+                    style={{ margin: '1.175rem 0' }}
+          >
+            <Button
+              color={'success'}
+              size={'md'}
+            >
               <label
-                className="btn btn-outline-secondary text-left">
+                style={{ color: '#FFFFFF' }}>
                 {uploadButtonText}
                 <input
                   type="file"
@@ -137,47 +144,47 @@ const CourseCreateForm = ({
                   hidden
                 />
               </label>
+            </Button>
+          </GridItem>
+
+          {/* image preview */}
+          {preview && (<>
+            <div>
+              <p>Image Preview:</p>
+              <Badge
+                count="X"
+                onClick={handleImageRemove}
+                role="button">
+                <Avatar width={200} src={preview}/>
+              </Badge>
             </div>
-          </div>
+          </>)}
 
-        </div>
-        {/* image preview */}
-        {preview && (<>
-          <div className="col-md-6 text-center w-100 mb-3">
-            <p>Image Preview:</p>
-            <Badge
-              count="X"
-              onClick={handleImageRemove}
-              role="button">
-              <Avatar width={200} src={preview}/>
-            </Badge>
-          </div>
-        </>)}
+          {editPage && values.image && (
+            <Avatar
+              width={200}
+              src={values.image.Location}
+            >{''}</Avatar>
+          )}
 
-        {editPage && values.image && (
-          <Avatar
-            width={200}
-            src={values.image.Location}
-          >{''}</Avatar>
-        )}
-
-        {/* button */}
-        <div className="row">
-          <div className="col d-grid">
+          {/* button */}
+          <GridItem xs={10} sm={10} md={12}
+          >
             <Button
+              fullWidth
               onClick={handleSubmit}
               disabled={values.loading || values.uploading}
               className="btn btn-primary"
               loading={values.loading}
               icon={<SaveOutlined/>}
-              type="primary"
-              size="large"
+              color="primary"
+              size="lg"
               shape="round"
             >
               {values.loading ? 'Saving...' : 'Save & Continue'}
             </Button>
-          </div>
-        </div>
+          </GridItem>
+        </CardBody>
       </form>
     )}
   </>)
