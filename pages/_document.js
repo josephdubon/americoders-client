@@ -35,7 +35,7 @@ class MyDocument extends Document {
             src={'https://app.termly.io/embed.min.js'}
             data-auto-block="on"
             data-website-uuid="a9d82342-1f11-4be9-ab0a-a2bcfaf09c65"
-          > </Script>
+          ></Script>
 
           {/* plausible analytics */}
           <Script type="text/javascript"
