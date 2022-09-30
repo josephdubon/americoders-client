@@ -83,6 +83,10 @@ const signupPageStyle = {
     textAlign: 'center',
     padding: '0',
   },
+  menuItem: {
+    margin: '.75rem',
+    padding: '.75rem',
+  },
   legalFooter: {
     textAlign: 'center',
     padding: '0',
