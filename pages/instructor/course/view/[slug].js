@@ -472,7 +472,8 @@ const CourseView = (props) => {
                 textTransform: 'uppercase',
               }}>Course Description</h4>
               <GridItem xs={12} sm={12} md={12} style={{ textAlign: 'center' }}>
-                <ReactMarkdown children={course.description}/>
+                <ReactMarkdown className={classes.markdown}
+                               children={course.description}/>
               </GridItem>
             </GridItem>
           </GridContainer>
