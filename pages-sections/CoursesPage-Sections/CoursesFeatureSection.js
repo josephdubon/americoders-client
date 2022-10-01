@@ -15,6 +15,7 @@ import parse from 'html-react-parser'
 import moment from 'moment'
 import { currencyFormatter } from '../../utils/helpers'
 import CoursesFeaturedSectionLeft from '../../components/FeaturedSectionLeft/CoursesFeaturedSectionLeft'
+import ReactMarkdown from 'react-markdown'
 
 const useStyles = makeStyles(styles)
 
@@ -29,7 +30,7 @@ export default function CoursesFeatureSection ({ course }) {
 
   return (<>
     {/* product area 1 */}
-    <CoursesFeaturedSectionLeft description={parse(course.description)}
+    <CoursesFeaturedSectionLeft description={<ReactMarkdown children={course.description}/>}
                                 imageUrl={course.image.Location}
                                 imgAlt={'americoders-robotics-project-student'}
     />

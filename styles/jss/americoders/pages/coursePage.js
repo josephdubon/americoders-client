@@ -1,4 +1,4 @@
-import { cardTitle, container, title } from '../../americoders'
+import { cardTitle, container, title, markdownStyles } from '../../americoders'
 
 const coursePageStyle = {
   container: {
@@ -106,10 +106,7 @@ const coursePageStyle = {
     margin: '.775rem auto',
   },
   markdown: {
-    color: '#3C4858',
-    fontSize: '1.1rem',
-    textAlign: 'left',
-    margin: '.775rem auto',
+    ...markdownStyles,
   },
   price: {
     ...title,
