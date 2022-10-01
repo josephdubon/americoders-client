@@ -1,4 +1,4 @@
-import { container, title } from '../../americoders'
+import { container, markdownStyles, title } from '../../americoders'
 
 import imagesStyle from '../imagesStyles.js'
 
@@ -40,6 +40,9 @@ const profilePageStyle = {
     marginTop: '30px',
     minHeight: '32px',
     textDecoration: 'none',
+  },
+  markdown: {
+    ...markdownStyles,
   },
   courseImage: {
     width: '100%',
