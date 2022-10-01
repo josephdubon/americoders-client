@@ -74,6 +74,94 @@ const brandFont = {
   fontHeight: '100%',
 }
 
+const markdownStyles = {
+  ...defaultFont,
+  '& h1': {
+    ...brandFont,
+    fontSize: '2.5rem',
+    fontWeight: '700',
+    lineHeight: '1.2em',
+    color: '#3C4858',
+    margin: '1.75rem 0 1.25rem',
+  },
+  '& h2': {
+    ...brandFont,
+    fontSize: '2rem',
+    fontWeight: '700',
+    lineHeight: '1.2em',
+    color: '#3C4858',
+    margin: '1.75rem 0 1.25rem',
+  },
+  '& h3': {
+    ...brandFont,
+    fontSize: '1.5rem',
+    fontWeight: '700',
+    lineHeight: '1.2em',
+    color: '#3C4858',
+    margin: '1.75rem 0 1.25rem',
+  },
+  '& h4': {
+    ...brandFont,
+    fontSize: '1.25rem',
+    fontWeight: '700',
+    lineHeight: '1.2em',
+    color: '#3C4858',
+    margin: '1.75rem 0 1.25rem',
+  },
+  '& h5': {
+    ...brandFont,
+    fontSize: '1rem',
+    fontWeight: '700',
+    lineHeight: '1.2em',
+    color: '#3C4858',
+    margin: '1.75rem 0 1.25rem',
+  },
+  '& h6': {
+    ...brandFont,
+    fontSize: '0.875rem',
+    fontWeight: '700',
+    lineHeight: '1.2em',
+    color: '#3C4858',
+    margin: '1.75rem 0 1.25rem',
+  },
+  '& p': {
+    fontSize: '1rem',
+    fontWeight: '400',
+    textAlign: 'left',
+    lineHeight: '1.5em',
+    color: '#3C4858',
+    margin: '0 0 1.25rem',
+  },
+  '& li': {
+    fontSize: '1rem',
+    fontWeight: '400',
+    textAlign: 'left',
+    lineHeight: '1.5em',
+    color: '#3C4858',
+    margin: '0 0 1.25rem',
+    listStyle: 'none',
+  },
+  '& code': {
+    color: '#89ddff',
+    fontSize: '0.875rem',
+    fontWeight: '400',
+    lineHeight: '1.5em',
+    textAlign: 'left',
+    margin: '0 0 1.25rem',
+    borderRadius: '3px',
+  },
+  '& pre': {
+    backgroundColor: '#212121',
+    fontSize: '0.875rem',
+    fontWeight: '400',
+    lineHeight: '1.5em',
+    textAlign: 'left',
+    margin: '0 0 1.25rem',
+    padding: '1.25rem',
+    borderRadius: '3px',
+  },
+}
+
 // :root {
 //   --white: #F5F7F6;
 //   --gold: #BF8848;
@@ -206,6 +294,7 @@ export {
   infoColor,
   roseColor,
   grayColor,
+  markdownStyles,
   primaryBoxShadow,
   infoBoxShadow,
   successBoxShadow,
