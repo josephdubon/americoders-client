@@ -184,7 +184,9 @@ const SingleCourse = ({ course }) => {
 
     <div className={classNames(classes.main, classes.mainRaised)}>
       <div className={classes.container}>
+        {/* image and description section */}
         <CoursesFeatureSection course={course}/>
+
         {/* enroll section */}
         <GridContainer
           direction="row"
