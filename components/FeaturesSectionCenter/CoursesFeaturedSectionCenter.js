@@ -8,7 +8,7 @@ import GridItem from '../Grid/GridItem'
 
 const useStyles = makeStyles(styles)
 
-export default function CoursesFeaturedSectionLeft ({
+export default function CoursesFeaturedSectionCenter ({
   title,
   description,
   imageUrl,
@@ -27,12 +27,7 @@ export default function CoursesFeaturedSectionLeft ({
                        justifyContent="center"
                        alignItems="center"
                        spacing={2}>
-          <GridItem xs={12} sm={12} md={8}>
-            <h5 className={classes.description}>
-              {description}
-            </h5>
-          </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={12} sm={12} md={11}>
             <div className={classes.imageBox}>
               <Image
                 src={imageUrl}
@@ -42,6 +37,11 @@ export default function CoursesFeaturedSectionLeft ({
                 className={classes.image}
               />
             </div>
+          </GridItem>
+          <GridItem xs={12} sm={12} md={11}>
+            <h5 className={classes.description}>
+              {description}
+            </h5>
           </GridItem>
         </GridContainer>
       </GridContainer>
