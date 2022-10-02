@@ -13,8 +13,8 @@ import styles
 import { Map, MonetizationOn, Today } from '@material-ui/icons'
 import moment from 'moment'
 import { currencyFormatter } from '../../utils/helpers'
-import CoursesFeaturedSectionLeft
-  from '../../components/FeaturedSectionLeft/CoursesFeaturedSectionLeft'
+import CoursesFeaturedSectionCenter
+  from '../../components/FeaturesSectionCenter/CoursesFeaturedSectionCenter'
 import ReactMarkdown from 'react-markdown'
 
 const useStyles = makeStyles(styles)
@@ -30,7 +30,7 @@ export default function CoursesFeatureSection ({ course }) {
 
   return (<>
     {/* product area 1 */}
-    <CoursesFeaturedSectionLeft
+    <CoursesFeaturedSectionCenter
       description={<ReactMarkdown className={classes.markdown}
                                   children={course.description}/>}
       imageUrl={course.image.Location}
