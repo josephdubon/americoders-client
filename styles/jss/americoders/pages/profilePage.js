@@ -41,6 +41,17 @@ const profilePageStyle = {
     minHeight: '32px',
     textDecoration: 'none',
   },
+  titleWhite: {
+    ...title,
+    color: '#FFFFFF',
+    fontSize: '2.275rem',
+    textAlign: 'center',
+    display: 'inline-block',
+    position: 'relative',
+    marginTop: '30px',
+    minHeight: '32px',
+    textDecoration: 'none',
+  },
   markdown: {
     ...markdownStyles,
   },
