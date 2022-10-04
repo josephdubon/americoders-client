@@ -27,7 +27,7 @@ export default function CoursesFeaturedSectionCenter ({
                        justifyContent="center"
                        alignItems="center"
                        spacing={2}>
-          <GridItem xs={12} sm={12} md={11}>
+          <GridItem xs={10} sm={11} md={11}>
             <div className={classes.imageBox}>
               <Image
                 src={imageUrl}
@@ -38,7 +38,7 @@ export default function CoursesFeaturedSectionCenter ({
               />
             </div>
           </GridItem>
-          <GridItem xs={12} sm={12} md={11}>
+          <GridItem xs={10} sm={11} md={11}>
             <h5 className={classes.description}>
               {description}
             </h5>

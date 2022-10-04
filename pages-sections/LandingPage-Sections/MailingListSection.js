@@ -21,12 +21,13 @@ export default function MailingListSection () {
         direction="row"
         justifyContent="center"
         alignItems="center"
+        className={classes.section}
       >
         <GridContainer direction="row"
                        justifyContent="center"
                        alignItems="center"
         >
-          <GridItem cs={12} sm={12} md={12}>
+          <GridItem xs={12} sm={12} md={12}>
             {/* title */}
             <h2 className={classes.title}>
               Join Our Mailing List
@@ -34,7 +35,9 @@ export default function MailingListSection () {
 
             {/* subtitle */}
             <h3 className={classes.subtitle}>
-              Get a discount on our next course!
+              Stay up to date with our latest news and events
+              <br/>
+              Learn about new courses directly
             </h3>
 
             {/* description */}
@@ -42,9 +45,6 @@ export default function MailingListSection () {
               Stay up to date with the news and latest updates from Americoders.
             </h4>
             <MailingListForm/>
-            <br/>
-            <br/>
-            <br/>
           </GridItem>
         </GridContainer>
       </GridContainer>

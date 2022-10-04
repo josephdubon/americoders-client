@@ -27,13 +27,13 @@ export default function FeaturedSectionLeft ({
                        justifyContent="center"
                        alignItems="center"
                        spacing={2}>
-          <GridItem xs={12} sm={12} md={8}>
+          <GridItem xs={10} sm={11} md={8}>
             <h2 className={classes.title}>{title}</h2>
             <h5 className={classes.description}>
               {description}
             </h5>
           </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
+          <GridItem xs={10} sm={11} md={4}>
             <div className={classes.imageBox}>
               <Image
                 src={imageUrl}
