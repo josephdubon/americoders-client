@@ -82,22 +82,6 @@ export default function HeaderLinks (props) {
         </Link>
       </ListItem>
 
-      {/* conditional render of content depending on user role (instructor or subscriber) */}
-      {user && user.role && user.role.includes('Instructor') ? (<>
-        {/* Instructor Role */}
-        <ListItem className={classes.listItem}>
-          <Link href={'/instructor/course/create'}>
-            <Button
-              color="transparent"
-              className={classes.navLink}
-            >
-              <Icon className={classes.icons}>create</Icon> Create Course
-            </Button>
-          </Link>
-        </ListItem>
-      </>) : (<>
-      </>)}
-
       {/* not logged in user menu */}
       {user === null && (
         <>
@@ -136,7 +120,7 @@ export default function HeaderLinks (props) {
             <CustomDropdown
               noLiPadding
               navDropdown
-              buttonText={`${user && user.firstName} ${user && user.lastName}`}
+              buttonText={user && user.firstName}
               buttonProps={{
                 className: classes.navLink,
                 color: 'transparent',
@@ -166,7 +150,7 @@ export default function HeaderLinks (props) {
             <CustomDropdown
               noLiPadding
               navDropdown
-              buttonText={'Instructor Menu'}
+              buttonText={'Instructor'}
               buttonProps={{
                 className: classes.navLink,
                 color: 'transparent',

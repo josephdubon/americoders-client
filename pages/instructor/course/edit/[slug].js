@@ -1,18 +1,31 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Resizer from 'react-image-file-resizer'
-import InstructorRoute from '../../../../components/routes/InstructorRoute'
 import CourseCreateForm from '../../../../components/forms/CourseCreateForm'
 import UpdateLessonForm from '../../../../components/forms/UpdateLessonForm'
 import { toast } from 'react-toastify'
 import { useRouter } from 'next/router'
-import { Avatar, List, Modal } from 'antd'
-import Item from 'antd/lib/list/Item'
+import { List } from 'antd'
 import { DeleteOutlined } from '@ant-design/icons'
 import { PageHead } from '../../../../components/head/PageHead'
 import UpdateEventForm from '../../../../components/forms/UpdateEventForm'
+import Header from '../../../../components/Header/Header'
+import NavLogo
+  from '../../../../public/images/logo/americoders-logo-simple_white.svg'
+import HeaderLinks from '../../../../components/Header/HeaderLinks'
+import Parallax from '../../../../components/Parallax/Parallax'
+import classNames from 'classnames'
+import GridItem from '../../../../components/Grid/GridItem'
+import styles from '../../../../styles/jss/americoders/pages/profilePage'
 
-const EditCourse = () => {
+import { makeStyles } from '@material-ui/core/styles'
+import GridContainer from '../../../../components/Grid/GridContainer'
+import { Avatar, Dialog, ListItem, ListItemText } from '@mui/material'
+import Footer from '../../../../components/Footer/Footer'
+
+const useStyles = makeStyles(styles)
+
+const EditCourse = (props, course) => {
   // state
   const [values, setValues] = useState({
     name: '',
@@ -27,6 +40,13 @@ const EditCourse = () => {
     lessons: [],
     event: [],
   })
+  const [eventValues, setEventValues] = useState({
+    title: '',
+    description: '',
+    startDate: '',
+    endDate: '',
+    location: '',
+  })
 
   // set image initial state to an empty object
   const [image, setImage] = useState({})
@@ -35,8 +55,10 @@ const EditCourse = () => {
 
   // set state for lessons update
   const [visible, setVisible] = useState(false)
+  const [visibleEvent, setVisibleEvent] = useState(false)
   const [current, setCurrent] = useState({})
-  const [uploadVideoButtonText, setUploadVideoButtonText] = useState('Upload Video')
+  const [uploadVideoButtonText, setUploadVideoButtonText] = useState(
+    'Upload Video')
   const [progress, setProgress] = useState(0)
   const [uploading, setUploading] = useState(false)
 
@@ -227,9 +249,7 @@ const EditCourse = () => {
         draggable: true,
         progress: undefined,
       })
-
     }
-
   }
 
   // form logic: delete lesson
@@ -249,7 +269,8 @@ const EditCourse = () => {
     setValues({ ...values, lessons: allLessons })
 
     // // send request to server
-    const { data } = await axios.put(`/api/course/${slug}/${removedLesson[0]._id}`)
+    const { data } = await axios.put(
+      `/api/course/${slug}/${removedLesson[0]._id}`)
 
     console.log('lesson deleted  => ', data)
   }
@@ -268,7 +289,7 @@ const EditCourse = () => {
     console.log(removedEvent[0]._id)
 
     // update state
-    setValues({ ...values, event: allEvent })
+    setEventValues({ ...eventValues, event: allEvent })
 
     // // send request to server
     const { data } = await axios.put(`/api/event/${slug}/${removedEvent[0]._id}`)
@@ -296,9 +317,11 @@ const EditCourse = () => {
     videoData.append('courseId', values._id)
 
     // save progress bar and send video as form_data to backend
-    const { data } = await axios.post(`/api/course/upload-video/${values.instructor._id}`, videoData, {
-      onUploadProgress: (e) => setProgress(Math.round((100 * e.loaded) / e.total)),
-    })
+    const { data } = await axios.post(
+      `/api/course/upload-video/${values.instructor._id}`, videoData, {
+        onUploadProgress: (e) => setProgress(
+          Math.round((100 * e.loaded) / e.total)),
+      })
 
     // update state
     setCurrent({ ...current, video: data })
@@ -309,7 +332,8 @@ const EditCourse = () => {
     e.preventDefault()
 
     // collect data
-    const { data } = await axios.put(`/api/course/lesson/${slug}/${current._id}`,
+    const { data } = await axios.put(
+      `/api/course/lesson/${slug}/${current._id}`,
       current)
     setUploadVideoButtonText('Upload Video')
     setVisible(false)
@@ -338,7 +362,8 @@ const EditCourse = () => {
     e.preventDefault()
 
     // collect data
-    const { data } = await axios.put(`/api/course/event/${slug}/${currentEvent._id}`,
+    const { data } = await axios.put(
+      `/api/course/event/${slug}/${currentEvent._id}`,
       currentEvent)
     setEventVisible(false)
 
@@ -362,22 +387,47 @@ const EditCourse = () => {
     })
   }
 
-  return (<InstructorRoute>
+  const classes = useStyles()
+  const { ...rest } = props
+
+  return (<>
+    {/* meta data */}
     <PageHead title={`Edit ${values.name}`}/>
 
-    <main>
-      <section className="py-5 text-center container">
-        <div className="row py-lg-5">
-          <div className="col-lg-6 col-md-8 mx-auto">
-            <h1 className="fw-light">Update Course</h1>
-          </div>
-        </div>
-      </section>
+    {/* navigation */}
+    <Header
+      color="transparent"
+      brand={NavLogo}
+      rightLinks={<HeaderLinks/>}
+      fixed
+      changeColorOnScroll={{
+        height: 200,
+        color: 'white',
+      }}
+      {...rest}
+      sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
+    />
 
-      <div className="album py-5 bg-light">
-        <div className="container">
-          <div className="container-fluid col-md-12 offset-md-12 pb-5">
-            {/* use props for form function and values */}
+    {/* hero section */}
+    <Parallax small filter
+              image="/images/americoders-community-diversity.png"/>
+
+    {/* main content */}
+    <div className={classNames(classes.main, classes.mainRaised)}>
+      <div className={classes.container}>
+        {/* flex container */}
+        <GridContainer direction="row"
+                       justifyContent="space-evenly"
+                       alignItems="center"
+                       spacing={2}>
+          {/* intro */}
+          <GridItem xs={11} sm={10} md={12}
+                    style={{ margin: '2.275rem 0 2.275rem 0' }}>
+            <h2 className={classes.title}>{`Edit ${values.name}`}</h2>
+          </GridItem>
+
+          {/* image col */}
+          <GridItem xs={11} sm={11} md={12} className={classes.section}>
             <CourseCreateForm
               handleSubmit={handleSubmit}
               handleImage={handleImage}
@@ -389,137 +439,158 @@ const EditCourse = () => {
               uploadButtonText={uploadButtonText}
               editPage={true}
             />
-          </div>
+          </GridItem>
+        </GridContainer>
 
-          {/* lessons list */}
-          <div className="row pb-5">
-            <div className="col lesson-list">
-              <h4>{values && values.lessons && values.lessons.length} Lessons</h4>
-              <small>Click on lesson title to edit lesson contents.</small>
-              <List
-                onDragOver={(e) => e.preventDefault()}
-                itemLayout="horizontal"
-                dataSource={values && values.lessons}
-                renderItem={(item, index) => (
+        <GridContainer
+          direction="row"
+          justifyContent="center"
+          alignItems="flex-start"
+          spacing={2}
+          className={classes.listsContainer}
+        >
+          <GridItem xs={11} sm={11} md={4}>
+            <h3 className={classes.title}>
+              {values && values.lessons &&
+                values.lessons.length} Lessons
+            </h3>
 
-                  // list each item with index number next to title
-                  <Item
-                    draggable
-                    onDragStart={(e) => handleDrag(e, index)} // use index for position
-                    onDrop={(e) => handleDrop(e, index)}
-                  >
-                    <Item.Meta
-                      role="button"
-                      onClick={() => {
-                        // update lesson modal
-                        setVisible(true)
-                        setCurrent(item)
-                      }}
-                      avatar={<Avatar>{index + 1}</Avatar>}
-                      title={item.title}
-                    >
-                    </Item.Meta>
+            {/* lessons list */}
+            <h6 className={classes.subtitle}>Click on title to edit
+                                             contents</h6>
+            <List
+              onDragOver={(e) => e.preventDefault()}
+              itemLayout="horizontal"
+              dataSource={values && values.lessons}
+              renderItem={(item, index) => (
 
-                    {/* delete lesson icon */}
-                    <DeleteOutlined
-                      onClick={() => {
-                        handleDelete(index)
-                      }}
-                      className="text-danger float-end"
-                    />
-                  </Item>
-                )}>
-              </List>
-            </div>
-          </div>
+                // list each item with index number next to title
+                <ListItem
+                  draggable
+                  onDragStart={(e) => handleDrag(e,
+                    index)} // use index for position
+                  onDrop={(e) => handleDrop(e, index)}
+                >
+                  <ListItemText
+                    role="button"
+                    onClick={() => {
+                      // update lesson modal
+                      setVisible(true)
+                      setCurrent(item)
+                    }}
+                    avatar={<Avatar>{index + 1}</Avatar>}
+                    title={item.title}
+                    primary={index + 1}
+                    secondary={item.title}
+                  />
 
-          {/* event list */}
-          <div className="row pb-5">
-            <div className="col lesson-list">
-              <h4>{values && values.event && values.event.length} Events</h4>
-              <small>Click on event title to edit event contents.</small>
-              <List
-                onDragOver={(e) => e.preventDefault()}
-                itemLayout="horizontal"
-                dataSource={values && values.event}
-                renderItem={(item, index) => (
+                  {/* delete lesson icon */}
+                  <DeleteOutlined
+                    onClick={() => {
+                      handleDelete(index)
+                    }}
+                    className="text-danger float-end"
+                  />
+                </ListItem>
+              )}>
+            </List>
+          </GridItem>
 
-                  // list each item with index number next to title
-                  <Item
-                    draggable
-                    onDragStart={(e) => handleDrag(e, index)} // use index for position
-                    onDrop={(e) => handleDrop(e, index)}
-                  >
-                    <Item.Meta
-                      role="button"
-                      onClick={() => {
-                        // update lesson modal
-                        setEventVisible(true)
-                        setCurrentEvent(item)
-                      }}
-                      avatar={<Avatar>{index + 1}</Avatar>}
-                      title={item.title}
-                    >
-                    </Item.Meta>
+          {/* events list */}
+          <GridItem xs={11} sm={11} md={4}>
+            <h3 className={classes.title}>
+              {values && values.event &&
+                values.event.length} Event
+            </h3>
 
-                    {/* delete event icon */}
-                    <DeleteOutlined
-                      onClick={() => {
-                        handleDeleteEvent(index).then(r => console.log(r))
-                      }}
-                      className="text-danger float-end"
-                    />
-                  </Item>
-                )}>
-              </List>
-            </div>
-          </div>
-        </div>
+            {/* events list */}
+            <h6 className={classes.subtitle}>Click on title to edit
+                                             contents</h6>
+
+            <List
+              onDragOver={(e) => e.preventDefault()}
+              itemLayout="horizontal"
+              dataSource={values && values.event}
+              renderItem={(item, index) => (
+
+                // list each item with index number next to title
+                <ListItem
+                  draggable
+                >
+                  <ListItemText
+                    role="button"
+                    onClick={() => {
+                      // update lesson modal
+                      setVisibleEvent(true)
+                      setCurrentEvent(item)
+                    }}
+                    avatar={<Avatar>{index + 1}</Avatar>}
+                    title={item.title}
+                    primary={index + 1}
+                    secondary={item.title}
+                  />
+
+                  {/* delete lesson icon */}
+                  <DeleteOutlined
+                    onClick={() => {
+                      handleDeleteEvent(index)
+                    }}
+                    className="text-danger float-end"
+                  />
+                </ListItem>
+              )}>
+            </List>
+          </GridItem>
+        </GridContainer>
+
+        {course && (<>
+          {/* modal for lesson */}
+          <Dialog
+            title="+ Edit Lesson"
+            centered
+            open={visible}
+            onClose={() => setVisible(false)}
+            footer={null}
+          >
+            <h4 className={classes.title}>Edit Lesson Form</h4>
+            <GridItem xs={10} md={12}>
+              {/* render form component */}
+              <UpdateLessonForm
+                current={current}
+                setCurrent={setCurrent}
+                handleVideo={handleVideo}
+                handleUpdateLesson={handleUpdateLesson}
+                uploadVideoButtonText={uploadVideoButtonText}
+                progress={progress}
+                uploading={uploading}
+              />
+            </GridItem>
+          </Dialog>
+
+          {/* modal for event */}
+          <Dialog
+            title="Update Event"
+            centered
+            open={visibleEvent}
+            onClose={() => setVisibleEvent(false)}
+            footer={null}
+          >
+            {/* render form component */}
+            <h4 className={classes.title}>Edit Event Form</h4>
+            <GridItem xs={10} md={12}>
+              {/* render form component */}
+              <UpdateEventForm
+                currentEvent={currentEvent}
+                setCurrentEvent={setCurrentEvent}
+                handleUpdateEvent={handleUpdateEvent}
+              />
+            </GridItem>
+          </Dialog>
+        </>)}
       </div>
-    </main>
-
-    {/* lesson modal */}
-    <Modal
-      title="Update Lesson"
-      centered
-      width={'50vw'}
-      visible={visible}
-      onCancel={() => setVisible(false)}
-      footer={null}
-    >
-      {/* modal content here */}
-      <UpdateLessonForm
-        current={current}
-        setCurrent={setCurrent}
-        handleVideo={handleVideo}
-        handleUpdateLesson={handleUpdateLesson}
-        uploadVideoButtonText={uploadVideoButtonText}
-        progress={progress}
-        uploading={uploading}
-      />
-    </Modal>
-
-    {/* event modal */}
-    <Modal
-      title="Update Event"
-      centered
-      width={'50vw'}
-      visible={eventVisible}
-      onCancel={() => setEventVisible(false)}
-      footer={null}
-    >
-      {/* modal content here */}
-      <UpdateEventForm
-        currentEvent={currentEvent}
-        setCurrentEvent={setCurrentEvent}
-        handleUpdateEvent={handleUpdateEvent}
-      />
-    </Modal>
-
-    {/* event list*/}
-
-    {/* end event list*/}
-  </InstructorRoute>)
+    </div>
+    <Footer/>
+  </>)
 }
 
 export default EditCourse
