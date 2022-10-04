@@ -1,3 +1,5 @@
+import { gradientColor } from '../../americoders'
+
 const parallaxStyle = (theme) => ({
   parallax: {
     height: '90vh',
@@ -14,8 +16,7 @@ const parallaxStyle = (theme) => ({
   },
   filter: {
     '&:before': {
-      backgroundColor: 'rgb(63,94,251, .1)',
-      background: 'linear-gradient(90deg, rgba(2,0,36,.8) 0%, rgba(9,9,121,.8) 23%, rgba(162,6,33,.8) 53%, rgba(242,242,242,1) 100%)',
+      background: gradientColor,
     },
     '&:after,&:before': {
       position: 'absolute',

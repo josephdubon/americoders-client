@@ -9,14 +9,12 @@ import Header from '../../components/Header/Header.js'
 import GridContainer from '../../components/Grid/GridContainer.js'
 import GridItem from '../../components/Grid/GridItem.js'
 import HeaderLinks from '../../components/Header/HeaderLinks.js'
-import NavPills from '../../components/NavPills/NavPills.js'
 import Parallax from '../../components/Parallax/Parallax.js'
 
 import { Context } from '../../context'
 
 import styles from '../../styles/jss/americoders/pages/profilePage.js'
 import axios from 'axios'
-import { School } from '@material-ui/icons'
 import UserRoute from '../../components/routes/UserRoute'
 import { PageHead } from '../../components/PageHead/PageHead'
 import Link from 'next/link'
@@ -24,6 +22,9 @@ import Moment from 'moment'
 import Footer from '../../components/Footer/Footer'
 import Button from '../../components/CustomButtons/Button'
 import NavLogo from '../../public/images/logo/americoders-logo-simple_white.svg'
+import Card from '../../components/Card/Card'
+import CardFooter from '../../components/Card/CardFooter'
+import CardBody from '../../components/Card/CardBody'
 
 const useStyles = makeStyles(styles)
 
@@ -151,59 +152,83 @@ export default function ProfilePage (props) {
                              spacing={2}>
                 <GridItem xs={12} sm={12} md={12}
                           className={classes.navWrapper}>
-                  <NavPills
-                    alignCenter
-                    color="primary"
-                    tabs={[
-                      {
-                        tabButton: 'My Courses',
-                        tabIcon: School,
-                        tabContent: (
-                          <GridContainer
-                            direction="row"
-                            justifyContent="center"
-                            alignItems="center"
-                          >
-                            <GridContainer direction="row"
-                                           justifyContent="center"
-                                           alignItems="center"
-                                           spacing={2}>
-                              {/* list all courses */}
-                              {courses && courses.length > 0
-                                ? courses.map(
-                                  course => (
-                                    <GridItem xs={12} sm={12} md={4}
-                                              key={course._id}
-                                              className={classes.marginBottom}>
-                                      <Link
-                                        href={`/user/course/${course.slug}`}
-                                      >
-                                        <a>
-                                          <img
-                                            alt="..."
-                                            src={course.image
-                                              ? course.image.Location
-                                              : '/images/americoders-course.png'}
-                                            className={navImageClasses}
-                                          />
-                                          <h6 className={classes.marginBottom}>
-                                            {course.name}
-                                          </h6>
-                                        </a>
-                                      </Link>
-                                      <p className={classes.description}>
-                                        {/* show number of lessons in course */}
-                                        {course.lessons.length} Lessons
-                                      </p>
-                                    </GridItem>
-                                  ))
-                                : ('You are not enrolled in any courses ...yet!')}
-                            </GridContainer>
-                          </GridContainer>
-                        ),
-                      },
-                    ]}
-                  />
+                  <h2 className={classes.title}>My Courses</h2>
+                  <GridContainer
+                    direction="row"
+                    justifyContent="center"
+                    alignItems="center"
+                  >
+                    <GridContainer direction="row"
+                                   justifyContent="center"
+                                   alignItems="center"
+                                   spacing={2}>
+                      {/* list all courses */}
+                      {courses && courses.length > 0
+                        ? courses.map(
+                          course => (
+                            <GridItem xs={10} sm={11} md={4}
+                                      key={course._id}
+                                      className={classes.marginBottom}>
+                              <Card>
+                                <Link
+                                  href={`/user/course/${course.slug}`}
+                                >
+
+                                  <a>
+                                    <img
+                                      alt="..."
+                                      src={course.image
+                                        ? course.image.Location
+                                        : '/images/americoders-course.png'}
+                                      className={navImageClasses}
+                                    />
+                                    <CardBody>
+                                      <h3 className={classes.title}>
+                                        {course.name}
+                                      </h3>
+                                      <h6 className={classes.title}>
+                                        {course.intro}
+                                      </h6>
+                                    </CardBody>
+                                    <Button
+                                      size={'sm'}
+                                      color={'primary'}
+                                    >
+                                      <h6 className={classes.titleWhite}
+                                          style={{ fontSize: '1rem' }}>
+                                        Go to Course
+                                      </h6>
+                                    </Button>
+                                  </a>
+                                </Link>
+                                <CardFooter>
+                                  <p className={classes.description}>
+                                    {/* show number of lessons in course */}
+                                    {course.lessons.length} Lessons
+                                  </p>
+                                </CardFooter>
+                              </Card>
+                            </GridItem>
+                          ))
+                        : ('You are not enrolled in any courses ...yet!')}
+                      <GridItem
+                        xs={12} sm={12}>
+                        <Link href={'/workshops'}>
+                          <a>
+                            <Button
+                              size={'sm'}
+                              color={'success'}
+                            >
+                              <h4 className={classes.titleWhite}
+                                  style={{ fontSize: '1rem' }}>Click Here To
+                                                               View More
+                                                               Courses</h4>
+                            </Button>
+                          </a>
+                        </Link>
+                      </GridItem>
+                    </GridContainer>
+                  </GridContainer>
                 </GridItem>
               </GridContainer>
             </GridContainer>

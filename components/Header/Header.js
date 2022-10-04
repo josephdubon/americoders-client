@@ -15,6 +15,9 @@ import Drawer from '@material-ui/core/Drawer'
 import Menu from '@material-ui/icons/Menu'
 // core components
 import styles from '../../styles/jss/americoders/components/headerStyle.js'
+import Image from 'next/image'
+
+import Logo from '../../public/images/logo/americoders-logo_white.svg'
 
 const useStyles = makeStyles(styles)
 
@@ -59,7 +62,7 @@ export default function Header (props) {
   const brandComponent = (
     <Link href="/landing">
       <a>
-        <span className={classes.title}>AMERICODERS</span>
+        <Image src={Logo}></Image>
       </a>
     </Link>
   )
@@ -122,13 +125,14 @@ Header.propTypes = {
     'warning',
     'danger',
     'transparent',
+    'transparent',
     'white',
     'rose',
     'dark',
   ]),
   rightLinks: PropTypes.node,
   leftLinks: PropTypes.node,
-  brand: PropTypes.string,
+  brand: PropTypes.object,
   fixed: PropTypes.bool,
   absolute: PropTypes.bool,
   // this will cause the sidebar to change the color from
@@ -138,6 +142,7 @@ Header.propTypes = {
   // changeColorOnScroll.height change it back to
   // props.color (see above)
   changeColorOnScroll: PropTypes.shape({
+    brand: PropTypes.object,
     height: PropTypes.number.isRequired,
     color: PropTypes.oneOf([
       'primary',

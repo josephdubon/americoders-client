@@ -40,30 +40,23 @@ const EditCourse = (props, course) => {
     lessons: [],
     event: [],
   })
-  const [eventValues, setEventValues] = useState({
-    title: '',
-    description: '',
-    startDate: '',
-    endDate: '',
-    location: '',
-  })
 
   // set image initial state to an empty object
   const [image, setImage] = useState({})
   const [preview, setPreview] = useState('')
   const [uploadButtonText, setUploadButtonText] = useState('Upload Image')
 
-  // set state for lessons update
-  const [visible, setVisible] = useState(false)
-  const [visibleEvent, setVisibleEvent] = useState(false)
-  const [current, setCurrent] = useState({})
   const [uploadVideoButtonText, setUploadVideoButtonText] = useState(
     'Upload Video')
   const [progress, setProgress] = useState(0)
   const [uploading, setUploading] = useState(false)
 
+  // set state for lessons update
+  const [visible, setVisible] = useState(false)
+  const [current, setCurrent] = useState({})
+
   // set state for events update
-  const [eventVisible, setEventVisible] = useState(false)
+  const [visibleEvent, setVisibleEvent] = useState(false)
   const [currentEvent, setCurrentEvent] = useState({})
 
   // router
@@ -263,8 +256,6 @@ const EditCourse = (props, course) => {
     // delete item based in index and collect id
     const removedLesson = allLessons.splice(index, 1)
 
-    console.log(removedLesson[0]._id)
-
     // update state
     setValues({ ...values, lessons: allLessons })
 
@@ -275,24 +266,23 @@ const EditCourse = (props, course) => {
     console.log('lesson deleted  => ', data)
   }
 
-  // form logic: delete lesson
+  // form logic: delete event
   const handleDeleteEvent = async (index) => {
-    const answer = window.confirm('Are you sure you want to delete?')
+    const answer = window.confirm('Are you sure you want to delete this event?')
     if (!answer) return // if user clicks cancel on confirmation prompt do nothing but close prompt
 
-    // collect lessons
-    let allEvent = values.event
+    // collect event
+    let allEvents = values.event
 
-    // delete item based in index and collect id
-    const removedEvent = allEvent.splice(index, 1)
+    // // delete item based in index and collect id
+    const removedEvent = allEvents.splice(index, 1)
 
-    console.log(removedEvent[0]._id)
+    // // update state
+    setValues({ ...values, event: allEvents })
 
-    // update state
-    setEventValues({ ...eventValues, event: allEvent })
-
-    // // send request to server
-    const { data } = await axios.put(`/api/event/${slug}/${removedEvent[0]._id}`)
+    // // // send request to server
+    const { data } = await axios.put(
+      `/api/course/${slug}/${removedEvent[0]._id}`)
 
     console.log('event deleted  => ', data)
   }
@@ -301,7 +291,8 @@ const EditCourse = (props, course) => {
   const handleVideo = async (e) => {
     // remove previous video, if there is one
     if (current.video && current.video.Location) {
-      const res = await axios.post(`/api/course/remove-video/${values.instructor._id}`,
+      const res = await axios.post(
+        `/api/course/remove-video/${values.instructor._id}`,
         current.video,
       )
     }
@@ -365,7 +356,7 @@ const EditCourse = (props, course) => {
     const { data } = await axios.put(
       `/api/course/event/${slug}/${currentEvent._id}`,
       currentEvent)
-    setEventVisible(false)
+    setVisibleEvent(false)
 
     // update state and ui
     if (data.ok) {
@@ -506,16 +497,13 @@ const EditCourse = (props, course) => {
             {/* events list */}
             <h6 className={classes.subtitle}>Click on title to edit
                                              contents</h6>
-
             <List
-              onDragOver={(e) => e.preventDefault()}
               itemLayout="horizontal"
               dataSource={values && values.event}
               renderItem={(item, index) => (
 
                 // list each item with index number next to title
                 <ListItem
-                  draggable
                 >
                   <ListItemText
                     role="button"
@@ -533,9 +521,8 @@ const EditCourse = (props, course) => {
                   {/* delete lesson icon */}
                   <DeleteOutlined
                     onClick={() => {
-                      handleDeleteEvent(index)
+                      handleDeleteEvent(index).then(console.log(index))
                     }}
-                    className="text-danger float-end"
                   />
                 </ListItem>
               )}>
@@ -580,8 +567,8 @@ const EditCourse = (props, course) => {
             <GridItem xs={10} md={12}>
               {/* render form component */}
               <UpdateEventForm
-                currentEvent={currentEvent}
-                setCurrentEvent={setCurrentEvent}
+                current={currentEvent}
+                setCurrent={setCurrentEvent}
                 handleUpdateEvent={handleUpdateEvent}
               />
             </GridItem>

@@ -29,7 +29,6 @@ import FeaturedSectionRight
 import Footer from '../components/Footer/Footer'
 
 import Logo from '../public/images/logo/americoders-logo_white.svg'
-import NavLogo from '../public/images/logo/americoders-logo-simple_white.svg'
 import Image from 'next/image'
 import CoursesGrid from '../components/CoursesGrid/CoursesGrid'
 
@@ -57,7 +56,7 @@ export default function LandingPage (props) {
       <div style={{ textAlign: 'center' }}>
         <Button
           href={'register'}
-          color="danger"
+          color="primary"
           size="lg"
         >
           <i className="fas fa-play"/>
@@ -70,78 +69,78 @@ export default function LandingPage (props) {
   return (
     <>
       {/* header section / nav */}
-        <PageHead title={'Welcome! We are a tech learning platform.'}/>
-        <Header
-          color="transparent"
-          routes={dashboardRoutes}
-          brand={NavLogo}
-          rightLinks={<HeaderLinks/>}
-          fixed
-          changeColorOnScroll={{
-            height: 400,
-            color: 'white',
-          }}
-          {...rest}
-        />
+      <PageHead title={'Welcome! We are a tech learning platform.'}/>
+      <Header
+        color="transparent"
+        routes={dashboardRoutes}
+        brand={Logo}
+        rightLinks={<HeaderLinks/>}
+        fixed
+        changeColorOnScroll={{
+          height: 400,
+          color: 'dark',
+        }}
+        {...rest}
+      />
 
       {/* hero section */}
-        <Parallax filter responsive
-                  image="/images/original/reno_downtown.png">
-          <div className={classes.container}>
-            <GridContainer
-              direction="row"
-              justifyContent="center"
-              alignItems="center"
+      <Parallax filter responsive
+                image="/images/original/reno_downtown.png">
+        <div className={classes.container}>
+          <GridContainer
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <GridContainer direction="row"
+                           justifyContent="center"
+                           alignItems="center"
             >
-              <GridContainer direction="row"
-                             justifyContent="center"
-                             alignItems="center"
-              >
-                <GridItem xs={10} sm={10} md={8}>
-                  <Image
-                    src={Logo}
-                    width={800}
-                    height={200}
-                    className={classes.logo}
-                    alt={'Logo for Americoders'}/>
-                  <h4 className={classes.subtitle}>
-                    We're a community enrichment program founded in the heart of
-                    the
-                    Biggest Little City in the World, Reno, Nevada.
-                    We believe education should be an experience to foster
-                    growth
-                    &
-                    advancements in STEM, Arts, & Mindfulness Development.
-                  </h4>
-                </GridItem>
-              </GridContainer>
+              <GridItem xs={10} sm={10} md={8}>
+                <Image
+                  src={Logo}
+                  width={800}
+                  height={200}
+                  className={classes.logo}
+                  alt={'Logo for Americoders'}/>
+                <h4 className={classes.subtitle}>
+                  We're a community enrichment program founded in the heart of
+                  the
+                  Biggest Little City in the World, Reno, Nevada.
+                  We believe education should be an experience to foster
+                  growth
+                  &
+                  advancements in STEM, Arts, & Mindfulness Development.
+                </h4>
+              </GridItem>
             </GridContainer>
-          </div>
-        </Parallax>
-
-        <div className={classNames(classes.main, classes.mainRaised)}>
-          <div className={classes.container}>
-
-            {/* intro section */}
-            <FeatureSection id={'more-info'}/>
-
-            {/* live courses and events section */}
-            <CoursesGrid id="workshops" courses={props.courses}/>
-
-            {/* join mailing list area */}
-            <MailingListSection/>
-
-            {/* course examples section */}
-            <CoursesSection/>
-
-            {/*  announcement section */}
-            <FeaturedSectionRight title={'Fall Semester 2022'}
-                                  description={announcement()}
-                                  imageUrl={'/images/original/americoders-kids-laptop-fun.jpg'}
-                                  imgAlt={'americoders-robotics-project-student'}/>
-          </div>
+          </GridContainer>
         </div>
-        <Footer/>
+      </Parallax>
+
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        <div className={classes.container}>
+
+          {/* intro section */}
+          <FeatureSection id={'more-info'}/>
+
+          {/* live courses and events section */}
+          <CoursesGrid id="workshops" courses={props.courses}/>
+
+          {/* join mailing list area */}
+          <MailingListSection/>
+
+          {/* course examples section */}
+          <CoursesSection/>
+
+          {/*  announcement section */}
+          <FeaturedSectionRight title={'Fall Semester 2022'}
+                                description={announcement()}
+                                imageUrl={'/images/original/americoders-kids-laptop-fun.jpg'}
+                                imgAlt={'americoders-robotics-project-student'}/>
+        </div>
+      </div>
+      <Footer/>
     </>
   )
 }

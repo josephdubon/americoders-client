@@ -1,7 +1,9 @@
-import {  Progress } from 'antd'
+import { Progress } from 'antd'
 import ReactPlayer from 'react-player'
-import { Switch } from '@mui/material'
+import { Switch, TextField } from '@mui/material'
 import Button from '../CustomButtons/Button'
+import GridItem from '../Grid/GridItem'
+import GridContainer from '../Grid/GridContainer'
 
 const UpdateLessonForm = ({
   current,
@@ -13,133 +15,141 @@ const UpdateLessonForm = ({
   progress,
 }) => {
   return (
-    <div className="container pt-3">
+    <GridItem xs={12} style={{maxHeight: '800px', overflow: 'scroll'}}>
       {/*{JSON.stringify(current, null, 4)}*/}
       <form onSubmit={handleUpdateLesson}>
-        <p className="mb-1">Title</p>
-        <input
+
+        {/* title */}
+        <TextField
+          label="Title"
+          fullWidth
           type="text"
-          className="form-control square mb-3"
           onChange={(e) => setCurrent({ ...current, title: e.target.value })}
           value={current.title}
-          autoFocus
-          required
-        />
+          style={{ margin: '15px 0' }}
+          placeholder="Title">
+        </TextField>
 
-        <p className="mb-1">Content</p>
-        <textarea
-          className="form-control mt-3"
-          cols="7"
-          rows="7"
+        {/* content */}
+        <TextField
+          label="Content"
+          fullWidth
+          multiline
+          rows={14}
+          type="text"
           onChange={(e) => setCurrent({ ...current, content: e.target.value })}
           value={current.content}
-        />
+          style={{ margin: '15px 0' }}
+          placeholder="Content">
+        </TextField>
 
-        {/* code area */}
-        <div className="row form-group gap-2 mt-3 mb-3">
-          <div>
+        {/* HTML */}
+        <TextField
+          label="HTML"
+          fullWidth
+          multiline
+          rows={14}
+          type="text"
+          onChange={(e) => setCurrent({ ...current, html: e.target.value })}
+          value={current.html}
+          style={{ margin: '15px 0' }}
+          placeholder="HTML">
+        </TextField>
 
-            {/*html*/}
-            <p className="mb-1">HTML</p>
-            <textarea
-              className="form-control mt-3 col"
-              cols="7"
-              rows="7"
-              onChange={(e) => setCurrent({ ...current, html: e.target.value })}
-              value={current.html}
-            />
-          </div>
+        {/* CSS */}
+        <TextField
+          label="CSS"
+          fullWidth
+          multiline
+          rows={14}
+          type="text"
+          onChange={(e) => setCurrent({ ...current, css: e.target.value })}
+          value={current.css}
+          style={{ margin: '15px 0' }}
+          placeholder="CSS">
+        </TextField>
 
-          {/* css */}
-          <div>
-            <p className="mb-1">CSS</p>
-            <textarea
-              className="form-control mt-3 col"
-              cols="7"
-              rows="7"
-              onChange={(e) => setCurrent({ ...current, css: e.target.value })}
-              value={current.css}
-            />
-          </div>
-
-          {/* javascript */}
-          <div>
-            <p className="mb-1">JavaScript</p>
-            <textarea
-              className="form-control mt-3 col"
-              cols="7"
-              rows="7"
-              onChange={(e) =>
-                setCurrent({ ...current, javascript: e.target.value })
-              }
-              value={current.javascript}
-            />
-          </div>
-        </div>
+        {/* Javascript */}
+        <TextField
+          label="Javascript"
+          fullWidth
+          multiline
+          rows={14}
+          type="text"
+          onChange={(e) => setCurrent(
+            { ...current, javascript: e.target.value })}
+          value={current.javascript}
+          style={{ margin: '15px 0' }}
+          placeholder="Javascript">
+        </TextField>
 
         {/* earsketch area */}
-        <div className="row form-group gap-2 mt-3 mb-3">
-          <div className="row form-group gap-2 mt-3 mb-3">
-            <p>EarSketch Lesson?</p>
-            {/* true */}
-            {/*  toggle input if current.earsketch value is true */}
-            <Switch
-              size='medium'
-              defaultChecked={current.earsketch}
-              onChange={(e) => setCurrent({ ...current, earsketch: e.target.checked })}
-            />
-          </div>
-        </div>
+        <GridItem xs={12}>
+          <h6>EarSketch Lesson?</h6>
+          {/* true */}
+          {/*  toggle input if current.earsketch value is true */}
+          <Switch
+            size="medium"
+            defaultChecked={current.earsketch}
+            onChange={(e) => setCurrent(
+              { ...current, earsketch: e.target.checked })}
+          />
+        </GridItem>
 
         {/* video area */}
-        <div className="col d-grid gap-2">
+        <GridItem xs={12}>
           {!uploading && current.video && current.video.Location && (
-            <div className="pt-2 d-flex justify-content-center">
+            <GridContainer
+              justifyContent="center"
+              alignItems="center"
+            >
               <ReactPlayer
                 url={current.video.Location}
                 width="410px"
                 height="240px"
                 controls
               />
-            </div>
+            </GridContainer>
           )}
-
-          <label className="btn btn-dark btn-block text-left mt-3">
+          <Button
+            fullWidth
+            size={'md'}
+            color={'success'}
+          >
             {uploadVideoButtonText}
             <input onChange={handleVideo} type="file" accept="video/*" hidden/>
-          </label>
-        </div>
-
-        {progress > 0 && (
-          <Progress
-            className="d-flex justify-content-center pt-2"
-            percent={progress}
-            steps={10}
-          />
-        )}
-
-        <div className="d-flex justify-content-between">
-          <span className="pt-3 badge text-black">Preview</span>
+          </Button>
+          {progress > 0 && (
+            <Progress
+              className="d-flex justify-content-center pt-2"
+              percent={progress}
+              steps={10}
+            />
+          )}
+          <hr/>
+          <h6>Video Preview?</h6>
           <Switch
             defaultChecked={current.free_preview}
             disabled={uploading}
             name="free_preview"
-            onChange={(v) => setCurrent({ ...current, free_preview: v.target.checked })}
+            onChange={(v) => setCurrent(
+              { ...current, free_preview: v.target.checked })}
           />
-        </div>
-
-        <Button
-          onClick={handleUpdateLesson}
-          className="col mt-3"
-          size="large"
-          type="primary"
-          loading={uploading}
-          shape="round"
-        >
-          Save
-        </Button>
+        </GridItem>
+        <GridItem xs={12}>
+          <Button
+            fullWidth
+            onClick={handleUpdateLesson}
+            size="lg"
+            color="primary"
+            loading={uploading}
+            style={{ margin: '2rem 0' }}
+          >
+            Save
+          </Button>
+        </GridItem>
       </form>
-    </div>
+    </GridItem>
   )
 }
 
