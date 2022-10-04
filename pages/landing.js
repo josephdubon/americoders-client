@@ -69,19 +69,19 @@ export default function LandingPage (props) {
   return (
     <>
       {/* header section / nav */}
-        <PageHead title={'Welcome! We are a tech learning platform.'}/>
-        <Header
-          color="transparent"
-          routes={dashboardRoutes}
-          brand={NavLogo}
-          rightLinks={<HeaderLinks/>}
-          fixed
-          changeColorOnScroll={{
-            height: 400,
-            color: 'white',
-          }}
-          {...rest}
-        />
+      <PageHead title={'Welcome! We are a tech learning platform.'}/>
+      <Header
+        color="transparent"
+        routes={dashboardRoutes}
+        brand={Logo}
+        rightLinks={<HeaderLinks/>}
+        fixed
+        changeColorOnScroll={{
+          height: 400,
+          color: 'dark',
+        }}
+        {...rest}
+      />
 
       {/* hero section */}
         <Parallax filter responsive
