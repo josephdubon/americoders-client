@@ -161,7 +161,7 @@ const SingleCourse = (props, { courses }) => {
                   {/* will take you to course home view*/}
                   <h1
                     onClick={() => setClicked(-1)}
-                    className={classes.title}
+                    className={classes.titleWhite}
                     style={{ cursor: 'pointer' }}
                   >
                     {course.name}
