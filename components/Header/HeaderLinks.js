@@ -69,6 +69,19 @@ export default function HeaderLinks (props) {
   return (
     <List className={classes.list}>
       {/* start nav items */}
+
+      {/* courses link */}
+      <ListItem className={classes.listItem}>
+        <Link href={'/workshops'}>
+          <Button
+            color="transparent"
+            className={classes.navLink}
+          >
+            <Icon className={classes.icons}>terminal</Icon> IRL Workshops
+          </Button>
+        </Link>
+      </ListItem>
+
       {/* conditional render of content depending on user role (instructor or subscriber) */}
       {user && user.role && user.role.includes('Instructor') ? (<>
         {/* Instructor Role */}
