@@ -180,6 +180,7 @@ const infoColor = '#CCFFCC'
 const roseColor = '#e91e63'
 const grayColor = '#4D4D4D'
 const whiteColor = '#F2F2F2'
+const gradientColor = 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,.8) 35%, rgba(0,212,255,1) 100%)'
 
 const primaryBoxShadow = {
   boxShadow: `0 12px 20px -10px ${hexToRGBAlpha(primaryColor,
@@ -294,6 +295,7 @@ export {
   successColor,
   infoColor,
   roseColor,
+  gradientColor,
   grayColor,
   markdownStyles,
   primaryBoxShadow,
