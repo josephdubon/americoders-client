@@ -1,4 +1,4 @@
-import { cardTitle, container, title, markdownStyles } from '../../americoders'
+import { cardTitle, container, markdownStyles, title } from '../../americoders'
 
 const coursePageStyle = {
   container: {
