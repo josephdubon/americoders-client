@@ -31,12 +31,7 @@ import Footer from '../components/Footer/Footer'
 import Logo from '../public/images/logo/americoders-logo_white.svg'
 import NavLogo from '../public/images/logo/americoders-logo-simple_white.svg'
 import Image from 'next/image'
-import CardBody from '../components/Card/CardBody'
-import Card from '../components/Card/Card'
-import Link from 'next/link'
-import { currencyFormatter } from '../utils/helpers'
-import Badge from '../components/Badge/Badge.js'
-import moment from 'moment'
+import CoursesGrid from '../components/CoursesGrid/CoursesGrid'
 
 const dashboardRoutes = []
 
@@ -75,68 +70,24 @@ export default function LandingPage (props) {
   return (
     <>
       {/* header section / nav */}
-      <PageHead title={'Welcome! We are a tech learning platform.'}/>
-      <Header
-        color="transparent"
-        routes={dashboardRoutes}
-        brand={NavLogo}
-        rightLinks={<HeaderLinks/>}
-        fixed
-        changeColorOnScroll={{
-          height: 400,
-          color: 'white',
-        }}
-        {...rest}
-      />
+        <PageHead title={'Welcome! We are a tech learning platform.'}/>
+        <Header
+          color="transparent"
+          routes={dashboardRoutes}
+          brand={NavLogo}
+          rightLinks={<HeaderLinks/>}
+          fixed
+          changeColorOnScroll={{
+            height: 400,
+            color: 'white',
+          }}
+          {...rest}
+        />
 
       {/* hero section */}
-      <Parallax filter responsive
-                image="/images/original/reno_downtown.png">
-        <div className={classes.container}>
-          <GridContainer
-            direction="row"
-            justifyContent="center"
-            alignItems="center"
-          >
-            <GridContainer direction="row"
-                           justifyContent="center"
-                           alignItems="center"
-            >
-              <GridItem xs={10} sm={10} md={8}>
-                <Image
-                  src={Logo}
-                  width={800}
-                  height={200}
-                  className={classes.logo}
-                  alt={'Logo for Americoders'}/>
-                <h4 className={classes.subtitle}>
-                  We're a community enrichment program founded in the heart of
-                  the
-                  Biggest Little City in the World, Reno, Nevada.
-                  We believe education should be an experience to foster growth
-                  &
-                  advancements in STEM, Arts, & Mindfulness Development.
-                </h4>
-              </GridItem>
-            </GridContainer>
-          </GridContainer>
-        </div>
-      </Parallax>
-
-      <div className={classNames(classes.main, classes.mainRaised)}>
-        <div className={classes.container}>
-
-          {/* 3 row feature section */}
-          <FeatureSection id={'more-info'}/>
-
-          {/* 3 col course examples area */}
-          <CoursesSection/>
-
-          {/* join mailing list area */}
-          <MailingListSection/>
-
-          {/* live and upcoming workshops area*/}
-          <div>
+        <Parallax filter responsive
+                  image="/images/original/reno_downtown.png">
+          <div className={classes.container}>
             <GridContainer
               direction="row"
               justifyContent="center"
@@ -146,80 +97,51 @@ export default function LandingPage (props) {
                              justifyContent="center"
                              alignItems="center"
               >
-                <GridItem cs={12} sm={12} md={12}>
-                  {/* title */}
-                  <h2 className={classes.sectionTitle}>
-                    Live and Upcoming Workshops
-                  </h2>
+                <GridItem xs={10} sm={10} md={8}>
+                  <Image
+                    src={Logo}
+                    width={800}
+                    height={200}
+                    className={classes.logo}
+                    alt={'Logo for Americoders'}/>
+                  <h4 className={classes.subtitle}>
+                    We're a community enrichment program founded in the heart of
+                    the
+                    Biggest Little City in the World, Reno, Nevada.
+                    We believe education should be an experience to foster
+                    growth
+                    &
+                    advancements in STEM, Arts, & Mindfulness Development.
+                  </h4>
                 </GridItem>
-
-                {/* loop through the published courses */}
-                {props.courses.map(course => (
-                    <GridItem xs={12} md={6} lg={4} key={course._id}>
-                      <p style={{ color: 'black' }}>
-                        {/*{JSON.stringify(course, null, 2)}*/}
-                      </p>
-                      <Card>
-                        <img
-                          style={{ height: '18rem', width: '100%', objectFit: 'cover', display: 'block' }}
-                          className={classes.imgCardTop}
-                          src={course.image && course.image.Location}
-                          alt="Card-img-cap"
-                        />
-                        <CardBody>
-                          {/* course name */}
-                          <h4 className={classes.cardTitle}>{course.name}</h4>
-
-                          {/*<p>by {course.instructor.name}</p>*/}
-                          {/* categories */}
-                          <Badge color="success">
-                            {course.category}
-                          </Badge>
-
-                          {/* course price */}
-                          <h4 className={classes.description}>{course.paid ? currencyFormatter({
-                            amount: course.price,
-                            currency: 'usd',
-                          }) : 'Free'}</h4>
-
-                          <h6 className={classes.description}>{course.event && moment(course.event[0].startDate).calendar()} - {course.event && moment(course.event[0].endDate).calendar()}
-                            <br/>
-                            {course.event[0].location}</h6>
-                          {/* action button */}
-                          <Link
-                            href={`/course/${course.slug}`}
-                          >
-                            <a>
-                              <Button
-                                fullWidth
-                                color="primary"
-                                size="lg"
-                              >More Info</Button>
-                            </a>
-                          </Link>
-                        </CardBody>
-                      </Card>
-                    </GridItem>
-                  ),
-                )}
               </GridContainer>
             </GridContainer>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <br/>
           </div>
+        </Parallax>
 
-          {/*  announcement section */}
-          <FeaturedSectionRight title={'Fall Semester 2022'}
-                                description={announcement()}
-                                imageUrl={'/images/original/americoders-kids-laptop-fun.jpg'}
-                                imgAlt={'americoders-robotics-project-student'}/>
+        <div className={classNames(classes.main, classes.mainRaised)}>
+          <div className={classes.container}>
+
+            {/* intro section */}
+            <FeatureSection id={'more-info'}/>
+
+            {/* live courses and events section */}
+            <CoursesGrid id="workshops" courses={props.courses}/>
+
+            {/* join mailing list area */}
+            <MailingListSection/>
+
+            {/* course examples section */}
+            <CoursesSection/>
+
+            {/*  announcement section */}
+            <FeaturedSectionRight title={'Fall Semester 2022'}
+                                  description={announcement()}
+                                  imageUrl={'/images/original/americoders-kids-laptop-fun.jpg'}
+                                  imgAlt={'americoders-robotics-project-student'}/>
+          </div>
         </div>
-      </div>
-      <Footer/>
+        <Footer/>
     </>
   )
 }
