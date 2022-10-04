@@ -9,6 +9,8 @@ import CardBody from '../Card/CardBody'
 import MenuItem from '@mui/material/MenuItem'
 import Button from '../CustomButtons/Button'
 import GridItem from '../Grid/GridItem'
+import Image from 'next/image'
+import GridContainer from '../Grid/GridContainer'
 
 const useStyles = makeStyles(styles)
 
@@ -44,7 +46,6 @@ const CourseCreateForm = ({
           <h4>Create New Course Form</h4>
         </CardHeader>
         <CardBody>
-
           {/*  name field */}
           <TextField
             id="standard-multiline-flexible"
@@ -115,7 +116,7 @@ const CourseCreateForm = ({
             label="Description"
             multiline
             fullWidth
-            rows={6}
+            rows={24}
             type="text"
             name="description"
             className="form-control"
@@ -126,26 +127,21 @@ const CourseCreateForm = ({
           />
 
           {/* image upload */}
-          <GridItem xs={10} sm={10} md={12}
-                    style={{ margin: '1.175rem 0' }}
-          >
+          <GridContainer justifyContent={'center'} alignItems={'center'}>
             <Button
               color={'success'}
               size={'md'}
             >
-              <label
-                style={{ color: '#FFFFFF' }}>
-                {uploadButtonText}
-                <input
-                  type="file"
-                  name="image"
-                  accept="image/*"
-                  onChange={handleImage}
-                  hidden
-                />
-              </label>
+              {uploadButtonText}
+              <input
+                type="file"
+                name="image"
+                accept="image/*"
+                onChange={handleImage}
+                hidden
+              />
             </Button>
-          </GridItem>
+          </GridContainer>
 
           {/* image preview */}
           {preview && (<>
@@ -161,29 +157,34 @@ const CourseCreateForm = ({
           </>)}
 
           {editPage && values.image && (
-            <Avatar
-              width={200}
-              src={values.image.Location}
-            >{''}</Avatar>
+            <GridContainer justifyContent={'center'} alignItems={'center'}>
+              <Image
+                width={200}
+                height={200}
+                src={values.image.Location}
+              />
+            </GridContainer>
           )}
 
           {/* button */}
-          <GridItem xs={10} sm={10} md={12}
-          >
-            <Button
-              fullWidth
-              onClick={handleSubmit}
-              disabled={values.loading || values.uploading}
-              className="btn btn-primary"
-              loading={values.loading}
-              icon={<SaveOutlined/>}
-              color="primary"
-              size="lg"
-              shape="round"
+          <GridContainer justifyContent={'center'} alignItems={'center'}>
+            <GridItem xs={10} sm={10} md={4}
             >
-              {values.loading ? 'Saving...' : 'Save & Continue'}
-            </Button>
-          </GridItem>
+              <Button
+                fullWidth
+                onClick={handleSubmit}
+                disabled={values.loading || values.uploading}
+                className="btn btn-primary"
+                loading={values.loading}
+                icon={<SaveOutlined/>}
+                color="primary"
+                size="lg"
+                shape="round"
+              >
+                {values.loading ? 'Saving...' : 'Save & Continue'}
+              </Button>
+            </GridItem>
+          </GridContainer>
         </CardBody>
       </form>
     )}

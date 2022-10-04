@@ -1,81 +1,98 @@
-import { Button } from 'antd'
+import GridItem from '../Grid/GridItem'
+import { TextField } from '@mui/material'
+import Datetime from 'react-datetime'
+import Button from '../CustomButtons/Button'
 
 const UpdateEventForm = ({
-  currentEvent,
-  setCurrentEvent,
+  current,
+  setCurrent,
   handleUpdateEvent,
 }) => {
   return (
-
-    <div className="container pt-3">
-
-      {/*{JSON.stringify(currentEvent, null, 4)}*/}
+    <GridItem xs={12} style={{ maxHeight: '800px', overflow: 'scroll' }}>
+      {/*{JSON.stringify(current, null, 4)}*/}
       <form onSubmit={handleUpdateEvent}>
-        <p className="mb-1">Title</p>
-        <input
+
+        {/* title */}
+        <TextField
+          label="Title"
+          multiline
+          fullWidth
+          rowsMax={2}
           type="text"
-          className="form-control square mb-3"
-          onChange={(e) => setCurrentEvent({ ...currentEvent, title: e.target.value })}
-          value={currentEvent.title}
+          className="form-control"
+          onChange={(e) => setCurrent(
+            { ...current, title: e.target.value })}
+          value={current.title}
+          style={{ margin: '15px 0' }}
+          placeholder="Title"
           autoFocus
           required
         />
 
-        <p className="mb-1">Description</p>
-        <textarea
-          className="form-control mt-3"
-          cols="7"
-          rows="7"
-          onChange={(e) => setCurrentEvent({ ...currentEvent, description: e.target.value })}
-          value={currentEvent.description}
+        {/* startDate area */}
+        <Datetime
+          inputProps={{ placeholder: 'Start Date' }}
+          onChange={(e) => setCurrent(
+            { ...current, startDate: e })}
+          value={current.startDate}
+          style={{ margin: '15px 0' }}
         />
 
-        {/* date area */}
-        <div className="row form-group gap-2 mt-3 mb-3">
-          <div>
-            <p className="mb-1">startDate</p>
-            <textarea
-              className="form-control mt-3 col"
-              cols="7"
-              rows="7"
-              onChange={(e) => setCurrentEvent({ ...currentEvent, startDate: e.target.value })}
-              value={currentEvent.startDate}
-            />
-          </div>
+        {/* endDate area */}
+        <Datetime
+          inputProps={{ placeholder: 'End Date' }}
+          onChange={(e) => setCurrent(
+            { ...current, endDate: e })}
+          value={current.endDate}
+          style={{ margin: '15px 0' }}
+        />
 
-          <div>
+        {/* location */}
+        <TextField
+          label="Location"
+          fullWidth
+          type="text"
+          className="form-control"
+          onChange={(e) => setCurrent(
+            { ...current, location: e.target.value })}
+          value={current.location}
+          style={{ margin: '15px 0' }}
+          placeholder="Location"
+          autoFocus
+          required
+        />
 
-            <p className="mb-1">endDate</p>
-            <textarea
-              className="form-control mt-3 col"
-              cols="7"
-              rows="7"
-              onChange={(e) => setCurrentEvent({ ...currentEvent, endDate: e.target.value })}
-              value={currentEvent.endDate}
-            />
-            <p className="mb-1">location</p>
-            <textarea
-              className="form-control mt-3 col"
-              cols="7"
-              rows="7"
-              onChange={(e) => setCurrentEvent({ ...currentEvent, location: e.target.value })}
-              value={currentEvent.location}
-            />
-          </div>
-
-        </div>
-
-        <Button
-          onClick={handleUpdateEvent}
-          className="col mt-3"
-          size="large"
-          type="primary"
-          shape="round"
-        >
-          Save
-        </Button>
+        {/* description */}
+        <TextField
+          label="Description"
+          multiline
+          fullWidth
+          rows={12}
+          type="text"
+          className="form-control"
+          onChange={(e) => setCurrent(
+            { ...current, description: e.target.value })}
+          value={current.description}
+          style={{ margin: '15px 0' }}
+          placeholder="Use Markdown Syntax"
+          autoFocus
+          required
+        />
+        <GridItem xs={12}>
+          <Button
+            fullWidth
+            type="submit"
+            color="primary"
+            size={'lg'}
+            onClick={handleUpdateEvent}
+            style={{ margin: '2rem 0' }}
+          >
+            Save
+          </Button>
+        </GridItem>
       </form>
-    </div>
+    </GridItem>
   )
 }
 
