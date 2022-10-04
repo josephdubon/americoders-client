@@ -40,30 +40,23 @@ const EditCourse = (props, course) => {
     lessons: [],
     event: [],
   })
-  const [eventValues, setEventValues] = useState({
-    title: '',
-    description: '',
-    startDate: '',
-    endDate: '',
-    location: '',
-  })
 
   // set image initial state to an empty object
   const [image, setImage] = useState({})
   const [preview, setPreview] = useState('')
   const [uploadButtonText, setUploadButtonText] = useState('Upload Image')
 
-  // set state for lessons update
-  const [visible, setVisible] = useState(false)
-  const [visibleEvent, setVisibleEvent] = useState(false)
-  const [current, setCurrent] = useState({})
   const [uploadVideoButtonText, setUploadVideoButtonText] = useState(
     'Upload Video')
   const [progress, setProgress] = useState(0)
   const [uploading, setUploading] = useState(false)
 
+  // set state for lessons update
+  const [visible, setVisible] = useState(false)
+  const [current, setCurrent] = useState({})
+
   // set state for events update
-  const [eventVisible, setEventVisible] = useState(false)
+  const [visibleEvent, setVisibleEvent] = useState(false)
   const [currentEvent, setCurrentEvent] = useState({})
 
   // router
