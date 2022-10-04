@@ -34,6 +34,7 @@ const containerFluid = {
   marginLeft: 'auto',
   width: '100%',
 }
+
 const container = {
   ...containerFluid, '@media (min-width: 576px)': {
     maxWidth: '540px',
