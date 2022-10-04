@@ -250,45 +250,48 @@ const SingleCourse = ({ course }) => {
         >
           {course && course.lessons[0].video && course.lessons[0].video.Location
             ? (
-              <GridItem cs={12} sm={12} md={6}
+              <GridItem xs={11} sm={10} md={6}
                         onClick={() => {
                           setPreview(course.lessons[0].video.Location)
                           setShowModal(!showModal) // toggle modal
                         }}
               >
-                <ReactPlayer
-                  url={course.lessons[0].video.Location}
-                  light={course.image.Location}
-                  width={'100%'}
-                />
+                <div style={{ height: '600px' }}>
+                  <ReactPlayer
+                    url={course.lessons[0].video.Location}
+                    light={course.image.Location}
+                    width={'100%'}
+                    height={'100%'}
+                  />
+                </div>
               </GridItem>
             )
             : (<>
-              <GridItem cs={12} sm={12} md={6}>
+              <GridItem xs={12} sm={12} md={6}>
                 {course && course.image && course.image.Location ?
                   <>
                     <img src={course.image.Location}
                          alt={course.name}
                          width={'100%'}
-                         height={'420px'}
+                         height={'100%'}
                          style={{
                            margin: '2.275rem 0',
                            objectFit: 'cover',
-                           borderRadius: '2rem',
+                           borderRadius: '.5rem',
                          }}
                     />
                   </>
                   : <img src="/images/americoders-course.png"
                          alt={course && course.name}
                          width={'100%'}
-                         height={'420px'}
+                         height={'100%'}
                          style={{ margin: '2.275rem 0', objectFit: 'cover' }}
                   />
                 }
               </GridItem>
             </>)
           }
-          <GridItem cs={12} sm={12} md={6}>
+          <GridItem xs={12} sm={12} md={6}>
             {course && course.lessons && (<>
               <SingleCourseLessons
                 lessons={course.lessons}
