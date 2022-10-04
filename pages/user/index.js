@@ -172,7 +172,7 @@ export default function ProfilePage (props) {
                               {courses && courses.length > 0
                                 ? courses.map(
                                   course => (
-                                    <GridItem xs={12} sm={12} md={4}
+                                    <GridItem xs={10} sm={11} md={4}
                                               key={course._id}
                                               className={classes.marginBottom}>
                                       <Link
