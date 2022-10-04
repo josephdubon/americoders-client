@@ -9,7 +9,7 @@ import makeStyles from '@material-ui/core/styles/makeStyles'
 import Button from '@material-ui/core/Button'
 
 // core components
-import buttonStyle from '/styles/jss/americoders/components/buttonStyle.js'
+import buttonStyle from '../../styles/jss/americoders/components/buttonStyle.js'
 
 const makeComponentStyles = makeStyles(() => ({
   ...buttonStyle,
