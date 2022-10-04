@@ -56,7 +56,7 @@ export default function LandingPage (props) {
       <div style={{ textAlign: 'center' }}>
         <Button
           href={'register'}
-          color="danger"
+          color="primary"
           size="lg"
         >
           <i className="fas fa-play"/>
