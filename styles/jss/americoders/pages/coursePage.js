@@ -29,9 +29,20 @@ const coursePageStyle = {
   },
   title: {
     ...title,
+    fontSize: '2.275rem',
+    textAlign: 'center',
+    display: 'inline-block',
+    position: 'relative',
+    marginTop: '30px',
+    minHeight: '32px',
+    textDecoration: 'none',
+  },
+  titleWhite: {
+    ...title,
     color: '#FFFFFF',
     fontSize: '2.275rem',
     textAlign: 'center',
+    display: 'inline-block',
     position: 'relative',
     marginTop: '30px',
     minHeight: '32px',
@@ -74,8 +85,16 @@ const coursePageStyle = {
     textAlign: 'left',
     margin: '2.5rem auto',
   },
+  subtitleWhite: {
+    color: '#FFFFFF',
+    fontSize: '1rem',
+    fontWeight: '600',
+    textAlign: 'left',
+    margin: '.5rem auto',
+  },
+
   lightSubtitle: {
-    color: '#3C4858',
+    color: '#FFFFFF',
     fontSize: '1rem',
     fontWeight: '400',
     textAlign: 'center',
