@@ -29,7 +29,6 @@ import FeaturedSectionRight
 import Footer from '../components/Footer/Footer'
 
 import Logo from '../public/images/logo/americoders-logo_white.svg'
-import Image from 'next/image'
 import CoursesGrid from '../components/CoursesGrid/CoursesGrid'
 
 const dashboardRoutes = []
@@ -76,13 +75,10 @@ export default function LandingPage (props) {
       to diversify and expand the reach of technology education.
       <br/>
       <br/>
-      We believe in community building and involvement. We want to foster a
-      natural state of dignity, pride, and individual significance in our
-      community.
+      Soon you will be able to register and login with your web3
+      wallet/credentials!
       <br/>
-      <br/>
-      We will soon expand to non-screen IRL workshops. There is a broken bridge
-      between nature and technology. Let's do something about it!
+      Earn POAP badges and NFTs for your participation.
     </>)
   }
 
@@ -117,12 +113,9 @@ export default function LandingPage (props) {
                            alignItems="center"
             >
               <GridItem xs={10} sm={10} md={8}>
-                <Image
-                  src={Logo}
-                  width={800}
-                  height={200}
-                  className={classes.logo}
-                  alt={'Logo for Americoders'}/>
+                <h2 className={classes.title}>
+                  AMERICODERS
+                </h2>
                 <h4 className={classes.subtitle}>
                   {introMessage()}
                 </h4>
