@@ -30,9 +30,9 @@ export default function CoursesSection () {
       <div>
         <GridContainer>
           {/* card start */}
-          <GridItem xs={11} sm={10} md={6}>
+          <GridItem xs={12} sm={10} md={6}>
             <Card plain>
-              <GridItem xs={11} sm={10} md={6} className={classes.itemGrid}>
+              <GridItem xs={12} sm={10} md={6} className={classes.itemGrid}>
                 <img
                   src="/images/thumbnail/americoders-scratch-game.jpg"
                   alt="..."
@@ -53,9 +53,9 @@ export default function CoursesSection () {
           </GridItem>
 
           {/* card start */}
-          <GridItem xs={11} sm={10} md={6}>
+          <GridItem xs={12} sm={10} md={6}>
             <Card plain>
-              <GridItem xs={11} sm={10} md={6} className={classes.itemGrid}>
+              <GridItem xs={12} sm={10} md={6} className={classes.itemGrid}>
                 <img
                   src="/images/thumbnail/americoders-kids-game-happy.jpg"
                   alt="..."
@@ -79,9 +79,9 @@ export default function CoursesSection () {
           </GridItem>
 
           {/* card start */}
-          <GridItem xs={11} sm={10} md={6}>
+          <GridItem xs={12} sm={10} md={6}>
             <Card plain>
-              <GridItem xs={11} sm={10} md={6} className={classes.itemGrid}>
+              <GridItem xs={12} sm={10} md={6} className={classes.itemGrid}>
                 <img
                   src="/images/thumbnail/americoders-old-school-game.jpg"
                   alt="..."
@@ -104,9 +104,9 @@ export default function CoursesSection () {
           </GridItem>
 
           {/* card start */}
-          <GridItem xs={11} sm={10} md={6}>
+          <GridItem xs={12} sm={10} md={6}>
             <Card plain>
-              <GridItem xs={11} sm={10} md={6} className={classes.itemGrid}>
+              <GridItem xs={12} sm={10} md={6} className={classes.itemGrid}>
                 <img
                   src="/images/thumbnail/americoders-technology-unplugged.jpg"
                   alt="..."
@@ -131,9 +131,9 @@ export default function CoursesSection () {
           </GridItem>
 
           {/* card start */}
-          <GridItem xs={11} sm={10} md={6}>
+          <GridItem xs={12} sm={10} md={6}>
             <Card plain>
-              <GridItem xs={11} sm={10} md={6} className={classes.itemGrid}>
+              <GridItem xs={12} sm={10} md={6} className={classes.itemGrid}>
                 <img
                   src="/images/thumbnail/americoders-teen-coding.jpg"
                   alt="..."
@@ -157,9 +157,9 @@ export default function CoursesSection () {
           </GridItem>
 
           {/* card start */}
-          <GridItem xs={11} sm={10} md={6}>
+          <GridItem xs={12} sm={10} md={6}>
             <Card plain>
-              <GridItem xs={11} sm={10} md={6} className={classes.itemGrid}>
+              <GridItem xs={12} sm={10} md={6} className={classes.itemGrid}>
                 <img
                   src="/images/thumbnail/americoders-teen-3d-printing.jpg"
                   alt="..."

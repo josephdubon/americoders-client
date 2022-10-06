@@ -220,8 +220,7 @@ export default function ProfilePage (props) {
                               color={'success'}
                             >
                               <h4 className={classes.titleWhite}
-                                  style={{ fontSize: '1rem' }}>Click Here To
-                                                               View More
+                                  style={{ fontSize: '1rem' }}>View Available
                                                                Courses</h4>
                             </Button>
                           </a>
