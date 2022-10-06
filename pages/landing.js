@@ -89,7 +89,7 @@ export default function LandingPage (props) {
   return (
     <>
       {/* header section / nav */}
-      <PageHead title={'Welcome! We are a tech learning platform.'}/>
+      <PageHead title={'Welcome to Americoders!'}/>
       <Header
         color="transparent"
         routes={dashboardRoutes}
