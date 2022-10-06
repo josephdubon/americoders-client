@@ -77,6 +77,9 @@ const brandFont = {
 
 const markdownStyles = {
   ...defaultFont,
+  '& img': {
+    maxWidth: '75%',
+  },
   '& h1': {
     ...brandFont,
     fontSize: '2.5rem',
@@ -143,34 +146,24 @@ const markdownStyles = {
     listStyle: 'none',
   },
   '& code': {
-    color: '#89ddff',
-    fontSize: '0.875rem',
-    fontWeight: '400',
-    lineHeight: '1.5em',
-    textAlign: 'left',
-    margin: '0 0 1.25rem',
-    borderRadius: '3px',
+    fontSize: '90%',
+    color: '#c7254e',
+    backgroundColor: '#f9f2f4',
+    borderRadius: '4px',
   },
   '& pre': {
+    overflowX: 'auto',
     backgroundColor: '#212121',
     fontSize: '0.875rem',
     fontWeight: '400',
     lineHeight: '1.5em',
     textAlign: 'left',
     margin: '0 0 1.25rem',
+    maxWidth: '50%',
     padding: '1.25rem',
     borderRadius: '3px',
   },
 }
-
-// :root {
-//   --white: #F5F7F6;
-//   --gold: #BF8848;
-//   --blue: #1890ff;
-//   --red: #C3544D;
-//   --dark-blue: #2A2E45;
-//   --purple: #0a0928;
-// }
 
 const primaryColor = '#090979'
 const warningColor = '#a20621'

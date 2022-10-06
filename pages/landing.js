@@ -66,10 +66,30 @@ export default function LandingPage (props) {
     </>)
   }
 
+  function introMessage () {
+    return (<>
+      We are an IRL EdTech Web3 startup. We offer non-age biased in-real-life
+      software engineering workshops.
+      <br/>
+      <br/>
+      Our goal is to make computer science more inviting and engaging. We want
+      to diversify and expand the reach of technology education.
+      <br/>
+      <br/>
+      We believe in community building and involvement. We want to foster a
+      natural state of dignity, pride, and individual significance in our
+      community.
+      <br/>
+      <br/>
+      We will soon expand to non-screen IRL workshops. There is a broken bridge
+      between nature and technology. Let's do something about it!
+    </>)
+  }
+
   return (
     <>
       {/* header section / nav */}
-      <PageHead title={'Welcome! We are a tech learning platform.'}/>
+      <PageHead title={'Welcome to Americoders!'}/>
       <Header
         color="transparent"
         routes={dashboardRoutes}
@@ -104,13 +124,7 @@ export default function LandingPage (props) {
                   className={classes.logo}
                   alt={'Logo for Americoders'}/>
                 <h4 className={classes.subtitle}>
-                  We're a community enrichment program founded in the heart of
-                  the
-                  Biggest Little City in the World, Reno, Nevada.
-                  We believe education should be an experience to foster
-                  growth
-                  &
-                  advancements in STEM, Arts, & Mindfulness Development.
+                  {introMessage()}
                 </h4>
               </GridItem>
             </GridContainer>
