@@ -46,14 +46,14 @@ const PlaygroundFrontEnd = ({ htmlValue }) => {
       />
     </GridItem>
 
-    {/* iframe render area */}
-    <GridItem xs={10} sm={10} md={6} style={{ margin: '2rem 0' }}>
-      <div className={classes.editorRenderBox}>
-        <div className={classes.editorRenderBoxTop}>
-          <span className={classes.editorRenderBoxDot}></span>
-          <span className={classes.editorRenderBoxDot}></span>
-          <span className={classes.editorRenderBoxDot}></span>
-        </div>
+    {/*/!* iframe render area *!/*/}
+    {/*<GridItem xs={10} sm={10} md={6} style={{ margin: '2rem 0' }}>*/}
+    {/*  <div className={classes.editorRenderBox}>*/}
+    {/*    <div className={classes.editorRenderBoxTop}>*/}
+    {/*      <span className={classes.editorRenderBoxDot}></span>*/}
+    {/*      <span className={classes.editorRenderBoxDot}></span>*/}
+    {/*      <span className={classes.editorRenderBoxDot}></span>*/}
+    {/*    </div>*/}
 
         <div className={classes.editorRenderBoxContent}>
           <iframe
