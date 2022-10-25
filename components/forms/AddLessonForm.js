@@ -84,6 +84,19 @@ const AddLessonForm = ({
           placeholder="JavaScript">
         </TextField>
 
+        {/* python */}
+        <TextField
+          label="Python"
+          multiline
+          fullWidth
+          rows={14}
+          onChange={(e) => setValues(
+            { ...values, python: e.target.value })}
+          value={values.python}
+          style={{ margin: '15px 0' }}
+          placeholder="Python">
+        </TextField>
+
         {/* earsketch area */}
         <GridItem xs={12}>
           <p>EarSketch Lesson?</p>
