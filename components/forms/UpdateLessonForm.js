@@ -15,7 +15,7 @@ const UpdateLessonForm = ({
   progress,
 }) => {
   return (
-    <GridItem xs={12} style={{maxHeight: '800px', overflow: 'scroll'}}>
+    <GridItem xs={12} style={{ maxHeight: '800px', overflow: 'scroll' }}>
       {/*{JSON.stringify(current, null, 4)}*/}
       <form onSubmit={handleUpdateLesson}>
 
