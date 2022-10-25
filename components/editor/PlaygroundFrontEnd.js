@@ -34,7 +34,7 @@ const PlaygroundFrontEnd = ({ htmlValue }) => {
 
   return (<>
     {/* editor area */}
-    <GridItem xs={10} sm={10} md={6}>
+    <GridItem xs={12} sm={12} md={12}>
       <AceDynamic
         language={'xml'}
         value={htmlValue}
