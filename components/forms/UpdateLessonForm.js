@@ -83,6 +83,19 @@ const UpdateLessonForm = ({
           placeholder="Javascript">
         </TextField>
 
+        {/* python */}
+        <TextField
+          label="Python"
+          multiline
+          fullWidth
+          rows={14}
+          onChange={(e) => setCurrent(
+            { ...current, python: e.target.value })}
+          value={current.python}
+          style={{ margin: '15px 0' }}
+          placeholder="Python">
+        </TextField>
+
         {/* earsketch area */}
         <GridItem xs={12}>
           <h6>EarSketch Lesson?</h6>
