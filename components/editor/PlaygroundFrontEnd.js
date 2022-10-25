@@ -55,16 +55,16 @@ const PlaygroundFrontEnd = ({ htmlValue }) => {
     {/*      <span className={classes.editorRenderBoxDot}></span>*/}
     {/*    </div>*/}
 
-        <div className={classes.editorRenderBoxContent}>
-          <iframe
-            srcDoc={srcDoc}
-            title={'output'}
-            frameBorder={0}
-            sandbox={'allow-scripts'}
-          />
-        </div>
-      </div>
-    </GridItem>
+    {/*    <div className={classes.editorRenderBoxContent}>*/}
+    {/*      <iframe*/}
+    {/*        srcDoc={srcDoc}*/}
+    {/*        title={'output'}*/}
+    {/*        frameBorder={0}*/}
+    {/*        sandbox={'allow-scripts'}*/}
+    {/*      />*/}
+    {/*    </div>*/}
+    {/*  </div>*/}
+    {/*</GridItem>*/}
   </>)
 }
 
