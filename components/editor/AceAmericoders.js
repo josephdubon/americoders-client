@@ -44,7 +44,7 @@ const AceBasic = (props) => {
                     enableBasicAutocompletion: true,
                     enableLiveAutocompletion: true,
                     showLineNumbers: true,
-                    tabSize: 4
+                    tabSize: 2
                 }}
                 width={'100%'}
             />
