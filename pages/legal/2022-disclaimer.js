@@ -27,7 +27,7 @@ export default function Disclaimer (props) {
       fixed
       changeColorOnScroll={{
         height: 200,
-        color: 'white',
+        color: 'dark',
       }}
       {...rest}
       sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
@@ -50,7 +50,7 @@ export default function Disclaimer (props) {
               </GridItem>
             </GridContainer>
             <GridItem xs={12} sm={12} md={12}>
-              <div name="termly-embed" data-id="d02996a0-fb89-41db-b9af-2fc15c3a7fa6" data-type="iframe"></div>
+              <div name="termly-embed" data-id="d02996a0-fb89-41db-b9af-2fc15c3a7fa6" datatype="iframe"></div>
               <Script type="text/javascript">{`(function(d, s, id) {
                 var js, tjs = d.getElementsByTagName(s)[0];
                 if (d.getElementById(id)) return;

@@ -15,7 +15,7 @@ const UpdateLessonForm = ({
   progress,
 }) => {
   return (
-    <GridItem xs={12} style={{maxHeight: '800px', overflow: 'scroll'}}>
+    <GridItem xs={12} style={{ maxHeight: '800px', overflow: 'scroll' }}>
       {/*{JSON.stringify(current, null, 4)}*/}
       <form onSubmit={handleUpdateLesson}>
 
@@ -81,6 +81,19 @@ const UpdateLessonForm = ({
           value={current.javascript}
           style={{ margin: '15px 0' }}
           placeholder="Javascript">
+        </TextField>
+
+        {/* python */}
+        <TextField
+          label="Python"
+          multiline
+          fullWidth
+          rows={14}
+          onChange={(e) => setCurrent(
+            { ...current, python: e.target.value })}
+          value={current.python}
+          style={{ margin: '15px 0' }}
+          placeholder="Python">
         </TextField>
 
         {/* earsketch area */}

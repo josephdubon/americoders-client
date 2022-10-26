@@ -40,111 +40,105 @@ export default function LandingPage (props) {
   const { ...rest } = props
 
   function announcement () {
-    return (<>
-      <p className={classes.description}>
-        <strong>PROGRAM STARTING SOON</strong>
+    return (
+      <>
+        <p className={ classes.description }>
+          <strong>PROGRAM STARTING SOON</strong>
+          <br/>
+          Join our community as we educate, evolve, and adapt to this new world.
+          Learn to code, create, live, and prosper in this new digital era while
+          keeping intact the ethics and traditions of our old-world.
+        </p>
         <br/>
-        Join our community as we educate, evolve,
-        and adapt to this new world.
-        Learn to code, create, live, and prosper
-        in this new digital era while
-        keeping intact the ethics and traditions
-        of our old-world.
-      </p>
-      <br/>
-      <div style={{ textAlign: 'center' }}>
-        <Button
-          href={'register'}
-          color="primary"
-          size="lg"
-        >
-          <i className="fas fa-play"/>
-          Register Now
-        </Button>
-      </div>
-    </>)
+        <div style={ { textAlign: 'center' } }>
+          <Button href={ 'register' } color="primary" size="lg">
+            <i className="fas fa-play"/>
+            Register Now
+          </Button>
+        </div>
+      </>
+    )
   }
 
   function introMessage () {
-    return (<>
-      We are an IRL EdTech Web3 startup. We offer non-age biased in-real-life
-      software engineering workshops.
-      <br/>
-      <br/>
-      Our goal is to make computer science more inviting and engaging. We want
-      to diversify and expand the reach of technology education.
-      <br/>
-      <br/>
-      Soon you will be able to register and login with your web3
-      wallet/credentials!
-      <br/>
-      Earn POAP badges and NFTs for your participation.
-    </>)
+    return (
+      <>
+        We are an IRL EdTech Web3 startup. We offer non-age biased in-real-life
+        software engineering workshops.
+        <br/>
+        <br/>
+        Our goal is to make computer science more inviting and engaging. We want
+        to diversify and expand the reach of technology education.
+        <br/>
+        <br/>
+        Soon you will be able to register and login with your web3
+        wallet/credentials!
+        <br/>
+        Earn POAP badges and NFTs for your participation.
+      </>
+    )
   }
 
   return (
     <>
-      {/* header section / nav */}
-      <PageHead title={'Welcome to Americoders!'}/>
+      {/* header section / nav */ }
+      <PageHead title={ 'Welcome to Americoders!' }/>
       <Header
         color="transparent"
-        routes={dashboardRoutes}
-        brand={Logo}
-        rightLinks={<HeaderLinks/>}
+        routes={ dashboardRoutes }
+        brand={ Logo }
+        rightLinks={ <HeaderLinks/> }
         fixed
-        changeColorOnScroll={{
+        changeColorOnScroll={ {
           height: 400,
           color: 'dark',
-        }}
-        {...rest}
+        } }
+        { ...rest }
       />
 
-      {/* hero section */}
-      <Parallax filter responsive
-                image="/images/original/reno_downtown.png">
-        <div className={classes.container}>
+      {/* hero section */ }
+      <Parallax filter responsive image="/images/original/reno_downtown.png">
+        <div className={ classes.container }>
           <GridContainer
             direction="row"
             justifyContent="center"
             alignItems="center"
           >
-            <GridContainer direction="row"
-                           justifyContent="center"
-                           alignItems="center"
+            <GridContainer
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
             >
-              <GridItem xs={10} sm={10} md={8}>
-                <h2 className={classes.title}>
-                  AMERICODERS
-                </h2>
-                <h4 className={classes.subtitle}>
-                  {introMessage()}
-                </h4>
+              <GridItem xs={ 10 } sm={ 10 } md={ 8 }>
+                <h2 className={ classes.title }>AMERICODERS</h2>
+                <h4 className={ classes.subtitle }>{ introMessage() }</h4>
               </GridItem>
             </GridContainer>
           </GridContainer>
         </div>
       </Parallax>
 
-      <div className={classNames(classes.main, classes.mainRaised)}>
-        <div className={classes.container}>
+      <div className={ classNames(classes.main, classes.mainRaised) }>
+        <div className={ classes.container }>
+          {/* intro section */ }
+          <FeatureSection id={ 'more-info' }/>
 
-          {/* intro section */}
-          <FeatureSection id={'more-info'}/>
+          {/* live courses and events section */ }
+          <CoursesGrid id="workshops" courses={ props.courses }/>
 
-          {/* live courses and events section */}
-          <CoursesGrid id="workshops" courses={props.courses}/>
-
-          {/* join mailing list area */}
+          {/* join mailing list area */ }
           <MailingListSection/>
 
-          {/* course examples section */}
+          {/* course examples section */ }
           <CoursesSection/>
 
-          {/*  announcement section */}
-          <FeaturedSectionRight title={'Fall Semester 2022'}
-                                description={announcement()}
-                                imageUrl={'/images/original/americoders-kids-laptop-fun.jpg'}
-                                imgAlt={'americoders-robotics-project-student'}/>
+          {/*  announcement section */ }
+          <FeaturedSectionRight
+            title={ 'Fall Semester 2022' }
+            description={ announcement() }
+            imageUrl={ '/images/original/americoders-kids-laptop-fun.jpg' }
+            imgAlt={ 'americoders-robotics-project-student' }
+          />
         </div>
       </div>
       <Footer/>
@@ -154,7 +148,7 @@ export default function LandingPage (props) {
 
 export async function getServerSideProps () {
   // collect courses data
-  const { data } = await axios.get(`${process.env.API}/courses`) // full path of server here
+  const { data } = await axios.get(`${ process.env.API }/courses`) // full path of server here
 
   // console.log(data)
   return {

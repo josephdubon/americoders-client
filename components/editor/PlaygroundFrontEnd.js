@@ -34,7 +34,7 @@ const PlaygroundFrontEnd = ({ htmlValue }) => {
 
   return (<>
     {/* editor area */}
-    <GridItem xs={10} sm={10} md={6}>
+    <GridItem xs={12} sm={12} md={12}>
       <AceDynamic
         language={'xml'}
         value={htmlValue}
@@ -46,25 +46,25 @@ const PlaygroundFrontEnd = ({ htmlValue }) => {
       />
     </GridItem>
 
-    {/* iframe render area */}
-    <GridItem xs={10} sm={10} md={6} style={{ margin: '2rem 0' }}>
-      <div className={classes.editorRenderBox}>
-        <div className={classes.editorRenderBoxTop}>
-          <span className={classes.editorRenderBoxDot}></span>
-          <span className={classes.editorRenderBoxDot}></span>
-          <span className={classes.editorRenderBoxDot}></span>
-        </div>
+    {/*/!* iframe render area *!/*/}
+    {/*<GridItem xs={10} sm={10} md={6} style={{ margin: '2rem 0' }}>*/}
+    {/*  <div className={classes.editorRenderBox}>*/}
+    {/*    <div className={classes.editorRenderBoxTop}>*/}
+    {/*      <span className={classes.editorRenderBoxDot}></span>*/}
+    {/*      <span className={classes.editorRenderBoxDot}></span>*/}
+    {/*      <span className={classes.editorRenderBoxDot}></span>*/}
+    {/*    </div>*/}
 
-        <div className={classes.editorRenderBoxContent}>
-          <iframe
-            srcDoc={srcDoc}
-            title={'output'}
-            frameBorder={0}
-            sandbox={'allow-scripts'}
-          />
-        </div>
-      </div>
-    </GridItem>
+    {/*    <div className={classes.editorRenderBoxContent}>*/}
+    {/*      <iframe*/}
+    {/*        srcDoc={srcDoc}*/}
+    {/*        title={'output'}*/}
+    {/*        frameBorder={0}*/}
+    {/*        sandbox={'allow-scripts'}*/}
+    {/*      />*/}
+    {/*    </div>*/}
+    {/*  </div>*/}
+    {/*</GridItem>*/}
   </>)
 }
 

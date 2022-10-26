@@ -130,7 +130,7 @@ const SingleCourse = (props, { courses }) => {
           fixed
           changeColorOnScroll={{
             height: 400,
-            color: 'white',
+            color: 'dark',
           }}
           {...rest}
         />
