@@ -27,7 +27,7 @@ export default function TermsAndConditions (props) {
       fixed
       changeColorOnScroll={{
         height: 200,
-        color: 'white',
+        color: 'dark',
       }}
       {...rest}
       sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
