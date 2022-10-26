@@ -132,14 +132,16 @@ const CourseCreateForm = ({
               color={'success'}
               size={'md'}
             >
-              {uploadButtonText}
-              <input
-                type="file"
-                name="image"
-                accept="image/*"
-                onChange={handleImage}
-                hidden
-              />
+              <label style={{ color: '#fff' }}>
+                {uploadButtonText}
+                <input
+                  type="file"
+                  name="image"
+                  accept="image/*"
+                  onChange={handleImage}
+                  hidden
+                />
+              </label>
             </Button>
           </GridContainer>
 
