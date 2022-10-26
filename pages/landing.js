@@ -2,7 +2,7 @@ import React from 'react'
 // nodejs library that concatenates classes
 import classNames from 'classnames'
 // @material-ui/core components
-import { makeStyles } from '@material-ui/core/styles'
+import {makeStyles} from '@material-ui/core/styles'
 
 // @material-ui/icons
 // core components
@@ -16,16 +16,12 @@ import Parallax from '../components/Parallax/Parallax.js'
 import styles from '../styles/jss/americoders/pages/landingPage.js'
 
 // Sections for this page
-import FeatureSection
-  from '../pages-sections/LandingPage-Sections/FeatureSection.js'
-import CoursesSection
-  from '../pages-sections/LandingPage-Sections/CoursesSection.js'
-import MailingListSection
-  from '../pages-sections/LandingPage-Sections/MailingListSection.js'
-import { PageHead } from '../components/PageHead/PageHead'
+import FeatureSection from '../pages-sections/LandingPage-Sections/FeatureSection.js'
+import CoursesSection from '../pages-sections/LandingPage-Sections/CoursesSection.js'
+import MailingListSection from '../pages-sections/LandingPage-Sections/MailingListSection.js'
+import {PageHead} from '../components/PageHead/PageHead'
 import axios from 'axios'
-import FeaturedSectionRight
-  from '../components/FeaturedSectionRight/FeaturedSectionRight'
+import FeaturedSectionRight from '../components/FeaturedSectionRight/FeaturedSectionRight'
 import Footer from '../components/Footer/Footer'
 
 import Logo from '../public/images/logo/americoders-logo_white.svg'
@@ -35,62 +31,59 @@ const dashboardRoutes = []
 
 const useStyles = makeStyles(styles)
 
-export default function LandingPage (props) {
+export default function LandingPage(props) {
   const classes = useStyles()
-  const { ...rest } = props
+  const {...rest} = props
 
-  function announcement () {
-    return (<>
-      <p className={classes.description}>
-        <strong>PROGRAM STARTING SOON</strong>
-        <br/>
-        Join our community as we educate, evolve,
-        and adapt to this new world.
-        Learn to code, create, live, and prosper
-        in this new digital era while
-        keeping intact the ethics and traditions
-        of our old-world.
-      </p>
-      <br/>
-      <div style={{ textAlign: 'center' }}>
-        <Button
-          href={'register'}
-          color="primary"
-          size="lg"
-        >
-          <i className="fas fa-play"/>
-          Register Now
-        </Button>
-      </div>
-    </>)
+  function announcement() {
+    return (
+      <>
+        <p className={classes.description}>
+          <strong>PROGRAM STARTING SOON</strong>
+          <br />
+          Join our community as we educate, evolve, and adapt to this new world.
+          Learn to code, create, live, and prosper in this new digital era while
+          keeping intact the ethics and traditions of our old-world.
+        </p>
+        <br />
+        <div style={{textAlign: 'center'}}>
+          <Button href={'register'} color="primary" size="lg">
+            <i className="fas fa-play" />
+            Register Now
+          </Button>
+        </div>
+      </>
+    )
   }
 
-  function introMessage () {
-    return (<>
-      We are an IRL EdTech Web3 startup. We offer non-age biased in-real-life
-      software engineering workshops.
-      <br/>
-      <br/>
-      Our goal is to make computer science more inviting and engaging. We want
-      to diversify and expand the reach of technology education.
-      <br/>
-      <br/>
-      Soon you will be able to register and login with your web3
-      wallet/credentials!
-      <br/>
-      Earn POAP badges and NFTs for your participation.
-    </>)
+  function introMessage() {
+    return (
+      <>
+        We are an IRL EdTech Web3 startup. We offer non-age biased in-real-life
+        software engineering workshops.
+        <br />
+        <br />
+        Our goal is to make computer science more inviting and engaging. We want
+        to diversify and expand the reach of technology education.
+        <br />
+        <br />
+        Soon you will be able to register and login with your web3
+        wallet/credentials!
+        <br />
+        Earn POAP badges and NFTs for your participation.
+      </>
+    )
   }
 
   return (
     <>
       {/* header section / nav */}
-      <PageHead title={'Welcome to Americoders!'}/>
+      <PageHead title={'Welcome to Americoders!'} />
       <Header
         color="transparent"
         routes={dashboardRoutes}
         brand={Logo}
-        rightLinks={<HeaderLinks/>}
+        rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
           height: 400,
@@ -100,25 +93,21 @@ export default function LandingPage (props) {
       />
 
       {/* hero section */}
-      <Parallax filter responsive
-                image="/images/original/reno_downtown.png">
+      <Parallax filter responsive image="/images/original/reno_downtown.png">
         <div className={classes.container}>
           <GridContainer
             direction="row"
             justifyContent="center"
             alignItems="center"
           >
-            <GridContainer direction="row"
-                           justifyContent="center"
-                           alignItems="center"
+            <GridContainer
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
             >
               <GridItem xs={10} sm={10} md={8}>
-                <h2 className={classes.title}>
-                  AMERICODERS
-                </h2>
-                <h4 className={classes.subtitle}>
-                  {introMessage()}
-                </h4>
+                <h2 className={classes.title}>AMERICODERS</h2>
+                <h4 className={classes.subtitle}>{introMessage()}</h4>
               </GridItem>
             </GridContainer>
           </GridContainer>
@@ -127,34 +116,35 @@ export default function LandingPage (props) {
 
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-
           {/* intro section */}
-          <FeatureSection id={'more-info'}/>
+          <FeatureSection id={'more-info'} />
 
           {/* live courses and events section */}
-          <CoursesGrid id="workshops" courses={props.courses}/>
+          <CoursesGrid id="workshops" courses={props.courses} />
 
           {/* join mailing list area */}
-          <MailingListSection/>
+          <MailingListSection />
 
           {/* course examples section */}
-          <CoursesSection/>
+          <CoursesSection />
 
           {/*  announcement section */}
-          <FeaturedSectionRight title={'Fall Semester 2022'}
-                                description={announcement()}
-                                imageUrl={'/images/original/americoders-kids-laptop-fun.jpg'}
-                                imgAlt={'americoders-robotics-project-student'}/>
+          <FeaturedSectionRight
+            title={'Fall Semester 2022'}
+            description={announcement()}
+            imageUrl={'/images/original/americoders-kids-laptop-fun.jpg'}
+            imgAlt={'americoders-robotics-project-student'}
+          />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   )
 }
 
-export async function getServerSideProps () {
+export async function getServerSideProps() {
   // collect courses data
-  const { data } = await axios.get(`${process.env.API}/courses`) // full path of server here
+  const {data} = await axios.get(`${process.env.API}/courses`) // full path of server here
 
   // console.log(data)
   return {
