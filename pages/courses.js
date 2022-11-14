@@ -25,13 +25,13 @@ const dashboardRoutes = []
 
 const useStyles = makeStyles(styles)
 
-export default function WorkshopsPage (props) {
+export default function CoursesPage (props) {
   const classes = useStyles()
   const { ...rest } = props
 
   return (<>
       {/* header section / nav */}
-      <PageHead title={'Upcoming IRL Workshops'}/>
+      <PageHead title={'Online Courses'}/>
       <Header
         color="transparent"
         routes={dashboardRoutes}
@@ -60,11 +60,17 @@ export default function WorkshopsPage (props) {
             >
               <GridItem xs={11} sm={10}>
                 <h1 className={classes.titleWhite}>
-                  IRL Workshops
+                  Online Courses
                 </h1>
                 <h4 className={classes.subtitleWhite}>
-                  Check out our upcoming in-real-life workshops, we are excited
-                  to see you there!
+                  Welcome to our library of online courses.
+                  <br/>
+                  <br/>
+                  Please feel free to look around and sign up for any of our
+                  courses.
+                  <br/>
+                  <br/>
+                  We look forward to learning with you!
                 </h4>
               </GridItem>
             </GridContainer>
@@ -88,14 +94,10 @@ export async function getServerSideProps () {
   // collect courses data
   const { data } = await axios.get(`${process.env.API}/courses`) // full path of server here
 
-  // console.log(data)
+  // return data if props.tag is 'workshop'
   return {
-    // props: {
-    //   courses: data, // return data as props
-    // },
-    // return data if props.tag is 'workshop'
     props: {
-      courses: data.filter((course) => course.category.includes('workshop')),
+      courses: data.filter((course) => course.category.includes('course')),
     },
   }
 }

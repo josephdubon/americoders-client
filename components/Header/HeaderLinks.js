@@ -1,26 +1,26 @@
 /*eslint-disable*/
-import React, { useContext, useEffect, useState } from 'react'
+import Icon from '@material-ui/core/Icon'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
 
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
 import Tooltip from '@material-ui/core/Tooltip'
-import Icon from '@material-ui/core/Icon'
 
 // @material-ui/icons
 import { HowToReg, PersonOutline, School } from '@material-ui/icons'
+import axios from 'axios'
+import Link from 'next/link'
+import useRouter from 'next/router'
+import React, { useContext, useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
 
 // core components
 import Button from '../../components/CustomButtons/Button.js'
+import { Context } from '../../context'
 
 import styles from '../../styles/jss/americoders/components/headerLinksStyle.js'
-import { Context } from '../../context'
-import useRouter from 'next/router'
-import axios from 'axios'
-import Link from 'next/link'
 import CustomDropdown from '../CustomDropdown/CustomDropdown'
-import { toast } from 'react-toastify'
 
 const useStyles = makeStyles(styles)
 
@@ -72,14 +72,24 @@ export default function HeaderLinks (props) {
 
       {/* courses link */}
       <ListItem className={classes.listItem}>
-        <Link href={'/workshops'}>
-          <Button
-            color="transparent"
-            className={classes.navLink}
-          >
-            <Icon className={classes.icons}>terminal</Icon> IRL Workshops
-          </Button>
-        </Link>
+        <CustomDropdown
+          noLiPadding
+          navDropdown
+          buttonText={'Library'}
+          buttonProps={{
+            className: classes.navLink,
+            color: 'transparent',
+          }}
+          buttonIcon={School}
+          dropdownList={[
+            <Link href={'/workshops'}>
+              <a className={classes.dropdownLink}>IRL Workshops</a>
+            </Link>,
+            <Link href={'/courses'}>
+              <a className={classes.dropdownLink}>Online Courses</a>
+            </Link>,
+          ]}
+        />
       </ListItem>
 
       {/* not logged in user menu */}
@@ -176,7 +186,6 @@ export default function HeaderLinks (props) {
 
               ]}
             />
-
           </ListItem>
         </>
       )}
