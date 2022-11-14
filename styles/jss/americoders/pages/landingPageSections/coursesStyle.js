@@ -42,6 +42,14 @@ const coursesStyle = {
   margin5: {
     margin: '5px',
   },
+  imageBox: {
+    width: '600px',
+    height: '600px',
+  },
+  image: {
+    borderRadius: '2rem',
+    objectFit: 'contain',
+  },
 }
 
 export default coursesStyle

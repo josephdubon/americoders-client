@@ -1,26 +1,26 @@
-import React, { useContext, useEffect, useState } from 'react'
-import axios from 'axios'
-import { useRouter } from 'next/router'
-import SingleCourseHero from '../../components/CourseCard/SingleCourseHero'
-import PreviewModal from '../../components/modal/PreviewModal'
-import SingleCourseLessons
-  from '../../components/CourseCard/SingleCourseLessons'
-import { Context } from '../../context'
-import { toast } from 'react-toastify'
-import { loadStripe } from '@stripe/stripe-js'
-import { PageHead } from '../../components/head/PageHead'
-import classNames from 'classnames'
-import GridContainer from '../../components/Grid/GridContainer'
-import GridItem from '../../components/Grid/GridItem'
-import ReactPlayer from 'react-player'
-import Footer from '../../components/Footer/Footer'
 import { makeStyles } from '@material-ui/core/styles'
-import styles from '../../styles/jss/americoders/pages/landingPage'
-import CoursesFeatureSection
-  from '../../pages-sections/CoursesPage-Sections/CoursesFeatureSection'
 import { Check, HourglassFull } from '@material-ui/icons'
 import { Tooltip } from '@mui/material'
+import { loadStripe } from '@stripe/stripe-js'
+import axios from 'axios'
+import classNames from 'classnames'
+import { useRouter } from 'next/router'
+import React, { useContext, useEffect, useState } from 'react'
+import ReactPlayer from 'react-player'
+import { toast } from 'react-toastify'
+import SingleCourseHero from '../../components/CourseCard/SingleCourseHero'
+import SingleCourseLessons
+  from '../../components/CourseCard/SingleCourseLessons'
 import Button from '../../components/CustomButtons/Button'
+import Footer from '../../components/Footer/Footer'
+import GridContainer from '../../components/Grid/GridContainer'
+import GridItem from '../../components/Grid/GridItem'
+import { PageHead } from '../../components/head/PageHead'
+import PreviewModal from '../../components/modal/PreviewModal'
+import { Context } from '../../context'
+import CoursesFeatureSection
+  from '../../pages-sections/CoursesPage-Sections/CoursesFeatureSection'
+import styles from '../../styles/jss/americoders/pages/landingPage'
 
 const Stripe = require('stripe')
 
@@ -248,50 +248,28 @@ const SingleCourse = ({ course }) => {
           justifyContent="center"
           alignItems="center"
         >
-          {course && course.lessons[0].video && course.lessons[0].video.Location
+
+          {course && course.lessons[0].video &&
+          course.lessons[0].video.Location
             ? (
-              <GridItem xs={11} sm={10} md={6}
+              <GridItem xs={12} sm={12} md={12}
                         onClick={() => {
                           setPreview(course.lessons[0].video.Location)
                           setShowModal(!showModal) // toggle modal
                         }}
               >
-                <div style={{ height: '600px' }}>
-                  <ReactPlayer
-                    url={course.lessons[0].video.Location}
-                    light={course.image.Location}
-                    width={'100%'}
-                    height={'100%'}
-                  />
-                </div>
+                <ReactPlayer
+                  url={course.lessons[0].video.Location}
+                  // light={course.image.Location} TODO: add thumbnail for video preview
+                  width="100%"
+                  height="360px"
+                />
               </GridItem>
             )
             : (<>
-              <GridItem xs={12} sm={12} md={6}>
-                {course && course.image && course.image.Location ?
-                  <>
-                    <img src={course.image.Location}
-                         alt={course.name}
-                         width={'100%'}
-                         height={'100%'}
-                         style={{
-                           margin: '2.275rem 0',
-                           objectFit: 'cover',
-                           borderRadius: '.5rem',
-                         }}
-                    />
-                  </>
-                  : <img src="/images/americoders-course.png"
-                         alt={course && course.name}
-                         width={'100%'}
-                         height={'100%'}
-                         style={{ margin: '2.275rem 0', objectFit: 'cover' }}
-                  />
-                }
-              </GridItem>
             </>)
           }
-          <GridItem xs={12} sm={12} md={6}>
+          <GridItem xs={12} sm={12} md={12}>
             {course && course.lessons && (<>
               <SingleCourseLessons
                 lessons={course.lessons}
