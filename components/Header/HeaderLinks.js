@@ -72,14 +72,24 @@ export default function HeaderLinks (props) {
 
       {/* courses link */}
       <ListItem className={classes.listItem}>
-        <Link href={'/workshops'}>
-          <Button
-            color="transparent"
-            className={classes.navLink}
-          >
-            <Icon className={classes.icons}>terminal</Icon> IRL Workshops
-          </Button>
-        </Link>
+        <CustomDropdown
+          noLiPadding
+          navDropdown
+          buttonText={'Library'}
+          buttonProps={{
+            className: classes.navLink,
+            color: 'transparent',
+          }}
+          buttonIcon={School}
+          dropdownList={[
+            <Link href={'/workshops'}>
+              <a className={classes.dropdownLink}>IRL Workshops</a>
+            </Link>,
+            <Link href={'/courses'}>
+              <a className={classes.dropdownLink}>Online Courses</a>
+            </Link>,
+          ]}
+        />
       </ListItem>
 
       {/* not logged in user menu */}
