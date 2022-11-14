@@ -1,15 +1,14 @@
-import React from 'react'
-import styles
-  from '../../styles/jss/americoders/pages/landingPageSections/productStyle.js'
 import { makeStyles } from '@material-ui/core/styles'
 import Image from 'next/image'
+import React from 'react'
+import styles
+  from '../../styles/jss/americoders/pages/landingPageSections/coursesStyle.js'
 import GridContainer from '../Grid/GridContainer'
 import GridItem from '../Grid/GridItem'
 
 const useStyles = makeStyles(styles)
 
 export default function CoursesFeaturedSectionCenter ({
-  title,
   description,
   imageUrl,
   imageAlt,
@@ -34,10 +33,12 @@ export default function CoursesFeaturedSectionCenter ({
                 width={800}
                 height={800}
                 alt={imageAlt}
+                layout="fill"
                 className={classes.image}
               />
             </div>
           </GridItem>
+
           <GridItem xs={10} sm={11} md={11}>
             <h5 className={classes.description}>
               {description}
