@@ -32,14 +32,20 @@ export default function CoursesGrid (props) {
         >
           <GridItem xs={10} sm={11} md={12}>
             {/* title */}
-            <h2 className={classes.sectionTitle}>
-              Upcoming IRL Workshops: {props.courses.length}
-            </h2>
+
+            {props.courses.length < 1 ?
+              <h2 className={classes.sectionTitle}>
+                Nothing scheduled</h2>
+              :
+              <h2 className={classes.sectionTitle}>
+                Active Listings: {props.courses.length}
+              </h2>
+            }
           </GridItem>
 
           {/* loop through the published courses */}
           {props.courses.map(course => (
-              <GridItem xs={10} sm={11} md={6} key={course._id}>
+              <GridItem xs={10} sm={11} md={4} key={course._id}>
                 <p style={{ color: 'black' }}>
                   {/*{JSON.stringify(course, null, 2)}*/}
                 </p>
