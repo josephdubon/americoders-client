@@ -90,8 +90,12 @@ export async function getServerSideProps () {
 
   // console.log(data)
   return {
+    // props: {
+    //   courses: data, // return data as props
+    // },
+    // return data if props.tag is 'workshop'
     props: {
-      courses: data, // return data as props
+      courses: data.filter((course) => course.category.includes('workshop')),
     },
   }
 }
