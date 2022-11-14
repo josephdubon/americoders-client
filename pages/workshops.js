@@ -1,25 +1,25 @@
-import React from 'react'
-// nodejs library that concatenates classes
-import classNames from 'classnames'
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles'
+import axios from 'axios'
+// nodejs library that concatenates classes
+import classNames from 'classnames'
+import React from 'react'
+import CoursesGrid from '../components/CoursesGrid/CoursesGrid'
+import Footer from '../components/Footer/Footer'
+import GridContainer from '../components/Grid/GridContainer.js'
+import GridItem from '../components/Grid/GridItem.js'
 
 // @material-ui/icons
 // core components
 import Header from '../components/Header/Header.js'
-import GridContainer from '../components/Grid/GridContainer.js'
-import GridItem from '../components/Grid/GridItem.js'
 import HeaderLinks from '../components/Header/HeaderLinks.js'
-import Parallax from '../components/Parallax/Parallax.js'
-
-import styles from '../styles/jss/americoders/pages/coursePage.js'
 
 // Sections for this page
 import { PageHead } from '../components/PageHead/PageHead'
-import axios from 'axios'
-import Footer from '../components/Footer/Footer'
+import Parallax from '../components/Parallax/Parallax.js'
 import NavLogo from '../public/images/logo/americoders-logo-simple_white.svg'
-import CoursesGrid from '../components/CoursesGrid/CoursesGrid'
+
+import styles from '../styles/jss/americoders/pages/coursePage.js'
 
 const dashboardRoutes = []
 
