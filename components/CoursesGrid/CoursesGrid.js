@@ -38,7 +38,7 @@ export default function CoursesGrid (props) {
                 Nothing scheduled</h2>
               :
               <h2 className={classes.sectionTitle}>
-                Active Listings: {props.courses.length}
+                Active in Library: {props.courses.length}
               </h2>
             }
           </GridItem>
