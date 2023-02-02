@@ -16,20 +16,17 @@ import Parallax from '../components/Parallax/Parallax.js'
 import styles from '../styles/jss/americoders/pages/landingPage.js'
 
 // Sections for this page
-import FeatureSection
-  from '../pages-sections/LandingPage-Sections/FeatureSection.js'
-import CoursesSection
-  from '../pages-sections/LandingPage-Sections/CoursesSection.js'
-import MailingListSection
-  from '../pages-sections/LandingPage-Sections/MailingListSection.js'
+import FeatureSection from '../pages-sections/LandingPage-Sections/FeatureSection.js'
+import CoursesSection from '../pages-sections/LandingPage-Sections/CoursesSection.js'
+import MailingListSection from '../pages-sections/LandingPage-Sections/MailingListSection.js'
 import { PageHead } from '../components/PageHead/PageHead'
 import axios from 'axios'
-import FeaturedSectionRight
-  from '../components/FeaturedSectionRight/FeaturedSectionRight'
+import FeaturedSectionRight from '../components/FeaturedSectionRight/FeaturedSectionRight'
 import Footer from '../components/Footer/Footer'
 
 import Logo from '../public/images/logo/americoders-logo_white.svg'
 import CoursesGrid from '../components/CoursesGrid/CoursesGrid'
+import Link from 'next/link'
 
 const dashboardRoutes = []
 
@@ -42,16 +39,18 @@ export default function LandingPage (props) {
   function announcement () {
     return (
       <>
-        <p className={ classes.description }>
-          <strong>PROGRAM STARTING SOON</strong>
+        <p className={classes.description}>
+          <strong>Join us on our game dev adventures!</strong>
           <br/>
-          Join our community as we educate, evolve, and adapt to this new world.
-          Learn to code, create, live, and prosper in this new digital era while
-          keeping intact the ethics and traditions of our old-world.
+          Bringing the 80s back, one game at a time. Come join our workshops for old-school fun!
+          <br/>
+          <br/>
+          Develop retro arcade
+          style games in real life workshops. Get your 8-bit fix here!
         </p>
         <br/>
-        <div style={ { textAlign: 'center' } }>
-          <Button href={ 'register' } color="primary" size="lg">
+        <div style={{ textAlign: 'center' }}>
+          <Button href={'register'} color="primary" size="lg">
             <i className="fas fa-play"/>
             Register Now
           </Button>
@@ -63,42 +62,45 @@ export default function LandingPage (props) {
   function introMessage () {
     return (
       <>
-        We are an IRL EdTech Web3 startup. We offer non-age biased in-real-life
-        software engineering workshops.
-        <br/>
-        <br/>
-        Our goal is to make computer science more inviting and engaging. We want
-        to diversify and expand the reach of technology education.
-        <br/>
-        <br/>
-        Soon you will be able to register and login with your web3
-        wallet/credentials!
-        <br/>
-        Earn POAP badges and NFTs for your participation.
+        <p className={classes.intro} style={{ fontWeight: '400', textAlign: 'left', textTransform: 'none' }}>
+          We are an EdTech startup striving to make computer science more accessible and engaging.
+          <br/>
+          Our goal is to diversify and expand technology education.
+          <br/>
+          <br/>
+          Our workshops offer non-age biased software
+          engineering, game dev, and music production.
+        </p>
+
+        <Link href='/#workshops' scroll={false}>
+          <Button color="primary" size="lg">
+            View Our Active Workshops
+          </Button>
+        </Link>
       </>
     )
   }
 
   return (
     <>
-      {/* header section / nav */ }
-      <PageHead title={ 'Welcome to Americoders!' }/>
+      {/* header section / nav */}
+      <PageHead title={'Welcome to Americoders!'}/>
       <Header
         color="transparent"
-        routes={ dashboardRoutes }
-        brand={ Logo }
-        rightLinks={ <HeaderLinks/> }
+        routes={dashboardRoutes}
+        brand={Logo}
+        rightLinks={<HeaderLinks/>}
         fixed
-        changeColorOnScroll={ {
+        changeColorOnScroll={{
           height: 400,
           color: 'dark',
-        } }
-        { ...rest }
+        }}
+        {...rest}
       />
 
-      {/* hero section */ }
+      {/* hero section */}
       <Parallax filter responsive image="/images/original/reno_downtown.png">
-        <div className={ classes.container }>
+        <div className={classes.container}>
           <GridContainer
             direction="row"
             justifyContent="center"
@@ -109,35 +111,35 @@ export default function LandingPage (props) {
               justifyContent="center"
               alignItems="center"
             >
-              <GridItem xs={ 10 } sm={ 10 } md={ 8 }>
-                <h2 className={ classes.title }>AMERICODERS</h2>
-                <h4 className={ classes.subtitle }>{ introMessage() }</h4>
+              <GridItem xs={10} sm={10} md={8}>
+                <h2 className={classes.title}>AMERICODERS</h2>
+                <h4 className={classes.subtitle}>{introMessage()}</h4>
               </GridItem>
             </GridContainer>
           </GridContainer>
         </div>
       </Parallax>
 
-      <div className={ classNames(classes.main, classes.mainRaised) }>
-        <div className={ classes.container }>
-          {/* intro section */ }
-          <FeatureSection id={ 'more-info' }/>
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        <div className={classes.container}>
+          {/* intro section */}
+          <FeatureSection id={'more-info'}/>
 
-          {/* live courses and events section */ }
-          <CoursesGrid id="workshops" courses={ props.courses }/>
+          {/* live courses and events section */}
+          <CoursesGrid id="workshops" courses={props.courses}/>
 
-          {/* join mailing list area */ }
+          {/* join mailing list area */}
           <MailingListSection/>
 
-          {/* course examples section */ }
+          {/* course examples section */}
           <CoursesSection/>
 
-          {/*  announcement section */ }
+          {/*  announcement section */}
           <FeaturedSectionRight
-            title={ 'Fall Semester 2022' }
-            description={ announcement() }
-            imageUrl={ '/images/original/americoders-kids-laptop-fun.jpg' }
-            imgAlt={ 'americoders-robotics-project-student' }
+            title={'Winter Workshops 2023'}
+            description={announcement()}
+            imageUrl={'/images/arcade/retro-gaming-americoders-workshops.png'}
+            imgAlt={'americoders-robotics-project-student'}
           />
         </div>
       </div>
@@ -148,7 +150,7 @@ export default function LandingPage (props) {
 
 export async function getServerSideProps () {
   // collect courses data
-  const { data } = await axios.get(`${ process.env.API }/courses`) // full path of server here
+  const { data } = await axios.get(`${process.env.API}/courses`) // full path of server here
 
   // console.log(data)
   return {
