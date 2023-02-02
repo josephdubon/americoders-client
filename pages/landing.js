@@ -62,18 +62,21 @@ export default function LandingPage (props) {
   function introMessage () {
     return (
       <>
-        We are an IRL EdTech Web3 startup. We offer non-age biased in-real-life
-        software engineering workshops.
-        <br/>
-        <br/>
-        Our goal is to make computer science more inviting and engaging. We want
-        to diversify and expand the reach of technology education.
-        <br/>
-        <br/>
-        Soon you will be able to register and login with your web3
-        wallet/credentials!
-        <br/>
-        Earn POAP badges and NFTs for your participation.
+        <p className={classes.intro} style={{ fontWeight: '400', textAlign: 'left', textTransform: 'none' }}>
+          We are an EdTech startup striving to make computer science more accessible and engaging.
+          <br/>
+          Our goal is to diversify and expand technology education.
+          <br/>
+          <br/>
+          Our workshops offer non-age biased software
+          engineering, game dev, and music production.
+        </p>
+
+        <Link href='/#workshops' scroll={false}>
+          <Button color="primary" size="lg">
+            View Our Active Workshops
+          </Button>
+        </Link>
       </>
     )
   }
