@@ -49,8 +49,8 @@ export default function LandingPage (props) {
           style games in real life workshops. Get your 8-bit fix here!
         </p>
         <br/>
-        <div style={ { textAlign: 'center' } }>
-          <Button href={ 'register' } color="primary" size="lg">
+        <div style={{ textAlign: 'center' }}>
+          <Button href={'register'} color="primary" size="lg">
             <i className="fas fa-play"/>
             Register Now
           </Button>
