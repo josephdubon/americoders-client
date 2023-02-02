@@ -148,7 +148,7 @@ export default function LandingPage (props) {
 
 export async function getServerSideProps () {
   // collect courses data
-  const { data } = await axios.get(`${ process.env.API }/courses`) // full path of server here
+  const { data } = await axios.get(`${process.env.API}/courses`) // full path of server here
 
   // console.log(data)
   return {
