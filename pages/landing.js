@@ -42,12 +42,14 @@ export default function LandingPage (props) {
   function announcement () {
     return (
       <>
-        <p className={ classes.description }>
-          <strong>PROGRAM STARTING SOON</strong>
+        <p className={classes.description}>
+          <strong>Join us on our game dev adventures!</strong>
           <br/>
-          Join our community as we educate, evolve, and adapt to this new world.
-          Learn to code, create, live, and prosper in this new digital era while
-          keeping intact the ethics and traditions of our old-world.
+          Bringing the 80s back, one game at a time. Come join our workshops for old-school fun!
+          <br/>
+          <br/>
+          Develop retro arcade
+          style games in real life workshops. Get your 8-bit fix here!
         </p>
         <br/>
         <div style={ { textAlign: 'center' } }>
