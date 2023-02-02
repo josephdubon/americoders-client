@@ -16,20 +16,17 @@ import Parallax from '../components/Parallax/Parallax.js'
 import styles from '../styles/jss/americoders/pages/landingPage.js'
 
 // Sections for this page
-import FeatureSection
-  from '../pages-sections/LandingPage-Sections/FeatureSection.js'
-import CoursesSection
-  from '../pages-sections/LandingPage-Sections/CoursesSection.js'
-import MailingListSection
-  from '../pages-sections/LandingPage-Sections/MailingListSection.js'
+import FeatureSection from '../pages-sections/LandingPage-Sections/FeatureSection.js'
+import CoursesSection from '../pages-sections/LandingPage-Sections/CoursesSection.js'
+import MailingListSection from '../pages-sections/LandingPage-Sections/MailingListSection.js'
 import { PageHead } from '../components/PageHead/PageHead'
 import axios from 'axios'
-import FeaturedSectionRight
-  from '../components/FeaturedSectionRight/FeaturedSectionRight'
+import FeaturedSectionRight from '../components/FeaturedSectionRight/FeaturedSectionRight'
 import Footer from '../components/Footer/Footer'
 
 import Logo from '../public/images/logo/americoders-logo_white.svg'
 import CoursesGrid from '../components/CoursesGrid/CoursesGrid'
+import Link from 'next/link'
 
 const dashboardRoutes = []
 
