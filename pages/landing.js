@@ -83,24 +83,24 @@ export default function LandingPage (props) {
 
   return (
     <>
-      {/* header section / nav */ }
-      <PageHead title={ 'Welcome to Americoders!' }/>
+      {/* header section / nav */}
+      <PageHead title={'Welcome to Americoders!'}/>
       <Header
         color="transparent"
-        routes={ dashboardRoutes }
-        brand={ Logo }
-        rightLinks={ <HeaderLinks/> }
+        routes={dashboardRoutes}
+        brand={Logo}
+        rightLinks={<HeaderLinks/>}
         fixed
-        changeColorOnScroll={ {
+        changeColorOnScroll={{
           height: 400,
           color: 'dark',
-        } }
-        { ...rest }
+        }}
+        {...rest}
       />
 
-      {/* hero section */ }
+      {/* hero section */}
       <Parallax filter responsive image="/images/original/reno_downtown.png">
-        <div className={ classes.container }>
+        <div className={classes.container}>
           <GridContainer
             direction="row"
             justifyContent="center"
@@ -111,30 +111,30 @@ export default function LandingPage (props) {
               justifyContent="center"
               alignItems="center"
             >
-              <GridItem xs={ 10 } sm={ 10 } md={ 8 }>
-                <h2 className={ classes.title }>AMERICODERS</h2>
-                <h4 className={ classes.subtitle }>{ introMessage() }</h4>
+              <GridItem xs={10} sm={10} md={8}>
+                <h2 className={classes.title}>AMERICODERS</h2>
+                <h4 className={classes.subtitle}>{introMessage()}</h4>
               </GridItem>
             </GridContainer>
           </GridContainer>
         </div>
       </Parallax>
 
-      <div className={ classNames(classes.main, classes.mainRaised) }>
-        <div className={ classes.container }>
-          {/* intro section */ }
-          <FeatureSection id={ 'more-info' }/>
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        <div className={classes.container}>
+          {/* intro section */}
+          <FeatureSection id={'more-info'}/>
 
-          {/* live courses and events section */ }
-          <CoursesGrid id="workshops" courses={ props.courses }/>
+          {/* live courses and events section */}
+          <CoursesGrid id="workshops" courses={props.courses}/>
 
-          {/* join mailing list area */ }
+          {/* join mailing list area */}
           <MailingListSection/>
 
-          {/* course examples section */ }
+          {/* course examples section */}
           <CoursesSection/>
 
-          {/*  announcement section */ }
+          {/*  announcement section */}
           <FeaturedSectionRight
             title={'Winter Workshops 2023'}
             description={announcement()}
