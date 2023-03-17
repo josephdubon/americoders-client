@@ -12,7 +12,7 @@ import styles from '/styles/jss/americoders/components/paginationStyle.js'
 
 const useStyles = makeStyles(styles)
 
-export default function Pagination (props) {
+export default function Pagination(props) {
   const classes = useStyles()
   const { pages, color } = props
   return (
@@ -31,7 +31,7 @@ export default function Pagination (props) {
               </Button>
             ) : (
               <Button
-                onClick={() => alert('you\'ve clicked ' + prop.text)}
+                onClick={() => alert("you've clicked " + prop.text)}
                 className={paginationLink}
               >
                 {prop.text}

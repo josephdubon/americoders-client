@@ -28,7 +28,7 @@ import CardBody from '../../components/Card/CardBody'
 
 const useStyles = makeStyles(styles)
 
-export default function ProfilePage (props) {
+export default function ProfilePage(props) {
   // state
   const [courses, setCourses] = useState([])
   const [loading, setLoading] = useState(false)
@@ -56,20 +56,20 @@ export default function ProfilePage (props) {
 
   const classes = useStyles()
   const { ...rest } = props
-  const imageClasses = classNames(
-    classes.imgRaised,
-    classes.imgFluid,
-  )
+  const imageClasses = classNames(classes.imgRaised, classes.imgFluid)
   const navImageClasses = classNames(classes.imgRounded, classes.imgGallery)
 
   return (
     <UserRoute>
-      <PageHead title={`Welcome back, ${user && user.firstName} ${user &&
-      user.lastName}!`}/>
+      <PageHead
+        title={`Welcome back, ${user && user.firstName} ${
+          user && user.lastName
+        }!`}
+      />
       <Header
         color="transparent"
         brand={NavLogo}
-        rightLinks={<HeaderLinks/>}
+        rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
           height: 200,
@@ -78,8 +78,11 @@ export default function ProfilePage (props) {
         {...rest}
         sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
       />
-      <Parallax small filter
-                image="/images/americoders-community-diversity.png"/>
+      <Parallax
+        small
+        filter
+        image="/images/americoders-community-diversity.png"
+      />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
           <div className={classes.container}>
@@ -88,10 +91,12 @@ export default function ProfilePage (props) {
               justifyContent="center"
               alignItems="center"
             >
-              <GridContainer direction="row"
-                             justifyContent="center"
-                             alignItems="center"
-                             spacing={2}>
+              <GridContainer
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+                spacing={2}
+              >
                 <GridItem xs={12} sm={12} md={12}>
                   <div className={classes.profile}>
                     <div>
@@ -108,27 +113,30 @@ export default function ProfilePage (props) {
                       <h3 className={classes.title}>
                         {`${user && user.firstName} ${user && user.lastName}`}
                       </h3>
-                      <br/>
+                      <br />
                       {/* update user */}
                       <Link href={'/user/update-user'} disablePadding button>
                         <a>
-                          <Button
-                            size="sm"
-                            color="warning">Edit Profile</Button>
+                          <Button size="sm" color="warning">
+                            Edit Profile
+                          </Button>
                         </a>
                       </Link>
-                      <br/>
+                      <br />
                       <h5>{user && user.email}</h5>
 
                       {/* user details */}
                       <h6>Role: {user && user.role.join(', ')}</h6>
-                      <h6>Enrolled: {courses && courses.length + ' '}
+                      <h6>
+                        Enrolled: {courses && courses.length + ' '}
                         {user && user.courses.length !== 1
                           ? 'Courses'
-                          : 'Course'}</h6>
-                      <h6>Member Since: {Moment(user && user.createdAt,
-                        'YYYYMMDD').fromNow()}</h6>
-
+                          : 'Course'}
+                      </h6>
+                      <h6>
+                        Member Since:{' '}
+                        {Moment(user && user.createdAt, 'YYYYMMDD').fromNow()}
+                      </h6>
                     </div>
                   </div>
                 </GridItem>
@@ -136,9 +144,7 @@ export default function ProfilePage (props) {
             </GridContainer>
 
             <div className={classes.description}>
-              <p>
-                {user && user.bio}
-              </p>
+              <p>{user && user.bio}</p>
             </div>
 
             <GridContainer
@@ -146,40 +152,50 @@ export default function ProfilePage (props) {
               justifyContent="center"
               alignItems="center"
             >
-              <GridContainer direction="row"
-                             justifyContent="center"
-                             alignItems="center"
-                             spacing={2}>
-                <GridItem xs={12} sm={12} md={12}
-                          className={classes.navWrapper}>
+              <GridContainer
+                direction="row"
+                justifyContent="center"
+                alignItems="center"
+                spacing={2}
+              >
+                <GridItem
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  className={classes.navWrapper}
+                >
                   <h2 className={classes.title}>My Courses</h2>
                   <GridContainer
                     direction="row"
                     justifyContent="center"
                     alignItems="center"
                   >
-                    <GridContainer direction="row"
-                                   justifyContent="center"
-                                   alignItems="center"
-                                   spacing={2}>
+                    <GridContainer
+                      direction="row"
+                      justifyContent="center"
+                      alignItems="center"
+                      spacing={2}
+                    >
                       {/* list all courses */}
                       {courses && courses.length > 0
-                        ? courses.map(
-                          course => (
-                            <GridItem xs={10} sm={11} md={4}
-                                      key={course._id}
-                                      className={classes.marginBottom}>
+                        ? courses.map((course) => (
+                            <GridItem
+                              xs={10}
+                              sm={11}
+                              md={4}
+                              key={course._id}
+                              className={classes.marginBottom}
+                            >
                               <Card>
-                                <Link
-                                  href={`/user/course/${course.slug}`}
-                                >
-
+                                <Link href={`/user/course/${course.slug}`}>
                                   <a>
                                     <img
                                       alt="..."
-                                      src={course.image
-                                        ? course.image.Location
-                                        : '/images/americoders-course.png'}
+                                      src={
+                                        course.image
+                                          ? course.image.Location
+                                          : '/images/americoders-course.png'
+                                      }
                                       className={navImageClasses}
                                     />
                                     <CardBody>
@@ -190,12 +206,11 @@ export default function ProfilePage (props) {
                                         {course.intro}
                                       </h6>
                                     </CardBody>
-                                    <Button
-                                      size={'sm'}
-                                      color={'primary'}
-                                    >
-                                      <h6 className={classes.titleWhite}
-                                          style={{ fontSize: '1rem' }}>
+                                    <Button size={'sm'} color={'primary'}>
+                                      <h6
+                                        className={classes.titleWhite}
+                                        style={{ fontSize: '1rem' }}
+                                      >
                                         Go to Course
                                       </h6>
                                     </Button>
@@ -210,18 +225,17 @@ export default function ProfilePage (props) {
                               </Card>
                             </GridItem>
                           ))
-                        : ('You are not enrolled in any courses ...yet!')}
-                      <GridItem
-                        xs={12} sm={12}>
+                        : 'You are not enrolled in any courses ...yet!'}
+                      <GridItem xs={12} sm={12}>
                         <Link href={'/workshops'}>
                           <a>
-                            <Button
-                              size={'sm'}
-                              color={'success'}
-                            >
-                              <h4 className={classes.titleWhite}
-                                  style={{ fontSize: '1rem' }}>View Available
-                                                               Courses</h4>
+                            <Button size={'sm'} color={'success'}>
+                              <h4
+                                className={classes.titleWhite}
+                                style={{ fontSize: '1rem' }}
+                              >
+                                View Available Courses
+                              </h4>
                             </Button>
                           </a>
                         </Link>
@@ -234,7 +248,7 @@ export default function ProfilePage (props) {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </UserRoute>
   )
 }

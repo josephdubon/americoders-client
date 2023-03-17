@@ -11,7 +11,7 @@ import styles from '/styles/jss/americoders/components/cardFooterStyle.js'
 
 const useStyles = makeStyles(styles)
 
-export default function CardFooter (props) {
+export default function CardFooter(props) {
   const classes = useStyles()
   const { className, children, ...rest } = props
   const cardFooterClasses = classNames({

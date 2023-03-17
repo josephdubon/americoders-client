@@ -6,7 +6,7 @@ export default class Index extends Component {
     Router.push('/landing')
   }
 
-  render () {
-    return <div/>
+  render() {
+    return <div />
   }
 }

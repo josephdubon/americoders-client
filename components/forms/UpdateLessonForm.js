@@ -18,7 +18,6 @@ const UpdateLessonForm = ({
     <GridItem xs={12} style={{ maxHeight: '800px', overflow: 'scroll' }}>
       {/*{JSON.stringify(current, null, 4)}*/}
       <form onSubmit={handleUpdateLesson}>
-
         {/* title */}
         <TextField
           label="Title"
@@ -27,8 +26,8 @@ const UpdateLessonForm = ({
           onChange={(e) => setCurrent({ ...current, title: e.target.value })}
           value={current.title}
           style={{ margin: '15px 0' }}
-          placeholder="Title">
-        </TextField>
+          placeholder="Title"
+        ></TextField>
 
         {/* content */}
         <TextField
@@ -40,8 +39,8 @@ const UpdateLessonForm = ({
           onChange={(e) => setCurrent({ ...current, content: e.target.value })}
           value={current.content}
           style={{ margin: '15px 0' }}
-          placeholder="Content">
-        </TextField>
+          placeholder="Content"
+        ></TextField>
 
         {/* HTML */}
         <TextField
@@ -53,8 +52,8 @@ const UpdateLessonForm = ({
           onChange={(e) => setCurrent({ ...current, html: e.target.value })}
           value={current.html}
           style={{ margin: '15px 0' }}
-          placeholder="HTML">
-        </TextField>
+          placeholder="HTML"
+        ></TextField>
 
         {/* CSS */}
         <TextField
@@ -66,8 +65,8 @@ const UpdateLessonForm = ({
           onChange={(e) => setCurrent({ ...current, css: e.target.value })}
           value={current.css}
           style={{ margin: '15px 0' }}
-          placeholder="CSS">
-        </TextField>
+          placeholder="CSS"
+        ></TextField>
 
         {/* Javascript */}
         <TextField
@@ -76,12 +75,13 @@ const UpdateLessonForm = ({
           multiline
           rows={14}
           type="text"
-          onChange={(e) => setCurrent(
-            { ...current, javascript: e.target.value })}
+          onChange={(e) =>
+            setCurrent({ ...current, javascript: e.target.value })
+          }
           value={current.javascript}
           style={{ margin: '15px 0' }}
-          placeholder="Javascript">
-        </TextField>
+          placeholder="Javascript"
+        ></TextField>
 
         {/* python */}
         <TextField
@@ -89,12 +89,11 @@ const UpdateLessonForm = ({
           multiline
           fullWidth
           rows={14}
-          onChange={(e) => setCurrent(
-            { ...current, python: e.target.value })}
+          onChange={(e) => setCurrent({ ...current, python: e.target.value })}
           value={current.python}
           style={{ margin: '15px 0' }}
-          placeholder="Python">
-        </TextField>
+          placeholder="Python"
+        ></TextField>
 
         {/* earsketch area */}
         <GridItem xs={12}>
@@ -104,18 +103,16 @@ const UpdateLessonForm = ({
           <Switch
             size="medium"
             defaultChecked={current.earsketch}
-            onChange={(e) => setCurrent(
-              { ...current, earsketch: e.target.checked })}
+            onChange={(e) =>
+              setCurrent({ ...current, earsketch: e.target.checked })
+            }
           />
         </GridItem>
 
         {/* video area */}
         <GridItem xs={12}>
           {!uploading && current.video && current.video.Location && (
-            <GridContainer
-              justifyContent="center"
-              alignItems="center"
-            >
+            <GridContainer justifyContent="center" alignItems="center">
               <ReactPlayer
                 url={current.video.Location}
                 width="410px"
@@ -124,13 +121,9 @@ const UpdateLessonForm = ({
               />
             </GridContainer>
           )}
-          <Button
-            fullWidth
-            size={'md'}
-            color={'success'}
-          >
+          <Button fullWidth size={'md'} color={'success'}>
             {uploadVideoButtonText}
-            <input onChange={handleVideo} type="file" accept="video/*" hidden/>
+            <input onChange={handleVideo} type="file" accept="video/*" hidden />
           </Button>
           {progress > 0 && (
             <Progress
@@ -139,14 +132,15 @@ const UpdateLessonForm = ({
               steps={10}
             />
           )}
-          <hr/>
+          <hr />
           <h6>Video Preview?</h6>
           <Switch
             defaultChecked={current.free_preview}
             disabled={uploading}
             name="free_preview"
-            onChange={(v) => setCurrent(
-              { ...current, free_preview: v.target.checked })}
+            onChange={(v) =>
+              setCurrent({ ...current, free_preview: v.target.checked })
+            }
           />
         </GridItem>
         <GridItem xs={12}>

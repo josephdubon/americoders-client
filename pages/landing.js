@@ -32,26 +32,27 @@ const dashboardRoutes = []
 
 const useStyles = makeStyles(styles)
 
-export default function LandingPage (props) {
+export default function LandingPage(props) {
   const classes = useStyles()
   const { ...rest } = props
 
-  function announcement () {
+  function announcement() {
     return (
       <>
         <p className={classes.description}>
           <strong>Join us on our game dev adventures!</strong>
-          <br/>
-          Bringing the 80s back, one game at a time. Come join our workshops for old-school fun!
-          <br/>
-          <br/>
-          Develop retro arcade
-          style games in real life workshops. Get your 8-bit fix here!
+          <br />
+          Bringing the 80s back, one game at a time. Come join our workshops for
+          old-school fun!
+          <br />
+          <br />
+          Develop retro arcade style games in real life workshops. Get your
+          8-bit fix here!
         </p>
-        <br/>
+        <br />
         <div style={{ textAlign: 'center' }}>
           <Button href={'register'} color="primary" size="lg">
-            <i className="fas fa-play"/>
+            <i className="fas fa-play" />
             Register Now
           </Button>
         </div>
@@ -59,20 +60,28 @@ export default function LandingPage (props) {
     )
   }
 
-  function introMessage () {
+  function introMessage() {
     return (
       <>
-        <p className={classes.intro} style={{ fontWeight: '400', textAlign: 'left', textTransform: 'none' }}>
-          We are an EdTech startup striving to make computer science more accessible and engaging.
-          <br/>
+        <p
+          className={classes.intro}
+          style={{
+            fontWeight: '400',
+            textAlign: 'left',
+            textTransform: 'none',
+          }}
+        >
+          We are an EdTech startup striving to make computer science more
+          accessible and engaging.
+          <br />
           Our goal is to diversify and expand technology education.
-          <br/>
-          <br/>
-          Our workshops offer non-age biased software
-          engineering, game dev, and music production.
+          <br />
+          <br />
+          Our workshops offer non-age biased software engineering, game dev, and
+          music production.
         </p>
 
-        <Link href='/#workshops' scroll={false}>
+        <Link href="/#workshops" scroll={false}>
           <Button color="primary" size="lg">
             View Our Active Workshops
           </Button>
@@ -84,12 +93,12 @@ export default function LandingPage (props) {
   return (
     <>
       {/* header section / nav */}
-      <PageHead title={'Welcome to Americoders!'}/>
+      <PageHead title={'Welcome to Americoders!'} />
       <Header
         color="transparent"
         routes={dashboardRoutes}
         brand={Logo}
-        rightLinks={<HeaderLinks/>}
+        rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
           height: 400,
@@ -123,16 +132,16 @@ export default function LandingPage (props) {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           {/* intro section */}
-          <FeatureSection id={'more-info'}/>
+          <FeatureSection id={'more-info'} />
 
           {/* live courses and events section */}
-          <CoursesGrid id="workshops" courses={props.courses}/>
+          <CoursesGrid id="workshops" courses={props.courses} />
 
           {/* join mailing list area */}
-          <MailingListSection/>
+          <MailingListSection />
 
           {/* course examples section */}
-          <CoursesSection/>
+          <CoursesSection />
 
           {/*  announcement section */}
           <FeaturedSectionRight
@@ -143,12 +152,12 @@ export default function LandingPage (props) {
           />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   )
 }
 
-export async function getServerSideProps () {
+export async function getServerSideProps() {
   // collect courses data
   const { data } = await axios.get(`${process.env.API}/courses`) // full path of server here
 

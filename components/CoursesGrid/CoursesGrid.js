@@ -13,38 +13,39 @@ import GridItem from '../Grid/GridItem'
 
 const useStyles = makeStyles(styles)
 
-export default function CoursesGrid (props) {
+export default function CoursesGrid(props) {
   const classes = useStyles()
 
   let imgUrl = '{course.image && course.image.Location}'
 
-  return (<>
-    {/* live and upcoming workshops area*/}
-    <div>
-      <GridContainer
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <GridContainer direction="row"
-                       justifyContent="center"
-                       alignItems="center"
+  return (
+    <>
+      {/* live and upcoming workshops area*/}
+      <div>
+        <GridContainer
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
         >
-          <GridItem xs={10} sm={11} md={12}>
-            {/* title */}
+          <GridContainer
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <GridItem xs={10} sm={11} md={12}>
+              {/* title */}
 
-            {props.courses.length < 1 ?
-              <h2 className={classes.sectionTitle}>
-                Nothing scheduled</h2>
-              :
-              <h2 className={classes.sectionTitle}>
-                Active in Library: {props.courses.length}
-              </h2>
-            }
-          </GridItem>
+              {props.courses.length < 1 ? (
+                <h2 className={classes.sectionTitle}>Nothing scheduled</h2>
+              ) : (
+                <h2 className={classes.sectionTitle}>
+                  Active in Library: {props.courses.length}
+                </h2>
+              )}
+            </GridItem>
 
-          {/* loop through the published courses */}
-          {props.courses.map(course => (
+            {/* loop through the published courses */}
+            {props.courses.map((course) => (
               <GridItem xs={10} sm={11} md={4} key={course._id}>
                 <p style={{ color: 'black' }}>
                   {/*{JSON.stringify(course, null, 2)}*/}
@@ -70,41 +71,39 @@ export default function CoursesGrid (props) {
 
                     {/*<p>by {course.instructor.name}</p>*/}
                     {/* categories */}
-                    <Badge color="success">
-                      {course.category}
-                    </Badge>
+                    <Badge color="success">{course.category}</Badge>
 
                     {/* course price */}
-                    <h4 className={classes.description}>{course.paid
-                      ? currencyFormatter({
-                        amount: course.price,
-                        currency: 'usd',
-                      })
-                      : 'Free'}</h4>
+                    <h4 className={classes.description}>
+                      {course.paid
+                        ? currencyFormatter({
+                            amount: course.price,
+                            currency: 'usd',
+                          })
+                        : 'Free'}
+                    </h4>
 
-                    <h6 className={classes.description}>{course.event &&
-                      moment(course.event[0].startDate).calendar()}
-                      <br/>
-                      {course.event[0].location}</h6>
+                    <h6 className={classes.description}>
+                      {course.event &&
+                        moment(course.event[0].startDate).calendar()}
+                      <br />
+                      {course.event[0].location}
+                    </h6>
                     {/* action button */}
-                    <Link
-                      href={`/course/${course.slug}`}
-                    >
+                    <Link href={`/course/${course.slug}`}>
                       <a>
-                        <Button
-                          fullWidth
-                          color="primary"
-                          size="lg"
-                        >More Info</Button>
+                        <Button fullWidth color="primary" size="lg">
+                          More Info
+                        </Button>
                       </a>
                     </Link>
                   </CardBody>
                 </Card>
               </GridItem>
-            ),
-          )}
+            ))}
+          </GridContainer>
         </GridContainer>
-      </GridContainer>
-    </div>
-  </>)
+      </div>
+    </>
+  )
 }

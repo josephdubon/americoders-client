@@ -17,52 +17,56 @@ import { PageHead } from '../components/head/PageHead'
 
 const useStyles = makeStyles(styles)
 
-export default function RegisterPage (props) {
+export default function RegisterPage(props) {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden')
   setTimeout(function () {
     setCardAnimation('')
   }, 700)
   const classes = useStyles()
   const { ...rest } = props
-  return (<>
-    <PageHead title={'New Student Registration'}/>
+  return (
+    <>
+      <PageHead title={'New Student Registration'} />
 
-    <Header
-      absolute
-      color="transparent"
-      brand={NavLogo}
-      rightLinks={<HeaderLinks/>}
-      {...rest}
-    />
+      <Header
+        absolute
+        color="transparent"
+        brand={NavLogo}
+        rightLinks={<HeaderLinks />}
+        {...rest}
+      />
 
-    <div
-      className={classes.pageHeader}
-      style={{
-        backgroundImage: 'url(\'/images/original/americoders-community-hands-friends.jpg\')',
-        backgroundSize: 'cover',
-        backgroundPosition: 'top center',
-      }}
-    >
-      <div className={classes.container}>
-        <GridContainer
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <GridContainer direction="row"
-                         justifyContent="center"
-                         alignItems="center"
+      <div
+        className={classes.pageHeader}
+        style={{
+          backgroundImage:
+            "url('/images/original/americoders-community-hands-friends.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'top center',
+        }}
+      >
+        <div className={classes.container}>
+          <GridContainer
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
           >
-            <GridItem xs={10} sm={6} md={6}>
-              <Card className={classes[cardAnimaton]}>
-                {/* register form */}
-                <StudentRegisterForm/>
-              </Card>
-            </GridItem>
+            <GridContainer
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <GridItem xs={10} sm={6} md={6}>
+                <Card className={classes[cardAnimaton]}>
+                  {/* register form */}
+                  <StudentRegisterForm />
+                </Card>
+              </GridItem>
+            </GridContainer>
           </GridContainer>
-        </GridContainer>
+        </div>
+        <Footer whiteFont />
       </div>
-      <Footer whiteFont/>
-    </div>
-  </>)
+    </>
+  )
 }

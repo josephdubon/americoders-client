@@ -3,16 +3,11 @@ import { TextField } from '@mui/material'
 import Datetime from 'react-datetime'
 import Button from '../CustomButtons/Button'
 
-const UpdateEventForm = ({
-  current,
-  setCurrent,
-  handleUpdateEvent,
-}) => {
+const UpdateEventForm = ({ current, setCurrent, handleUpdateEvent }) => {
   return (
     <GridItem xs={12} style={{ maxHeight: '800px', overflow: 'scroll' }}>
       {/*{JSON.stringify(current, null, 4)}*/}
       <form onSubmit={handleUpdateEvent}>
-
         {/* title */}
         <TextField
           label="Title"
@@ -21,8 +16,7 @@ const UpdateEventForm = ({
           rowsMax={2}
           type="text"
           className="form-control"
-          onChange={(e) => setCurrent(
-            { ...current, title: e.target.value })}
+          onChange={(e) => setCurrent({ ...current, title: e.target.value })}
           value={current.title}
           style={{ margin: '15px 0' }}
           placeholder="Title"
@@ -33,8 +27,7 @@ const UpdateEventForm = ({
         {/* startDate area */}
         <Datetime
           inputProps={{ placeholder: 'Start Date' }}
-          onChange={(e) => setCurrent(
-            { ...current, startDate: e })}
+          onChange={(e) => setCurrent({ ...current, startDate: e })}
           value={current.startDate}
           style={{ margin: '15px 0' }}
         />
@@ -42,8 +35,7 @@ const UpdateEventForm = ({
         {/* endDate area */}
         <Datetime
           inputProps={{ placeholder: 'End Date' }}
-          onChange={(e) => setCurrent(
-            { ...current, endDate: e })}
+          onChange={(e) => setCurrent({ ...current, endDate: e })}
           value={current.endDate}
           style={{ margin: '15px 0' }}
         />
@@ -54,8 +46,7 @@ const UpdateEventForm = ({
           fullWidth
           type="text"
           className="form-control"
-          onChange={(e) => setCurrent(
-            { ...current, location: e.target.value })}
+          onChange={(e) => setCurrent({ ...current, location: e.target.value })}
           value={current.location}
           style={{ margin: '15px 0' }}
           placeholder="Location"
@@ -71,8 +62,9 @@ const UpdateEventForm = ({
           rows={12}
           type="text"
           className="form-control"
-          onChange={(e) => setCurrent(
-            { ...current, description: e.target.value })}
+          onChange={(e) =>
+            setCurrent({ ...current, description: e.target.value })
+          }
           value={current.description}
           style={{ margin: '15px 0' }}
           placeholder="Use Markdown Syntax"

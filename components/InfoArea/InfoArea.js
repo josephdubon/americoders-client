@@ -10,7 +10,7 @@ import styles from '../../styles/jss/americoders/components/infoStyle.js'
 
 const useStyles = makeStyles(styles)
 
-export default function InfoArea (props) {
+export default function InfoArea(props) {
   const classes = useStyles()
   const { title, description, iconColor, vertical } = props
   const iconWrapper = classNames({
@@ -25,7 +25,7 @@ export default function InfoArea (props) {
   return (
     <div className={classes.infoArea}>
       <div className={iconWrapper}>
-        <props.icon className={iconClasses}/>
+        <props.icon className={iconClasses} />
       </div>
       <div className={classes.descriptionWrapper}>
         <h4 className={classes.title}>{title}</h4>

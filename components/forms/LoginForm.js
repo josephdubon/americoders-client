@@ -55,7 +55,8 @@ const LoginForm = () => {
       // activate load spinner
       setLoading(true)
       const { data } = await axios.post(`/api/login`, {
-        email, password,
+        email,
+        password,
       })
 
       // // notification config
@@ -69,7 +70,8 @@ const LoginForm = () => {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-        })
+        },
+      )
 
       // deactivate load spinner
       setLoading(false)
@@ -103,117 +105,117 @@ const LoginForm = () => {
     }
   }
 
-  return (<>
-    <form
-      className={classes.form}
-      onSubmit={handleSubmit}>
-      <CardHeader color="primary" className={classes.cardHeader}>
-        <h4>Login</h4>
+  return (
+    <>
+      <form className={classes.form} onSubmit={handleSubmit}>
+        <CardHeader color="primary" className={classes.cardHeader}>
+          <h4>Login</h4>
 
-        {/* social login icons */}
-        {/*<div className={classes.socialLine}>*/}
-        {/*  <Button*/}
-        {/*    justIcon*/}
-        {/*    href="#TODO add a social login option"*/}
-        {/*    target="_blank"*/}
-        {/*    color="transparent"*/}
-        {/*    onClick={(e) => e.preventDefault()}*/}
-        {/*  >*/}
-        {/*    <i className={'fab fa-twitter'}/>*/}
-        {/*  </Button>*/}
-        {/*  <Button*/}
-        {/*    justIcon*/}
-        {/*    href="#TODO add a social login option"*/}
-        {/*    target="_blank"*/}
-        {/*    color="transparent"*/}
-        {/*    onClick={(e) => e.preventDefault()}*/}
-        {/*  >*/}
-        {/*    <i className={'fab fa-facebook'}/>*/}
-        {/*  </Button>*/}
-        {/*  <Button*/}
-        {/*    justIcon*/}
-        {/*    href="#TODO add a social login option"*/}
-        {/*    target="_blank"*/}
-        {/*    color="transparent"*/}
-        {/*    onClick={(e) => e.preventDefault()}*/}
-        {/*  >*/}
-        {/*    <i className={'fab fa-google-plus-g'}/>*/}
-        {/*  </Button>*/}
-        {/*</div>*/}
-      </CardHeader>
+          {/* social login icons */}
+          {/*<div className={classes.socialLine}>*/}
+          {/*  <Button*/}
+          {/*    justIcon*/}
+          {/*    href="#TODO add a social login option"*/}
+          {/*    target="_blank"*/}
+          {/*    color="transparent"*/}
+          {/*    onClick={(e) => e.preventDefault()}*/}
+          {/*  >*/}
+          {/*    <i className={'fab fa-twitter'}/>*/}
+          {/*  </Button>*/}
+          {/*  <Button*/}
+          {/*    justIcon*/}
+          {/*    href="#TODO add a social login option"*/}
+          {/*    target="_blank"*/}
+          {/*    color="transparent"*/}
+          {/*    onClick={(e) => e.preventDefault()}*/}
+          {/*  >*/}
+          {/*    <i className={'fab fa-facebook'}/>*/}
+          {/*  </Button>*/}
+          {/*  <Button*/}
+          {/*    justIcon*/}
+          {/*    href="#TODO add a social login option"*/}
+          {/*    target="_blank"*/}
+          {/*    color="transparent"*/}
+          {/*    onClick={(e) => e.preventDefault()}*/}
+          {/*  >*/}
+          {/*    <i className={'fab fa-google-plus-g'}/>*/}
+          {/*  </Button>*/}
+          {/*</div>*/}
+        </CardHeader>
 
-      <p className={classes.divider}>Code to Live, Live to Code</p>
-      <CardBody>
-        <CustomInput
-          labelText="Email"
-          id="email"
-          formControlProps={{
-            fullWidth: true,
-          }}
-          inputProps={{
-            type: 'email',
-            value: email,
-            onChange: e => setEmail(e.target.value),
-            endAdornment: (
-              <InputAdornment position="end">
-                <AlternateEmail className={classes.inputIconsColor}/>
-              </InputAdornment>
-            ),
-          }}
-        />
-        <CustomInput
-          labelText="Password"
-          id="pass"
-          formControlProps={{
-            fullWidth: true,
-          }}
-          inputProps={{
-            type: 'password',
-            value: password,
-            onChange: e => setPassword(e.target.value),
-            endAdornment: (
-              <InputAdornment position="end">
-                <Icon className={classes.inputIconsColor}>
-                  password
-                </Icon>
-              </InputAdornment>
-            ),
-            autoComplete: 'off',
-          }}
-        />
-      </CardBody>
-      <CardFooter className={classes.cardFooter}>
-        <Button
-          type="submit"
-          color="danger"
-          size="lg"
-          disabled={!email || !password || loading}
-        >
-          Get started
-        </Button>
-      </CardFooter>
-    </form>
-    <GridContainer
-      direction="row"
-      justifyContent="center"
-      alignItems="center"
-    >
-      <GridItem xs={10} sm={10} md={8}>
-        <Typography
-          variant="caption"
-          display="block"
-          gutterBottom
-          className={classes.registerFooter}
-        >
-          Do you need an account?
-          <br/>
-          Click {' '}
-          <Link href={'/register'}><a
-            className={classes.registerFooterLink}>here</a></Link> to register!
-        </Typography>
-      </GridItem>
-    </GridContainer>
-  </>)
+        <p className={classes.divider}>Code to Live, Live to Code</p>
+        <CardBody>
+          <CustomInput
+            labelText="Email"
+            id="email"
+            formControlProps={{
+              fullWidth: true,
+            }}
+            inputProps={{
+              type: 'email',
+              value: email,
+              onChange: (e) => setEmail(e.target.value),
+              endAdornment: (
+                <InputAdornment position="end">
+                  <AlternateEmail className={classes.inputIconsColor} />
+                </InputAdornment>
+              ),
+            }}
+          />
+          <CustomInput
+            labelText="Password"
+            id="pass"
+            formControlProps={{
+              fullWidth: true,
+            }}
+            inputProps={{
+              type: 'password',
+              value: password,
+              onChange: (e) => setPassword(e.target.value),
+              endAdornment: (
+                <InputAdornment position="end">
+                  <Icon className={classes.inputIconsColor}>password</Icon>
+                </InputAdornment>
+              ),
+              autoComplete: 'off',
+            }}
+          />
+        </CardBody>
+        <CardFooter className={classes.cardFooter}>
+          <Button
+            type="submit"
+            color="danger"
+            size="lg"
+            disabled={!email || !password || loading}
+          >
+            Get started
+          </Button>
+        </CardFooter>
+      </form>
+      <GridContainer
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <GridItem xs={10} sm={10} md={8}>
+          <Typography
+            variant="caption"
+            display="block"
+            gutterBottom
+            className={classes.registerFooter}
+          >
+            Do you need an account?
+            <br />
+            Click{' '}
+            <Link href={'/register'}>
+              <a className={classes.registerFooterLink}>here</a>
+            </Link>{' '}
+            to register!
+          </Typography>
+        </GridItem>
+      </GridContainer>
+    </>
+  )
 }
 
 export default LoginForm

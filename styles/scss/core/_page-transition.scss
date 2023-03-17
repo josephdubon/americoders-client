@@ -13,8 +13,8 @@
 
   #page-transition > div {
     &:after {
-      content: "";
-      background-image: url("/images/original/reno_downtown.png");
+      content: '';
+      background-image: url('/images/original/reno_downtown.png');
       background-size: cover;
       background-position: center bottom;
       position: fixed;

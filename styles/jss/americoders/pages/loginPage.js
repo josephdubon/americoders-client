@@ -102,7 +102,7 @@ const signupPageStyle = {
   },
   registerFooterLink: {
     color: primaryColor,
-    fontWeight: '600'
+    fontWeight: '600',
   },
   inputIconsColor: {
     color: '#495057',

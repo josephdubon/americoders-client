@@ -12,8 +12,7 @@ import Card from '../../components/Card/Card.js'
 import CardBody from '../../components/Card/CardBody.js'
 import CardFooter from '../../components/Card/CardFooter.js'
 
-import styles
-  from '../../styles/jss/americoders/pages/landingPageSections/workStyle.js'
+import styles from '../../styles/jss/americoders/pages/landingPageSections/workStyle.js'
 import { CardHeader } from '@mui/material'
 import Button from '../../components/CustomButtons/Button'
 import axios from 'axios'
@@ -21,15 +20,17 @@ import Link from 'next/link'
 
 const useStyles = makeStyles(styles)
 
-export default function WorkshopsSection (props) {
+export default function WorkshopsSection(props) {
   const classes = useStyles()
 
-  return (<>
-    <p>PAGE NOT BUILT YET</p>
-  </>)
+  return (
+    <>
+      <p>PAGE NOT BUILT YET</p>
+    </>
+  )
 }
 
-export async function getServerSideProps () {
+export async function getServerSideProps() {
   // collect courses data
   const { data } = await axios.get(`${process.env.API}/courses`) // full path of server here
 

@@ -13,7 +13,7 @@ const StripeCallback = () => {
   // update user info in db
   useEffect(() => {
     if (user) {
-      axios.post('/api/get-account-status').then(res => {
+      axios.post('/api/get-account-status').then((res) => {
         // console.log(res)
 
         dispatch({
@@ -29,10 +29,14 @@ const StripeCallback = () => {
     }
   }, [user])
 
-  return (<>
-    <SyncOutlined spin
-                  className="d-flex justify-content-center display-1 text-danger p-5"/>
-  </>)
+  return (
+    <>
+      <SyncOutlined
+        spin
+        className="d-flex justify-content-center display-1 text-danger p-5"
+      />
+    </>
+  )
 }
 
 export default StripeCallback

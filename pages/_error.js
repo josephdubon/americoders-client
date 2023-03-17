@@ -6,7 +6,7 @@ export default class _error extends Component {
     Router.push('/landing')
   }
 
-  render () {
-    return <div/>
+  render() {
+    return <div />
   }
 }

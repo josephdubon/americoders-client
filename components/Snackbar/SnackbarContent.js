@@ -9,12 +9,11 @@ import Icon from '@material-ui/core/Icon'
 // @material-ui/icons
 import Close from '@material-ui/icons/Close'
 // core components
-import styles
-  from '../../styles/jss/americoders/components/snackbarContentStyle.js'
+import styles from '../../styles/jss/americoders/components/snackbarContentStyle.js'
 
 const useStyles = makeStyles(styles)
 
-export default function SnackbarContent (props) {
+export default function SnackbarContent(props) {
   const { message, color, close, icon } = props
   const classes = useStyles()
   var action = []
@@ -30,14 +29,14 @@ export default function SnackbarContent (props) {
         color="inherit"
         onClick={closeAlert}
       >
-        <Close className={classes.close}/>
+        <Close className={classes.close} />
       </IconButton>,
     ]
   }
   let snackIcon = null
   switch (typeof icon) {
     case 'object':
-      snackIcon = <props.icon className={classes.icon}/>
+      snackIcon = <props.icon className={classes.icon} />
       break
     case 'string':
       snackIcon = <Icon className={classes.icon}>{props.icon}</Icon>

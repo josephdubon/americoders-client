@@ -61,7 +61,10 @@ const StudentUpdateForm = () => {
 
       // update user data in db
       const { data } = await axios.post(`/api/update-user`, {
-        firstName, lastName, bio, email,
+        firstName,
+        lastName,
+        bio,
+        email,
       })
 
       // update user state
@@ -100,24 +103,26 @@ const StudentUpdateForm = () => {
     }
   }
 
-  return (<>
-      <form
-        className={classes.form}
-        onSubmit={handleSubmit}>
+  return (
+    <>
+      <form className={classes.form} onSubmit={handleSubmit}>
         <CardHeader color="primary" className={classes.cardHeader}>
           <h4>Update User Details</h4>
         </CardHeader>
 
         <p className={classes.divider}>
           Confirm your email and click submit to save your changes.
-          <br/>
+          <br />
           <strong>
             🚨 You will be redirected to a login page after saving.
           </strong>
-          <br/>
+          <br />
           <small>
-            Change your mind? Click <Link href={'/user'}><a>here</a></Link> to
-            go back to your profile.
+            Change your mind? Click{' '}
+            <Link href={'/user'}>
+              <a>here</a>
+            </Link>{' '}
+            to go back to your profile.
           </small>
         </p>
 
@@ -133,10 +138,10 @@ const StudentUpdateForm = () => {
               type: 'firstName',
               value: firstName,
               required: true,
-              onChange: e => setFirstName(e.target.value),
+              onChange: (e) => setFirstName(e.target.value),
               endAdornment: (
                 <InputAdornment position="end">
-                  <Person className={classes.inputIconsColor}/>
+                  <Person className={classes.inputIconsColor} />
                 </InputAdornment>
               ),
             }}
@@ -153,10 +158,10 @@ const StudentUpdateForm = () => {
               type: 'lastName',
 
               value: lastName,
-              onChange: e => setLastName(e.target.value),
+              onChange: (e) => setLastName(e.target.value),
               endAdornment: (
                 <InputAdornment position="end">
-                  <AccountBox className={classes.inputIconsColor}/>
+                  <AccountBox className={classes.inputIconsColor} />
                 </InputAdornment>
               ),
             }}
@@ -172,10 +177,10 @@ const StudentUpdateForm = () => {
             inputProps={{
               type: 'bio',
               value: bio,
-              onChange: e => setBio(e.target.value),
+              onChange: (e) => setBio(e.target.value),
               endAdornment: (
                 <InputAdornment position="end">
-                  <EmojiPeople className={classes.inputIconsColor}/>
+                  <EmojiPeople className={classes.inputIconsColor} />
                 </InputAdornment>
               ),
             }}
@@ -192,15 +197,14 @@ const StudentUpdateForm = () => {
               type: 'email',
               // value: email,
               required: true,
-              onChange: e => setEmail(e.target.value),
+              onChange: (e) => setEmail(e.target.value),
               endAdornment: (
                 <InputAdornment position="end">
-                  <AlternateEmail className={classes.inputIconsColor}/>
+                  <AlternateEmail className={classes.inputIconsColor} />
                 </InputAdornment>
               ),
             }}
           />
-
         </CardBody>
         <CardFooter className={classes.cardFooter}>
           <Button

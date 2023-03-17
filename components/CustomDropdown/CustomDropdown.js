@@ -22,7 +22,7 @@ import styles from '/styles/jss/americoders/components/customDropdownStyle.js'
 
 const useStyles = makeStyles(styles)
 
-export default function CustomDropdown (props) {
+export default function CustomDropdown(props) {
   const [anchorEl, setAnchorEl] = React.useState(null)
   const handleClick = (event) => {
     if (anchorEl && anchorEl.contains(event.target)) {
@@ -72,7 +72,7 @@ export default function CustomDropdown (props) {
   let icon = null
   switch (typeof buttonIcon) {
     case 'object':
-      icon = <props.buttonIcon className={classes.buttonIcon}/>
+      icon = <props.buttonIcon className={classes.buttonIcon} />
       break
     case 'string':
       icon = <Icon className={classes.buttonIcon}>{props.buttonIcon}</Icon>
@@ -93,7 +93,7 @@ export default function CustomDropdown (props) {
         >
           {icon}
           {buttonText !== undefined ? buttonText : null}
-          {caret ? <b className={caretClasses}/> : null}
+          {caret ? <b className={caretClasses} /> : null}
         </Button>
       </div>
       <Popper
@@ -107,8 +107,8 @@ export default function CustomDropdown (props) {
               ? 'top-start'
               : 'top'
             : left
-              ? 'bottom-start'
-              : 'bottom'
+            ? 'bottom-start'
+            : 'bottom'
         }
         className={classNames({
           [classes.popperClose]: !anchorEl,

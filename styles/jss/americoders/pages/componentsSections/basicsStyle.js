@@ -1,6 +1,5 @@
 import { container, title } from '/styles/jss/americoders.js'
-import customCheckboxRadioSwitch
-  from '/styles/jss/americoders/customCheckboxRadioSwitch.js'
+import customCheckboxRadioSwitch from '/styles/jss/americoders/customCheckboxRadioSwitch.js'
 
 const basicsStyle = {
   sections: {

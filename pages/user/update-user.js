@@ -17,7 +17,7 @@ import NavLogo from '../../public/images/logo/americoders-logo-simple_white.svg'
 
 const useStyles = makeStyles(styles)
 
-export default function RegisterPage (props) {
+export default function RegisterPage(props) {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden')
   setTimeout(function () {
     setCardAnimation('')
@@ -31,14 +31,15 @@ export default function RegisterPage (props) {
         absolute
         color="transparent"
         brand={NavLogo}
-        rightLinks={<HeaderLinks/>}
+        rightLinks={<HeaderLinks />}
         {...rest}
       />
 
       <div
         className={classes.pageHeader}
         style={{
-          backgroundImage: 'url(\'/images/original/americoders-community-hands-friends.jpg\')',
+          backgroundImage:
+            "url('/images/original/americoders-community-hands-friends.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'top center',
         }}
@@ -49,20 +50,21 @@ export default function RegisterPage (props) {
             justifyContent="center"
             alignItems="center"
           >
-            <GridContainer direction="row"
-                           justifyContent="center"
-                           alignItems="center"
+            <GridContainer
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
             >
               <GridItem xs={10} sm={8} md={8}>
                 <Card className={classes[cardAnimaton]}>
                   {/* register form */}
-                  <StudentUpdateForm/>
+                  <StudentUpdateForm />
                 </Card>
               </GridItem>
             </GridContainer>
           </GridContainer>
         </div>
-        <Footer whiteFont/>
+        <Footer whiteFont />
       </div>
     </UserRoute>
   )

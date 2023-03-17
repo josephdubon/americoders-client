@@ -17,7 +17,7 @@ import NavLogo from '../public/images/logo/americoders-logo-simple_white.svg'
 
 const useStyles = makeStyles(styles)
 
-export default function LoginPage (props) {
+export default function LoginPage(props) {
   const [cardAnimaton, setCardAnimation] = React.useState('cardHidden')
   setTimeout(function () {
     setCardAnimation('')
@@ -26,18 +26,19 @@ export default function LoginPage (props) {
   const { ...rest } = props
   return (
     <div>
-      <PageHead title={'Login, Embrace the Knowledge'}/>
+      <PageHead title={'Login, Embrace the Knowledge'} />
       <Header
         absolute
         color="transparent"
         brand={NavLogo}
-        rightLinks={<HeaderLinks/>}
+        rightLinks={<HeaderLinks />}
         {...rest}
       />
       <div
         className={classes.pageHeader}
         style={{
-          backgroundImage: 'url(\'/images/original/americoders-mindful-meditation-teen.jpg\')',
+          backgroundImage:
+            "url('/images/original/americoders-mindful-meditation-teen.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'top center',
         }}
@@ -48,20 +49,21 @@ export default function LoginPage (props) {
             justifyContent="center"
             alignItems="center"
           >
-            <GridContainer direction="row"
-                           justifyContent="center"
-                           alignItems="center"
+            <GridContainer
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
             >
               <GridItem xs={10} sm={10} md={12}>
                 <Card className={classes[cardAnimaton]}>
                   {/* login form */}
-                  <LoginForm/>
+                  <LoginForm />
                 </Card>
               </GridItem>
             </GridContainer>
           </GridContainer>
         </div>
-        <Footer whiteFont/>
+        <Footer whiteFont />
       </div>
     </div>
   )

@@ -26,19 +26,20 @@ const StudentRoute = ({ children, showNav = true }) => {
     }
   }
 
-  return (<>
-    {!ok ? (
-      // if ok is false, show loading screen
-      <SyncOutlined spin
-                    className="d-flex justify-content-center display-1 text-primary p-5"
-      />
-    ) : (
-      // if ok is true, show child element
-      <>
-        {children}
-      </>
-    )}
-  </>)
+  return (
+    <>
+      {!ok ? (
+        // if ok is false, show loading screen
+        <SyncOutlined
+          spin
+          className="d-flex justify-content-center display-1 text-primary p-5"
+        />
+      ) : (
+        // if ok is true, show child element
+        <>{children}</>
+      )}
+    </>
+  )
 }
 
 export default StudentRoute

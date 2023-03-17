@@ -17,7 +17,7 @@ import styles from '/styles/jss/americoders/components/navPillsStyle.js'
 
 const useStyles = makeStyles(styles)
 
-export default function NavPills (props) {
+export default function NavPills(props) {
   const [active, setActive] = React.useState(props.active)
   const handleChange = (event, active) => {
     setActive(active)
@@ -46,7 +46,7 @@ export default function NavPills (props) {
       {tabs.map((prop, key) => {
         var icon = {}
         if (prop.tabIcon !== undefined) {
-          icon['icon'] = <prop.tabIcon className={classes.tabIcon}/>
+          icon['icon'] = <prop.tabIcon className={classes.tabIcon} />
         }
         const pillsClasses = classNames({
           [classes.pills]: true,

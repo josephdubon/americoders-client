@@ -61,7 +61,7 @@ const landingPageStyle = {
     color: '#3C4858',
     fontSize: '1.1rem',
     textAlign: 'left',
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
   },
   price: {
     ...title,

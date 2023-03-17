@@ -27,29 +27,30 @@ const UserRoute = ({ children, showNav = true }) => {
     }
   }
 
-  return (<>
-    {!ok ? (
-      // if ok is false, show loading screen
-      <SyncOutlined spin
-                    className="d-flex justify-content-center display-1 text-primary p-5"
-      />
-    ) : (
-      // if ok is true, show child element
-      <>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-md-2 mt-3">
-              {/* only show UserNav when showNav is true, hide on false */}
-              {showNav && <HeaderUser/>}
-            </div>
-            <div className="col-md-10">
-              {children}
+  return (
+    <>
+      {!ok ? (
+        // if ok is false, show loading screen
+        <SyncOutlined
+          spin
+          className="d-flex justify-content-center display-1 text-primary p-5"
+        />
+      ) : (
+        // if ok is true, show child element
+        <>
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-md-2 mt-3">
+                {/* only show UserNav when showNav is true, hide on false */}
+                {showNav && <HeaderUser />}
+              </div>
+              <div className="col-md-10">{children}</div>
             </div>
           </div>
-        </div>
-      </>
-    )}
-  </>)
+        </>
+      )}
+    </>
+  )
 }
 
 export default UserRoute

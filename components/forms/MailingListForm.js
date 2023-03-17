@@ -11,7 +11,7 @@ import { toast } from 'react-toastify'
 
 const useStyles = makeStyles(styles)
 
-export default function MailingListForm () {
+export default function MailingListForm() {
   // set state
   const [email, setEmail] = useState(null)
   const [loading, setLoading] = useState(false)
@@ -51,75 +51,82 @@ export default function MailingListForm () {
         progress: undefined,
       })
     } else {
-      return axios.put('/api/mailing-list', {
-        email,
-      }).then((result) => {
-        if (result.status === 200 || 202) {
-          // notification config
-          toast.success('Thanks for joining our mailing-list 🎉', {
-            position: 'top-center',
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          })
+      return axios
+        .put('/api/mailing-list', {
+          email,
+        })
+        .then((result) => {
+          if (result.status === 200 || 202) {
+            // notification config
+            toast.success('Thanks for joining our mailing-list 🎉', {
+              position: 'top-center',
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            })
+            setLoading(false)
+          }
+        })
+        .catch((err) => {
+          console.log(err)
           setLoading(false)
-        }
-      }).catch((err) => {
-        console.log(err)
-        setLoading(false)
-      })
+        })
     }
   }
 
-  return (<>
-    <p className="lead text-dark text-center form-text">
-      Please enter your email to join our mailing list.</p>
-    <form
-      onSubmit={subscribe}
-      name="basic"
-      initialvalues={{
-        remember: true,
-      }}
-      autoComplete="off"
-    >
-      <GridContainer
-        justifyContent="center"
-        alignItems="center"
-        spacing={2}
+  return (
+    <>
+      <p className="lead text-dark text-center form-text">
+        Please enter your email to join our mailing list.
+      </p>
+      <form
+        onSubmit={subscribe}
+        name="basic"
+        initialvalues={{
+          remember: true,
+        }}
+        autoComplete="off"
       >
-        <GridContainer
-          justifyContent="center"
-          alignItems="stretch"
-          spacing={2}
-        >
-          <GridItem xs={12} sm={12} md={6}>
-            <CustomInput
-              labelText="Your Email"
-              name="email"
-              id="email"
-              formControlProps={{
-                fullWidth: true,
-                onChange: (e) => setEmail(e.target.value),
-              }}
-            />
-          </GridItem>
-          <hr/>
-          <GridItem xs={12} sm={12} md={4} className={classes.textCenter}
-                    style={{ textAlign: 'center' }}>
-            <Button
-              type="submit"
-              color="primary"
-              size="lg"
-              disabled={!email || loading}
+        <GridContainer justifyContent="center" alignItems="center" spacing={2}>
+          <GridContainer
+            justifyContent="center"
+            alignItems="stretch"
+            spacing={2}
+          >
+            <GridItem xs={12} sm={12} md={6}>
+              <CustomInput
+                labelText="Your Email"
+                name="email"
+                id="email"
+                formControlProps={{
+                  fullWidth: true,
+                  onChange: (e) => setEmail(e.target.value),
+                }}
+              />
+            </GridItem>
+            <hr />
+            <GridItem
+              xs={12}
+              sm={12}
+              md={4}
+              className={classes.textCenter}
+              style={{ textAlign: 'center' }}
             >
-              Subscribe
-            </Button>
-          </GridItem>
+              <Button
+                type="submit"
+                color="primary"
+                size="lg"
+                disabled={!email || loading}
+              >
+                Subscribe
+              </Button>
+            </GridItem>
+          </GridContainer>
         </GridContainer>
-      </GridContainer>
-    </form>
-  </>)
+      </form>
+    </>
+  )
 }

@@ -21,14 +21,14 @@ import Logo from '../../public/images/logo/americoders-logo_white.svg'
 
 const useStyles = makeStyles(styles)
 
-export default function Header (props) {
+export default function Header(props) {
   const classes = useStyles()
   const [mobileOpen, setMobileOpen] = React.useState(false)
   React.useEffect(() => {
     if (props.changeColorOnScroll) {
       window.addEventListener('scroll', headerColorChange)
     }
-    return function cleanup () {
+    return function cleanup() {
       if (props.changeColorOnScroll) {
         window.removeEventListener('scroll', headerColorChange)
       }
@@ -41,15 +41,19 @@ export default function Header (props) {
     const { color, changeColorOnScroll } = props
     const windowsScrollTop = window.pageYOffset
     if (windowsScrollTop > changeColorOnScroll.height) {
-      document.body.getElementsByTagName('header')[0].classList.remove(
-        classes[color])
-      document.body.getElementsByTagName('header')[0].classList.add(
-        classes[changeColorOnScroll.color])
+      document.body
+        .getElementsByTagName('header')[0]
+        .classList.remove(classes[color])
+      document.body
+        .getElementsByTagName('header')[0]
+        .classList.add(classes[changeColorOnScroll.color])
     } else {
-      document.body.getElementsByTagName('header')[0].classList.add(
-        classes[color])
-      document.body.getElementsByTagName('header')[0].classList.remove(
-        classes[changeColorOnScroll.color])
+      document.body
+        .getElementsByTagName('header')[0]
+        .classList.add(classes[color])
+      document.body
+        .getElementsByTagName('header')[0]
+        .classList.remove(classes[changeColorOnScroll.color])
     }
   }
   const { color, rightLinks, leftLinks, brand, fixed, absolute } = props
@@ -89,7 +93,7 @@ export default function Header (props) {
             aria-label="open drawer"
             onClick={handleDrawerToggle}
           >
-            <Menu/>
+            <Menu />
           </IconButton>
         </Hidden>
       </Toolbar>

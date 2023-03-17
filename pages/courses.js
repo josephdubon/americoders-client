@@ -25,18 +25,19 @@ const dashboardRoutes = []
 
 const useStyles = makeStyles(styles)
 
-export default function CoursesPage (props) {
+export default function CoursesPage(props) {
   const classes = useStyles()
   const { ...rest } = props
 
-  return (<>
+  return (
+    <>
       {/* header section / nav */}
-      <PageHead title={'Online Courses'}/>
+      <PageHead title={'Online Courses'} />
       <Header
         color="transparent"
         routes={dashboardRoutes}
         brand={NavLogo}
-        rightLinks={<HeaderLinks/>}
+        rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
           height: 400,
@@ -46,30 +47,33 @@ export default function CoursesPage (props) {
       />
 
       {/* hero section */}
-      <Parallax filter responsive small
-                image="/images/original/reno_downtown.png">
+      <Parallax
+        filter
+        responsive
+        small
+        image="/images/original/reno_downtown.png"
+      >
         <div className={classes.container}>
           <GridContainer
             direction="row"
             justifyContent="center"
             alignItems="center"
           >
-            <GridContainer direction="row"
-                           justifyContent="center"
-                           alignItems="center"
+            <GridContainer
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
             >
               <GridItem xs={11} sm={10}>
-                <h1 className={classes.titleWhite}>
-                  Online Courses
-                </h1>
+                <h1 className={classes.titleWhite}>Online Courses</h1>
                 <h4 className={classes.subtitleWhite}>
                   Welcome to our library of online courses.
-                  <br/>
-                  <br/>
+                  <br />
+                  <br />
                   Please feel free to look around and sign up for any of our
                   courses.
-                  <br/>
-                  <br/>
+                  <br />
+                  <br />
                   We look forward to learning with you!
                 </h4>
               </GridItem>
@@ -80,17 +84,16 @@ export default function CoursesPage (props) {
 
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-
           {/* live courses and events section */}
-          <CoursesGrid id="workshops" courses={props.courses}/>
+          <CoursesGrid id="workshops" courses={props.courses} />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   )
 }
 
-export async function getServerSideProps () {
+export async function getServerSideProps() {
   // collect courses data
   const { data } = await axios.get(`${process.env.API}/courses`) // full path of server here
 

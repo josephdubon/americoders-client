@@ -8,7 +8,7 @@ import styles from '../../styles/jss/americoders/components/typographyStyle.js'
 
 const useStyles = makeStyles(styles)
 
-export default function Quote (props) {
+export default function Quote(props) {
   const { text, author } = props
   const classes = useStyles()
   return (

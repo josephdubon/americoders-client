@@ -11,7 +11,7 @@ import styles from '/styles/jss/americoders/components/cardHeaderStyle.js'
 
 const useStyles = makeStyles(styles)
 
-export default function CardHeader (props) {
+export default function CardHeader(props) {
   const classes = useStyles()
   const { className, children, color, plain, ...rest } = props
   const cardHeaderClasses = classNames({
