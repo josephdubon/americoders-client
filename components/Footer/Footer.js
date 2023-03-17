@@ -15,6 +15,7 @@ import { ListItem } from '@mui/material'
 
 const useStyles = makeStyles(styles)
 
+export default function Footer(props) {
   const classes = useStyles()
   const { whiteFont } = props
   const footerClasses = classNames({
@@ -33,6 +34,7 @@ const useStyles = makeStyles(styles)
             {/* add left side links here */}
             <ListItem className={classes.inlineBlock}>
               <Link href={'/landing'} as={'/home'}>
+                <a className={classes.block}>Home</a>
               </Link>
             </ListItem>
           </List>
@@ -40,6 +42,7 @@ const useStyles = makeStyles(styles)
 
         {/* right side credit line */}
         <div className={classes.right}>
+          &copy; {1900 + new Date().getYear()}{' '}
           <Link href={'/landing'} as={'/home'}>
             <a className={aClasses}>AMERICODERS</a>
           </Link>
