@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 import { SyncOutlined } from '@ant-design/icons'
 
 const ForgotPasswordForm = () => {
-// state
+  // state
   const [email, setEmail] = useState('')
   const [success, setSuccess] = useState(false)
   const [code, setCode] = useState('')
@@ -48,7 +48,6 @@ const ForgotPasswordForm = () => {
         progress: undefined,
       })
       setLoading(false)
-
     } catch (err) {
       setLoading(false)
 
@@ -71,7 +70,9 @@ const ForgotPasswordForm = () => {
     try {
       setLoading(true)
       const { data } = await axios.post('/api/reset-password', {
-        email, code, newPassword,
+        email,
+        code,
+        newPassword,
       })
 
       // reset fields to empty
@@ -109,50 +110,54 @@ const ForgotPasswordForm = () => {
     }
   }
 
-  return (<>
-    {/* if success is true then handle submit with handleResetPassword */}
-    <form onSubmit={success ? handleResetPassword : handleSubmit}>
-      <input
-        type="email"
-        className="form-control mb-4 p-4"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-        placeholder="Enter email"
-        required
-      />
-
-      {/* render on successful reset password submission */}
-      {success && <>
+  return (
+    <>
+      {/* if success is true then handle submit with handleResetPassword */}
+      <form onSubmit={success ? handleResetPassword : handleSubmit}>
         <input
-          type="password"
+          type="email"
           className="form-control mb-4 p-4"
-          value={code}
-          onChange={e => setCode(e.target.value)}
-          placeholder="Enter secret code"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter email"
           required
         />
 
-        <input
-          type="password"
-          className="form-control mb-4 p-4"
-          value={newPassword}
-          onChange={e => setNewPassword(e.target.value)}
-          placeholder="Enter new password"
-          required
-        />
-      </>}
+        {/* render on successful reset password submission */}
+        {success && (
+          <>
+            <input
+              type="password"
+              className="form-control mb-4 p-4"
+              value={code}
+              onChange={(e) => setCode(e.target.value)}
+              placeholder="Enter secret code"
+              required
+            />
 
-      <div className="d-grid gap-2">
-        <button
-          type="submit"
-          className="btn btn-primary"
-          disabled={!email || loading}
-        >
-          {loading ? <SyncOutlined spin/> : 'Submit'}
-        </button>
-      </div>
-    </form>
-  </>)
+            <input
+              type="password"
+              className="form-control mb-4 p-4"
+              value={newPassword}
+              onChange={(e) => setNewPassword(e.target.value)}
+              placeholder="Enter new password"
+              required
+            />
+          </>
+        )}
+
+        <div className="d-grid gap-2">
+          <button
+            type="submit"
+            className="btn btn-primary"
+            disabled={!email || loading}
+          >
+            {loading ? <SyncOutlined spin /> : 'Submit'}
+          </button>
+        </div>
+      </form>
+    </>
+  )
 }
 
 export default ForgotPasswordForm

@@ -13,7 +13,7 @@ import styles from '../../styles/jss/americoders/components/customInputStyle.js'
 
 const useStyles = makeStyles(styles)
 
-export default function CustomInput (props) {
+export default function CustomInput(props) {
   const classes = useStyles()
   const {
     formControlProps,

@@ -3,13 +3,13 @@ import Document, { Head, Html, Main, NextScript } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/styles'
 
 class MyDocument extends Document {
-  render () {
+  render() {
     return (
       <Html lang="en">
         <Head>
-          <meta charSet="utf-8"/>
-          <meta name="theme-color" content="#000000"/>
-          <link rel="shortcut icon" href="/favicon.ico"/>
+          <meta charSet="utf-8" />
+          <meta name="theme-color" content="#000000" />
+          <link rel="shortcut icon" href="/favicon.ico" />
           <link
             rel="apple-touch-icon"
             sizes="76x76"
@@ -23,7 +23,8 @@ class MyDocument extends Document {
           />
           <link
             href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-            rel="stylesheet"/>
+            rel="stylesheet"
+          />
           <link
             href={'https://use.fontawesome.com/releases/v5.0.10/css/all.css'}
             rel="stylesheet"
@@ -37,9 +38,9 @@ class MyDocument extends Document {
           ></script>
         </Head>
         <body>
-        <div id="page-transition"></div>
-        <Main/>
-        <NextScript/>
+          <div id="page-transition"></div>
+          <Main />
+          <NextScript />
         </body>
       </Html>
     )

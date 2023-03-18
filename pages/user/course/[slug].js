@@ -4,8 +4,7 @@ import axios from 'axios'
 import StudentRoute from '../../../components/routes/StudentRoute'
 import { SyncOutlined } from '@ant-design/icons'
 import { PageHead } from '../../../components/head/PageHead'
-import NavLogo
-  from '../../../public/images/logo/americoders-logo-simple_white.svg'
+import NavLogo from '../../../public/images/logo/americoders-logo-simple_white.svg'
 import HeaderLinks from '../../../components/Header/HeaderLinks'
 import Header from '../../../components/Header/Header'
 import Parallax from '../../../components/Parallax/Parallax'
@@ -117,7 +116,7 @@ const SingleCourse = (props, { courses }) => {
   return (
     <>
       {/* page title meta */}
-      <PageHead title={course.name}/>
+      <PageHead title={course.name} />
 
       {/* student route wrapper */}
       <StudentRoute className="container">
@@ -126,7 +125,7 @@ const SingleCourse = (props, { courses }) => {
           color="transparent"
           routes={dashboardRoutes}
           brand={NavLogo}
-          rightLinks={<HeaderLinks/>}
+          rightLinks={<HeaderLinks />}
           fixed
           changeColorOnScroll={{
             height: 400,
@@ -406,9 +405,11 @@ const SingleCourse = (props, { courses }) => {
                         >
                           EarSketch Studio
                         </h2>
-                        <EarSketch/>
+                        <EarSketch />
                       </>
-                    ) : ('')}
+                    ) : (
+                      ''
+                    )}
                   </GridContainer>
                 </GridContainer>
 
@@ -477,7 +478,7 @@ const SingleCourse = (props, { courses }) => {
                       {/* welcoming message to user */}
                       <h4 className={classes.lightSubtitle}>
                         Good luck on your journey!
-                        <br/>
+                        <br />
                         If you need any help please raise your hand.
                       </h4>
                     </GridItem>
@@ -488,7 +489,7 @@ const SingleCourse = (props, { courses }) => {
             {/*end*/}
           </div>
         </div>
-        <Footer/>
+        <Footer />
       </StudentRoute>
     </>
   )

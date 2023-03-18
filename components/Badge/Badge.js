@@ -9,7 +9,7 @@ import styles from '/styles/jss/americoders/components/badgeStyle.js'
 
 const useStyles = makeStyles(styles)
 
-export default function Badge (props) {
+export default function Badge(props) {
   const classes = useStyles()
   const { color, children } = props
   return (

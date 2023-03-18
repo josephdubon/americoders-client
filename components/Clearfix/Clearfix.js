@@ -17,9 +17,9 @@ const styles = {
 
 const useStyles = makeStyles(styles)
 
-export default function Clearfix () {
+export default function Clearfix() {
   const classes = useStyles()
-  return <div className={classes.clearfix}/>
+  return <div className={classes.clearfix} />
 }
 
 Clearfix.propTypes = {}

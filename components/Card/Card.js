@@ -11,7 +11,7 @@ import styles from '/styles/jss/americoders/components/cardStyle.js'
 
 const useStyles = makeStyles(styles)
 
-export default function Card (props) {
+export default function Card(props) {
   const classes = useStyles()
   const { className, children, plain, carousel, ...rest } = props
   const cardClasses = classNames({

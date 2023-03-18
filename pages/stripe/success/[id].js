@@ -28,7 +28,7 @@ const StripeSuccess = () => {
       <div className="row text-center">
         <div className="col-md-9 pb-5">
           <div className="d-flex justify-content-center p-5">
-            <SyncOutlined className="display-1 text-danger p-5"/>
+            <SyncOutlined className="display-1 text-danger p-5" />
           </div>
         </div>
         <div className="col-md-3">{''}</div>

@@ -24,7 +24,7 @@ import CustomDropdown from '../CustomDropdown/CustomDropdown'
 
 const useStyles = makeStyles(styles)
 
-export default function HeaderLinks (props) {
+export default function HeaderLinks(props) {
   const classes = useStyles()
 
   // set state for current page/link
@@ -98,10 +98,7 @@ export default function HeaderLinks (props) {
           {/* login */}
           <ListItem className={classes.listItem}>
             <Link href={'/login'}>
-              <Button
-                color="transparent"
-                className={classes.navLink}
-              >
+              <Button color="transparent" className={classes.navLink}>
                 <Icon className={classes.icons}>login</Icon> Login
               </Button>
             </Link>
@@ -110,12 +107,8 @@ export default function HeaderLinks (props) {
           {/* signup */}
           <ListItem className={classes.listItem}>
             <Link href={'/register'}>
-              <Button
-                color="transparent"
-                className={classes.navLink}
-              >
-                <HowToReg
-                  className={classes.icons}/> Register
+              <Button color="transparent" className={classes.navLink}>
+                <HowToReg className={classes.icons} /> Register
               </Button>
             </Link>
           </ListItem>
@@ -140,10 +133,7 @@ export default function HeaderLinks (props) {
                 <Link href={'/user'}>
                   <a className={classes.dropdownLink}>Dashboard</a>
                 </Link>,
-                <a
-                  onClick={logout}
-                  className={classes.dropdownLink}
-                >
+                <a onClick={logout} className={classes.dropdownLink}>
                   Logout
                 </a>,
               ]}
@@ -167,7 +157,6 @@ export default function HeaderLinks (props) {
               }}
               buttonIcon={School}
               dropdownList={[
-
                 <Link href={'/instructor'}>
                   <a className={classes.dropdownLink}>Dashboard</a>
                 </Link>,
@@ -177,13 +166,9 @@ export default function HeaderLinks (props) {
                 <Link href={'/instructor/revenue'}>
                   <a className={classes.dropdownLink}>Revenue</a>
                 </Link>,
-                <a
-                  onClick={logout}
-                  className={classes.dropdownLink}
-                >
+                <a onClick={logout} className={classes.dropdownLink}>
                   Logout
                 </a>,
-
               ]}
             />
           </ListItem>
@@ -205,7 +190,7 @@ export default function HeaderLinks (props) {
             color="transparent"
             className={classes.navLink}
           >
-            <i className={classes.socialIcons + ' fab fa-twitter'}/>
+            <i className={classes.socialIcons + ' fab fa-twitter'} />
           </Button>
         </Tooltip>
       </ListItem>
@@ -224,7 +209,7 @@ export default function HeaderLinks (props) {
             color="transparent"
             className={classes.navLink}
           >
-            <i className={classes.socialIcons + ' fab fa-instagram'}/>
+            <i className={classes.socialIcons + ' fab fa-instagram'} />
           </Button>
         </Tooltip>
       </ListItem>

@@ -26,7 +26,7 @@ const parallaxStyle = (theme) => ({
       display: 'block',
       left: '0',
       top: '0',
-      content: '\'\'',
+      content: "''",
     },
   },
   small: {

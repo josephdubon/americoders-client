@@ -12,7 +12,7 @@ const loginStyle = {
     border: '0',
     display: 'flex',
     alignItems: 'center',
-    backgroundImage: 'url(\'/img/sign.jpg\')',
+    backgroundImage: "url('/img/sign.jpg')",
   },
   container,
   form: {

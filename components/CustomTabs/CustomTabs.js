@@ -18,7 +18,7 @@ import styles from '/styles/jss/americoders/components/customTabsStyle.js'
 
 const useStyles = makeStyles(styles)
 
-export default function CustomTabs (props) {
+export default function CustomTabs(props) {
   const [value, setValue] = React.useState(0)
 
   const handleChange = (event, value) => {
@@ -50,7 +50,7 @@ export default function CustomTabs (props) {
                   typeof prop.tabIcon === 'string' ? (
                     <Icon>{prop.tabIcon}</Icon>
                   ) : (
-                    <prop.tabIcon/>
+                    <prop.tabIcon />
                   ),
               }
             }

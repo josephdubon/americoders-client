@@ -8,7 +8,7 @@ import styles from '../../styles/jss/americoders/components/typographyStyle.js'
 
 const useStyles = makeStyles(styles)
 
-export default function Danger (props) {
+export default function Danger(props) {
   const classes = useStyles()
   const { children } = props
   return (

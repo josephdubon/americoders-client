@@ -16,8 +16,7 @@ import AddEventForm from '../../../../components/forms/AddEventForm'
 import { toast } from 'react-toastify'
 import { PageHead } from '../../../../components/head/PageHead'
 import Header from '../../../../components/Header/Header'
-import NavLogo
-  from '../../../../public/images/logo/americoders-logo-simple_white.svg'
+import NavLogo from '../../../../public/images/logo/americoders-logo-simple_white.svg'
 import HeaderLinks from '../../../../components/Header/HeaderLinks'
 import Parallax from '../../../../components/Parallax/Parallax'
 import classNames from 'classnames'
@@ -40,7 +39,8 @@ const CourseView = (props) => {
 
   // style
   const myStyle = {
-    marginTop: '-15px', fontSize: '10px',
+    marginTop: '-15px',
+    fontSize: '10px',
   }
 
   // state
@@ -100,13 +100,14 @@ const CourseView = (props) => {
 
   //start
   // add-event functions
-  const handleAddEvent = async e => {
+  const handleAddEvent = async (e) => {
     e.preventDefault()
     try {
       // get request for data
       const { data } = await axios.post(
         `/api/course/event/${slug}/${course.instructor._id}`,
-        eventValues) // lesson content from values
+        eventValues,
+      ) // lesson content from values
 
       // update state
       setEventValues({
@@ -130,7 +131,6 @@ const CourseView = (props) => {
         draggable: true,
         progress: undefined,
       })
-
     } catch (err) {
       console.log('HANDLE EVENT: ', err)
 
@@ -149,13 +149,14 @@ const CourseView = (props) => {
   //end
 
   // add-lesson functions
-  const handleAddLesson = async e => {
+  const handleAddLesson = async (e) => {
     e.preventDefault()
     try {
       // get request for data
       const { data } = await axios.post(
         `/api/course/lesson/${slug}/${course.instructor._id}`,
-        values) // lesson content from values
+        values,
+      ) // lesson content from values
 
       // update state
       setValues({
@@ -183,7 +184,6 @@ const CourseView = (props) => {
         draggable: true,
         progress: undefined,
       })
-
     } catch (err) {
       console.log('HANDLE LESSON: ', err)
 
@@ -201,7 +201,7 @@ const CourseView = (props) => {
   }
 
   // save video logic
-  const handleVideo = async e => {
+  const handleVideo = async (e) => {
     e.preventDefault()
     try {
       // get file from form and update button text and loading state
@@ -216,11 +216,13 @@ const CourseView = (props) => {
       // save progress bar and send video as form data to backend
       const { data } = await axios.post(
         `/api/course/upload-video/${course.instructor._id}`,
-        videoData, {
+        videoData,
+        {
           onUploadProgress: (e) => {
             setProgress(Math.round((100 * e.loaded) / e.total))
           },
-        })
+        },
+      )
 
       // once response is received update state
       setValues({ ...values, video: data })
@@ -239,7 +241,7 @@ const CourseView = (props) => {
   }
 
   // remove video logic
-  const handleRemoveVideo = async e => {
+  const handleRemoveVideo = async (e) => {
     e.preventDefault()
     try {
       setUploading(true)
@@ -270,7 +272,8 @@ const CourseView = (props) => {
     try {
       // confirm publish
       let answer = window.confirm(
-        'Once you publish the course will be live on the platform for the students to enroll.')
+        'Once you publish the course will be live on the platform for the students to enroll.',
+      )
 
       if (!answer) return
 
@@ -307,7 +310,8 @@ const CourseView = (props) => {
     try {
       // confirm publish
       let answer = window.confirm(
-        'Once you unpublish the course will be not be live on the platform for the students to enroll.')
+        'Once you unpublish the course will be not be live on the platform for the students to enroll.',
+      )
 
       if (!answer) return
 
@@ -327,7 +331,6 @@ const CourseView = (props) => {
         draggable: true,
         progress: undefined,
       })
-
     } catch (err) {
       toast.error('Course unpublish failed.', {
         position: 'top-center',
@@ -339,7 +342,6 @@ const CourseView = (props) => {
         progress: undefined,
       })
     }
-
   }
   const classes = useStyles()
   const { ...rest } = props
@@ -347,13 +349,13 @@ const CourseView = (props) => {
   return (
     <>
       {/* meta data */}
-      <PageHead title={course.name}/>
+      <PageHead title={course.name} />
 
       {/* navigation */}
       <Header
         color="transparent"
         brand={NavLogo}
-        rightLinks={<HeaderLinks/>}
+        rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
           height: 200,
@@ -364,17 +366,22 @@ const CourseView = (props) => {
       />
 
       {/* hero section */}
-      <Parallax small filter
-                image="/images/americoders-community-diversity.png"/>
+      <Parallax
+        small
+        filter
+        image="/images/americoders-community-diversity.png"
+      />
 
       {/* main content */}
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           {/* flex container */}
-          <GridContainer direction="row"
-                         justifyContent="space-evenly"
-                         alignItems="center"
-                         spacing={2}>
+          <GridContainer
+            direction="row"
+            justifyContent="space-evenly"
+            alignItems="center"
+            spacing={2}
+          >
             {/* intro */}
             <GridItem xs={11} sm={10} md={12}>
               <h2 className={classes.title}>{course && course.name}</h2>
@@ -430,29 +437,30 @@ const CourseView = (props) => {
                   </Tooltip>
 
                   {/* render publish icon if min of 6 lessons is met */}
-                  {course.lessons && course.lessons.length < 5 ?
-                    <Tooltip
-                      title="Minimum of 5 lessons required to publish">
-                      <QuestionOutlined role="button"
-                                        className="h5 text-danger"/>
-                    </Tooltip> : course.published ? (
-
-                      // unpublish
-                      <Tooltip title="Unpublish">
-                        <CloseOutlined
-                          onClick={handleUnpublish}
-                          className="text-danger"/>
-                      </Tooltip>
-                    ) : (
-
-                      // publish
-                      <Tooltip title="Publish">
-                        <CheckOutlined
-                          onClick={handlePublish}
-                          className="text-success"/>
-                      </Tooltip>
-                    )
-                  }
+                  {course.lessons && course.lessons.length < 5 ? (
+                    <Tooltip title="Minimum of 5 lessons required to publish">
+                      <QuestionOutlined
+                        role="button"
+                        className="h5 text-danger"
+                      />
+                    </Tooltip>
+                  ) : course.published ? (
+                    // unpublish
+                    <Tooltip title="Unpublish">
+                      <CloseOutlined
+                        onClick={handleUnpublish}
+                        className="text-danger"
+                      />
+                    </Tooltip>
+                  ) : (
+                    // publish
+                    <Tooltip title="Publish">
+                      <CheckOutlined
+                        onClick={handlePublish}
+                        className="text-success"
+                      />
+                    </Tooltip>
+                  )}
                 </GridContainer>
               </GridItem>
             </GridContainer>
@@ -466,14 +474,20 @@ const CourseView = (props) => {
           >
             {/* course description */}
             <GridItem xs={11} sm={11} md={12} style={{ margin: '1.75rem' }}>
-              <h4 style={{
-                textAlign: 'center',
-                fontWeight: '600',
-                textTransform: 'uppercase',
-              }}>Course Description</h4>
+              <h4
+                style={{
+                  textAlign: 'center',
+                  fontWeight: '600',
+                  textTransform: 'uppercase',
+                }}
+              >
+                Course Description
+              </h4>
               <GridItem xs={12} sm={12} md={12} style={{ textAlign: 'center' }}>
-                <ReactMarkdown className={classes.markdown}
-                               children={course.description}/>
+                <ReactMarkdown
+                  className={classes.markdown}
+                  children={course.description}
+                />
               </GridItem>
             </GridItem>
           </GridContainer>
@@ -492,25 +506,26 @@ const CourseView = (props) => {
                 type="primary"
                 shape="round"
                 color={'primary'}
-                icon={<UploadOutlined/>}
+                icon={<UploadOutlined />}
                 size="large"
               >
                 Add lesson
               </Button>
 
               {/* lessons list */}
-              <h6>{course && course.lessons &&
-                course.lessons.length} Lessons</h6>
+              <h6>
+                {course && course.lessons && course.lessons.length} Lessons
+              </h6>
               <List
                 itemLayout="horizontal"
                 dataSource={course && course.lessons}
                 renderItem={(item, index) => (
                   // list each item with index number next to title
                   <ListItem style={{ textAlign: 'left' }}>
-                    <ListItemText primary={index + 1} secondary={item.title}/>
+                    <ListItemText primary={index + 1} secondary={item.title} />
                   </ListItem>
-                )}>
-              </List>
+                )}
+              ></List>
             </GridItem>
 
             {/* events list */}
@@ -520,83 +535,84 @@ const CourseView = (props) => {
                 type="primary"
                 shape="round"
                 color={'success'}
-                icon={<UploadOutlined/>}
+                icon={<UploadOutlined />}
                 size="large"
               >
                 Add Event
               </Button>
 
               {/* events list */}
-              <h6>{course && course.event &&
-                course.event.length} Events</h6>
+              <h6>{course && course.event && course.event.length} Events</h6>
               <List
                 itemLayout="horizontal"
                 dataSource={course && course.event}
                 renderItem={(item, index) => (
                   // list each item with index number next to title
                   <ListItem style={{ textAlign: 'left' }}>
-                    <ListItemText primary={index + 1} secondary={item.title}/>
+                    <ListItemText primary={index + 1} secondary={item.title} />
                   </ListItem>
-                )}>
-              </List>
+                )}
+              ></List>
             </GridItem>
           </GridContainer>
 
-          {course && (<>
-            {/* modal for lesson */}
-            <Dialog
-              title="+ Add Lesson"
-              centered
-              width={'50vw'}
-              open={visible}
-              onClose={() => setVisible(false)}
-              footer={null}
-            >
-              <h4 className={classes.title}>Add Lesson Form</h4>
-              <GridItem xs={10} md={12}>
-                {/* render form component */}
-                <AddLessonForm
-                  values={values}
-                  setValues={setValues}
-                  handleAddLesson={handleAddLesson}
-                  handleVideo={handleVideo}
-                  handleRemoveVideo={handleRemoveVideo}
-                  uploading={uploading}
-                  uploadButtonText={uploadButtonText}
-                  progress={progress}
-                />
-              </GridItem>
-            </Dialog>
+          {course && (
+            <>
+              {/* modal for lesson */}
+              <Dialog
+                title="+ Add Lesson"
+                centered
+                width={'50vw'}
+                open={visible}
+                onClose={() => setVisible(false)}
+                footer={null}
+              >
+                <h4 className={classes.title}>Add Lesson Form</h4>
+                <GridItem xs={10} md={12}>
+                  {/* render form component */}
+                  <AddLessonForm
+                    values={values}
+                    setValues={setValues}
+                    handleAddLesson={handleAddLesson}
+                    handleVideo={handleVideo}
+                    handleRemoveVideo={handleRemoveVideo}
+                    uploading={uploading}
+                    uploadButtonText={uploadButtonText}
+                    progress={progress}
+                  />
+                </GridItem>
+              </Dialog>
 
-            {/* modal for event */}
-            <Dialog
-              title="+ Add Event"
-              centered
-              width={'50vw'}
-              open={visibleEvent}
-              onClose={() => setVisibleEvent(false)}
-              footer={null}
-            >
-              {/* render form component */}
-              <h4 className={classes.title}>Event Form</h4>
-              <GridItem xs={10} md={12}>
+              {/* modal for event */}
+              <Dialog
+                title="+ Add Event"
+                centered
+                width={'50vw'}
+                open={visibleEvent}
+                onClose={() => setVisibleEvent(false)}
+                footer={null}
+              >
                 {/* render form component */}
-                <AddEventForm
-                  eventValues={eventValues}
-                  setEventValues={setEventValues}
-                  handleAddEvent={handleAddEvent}
-                />
-              </GridItem>
-            </Dialog>
+                <h4 className={classes.title}>Event Form</h4>
+                <GridItem xs={10} md={12}>
+                  {/* render form component */}
+                  <AddEventForm
+                    eventValues={eventValues}
+                    setEventValues={setEventValues}
+                    handleAddEvent={handleAddEvent}
+                  />
+                </GridItem>
+              </Dialog>
 
-            {/**/}
-          </>)}
+              {/**/}
+            </>
+          )}
 
           {/*  events area */}
         </div>
       </div>
-    </>)
-
+    </>
+  )
 }
 
 export default CourseView

@@ -25,18 +25,19 @@ const dashboardRoutes = []
 
 const useStyles = makeStyles(styles)
 
-export default function WorkshopsPage (props) {
+export default function WorkshopsPage(props) {
   const classes = useStyles()
   const { ...rest } = props
 
-  return (<>
+  return (
+    <>
       {/* header section / nav */}
-      <PageHead title={'Upcoming IRL Workshops'}/>
+      <PageHead title={'Upcoming IRL Workshops'} />
       <Header
         color="transparent"
         routes={dashboardRoutes}
         brand={NavLogo}
-        rightLinks={<HeaderLinks/>}
+        rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
           height: 400,
@@ -46,22 +47,25 @@ export default function WorkshopsPage (props) {
       />
 
       {/* hero section */}
-      <Parallax filter responsive small
-                image="/images/original/reno_downtown.png">
+      <Parallax
+        filter
+        responsive
+        small
+        image="/images/original/reno_downtown.png"
+      >
         <div className={classes.container}>
           <GridContainer
             direction="row"
             justifyContent="center"
             alignItems="center"
           >
-            <GridContainer direction="row"
-                           justifyContent="center"
-                           alignItems="center"
+            <GridContainer
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
             >
               <GridItem xs={11} sm={10}>
-                <h1 className={classes.titleWhite}>
-                  IRL Workshops
-                </h1>
+                <h1 className={classes.titleWhite}>IRL Workshops</h1>
                 <h4 className={classes.subtitleWhite}>
                   Check out our upcoming in-real-life workshops, we are excited
                   to see you there!
@@ -74,17 +78,16 @@ export default function WorkshopsPage (props) {
 
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
-
           {/* live courses and events section */}
-          <CoursesGrid id="workshops" courses={props.courses}/>
+          <CoursesGrid id="workshops" courses={props.courses} />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   )
 }
 
-export async function getServerSideProps () {
+export async function getServerSideProps() {
   // collect courses data
   const { data } = await axios.get(`${process.env.API}/courses`) // full path of server here
 

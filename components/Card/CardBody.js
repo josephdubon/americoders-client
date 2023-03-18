@@ -11,7 +11,7 @@ import styles from '/styles/jss/americoders/components/cardBodyStyle.js'
 
 const useStyles = makeStyles(styles)
 
-export default function CardBody (props) {
+export default function CardBody(props) {
   const classes = useStyles()
   const { className, children, ...rest } = props
   const cardBodyClasses = classNames({

@@ -1,6 +1,5 @@
 import { container, grayColor, title } from '/styles/jss/americoders.js'
-import headerLinksStyle
-  from '/styles/jss/americoders/components/headerLinksStyle.js'
+import headerLinksStyle from '/styles/jss/americoders/components/headerLinksStyle.js'
 
 const navbarsStyle = (theme) => ({
   section: {

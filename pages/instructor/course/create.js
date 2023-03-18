@@ -5,8 +5,7 @@ import { toast } from 'react-toastify'
 import { useRouter } from 'next/router'
 import { PageHead } from '../../../components/head/PageHead'
 import Header from '../../../components/Header/Header'
-import NavLogo
-  from '../../../public/images/logo/americoders-logo-simple_white.svg'
+import NavLogo from '../../../public/images/logo/americoders-logo-simple_white.svg'
 import HeaderLinks from '../../../components/Header/HeaderLinks'
 import GridContainer from '../../../components/Grid/GridContainer'
 import GridItem from '../../../components/Grid/GridItem'
@@ -89,7 +88,7 @@ const CreateCourse = (props) => {
           setValues({ ...values, loading: false })
         } catch (err) {
           console.log('IMAGE RESIZE ERROR ', err)
-          setValues(({ ...values, loading: false }))
+          setValues({ ...values, loading: false })
           // notification config
           toast.error('Image upload failed. Try again later.', {
             position: 'top-center',
@@ -101,23 +100,23 @@ const CreateCourse = (props) => {
             progress: undefined,
           })
         }
-      })
+      },
+    )
   }
 
   // form logic: image remove
   const handleImageRemove = async (e) => {
     // console.log('REMOVE IMAGE ')
     try {
-      setValues(({ ...values, loading: true }))
+      setValues({ ...values, loading: true })
       const res = await axios.post('/api/course/remove-image', { image })
       setImage({})
       setPreview('')
       setUploadButtonText('Upload Image')
-      setValues(({ ...values, loading: false }))
-
+      setValues({ ...values, loading: false })
     } catch (err) {
       console.log('IMAGE REMOVE ERROR ', err)
-      setValues(({ ...values, loading: false }))
+      setValues({ ...values, loading: false })
       // notification config
       toast.error('Image remove failed. Try again later.', {
         position: 'top-center',
@@ -168,59 +167,63 @@ const CreateCourse = (props) => {
         progress: undefined,
       })
     }
-
   }
 
-  return (<>
-    <PageHead title={'Create New Course Form'}/>
+  return (
+    <>
+      <PageHead title={'Create New Course Form'} />
 
-    <Header
-      absolute
-      color="transparent"
-      brand={NavLogo}
-      rightLinks={<HeaderLinks/>}
-      {...rest}
-    />
+      <Header
+        absolute
+        color="transparent"
+        brand={NavLogo}
+        rightLinks={<HeaderLinks />}
+        {...rest}
+      />
 
-    <div
-      className={classes.pageHeader}
-      style={{
-        backgroundImage: 'url(\'/images/original/americoders-community-hands-friends.jpg\')',
-        backgroundSize: 'cover',
-        backgroundPosition: 'top center',
-      }}
-    >
-      <div className={classes.container}>
-        <GridContainer
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-        >
-          <GridContainer direction="row"
-                         justifyContent="center"
-                         alignItems="center"
+      <div
+        className={classes.pageHeader}
+        style={{
+          backgroundImage:
+            "url('/images/original/americoders-community-hands-friends.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'top center',
+        }}
+      >
+        <div className={classes.container}>
+          <GridContainer
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
           >
-            <GridItem xs={10} sm={8} md={11}>
-              <Card className={classes[cardAnimaton]}>
-                {/* create course form */}
-                {/* use props for form function and values */}
-                <CourseCreateForm
-                  handleSubmit={handleSubmit}
-                  handleImage={handleImage}
-                  handleImageRemove={handleImageRemove}
-                  handleChange={handleChange}
-                  values={values}
-                  setValues={setValues}
-                  preview={preview}
-                  uploadButtonText={uploadButtonText}
-                /> </Card>
-            </GridItem>
+            <GridContainer
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <GridItem xs={10} sm={8} md={11}>
+                <Card className={classes[cardAnimaton]}>
+                  {/* create course form */}
+                  {/* use props for form function and values */}
+                  <CourseCreateForm
+                    handleSubmit={handleSubmit}
+                    handleImage={handleImage}
+                    handleImageRemove={handleImageRemove}
+                    handleChange={handleChange}
+                    values={values}
+                    setValues={setValues}
+                    preview={preview}
+                    uploadButtonText={uploadButtonText}
+                  />{' '}
+                </Card>
+              </GridItem>
+            </GridContainer>
           </GridContainer>
-        </GridContainer>
+        </div>
+        <Footer whiteFont />
       </div>
-      <Footer whiteFont/>
-    </div>
-  </>)
+    </>
+  )
 }
 
 export default CreateCourse

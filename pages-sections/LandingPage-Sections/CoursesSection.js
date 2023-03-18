@@ -12,12 +12,11 @@ import Card from '../../components/Card/Card.js'
 import CardBody from '../../components/Card/CardBody.js'
 import CardFooter from '../../components/Card/CardFooter.js'
 
-import styles
-  from '../../styles/jss/americoders/pages/landingPageSections/coursesStyle.js'
+import styles from '../../styles/jss/americoders/pages/landingPageSections/coursesStyle.js'
 
 const useStyles = makeStyles(styles)
 
-export default function CoursesSection () {
+export default function CoursesSection() {
   const classes = useStyles()
   const imageClasses = classNames(
     classes.imgRaised,
@@ -41,14 +40,13 @@ export default function CoursesSection () {
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Introduction to Coding
-                <br/>
-                <small className={classes.smallTitle}>Python, Javascript,
-                                                      Scratch, EarSketch</small>
+                <br />
+                <small className={classes.smallTitle}>
+                  Python, Javascript, Scratch, EarSketch
+                </small>
               </h4>
-              <CardBody>
-              </CardBody>
-              <CardFooter className={classes.justifyCenter}>
-              </CardFooter>
+              <CardBody></CardBody>
+              <CardFooter className={classes.justifyCenter}></CardFooter>
             </Card>
           </GridItem>
 
@@ -64,17 +62,14 @@ export default function CoursesSection () {
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Internet Safety
-                <br/>
-                <small className={classes.smallTitle}>Are we dedicating enough
-                                                      time to the safety and
-                                                      protection of our children
-                                                      while they are
-                                                      online?</small>
+                <br />
+                <small className={classes.smallTitle}>
+                  Are we dedicating enough time to the safety and protection of
+                  our children while they are online?
+                </small>
               </h4>
-              <CardBody>
-              </CardBody>
-              <CardFooter className={classes.justifyCenter}>
-              </CardFooter>
+              <CardBody></CardBody>
+              <CardFooter className={classes.justifyCenter}></CardFooter>
             </Card>
           </GridItem>
 
@@ -90,16 +85,13 @@ export default function CoursesSection () {
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Game Development
-                <br/>
-                <small className={classes.smallTitle}>Python, Javascript, and
-                                                      Custom Game Engine</small>
+                <br />
+                <small className={classes.smallTitle}>
+                  Python, Javascript, and Custom Game Engine
+                </small>
               </h4>
-              <CardBody>
-                {' '}
-              </CardBody>
-              <CardFooter className={classes.justifyCenter}>
-                {' '}
-              </CardFooter>
+              <CardBody> </CardBody>
+              <CardFooter className={classes.justifyCenter}> </CardFooter>
             </Card>
           </GridItem>
 
@@ -115,18 +107,14 @@ export default function CoursesSection () {
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Technology Unplugged
-                <br/>
-                <small className={classes.smallTitle}>Let's turn the screen off
-                                                      and learn in the real
-                                                      world for a
-                                                      change.</small>
+                <br />
+                <small className={classes.smallTitle}>
+                  Let's turn the screen off and learn in the real world for a
+                  change.
+                </small>
               </h4>
-              <CardBody>
-                {' '}
-              </CardBody>
-              <CardFooter className={classes.justifyCenter}>
-                {' '}
-              </CardFooter>
+              <CardBody> </CardBody>
+              <CardFooter className={classes.justifyCenter}> </CardFooter>
             </Card>
           </GridItem>
 
@@ -142,17 +130,13 @@ export default function CoursesSection () {
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Create a Projects Portfolio
-                <br/>
-                <small className={classes.smallTitle}>Show off your code and
-                                                      game/program
-                                                      collection.</small>
+                <br />
+                <small className={classes.smallTitle}>
+                  Show off your code and game/program collection.
+                </small>
               </h4>
-              <CardBody>
-                {' '}
-              </CardBody>
-              <CardFooter className={classes.justifyCenter}>
-                {''}
-              </CardFooter>
+              <CardBody> </CardBody>
+              <CardFooter className={classes.justifyCenter}>{''}</CardFooter>
             </Card>
           </GridItem>
 
@@ -168,19 +152,14 @@ export default function CoursesSection () {
               </GridItem>
               <h4 className={classes.cardTitle}>
                 Hardware Hacking
-                <br/>
-                <small className={classes.smallTitle}>Let's Build And Break Some
-                                                      Stuff! We can learn a
-                                                      whole lot by taking apart
-                                                      and putting things back
-                                                      together.</small>
+                <br />
+                <small className={classes.smallTitle}>
+                  Let's Build And Break Some Stuff! We can learn a whole lot by
+                  taking apart and putting things back together.
+                </small>
               </h4>
-              <CardBody>
-                {' '}
-              </CardBody>
-              <CardFooter className={classes.justifyCenter}>
-                {' '}
-              </CardFooter>
+              <CardBody> </CardBody>
+              <CardFooter className={classes.justifyCenter}> </CardFooter>
             </Card>
           </GridItem>
         </GridContainer>

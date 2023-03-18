@@ -20,7 +20,7 @@ Router.events.on('routeChangeStart', (url) => {
   // console.log(`Loading: ${url}`)
   document.body.classList.add('body-page-transition')
   ReactDOM.render(
-    <PageChange path={url}/>,
+    <PageChange path={url} />,
     document.getElementById('page-transition'),
   )
 })
@@ -34,7 +34,7 @@ Router.events.on('routeChangeError', () => {
 })
 
 export default class MyApp extends App {
-  static async getInitialProps ({ Component, router, ctx }) {
+  static async getInitialProps({ Component, router, ctx }) {
     let pageProps = {}
 
     if (Component.getInitialProps) {
@@ -44,7 +44,7 @@ export default class MyApp extends App {
     return { pageProps }
   }
 
-  render () {
+  render() {
     const { Component, pageProps } = this.props
 
     return (
@@ -58,7 +58,7 @@ export default class MyApp extends App {
           {/* wrap app in provider for access to state */}
           <Provider>
             {/* page head section*/}
-            <PageHead title={'Americoders'}/>
+            <PageHead title={'Americoders'} />
             <Component {...pageProps} />
           </Provider>
         </PlausibleProvider>
