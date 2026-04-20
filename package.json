@@ -72,7 +72,7 @@
     "stripe": "^9.1.0",
     "styled-components": "5.3.5",
     "tsparticles": "^2.0.6",
-    "typed": "10.0.0-beta.2",
+    "typed.js": "^2.1.0",
     "webpack": "5.74.0"
   },
   "devDependencies": {
