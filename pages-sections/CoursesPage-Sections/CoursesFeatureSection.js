@@ -33,7 +33,7 @@ export default function CoursesFeatureSection({ course }) {
             children={course.description}
           />
         }
-        imageUrl={course.image.Location}
+        imageUrl={course?.image?.Location || undefined}
         imgAlt={'americoders-robotics-project-student'}
       />
 
